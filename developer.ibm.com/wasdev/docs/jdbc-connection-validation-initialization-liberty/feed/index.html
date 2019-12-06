@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: JDBC connection validation and initialization in Liberty</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Fred Rowe</title>
+		<link>https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/#comment-153091</link>
+		<dc:creator><![CDATA[Fred Rowe]]></dc:creator>
+		<pubDate>Thu, 05 Jul 2018 17:03:09 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=20020#comment-153091</guid>
+		<description><![CDATA[It&#039;s even simpler in Liberty, if you don&#039;t want to use connection validation or connection pretest, simply don&#039;t set values for those attributes and no connection testing will occur.]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s even simpler in Liberty, if you don&#8217;t want to use connection validation or connection pretest, simply don&#8217;t set values for those attributes and no connection testing will occur.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Fred Rowe</title>
+		<link>https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/#comment-153090</link>
+		<dc:creator><![CDATA[Fred Rowe]]></dc:creator>
+		<pubDate>Thu, 05 Jul 2018 17:00:47 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=20020#comment-153090</guid>
+		<description><![CDATA[There are no additional conditions but remember the associated SQL is only executed once, at connection creation.   The onConnect attribute of the dataSource config element was delivered in our 4Q2016 Liberty 16.0.0.4 release so it&#039;s not available in 855.  Remember, Liberty is zero-migration so there should be no reason not to move up to the latest stable release 17.0.0.2]]></description>
+		<content:encoded><![CDATA[<p>There are no additional conditions but remember the associated SQL is only executed once, at connection creation.   The onConnect attribute of the dataSource config element was delivered in our 4Q2016 Liberty 16.0.0.4 release so it&#8217;s not available in 855.  Remember, Liberty is zero-migration so there should be no reason not to move up to the latest stable release 17.0.0.2</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Pier Fortunato Bottan</title>
+		<link>https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/#comment-153044</link>
+		<dc:creator><![CDATA[Pier Fortunato Bottan]]></dc:creator>
+		<pubDate>Wed, 04 Jul 2018 10:24:45 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=20020#comment-153044</guid>
+		<description><![CDATA[It is not clear how to disable test connection in a liberty dataSource , while it was simple in WebSphere]]></description>
+		<content:encoded><![CDATA[<p>It is not clear how to disable test connection in a liberty dataSource , while it was simple in WebSphere</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Adam Skowroński</title>
+		<link>https://developer.ibm.com/wasdev/docs/jdbc-connection-validation-initialization-liberty/#comment-153019</link>
+		<dc:creator><![CDATA[Adam Skowroński]]></dc:creator>
+		<pubDate>Tue, 03 Jul 2018 15:13:09 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=20020#comment-153019</guid>
+		<description><![CDATA[Are there any additional conditions that commands in  are executed? 
+I&#039;m trying to use this feature to force IBM ODM to use another users&#039; schema on Oracle, but it seems not working in Liberty 8.5.5. 
+This feature isn&#039;t widely advertised (google doesn&#039;t know a lot about it) but still in official documentation like: https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.liberty.autogen.base.doc/ae/rwlp_config_dataSource.html#onConnect]]></description>
+		<content:encoded><![CDATA[<p>Are there any additional conditions that commands in  are executed?<br />
+I&#8217;m trying to use this feature to force IBM ODM to use another users&#8217; schema on Oracle, but it seems not working in Liberty 8.5.5.<br />
+This feature isn&#8217;t widely advertised (google doesn&#8217;t know a lot about it) but still in official documentation like: <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.liberty.autogen.base.doc/ae/rwlp_config_dataSource.html#onConnect">https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.liberty.autogen.base.doc/ae/rwlp_config_dataSource.html#onConnect</a></p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

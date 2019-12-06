@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="NGINX," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-06-10",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"NGINX and WebSphere Application Server",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"NGINX,",
+						"contentArea": "Liberty with open source"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"NGINX,",
+		      "description":"NGINX and WebSphere Application Server"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>NGINX and WebSphere Application Server - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A description of the basic configuration of open source web server and reverse proxy NGINX and NGINX Plus. Includes topics on usage with WAS and Liberty."/>
+<link rel="canonical" href="index.html%3Fp=12651.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; NGINX and WebSphere Application Server Comments Feed" href="docs/nginx-websphere-application-server/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=12651.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fnginx-websphere-application-server%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fnginx-websphere-application-server%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-12651 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=12651.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/oss/index.html" rel="tag">Liberty with open source</a></span></div><h1 class="entry-title">NGINX and WebSphere Application Server</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/ecovener/index.html">Eric Covener</a></span><br>Published on June 10, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=12651.html#comments" class="pn_comments_icon">4 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=12651.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A description of the basic configuration of open source web server and reverse proxy NGINX and NGINX Plus. Includes specific topics on usage with WebSphere Application Server (WAS), both full and Liberty profiles.  You are assumed to have a basic knowledge of NGINX and WAS.</p>
+<p>Authors: Ed Lu <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#101;l&#x75;&#64;&#x75;&#115;&#x2e;&#105;&#x62;&#109;.&#x63;&#111;&#x6d;">&#101;l&#x75;&#64;&#x75;&#115;&#x2e;&#105;&#x62;&#109;.&#x63;&#111;&#x6d;</a>, Eric Covener <a href="&#109;a&#105;l&#116;o&#x3a;e&#x63;&#111;&#x76;&#101;&#x6e;&#101;&#x72;&#64;&#x75;&#115;&#x2e;&#105;&#x62;&#109;&#x2e;&#99;&#x6f;&#109;">e&#x63;&#111;&#x76;&#101;&#x6e;&#101;&#x72;&#64;&#x75;&#115;&#x2e;&#105;&#x62;&#109;&#x2e;&#99;&#x6f;&#109;</a></p>
+<h2>NGINX vs IBM HTTP Server</h2>
+<p><a href="http://nginx.org">NGINX</a> is an open source webserver and reverse proxy that has grown in popularity in recent years due to its scalability. NGINX was first created to solve the C10K problem &#8211; serving 10,000 simultaneous connections on a single webserver.  NGINXâ€™s features and performance have made it a staple of high performance sites &#8212; <a href="http://w3techs.com/technologies/cross/web_server/ranking">now powering 1 in 3 of the world&#8217;s busiest web properties</a>.</p>
+<p><a href="http://nginx.com/products/">NGINX Plus</a> is the commercial (subscription-based) version of NGINX open source.  It adds a number of features for load-balancing and proxying traffic that can enhance a WebSphere Application Server deployment, including session persistence, health checks, dynamic configuration and live activity data. NGINX Plus is fully supported by NGINX, Inc.</p>
+<p>The traditional reverse proxy for WebSphere Application Server is IBM HTTP Server (IHS).  IHS and WAS are tightly integrated via the WebSphere WebServer Plug-in and there is a wealth of documentation and expertise in the WebSphere community.</p>
+<p>In many ways, NGINX and IHS are similar. They are configured similarly, and behave similarly on the outside but, on the inside, they are quite different. At low load or ideal network conditions, they perform comparably well. However, NGINX is made to scale well on large numbers of long-lived connections and in the face of large traffic variations &#8211; exactly where IHS&#8217;s one-thread-per-connection struggles.</p>
+<p>In addition, NGINX is well-equipped to handle HTTP/2 traffic &#8211; it currently supports SPDY, and <a href="http://w3techs.com/technologies/segmentation/ce-spdy/web_server">powers the majority of sites that have adopted this standard</a>.  HTTP/2 support is planned for release in late 2015; there are currently no plans to support HTTP/2 within IHS.</p>
+<p>On the other hand, there are some WebSphere specific features that are currently only integrated into IHS and Datapower &#8211; for example, dynamic clustering of WebSphere Application Servers. Currently, NGINX can only proxy to statically-defined groups of application servers. NGINX Plus does offer an API to configure load-balancing groups, or can be configured via DNS.</p>
+<p>NGINX may provide significant value in environments where acceleration via SPDY, HTTP/2 or a high performance centralized cache smaller than an appliance is needed.</p>
+<h2><a id="proxying"></a>Basic proxying with NGINX</h2>
+<p>This section outlines some basic information on setting up NGINX as a reverse proxy. The configuration here is essentially equivalent to what one would get with a generated <code>plugin-cfg.xml</code> for the WAS plug-in.</p>
+<p>NGINX&#8217;s proxying is based around the concept of an <em>upstream group</em>, which defines a group of servers. Setting up a simple reverse proxy involves defining an <code>upstream</code> group, then using it in one or more <code>proxy_pass</code> directives.</p>
+<p>Here is an example of an <code>upstream</code> group:</p>
+<pre><code>http {
+   ...
+
+    upstream websphere {
+        server 127.0.0.1:9080;
+        server 127.0.0.1:9081;
+    }
+}
+</code></pre>
+<p>The <code>upstream</code> group above, named <code>websphere</code>, is defined by two servers. Both are on ip <code>127.0.0.1</code>, with one server on port 9080 and the other on 9081. Note that the <code>upstream</code> group is placed within an <code>http</code> block.</p>
+<p>We use the <code>proxy_pass</code> directive within a <code>location</code> block to point at an upstream:</p>
+<pre><code>http {
+    ...
+    server {
+        ...
+
+        location /webapp/ {
+            proxy_pass http://websphere;
+        }
+    }
+}
+</code></pre>
+<p>This tells NGINX to proxy all HTTP requests starting with <code>/webapp/</code> to one of the servers in the <code>websphere</code> upstream. Note that this configuration only applies to HTTP traffic; additional configuration is needed both for <a href="index.html%3Fp=12651.html#ssl">SSL</a> and for <a href="index.html%3Fp=12651.html#websockets">WebSockets</a>.</p>
+<p>For more information on proxying, refer to the official NGINX documentation on <a href="http://NGINX.org/en/docs/http/ngx_http_proxy_module.html">the proxy module</a> and <a href="http://NGINX.org/en/docs/http/ngx_http_upstream_module.html">the upstream module</a>.</p>
+<p>The NGINX guides: <a href="http://nginx.com/blog/load-balancing-with-nginx-plus"><em>Load Balancing part 1</em></a> and <a href="http://nginx.com/blog/load-balancing-with-nginx-plus-part2/"><em>Load Balancing part 2</em></a> provide a step-by-step walkthrough, and the document <a href="http://nginx.com/products/on-the-fly-reconfiguration/"><em>On-the-fly reconfiguration of NGINX Plus</em></a> describes how NGINX Plus&#8217; load-balancing groups can be configured using an API or DNS.</p>
+<h3>Load balancing</h3>
+<p>The default strategy for load balancing among servers in a given <code>upstream</code> group is round-robin. In round-robin load balancing, requests are distributed evenly among all servers in turn. For example, in the above proxying configuration, the first request will go to port 9080, the second to 9081, the third to 9080, and so on.</p>
+<p>There are several other load-balancing strategies included in NGINX; for more info, see <a href="http://NGINX.org/en/docs/http/load_balancing.html">this article on load balancing</a>.</p>
+<h3>Failover</h3>
+<p>Failover is also automatically configured when using an <code>upstream</code> group. By default, when a request comes in and it is directed to an unreachable server, NGINX marks that server down for some time and automatically redirects the request to another server. After 10 seconds, NGINX starts sending requests to the downed server. If those requests succeed, the server returns to normal operation; otherwise, it remains down for another 10 seconds.</p>
+<p>See the <a href="http://NGINX.org/en/docs/http/ngx_http_upstream_module.html#server">documentation for the <code>server</code> directive</a> to configure parameters related to failover.</p>
+<h3>Health checks</h3>
+<h4>NGINX Plus</h4>
+<p>Health checks are out-of-band HTTP requests sent to probe a server on a preset interval. They are used to determine whether or not a server is still up without requiring an actual request from a user. To enable health checks for a server, add the <code>health_check</code> directive to the <code>location</code> block of a given <code>proxy_pass</code> directive:</p>
+<pre><code>http {
+    upstream websphere {
+        # Health-monitored upstream groups must be stored in shared memory
+        zone backend 64k;
+
+        server localhost:9080;
+        server localhost:9081;
+    }
+
+    server {
+        location /webapp/ {
+            proxy_pass http://websphere;
+            health_check;
+        }
+    }
+}
+</code></pre>
+<p>This configuration will send an out-of-band request for the URI <code>/</code> to each of the servers in the upstream <code>websphere</code> every 5 seconds. Any server that does not respond with a successful response will be marked down. Note that the <code>health_check</code> directive is placed within the <code>location</code> block, not the <code>upstream</code> block; this means health checks can be enabled per-application.</p>
+<p>Unlike previous <code>upstream</code> groups in this document, the one in the above example has a <code>zone</code> directive. This directive defines a shared memory zone which stores the group&#8217;s configuration and run-time state, and is required when using the health check feature.</p>
+<p>See the <a href="http://NGINX.org/en/docs/http/ngx_http_upstream_module.html">documentation for the <code>health_check</code> directive</a> for more information and details on how to customize health checks.</p>
+<p>NGINX Plus also provides a <a href="http://nginx.org/en/docs/http/ngx_http_upstream_module.html#slow_start">slow start</a> feature when failed servers recover and are reintroduced into the load-balancing pool.</p>
+<h4>Open Source</h4>
+<p>Open source NGINX does not support the health checks feature.</p>
+<h3>Session Affinity</h3>
+<p>If your architecture has IHS between NGINX and WebSphere, then no session affinity on the NGINX side is required &#8211; IHS will handle session affinity. If NGINX is proxying straight to WAS, then session affinity may be beneficial.</p>
+<h4>NGINX Plus</h4>
+<p>NGINX Plus has a built-in <code>sticky</code> directive to handle session affinity. We can use the <code>JSESSIONID</code> cookie, created by WAS, as the session identifier by taking advantage of the <code>learn</code> method. Here is an example configuration:.</p>
+<pre><code>upstream websphere {
+   server 127.0.0.1:8080;
+   server 127.0.0.1:8081;
+
+   sticky learn
+          create=$upstream_cookie_JSESSIONID
+          lookup=$cookie_JSESSIONID
+          zone=client_sessions:1m;
+}
+</code></pre>
+<p>Note that for any given request, the <code>$upstream_cookie_JSESSIONID</code> variable contains the value of the <code>JSESSIONID</code> cookie sent from the backend server in the <code>Set-Cookie</code> header. Likewise, the <code>$cookie_JSESSIONID</code> variable contains the value of the <code>JSESSIONID</code> cookie sent from the client in the <code>Cookie</code> header. These two variables, specified in the <code>create</code> and <code>lookup</code> arguments, specify what values are used to create new sessions and lookup existing sessions, respectively.</p>
+<p>The <code>zone</code> argument specifies a shared memory zone where sessions are stored.  The size passed to the argument &#8211; one megabyte, here &#8211; determines how many sessions can be stored at a time. The amount of sessions that can be stored in any given space is platform dependent. Note that the name passed to the <code>zone</code> argument must be unique for each <code>sticky</code> directive.</p>
+<p>For more information on sticky sessions, refer to the <a href="http://NGINX.org/en/docs/http/ngx_http_upstream_module.html#sticky">documentation on the <code>sticky</code> directive</a>.</p>
+<h4>Open Source</h4>
+<p>Session affinity in the open-source version can only be achieved by using third-party modules.  Compiling third-party modules for use with NGINX requires compilation of NGINX itself. To compile NGINX from source, see the section <a href="index.html%3Fp=12651.html#source-build">Building NGINX from source</a> below. On the <code>configure</code> step, add an <code>add-module</code> option with the root of the third-party module as the argument.</p>
+<p>For example, here is <a href="https://bitbucket.org/NGINX-goodies/NGINX-sticky-module-ng/overview">a module which supports session affinity</a>.  After downloading and unarchiving the module&#8217;s source code, we compile NGINX as normal, except during the <code>configure</code> step, we run:</p>
+<pre><code>./configure --add-module=THIRD_PARTY_MODULE_ROOT
+</code></pre>
+<p>Replace <code>THIRD_PARTY_MODULE_ROOT</code> with the root directory of the module which we just downloaded and unarchived. Then, proceed with the compilation as normal, i.e. run <code>make</code> and <code>make install</code>.</p>
+<p>You now have a build of NGINX with the third-party module compiled in. To enable sticky sessions, simply add the <code>sticky</code> directive to the <code>upstream</code> block:</p>
+<pre><code>upstream websphere {
+    sticky;
+    server 127.0.0.1:9080;
+    server 127.0.0.1:9081;
+}
+</code></pre>
+<p>Upon the first request from any client to a server, a <code>route</code> cookie is added to the response, which is used to determine session affinity. The <code>JSESSIONID</code> cookie is not used for session affinity under this module.</p>
+<h3><a id="websockets"></a>Proxying WebSockets</h3>
+<p>When the WebSphere WebServer plug-in is used in an Apache-based server, WebSockets traffic is proxied without any additional configuration. If any other HTTP terminating software is used with WebSockets, it typically requires explicit configuration.</p>
+<p>In NGINX, upstream connections use HTTP/1.0 by default. WebSocket connections require HTTP/1.1 along with some other configuration to be proxied correctly.  Here is an example configuration:</p>
+<pre><code>http {
+    ...
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        ''      close;
+    }
+
+    server {
+        ...
+
+        location /wstunnel/ {
+            proxy_pass http://websphere;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+        }
+    }
+}
+</code></pre>
+<p>Special rules are needed because the <code>Upgrade</code> header is a hop-by-hop header, i.e. the HTTP specification explicitly notes that is not to be passed on by proxies. In the configuration above, we explicitly pass on the <code>Upgrade</code> header. Additionally, if the request had an <code>Upgrade</code> header, then the <code>Connection</code> header is set to <code>upgrade</code>; otherwise, it is set to <code>close</code>.</p>
+<p>Some additional issues must be considered if NGINX is proxying to IHS and will need to maintain many thousands of open websockets connections. IHS is not well-equipped to handle high loads of long-lived connections. For this reason, it is better to skip over the IHS instance when proxying WebSockets to the application server. A nested <code>location</code> directive can be used for this, e.g.:</p>
+<pre><code>location / {
+    proxy_pass http://IBMHTTPServer;
+    location /wstunnel/ {
+        proxy_pass http://websphere;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+    }
+}
+</code></pre>
+<p>See <a href="http://NGINX.org/en/docs/http/websocket.html">this article</a> for more information on proxying WebSockets.</p>
+<h2><a id="caching"></a>Caching</h2>
+<p>Scalable HTTP caches have a recognized value on the edge of the network. The Datapower XC10 appliance is an example of a sophisticated, scalable HTTP caching appliance using a WebSphere Extreme Scale (WXS) data grid for storage.</p>
+<p>NGINX provides a scalable disk-based cache that integrates with its reverse proxy capability.  The <code>proxy_cache</code> directive is the key here. Here is a very simple caching configuration:</p>
+<pre><code>http {
+    ...
+    proxy_cache_path /tmp/NGINX_cache/ keys_zone=backcache:10m;
+
+    server {
+        listen 80;
+        proxy_cache backcache;
+        location /webapp/ {
+            proxy_pass http://was_upstream;
+        }
+    }
+}
+</code></pre>
+<p>This configuration creates a cache in the directory <code>/tmp/NGINX_cache/</code>, and caches all responses that come through the proxy on port 80. Note that the size argument to <code>keys_zone</code> (<code>10m</code> in this case) should be set to be proportional to the number of pages that should be cached. The value is OS-dependent, as it relies on file metadata size.</p>
+<p>For more complete information on caching in NGINX, refer to the <a href="http://NGINX.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_path">offical documentation</a> and <a href="http://NGINX.com/resources/admin-guide/caching/">this article</a>.</p>
+<h2><a id="ssl"></a>Configuring NGINX to proxy SSL traffic</h2>
+<p>This section describes how to configure SSL communication between NGINX and WebSphere.</p>
+<h3>Enabling SSL in NGINX</h3>
+<p>If using the open source version of NGINX, the SSL module must be enabled manually <a href="index.html%3Fp=12651.html#source-build">during compilation</a>. During the configure step, pass the argument:</p>
+<pre><code>--with-http_ssl_module
+</code></pre>
+<p>If this argument is not passed to <code>configure</code>, NGINX will not support the directives needed for SSL communication.</p>
+<h3>Extracting the certificate and private key</h3>
+<p>It&#8217;s likely that the server certificate is currently stored in a <code>kdb</code> file for use with WebSphere. Before using the server certificate with NGINX, it must be converted into PEM format, and the private key must be separated out. If you happen to have the certificate and key file in PEM format already, you can skip this subsection.</p>
+<p>Note that the commands below using <code>gskcapicmd</code> can also be executed in <code>ikeyman</code> by selecting the relevant options in the GUI.</p>
+<ol>
+<li>Find the certificate you wish to export from the kdb. List the certificates by executing:
+<pre><code>gskcapicmd -cert -list -db key.kdb -stashed
+</code></pre>
+</li>
+<li>Export the certificate and its associated private key to a pkcs12 file:
+<pre><code>gskcapicmd -cert -export -db key.kdb -label CERT_LABEL -type cms -target /tmp/conv.p12 -target_type p12
+</code></pre>
+</li>
+<li>Extract the certificate and the private key from the pkcs12 file:
+<pre><code>openssl pkcs12 -in /tmp/conv.p12 -nocerts -out privkey.pem
+openssl pkcs12 -in /tmp/conv.p12 -clcerts -nokeys -out servercert.pem
+</code></pre>
+</li>
+<li>Extract any intermediate certificates from the kdb:
+<pre><code>gskcapicmd -cert -extract -db key.kdb -label INTERMEDIATE_LABEL -file /tmp/intermediate.pem -format ascii
+</code></pre>
+</li>
+<li>Concatenate the intermediate certificates and the server certificate, making sure the server certificate is first:
+<pre><code>cat servercert.pem /tmp/intermediate1.pem /tmp/intermediate2.pem &gt; certchain.pem
+</code></pre>
+</li>
+</ol>
+<p>The certificate and secret key are now in a format that is useable by NGINX.</p>
+<p><strong>WARNING: <code>privkey.pem</code> contains the unencrypted private key of the server, and should be secured appropriately.</strong></p>
+<h3>Configuring SSL in NGINX</h3>
+<p>A new <code>server</code> block must be created for the SSL server configuration. The default configuration provides one, commented out by default. Here it is along with a sample <code>location</code> block, for proxying to WebSphere:</p>
+<pre><code>server {
+    listen       443 ssl;
+    server_name  localhost;
+
+    ssl_certificate      certchain.pem;
+    ssl_certificate_key  privkey.pem;
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+
+    location /webapp/ {
+        proxy_pass https://websphere_ssl
+    }
+}
+</code></pre>
+<p>The arguments to the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> should be changed to the paths to your certificate bundle and private key in PEM format.  The <code>location</code> block is the same as that in the previous section on proxying, except that the scheme is changed from <code>http</code> to <code>https</code>.</p>
+<p>For more information on SSL configuration in NGINX, refer to <a href="http://NGINX.org/en/docs/http/configuring_https_servers.html">this article</a> and the <a href="http://NGINX.org/en/docs/http/ngx_http_ssl_module.html">documentation on the ssl module</a>.</p>
+<h2><a id="plugin-cfg"></a>Manually translating plugin-cfg.xml</h2>
+<p>This section brings together the information from the above sections and use it to translate a simple <code>plugin-cfg.xml</code>. If you skipped straight to this section, that&#8217;s fine; refer to the above sections when necessary.</p>
+<p>First, we must create the <code>upstream</code> blocks. Within the <code>plugin-cfg.xml</code>, locate a <code>ServerCluster</code> block which you wish to translate. Within each <code>Server</code> tag within the <code>ServerCluster</code>, you should see <code>Transport</code> tags, e.g.:</p>
+<pre><code>&lt;ServerCluster Name="defaultServer_default_node_Cluster" ... &gt;
+    &lt;Server ... &gt;
+        &lt;Transport Hostname="localhost" Port="9080" Protocol="http"/&gt;
+        &lt;Transport Hostname="localhost" Port="9443" Protocol="https"&gt;
+            ...
+        &lt;/Transport&gt;
+    &lt;/Server&gt;
+    &lt;Server ... &gt;
+        &lt;Transport Hostname="localhost" Port="9081" Protocol="http"/&gt;
+        &lt;Transport Hostname="localhost" Port="9444" Protocol="https"&gt;
+            ...
+        &lt;/Transport&gt;
+    &lt;/Server&gt;
+&lt;/ServerCluster&gt;
+</code></pre>
+<p>One <code>upstream</code> is required for each of the <code>Protocol</code> values. The hostname and port in each <code>server</code> directive within the <code>upstream</code> should correspond to the <code>Hostname</code> and <code>Port</code> values within the <code>Transport</code> tags in the <code>plugin-cfg.xml</code>. For the sample snippet above, the corresponding <code>upstream</code> blocks in the <code>NGINX.conf</code> could be:</p>
+<pre><code>http {
+    ...
+    upstream defaultServer_default_node_Cluster_http {
+        server localhost:9080;
+        server localhost:9081;
+    }
+
+    upstream defaultServer_default_node_Cluster_https {
+        server localhost:9443;
+        server localhost:9444;
+    }
+}
+</code></pre>
+<p>Now, we must map URLs to these <code>upstream</code> blocks. Find the <code>UriGroup</code> section corresponding to the cluster:</p>
+<pre><code>&lt;UriGroup Name="default_host_defaultServer_default_node_Cluster_URIs"&gt;
+    &lt;Uri AffinityCookie="JSESSIONID" AffinityURLIdentifier="jsessionid" Name="/webapp/*"/&gt;
+&lt;/UriGroup&gt;
+</code></pre>
+<p>Each <code>Uri</code> tag in the <code>UriGroup</code> needs at least one corresponding <code>location</code> block with <code>proxy_pass</code> directives to point to the proper <code>upstream</code> groups.  For the example <code>UriGroup</code>, the corresponding HTTP <code>location</code> block could be:</p>
+<pre><code>server {
+    listen 80;
+    ...
+
+    location /webapp/ {
+        proxy_pass http://defaultServer_default_node_Cluster_http;
+    }
+}
+</code></pre>
+<p>And the HTTPS <code>location</code> block, in the <a href="index.html%3Fp=12651.html#ssl">HTTPS-configured</a> <code>server</code> block:</p>
+<pre><code>server {
+    listen 443 ssl;
+    ...
+
+    location /webapp/ {
+        proxy_pass https://defaultServer_default_node_Cluster_https;
+    }
+}
+</code></pre>
+<p>Note that, by default, the argument to <code>location</code> specifies a URL prefix to match against.  More complex arguments to the <code>location</code> block might be needed, depending on the value of the <code>Name</code> attribute of the <code>Uri</code> tag.</p>
+<p>See the <a href="http://NGINX.org/en/docs/http/ngx_http_core_module.html#location">NGINX documentation for more details on the <code>location</code> block</a>.</p>
+<p>The above should be enough for simple communication between NGINX and Websphere Application Server for a server cluster. The above steps should be repeated for each <code>ServerCluster</code> block within the <code>plugin-cfg.xml</code>.</p>
+<h3>Further configuration</h3>
+<p>In the last section, we skipped some of the configuration within the <code>ServerCluster</code> and <code>Server</code> tags themselves, such as <code>ConnectTimeout</code> and <code>ServerIOTimeout</code>. NGINX has similar configuration options. Here are some of the common arguments to <code>ServerCluster</code> and <code>Server</code>, and their counterparts in NGINX:</p>
+<ul>
+<li><code>LoadBalanceWeight</code>: <code>weight</code> argument to the <code>server</code> directive.</li>
+<li><code>RetryInterval</code>: <code>fail_timeout</code> argument to the <code>server</code> directive.</li>
+<li><code>MaxConnections</code>: (NGINX Plus only) The <code>max_conns</code> argument to the <code>server</code> directive.</li>
+<li><code>ConnectTimeout</code>: <code>proxy_connect_timeout</code> directive.</li>
+<li><code>ServerIOTimeout</code>: <code>proxy_read_timeout</code> directive.</li>
+<li><code>LoadBalance</code>: See the above section, <em>Load Balancing</em>.</li>
+<li><code>AffinityCookie</code>: See the above section, <em>Session Affinity</em>.</li>
+</ul>
+<p>Documentation for these directives can be found in the <a href="http://NGINX.org/en/docs/http/ngx_http_upstream_module.html">upstream module documentation</a> and the <a href="http://NGINX.org/en/docs/http/ngx_http_proxy_module.html">proxy module documentation</a>.</p>
+<h2><a id="spdy"></a>SPDY Support</h2>
+<p>At time of writing, NGINX does not support HTTP/2. The server does, however, support SPDY, the predecessor of HTTP/2. SPDY is not enabled in the server by default, and support is experimental as the protocol specification is subject to change.</p>
+<p>NGINX Plus includes SPDY support by default, but it is a compile-time option for NGINX. To compile SPDY into NGINX, follow the steps in the section below, <a href="index.html%3Fp=12651.html#source-build">Building NGINX From Source</a>. In the <code>configure</code> step, instead of running only <code>./configure</code>, add the <code>--with-http_spdy_module</code> parameter:</p>
+<pre><code>`./configure --with-http_spdy_module`
+</code></pre>
+<p>After completing the rest of the build steps, you should have a build of NGINX with SPDY enabled. SPDY will automatically be negotiated with any compatible client.</p>
+<p>For more information, see the <a href="http://NGINX.org/en/docs/http/ngx_http_spdy_module.html">documentation on the SPDY module</a>.</p>
+<h2><a id="private-headers"></a>Private websphere headers</h2>
+<p>Normally, the IHS plugin sets some private headers that are sent only to the application server. These headers may affect application processing. NGINX does not know how to set these headers by default.</p>
+<p>Here is a sample config, which sets the private headers:</p>
+<pre><code>http {
+    ...
+    map $https $is_ssl {
+        default false;
+        on      true;
+    }
+    server {
+        ...
+
+        location {
+            proxy_pass http://websphere;
+
+            proxy_set_header "$WSSC" $scheme;
+            proxy_set_header "$WSPR" $server_protocol;
+            proxy_set_header "$WSRA" $remote_addr;
+            proxy_set_header "$WSRH" $host;
+            proxy_set_header "$WSRU" $remote_user";
+            proxy_set_header "$WSSN" $server_name;
+            proxy_set_header "$WSSP" $server_port;
+            proxy_set_header "$WSIS" $is_ssl;
+
+            # Note that these vars are only available if
+            # NGINX was built with SSL
+            proxy_set_header "$WSCC" $ssl_client_cert;
+            proxy_set_header "$WSCS" $ssl_cipher;
+            proxy_set_header "$WSSI" $ssl_session_id;
+
+            # No equivalent NGINX variable for these headers.
+            proxy_hide_header "$WSAT";
+            proxy_hide_header "$WSPT";
+            proxy_hide_header "$WSFO";
+        }
+    }
+}
+</code></pre>
+<p>Most of the headers are set using the <code>proxy_set_header</code> directive, in combination with NGINX&#8217;s <a href="http://NGINX.org/en/docs/http/ngx_http_core_module.html#variables">embedded variables</a>.  The only tricky header is <code>$WSIS</code>, whose value is mapped from the value of <code>https</code> variable.</p>
+<h3>Plugin configuration</h3>
+<p><em>This section only applies if you are proxying from NGINX to IBM HTTP Server.</em></p>
+<p>Usually, the WAS plug-in will not allow the client to set any private headers.  However, in this case, the plug-in must allow NGINX to set a few headers such as remote IP and host. We can allow NGINX to set these headers through the <code>TrustedProxyEnable</code> and <code>TrustedProxyList</code> custom properties of the plug-in.</p>
+<p>The value of <code>TrustedProxyEnable</code> should be set to <code>true</code>. and the value of <code>TrustedProxyList</code> should be set to the hostname or IP of the machine that is running NGINX.  These values can either be manually set in the <code>plugin-cfg.xml</code>, or through the WAS administrative console. For instructions on setting them through the administrative console, <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-dist&amp;topic=rwsv_plugin_customprop">see the knowledgecenter</a>.</p>
+<h2><a id="source-build"></a>Building NGINX from source</h2>
+<p><em>This section only applies if you are using the open-source version of NGINX.</em></p>
+<p>Certain features in the open source version of NGINX can only be enabled when it is compiled from source. The following instructions are for a Unix-like system, with GNU make and buildtools. They were tested on version <code>1.7.10</code>, but the procedure should be similar for other versions.</p>
+<ul>
+<li>Go to: <a href="http://NGINX.org/en/download.html">http://NGINX.org/en/download.html</a> and choose a version of NGINX to download.</li>
+<li>Unpack the archive using an unarchiver, e.g. <code>tar -xvzf NGINX-1.7.10.zip -C $HOME</code>.</li>
+<li>Configure NGINX for your platform by <code>cd</code>ing to the directory you unzipped NGINX to, and running: <code>./configure</code>.
+<ul>
+<li>Arguments to <code>configure</code> are generally the way to add features. If you came to this section from a previous section, now would be a good time to go back and check the instructions there.</li>
+</ul>
+</li>
+<li>Run <code>make</code> to compile NGINX.</li>
+<li>Run <code>make install</code> to install the newly compiled version of NGINX. You may need to run this command as root.
+<ul>
+<li>NOTE: Running this as root <strong>will replace any previous installation of NGINX</strong>! Configuration files and logs will be kept, but other files will be overwritten.</li>
+</ul>
+</li>
+</ul>
+<h2>License</h2>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><br />
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/nginx/index.html" rel="tag">NGINX</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/ecovener/index.html">Eric Covener</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			4 comments on"NGINX and WebSphere Application Server"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment byuser comment-author-tilo-soennichsen even thread-even depth-1 pn-comment" id="comment-155842">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">TiloBlue</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=12651.html#comment-155842">
+					May 07, 2019	         	</a>
+			</div>
+			      		<p>great article. could you update with info on Kubenetes Ingress via nginx. How to translate plugin-cfg.xml and particular &#8220;AffinityCookie&#8221; and &#8220;AffinityURLIdentifier&#8221;</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=12651.html#comment-155842' onclick='return addComment.moveForm( "comment-155842", "155842", "respond", "12651" )' aria-label='Reply to TiloBlue'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-153585">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Wizard</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=12651.html#comment-153585">
+					September 11, 2018	         	</a>
+			</div>
+			      		<p>Suppose there is more than one nginx server, then how to transfer the header &#8220;$WSSN<br />
+&#8221; from the first one to the application? The application can not receive the right header value because it starts with &#8220;$&#8221; and it seems that the second nginx server would not forward it automatically.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=12651.html#comment-153585' onclick='return addComment.moveForm( "comment-153585", "153585", "respond", "12651" )' aria-label='Reply to Wizard'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-151760">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">nikx liu</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=12651.html#comment-151760">
+					December 19, 2017	         	</a>
+			</div>
+			      		<p>In the open-source edition nginx, for Session Affinity, I think can use this directive &#8221; hash $cookie_JSESSION&#8221; to implement it.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=12651.html#comment-151760' onclick='return addComment.moveForm( "comment-151760", "151760", "respond", "12651" )' aria-label='Reply to nikx liu'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-2 pn-comment" id="comment-151838">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">covener</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=12651.html#comment-151838">
+					January 03, 2018	         	</a>
+			</div>
+			      		<p>Interesting, will have to give it a try and update the post. But I am skeptical that it would return you to the right server. It seems like you could easily start affinity with server1 then have hash(jsessionid) take you to server2 (but in a sticky way).</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=12651.html#comment-151838' onclick='return addComment.moveForm( "comment-151838", "151838", "respond", "12651" )' aria-label='Reply to covener'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=12651.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='12651' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="025681222a" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="125"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=12651.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=12651.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=12651.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fnginx-websphere-application-server&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fnginx-websphere-application-server"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

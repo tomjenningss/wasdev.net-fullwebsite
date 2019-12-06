@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Small Footprint, Fast Deployments, Easy Installation and Commercial Support ...Why Not WebSphere?--An Interview With Kevin Sutter : Adam Bien's Weblog</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+               <link rel="EditURI"   type="application/rsd+xml" title="RSD" href="http://adambien.blog/roller/abien/rsd"/>
+        
+            <link rel="alternate" type="application/atom+xml" title="Recent Entries (Atom)"  href="http://adambien.blog/roller/abien/feed/entries/atom" />
+    <link rel="alternate" type="application/rss+xml"  title="Recent Entries (RSS)"   href="http://adambien.blog/roller/abien/feed/entries/rss" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Comments (Atom)" href="http://adambien.blog/roller/abien/feed/comments/atom" />
+    <link rel="alternate" type="application/rss+xml"  title="Recent Comments (RSS)"  href="http://adambien.blog/roller/abien/feed/comments/rss" />
+
+    
+        <link rel="stylesheet" type="text/css" media="all" href="http://www.adam-bien.com/roller/abien/page/basic-custom.css">
+</head>
+<body>
+
+<div class="content_wrapper">
+  <div class="content">
+
+<!-- commented out at:12.07.2009
+    <h1 class="weblogName">Adam Bien's Weblog</h1>
+        <center>
+                                <ul class="rCategory">
+                   <li class="selected">All</li>
+                                            <li><a href="http://adambien.blog/roller/abien/category/RIA+/+Java+FX">RIA / Java FX</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Real+World+Java+EE+Patterns+-+Rethinking+Best+Practices">Real World Java EE Patterns - Rethinking Best Practices</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/General">General</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/JavaOne+2010">JavaOne 2010</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Events">Events</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Enterprise+Architekturen%2C+Leitfaden+f%C3%BCr+Effiziente+Softwareentwicklung">Enterprise Architekturen, Leitfaden für Effiziente Softwareentwicklung</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/JavaONE+2011">JavaONE 2011</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Netbeans">Netbeans</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Java+/+JEE+/+Architecture">Java / JEE / Architecture</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/In+The+Clouds">In The Clouds</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Fun">Fun</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Productive+Java+EE+-+Rethinking+Best+Practices">Productive Java EE - Rethinking Best Practices</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/JavaONE+2009">JavaONE 2009</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/JavaONE+2008">JavaONE 2008</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/JavaONE+2007">JavaONE 2007</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Real+World+Java+EE+Night+Hacks+-+Dissecting+the+Business+Tier">Real World Java EE Night Hacks - Dissecting the Business Tier</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Publications">Publications</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Java+EE+5+Architectures+And+Idioms">Java EE 5 Architectures And Idioms</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/solaris">solaris</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Java+EE+5+Architectures">Java EE 5 Architectures</a></li>
+                                                <li><a href="http://adambien.blog/roller/abien/category/Blog+Statistics">Blog Statistics</a></li>
+                            </ul>
+            </center>
+-->
+                <div class="next-previous">
+                                        &laquo; <a href="http://adambien.blog/roller/abien/entry/build_your_fresh_payara_glassfish">Build Your Fresh...</a> |  
+                <a href="http://www.adam-bien.com/roller/abien/">Main</a>
+                | <a href="http://adambien.blog/roller/abien/entry/link_serialization_with_jax_rs">Link Serialization...</a> &raquo;
+            </div>
+
+                            <section class="dayBox">
+    <article class="entryBox">
+<header>
+        <a name="small_footprint_fast_deployments_easy" id="small_footprint_fast_deployments_easy"></a>
+        <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy"><h1 class="entryTitle">Small Footprint, Fast Deployments, Easy Installation and Commercial Support ...Why Not WebSphere?--An Interview With Kevin Sutter</h1></a>
+</header>
+        <p class="entryContent">
+                            <a href="http://webspherepersistence.blogspot.com/" target="_blank">Kevin Sutter</a> is Senior Technical Staff Member at IBM, Java EE Architect and JPA Architect for WebSphere and JPA Expert Group member. I had the opportunity to 
+ask him some questions about the <a href="liberty-and-websphere-an-interview-with-java-ee-architect-kevin-sutter.html" target="_blank">WebSphere Liberty Profile (WLP)</a>.
+<p>
+<em> What is WebSphere Liberty Profile (WLP)?</em>
+</p>
+<p> 
+WebSphere Liberty Profile is the "next generation" application server from WebSphere.  It is a re-architected production-ready application server built on a new kernel that enables the server to be lightweight, composable, simple, flexible, dynamic, and extensible.  But, at the same time, we also needed to provide full application fidelity with the full profile WebSphere.  So, if you develop a Java EE application with WLP, you can be assured that this same application will execute unaltered on full profile WebSphere.  This has been a key requirement of our customers as we continue to develop and evolve the WebSphere Liberty Profile.
+</p>
+<p>
+<em> What is the difference between WLP and the "full" WebSphere (WAS)?</em>
+</p>
+<p>
+From a Java EE perspective, there is very little difference between WLP and full profile WebSphere.  Currently, WLP is Java EE 6 Web Profile compliant, while full profile WebSphere is Java EE 6 Full Platform compliant.  As I mentioned above, applications developed for WLP will have full fidelity with running on full profile WebSphere.  That fidelity statement does not always work in reverse though...  If you have applications on full profile WebSphere that take advantage of Remote EJBs, for example, these will not work on WLP since Remote EJBs are beyond the Web Profile specification.
+
+Another major feature of WLP is our goal of Zero Migration.  Due to our composable and versioned feature architecture, we are striving to provide zero migration for our customers moving from one release of WLP to the next.  If the customer is only interested in moving up to the runtime improvements provided by the next release, but is not ready to start experimenting with the new features, their applications should continue to execute without any migration assistance.  This feature has been very popular with our customers.
+</p>
+<p>
+<em> Is it possible to migrate apps between WLP and WAS back and forth?</em>
+</p>
+<p>
+Yes, it is possible to migrate apps between WLP and WAS, especially with moving applications from WLP to full profile WebSphere.  As I have mentioned, this fidelity statement is guaranteed as long as you stick with the defined programming models.  Migrating applications from full profile WebSphere to WLP is also possible, again if you have limited your full profile WebSphere applications to the Java EE Web Profile standard.  WLP also supports some of the Java EE full platform standards, such as JCA 1.6, JAX-WS 2.2, and JMS 1.1.  Beyond Java EE, WLP also supports NoSQL databases such as MongoDB, and several other features.
+
+WebSphere provides the Migration Toolkit (<a href="http://www.adam-bien.com/roller/abien/entry/&lt;/em&gt;s://developer.ibm.com/wasdev/downloads/#asset/tools-Migration_Toolkit_for_WebSphere_Version_Migration_V8.5.5" target="_blank">https://developer.ibm.com/wasdev/downloads/#asset/tools-Migration_Toolkit_for_WebSphere_Version_Migration_V8.5.5</a>) which can help identify aspects of your applications which will work on each profile.  There is also a variation of this Migration Toolkit which will also help with migrating to WLP from competing solutions (<a href="../downloads/websphere-application-server-migration-tools/index.html#asset/tools-Migration_Toolkit_for_Competitive_Migration_V8.5.5" target="_blank">https://developer.ibm.com/wasdev/downloads/#asset/tools-Migration_Toolkit_for_Competitive_Migration_V8.5.5</a>).
+</p>
+<p>
+<em> Is it possible to get commercial support for WLP? How complicated is it?</em>
+</p>
+<p>
+The development environment (runtime and tools) for WLP is free and easily downloaded from WASDev (<a href="../downloads/websphere-application-server-migration-tools/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/</a>).  WLP is fully supported for production use when used with a commercial WebSphere Application Server license (<a href="http://www-03.ibm.com/software/products/en/appserv-was" target="_blank">http://www-03.ibm.com/software/products/en/appserv-was</a>).
+</p>
+<p>
+<em> Are the WAS/WLP licensing models different?</em>
+</p>
+<p>
+No, WebSphere Application Server Full Profile and WebSphere Application Server Liberty Profile share the same licensing model.  But, we do also offer an entry level version called Liberty Core.  Liberty Core provides Java EE Web Profile without any of the extensions and additions mentioned earlier.
+</p>
+<p>
+<em> Is there any binary difference between an unsupported and commercial WLP?</em>
+</p>
+<p>
+No, there are no binary differences between the free development download WLP and the supported, commercial WLP.  Exact same binaries, just a different licensing model.
+</p>
+<p>
+<em> Is WLP opensource?</em>
+</p>
+<p>
+No, WLP is not open-source.  But, we are employing open-source "best practices" for our developer community.  We have a vibrant WLP community for asking questions and seeking assistance (<a href="../help.html" target="_blank">https://developer.ibm.com/wasdev/help/</a>).  We also have provided the WebSphere Liberty Repository (<a href="../downloads/websphere-application-server-migration-tools/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/</a>) which not only provides access to the Liberty downloads, but also contains additional feature extensions, samples, and open-source integration write-ups on how to use Liberty.
+</p>
+<p>
+<em> Why commercial support for WLP is important?</em>
+</p>
+<p>
+A good friend of ours once said, "Open-source is not free!".  Although the open-source model is attractive to get started with, eventually users of the open-source alternatives need some type of support.  Whether this support is for bug fixes, or new features, or even consulting work.  So, having IBM ready and willing to provide full support for WLP is a welcome, comforting feature. 
+</p>
+<p>
+<em> When Java EE 7 and Java 8 are going to be supported?</em>
+</p>
+<p>
+As I mentioned at JavaOne, we are delivering Java EE 7 content as it becomes "ready" through the WebSphere Liberty repository in a more continuous-delivery fashion than with full-profile WAS.  For example, we recently announced that our 4Q2014 deliverable (WebSphere Liberty Profile v8.5.5.4) contains Web Sockets 1.0, Servlet 3.1, Concurrency Utilities 1.0, and JSON-P 1.0.  We are planning similar updates in our future quarterly deliverables.
+
+Related to this is our Monthly Beta program.  We are delivering WebSphere Liberty Profile Monthly Betas which contain many of our early Java EE 7 technology features.  The most recent Monthly Beta (<a href="../downloads/liberty-profile-beta/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/liberty-profile-beta/</a>) contains early versions of most of the Java EE 7 Web Profile and some of the Java EE 7 full platform implementations.  This is a great way for our customers to "kick the tires" of the new technologies and provide feedback before they are delivered as part of a quarterly deliverable.
+</p>
+<p>
+<em> How to get WLP? How to start with WLP?</em>
+</p>
+<p>
+Various answers above have identified the various web sites available for WLP.  But, here's the concise collection of URLs:
+Liberty v8.5.5.4 via Eclipse:  <a href="../downloads/liberty-profile-using-eclipse/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/</a>
+Liberty v8.5.5.4 Runtime:  <a href="../downloads/liberty-profile-using-non-eclipse-environments/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments/</a>
+Liberty Monthly Betas:  <a href="../downloads/liberty-profile-beta/index.html" target="_blank">https://developer.ibm.com/wasdev/downloads/liberty-profile-beta/</a>
+</p>
+<p>
+</em> I always made fun of WAS -- with the introduction of WLP I stopped with that... Thanks for the interview!</em>
+</p>
+                    </p>
+        <footer class="entryInfo">
+<!--            Posted at <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy">06:05AM Feb 10, 2015</a>-->
+            Posted at <time datetime="2015-Feb-10T06:05AM" pubdate>06:05AM Feb 10, 2015</time> by <a href="http://www.adam-bien.com">Adam Bien</a>,
+                                        <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comments" class="commentsLink">Comments[5]</a>
+                      &nbsp;|&nbsp;Views/Hits: 1661       
+ </footer>       
+<br/>
+<p>
+Web Apps, SPA, PWA with vanilla Java Script (ES 6+), CSS 3 and WebStandards only. As simple as possible, but not simpler. See you at:  <a href="http://workshops.adam-bien.com">(Progressive) Web apps, Single Page Apps and WebStandards airhacks workshops at MUC airport, Winter Edition</a></p>
+<p><a href="http://airhacks.fm">airhacks.fm</a> the podcast: <a href="https://itunes.apple.com/us/podcast/airhacks-fm-podcast-with-adam-bien/id1296655154?mt=2&app=podcast"><img src="http://adam-bien.com/images/apple_podcast_listen.svg" style="height:1em;"></a><a href="https://open.spotify.com/show/6nOTQLa2uZxeyGpMW8eppS"><img src="http://adam-bien.com/images/spotify_podcast_listen.svg" style="height:1em;"></a>
+</p>
+<p>
+Stay in touch: <a href="http://airhacks.news">airhacks.news</a>.
+</p>
+</article>
+    </section>    
+                    <a name="comments"></a>
+    <div class="comments" id="comments">
+
+            <div class="comments-head">Comments:</div>
+            
+    <br/>
+                        <a name="comment-1423555895463" id="comment-1423555895463"></a>
+            <div class="comment odd" id="comment1">
+
+                
+<p>Do they still use OpenJPA as JPA implementation? </p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>javaservant</b>
+                
+                on February 10, 2015 at 09:11 AM CET
+
+                <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comment-1423555895463"
+                   class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1423568581839" id="comment-1423568581839"></a>
+            <div class="comment even" id="comment2">
+
+                
+<p>Why supporting JEE 7 is so slow throughout the industry?</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <a rel="nofollow" href="http://www.nerdmor.com"><b>Fabiano G. Souza</b></a>
+                
+                on February 10, 2015 at 12:43 PM CET
+
+                <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comment-1423568581839"
+                   class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1423587068904" id="comment-1423587068904"></a>
+            <div class="comment odd" id="comment3">
+
+                
+<p>@javaservant - Yes, OpenJPA is still a JPA implementation used by WebSphere.  This is in support of the JPA 1.0 and JPA 2.0 specifications.  Per this article [1], WebSphere is also adding EclipseLink as a JPA provider in support of the JPA 2.1 specification.</p>
+
+
+<p>[1]  https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/ </p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Kevin Sutter</b>
+                
+                on February 10, 2015 at 05:51 PM CET
+
+                <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comment-1423587068904"
+                   class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1423599656237" id="comment-1423599656237"></a>
+            <div class="comment even" id="comment4">
+
+                
+<p>Should have asked when will Websphere support Java 8 ?</p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>anon</b>
+                
+                on February 10, 2015 at 09:20 PM CET
+
+                <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comment-1423599656237"
+                   class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                                <a name="comment-1424186799388" id="comment-1424186799388"></a>
+            <div class="comment odd" id="comment5">
+
+                
+<p>@anon - WebSphere Liberty Profile just announced support for Java 8 this morning [1].  Java 8 support has been available in Beta format for several months, but it will be officially supported with the 1Q2015 deliverable.  This support is for both the IBM and Oracle Java 8 offerings.</p>
+
+
+<p>[1]  http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&amp;infotype=an&amp;supplier=897&amp;letternum=ENUS215-084#h2-availx </p>
+
+
+
+                <p class="comment-details">
+                Posted by
+                                    <b>Kevin Sutter</b>
+                
+                on February 17, 2015 at 04:26 PM CET
+
+                <a href="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy#comment-1424186799388"
+                   class="entrypermalink" title="comment permalink">#</a>
+                </p>
+
+            </div>
+
+                </div>
+        
+    <div class="comments-form">
+    <div class="comments-head">Post a Comment:</div>
+    <a name="comment-form"></a>
+
+
+    
+    <form method="post" action="http://adambien.blog/roller/abien/entry/small_footprint_fast_deployments_easy" focus="name" 
+        name="commentForm" onsubmit="fixURL(this); return validateComments(this)">    
+        <input type="hidden" name="method" value="post" />
+
+        <ul>
+            <li>
+                <label class="desc">Name:</label>
+                <input type="text" name="name" class="text large" value="" size="50" maxlength="255" />
+            </li>
+
+            <li><label class="desc">E-Mail:</label>
+                <input type="text" name="email" class="text large" value="" size="50" maxlength="255" />
+            </li>
+
+            <li><label class="desc">URL:</label>
+                <input type="text" name="url" class="text large" value="" size="50" maxlength="255" />
+            </li>
+
+                    <li><input type="checkbox" class="checkbox" id="notify" name="notify" />
+                <label for="notify" class="choice">Notify me by email of new comments</label>
+            </li>
+                    <li>
+                <input type="checkbox" class="checkbox" id="rememberInfo" name="rememberInfo" />
+                <label for="rememberInfo" class="choice">Remember Information?</label>
+            </li>
+            <li>
+                <label class="desc">Your Comment:</label>
+             
+            <textarea name="content" class="textarea large" cols="40" rows="10"></textarea>
+
+            </li>
+            <li class="info">
+                <span class="comments-syntax-indicator">
+                HTML Syntax:
+                                    <span class="disabled">NOT allowed</span>
+                                </span>
+            </li>
+            <li class="info">
+               <script type="text/javascript" src="http://www.adam-bien.com/roller/theme/scripts/clientSideInclude.js"></script>
+               <div id="commentAuthenticator"></div>
+            </li>
+            <li>
+               <input type="button" class="button" name="post" value="&nbsp;Preview&nbsp;"
+                  onclick="this.form.method.value='preview';this.form.submit()" />
+               <input type="submit" class="button" name="post" value="&nbsp;Post&nbsp;" />
+            </li>
+        </ul>
+
+    </form>
+
+    <script type="text/javascript" src="http://www.adam-bien.com/roller/theme/scripts/roller.js"></script>
+    <script type="text/javascript">
+    clientSideInclude('commentAuthenticator', '/roller/CommentAuthenticatorServlet');
+
+    var author = getCookie("commentAuthor");
+    var email = getCookie("commentEmail");
+    var url = getCookie("commentUrl");
+    // check each field - IE will render "null"
+    if (author) {
+        document.forms['commentForm'].name.value = author;
+    }
+    if (email) {
+        document.forms['commentForm'].email.value = email;
+    }
+    if (url) {
+        document.forms['commentForm'].url.value = url;
+    }
+
+    if (author || email || url) {
+        document.forms['commentForm'].rememberInfo.checked = true;
+    }
+
+    function fixURL(theForm) {
+        if (theForm.url.value != "" &&
+            theForm.url.value.indexOf("http://") == -1) { //prepend http://
+            theForm.url.value = "http://"+theForm.url.value;
+        }
+        saveUserInformation(theForm);
+    }
+
+    function saveUserInformation(theForm) {
+        if (theForm.rememberInfo.checked) {
+            rememberUser(theForm);
+        } else {
+            forgetUser(theForm);
+        }
+    }
+
+    function validateComments(theForm) {
+        if (theForm.content.value == "") {
+            alert("Please enter a comment.");
+            theForm.content.focus();
+            return false;
+        }
+    }
+    </script>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div class="rightbar_wrapper">
+  <div class="rightbar">
+                   <div class="sidebar">
+    Number of posts:  <a href="http://archive.adam-bien.com" target="_blank">1987</a> <br/>
+    Number of comments: 6135<br/>
+    Yesterday's hits: 20952<br/>
+    Today's hits: 9610<br/>
+    Post reads / hour: 1064<br/>
+    Top posts:<br/>
+   <nav>
+    <ol class="posts"><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/feed/entries/rss">Adam Bien</a><div class="hits">211341</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/java_8_reading_a_file">Java 8: Reading A File Into A String : Adam Bien's Weblog</a><div class="hits">58284</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/search">Search Results for '' : Adam Bien's Weblog</a><div class="hits">54448</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/mozilla_firefox_1_5_0">Mozilla Firefox 1.5.0 is the most used browser - at least on my blog : Adam[...]</a><div class="hits">44621</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/installing_oracle_jdbc_driver_on">Installing Oracle JDBC-Driver On Wildfly / JBoss : Adam Bien's Weblog</a><div class="hits">38541</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/java_8_flatmap_example">Java 8 FlatMap Example : Adam Bien's Weblog</a><div class="hits">38198</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien">Adam Bien's Weblog</a><div class="hits">24944</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/singleton_pattern_in_es6_and">Singleton Pattern in ES6 and ES7 : Adam Bien's Weblog</a><div class="hits">23079</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/java_8_from_a_for">Java 8: From a for-loop to forEach statement : Adam Bien's Weblog</a><div class="hits">19846</div></li></ol>
+   </nav>
+    Trending (last hour):<br/>
+    <nav>
+    <ol class="posts"><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/db_load_balancing_java_ee">DB Load Balancing, Java EE Authentication, Unikernels, Lazy Entity Serializ[...]</a><div class="hits">4</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/yes_no_user_input_in">Yes/NO User Input in Jenkinsfile : Adam Bien's Weblog</a><div class="hits">1</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/some_java_ee_6_hacking">Some Java EE 6 Hacking, Patterns and Best Practices in Las Vegas : Adam Bie[...]</a><div class="hits">1</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/my_javaone_2011_s_f">My JavaOne 2011 (S.F) Java EE Sessions : Adam Bien's Weblog</a><div class="hits">1</div></li><li class="post"><a class="postLink" href="http://www.adam-bien.com/roller/abien/entry/your_application_is_not_lightweight">Your Application Is *Not* Lightweight If: : Adam Bien's Weblog</a><div class="hits">1</div></li></ol>
+    </nav>
+<br/>
+    <a href="http://about.adam-bien.com" target="_blank">about.adam-bien.com</a> 
+    <br/>
+    <a href="http://archive.adam-bien.com" target="_blank">blog archives</a> 
+<br/>
+   </div>
+  
+<div align="center">
+    <div class="sidetitle">Online Workshops</div>
+    <div class="sidebar">
+
+<div align="center">
+<a href="http://effectiveweb.training">
+<img src="https://i.vimeocdn.com/vod_poster/230920_550x814.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://webcomponents.training">
+<img src="https://i.vimeocdn.com/vod_poster/188886_550x814.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://webstandards.training">
+<img src="https://i.vimeocdn.com/vod_poster/172491_550x814.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://javaeemicro.services">
+<img src="https://i.vimeocdn.com/vod_poster/91337_186x275.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://javaeetesting.com">
+<img src="https://i.vimeocdn.com/vod_poster/76008_310x459.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://javaeebootstrap.com">
+<img src="https://i.vimeocdn.com/vod_poster/75196_310x459.jpg" width="200" style="margin-bottom=0.5em;"/>
+</a>
+<a href="http://effectivejavaee.com">
+<img src="https://i.vimeocdn.com/vod_poster/60594_310x459.jpg" width="200"/>
+</a>
+
+</div>
+</div>
+<div class="sidetitle">realworldpatterns.com</div>
+<div class="sidebar">
+<a href="http://realworldpatterns.com"><img src="http://static.lulu.com/browse/product_thumbnail.php?productId=20372080&resolution=320"/ width=200><br/>Real World Java EE Patterns Rethinking Best Practices</a></br>
+                                <a href="http://www.amazon.de/gp/product/1300149310/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=1300149310&linkCode=as2&tag=adambien-21">Order from amazon.de</a>
+                                <img src="http://www.assoc-amazon.de/e/ir?t=adambien-21&l=as2&o=3&a=1300149310" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<br/>
+                                <a href="http://www.amazon.com/gp/product/1300149310/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1300149310&linkCode=as2&tag=wwwadambienco-20">Order from amazon.com</a>
+                                <img src="http://www.assoc-amazon.com/e/ir?t=wwwadambienco-20&l=as2&o=1&a=1300149310" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</p>
+</div>
+</div>
+
+    <div class="sidetitle">...the last 150 posts</div>
+   <nav>
+    <div class="sidebar">
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/quarkus_1_0_and_springboot">Quarkus 1.0 and SpringBoot -- airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/the_class_forname_in_javascript">The "Class#getName" in JavaScript</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/nodejs_microprofile_and_java_cloud">NodeJS, MicroProfile and Java Cloud Native Starter--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/interfaces_modules_and_microservices_airhacks">Interfaces, Modules and Microservices--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/forever_young_and_building_mobile">Forever Young and Building Mobile Apps with Java--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_examples_tutorials_guides_apis">MicroProfile: Examples, Tutorials, Guides, APIs, Projects and Resources</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakarta_ee_big_bang_quarkus">Jakarta EE Big Bang, Quarkus Secrets, OKD, Kubernetes, OpenShift, JavaScript i18n, MicroProfile and Monoliths--the 68th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_ee_jakarta_ee_microprofile">Java EE, Jakarta EE, MIcroProfile and the Big Bang Migration--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_internationalization_with_vanilla">Simplest Possible Internationalization with Vanilla JavaScript</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/quarkus_secrets_internationalisation_consistency_threads">Jakarta EE Big Bang, Quarkus, Secrets, Internationalisation, Consistency, Threads, mvn clean, Kubernetes, OKD, Docker--or 68th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/dynamic_imports_with_javascript">Dynamic Imports with JavaScript</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_rest_client_for_system">MicroProfile REST Client for System Testing</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/blockchain_heavy_metal_docker_and">Blockchain, Heavy Metal, Docker and Testcontainers--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/watch_and_deploy_wad_01">Watch and Deploy (WAD) 0.1.1 "the substitutor" is available</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/accessing_shadow_dom_insides_a">Accessing Shadow DOM inside a Web Component from Cypress</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_runtimes_overview">MicroProfile Runtimes Overview</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/javascript_cleaner_fetch_without_then">JavaScript: cleaner "fetch" without "then" with "async" / "await"</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/code_shrinking_with_quarkus_and">Code Shrinking with Quarkus and Panache ORM</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/what_are_thinwars_hollowjars_skimmedjars">What are: ThinWARs, HollowJARs, SkimmedJARs, FatJARs, UeberJARs, FatWARs and Executable Images?</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/helidon_fatjars_thinwars_hollowjars_microprofile">Helidon, FatJARs, ThinWARs, HollowJARs, MicroProfile, Jakarta EE and GraalVM--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/the_simplest_possible_web_component">The Simplest Possible Web Component (CustomElement)</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/custom_map_updates_without_null">Custom Map Updates without Null Checks: Map#merge</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/installing_and_deploying_swagger_ui">Installing and Deploying Swagger UI</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/threads_transactions_entitymanager_fluid_logic">Threads, Transactions, EntityManager, Fluid Logic,Quarkus, AMQP and Jakarta EE -- the 67th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/change_data_capture_debezium_streaming">Change Data Capture, Debezium, Streaming and Kafka--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakarta_ee_without_docker_fulltext">Jakarta EE without Docker, Fulltext Search, Connection Pools, Passwords, Fluid Logic, Thread-Safety and EntityManager--or 67th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jason_s_binding_and_fast">Jason's Binding and Fast, Greek Birds--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/authentication_and_authorization_with_microprofile">Authentication and Authorization with MicroProfile JWT and Payara Server</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/building_and_deploying_a_quarkus">Building and Deploying a Quarkus ThinJAR on OpenShift</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/soujava_jakarta_ee_8_microprofile">SOUJava: Jakarta EE 8 + Microprofile 3.0: Live Coding - With Even Less Ceremony #slideless</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/listening_to_mediaqueries_events_with">Listening to MediaQueries Events with MatchMedia</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_ee_is_dead_completely">Java EE Is Dead -- Completely Dead</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/javaone_vs_codeone_2019_airhacks">JavaONE vs. CodeONE 2019--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/using_vaadin_router_with_webcomponents">Using Vaadin Router with WebComponents </a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakarta_ee_8_links_and">Jakarta EE 8: Links and Resources</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jug_muc_openvalue_jug_thueringen">JUG MUC / OpenValue, JUG Thueringen, EclipseCon, W-JAX, SOU Java, Java Forum Nord, JCON, Apeldoorn IT and airhacks.com 2019 events</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/from_php_to_transactions_airhacks">From PHP to Transactions--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakartaone_live_coding_with_jakarta">JakartaONE: Live Coding with Jakarta EE and MicroProfile #slideless</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_ee_8_to_jakarta">Java EE 8 to Jakarta EE 8 Migration</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_business_constraints_outbox_lit1">MicroProfile, Business Constraints, Outbox, lit-html, OData, ManagedExecutorService, Effective Java EE, Minishift, Quarkus-the 66th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/the_page_visibility_api">The Page Visibility API</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/the_first_line_of_quarkus">The First Line of Quarkus--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_business_constraints_outbox_lit">MicroProfile, Business Constraints, Outbox, lit-html, OData, ManagedExecutorService, Effective Java EE--or 66th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/authentication_and_authorisation_as_joy">Authentication and Authorisation as Joy - airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/shipping_fallback_scripts_with_nomodule">Shipping Fallback Scripts with "nomodule"</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/unidirectional_dataflow_with_webcomponents_async">Unidirectional Dataflow with WebComponents, async fetch and CustomEvents</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/a_lean_core_insurance_as">A Lean "Core Insurance As A Service" (Java EE / Jakarta EE / MicroProfile) Startup--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/quarkus_jax_rs_service_with">Quarkus JAX-RS Service With CORS Support</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/payara_java_lang_nosuchmethoderror_com">Payara, "java.lang.NoSuchMethodError: com.google.common.collect..."  Problem and Solution</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/productive_java_ee_microprofile_ai">Productive Java EE, MicroProfile, AI and Deep Learning--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jax_rs_client_jersey_http">JAX-RS Client / Jersey: HTTP Tracing</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/j4k_quarkus_thinwar_startup_ejb1">J4K, Quarkus, ThinWAR Startup, EJB, CDI, JavaMail--or 65th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/code_shrinking_techniques_with_jakarta">Code Shrinking Techniques with Jakarta EE and MicroProfile--Devoxx.pl</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/quarkus_is_the_opposite_of">Quarkus is the Opposite of Wildfly--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/j4k_quarkus_thinwar_startup_ejb">J4K, Quarkus, ThinWAR Startup, EJB and Specializes, JavaMail, DTOs, Java EE Security--or 65th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/maven_archetype_generate_tuning">Maven archetype:generate Tuning</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/building_microservices_on_openshift_with">Building Microservices on OpenShift with S2I and Jenkins Pipelines</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakarta_ee_microprofile_and_innovation">Jakarta EE, MicroProfile and Innovation without Politics --airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/combining_jsonobjects_with_jsonmerge_and">Combining JsonObjects With JsonMerge and JSON-P</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/microprofile_opentracing_jaegertracing_and_quarkus">MicroProfile OpenTracing, Jaegertracing and Quarkus ...in 7mins</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/opensource_and_math_never_lies">OpenSource and Math Never Lies--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_liveness_and_readiness">Simplest Possible Liveness and Readiness Probes with MicroProfile and Quarkus</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/ui5_webcomponent_datepicker_receiving_events">UI5 WebComponent DatePicker -- Receiving Events</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/installing_and_integrating_a_ui5">Installing and Integrating a UI5 DatePicker WebComponent</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/i_don_t_your_dependency">"I Don't Your Dependency Injection"--an airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_webcomponent_with_jax">Simplest Possible WebComponent with JAX-RS Backend</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_quarkus_scheduler_timer">Simplest Possible Quarkus Scheduler / Timer</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jax_rs_parameter_to_object">JAX-RS: Parameter to Object Mapping</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/slideless_nomigrations_workshops_events_jugs">#slideless #nomigrations Workshops, Events, JUGs, Conferences</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/plugging_things_together_with_reactive">Plugging Things Together With Reactive Programming--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/listening_to_customevents_with_lit">Listening to CustomEvents with lit-html</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/vsc_config_singleton_concurrency_supply">VSC Config, Singleton Concurrency, Supply Chain Management, BCE, MIcroSerivces, OSGi, Service Registries--64th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/identifying_deployment_errors_at_build">Identifying Deployment Errors at Build Time With Quarkus</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/new_and_familiar_at_the">New and Familiar at the Same Time--airhacks.fm podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/vsc_config_concurrency_supply_chain">VSC Config, Concurrency, Supply Chain Management Frameworks, BCE, Microservices, OSGi, Service Gateways, EJBs and CompletableFuture--or 64th airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_quarkus_extension">Simplest Possible Quarkus Extension</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/payara_full_vs_or_payara">Payara Full vs./or Payara MIcro--Airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/webapplications_without_frameworks_airhacks_fm">WebApplications without Frameworks --Airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/deploying_and_configuring_payara_micro">Deploying and Configuring Payara Micro on OpenShift with s2i</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/transactions_j2ee_java_ee_jakarta">Transactions, J2EE, Java EE, Jakarta EE, MicroProfile and Quarkus--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/adding_external_npm_javascript_dependencies">Adding External NPM JavaScript Dependencies as ES 6 Modules</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/json_web_token_generator_jwtenizr">Json Web Token Generator - JWTenizr.sh 0.0.3 released</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_s_job_listings_jwt">Java's Job Listings, JWT, Kafka, Serverless, Streaming, JARs in WARs, Threads, Code Coverage--63rd airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/reactive_asynchronous_jax_rs_client">Reactive, Asynchronous JAX-RS Client with Thread Pool aka Bulkheads</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jwt_authorization_kafka_vs_jms">JWT, Authorization, Kafka vs. JMS, Streaming, Containers, Serverless, Code Coverage, CI/CD--or 63rd airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/use_the_most_productive_stack">Use the Most Productive Stack You Can Get--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/reading_and_writing_configuration_files">Reading and Writing Configuration Files with JSON-B</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/reading_and_writing_configuration_with">Reading and Writing Configuration Files with JSON-P</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/asynchronous_jax_rs_timeout_configuration">Asynchronous JAX-RS: Timeout Configuration and Handling</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/authentication_and_authorization_with_jwt">Securing JAX-RS Endpoints with JWT</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/from_webscale_java_over_cdi">From Webscale Java over CDI to javax--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/scaling_from_0_to_20">JVM vs. Native: Scaling from 0 to 20 Nodes with quarkus.io</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/quarkee_the_java_ee_stic">QuarkEE - the Java EE-stic quarkus.io </a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/jakarta_ee_microprofile_testing_and">Jakarta EE / MicroProfile Testing and Quality over Statistics--airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/dead_javax_singleton_performance_exactly">Dead javax, Singleton performance, exactly once, DB authentication, refresh tokens, Kafka, distributed failures--62nd airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/using_configmaps_to_configure_microprofile">Using ConfigMaps To Configure MicroProfile Applications</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/javax_and_future_of_jakarta">javax and future of Jakarta EE, TX, quarkus, startup, Java FX, MicroProfile, openJDK support, Green Field Architectures--or 62nd airhacks.tv</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_native_database_airhacks_fm">Java Native Database--Airhacks.fm Podcast</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/java_ee_jakarta_ee_and">Java EE, Jakarta EE and the Dead "javax"</a><br/>
+        <a class="aSmall" href="http://adambien.blog/roller/abien/entry/80_code_coverage_is_not">80% Code Coverage is Not Enough--airhacks.fm Podcast</a><br/>
+        </div>
+     </nav>
+    <div class="sidetitle">...the last 10 comments</div>
+    <nav>
+    <div class="sidebar">
+    
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/code_shrinking_with_quarkus_and">Adam Bien wrote: 
+<p>Knowing some quarkus developers :-), I thought Panache was meant as defined here:            <br/>
+https://en.wikipedia.org/wiki/Shandy#Panach&eac[...]</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/code_shrinking_with_quarkus_and">John Clingan wrote: 
+<p>Panache: Flair, Style :-)</p>
+
+
+<p>https://www.dictionary.com/browse/panache?s=t</p>
+
+</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/custom_map_updates_without_null">Micha&#322;  wrote: 
+<p>The BiFunction in Map::merge can be substituted with Integer::sum method reference in this case, for further code amount reduction. But it might b[...]</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/custom_map_updates_without_null">Werner wrote: 
+<p>The equivalent old style version has to add oldValue and NewValue together when oldValue is not equal to Null</p>
+
+</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/the_only_one_dependency_you">Ben wrote: 
+<p>Many thanks! This works as an easy way like Spring Boot to get projects up and running quickly</p>
+
+</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/data_access_object_reader_s">FStarred wrote: 
+<p>Not at all.<br/>
+I still use an abstract class with class type and ID for generic methods such findById, findAll, merge, etc, in this way I don't [...]</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/when_there_is_a_process">Gabriel wrote: 
+<p>Hi, I have set already the &quot;/etc/hosts&quot; with the localhost IP, but the problem still. I tried change the default 4848 port but with the [...]</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/trouble_with_crippled_java_ee">Luca wrote: 
+<p>Kenai is no more. Would you care to upload the code to Github? Thanks. </p>
+
+</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/simplest_possible_quarkus_scheduler_timer">zemiak wrote: 
+<p>Anyway, in cloud environment (Openshift, Kubernetes), I would recommend not to use Quarkus (or JavaEE) native schedulers. You'll get troubles with[...]</a><br/>
+                 <br/><a class="aSmall" href="http://adambien.blog/roller/abien/entry/new_and_familiar_at_the">Bogor Bandung wrote: 
+<p>The game is called Rogue, not (Moulin) Rouge :D</p>
+
+</a><br/>
+        </div>
+    </nav>
+</div>
+
+<div class="sidetitle">License</div>
+<div class="sidebar">
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/de/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.0/de/">Creative Commons Attribution-NonCommercial-NoDerivs 2.0  License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<Work rdf:about="">
+		<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.0/de/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+	</Work>
+	<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.0/de/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> --> 
+</div>      </div>
+</div>
+
+</body>
+</html>

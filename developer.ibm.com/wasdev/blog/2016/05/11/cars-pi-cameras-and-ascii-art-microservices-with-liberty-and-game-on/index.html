@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-05-11",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On!",
+						"contentType": "post",
+						"wpid":"9",
+						"topics":"Docker,",
+						"contentArea": "Blog"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,",
+		      "description":"Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On!"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On! - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A fun demonstration of how to build microservices with Liberty using throw-back text adventure game Game On! and a remote-controlled car that takes photos."/>
+<link rel="canonical" href="../../../../../index.html%3Fp=17693.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../../../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On! Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../../../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../../../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../../../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../../../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../../../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../../../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../../../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../../../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../../../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../../../../index.html%3Fp=17693.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F05%2F11%2Fcars-pi-cameras-and-ascii-art-microservices-with-liberty-and-game-on%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F05%2F11%2Fcars-pi-cameras-and-ascii-art-microservices-with-liberty-and-game-on%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="post-template-default single single-post postid-17693 single-format-standard ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../../../../index.html%3Fp=17693.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../../../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../../../../../docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../../../../../docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../../../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../../../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../../../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../../../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../../../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+
+	<div id="primary" class="content-area-restricted ibm-fluid pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b> in</b> <a href="../../../../category/blog/index.html" rel="category tag">Blog</a></span></div><h1 class="entry-title">Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On!</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../../../author/apilkington/index.html">Adam_P</a></span><br>Published on May 11, 2016<i> / Updated on July 20, 2016</i></div><div class="pn_slic"><a href="../../../../../index.html%3Fp=17693.html#comments" class="pn_comments_icon">2 <i>Comments</i></a></div></div></header>			<main id="main" class="site-main " role="main">
+				<article id="post-17693" class="post-17693 post type-post status-publish format-standard hentry category-blog tag-docker">
+		<div class="entry-content">
+		<p>The Liberty microservices team, based in IBM Hursley in the UK, recently decided to include some ASCII art in <a href="https://game-on.org">Game On!</a>. From there, it was but a short step to driving a remote-controlled car around the floor of the latest WebSphere User Group meeting at IBM Southbank, taking pictures with a Raspberry Pi camera to render as ASCII art.</p>
+<h2>Game On!</h2>
+<p>Game On! is both a sample microservices application and throwback text adventure brought to you by the <a href="http://wasdev.net">WASdev</a> team at IBM. It aims to enable exploration of microservice architectures from two points of view:</p>
+<ul>
+<li><strong>As a player</strong>: On the one hand, you can be entertained by the creativity of other peer developers, exploring the game&#8217;s <em>rooms</em>; on the other hand, you can navigate a distributed system, exit by exit.</p>
+</li>
+<li>
+<p><strong>As a developer</strong>: Learn about microservice architectures and supporting infrastructure by extending the game with your own services. Write your own rooms to see how they interact with the rest of the system and to experiment with different strategies for building resilient distributed systems.</p>
+</li>
+</ul>
+<h2>Polyglot to the rescue</h2>
+<p>Text is one way to display information to the user but we wanted to add images. Game On! is text-based, though, and doesn&#8217;t support images. So we thought it would be cool if we could display some ASCII art and, even better, provide a way for images to be converted on-the-fly.</p>
+<p>Our initial approach was to create a new room for Game On! which would display some ASCII art pictures (we imaginatively titled this the <em>picture room</em>). This would be hosted in its own Docker container and it would register with the Game On! map service at startup. The <a href="https://github.com/gameontext/gameon-simpleroom">simple Java room example</a> provided a good starting point. It shows all the skeleton code needed to connect a room to Game On! and how to handle things like security and creating the correct JSON data structures. Great, we were up and running with a new Game On! room in about 10 minutes (after a few minor tweaks to the Java code, such as setting the correct developer API key).</p>
+<p>Now all we needed was a Java library to do the image-to-ASCII conversion for us and we would be good to go. Unfortunately, this wasn&#8217;t as easy as it first sounded because there isn&#8217;t a readily available library for Java. The library that a lot of people use is <a href="http://www.graphicsmagick.org/">GraphicsMagick</a> but that is native code. A little bit of searching revealed that there exists a node.js module called <a href="https://www.npmjs.com/package/image-to-ascii"><code>image-to-ascii</code></a>. Normally this would be the end of the investigation, but with microservices we could quickly add in a new technology, even from other runtimes and languages.</p>
+<p>We configured a Docker container to run a node.js instance with the <code>image-to-ascii</code> module installed. We then added a very simple web interface with <a href="https://www.npmjs.com/package/express"><code>express</code></a>: not even REST, just an endpoint that accepts an image and returns ASCII art. We called this the <em>image service</em>. After that, we just configured the Game On! room to call out to the image service.</p>
+<p>So now we have a nice polyglot environment and, because IBM Bluemix supports both node.js and Liberty runtimes, there won&#8217;t be a problem when we deploy this to the cloud in the future.</p>
+<h2>Smile please</h2>
+<p>Once we had static images, we immediately wanted to use a camera to capture live pictures; something altogether much more interesting (oh look, new shiny!). We had a camera in the office that plugged into a Raspberry Pi; Liberty is such a lighweight application server that it happily runs on a Pi. So we built another Game On! room (again based on the Java simple room template) but moved it be running on the Pi: we called this the <em>camera room</em> (you can tell we&#8217;re in development and not marketing&#8230;). Here is a picture showing the room running in Game On! and the camera taking a picture of one of the team (note the obligatory coffee pot in the foreground, this was a bit of a late night coding session in the office ðŸ™‚ ):</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/04/DSC_0039-e1461768832212.jpg"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/04/DSC_0039-e1461768832212.jpg" alt="Game On! camera and ascii art" width="600" height="450" class="alignnone size-full wp-image-17697" /></a></p>
+<p>This was interesting as it was starting to not only show how to communicate with devices (think Internet of Things) but also what happens when more than one person tries to control the same physical device. The increasing number of microservice interactions between Game On!, node, and the Pi also nicely serves to illustrate the fact that increased remote calls is something that is part of a microservices environment. The good news is that Game On! contains plenty of code showing how to do things like re-establishing WebSocket connections, handling timeouts, and a whole plethora of things that can happen when one service tries to call another.</p>
+<h2>Backseat drivers!</h2>
+<p>Having got the camera working, always getting the same image (albeit a live one instead of a static one) soon got a little bit boring. We needed a way to move the camera around so that it could take different pictures. Enter the Liberty Car. For those that don&#8217;t know, the Liberty Car is a remote-controlled car that is controlled using a Liberty instance running on a Pi, which is housed within the car. Hhhmmm, so that would be something that can be moved using a Pi&#8230;perfect! We removed the old Pi that was in the car and replaced it with the one running our Game On camera room:</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/04/DSC_0041-e1461768803158.jpg"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/04/DSC_0041-e1461768803158.jpg" alt="Liberty car and camera" width="600" height="450" class="alignnone size-full wp-image-17700" /></a></p>
+<p>One of the key tenets of microservices is the separation of concern between services and how each one should have a clearly defined responsibility. Rather than add functionality to the camera room, we added another room to control the car (<em>car room</em>). To that end, we further decomposed the existing camera room into a camera service that would let you take a picture and could be accessed independently from Game On.</p>
+<p>Earlier, I mentioned how increased numbers of remote calls, and their associated overheads, are one of the costs of using a microservices architecture. The sample flows below show just how quickly these calls start to add up, and why you need to be defining your API up front: think Test Driven Development but with APIs and Swagger.</p>
+<p>Taking a picture:<br />
+  <code>Browser &lt;-&gt; Game On (docker) &lt;-&gt; Car Room (Pi) &lt;-&gt; Camera Service (Pi) &lt;-&gt; Image Service (node.js)</code></p>
+<p>Driving the car:<br />
+  <code>Browser &lt;-&gt; Game On (docker) &lt;-&gt; Car Room (Pi) &lt;-&gt; Car Service (Pi)</code></p>
+<p>Re-using the camera service:<br />
+  <code>3rd Party App &lt;-&gt; Camera Service (Pi)</code></p>
+<h2>The final picture</h2>
+<p>At a high level, this is how we had all the services talking to each other:</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/04/GameOnDemoArchitecture.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/04/GameOnDemoArchitecture.png" alt="GameOn Demo Architecture" width="1130" height="818" class="alignnone size-full wp-image-17703" srcset="../../../../../wp-content/uploads/sites/9/2016/04/GameOnDemoArchitecture.png 1130w, ../../../../../wp-content/uploads/sites/9/2016/04/GameOnDemoArchitecture-300x217.png 300w, ../../../../../wp-content/uploads/sites/9/2016/04/GameOnDemoArchitecture-1024x741.png 1024w" sizes="(max-width: 1130px) 100vw, 1130px" /></a></p>
+<p>This architecture shows:</p>
+<ul>
+<li>A virtual machine with 7 Docker containers, each running an instance of Liberty</li>
+<li>A polyglot environment with both node.js and Liberty runtimes</li>
+<li>A Raspberry Pi running Liberty, with 4 deployed applications</li>
+<li>Service re-use; being able to drive the car, or take pictures, through Game On! or using a second web interface</li>
+</ul>
+<h2>WebSphere User Group</h2>
+<p>Finally, we took this to the latest WebSphere User Group (WUG) which was held in IBM&#8217;s Southbank offices.</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/04/GameOnStand-e1461768766627.jpg"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/04/GameOnStand-e1461768766627.jpg" alt="Game On stand at the WUG" width="600" height="450" class="alignnone size-full wp-image-17701" /></a></p>
+<p>We had lots of people stop by and ask us a whole range of questions, for example:</p>
+<ul>
+<li>So what are microservices?</li>
+<li>Why is Liberty a good fit for microservices?</li>
+<li>You&#8217;ve done, what!?! with a text adventure&#8230;</li>
+<li>Can you take the car off the blocks so that I can drive it around ? (which was fun because, of course, we said yes)</li>
+</ul>
+<p>Game On! gives us a really great context within which to answer these questions. The fact that it&#8217;s available online at <a href="https://game-on.org/">game-on.org</a> and the code is in <a href="https://github.com/gameontext">GitHub</a> means that you can write your own rooms and learn about microservices with Liberty whenever and wherever you want.</p>
+			</div><!-- .entry-content -->
+	<footer class="entry-footer">
+		<div class="tags-links">Tags <a href="../../../../tag/docker/index.html" rel="tag">Docker</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../../../author/apilkington/index.html">Adam_P</a></span></p><ul class="byline__social"><li class="byline__social__twitter"><a href="https://www.twitter.com/marknsweep">Twitter</a></li></ul><p class="byline__bio">Adam is WebSphere Liberty developer based in the UK Hursley Lab working in the Microservices team. His current focus is on developing best practices and patterns for WebSphere Liberty in microservice architectures. He is also an IBM Master Inventor. Prior to joining IBM he worked in the UK financial services sector.</p></div></div>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			2 comments on"Cars, Pi cameras and ASCII art: Microservices with Liberty and Game On!"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment byuser comment-author-apilkington bypostauthor even thread-even depth-1 pn-comment" id="comment-146636">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Adam_P</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=17693.html#comment-146636">
+					June 03, 2016	         	</a>
+			</div>
+			      		<p>Hi Roman, GameOn already uses Gradle for it&#8217;s build system, with the source in Github here : <a href="https://github.com/gameontext">https://github.com/gameontext</a>.</p>
+<p>Was there a particular build you were interested in ?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=17693.html#comment-146636' onclick='return addComment.moveForm( "comment-146636", "146636", "respond", "17693" )' aria-label='Reply to Adam_P'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146627">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Roman Kharkovski</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=17693.html#comment-146627">
+					June 02, 2016	         	</a>
+			</div>
+			      		<p>Are there plans to provide Gradle builds for the GameOn ?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=17693.html#comment-146627' onclick='return addComment.moveForm( "comment-146627", "146627", "respond", "17693" )' aria-label='Reply to Roman Kharkovski'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../../../../index.html%3Fp=17693.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='17693' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d07993f1c8" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="196"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+			</main><!-- #main -->
+
+				</div><!-- #primary -->
+
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../../../../index.html%3Fp=17693.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../../../../index.html%3Fp=17693.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../../../../index.html%3Fp=17693.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../../../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F05%2F11%2Fcars-pi-cameras-and-ascii-art-microservices-with-liberty-and-game-on&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F05%2F11%2Fcars-pi-cameras-and-ascii-art-microservices-with-liberty-and-game-on"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

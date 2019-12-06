@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Rebuilding the Microservice Builder pipeline</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2017/09/06/rebuilding-microservice-builder-pipeline/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2017/09/06/rebuilding-microservice-builder-pipeline/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Mark Nuttall</title>
+		<link>https://developer.ibm.com/wasdev/blog/2017/09/06/rebuilding-microservice-builder-pipeline/#comment-151279</link>
+		<dc:creator><![CDATA[Mark Nuttall]]></dc:creator>
+		<pubDate>Wed, 11 Oct 2017 10:07:24 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=22790#comment-151279</guid>
+		<description><![CDATA[Hello, 
+You only need to deploy one pipeline per target environment (&#039;test&#039;, &#039;staging&#039;, etc). Each build runs as a pod dynamically created by the master, and load balanced by Kubernetes. Master does not bear much load, as almost all the work is delegated to the slaves. 
+
+Regards, 
+Mark]]></description>
+		<content:encoded><![CDATA[<p>Hello,<br />
+You only need to deploy one pipeline per target environment (&#8216;test&#8217;, &#8216;staging&#8217;, etc). Each build runs as a pod dynamically created by the master, and load balanced by Kubernetes. Master does not bear much load, as almost all the work is delegated to the slaves. </p>
+<p>Regards,<br />
+Mark</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: kylekim</title>
+		<link>https://developer.ibm.com/wasdev/blog/2017/09/06/rebuilding-microservice-builder-pipeline/#comment-151276</link>
+		<dc:creator><![CDATA[kylekim]]></dc:creator>
+		<pubDate>Wed, 11 Oct 2017 02:30:20 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=22790#comment-151276</guid>
+		<description><![CDATA[for having 10 builds at the same time, then do I have to deploy 10 pods of mb pipeline? if we assume that every pods have a container.
+I wonder how to calculate the number of pods for multiple build process
+
+and how much a single master jenkins can afford the mb pipeline slave nodes?]]></description>
+		<content:encoded><![CDATA[<p>for having 10 builds at the same time, then do I have to deploy 10 pods of mb pipeline? if we assume that every pods have a container.<br />
+I wonder how to calculate the number of pods for multiple build process</p>
+<p>and how much a single master jenkins can afford the mb pipeline slave nodes?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: JAX-RS basics</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/jax-rs-basics/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Keith Chong</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-118503</link>
+		<dc:creator><![CDATA[Keith Chong]]></dc:creator>
+		<pubDate>Mon, 23 Mar 2015 17:56:49 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-118503</guid>
+		<description><![CDATA[Edit to my last comment:
+
+For Step 3, second bullet, after removing web.xml: add the following class.  You can choose your own application path value.]]></description>
+		<content:encoded><![CDATA[<p>Edit to my last comment:</p>
+<p>For Step 3, second bullet, after removing web.xml: add the following class.  You can choose your own application path value.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Keith Chong</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-118499</link>
+		<dc:creator><![CDATA[Keith Chong]]></dc:creator>
+		<pubDate>Mon, 23 Mar 2015 17:41:11 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-118499</guid>
+		<description><![CDATA[Step 2, second bullet, after removing web.xml, add this class:  customizate your application path value.
+
+package p;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath(&quot;/mypath&quot;)
+public class MyApplication extends Application {
+
+}]]></description>
+		<content:encoded><![CDATA[<p>Step 2, second bullet, after removing web.xml, add this class:  customizate your application path value.</p>
+<p>package p;</p>
+<p>import javax.ws.rs.ApplicationPath;<br />
+import javax.ws.rs.core.Application;</p>
+<p>@ApplicationPath(&#8220;/mypath&#8221;)<br />
+public class MyApplication extends Application {</p>
+<p>}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Keith Chong</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-118498</link>
+		<dc:creator><![CDATA[Keith Chong]]></dc:creator>
+		<pubDate>Mon, 23 Mar 2015 17:37:41 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-118498</guid>
+		<description><![CDATA[Hi Kevin, what incorrect content does the wizard insert?  Perhaps there is a bug in here that needs to be addressed?
+
+This tutorial suggests two ways to get your JAX-RS service up and running. In step 3 above, second bullet point, by using the Application class, it does not necessarily require you to use web.xml.   The wizard provides the option to generate the web.xml or not.  You can create the web.xml after-the-fact via an action in the Java EE Tools context menu from the project.]]></description>
+		<content:encoded><![CDATA[<p>Hi Kevin, what incorrect content does the wizard insert?  Perhaps there is a bug in here that needs to be addressed?</p>
+<p>This tutorial suggests two ways to get your JAX-RS service up and running. In step 3 above, second bullet point, by using the Application class, it does not necessarily require you to use web.xml.   The wizard provides the option to generate the web.xml or not.  You can create the web.xml after-the-fact via an action in the Java EE Tools context menu from the project.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Kevin</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-118263</link>
+		<dc:creator><![CDATA[Kevin]]></dc:creator>
+		<pubDate>Mon, 23 Mar 2015 00:10:57 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-118263</guid>
+		<description><![CDATA[Thank you!
+
+Step 3 – Configuring the web.xml  &#060;&#060;&#060; This step is the KEY!
+
+For the life in me, I couldn&#039;t get my REST services up simply because stupid eclipse doesn&#039;t create a web.xml file for you by default. And when you use the JAX-RS wizard to update the web.xml, it incorrectly inserts stuff.]]></description>
+		<content:encoded><![CDATA[<p>Thank you!</p>
+<p>Step 3 – Configuring the web.xml  &lt;&lt;&lt; This step is the KEY!</p>
+<p>For the life in me, I couldn&#039;t get my REST services up simply because stupid eclipse doesn&#039;t create a web.xml file for you by default. And when you use the JAX-RS wizard to update the web.xml, it incorrectly inserts stuff.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-72153</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Tue, 25 Nov 2014 18:09:25 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-72153</guid>
+		<description><![CDATA[it would be useful to also show how to code REST client in Liberty]]></description>
+		<content:encoded><![CDATA[<p>it would be useful to also show how to code REST client in Liberty</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sarah Eggleston</title>
+		<link>https://developer.ibm.com/wasdev/docs/jax-rs-basics/#comment-234</link>
+		<dc:creator><![CDATA[Sarah Eggleston]]></dc:creator>
+		<pubDate>Thu, 10 Apr 2014 16:44:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5356#comment-234</guid>
+		<description><![CDATA[Thanks for the useful article - I&#039;ve just got my first REST service working!]]></description>
+		<content:encoded><![CDATA[<p>Thanks for the useful article &#8211; I&#8217;ve just got my first REST service working!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

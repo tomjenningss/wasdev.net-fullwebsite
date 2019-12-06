@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to learn and use WAS Liberty OpenID Connect</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/learn-use-liberty-openid-connect/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/learn-use-liberty-openid-connect/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: shudong</title>
+		<link>https://developer.ibm.com/wasdev/docs/learn-use-liberty-openid-connect/#comment-146188</link>
+		<dc:creator><![CDATA[shudong]]></dc:creator>
+		<pubDate>Wed, 13 Apr 2016 02:26:48 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12752#comment-146188</guid>
+		<description><![CDATA[Hi, Chunlong
+Thanks for prompt response. And it works for me. Somehow your sample application binding is not visible here. I put my sample application binding here for other people&#039;s reference.
+    &lt;!-- The application binding maps the roles to users or groups returned in Liberty OP&#039;s ID token or to special subjects. --&gt;
+    &lt;!-- ID Token {“iss”:”https://localhost:8443/oidc/endpoint/liberty_op2″,”at_hash”:”xHQmkp963txxbyLzXAkmQw”,”sub”:”user1″,”aud”:”liberty_rp2″,”realmName”:”customRealm”,”uniqueSecurityName”:”501″,”groupIds”:[“001″],”exp”:1460439441,”iat”:1460432241} --&gt;
+    
+        
+            
+                
+            
+            
+		
+	        
+            
+        
+    ]]></description>
+		<content:encoded><![CDATA[<p>Hi, Chunlong<br />
+Thanks for prompt response. And it works for me. Somehow your sample application binding is not visible here. I put my sample application binding here for other people&#8217;s reference.<br />
+    <!-- The application binding maps the roles to users or groups returned in Liberty OP's ID token or to special subjects. --><br />
+    <!-- ID Token {“iss”:”https://localhost:8443/oidc/endpoint/liberty_op2″,”at_hash”:”xHQmkp963txxbyLzXAkmQw”,”sub”:”user1″,”aud”:”liberty_rp2″,”realmName”:”customRealm”,”uniqueSecurityName”:”501″,”groupIds”:[“001″],”exp”:1460439441,”iat”:1460432241} --></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/learn-use-liberty-openid-connect/#comment-146186</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 20:25:35 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12752#comment-146186</guid>
+		<description><![CDATA[Here is a sample application binding
+
+    
+	
+		
+		
+	
+    
+]]></description>
+		<content:encoded><![CDATA[<p>Here is a sample application binding</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: shudong</title>
+		<link>https://developer.ibm.com/wasdev/docs/learn-use-liberty-openid-connect/#comment-146182</link>
+		<dc:creator><![CDATA[shudong]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 06:21:27 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12752#comment-146182</guid>
+		<description><![CDATA[Hi, I have setup two liberty profile server (v8.5.5.9), one as OP, the other one as OIDC relying party. For Liberty OIDC provider, I use custom user registry for authentication. From OIDC token endpoint, I could get the access token, refresh token and ID token as follows:
+{&quot;access_token&quot;:&quot;yt3T890nwaBepptycYxFmDXz1JDIi2iHF1SHUTwu&quot;,&quot;token_type&quot;:&quot;Bearer&quot;,&quot;expires_in&quot;:7199,&quot;scope&quot;:&quot;openid profile email&quot;,&quot;refresh_token&quot;:&quot;ttYpurkfYURpw
+JfzZMBdXf3bzIjskB7p06gMDESmeoUBsd8dsU&quot;,&quot;id_token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo4NDQzL29pZGMvZW5kcG9pbnQvbGliZXJ0eV9vcDIiLCJhdF9oYXNo
+IjoieEhRbWtwOTYzdHh4YnlMelhBa21RdyIsInN1YiI6InVzZXIxIiwiYXVkIjoibGliZXJ0eV9ycDIiLCJyZWFsbU5hbWUiOiJjdXN0b21SZWFsbSIsInVuaXF1ZVNlY3VyaXR5TmFtZSI6IjUwMSIsImdyb3Vw
+SWRzIjpbIjAwMSJdLCJleHAiOjE0NjA0Mzk0NDEsImlhdCI6MTQ2MDQzMjI0MX0.zMfVNEJyuUX38wfaF_mn7AFDnAc2fxr2EYrLMPwrBHg&quot;}
+After decoding, the id token is --&#062; {&quot;iss&quot;:&quot;https://localhost:8443/oidc/endpoint/liberty_op2&quot;,&quot;at_hash&quot;:&quot;xHQmkp963txxbyLzXAkmQw&quot;,&quot;sub&quot;:&quot;user1&quot;,&quot;aud&quot;:&quot;liberty_rp2&quot;,&quot;realmName&quot;:&quot;customRealm&quot;,&quot;uniqueSecurityName&quot;:&quot;501&quot;,&quot;groupIds&quot;:[&quot;001&quot;],&quot;exp&quot;:1460439441,&quot;iat&quot;:1460432241}
+
+My problem is that at OIDC relying party, I could not map the security-role using the user name or group name, which is actually included in the ID token.
+	&lt;!-- The application binding maps the roles to users or groups in the custom user registry or to special subjects. --&gt;
+    
+        
+            
+                
+            
+            
+                
+                
+            
+        
+    
+
+The following exceptions are reported
+[4/12/16 13:43:28:040 SGT] 0000003e com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: &quot;com.ibm.ws.security.registry.RegistryException com.ibm.ws.security.appbnd.internal.authorization.AppBndAuthorizationTableService 334&quot; at ffdc_16.04.12_13.43.28.0.log
+[4/12/16 13:43:28:054 SGT] 0000003e .ibm.ws.webcontainer.security.WebAppSecurityCollaboratorImpl A CWWKS9104A: Authorization failed for user user1 while invoking testpage on /. The user is not granted access to any of the required roles: [All Role].]]></description>
+		<content:encoded><![CDATA[<p>Hi, I have setup two liberty profile server (v8.5.5.9), one as OP, the other one as OIDC relying party. For Liberty OIDC provider, I use custom user registry for authentication. From OIDC token endpoint, I could get the access token, refresh token and ID token as follows:<br />
+{&#8220;access_token&#8221;:&#8221;yt3T890nwaBepptycYxFmDXz1JDIi2iHF1SHUTwu&#8221;,&#8221;token_type&#8221;:&#8221;Bearer&#8221;,&#8221;expires_in&#8221;:7199,&#8221;scope&#8221;:&#8221;openid profile email&#8221;,&#8221;refresh_token&#8221;:&#8221;ttYpurkfYURpw<br />
+JfzZMBdXf3bzIjskB7p06gMDESmeoUBsd8dsU&#8221;,&#8221;id_token&#8221;:&#8221;eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo4NDQzL29pZGMvZW5kcG9pbnQvbGliZXJ0eV9vcDIiLCJhdF9oYXNo<br />
+IjoieEhRbWtwOTYzdHh4YnlMelhBa21RdyIsInN1YiI6InVzZXIxIiwiYXVkIjoibGliZXJ0eV9ycDIiLCJyZWFsbU5hbWUiOiJjdXN0b21SZWFsbSIsInVuaXF1ZVNlY3VyaXR5TmFtZSI6IjUwMSIsImdyb3Vw<br />
+SWRzIjpbIjAwMSJdLCJleHAiOjE0NjA0Mzk0NDEsImlhdCI6MTQ2MDQzMjI0MX0.zMfVNEJyuUX38wfaF_mn7AFDnAc2fxr2EYrLMPwrBHg&#8221;}<br />
+After decoding, the id token is &#8211;&gt; {&#8220;iss&#8221;:&#8221;https://localhost:8443/oidc/endpoint/liberty_op2&#8243;,&#8221;at_hash&#8221;:&#8221;xHQmkp963txxbyLzXAkmQw&#8221;,&#8221;sub&#8221;:&#8221;user1&#8243;,&#8221;aud&#8221;:&#8221;liberty_rp2&#8243;,&#8221;realmName&#8221;:&#8221;customRealm&#8221;,&#8221;uniqueSecurityName&#8221;:&#8221;501&#8243;,&#8221;groupIds&#8221;:[&#8220;001&#8243;],&#8221;exp&#8221;:1460439441,&#8221;iat&#8221;:1460432241}</p>
+<p>My problem is that at OIDC relying party, I could not map the security-role using the user name or group name, which is actually included in the ID token.<br />
+	<!-- The application binding maps the roles to users or groups in the custom user registry or to special subjects. --></p>
+<p>The following exceptions are reported<br />
+[4/12/16 13:43:28:040 SGT] 0000003e com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: &#8220;com.ibm.ws.security.registry.RegistryException com.ibm.ws.security.appbnd.internal.authorization.AppBndAuthorizationTableService 334&#8221; at ffdc_16.04.12_13.43.28.0.log<br />
+[4/12/16 13:43:28:054 SGT] 0000003e .ibm.ws.webcontainer.security.WebAppSecurityCollaboratorImpl A CWWKS9104A: Authorization failed for user user1 while invoking testpage on /. The user is not granted access to any of the required roles: [All Role].</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

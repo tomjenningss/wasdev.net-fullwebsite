@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-02-13",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"WASdev",
+						"contentType": "page",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": ""
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"WASdev - Enterprise Java developer community"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>About WebSphere Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="WebSphere Liberty is a fast, dynamic, easy-to-use Java EE application server with fast startup times (&lt;2 secs), no server restarts, and simple XML config."/>
+<link rel="canonical" href="index.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; About WebSphere Liberty Comments Feed" href="../../websphere-liberty/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading...","event_detach_warning":"Are you sure you want to detach this event? By doing so, this event will be independent of the recurring set of events.","delete_recurrence_warning":"Are you sure you want to delete all recurrences of this event? All events will be moved to trash."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=10371.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fwebsphere-liberty%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fwebsphere-liberty%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="page-template-default page page-id-10371 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10371 current_page_item menu-item-11996"><a title="About WebSphere Liberty" href="index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+	<div class="ibm-fluid content-area-restricted pnpagepost">
+				<header class="pagepost-entry-header">
+				<h1 class="entry-title">About WebSphere Liberty</h1>		</header><!-- .entry-header -->
+		    	<div id="primary" class="content-area ">
+    		<main id="main" class="site-main" role="main">
+    			    				<article id="post-10371" class="post-10371 page type-page status-publish hentry">
+	
+	<div class="entry-content">
+		WebSphere Liberty is a fast, dynamic, and easy-to-use Java application server, built on the open source <a href="http://openliberty.io">Open Liberty project</a>. Ideal for developers but also ready for production, on-premise or <a href="../../index.html%3Fp=9407.html">in the cloud</a>
+
+Liberty is a combination of IBM technology and open source software, with fast startup times (<2 seconds), no server restarts to pick up changes, and a simple XML configuration. All in <a href="../../downloads/liberty-profile-using-non-eclipse-environments/index.html">a package (with Java EE 8 Web Profile) that&#8217;s 80 MB to download</a>. You can be developing applications in no time.
+
+With a flexible, modular runtime you can <a href="../../downloads/websphere-application-server-migration-tools/index.html#filter/assetTypeFilters=FEATURE">download additional features from the Liberty Repository</a> or <a href="../article_minify/index.html">strip it back to the bare essentials</a> for deployment into production environments. Everything in Liberty is designed to help you get your job done how you want to do it.
+
+We know that integrating Liberty into your development environment is important, so you&#8217;ll find we integrate with other frameworks like Docker, Chef, Puppet, Jenkins, and UrbanCode Deploy, to name a few, all of which you can find out more about from the developer community and here on <a href="http://wasdev.net/">WASdev.net</a>.
+
+It&#8217;s easy to get started. Don&#8217;t believe us? Try downloading the latest version and see for yourself&#8230;
+
+<div class="ibm-fluid">
+  <div class="ibm-col-12-9">
+
+   <p class="ibm-btn-row pn-p40">
+<a class="ibm-btn-sec ibm-btn-blue-50" href="../../downloads/liberty-profile-using-non-eclipse-environments/index.html">Download latest stable release</a>
+<a class="ibm-btn-sec ibm-btn-blue-50" href="../../downloads/liberty-profile-beta/index.html">Download latest beta release</a>
+</p>
+
+<a href="../../wp-content/uploads/sites/9/2017/09/OL_badge.png"><img src="../../wp-content/uploads/sites/9/2017/09/OL_badge-1024x306.png" alt="Built on Open LIberty" width="640" height="191" class="aligncenter size-large wp-image-23627" srcset="../../wp-content/uploads/sites/9/2017/09/OL_badge-1024x306.png 1024w, ../../wp-content/uploads/sites/9/2017/09/OL_badge-300x90.png 300w, ../../wp-content/uploads/sites/9/2017/09/OL_badge-768x230.png 768w, ../../wp-content/uploads/sites/9/2017/09/OL_badge.png 1465w" sizes="(max-width: 640px) 100vw, 640px" /></a>
+
+<!--Java EE and WAS-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  Java EE</h2>
+The <a href="../../downloads/liberty-profile-using-non-eclipse-environments/index.html">latest stable release</a> of WebSphere Liberty supports <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">Java EE 8 Full Platform</a> in both development and production.
+
+Liberty also continues to support Java EE 6 Web Profile, Java EE 7 Full Profile, and Java EE 7 Web Profile. Any Java EE 7 and Java EE 6 applications you write on Liberty can be deployed in production, without changes, on Liberty or on WAS classic (WebSphere Application Server) which is certified for both Java EE 7 and Java EE 6 Full Platform. Here&#8217;s <a href="../../index.html%3Fp=13311.html">an explanation of which application server to choose</a>.
+
+<!--IDEs-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" /> IDEs and Open Source frameworks</h2>
+<p><a href="../../blog/getting_started_with_the_was_liberty_profile.html">WebSphere Developer Tools</a> makes it easy to write and deploy applications in Eclipse. Just drag and drop your app on to your Liberty server.
+
+Prefer IntelliJ IDEA? That&#8217;s fine because <a href="../../index.html%3Fp=5737.html">they support Liberty too</a>. Liberty integrates neatly with Open Source software like <a href="../../index.html%3Fp=4710.html">Spring</a>, <a href="../../downloads/websphere-application-server-migration-tools/index.html#asset/opensource-Tapestry_v5.3.6_Integration">Tapestry</a>, <a href="../accessing-a-mongodb-database-from-the-liberty-profile/index.html">MongoDB</a>, and <a href="../../downloads/websphere-application-server-migration-tools/index.html#asset/opensource-Cassandra_Sample">Cassandra</a>, and with other developer software like <a href="https://developer.ibm.com/wasdev/docs/jrebel-liberty-5-minutes-10-easy-steps/">JRebel</a>.
+
+<!--Config-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" /> Simple configuration</h2>
+WebSphere Liberty makes it really easy to configure your server in a simple, but flexible, XML file. For example, the <code>server.xml</code> configuration file, by default, looks like this:
+
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;server description=&quot;new server&quot;&gt;
+
+    &lt;!-- Enable features --&gt;
+    &lt;featureManager&gt;
+        &lt;feature&gt;jsp-2.3&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+    &lt;!-- To access this server from a remote
+ client add a host attribute to the 
+following element, e.g. host=&quot;*&quot; --&gt;
+    &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;
+                  httpPort=&quot;9080&quot;
+                  httpsPort=&quot;9443&quot; /&gt;
+
+&lt;/server&gt;
+</pre>
+This <code>server.xml</code> enables the JSP 2.3 feature, which depends on the Servlet feature; the Servlet feature is, therefore, automatically enabled as well (without needing to be explicitly listed in the <code>server.xml</code> file).
+
+
+<!--DevOps-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  DevOps</h2>
+Build, deploy, and run your Java applications with Liberty. Use Liberty with <a href="http://ant.apache.org/">Ant</a>, <a href="../../index.html%3Fp=9529.html">Maven</a>, <a href="../../index.html%3Fp=7248.html">Chef</a>, <a href="http://en.wikipedia.org/wiki/Puppet_(software)">Puppet</a>, <a href="https://wiki.jenkins-ci.org/display/JENKINS/WebSphere+Deployer+Plugin">Jenkins</a>, <a href="http://arquillian.org/modules/arquillian-wlp-managed-8.5-container-adapter/">Arquillian</a>, <a href="../deploying-liberty-using-ibm-urbancode-deploy-part-1/index.html">UrbanCode Deploy</a>, <a href="../running-liberty-profile-docker-container/index.html">Docker</a> and other frameworks to automate build, testing, and deployment into your test and production environments. You can manage your application code, server configurations, and infrastructure scripts in version control and deliver changes across them all as a unit.
+
+<!--OSGi applications-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  OSGi applications</h2>
+Liberty supports OSGi Applications in both development and production, enabling you to write dynamic, flexible, modular Web applications and microservices assembled from collaborating sets of OSGi bundles.
+
+
+<!--Extending-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  Extending WebSphere Liberty</h2>
+If you need additional capabilities, you can <a href="../../index.html%3Fp=2000.html">extend Liberty by writing a <em>user feature</em></a>. For example, one of our developers wrote a user feature to <a href="../../2014/06/11/arduino-feature-liberty-profile/index.html">enable Java apps on Liberty to talk to an Arduino</a>.
+
+<!--Open source-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  Built on Open Source</h2>
+The core source code of WebSphere Liberty was released into GitHub as the <a href="https://openliberty.io/">Open Liberty</a> in September 2017 under the <a href="https://github.com/OpenLiberty/open-liberty/blob/master/LICENSE">EPL v-1.0</a>. WebSphere Liberty is built from the Open Liberty source code. We&#8217;d love for you to get involved and <a href="http://openliberty.io/contribute/">contribute to Open Liberty</a> in some way, whether it&#8217;s raising GitHub issues, writing code and submitting pull requests, writing documentation, or just discussing Open Liberty and giving feedback, thoughts, and ideas on the <a href="https://groups.io/g/openliberty/">Open Liberty mailing list</a>.
+Open Liberty includes many other open source projects, including: 
+<br /><br />
+<div class="pn-columns">
+<div class="pn-col-6-3">
+<ul style="list-style: none;">
+<li><a href="http://aries.apache.org/">Apache Aries</a></li>
+<li><a href="http://cxf.apache.org/">Apache CXF</a></li>
+<li><a href="http://felix.apache.org/">Apache Felix</a></li>
+<li><a href="http://maven.apache.org/">Apache Maven</a></li>
+<li><a href="http://myfaces.apache.org/">Apache MyFaces</a></li>
+<li><a href="http://openjpa.apache.org/">Apache OpenJPA</a></li>
+<li><a href="http://openwebbeans.apache.org/">Apache OpenWebBeans</a></li>
+<li><a href="http://wink.apache.org/">Apache Wink</a></li>
+</ul>
+</div>
+<div class="pn-col-6-3">
+<ul>
+<li><a href="http://www.eclipse.org/equinox/">Eclipse Equinox</a></li>
+<li><a href="http://asm.ow2.org/">ObjectWeb ASM</a></li>
+<li><a href="http://www.eclipse.org/eclipselink/">Eclipse EclipseLink (RI)</a></li>
+<li><a href="http://bval.apache.org/">Apache BVal</a></li>
+<li><a href="http://weld.cdi-spec.org/">JBoss Weld (RI)</a></li>
+<li><a href="https://jsonp.java.net/download.html">Oracle/Glassfish JSON Processing (RI)</a></li>
+<li><a href="https://java.net/projects/javamail/pages/Home">Oracle/Glassfish JavaMail (RI)</a> <br>(RI == Reference Implementation)</li>
+</ul>
+</div>
+</div>
+
+<!--Help-->
+<h2 class="aboutliberty"><img src="../../wp-content/uploads/sites/9/2015/10/liberty-logo-01.png" alt="lightweight" width="36" height="36" class="alignnone size-full wp-image-10674" style="vertical-align:middle" />  Getting help</h2>
+This site, <a href="../portlet-container-differences-liberty-full-profile/index.html">WASdev.net</a>, contains loads of articles and links to videos about using and developing applications for Liberty. The <a href="../../downloads/websphere-application-server-migration-tools/index.html">Liberty Repository</a> and <a href="https://github.com/wasdev">Github</a> host sample applications you can download and try. If you need an answer from an expert, <a href="http://stackoverflow.com/questions/tagged/websphere-liberty?cm_mc_uid=20769018683514629845965&#038;cm_mc_sid_50200000=1463141032">ask a question on StackOverflow</a>. See the <a href="../../help.html">Get Help section</a> of this site for more.
+
+<p class="ibm-btn-row pn-pt40">
+<a class="ibm-btn-sec ibm-btn-blue-50" href="../../downloads/liberty-profile-using-non-eclipse-environments/index.html">Download latest stable release</a>
+<a class="ibm-btn-sec ibm-btn-blue-50" href="../../downloads/liberty-profile-beta/index.html">Download latest beta release</a>
+</p>
+
+  </div>
+  <div class="ibm-col-12-3">
+    <aside class="widget_links">
+<h3 class="pn-widgettitle aboutliberty">Related articles</h2>
+
+<ul>
+<li><a href="../../blog/getting_started_with_the_was_liberty_profile.html">Getting started with Liberty</a></li>
+<li><a href="../../index.html%3Fp=9407.html">The best Java runtime for the cloud</a></li>
+<li><a href="../liberty-and-websphere-an-interview-with-java-ee-architect-kevin-sutter.html">Kevin Sutter, Java EE architect, on Liberty</a></li>
+<li><a href="../../index.html%3Fp=3037.html">Introducing the Liberty profile</a></li>
+<li><a href="../../index.html%3Fp=11661.html">What the Liberty runtime license lets you do</a></li>
+<li><a href="../../index.html%3Fp=13311.html">Liberty or WAS traditional?</a></li>
+<li><a href="http://www.openliberty.io/about/">About the Open Liberty project</a>
+</ul>
+
+<h3 class="pn-widgettitle aboutliberty">Related videos</h2>
+<div class="videoWrapper">
+<iframe width="500" height="280" src="https://www.youtube.com/embed/A6pwGuBgiEI" frameborder="0" allowfullscreen></iframe>
+</div>
+<h3 class="pn-widgettitle aboutliberty">Related downloads</h2>
+
+<ul>
+<li><a href="../../downloads/liberty-profile-using-eclipse/index.html">Get started</a></li>
+<li><a href="../../downloads/liberty-profile-using-non-eclipse-environments/index.html">Download Liberty runtime</a></li>
+<li><a href="../../downloads/liberty-profile-beta/index.html">Download the latest Liberty beta</a></li>
+</ul>
+
+
+</aside>
+  </div>
+</div>			</div><!-- .entry-content -->
+
+	<!--footer class="entry-footer">
+			</footer-->
+</article><!-- #post-## -->
+    			    		</main><!-- #main -->
+    	</div><!-- #primary -->
+         </div><!-- /pn-columns -->
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fwebsphere-liberty&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fwebsphere-liberty"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

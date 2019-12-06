@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-08-10",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"Docker,",
+						"contentArea": "DevOps"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,",
+		      "description":"Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="How to set up a connection between two instances of WebSphere Liberty using IBM MQ as the messaging, all running under Docker containers using Docker Compose."/>
+<link rel="canonical" href="index.html%3Fp=16171.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ Comments Feed" href="docs/using-docker-compose-configure-topology-websphere-liberty-ibm-mq/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=16171.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-docker-compose-configure-topology-websphere-liberty-ibm-mq%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-docker-compose-configure-topology-websphere-liberty-ibm-mq%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-16171 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=16171.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/devops/index.html" rel="tag">DevOps</a></span></div><h1 class="entry-title">Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/jcolema3/index.html">Jamie_Coleman</a></span><br>Published on August 10, 2016<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=16171.html#comments" class="pn_comments_icon">1 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=16171.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">This tutorial demonstrates how easy it is to set up a connection between two instances of <a href="docs/introducing_the_liberty_profile/index.html">WebSphere Liberty</a> using <a href="https://developer.ibm.com/messaging/">IBM MQ</a> as the messaging service, all running under Docker containers. This is done using <a href="https://docs.docker.com/compose/">Docker Compose</a> which brings up the containers and connects them to one another.</p>
+<h2>Before you start</h2>
+<p>This has been tested on Docker Machine, Ubuntu 15.10 and Fedora 23 so take your pick.</p>
+<ol>
+<li><a href="https://docs.docker.com/engine/installation/ubuntulinux/">Install Docker</a>.</li>
+<li><a href="https://docs.docker.com/compose/install/">Install Docker Compose</a>.</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a>.</li>
+<li>Upgrade the Linux Kernel to V3.16 minimum.</li>
+<li>Complete the prerequisites for MQ. On <a href="https://docs.docker.com/machine/">Docker Machine</a> and most Linux distributions, simply <code>ssh</code> into the host and run the command: <code>sudo sysctl fs.file-max=524288</code>. This will increase the maximum file limit for the current session.</li>
+</ol>
+<h2>Preparing the Web applications</h2>
+<ol>
+<li>Clone the repository from GitHub to your local machine. If you are on Windows/Mac, open up the <a href="https://docs.docker.com/engine/getstarted/">Docker Quickstart Terminal</a>; on Linux just open up a normal terminal. Navigate to the folder you would like the repository to be pulled into then run the following command:<br />
+<code>git clone https://github.com/WASdev/sample.docker.mq.git</code></li>
+<li>Download the resource adapter for MQ. This allows WebSphere Liberty to connect to IBM MQ in order to send messages to a second web application. You can find the resource adapter for MQ on the <a href="https://www-945.ibm.com/support/fixcentral/">IBM Fix Central page</a>. To locate the latest version that is available for download, enter the phrase <code>Resource Adapter</code> in the Search Fix Central box (alternatively, select <strong>IBM MQ</strong> from the <strong>Product selector</strong> list, then select <strong>9.0</strong> and <strong>Linux 64-bit,x86_64</strong>, then browse for fixes and the resource adapter should be one of the fixes displayed). The name of the file to be downloaded is in the format of <code>&lt;V.R.M.F&gt;-IBM-MQ-Java-InstallRA.jar</code>.</li>
+<li>Put the resource adapter JAR file that you downloaded in the application folders that were downloaded into your local repository from GitHub <code>liberty-sender</code> and <code>liberty-receiver</code>.</li>
+<li>Open the Dockerfile for each application and check that the line for copying the resource adapter in to the image is up-to-date with the current resource adapter&#8217;s name.</li>
+<li>Run <code>./build</code> which uses maven to build the WAR files for the two applications in the <code>sender</code> and <code>receiver</code> directories and copies them in to the correct locations.</li>
+</ol>
+<h2>Deploying the Web applications</h2>
+<p>This part of the tutorial is very simple because Docker Compose does most of the work for you. Simply navigate to the root of the repository that you downloaded from GitHub and run:</p>
+<p><code>docker-compose up</code></p>
+<p>This will build and then start the Docker images for both instances of Liberty and IBM MQ. The second Liberty container has a message-driven bean so, if it starts before IBM MQ, it will throw some errors in the logs because it has no queue to listen on. As soon as MQ is available the message-driven bean will connect.</p>
+<h2>What Docker Compose is doing when deploying your containers</h2>
+<p>The <code>docker-compose.yml</code> file is used for building the images, setting environment variables, exposing ports, accepting the license agreement for MQ and linking the containers to one another.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+mq:
+  build: mq
+  environment:
+    LICENSE: accept
+    MQ_QMGR_NAME: QM1
+  ports:
+    - &quot;1414:1414&quot;
+sender:
+  build: liberty-sender
+  links:
+   - mq:mqfull
+  ports:
+   - &quot;9080&quot;
+   - &quot;9443&quot;
+receiver:
+  build: liberty-receiver
+  links:
+   - mq:mqfull
+  ports:
+   - &quot;9080&quot;
+   - &quot;9443&quot;
+</pre>
+<p>For the instances of our Web application and server, Docker Compose is building the images using the Dockerfiles inside the application folders.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+FROM websphere-liberty
+
+MAINTAINER Jamie Coleman &lt;jlcoleman@uk.ibm.com&gt;
+
+COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/
+COPY 9.0.0.0-IBM-MQ-Java-InstallRA.jar /
+COPY sender.war /opt/ibm/wlp/usr/servers/defaultServer/dropins/
+
+RUN installUtility install --acceptLicense defaultServer
+RUN java -jar 9.0.0.0-IBM-MQ-Java-InstallRA.jar --acceptLicense /
+</pre>
+<ul>
+<li>The <code>FROM</code> line (line 1) gets the standard Liberty Docker image from Docker Hub.</li>
+<li>The first <code>COPY</code> line (line 6) copies the resource adapter to the container that is needed to establish a connection to IBM MQ.</li>
+<li>The second <code>COPY</code> line (line 7) copies the Web application to the container.</li>
+<li>The first <code>RUN</code> command (line 9) installs the features that Liberty needs for this tutorial. You can find more explanation of these features in the <code>server.xml</code> section of this tutorial.</li>
+<li>The second <code>RUN</code> command (line 10) accepts the license agreement and installs the resource adapter.</li>
+</ul>
+<p>For our instance of IBM MQ, Docker Compose builds the image from the Dockerfile located in the <code>mq</code> directory. This Dockerfile pulls down the MQ image from Docker Hub and copies the <code>config.mqsc</code> file in to the image. The Dockerfile contents are shown below.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+FROM ibmimages/mqadvanced
+
+COPY config.mqsc /etc/mqm/
+</pre>
+<p>The <code>config.mqsc</code> file defines the necessary channels and queues we need. Note that, for the purposes of this tutorial, the file disables security which would not be recommended in a production scenario.</p>
+<h2>Running the Application</h2>
+<p>This is a relatively easy task. You just need to navigate to the URL provided for your first Liberty container. You can find this URL by running the command:</p>
+<p><code>docker-compose port sender 9080</code></p>
+<p>If you&#8217;re running on Docker Machine, you need to either forward your ports or use <code>docker-machine ip</code> to find the IP address of your Docker host. The URL should look something like this: <code>0.0.0.0:xxxx/sender/ or 192.xxx.xxx.xxx:xxxx/sender/</code></p>
+<h2>What the applications are doing</h2>
+<ol>
+<li>The sending application uses a connection factory and destination bound in to JNDI.</li>
+<li>When the servlet is accessing, the sending application creates a connection to the queue manager (<code>QM1</code>).</li>
+<li>The sending application puts a message on the queue (<code>Q1</code>).</li>
+<li>The sending application then waits for a response.</li>
+<li>The receiving application is constantly monitoring the queue for messages using a message-driven bean.</li>
+<li>The receiving application consumes the message from the queue and creates a response.</li>
+<li>The receiving application puts the response on a temporary response queue and closes the connection to the queue.</li>
+<li>The sending application then sees the message and consumes it from the queue.</li>
+<li>The sending application closes the connection to the queue manager until the servlet is accessed again.</li>
+</ol>
+<p>The sending application reports its progress back to the browser and writes the same messages out to the logs.</p>
+<p>Congratulations &#8211; you have successfully deployed two applications running on Liberty to communicate via IBM MQ using just a single Docker Compose command!</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/docker/index.html" rel="tag">Docker</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/jcolema3/index.html">Jamie_Coleman</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			1 comment on"Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="pingback even thread-even depth-1 pn-comment" id="comment-148328">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='https://mqgem.wordpress.com/2016/08/25/mqgem-monthly-2016-08/' rel='external nofollow' class='url'>MQGem Monthly (August 2016) | MQGem Software</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=16171.html#comment-148328">
+					December 30, 2016	         	</a>
+			</div>
+			      		<p>[&#8230;] Using Docker Compose to configure a topology with WebSphere Liberty and IBM MQ [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=16171.html#comment-148328' onclick='return addComment.moveForm( "comment-148328", "148328", "respond", "16171" )' aria-label='Reply to MQGem Monthly (August 2016) | MQGem Software'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=16171.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='16171' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="26e5b96900" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="200"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=16171.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=16171.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=16171.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-docker-compose-configure-topology-websphere-liberty-ibm-mq&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-docker-compose-configure-topology-websphere-liberty-ibm-mq"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

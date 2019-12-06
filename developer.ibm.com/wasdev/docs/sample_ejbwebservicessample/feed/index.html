@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to create an EJB-based web services application</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Bruce</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-147737</link>
+		<dc:creator><![CDATA[Bruce]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 16:05:01 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-147737</guid>
+		<description><![CDATA[Step 9 does have a few ambiguities.  
+ - path_to_compiled_SEI_class - you might have to peruse your eclipse workspace to find this folder.
+ - the javaee jar - the number changes with each Liberty version, so it might not be exactly as in the article.
+ - temp.dir  - this is a temporary folder of your own choosing that you created first.
+ 
+For example, in my case,
+cd C:\tmp\liberty\16003\wlp\bin\jaxws
+md tmp 
+wsgen.bat -cp C:\eclipse_mars\workspace1\AnEJBWebServices\build\classes;..\..\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.14.jar 
+-d tmp -s tmp -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery]]></description>
+		<content:encoded><![CDATA[<p>Step 9 does have a few ambiguities.<br />
+ &#8211; path_to_compiled_SEI_class &#8211; you might have to peruse your eclipse workspace to find this folder.<br />
+ &#8211; the javaee jar &#8211; the number changes with each Liberty version, so it might not be exactly as in the article.<br />
+ &#8211; temp.dir  &#8211; this is a temporary folder of your own choosing that you created first.</p>
+<p>For example, in my case,<br />
+cd C:\tmp\liberty\16003\wlp\bin\jaxws<br />
+md tmp<br />
+wsgen.bat -cp C:\eclipse_mars\workspace1\AnEJBWebServices\build\classes;..\..\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.14.jar<br />
+-d tmp -s tmp -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: nada</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-147687</link>
+		<dc:creator><![CDATA[nada]]></dc:creator>
+		<pubDate>Tue, 01 Nov 2016 10:37:07 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-147687</guid>
+		<description><![CDATA[everything went well , but in the end i couldn&#039;t reach my published services using http://:// URL i got 404 page not found , also i couldn&#039;t find \dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar on my machine what is this exactly and why we need to add it as i skipped it , thanks all]]></description>
+		<content:encoded><![CDATA[<p>everything went well , but in the end i couldn&#8217;t reach my published services using <a href="http://://">http://://</a> URL i got 404 page not found , also i couldn&#8217;t find \dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar on my machine what is this exactly and why we need to add it as i skipped it , thanks all</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sid</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-145868</link>
+		<dc:creator><![CDATA[Sid]]></dc:creator>
+		<pubDate>Mon, 15 Feb 2016 05:24:03 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-145868</guid>
+		<description><![CDATA[All good....
+The WSDL is generating perfectly.
+The WebService Tester is also working fine.
+
+but i am getting error instantiating the servlet class after hitting the submit button when I want to test from the UI.]]></description>
+		<content:encoded><![CDATA[<p>All good&#8230;.<br />
+The WSDL is generating perfectly.<br />
+The WebService Tester is also working fine.</p>
+<p>but i am getting error instantiating the servlet class after hitting the submit button when I want to test from the UI.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Daniel</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-128183</link>
+		<dc:creator><![CDATA[Daniel]]></dc:creator>
+		<pubDate>Tue, 28 Jul 2015 12:30:53 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-128183</guid>
+		<description><![CDATA[Stuck also on step 9, but I would like to know what do you mean by the path to the compiled SEI class? Trying to do this tutorial to be able to run a Liberty profile server that supports ejb configuration.]]></description>
+		<content:encoded><![CDATA[<p>Stuck also on step 9, but I would like to know what do you mean by the path to the compiled SEI class? Trying to do this tutorial to be able to run a Liberty profile server that supports ejb configuration.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Eric</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-11594</link>
+		<dc:creator><![CDATA[Eric]]></dc:creator>
+		<pubDate>Sun, 08 Jun 2014 13:35:49 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-11594</guid>
+		<description><![CDATA[In step 9, please notice the &quot;-cp ＜path_to_compiled_SEI_class＞;＜wlp.install.dir＞\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&quot; is used to configure classpath to all needed classes when running the command. Please note the semicolon &quot;;&quot; is used as delimiter between two paths. 
+
+But in your command &quot;-cp ;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&quot;. There is only one path to the jar file, and there is no ＜path_to_compiled_SEI_class＞ before semicolon. If your compiled classes are placed in the current folder, you should write it as &quot;-cp .\;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&quot;.]]></description>
+		<content:encoded><![CDATA[<p>In step 9, please notice the &#8220;-cp ＜path_to_compiled_SEI_class＞;＜wlp.install.dir＞\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&#8221; is used to configure classpath to all needed classes when running the command. Please note the semicolon &#8220;;&#8221; is used as delimiter between two paths. </p>
+<p>But in your command &#8220;-cp ;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&#8221;. There is only one path to the jar file, and there is no ＜path_to_compiled_SEI_class＞ before semicolon. If your compiled classes are placed in the current folder, you should write it as &#8220;-cp .\;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar&#8221;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Name *Eugene</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-10793</link>
+		<dc:creator><![CDATA[Name *Eugene]]></dc:creator>
+		<pubDate>Fri, 06 Jun 2014 11:19:24 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-10793</guid>
+		<description><![CDATA[Hi, as well step 9 problem:
+used the following command:
+c:\Liberty Server 8.5.5.2&#062;.\bin\jaxws\wsgen.bat -cp ;\dev\api\spec\com.ibm.ws.ja
+vaee.ejb.3.1_1.0.0.jar -d temp -keep -r temp -s temp -wsdl com.ibm.liberty.jaxws
+.demo2.ejbwebservices.UserQuery
+Got the error:
+Class not found: &quot;com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery&quot;
+Liberty installation dir is c:\Liberty Server 8.5.5.2
+Eclipse workspace dir:
+d:\eclipse\workspace-kepler\]]></description>
+		<content:encoded><![CDATA[<p>Hi, as well step 9 problem:<br />
+used the following command:<br />
+c:\Liberty Server 8.5.5.2&gt;.\bin\jaxws\wsgen.bat -cp ;\dev\api\spec\com.ibm.ws.ja<br />
+vaee.ejb.3.1_1.0.0.jar -d temp -keep -r temp -s temp -wsdl com.ibm.liberty.jaxws<br />
+.demo2.ejbwebservices.UserQuery<br />
+Got the error:<br />
+Class not found: &#8220;com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery&#8221;<br />
+Liberty installation dir is c:\Liberty Server 8.5.5.2<br />
+Eclipse workspace dir:<br />
+d:\eclipse\workspace-kepler\</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Eric</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-10016</link>
+		<dc:creator><![CDATA[Eric]]></dc:creator>
+		<pubDate>Wed, 04 Jun 2014 15:32:33 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-10016</guid>
+		<description><![CDATA[\bin\jaxws\wsgen.bat -cp ;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar -d  -keep -r  -s  -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery
+
+You replace all variables like &quot;&quot; to the actual folders you have. And then run this command line in windows cmd window, or linux/unix term. Do not run it in Eclipse.]]></description>
+		<content:encoded><![CDATA[<p>\bin\jaxws\wsgen.bat -cp ;\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar -d  -keep -r  -s  -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery</p>
+<p>You replace all variables like &#8220;&#8221; to the actual folders you have. And then run this command line in windows cmd window, or linux/unix term. Do not run it in Eclipse.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Eric</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-10015</link>
+		<dc:creator><![CDATA[Eric]]></dc:creator>
+		<pubDate>Wed, 04 Jun 2014 15:30:03 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-10015</guid>
+		<description><![CDATA[In step 9 it clearly stated &quot;This command will generate a WSDL file and its schema in folder &quot;. So  is one existing folder where you want to place the generated WSDL and XSD files to.]]></description>
+		<content:encoded><![CDATA[<p>In step 9 it clearly stated &#8220;This command will generate a WSDL file and its schema in folder &#8220;. So  is one existing folder where you want to place the generated WSDL and XSD files to.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: pablotoledo</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-9030</link>
+		<dc:creator><![CDATA[pablotoledo]]></dc:creator>
+		<pubDate>Mon, 02 Jun 2014 18:52:34 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-9030</guid>
+		<description><![CDATA[In the above comment I wanted to write: What is the &quot;temp.dir&quot;?]]></description>
+		<content:encoded><![CDATA[<p>In the above comment I wanted to write: What is the &#8220;temp.dir&#8221;?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: pablotoledo</title>
+		<link>https://developer.ibm.com/wasdev/docs/sample_ejbwebservicessample/#comment-9028</link>
+		<dc:creator><![CDATA[pablotoledo]]></dc:creator>
+		<pubDate>Mon, 02 Jun 2014 18:48:31 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/sample_ejbwebservicessample/#comment-9028</guid>
+		<description><![CDATA[HI
+
+Can someone you tell me what is the ? (step 9), and how exactly I can execute the commands 
+
+\bin\jaxws\wsgen.bat -cp ;
+
+\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar -d  -keep -r  -s  -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery
+
+I am new with Eclipse.
+
+Thanks you in advance.]]></description>
+		<content:encoded><![CDATA[<p>HI</p>
+<p>Can someone you tell me what is the ? (step 9), and how exactly I can execute the commands </p>
+<p>\bin\jaxws\wsgen.bat -cp ;</p>
+<p>\dev\api\spec\com.ibm.ws.javaee.ejb.3.1_1.0.0.jar -d  -keep -r  -s  -wsdl com.ibm.liberty.jaxws.demo2.ejbwebservices.UserQuery</p>
+<p>I am new with Eclipse.</p>
+<p>Thanks you in advance.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Liberty in Docker on a Raspberry Pi</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/liberty-in-docker-on-a-raspberry-pi/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/liberty-in-docker-on-a-raspberry-pi/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Noah</title>
+		<link>https://developer.ibm.com/wasdev/docs/liberty-in-docker-on-a-raspberry-pi/#comment-151638</link>
+		<dc:creator><![CDATA[Noah]]></dc:creator>
+		<pubDate>Wed, 29 Nov 2017 10:14:50 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=18938#comment-151638</guid>
+		<description><![CDATA[Thanks to edward, the dockerfile is still not working.
+You need to change LIBERTY_VERSION from 16.0.0_2 or 16.0.0.2 to 17.0.0.2.
+If it is still not working, look in https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml which LIBERTY_VERSION is the last one.
+
+Best Regards, Noah]]></description>
+		<content:encoded><![CDATA[<p>Thanks to edward, the dockerfile is still not working.<br />
+You need to change LIBERTY_VERSION from 16.0.0_2 or 16.0.0.2 to 17.0.0.2.<br />
+If it is still not working, look in <a href="https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml">https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml</a> which LIBERTY_VERSION is the last one.</p>
+<p>Best Regards, Noah</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: edward</title>
+		<link>https://developer.ibm.com/wasdev/docs/liberty-in-docker-on-a-raspberry-pi/#comment-147648</link>
+		<dc:creator><![CDATA[edward]]></dc:creator>
+		<pubDate>Wed, 26 Oct 2016 23:35:03 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=18938#comment-147648</guid>
+		<description><![CDATA[I&#039;ve had difficulty running this and found I had to change the following:
+1. LIBERTY_VERSION from 16.0.0_2 to 16.0.0.2 (or 16.0.0.3)
+2. change &quot;grep $LIBERTY_VERSION -A 6&quot; in wget (line 31) to &quot;grep $LIBERTY_VERSION&quot;. For me this was resulting in the selection and download of two Liberty versions, which were clashing when it tried to unzip.]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;ve had difficulty running this and found I had to change the following:<br />
+1. LIBERTY_VERSION from 16.0.0_2 to 16.0.0.2 (or 16.0.0.3)<br />
+2. change &#8220;grep $LIBERTY_VERSION -A 6&#8221; in wget (line 31) to &#8220;grep $LIBERTY_VERSION&#8221;. For me this was resulting in the selection and download of two Liberty versions, which were clashing when it tried to unzip.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

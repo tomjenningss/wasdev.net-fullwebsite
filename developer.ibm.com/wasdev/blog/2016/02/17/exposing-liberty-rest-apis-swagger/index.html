@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="REST,swagger,rest api,api discovery," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-02-17",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Exposing WebSphere Liberty REST APIs with Swagger",
+						"contentType": "post",
+						"wpid":"9",
+						"topics":"REST,swagger,rest api,api discovery,",
+						"contentArea": "Blog"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"REST,swagger,rest api,api discovery,",
+		      "description":"Exposing WebSphere Liberty REST APIs with Swagger"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Exposing WebSphere Liberty REST APIs with Swagger - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Article that describes how to expose REST APIs in WebSphere Liberty using Swagger."/>
+<link rel="canonical" href="../../../../../index.html%3Fp=16853.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../../../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Exposing WebSphere Liberty REST APIs with Swagger Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../../../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../../../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../../../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../../../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../../../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../../../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../../../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../../../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../../../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../../../../index.html%3Fp=16853.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F02%2F17%2Fexposing-liberty-rest-apis-swagger%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F02%2F17%2Fexposing-liberty-rest-apis-swagger%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="post-template-default single single-post postid-16853 single-format-standard ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../../../../index.html%3Fp=16853.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../../../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../../../../../docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../../../../../docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../../../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../../../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../../../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../../../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../../../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+
+	<div id="primary" class="content-area-restricted ibm-fluid pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b> in</b> <a href="../../../../category/blog/index.html" rel="category tag">Blog</a></span></div><h1 class="entry-title">Exposing WebSphere Liberty REST APIs with Swagger</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../../../author/arthurdm/index.html">Arthur De Magalhaes</a></span><br>Published on February 17, 2016<i> / Updated on February 17, 2016</i></div><div class="pn_slic"><a href="../../../../../index.html%3Fp=16853.html#comments" class="pn_comments_icon">32 <i>Comments</i></a></div></div></header>			<main id="main" class="site-main " role="main">
+				<article id="post-16853" class="post-16853 post type-post status-publish format-standard hentry category-blog tag-rest tag-swagger tag-rest-api tag-api-discovery">
+		<div class="entry-content">
+		<p>One of the most used terms these days is <em>API Economy</em>.  It is a vast domain that covers the exposure and invocation of services from and to anywhere.  At the center of the API Economy are RESTful APIs because they are, by nature, language-neutral and by far the most widely used type of API today.</p>
+<p>Liberty supports the creation and deployment of REST APIs in a variety of forms (JAX-RS, Java EE servlet, OSGi web apps, REST Handler, etc) but, until recently, there was not an easy way of exposing all these REST assets from your Liberty instance.  This article will go over the new capabilities available in Liberty to close this gap.</p>
+<h2>The API discovery feature in Liberty</h2>
+<p>Starting with Liberty v8.5.5.8 we added a new feature called <code>apiDiscovery-1.0</code>.  This feature aggregates the Swagger-based definitions from all deployed applications (including runtime endpoints) into a single Swagger document, which can be consumed in native JSON or YAML formats or through our Swagger User Interface.</p>
+<p>If you don&#8217;t have the <code>apiDiscovery-1.0</code> feature in your Liberty installation you can pull it from the repository by running the command:</p>
+<p><code>wlp/bin installUtility install apiDiscovery-1.0</code></p>
+<p>The first release of this feature, in Liberty v8.5.5.8, focused on exposing pre-generated Swagger documents in JSON format by searching for a <code>swagger.json</code> file inside the <code>META-INF</code> folder of every deployed web module.  All these documents are aggregated internally to produce a single Swagger definition, available through a new Liberty REST endpoint at <code>https://&lt;host&gt;:&lt;https_port&gt;/ibm/api/docs</code>.</p>
+<p>Here is a sample of minimal configuration needed in your <code>server.xml</code> in order to reach that endpoint:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;server&gt;
+    &lt;featureManager&gt;
+        &lt;feature&gt;apiDiscovery-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+    &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;
+                  host=&quot;*&quot;
+                  httpPort=&quot;8010&quot;
+                  httpsPort=&quot;8020&quot;/&gt;
+
+    &lt;keyStore id=&quot;defaultKeyStore&quot; password=&quot;Liberty&quot;/&gt;
+  
+    &lt;basicRegistry id=&quot;basic&quot; realm=&quot;ibm/api&quot;&gt;
+        &lt;user name=&quot;bob&quot; password=&quot;bobpwd&quot; /&gt;
+    &lt;/basicRegistry&gt;
+&lt;/server&gt;
+</pre>
+<p>This JSON definition is useful for API Management solutions or any graphical user interface that wants to display the definitions of those RESTful APIs.  The following diagrams depicts this relationship:</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/02/app_diagram.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/02/app_diagram.png" alt="app_diagram" width="969" height="279" class="alignnone size-full wp-image-16865" srcset="../../../../../wp-content/uploads/sites/9/2016/02/app_diagram.png 969w, ../../../../../wp-content/uploads/sites/9/2016/02/app_diagram-300x86.png 300w" sizes="(max-width: 969px) 100vw, 969px" /></a></p>
+<h2>Liberty&#8217;s new Swagger User Interface</h2>
+<p>In fact, this is exactly what our Swagger User Interface (based on the <a href="https://github.com/swagger-api/swagger-ui" target="_blank">Swagger UI open source version</a>) does. It renders the aggregated definition from <code>/ibm/api/docs</code> and displays an attractive human-friendly UI at <code>https://&lt;host&gt;:&lt;https_port&gt;/ibm/api/explorer</code>:</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/02/explorer_screenshot.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/02/explorer_screenshot-1024x482.png" alt="explorer_screenshot" width="980" height="461" class="alignnone size-large wp-image-16867" srcset="../../../../../wp-content/uploads/sites/9/2016/02/explorer_screenshot-1024x482.png 1024w, ../../../../../wp-content/uploads/sites/9/2016/02/explorer_screenshot-300x141.png 300w, ../../../../../wp-content/uploads/sites/9/2016/02/explorer_screenshot.png 1126w" sizes="(max-width: 980px) 100vw, 980px" /></a></p>
+<p>Developers familiar with <a href="https://docs.strongloop.com/display/public/LB/Use+API+Explorer" target="_blank">StrongLoop&#8217;s Explorer</a> will appreciate the design decision of keeping the UIs consistent at the <code>/explorer</code> endpoint.</p>
+<p>From this user interface, just like the open source version and StrongLoop&#8217;s version, you can view all RESTful endpoints and actually invoke them right from your browser by filling in the corresponding fields and clicking the <strong>Try it out!</strong> button.  It&#8217;s a handy client built into your browser.  Another nice feature of our UI, which is not available in other Swagger renderings, is a filter box that lets you focus on the applications you really care about.  If, in the example above, I typed <code>/ibm/api/markham/traffic</code>, only the APIs for the Traffic application would be shown in the UI.</p>
+<p>From the screenshot above you&#8217;ll notice that Liberty&#8217;s JMX Connector APIs are also appearing.  These APIs were contributed to our API discovery aggregator through our OSGi SPI, <code>com.ibm.wsspi.rest.api.discovery.APIProvider</code>.  This very simple interface has a single method, called <code>getDocument</code>, which allows OSGi bundles (web bundles or regular bundles) to contribute REST API definitions into the aggregator.</p>
+<p>So if you enable <code>apiDiscovery-1.0</code> and any internal Liberty runtime that exposes REST APIs (<code>restConnector-1.0</code>, <code>collectiveController-1.0</code>, etc), you will see those APIs in both the aggregated document (<code>/ibm/api/docs</code>) and in the UI (<code>/ibm/api/explorer</code>)!  This is also valid for any extensions of Liberty, where their bundles can similarly expose their REST APIs through this SPI.</p>
+<p>Besides <code>&lt;webModule&gt;/META-INF/swagger.json</code> and the SPI, using Liberty v8.5.5.8 you also specify another location of your pre-generated Swagger definition by using the <code>webModuleDoc</code> configuration element, a child of <code>apiDiscovery</code>:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;apiDiscovery&gt;
+   &lt;webModuleDoc contextRoot=&quot;/30ExampleServletInEar&quot; docURL=&quot;/swagger.json&quot; /&gt;	
+   &lt;webModuleDoc contextRoot=&quot;/custom&quot; docURL=&quot;http://petstore.swagger.io/v2/swagger.json&quot; /&gt;
+&lt;/apiDiscovery&gt;
+</pre>
+<p>The first entry, for web module <code>/30ExampleServletInEar</code>, is specifying that a <code>swagger.json</code> is available relative to its context root, therefore at <code>/30ExampleServletInEar/swagger.json</code>, while the second entry, for web module <code>/custom</code>, is specifying the absolute URL of a remote document repository.</p>
+<p>The next few <a href="../../../../../index.html%3Fp=16399.html" target="_blank">Beta releases after Liberty v8.5.5.8</a> packed a lot more good stuff!  Let&#8217;s go through some of them.</p>
+<h2>New Liberty beta functionality</h2>
+<h3>JAX-RS 1.1/2.0 and Swagger annotation support</h3>
+<p>We now support auto-generation of Swagger definitions from JAX-RS and Swagger annotations!  This is a very important feature, since it supports the famous <em>bottom-up</em> development where the documentation comes from the code itself.  Just enable <code>apiDiscovery-1.0</code>, drop your JAX-RS application into the <code>dropins</code> directory (with either <code>jaxrs-1.1</code> or <code>jaxrs-2.0</code> enabled) and watch your APIs come out inside <code>/ibm/api/explorer</code>!</p>
+<h3>YAML support</h3>
+<p>The Liberty REST API Discovery framework now interchangeably supports both JSON and YAML formats. You can provide either format and query either format; it all merges and renders perfectly! This means you can now provide Liberty with your <code>swagger.json</code> OR <code>swagger.yaml</code> document inside <code>&lt;webModule&gt;/META-INF</code>, and also use an <code>Accept</code> header of <code>application/yaml</code> when querying <code>/ibm/api/docs</code> and you’ll be returned the aggregated Swagger 2.0 document in YAML format!</p>
+<p>You can also continue to use the <code>/ibm/api/explorer</code> as before, regardless of whether some documents are being provided as JSON and other as YAML.</p>
+<h3>Stub merging</h3>
+<p>You can now provide a <code>swagger.json</code> or <code>swagger.yaml</code> document inside <code>&lt;webModule&gt;/META-INF/stub</code> and Liberty’s REST API Discovery framework will automatically merge those contents with any JAX-RS annotations that we find. This is useful for the scenarios where your web module has regular servlets (non JAX-RS) that you want to document in addition to any JAX-RS endpoints.  You can also use this methodology to augment your existing annotations with extra information such as security constraints.</p>
+<h3>Collective aggregation and Explorer</h3>
+<p>There is now a collective-wide Swagger 2.0 document of your REST APIs. Just add <code>apiDiscovery-1.0</code> to your collective controller and to any collective member that wants to expose REST APIs, and when you query <code>/ibm/api/collective/docs</code> in the collective controller you will see a Swagger 2.0 document that aggregates all of the REST APIs being exposed in the collective!</p>
+<p>We also have its visual counterpart, available at <code>/ibm/api/collective/explorer</code>.  It is very similar to <code>/ibm/api/explorer</code>, except that this endpoint is only available in the Liberty collective controller. It will also show all REST APIs that are available from any of the members of that Liberty collective.  The filter box for the collective UI also has been enhanced to allow filtering based on collective member ID (a comma-separated tuple of the member’s hostName, URL-encoded <code>wlp/usr</code> path, and <code>serverName</code>).</p>
+<h3>WebSocket subscription</h3>
+<p>You can now subscribe to receive real-time updates on the REST APIs of a Liberty server.  This means that you can instantly know if a new application has been deployed with new REST endpoints, or if an existing set of endpoints has been dynamically removed.  Simply subscribe to the <code>/ibm/api/docs/subscription</code> endpoint and you’ll receive a WebSocket URL which you can open and listen for updates.  You can also subscribe for collective-wide notifications by calling <code>/ibm/api/collective/docs/subscription</code> on the collective controller.</p>
+<h3>Context root document serving</h3>
+<p>Any web module in Liberty that is providing Swagger 2.0 documentation through any means (i.e. annotations, pre-generated, stub merging, etc) can now directly reach the documentation by invoking <code>&lt;webModule_contextRoot&gt;/swagger.json</code> or <code>&lt;webModule_contextRoot&gt;/swagger.yaml</code>.  Except in cases where the application has explicitly blocked access to it, the REST API Discovery framework auto-detects this request from the web container and automatically responds with the Swagger 2.0 document.  This provides the exact same effect as querying <code>/ibm/api/docs?root=&lt;webModule_contextRoot&gt;</code>.</p>
+<p>For more information please visit <a href="https://www.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_api_discovery.html">Knowledge Center</a>.</p>
+			</div><!-- .entry-content -->
+	<footer class="entry-footer">
+		<div class="tags-links">Tags <a href="../../../../tag/rest/index.html" rel="tag">REST</a>, <a href="../../../../tag/swagger/index.html" rel="tag">swagger</a>, <a href="../../../../tag/rest-api/index.html" rel="tag">rest api</a>, <a href="../../../../tag/api-discovery/index.html" rel="tag">api discovery</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../../../author/arthurdm/index.html">Arthur De Magalhaes</a></span></p><ul class="byline__social"></ul><p class="byline__bio">Arthur is a senior software engineer and API / cloud architect for the WebSphere Application Server organization, as well as an IBM Master Inventor.  He focuses on cloud and API related initiatives, improving the connectivity and exposure of microservices.</p></div></div>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			32 comments on"Exposing WebSphere Liberty REST APIs with Swagger"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-153236">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Luigi Biai</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-153236">
+					July 11, 2018	         	</a>
+			</div>
+			      		<p>Hi Arthur,<br />
+thanks a lot for your article, but I am not able to display the REST APIs doc following your tutorial.<br />
+My project is composed by an EAR and JAXRS REST APIs involves in 3 projects:<br />
+&#8211; War project with the web.xml file and JaxRs Application class with the method getSingletons that returns all resources.<br />
+&#8211; Java jar file with interfaces for rest resources. The interfaces contain the JAX-RS annotations<br />
+&#8211; Java jar file with the resource implementation, each class extends the interface<br />
+Seems that apiDiscovery is not able to detect the resources.<br />
+If I create only one project with all resources inside it, the APIs are discovered well and all, but I need to use the scenario below.<br />
+Thanks a lot for your help</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-153236' onclick='return addComment.moveForm( "comment-153236", "153236", "respond", "16853" )' aria-label='Reply to Luigi Biai'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-153285">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-153285">
+					July 17, 2018	         	</a>
+			</div>
+			      		<p>Hey Luigi,<br />
+Thanks for your feedback!  Unfortunately, as you noted, the annotation aggregation of this feature was only works when the resources are inside the same project.    If you want keep your project structure you could add a YAML or JSON Swagger file (static doc) to your WAR file, which would expose your APIs correctly.  You can do that by putting all the resources in a single project, grabbing the output from api/docs, then saving that in your WAR &#8211; then you can go back to the original structure.  </p>
+<p>By the way, have you checked out the new MicroProfile OpenAPI feature?  <a href="https://openliberty.io/blog/2018/05/22/microprofile-openapi-intro.html">https://openliberty.io/blog/2018/05/22/microprofile-openapi-intro.html</a></p>
+<p>Thanks,<br />
+Arthur</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-153285' onclick='return addComment.moveForm( "comment-153285", "153285", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-151920">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Alon Amiramov</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-151920">
+					January 22, 2018	         	</a>
+			</div>
+			      		<p>Dear Arthur,<br />
+First of all thank you for your post.<br />
+Second, when im trying to run my JVM server with the apiDiscovery feture that i included in my server.xml file, my CICS procedure facing a lot of Dumps and errors which disable the proper behavior of the system.<br />
+Can you please tell me what do i need to implement before i enabled the apiDiscovery feature and what do i need to implement afterwards ? Because I think that i miss some step for making this work..<br />
+The things that i done :<br />
+1. Enabled apiDiscovery feature in server.xml file.<br />
+2. Created Swagger.json file under the META-INF directory in my service project.<br />
+That&#8217;s it.<br />
+Thak you very much.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-151920' onclick='return addComment.moveForm( "comment-151920", "151920", "respond", "16853" )' aria-label='Reply to Alon Amiramov'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-151936">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-151936">
+					January 24, 2018	         	</a>
+			</div>
+			      		<p>Hey Alon.    What you did is correct.    I suspect that these errors are coming from other web modules that you have deployed in your same Liberty application server?     You can disable api discovery for specific modules by using the `webModuleDoc` element (see this page for an example that disables a particular web module: <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_api_discovery.html">https://www.ibm.com/support/knowledgecenter/en/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_api_discovery.html</a>)</p>
+<p>Thanks,<br />
+Arthur</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-151936' onclick='return addComment.moveForm( "comment-151936", "151936", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-146813">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Prajakta</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146813">
+					June 22, 2016	         	</a>
+			</div>
+			      		<p>Hello Arthur,</p>
+<p>I configured apiDiscovery but I don&#8217;t see apis being discovered. I&#8217;m using WebSphere Liberty 8.5.5.9. The logs aren&#8217;t helping. Any pointers you can give?</p>
+<p>Thanks<br />
+Prajakta</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146813' onclick='return addComment.moveForm( "comment-146813", "146813", "respond", "16853" )' aria-label='Reply to Prajakta'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-146875">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146875">
+					June 29, 2016	         	</a>
+			</div>
+			      		<p>Hi Prajakta,</p>
+<p>The most common issue is having duplicate method names within your jaxrs app (ie: same method in 2 different resources).   Do you have that?  Can you offer more information about your app? (how is it structured, how many resources, are you using web.xml or purely annotations, etc)</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146875' onclick='return addComment.moveForm( "comment-146875", "146875", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-146427">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Rocky</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146427">
+					May 16, 2016	         	</a>
+			</div>
+			      		<p>Hi,</p>
+<p>I am using WAS 8.5.5.0, and want to add swagger to the REST service.<br />
+Can i add swagger? What are the other options with this WAS version?</p>
+<p>thanks in advance</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146427' onclick='return addComment.moveForm( "comment-146427", "146427", "respond", "16853" )' aria-label='Reply to Rocky'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-146428">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146428">
+					May 16, 2016	         	</a>
+			</div>
+			      		<p>Hi Rocky.  Unfortunately WAS 8.5.5.0 does not have any native Swagger support, as it started with Liberty 8.5.58 and 8.5.5.9.</p>
+<p>However, you can integrate our open source &#8220;offline swagger processor&#8221; (<a href="https://github.com/WASdev/tool.swagger.docgen">https://github.com/WASdev/tool.swagger.docgen</a>) into your build system to extract a Swagger definition (either JSON or YAML) from your applications, using the exact same logic as Liberty uses.</p>
+<p>Thanks,<br />
+Arthur</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146428' onclick='return addComment.moveForm( "comment-146428", "146428", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-146235">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Hans</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146235">
+					April 24, 2016	         	</a>
+			</div>
+			      		<p>Hi Arthur, great stuff you are presenting here 🙂 One question though, how can you exclude the /IBMJMXConnectorREST in Liberty from your Swagger docs? I really wouldn&#8217;t want to expose that one. Br, Hans</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146235' onclick='return addComment.moveForm( "comment-146235", "146235", "respond", "16853" )' aria-label='Reply to Hans'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-146237">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146237">
+					April 26, 2016	         	</a>
+			</div>
+			      		<p>Thanks Hans!  Be sure to check out the newest blog about this topic (with videos), at <a href="../../../../../index.html%3Fp=17519.html">https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/</a></p>
+<p>At the moment we don&#8217;t have a mechanism to automatically exclude runtime endpoints, such as the jmx connector, but that&#8217;s definitely on our radar and being considered.</p>
+<p>What you can do is take advantage of our multi-cardinality query param callled &#8220;root&#8221;.   So for example, if you have 2 apps, with corresponding context roots of /myApp1 and /myApp2, you can call &#8220;/ibm/api/docs?root=/myApp1&#038;root=/myApp2&#8221; and the Swagger 2.0 doc from that call will only contain those 2 apps, nothing else.</p>
+<p>The exact same filtering is available in the UI side by using the filter input box, where you can type in &#8220;/myApp1, /myApp2&#8221;</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146237' onclick='return addComment.moveForm( "comment-146237", "146237", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-146247">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Hans</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146247">
+					April 27, 2016	         	</a>
+			</div>
+			      		<p>Hi Arthur, thanks for a swift response and good suggestion. It does the trick nicely as a workaround and I believe it is the way to go until excluding runtime endpoints with a setting in the server.xml drops from your radar and onto your desk 🙂 I&#8217;m staying tuned and certainly looking forward to seeing what you come up with.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146247' onclick='return addComment.moveForm( "comment-146247", "146247", "respond", "16853" )' aria-label='Reply to Hans'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146192">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='../../../../../index.html%3Fp=17519.html' rel='external nofollow' class='url'>WASdev | Deploying Swagger-enabled endpoints with WebSphere Liberty, Bluemix, and API Connect - WASdev</a></span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146192">
+					April 13, 2016	         	</a>
+			</div>
+			      		<p>[&#8230;] blog is a follow-up to our WebSphere Liberty API discovery introduction and takes you on the journey of adding Swagger support to your assets, exposing them on-premise, [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146192' onclick='return addComment.moveForm( "comment-146192", "146192", "respond", "16853" )' aria-label='Reply to WASdev | Deploying Swagger-enabled endpoints with WebSphere Liberty, Bluemix, and API Connect - WASdev'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-146185">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Johan</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146185">
+					April 12, 2016	         	</a>
+			</div>
+			      		<p>2. Forgot one thing, which I think is kinda missing.<br />
+ a) base url: /PlayerAccount , api version: 1.0.0<br />
+ b) Grouping of contexts? (Actually haven&#8217;t tested this one yet)</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146185' onclick='return addComment.moveForm( "comment-146185", "146185", "respond", "16853" )' aria-label='Reply to Johan'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-2 pn-comment" id="comment-146195">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146195">
+					April 13, 2016	         	</a>
+			</div>
+			      		<p>Hey,</p>
+<p>(a) Because /ibm/api/docs is an aggregation of all the restful endpoints in that Liberty instance, we have logic that adds the basepath of the individual APIs into the path themselves, since likely not all APIs will share the same basepath.  Same goes for the version.  We have some improvements we are considering for the future, related to when you filter the docs into a specific app, by using the &#8220;root&#8221; query param (ie: /ibm/api/docs?root=/myApp)</p>
+<p>(b) The grouping in the UI is based on the Swagger tags used.  So if you use a common tag with your resources they will be grouped together.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146195' onclick='return addComment.moveForm( "comment-146195", "146195", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-146201">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Johan</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146201">
+					April 15, 2016	         	</a>
+			</div>
+			      		<p>What if there are two services on the same WLP server, containing /health? That would be kinda bad?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146201' onclick='return addComment.moveForm( "comment-146201", "146201", "respond", "16853" )' aria-label='Reply to Johan'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor odd alt depth-4 pn-comment" id="comment-146202">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146202">
+					April 15, 2016	         	</a>
+			</div>
+			      		<p>Hey,</p>
+<p>The two services couldn&#8217;t have the same context root, by virtue of that not being allowed in a web container.  But even if they contributed two swagger definitions with /health as the basepath, that&#8217;s fine because our aggregator will combine each of their basepaths with their URLs.   So the two services wouldn&#8217;t have the same basepath + URL combinations.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146202' onclick='return addComment.moveForm( "comment-146202", "146202", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-5 pn-comment" id="comment-146215">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Johan</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146215">
+					April 18, 2016	         	</a>
+			</div>
+			      		<p>Thats correct. But 2 services, with different context root can have the same api paths after the context. Such as /health<br />
+The explorer is then exposing them as &#8220;health&#8221; and &#8220;health1&#8221; which is kinda ugly.<br />
+I would guess we are not the only ones having an health endpoint in all of our services &#8211; therefor it would be quite awesome if the explorer would group services (contexts)!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146215' onclick='return addComment.moveForm( "comment-146215", "146215", "respond", "16853" )' aria-label='Reply to Johan'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146184">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Johan</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146184">
+					April 12, 2016	         	</a>
+			</div>
+			      		<p>1. Does it really need to require https/login? It would be nice if my users would not need that, it&#8217;s only used in dev and not needed at all for us.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146184' onclick='return addComment.moveForm( "comment-146184", "146184", "respond", "16853" )' aria-label='Reply to Johan'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-2 pn-comment" id="comment-146194">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146194">
+					April 13, 2016	         	</a>
+			</div>
+			      		<p>Hey Johan,</p>
+<p>At the moment it always requires https and login.  We will take this feedback into consideration for our future iterations.  Thanks!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146194' onclick='return addComment.moveForm( "comment-146194", "146194", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-3 pn-comment" id="comment-147784">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Jim</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-147784">
+					November 17, 2016	         	</a>
+			</div>
+			      		<p>I second the request for a no https/login option with apidiscovery.  Prototype SSL is simple, yes, production SSL is a pain, and in constant flux.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-147784' onclick='return addComment.moveForm( "comment-147784", "147784", "respond", "16853" )' aria-label='Reply to Jim'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-4 pn-comment" id="comment-147804">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-147804">
+					November 21, 2016	         	</a>
+			</div>
+			      		<p>Hey Jim,</p>
+<p>I agree.  Keep an eye out for the December beta driver, it might have something along those lines.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-147804' onclick='return addComment.moveForm( "comment-147804", "147804", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-146170">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">James</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146170">
+					April 07, 2016	         	</a>
+			</div>
+			      		<p>Hi,</p>
+<p>I have this working fine for my app using (WebSphere Application Server 2016.3.0.0/wlp-1.0.12.20160305-0200).  Only question is how do I &#8216;name&#8217; my API for use in the explorer?  It shows up as &#8216;default&#8217;.</p>
+<p>I thought that by &#8216;default&#8217;, it would be my context root&#8230; but I don&#8217;t see any way to influence that?</p>
+<p>Many thanks!</p>
+<p>james</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146170' onclick='return addComment.moveForm( "comment-146170", "146170", "respond", "16853" )' aria-label='Reply to James'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-2 pn-comment" id="comment-146177">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146177">
+					April 11, 2016	         	</a>
+			</div>
+			      		<p>Hi James,</p>
+<p>The name &#8220;default&#8221; is used when the app doesn&#8217;t contain any Swagger Tags.   You can add a tag (or more than 1) to your app by using the SwaggerDefinition annotation.  See an example here: <a href="https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/JAXRSApp.java">https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/JAXRSApp.java</a></p>
+<p>Then you have to reference that tag from a resource, by using the @API(&#8220;tagname&#8221;) annotation, as seen in <a href="https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/TasksResource.java">https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/TasksResource.java</a></p>
+<p>You could override each tag for a specific operation by using the @APIOperation annotation, <a href="http://docs.swagger.io/swagger-core/v1.5.0/apidocs/io/swagger/annotations/ApiOperation.html#tags()">http://docs.swagger.io/swagger-core/v1.5.0/apidocs/io/swagger/annotations/ApiOperation.html#tags()</a></p>
+<p>Thanks,<br />
+Arthur</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146177' onclick='return addComment.moveForm( "comment-146177", "146177", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-3 pn-comment" id="comment-146178">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">James</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-146178">
+					April 11, 2016	         	</a>
+			</div>
+			      		<p>Thanks Arthur.. Will give that a try!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-146178' onclick='return addComment.moveForm( "comment-146178", "146178", "respond", "16853" )' aria-label='Reply to James'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-ignacio even depth-3 pn-comment" id="comment-147211">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">ignacio4d</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-147211">
+					August 29, 2016	         	</a>
+			</div>
+			      		<p>Thanks Arthur. I have added<br />
+`@SwaggerDefinition(tags = { @Tag(name = &#8220;AwesomeAPI&#8221;, description = &#8220;some description&#8221;) })` to my Application class<br />
+and `@Api(tags={&#8220;AwesomeAPI&#8221;})` to all my resource classes and now everything is grouped nicely in &#8220;AwesomeAPI&#8221; group 🙂</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-147211' onclick='return addComment.moveForm( "comment-147211", "147211", "respond", "16853" )' aria-label='Reply to ignacio4d'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-145902">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">adam</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145902">
+					March 01, 2016	         	</a>
+			</div>
+			      		<p>I try once again as my xml was escaped in a wrong way</p>
+<p>&lt;server description=&quot;test server&quot;&gt;</p>
+<p>	&lt;featureManager&gt;<br />
+	    &lt;feature&gt;apiDiscovery-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;jaxrs-1.1&lt;/feature&gt;<br />
+		&lt;feature&gt;jdbc-4.0&lt;/feature&gt;<br />
+		&lt;feature&gt;json-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;localConnector-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;ejbLite-3.1&lt;/feature&gt;<br />
+		&lt;feature&gt;restConnector-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;servlet-3.0&lt;/feature&gt;<br />
+		&lt;feature&gt;jndi-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;cdi-1.0&lt;/feature&gt;<br />
+	    &lt;feature&gt;jpa-2.0&lt;/feature&gt;<br />
+	    &lt;feature&gt;ssl-1.0&lt;/feature&gt;<br />
+    &lt;/featureManager&gt;</p>
+<p>    &lt;httpEndpoint host=&quot;localhost&quot; httpPort=&quot;9080&quot; httpsPort=&quot;9143&quot; id=&quot;defaultHttpEndpoint&quot;/&gt;</p>
+<p>	&lt;library id=&quot;DB2JCC4Lib&quot;&gt;<br />
+		&lt;fileset dir=&quot;C:\IBM\SQLLIB\java&quot; includes=&quot;db2jcc4.jar db2jcc_license_cisuz.jar&quot;/&gt;<br />
+	&lt;/library&gt;<br />
+	&lt;dataSource id=&quot;db2&quot; jndiName=&quot;jdbc/ebookingDS&quot;&gt;<br />
+		&lt;jdbcDriver libraryRef=&quot;DB2JCC4Lib&quot;/&gt;<br />
+		&lt;properties.db2.jcc databaseName=&quot;DORDER&quot; password=&quot;foobar&quot; portNumber=&quot;50000&quot; serverName=&quot;localhost&quot; user=&quot;db2admin&quot;/&gt;<br />
+	&lt;/dataSource&gt;<br />
+	&lt;keyStore password=&quot;mysecret&quot;&gt;&lt;/keyStore&gt;<br />
+	&lt;basicRegistry id=&quot;basic&quot; realm=&quot;customRealm&quot;&gt;<br />
+	     &lt;user name=&quot;adam&quot; password=&quot;foobar&quot; /&gt;<br />
+	&lt;/basicRegistry&gt;</p>
+<p>	&lt;applicationMonitor updateTrigger=&quot;mbean&quot;/&gt;<br />
+	&lt;logging consoleLogLevel=&quot;INFO&quot; maxFileSize=&quot;20&quot; maxFiles=&quot;10&quot; traceFileName=&quot;trace.log&quot; traceFormat=&quot;BASIC&quot; traceSpecification=&quot;*=info:com.dsv.*=finest:com.ibm.ws.rsadapter.jdbc.WSJdbcConnection=finer&quot;/&gt;</p>
+<p>    &lt;webApplication id=&quot;RestArtifact&quot; location=&quot;RestArtifact.war&quot; name=&quot;RestArtifact&quot;/&gt;<br />
+&lt;/server&gt;</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145902' onclick='return addComment.moveForm( "comment-145902", "145902", "respond", "16853" )' aria-label='Reply to adam'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-2 pn-comment" id="comment-145903">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145903">
+					March 02, 2016	         	</a>
+			</div>
+			      		<p>Hi Adam.   It looks like you&#8217;re using Liberty 8558, which doesn&#8217;t support API discovery from annotations.  That support is in the current Beta, <a href="../../../../../downloads/liberty-profile-beta.html">https://developer.ibm.com/wasdev/downloads/liberty-profile-beta</a>.   </p>
+<p>Can you download the Beta and give it another try?</p>
+<p>Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145903' onclick='return addComment.moveForm( "comment-145903", "145903", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-3 pn-comment" id="comment-145904">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">adam</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145904">
+					March 02, 2016	         	</a>
+			</div>
+			      		<p>Hi Arthur,<br />
+downloading beta that helps 🙂 </p>
+<p>Now I have another issue:<br />
+io.swagger.models.SwaggerException: CWWKO1204E: Can not have multiple operations with the same operation ID: create</p>
+<p>This is not a surprise as operationId is created based on method name and my application contains many webservices so the method name is not unique. Could you fix that or report that issue to the right people.</p>
+<p>BR,<br />
+Adam</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145904' onclick='return addComment.moveForm( "comment-145904", "145904", "respond", "16853" )' aria-label='Reply to adam'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-4 pn-comment" id="comment-145907">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145907">
+					March 03, 2016	         	</a>
+			</div>
+			      		<p>Hey Adam,</p>
+<p>The operation ID must be unique within your web module, which can be achieved by choosing unique method names for your JAXRS methods, or by using the ApiOperation annotation (<a href="http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html">http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html</a>), with its nickname attribute.</p>
+<p>Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145907' onclick='return addComment.moveForm( "comment-145907", "145907", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-5 pn-comment" id="comment-145908">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Adam</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145908">
+					March 03, 2016	         	</a>
+			</div>
+			      		<p>Hi Arthur,<br />
+Thanks for the hint with @ApiOperation.nickname. Don&#8217;t you think however that it is a bit awkward to expect methods name to be globally unique? Using fully qualified name instead would be more justified in my humble opinion.</p>
+<p>Regards,<br />
+Adam</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145908' onclick='return addComment.moveForm( "comment-145908", "145908", "respond", "16853" )' aria-label='Reply to Adam'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-arthurdm bypostauthor even depth-6 pn-comment" id="comment-145911">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145911">
+					March 03, 2016	         	</a>
+			</div>
+			      		<p>I agree, that&#8217;s a good point.  I will take this feedback into consideration for our current set of improvements to this feature.  Thanks again for your input!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145911' onclick='return addComment.moveForm( "comment-145911", "145911", "respond", "16853" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-145901">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Adam</span> 	         	<a class="pn-comment__meta" href="../../../../../index.html%3Fp=16853.html#comment-145901">
+					March 01, 2016	         	</a>
+			</div>
+			      		<p>Hi Arthur,<br />
+I am trying to configure that but my api is not discovered. Could you please advice what am I doing wrong.</p>
+<p>C:\Program-extras\wlp-webProfile7-8.5.5.8\wlp\bin&gt;productInfo version<br />
+Product name: WebSphere Application Server<br />
+Product version: 8.5.5.8<br />
+Product edition: BASE_ILAN</p>
+<p>server.xml:</p>
+<p>	    apiDiscovery-1.0<br />
+		jaxrs-1.1<br />
+		jdbc-4.0<br />
+		json-1.0<br />
+		localConnector-1.0<br />
+		ejbLite-3.1<br />
+		restConnector-1.0<br />
+		servlet-3.0<br />
+		jndi-1.0<br />
+		cdi-1.0<br />
+	    jpa-2.0<br />
+	    ssl-1.0	    </p>
+<p>I use @Path annotation in my Webservices.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../../../../index.html%3Fp=16853.html#comment-145901' onclick='return addComment.moveForm( "comment-145901", "145901", "respond", "16853" )' aria-label='Reply to Adam'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../../../../index.html%3Fp=16853.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='16853' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="443e733d58" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="102"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+			</main><!-- #main -->
+
+				</div><!-- #primary -->
+
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../../../../index.html%3Fp=16853.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../../../../index.html%3Fp=16853.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../../../../index.html%3Fp=16853.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><script type='text/javascript' src='../../../../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../../../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F02%2F17%2Fexposing-liberty-rest-apis-swagger&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F02%2F17%2Fexposing-liberty-rest-apis-swagger"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

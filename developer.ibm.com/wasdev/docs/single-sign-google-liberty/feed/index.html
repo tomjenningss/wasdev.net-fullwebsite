@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Single sign-on with Google on Liberty</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Vijay Kumar</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-155816</link>
+		<dc:creator><![CDATA[Vijay Kumar]]></dc:creator>
+		<pubDate>Fri, 03 May 2019 19:00:34 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-155816</guid>
+		<description><![CDATA[This is great article. I am curious to know how token and session management is done for application and do you have any article that covers the cluster environment implementations.]]></description>
+		<content:encoded><![CDATA[<p>This is great article. I am curious to know how token and session management is done for application and do you have any article that covers the cluster environment implementations.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-153480</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Sun, 19 Aug 2018 17:10:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-153480</guid>
+		<description><![CDATA[Thanks for your question! This article is for authorization code grant type, and response type of code, which is default.  We now have another feature that is dedicated to the login with Google account, see https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_sec_sociallogin.html#twlp_sec_sociallogin__google]]></description>
+		<content:encoded><![CDATA[<p>Thanks for your question! This article is for authorization code grant type, and response type of code, which is default.  We now have another feature that is dedicated to the login with Google account, see <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_sec_sociallogin.html#twlp_sec_sociallogin__google">https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_sec_sociallogin.html#twlp_sec_sociallogin__google</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: JK</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-153465</link>
+		<dc:creator><![CDATA[JK]]></dc:creator>
+		<pubDate>Thu, 16 Aug 2018 18:26:34 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-153465</guid>
+		<description><![CDATA[For clarity, please include the OAuth 2.0 Flow being used, and include the openidConnectClient responseType parameter.   Thanks!]]></description>
+		<content:encoded><![CDATA[<p>For clarity, please include the OAuth 2.0 Flow being used, and include the openidConnectClient responseType parameter.   Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-148975</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Wed, 19 Apr 2017 15:23:24 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-148975</guid>
+		<description><![CDATA[Please import certificate from https://www.googleapis.com/oauth2/v3/token, not from https://accounts.google.com. Those two URL use different certificates.
+If you view their certificates, you can see they have different certificate serial numbers.]]></description>
+		<content:encoded><![CDATA[<p>Please import certificate from <a href="https://www.googleapis.com/oauth2/v3/token">https://www.googleapis.com/oauth2/v3/token</a>, not from <a href="https://accounts.google.com">https://accounts.google.com</a>. Those two URL use different certificates.<br />
+If you view their certificates, you can see they have different certificate serial numbers.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jens Faeustl</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-148926</link>
+		<dc:creator><![CDATA[Jens Faeustl]]></dc:creator>
+		<pubDate>Thu, 13 Apr 2017 21:35:41 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-148926</guid>
+		<description><![CDATA[First of all, like that article. but I do have a problem with the SSL communication. My AppServer (Liberty) telling my, that the CertSigner &quot;CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US&quot; is not in my keystone. I downloaded Google Cert from https://accounts.google.com and imported into my keystore. 
+
+PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+[ERROR   ] CWPKI0022E: FEHLER BEIM SSL-HANDSHAKE: Es wurde ein Unterzeichner mit dem SubjectDN CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US vom Zielhost gesendet. Der Unterzeichner muss dem lokalen Truststore /Users/jensfaustl/wlp/usr/servers/defaultServer/resources/security/key.jks im SSL-Konfigurationsalias defaultSSLConfig hinzugefügt werden. Die erweiterte Fehlernachricht aus der SSL-Handshake-Ausnahme lautet wie folgt: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+[ERROR   ] CWWKS1708E: Der OpenID Connect-Client [915261505398-q13oa5i12t01jvje67ft5qui51rfmg2q.apps.googleusercontent.com] kann keine Verbindung zum OpenID Connect-Provider unter [https://www.googleapis.com/oauth2/v3/token] herstellen, um ein ID-Token zu empfangen. Ursache: [java.security.cert.CertificateException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target].
+
+Do you have any idea why? 
+TX 
+Jens]]></description>
+		<content:encoded><![CDATA[<p>First of all, like that article. but I do have a problem with the SSL communication. My AppServer (Liberty) telling my, that the CertSigner &#8220;CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US&#8221; is not in my keystone. I downloaded Google Cert from <a href="https://accounts.google.com">https://accounts.google.com</a> and imported into my keystore. </p>
+<p>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p>[ERROR   ] CWPKI0022E: FEHLER BEIM SSL-HANDSHAKE: Es wurde ein Unterzeichner mit dem SubjectDN CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US vom Zielhost gesendet. Der Unterzeichner muss dem lokalen Truststore /Users/jensfaustl/wlp/usr/servers/defaultServer/resources/security/key.jks im SSL-Konfigurationsalias defaultSSLConfig hinzugefügt werden. Die erweiterte Fehlernachricht aus der SSL-Handshake-Ausnahme lautet wie folgt: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p>[ERROR   ] CWWKS1708E: Der OpenID Connect-Client [915261505398-q13oa5i12t01jvje67ft5qui51rfmg2q.apps.googleusercontent.com] kann keine Verbindung zum OpenID Connect-Provider unter [https://www.googleapis.com/oauth2/v3/token] herstellen, um ein ID-Token zu empfangen. Ursache: [java.security.cert.CertificateException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target].</p>
+<p>Do you have any idea why?<br />
+TX<br />
+Jens</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-146112</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Wed, 30 Mar 2016 15:03:57 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-146112</guid>
+		<description><![CDATA[If you want to have fine grained authorization, you can assign security role to each group user. However, you can not assign role to group as Google OpenID Connect provider does not emit group membership in id token. If you want to assign role to group, you can configure a LDAP registry for Liberty, and have Liberty to map Google account to LDAP.
+
+The following is a sample configuration to assign role to two Google users:
+
+
+    
+	
+		
+		
+	
+    
+]]></description>
+		<content:encoded><![CDATA[<p>If you want to have fine grained authorization, you can assign security role to each group user. However, you can not assign role to group as Google OpenID Connect provider does not emit group membership in id token. If you want to assign role to group, you can configure a LDAP registry for Liberty, and have Liberty to map Google account to LDAP.</p>
+<p>The following is a sample configuration to assign role to two Google users:</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Peter Nguyen</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-146111</link>
+		<dc:creator><![CDATA[Peter Nguyen]]></dc:creator>
+		<pubDate>Wed, 30 Mar 2016 14:25:12 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-146111</guid>
+		<description><![CDATA[Never mind. The question is out of scope of this tutorial.]]></description>
+		<content:encoded><![CDATA[<p>Never mind. The question is out of scope of this tutorial.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Peter Nguyen</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-146105</link>
+		<dc:creator><![CDATA[Peter Nguyen]]></dc:creator>
+		<pubDate>Tue, 29 Mar 2016 21:34:57 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-146105</guid>
+		<description><![CDATA[It&#039;s a great article. I have a question.  Pretend that I use OpenID to authenticate for just 2 users (namely, pssex01@gmail.com, yun14@gmail.com).  In the section of server.xml above, you indicated,
+
+            
+                
+                    
+                
+            
+        
+
+How would you implement for just 2 users instead of ALL_AUTHENTICATED_USERS ?]]></description>
+		<content:encoded><![CDATA[<p>It&#8217;s a great article. I have a question.  Pretend that I use OpenID to authenticate for just 2 users (namely, <a href="mailto:pssex01@gmail.com">pssex01@gmail.com</a>, <a href="mailto:yun14@gmail.com">yun14@gmail.com</a>).  In the section of server.xml above, you indicated,</p>
+<p>How would you implement for just 2 users instead of ALL_AUTHENTICATED_USERS ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-138506</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2016 15:42:07 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-138506</guid>
+		<description><![CDATA[Please use WebSphere 8.5.5.8 fix pack for your test. You can refer to this article for the configuration: https://www.ibm.com/developerworks/community/blogs/8f2bc166-3bdc-4a9d-bad4-3620dbb3e46c/entry/Enable_Appserver_RelyingParty_TAI_for_Google_authentication?lang=en]]></description>
+		<content:encoded><![CDATA[<p>Please use WebSphere 8.5.5.8 fix pack for your test. You can refer to this article for the configuration: <a href="https://www.ibm.com/developerworks/community/blogs/8f2bc166-3bdc-4a9d-bad4-3620dbb3e46c/entry/Enable_Appserver_RelyingParty_TAI_for_Google_authentication?lang=en">https://www.ibm.com/developerworks/community/blogs/8f2bc166-3bdc-4a9d-bad4-3620dbb3e46c/entry/Enable_Appserver_RelyingParty_TAI_for_Google_authentication?lang=en</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: George</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-136414</link>
+		<dc:creator><![CDATA[George]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2015 19:01:02 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-136414</guid>
+		<description><![CDATA[Is there a similar article on doing this with the full WebSphere profile?  I&#039;ve tried this with a WebSphere version 8.5.5.5 profile and get a null refresh_token error when trying to use Google for authentication.  This is in the trace.                                                                             SessionData   &#062;  setAccessToken(token [ya29.WgKth4hc6Rl3tcx2P7P4JdYcuimsxIyfqR40BEUKzDqXfjIUw_xvrfJ28uCqat-hiqwo]) Entry
+SessionData     getJsonValue(jobj[not null],key[refresh_token]) Entry
+RelyingPartyU 3   Did not find the value for the provided key [refresh_token] in json object]]></description>
+		<content:encoded><![CDATA[<p>Is there a similar article on doing this with the full WebSphere profile?  I&#8217;ve tried this with a WebSphere version 8.5.5.5 profile and get a null refresh_token error when trying to use Google for authentication.  This is in the trace.                                                                             SessionData   &gt;  setAccessToken(token [ya29.WgKth4hc6Rl3tcx2P7P4JdYcuimsxIyfqR40BEUKzDqXfjIUw_xvrfJ28uCqat-hiqwo]) Entry<br />
+SessionData     getJsonValue(jobj[not null],key[refresh_token]) Entry<br />
+RelyingPartyU 3   Did not find the value for the provided key [refresh_token] in json object</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-128403</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2015 15:00:09 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-128403</guid>
+		<description><![CDATA[You can use Firefox browser to import Google OP&#039;s certificate to your keystore. Here are steps:
+1. From firefox, enter https://accounts.google.com
+2. Left click the lock in the front of https
+3. click &quot;more information&quot;
+4. Click &quot;Security&quot;
+5. Click &quot;View Certificate&quot;
+6. Click &quot;Details&quot;
+7. Click &quot;Export&quot;
+8. Save
+
+After that, you can use java keytool or other keytool (like iKeyman) to import Google&#039;s certificate to your local keyStore.]]></description>
+		<content:encoded><![CDATA[<p>You can use Firefox browser to import Google OP&#8217;s certificate to your keystore. Here are steps:<br />
+1. From firefox, enter <a href="https://accounts.google.com">https://accounts.google.com</a><br />
+2. Left click the lock in the front of https<br />
+3. click &#8220;more information&#8221;<br />
+4. Click &#8220;Security&#8221;<br />
+5. Click &#8220;View Certificate&#8221;<br />
+6. Click &#8220;Details&#8221;<br />
+7. Click &#8220;Export&#8221;<br />
+8. Save</p>
+<p>After that, you can use java keytool or other keytool (like iKeyman) to import Google&#8217;s certificate to your local keyStore.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Manu</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-128385</link>
+		<dc:creator><![CDATA[Manu]]></dc:creator>
+		<pubDate>Tue, 04 Aug 2015 11:17:11 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-128385</guid>
+		<description><![CDATA[Thank you for your very useful article. Its not clear how do one do this step. Can you pls elaborate ?
+
+In addition to storing the Liberty server certificate, you will need to import Google’s certificate to this key store.]]></description>
+		<content:encoded><![CDATA[<p>Thank you for your very useful article. Its not clear how do one do this step. Can you pls elaborate ?</p>
+<p>In addition to storing the Liberty server certificate, you will need to import Google’s certificate to this key store.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chunlong Liang</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-117324</link>
+		<dc:creator><![CDATA[Chunlong Liang]]></dc:creator>
+		<pubDate>Fri, 20 Mar 2015 04:26:01 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-117324</guid>
+		<description><![CDATA[Yes, that is Liberty profile&#039;s redirect URL. Liberty profile redirect URL is like https://&lt;hostname&gt;:&lt;sslport&gt;/oidcclient/redirect/&lt;openidConnecClient id in server.xml&gt;. If you have multiple openidConnecClient defined in Liberty server.xml, make sure you use the correct ID (You could define multiple IDs to single-sign-on with different OpenID Connect providers).]]></description>
+		<content:encoded><![CDATA[<p>Yes, that is Liberty profile&#8217;s redirect URL. Liberty profile redirect URL is like https://:/oidcclient/redirect/. If you have multiple openidConnecClient defined in Liberty server.xml, make sure you use the correct ID (You could define multiple IDs to single-sign-on with different OpenID Connect providers).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: James Stansell</title>
+		<link>https://developer.ibm.com/wasdev/docs/single-sign-google-liberty/#comment-116919</link>
+		<dc:creator><![CDATA[James Stansell]]></dc:creator>
+		<pubDate>Wed, 18 Mar 2015 20:25:57 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11797#comment-116919</guid>
+		<description><![CDATA[Just wondering about step 6 (copied below) - is that redirect URI the one used in step 4 of Figure 2 in your developerWorks article?
+
+6. Edit REDIRECT URIS to add Liberty profile’s redirect URL. In this demo, it is https://localhost:8020/oidcclient/redirect/googleRP]]></description>
+		<content:encoded><![CDATA[<p>Just wondering about step 6 (copied below) &#8211; is that redirect URI the one used in step 4 of Figure 2 in your developerWorks article?</p>
+<p>6. Edit REDIRECT URIS to add Liberty profile’s redirect URL. In this demo, it is <a href="https://localhost:8020/oidcclient/redirect/googleRP">https://localhost:8020/oidcclient/redirect/googleRP</a></p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

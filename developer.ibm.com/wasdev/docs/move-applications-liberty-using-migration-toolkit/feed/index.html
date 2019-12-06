@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Move applications to Liberty using the Migration Toolkit</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: DaliaAboSheasha</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-153367</link>
+		<dc:creator><![CDATA[DaliaAboSheasha]]></dc:creator>
+		<pubDate>Wed, 01 Aug 2018 15:11:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-153367</guid>
+		<description><![CDATA[If you can&#039;t run the tool with Java 7 or higher, the following options still work with Java 6: --analyze, --evaluate, and --inventory. However, the default --all and the --featureList option are not supported with Java 6.]]></description>
+		<content:encoded><![CDATA[<p>If you can&#8217;t run the tool with Java 7 or higher, the following options still work with Java 6: &#8211;analyze, &#8211;evaluate, and &#8211;inventory. However, the default &#8211;all and the &#8211;featureList option are not supported with Java 6.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Dalia Abo Sheasha</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-153366</link>
+		<dc:creator><![CDATA[Dalia Abo Sheasha]]></dc:creator>
+		<pubDate>Wed, 01 Aug 2018 14:51:08 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-153366</guid>
+		<description><![CDATA[Hey Akhil,
+
+I would advise you to run the tool with Java 7. Currently, we support the &quot;--analyze&quot;, &quot;--evaluate&quot;, and &quot;--inventory&quot; options with Java 6. However, the &quot;--featureList&quot; option is not supported with Java 6. 
+
+If you are unable to run with Java 7, you can run the supported options separately with Java 6. 
+
+Thanks,
+Dalia]]></description>
+		<content:encoded><![CDATA[<p>Hey Akhil,</p>
+<p>I would advise you to run the tool with Java 7. Currently, we support the &#8220;&#8211;analyze&#8221;, &#8220;&#8211;evaluate&#8221;, and &#8220;&#8211;inventory&#8221; options with Java 6. However, the &#8220;&#8211;featureList&#8221; option is not supported with Java 6. </p>
+<p>If you are unable to run with Java 7, you can run the supported options separately with Java 6. </p>
+<p>Thanks,<br />
+Dalia</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Cindy High</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-153365</link>
+		<dc:creator><![CDATA[Cindy High]]></dc:creator>
+		<pubDate>Wed, 01 Aug 2018 13:41:00 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-153365</guid>
+		<description><![CDATA[Akhil, The root cause looks like the version of Java you are using.  Are you using Java 6?  Can you try at least Java 7 - preferably Java 8?  I see that the download page says that Java 6 is still supported. We will get that corrected.  Java 6 is no longer supported by the tool.]]></description>
+		<content:encoded><![CDATA[<p>Akhil, The root cause looks like the version of Java you are using.  Are you using Java 6?  Can you try at least Java 7 &#8211; preferably Java 8?  I see that the download page says that Java 6 is still supported. We will get that corrected.  Java 6 is no longer supported by the tool.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Akhil</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-153354</link>
+		<dc:creator><![CDATA[Akhil]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2018 18:58:49 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-153354</guid>
+		<description><![CDATA[I prefer to use the Migration Toolkit for Application Binaries to scan application binaries but it always throws errors whenever I try to do &#039;java -jar binaryAppScanner.jar C:\Git_repository\.....1.0.11.ear&#039;
+
+Exception in thread &quot;main&quot; java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)
+Caused by: java.lang.UnsupportedClassVersionError: com/ibm/ws/kernel/feature/resolver/FeatureResolver$Repository : Unsupported major.minor version 51.0
+        at java.lang.ClassLoader.defineClass1(Native Method)
+
+Not sure of the root cause. Pleas advise.]]></description>
+		<content:encoded><![CDATA[<p>I prefer to use the Migration Toolkit for Application Binaries to scan application binaries but it always throws errors whenever I try to do &#8216;java -jar binaryAppScanner.jar C:\Git_repository\&#8230;..1.0.11.ear&#8217;</p>
+<p>Exception in thread &#8220;main&#8221; java.lang.reflect.InvocationTargetException<br />
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+        at java.lang.reflect.Method.invoke(Unknown Source)<br />
+        at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)<br />
+Caused by: java.lang.UnsupportedClassVersionError: com/ibm/ws/kernel/feature/resolver/FeatureResolver$Repository : Unsupported major.minor version 51.0<br />
+        at java.lang.ClassLoader.defineClass1(Native Method)</p>
+<p>Not sure of the root cause. Pleas advise.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Check for application problems using the binary scanner - WASdev</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151888</link>
+		<dc:creator><![CDATA[Check for application problems using the binary scanner - WASdev]]></dc:creator>
+		<pubDate>Fri, 12 Jan 2018 18:45:22 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151888</guid>
+		<description><![CDATA[[&#8230;] question on the Move applications to Liberty using the Migration Toolkit article just reminded me that the binary scanner isn&#8217;t just for migration. Use the binary [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] question on the Move applications to Liberty using the Migration Toolkit article just reminded me that the binary scanner isn&#8217;t just for migration. Use the binary [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Walter</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151875</link>
+		<dc:creator><![CDATA[Walter]]></dc:creator>
+		<pubDate>Wed, 10 Jan 2018 21:25:10 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151875</guid>
+		<description><![CDATA[Thanks a lot Cindy. I made some adjustments about the encoding and could run it correctly.]]></description>
+		<content:encoded><![CDATA[<p>Thanks a lot Cindy. I made some adjustments about the encoding and could run it correctly.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Cindy High</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151874</link>
+		<dc:creator><![CDATA[Cindy High]]></dc:creator>
+		<pubDate>Wed, 10 Jan 2018 16:47:02 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151874</guid>
+		<description><![CDATA[Hi Walter, 
+There is something incorrect about the dash &quot;-&quot; characters in your command.  First, the &quot;all&quot; parameter needs 2 dashes:  --all.  Also your other dash characters look like a x&#039;2011&#039; hex character rather than a x&#039;2d&#039;. Maybe you copy/pasted the string from a document or website that did a translation on the character?  If I past your command, change the app to a file I have and retype the dashes, it works.]]></description>
+		<content:encoded><![CDATA[<p>Hi Walter,<br />
+There is something incorrect about the dash &#8220;-&#8221; characters in your command.  First, the &#8220;all&#8221; parameter needs 2 dashes:  &#8211;all.  Also your other dash characters look like a x&#8217;2011&#8242; hex character rather than a x&#8217;2d&#8217;. Maybe you copy/pasted the string from a document or website that did a translation on the character?  If I past your command, change the app to a file I have and retype the dashes, it works.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Walter</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151868</link>
+		<dc:creator><![CDATA[Walter]]></dc:creator>
+		<pubDate>Tue, 09 Jan 2018 16:44:03 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151868</guid>
+		<description><![CDATA[I&#039;m having problems with the options parameters, can you tell me what&#039;s incorrect with this custom call?
+
+java -jar binaryAppScanner.jar ../legacyApp.ear --all ‑‑sourceAppServer=was70 ‑‑sourceJava=ibm6 ‑‑targetAppServer=liberty ‑‑targetJava=ibm8 ‑‑targetJavaEE=ee6
+SEVERE: The following option was not recognized: ‑‑sourceAppServer=was70
+SEVERE: The following option was not recognized: ‑‑sourceJava=ibm6
+SEVERE: The following option was not recognized: ‑‑targetAppServer=liberty
+SEVERE: The following option was not recognized: ‑‑targetJava=ibm8
+SEVERE: The following option was not recognized: ‑‑targetJavaEE=ee6
+
+Usage: java -jar binaryAppScanner.jar binaryInputPath [action] [options]]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m having problems with the options parameters, can you tell me what&#8217;s incorrect with this custom call?</p>
+<p>java -jar binaryAppScanner.jar ../legacyApp.ear &#8211;all ‑‑sourceAppServer=was70 ‑‑sourceJava=ibm6 ‑‑targetAppServer=liberty ‑‑targetJava=ibm8 ‑‑targetJavaEE=ee6<br />
+SEVERE: The following option was not recognized: ‑‑sourceAppServer=was70<br />
+SEVERE: The following option was not recognized: ‑‑sourceJava=ibm6<br />
+SEVERE: The following option was not recognized: ‑‑targetAppServer=liberty<br />
+SEVERE: The following option was not recognized: ‑‑targetJava=ibm8<br />
+SEVERE: The following option was not recognized: ‑‑targetJavaEE=ee6</p>
+<p>Usage: java -jar binaryAppScanner.jar binaryInputPath [action] [options]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Cheryl_King</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151434</link>
+		<dc:creator><![CDATA[Cheryl_King]]></dc:creator>
+		<pubDate>Thu, 26 Oct 2017 15:08:29 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151434</guid>
+		<description><![CDATA[Change your command to the following: java -jar binaryAppScanner.jar isc.ear --all
+
+You are meant to replace binaryInputPath with the path to your application binary.]]></description>
+		<content:encoded><![CDATA[<p>Change your command to the following: java -jar binaryAppScanner.jar isc.ear &#8211;all</p>
+<p>You are meant to replace binaryInputPath with the path to your application binary.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: BinXiong</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-151369</link>
+		<dc:creator><![CDATA[BinXiong]]></dc:creator>
+		<pubDate>Tue, 17 Oct 2017 07:55:44 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-151369</guid>
+		<description><![CDATA[Why error msg keeps jumping out...
+----------------------------------
+The file that is specified by the binaryInputPath parameter does not exist.
+The specified binaryInputPath directory contains no supported binary file types.
+The following option was not recognized: isc.ear
+----------------------------------
+My command:  java -jar binaryAppScanner.jar binaryInputPath --all isc.ear]]></description>
+		<content:encoded><![CDATA[<p>Why error msg keeps jumping out&#8230;<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+The file that is specified by the binaryInputPath parameter does not exist.<br />
+The specified binaryInputPath directory contains no supported binary file types.<br />
+The following option was not recognized: isc.ear<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+My command:  java -jar binaryAppScanner.jar binaryInputPath &#8211;all isc.ear</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Cheryl_King</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-148438</link>
+		<dc:creator><![CDATA[Cheryl_King]]></dc:creator>
+		<pubDate>Mon, 30 Jan 2017 22:43:23 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-148438</guid>
+		<description><![CDATA[Hello Matthias,
+I just wanted to point out that the referenced RFE has been implemented and delivered in December 2016. Check out the new featureList action in the binary scanner command line tool described here: https://developer.ibm.com/wasdev/blog/2017/01/25/binary-scanner-not-just-migrations-anymore/]]></description>
+		<content:encoded><![CDATA[<p>Hello Matthias,<br />
+I just wanted to point out that the referenced RFE has been implemented and delivered in December 2016. Check out the new featureList action in the binary scanner command line tool described here: <a href="https://developer.ibm.com/wasdev/blog/2017/01/25/binary-scanner-not-just-migrations-anymore/">https://developer.ibm.com/wasdev/blog/2017/01/25/binary-scanner-not-just-migrations-anymore/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: CindyHigh</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-147394</link>
+		<dc:creator><![CDATA[CindyHigh]]></dc:creator>
+		<pubDate>Fri, 16 Sep 2016 19:49:45 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-147394</guid>
+		<description><![CDATA[Hi Narendra, 
+Today we don&#039;t have the capability of adding custom rules. Which tool are you looking for this functionality? The binary scanner or the Eclipse source scanner? 
+
+You can create a request for enhancement at https://www.ibm.com/developerworks/rfe/?BRAND_ID=181.
+
+Cindy]]></description>
+		<content:encoded><![CDATA[<p>Hi Narendra,<br />
+Today we don&#8217;t have the capability of adding custom rules. Which tool are you looking for this functionality? The binary scanner or the Eclipse source scanner? </p>
+<p>You can create a request for enhancement at <a href="https://www.ibm.com/developerworks/rfe/?BRAND_ID=181">https://www.ibm.com/developerworks/rfe/?BRAND_ID=181</a>.</p>
+<p>Cindy</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: CindyHigh</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-147167</link>
+		<dc:creator><![CDATA[CindyHigh]]></dc:creator>
+		<pubDate>Wed, 17 Aug 2016 17:34:18 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-147167</guid>
+		<description><![CDATA[Hi Matthias,
+The WebSphere Configuration Migration Tool that migrates WebSphere property based configuration to Liberty server.xml is currently only available in Eclipse.  Do you want to migrate properties based configuration to server.xml using the command-line?  Or, do you want a command-line tool to scan your application and create a skeleton server.xml?
+
+If it is the second, you can vote for https://www.ibm.com/developerworks/rfe/execute?use_case=viewRfe&amp;CR_ID=68893.
+
+If it is the first, let me know and perhaps also open a new RFE.]]></description>
+		<content:encoded><![CDATA[<p>Hi Matthias,<br />
+The WebSphere Configuration Migration Tool that migrates WebSphere property based configuration to Liberty server.xml is currently only available in Eclipse.  Do you want to migrate properties based configuration to server.xml using the command-line?  Or, do you want a command-line tool to scan your application and create a skeleton server.xml?</p>
+<p>If it is the second, you can vote for <a href="https://www.ibm.com/developerworks/rfe/execute?use_case=viewRfe&#038;CR_ID=68893">https://www.ibm.com/developerworks/rfe/execute?use_case=viewRfe&#038;CR_ID=68893</a>.</p>
+<p>If it is the first, let me know and perhaps also open a new RFE.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Matthias</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-147161</link>
+		<dc:creator><![CDATA[Matthias]]></dc:creator>
+		<pubDate>Tue, 16 Aug 2016 12:54:00 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-147161</guid>
+		<description><![CDATA[In case I want to do a migration to Liberty there is a nice feature in the Eclipse plugin to generate a server.xml. Is it possible to generate this file also via command line? Or any other way except going via Eclipse? Thanks!]]></description>
+		<content:encoded><![CDATA[<p>In case I want to do a migration to Liberty there is a nice feature in the Eclipse plugin to generate a server.xml. Is it possible to generate this file also via command line? Or any other way except going via Eclipse? Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: NARENDRA NAIDU</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-146910</link>
+		<dc:creator><![CDATA[NARENDRA NAIDU]]></dc:creator>
+		<pubDate>Sun, 03 Jul 2016 12:15:45 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-146910</guid>
+		<description><![CDATA[Can I add more custom rules to the toolkit?
+For e.g. I want to add rules for Hibernate or a third-party library.]]></description>
+		<content:encoded><![CDATA[<p>Can I add more custom rules to the toolkit?<br />
+For e.g. I want to add rules for Hibernate or a third-party library.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: CindyHigh</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-146416</link>
+		<dc:creator><![CDATA[CindyHigh]]></dc:creator>
+		<pubDate>Mon, 16 May 2016 00:00:14 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-146416</guid>
+		<description><![CDATA[Can you give a little more information on what hung?  Did you get analysis results.  Running analysis should have told you about the org.apache.catalina classes in use.  You will need to manually migrate use of those classes manually.]]></description>
+		<content:encoded><![CDATA[<p>Can you give a little more information on what hung?  Did you get analysis results.  Running analysis should have told you about the org.apache.catalina classes in use.  You will need to manually migrate use of those classes manually.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: James</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-146409</link>
+		<dc:creator><![CDATA[James]]></dc:creator>
+		<pubDate>Sun, 15 May 2016 00:51:52 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-146409</guid>
+		<description><![CDATA[Tried this from Eclipse to migrate a Tomcat app.  Only seleced migrate app.  Just hangs.  Kill eclipse then try again.. says it&#039;s been migrated to the server.. but there are compile errors since the app uses catalina classes etc. (import org.apache.catalina.realm.GenericPrincipal;)
+
+Probably didn&#039;t complete at all.
+
+Will try again... and try to migrate server too.]]></description>
+		<content:encoded><![CDATA[<p>Tried this from Eclipse to migrate a Tomcat app.  Only seleced migrate app.  Just hangs.  Kill eclipse then try again.. says it&#8217;s been migrated to the server.. but there are compile errors since the app uses catalina classes etc. (import org.apache.catalina.realm.GenericPrincipal;)</p>
+<p>Probably didn&#8217;t complete at all.</p>
+<p>Will try again&#8230; and try to migrate server too.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: CindyHigh</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-146216</link>
+		<dc:creator><![CDATA[CindyHigh]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2016 14:12:59 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-146216</guid>
+		<description><![CDATA[Hi, 
+Can you size the WebSphere Configuration Migration window?  It looks like there is a problem with automatic sizing of the wizard.
+
+Cindy]]></description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+Can you size the WebSphere Configuration Migration window?  It looks like there is a problem with automatic sizing of the wizard.</p>
+<p>Cindy</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: lupin</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-146206</link>
+		<dc:creator><![CDATA[lupin]]></dc:creator>
+		<pubDate>Fri, 15 Apr 2016 23:47:19 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-146206</guid>
+		<description><![CDATA[Hi,
+
+I tried to use the Websphere Configuration Migration Toolkit but the file input button isn&#039;t showing. All I see is this messages
+
+ Step 1: Specify Input
+   - start
+   - go to
+   - Execute the following command
+
+I have the properties files but no way of putting it in as input.
+
+Cheer
+lupin]]></description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>I tried to use the Websphere Configuration Migration Toolkit but the file input button isn&#8217;t showing. All I see is this messages</p>
+<p> Step 1: Specify Input<br />
+   &#8211; start<br />
+   &#8211; go to<br />
+   &#8211; Execute the following command</p>
+<p>I have the properties files but no way of putting it in as input.</p>
+<p>Cheer<br />
+lupin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: vinoth</title>
+		<link>https://developer.ibm.com/wasdev/docs/move-applications-liberty-using-migration-toolkit/#comment-142585</link>
+		<dc:creator><![CDATA[vinoth]]></dc:creator>
+		<pubDate>Fri, 29 Jan 2016 07:00:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11849#comment-142585</guid>
+		<description><![CDATA[very helpful in providing the inital considerations and planning for any migration]]></description>
+		<content:encoded><![CDATA[<p>very helpful in providing the inital considerations and planning for any migration</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-09-16",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Move applications to Liberty using the Migration Toolkit",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": ""
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Move applications to Liberty using the Migration Toolkit"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Move applications to Liberty using the Migration Toolkit - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A brief overview of three migration tools that can help you move applications to Liberty from traditional WebSphere Application Server."/>
+<link rel="canonical" href="docs/move-applications-liberty-using-migration-toolkit.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Move applications to Liberty using the Migration Toolkit Comments Feed" href="docs/move-applications-liberty-using-migration-toolkit/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=11849.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fmove-applications-liberty-using-migration-toolkit%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fmove-applications-liberty-using-migration-toolkit%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-11849 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="docs/move-applications-liberty-using-migration-toolkit.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"></div><h1 class="entry-title">Move applications to Liberty using the Migration Toolkit</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/cthigh/index.html">Cindy High</a></span><br>Published on September 16, 2016<i> / Updated on June 13, 2017</i></div><div class="pn_slic"><a href="docs/move-applications-liberty-using-migration-toolkit.html#comments" class="pn_comments_icon">20 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="docs/move-applications-liberty-using-migration-toolkit.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A brief overview of four migration tools that can help you move applications to Liberty from traditional WebSphere Application Server.</p>
+<h2>Tools simplified!</h2>
+<p>If you want to move applications to Liberty or Liberty for Java on IBM Bluemix, there are four migration tools that can help speed up the process:</p>
+<ul>
+<li>Migration Toolkit for Application Binaries</li>
+<li>WebSphere Migration Discovery Tool</li>
+<li>WebSphere Application Server Migration Toolkit</li>
+<li>WebSphere Configuration Migration Tool</li>
+</ul>
+<p>See our <a href="docs/learn_wamt_tomcat_config_tp.html">migration home page</a> for a description of each of these tools.</p>
+<h2>Tools for each step along the way</h2>
+<p>The migration tools can help in each step of the migration process:</p>
+<ol>
+<li>Initial application evaluation and planning: Migration Toolkit for Application Binaries or the Eclipse-based Migration Toolkit and the WebSphere Migration Discovery Tool</li>
+<li>Detailed analysis: Migration Toolkit for Application Binaries or the Eclipse-based Migration Toolkit</li>
+<li>Application development: Eclipse-based Migration Toolkit</li>
+<li>Configuration migration: WebSphere Configuration Migration Tool</li>
+</ol>
+<p>Also use the WebSphere Developer Tools for additional help with adding features to your configuration and for an overall great developer experience.</p>
+<h3>1. Initial application evaluation and planning</h3>
+<p>As a first step, I prefer to use the Migration Toolkit for Application Binaries to scan application binaries. The new Application Migration Report makes it easier than ever to analyze your application binaries for migration to Liberty. This report combines the content of the Application Evaluation Report (&#8211;evaluate), the Detailed Migration Analysis Report (&#8211;analyze), the Application Inventory Report (&#8211;inventory), and the feature list configuration file (&#8211;featureList). The Application Migration Report is generated with the &#8211;all action, which is the new default action.</p>
+<p>Running the binary tool is as simple as:</p>
+<pre>java -jar binaryAppScanner.jar MyApplication.ear</pre>
+<p>This creates an Application Migration Report in HTML format as shown below. Use the <code>--help</code> option to learn the other options including the JSON format option.</p>
+<figure id="attachment_19284" style="width: 934px" class="wp-caption alignnone"><a href="wp-content/uploads/sites/9/2016/09/consolidatedMigrationReport.jpg"><br />
+<img src="wp-content/uploads/sites/9/2016/09/consolidatedMigrationReport.jpg" alt="Application Migration Report" width="934" height="738" class="size-full wp-image-19284" /></a><br />
+<figcaption class="wp-caption-text">Application Migration Report</figcaption>
+</figure>
+<p>To just evaluate application binaries for the technologies they use and the IBM platforms that support those technologies, you can use the &#8211;evaluate action.</p>
+<pre>java -jar binaryAppScanner.jar MyApplication.ear --evaluate</pre>
+<p>Evaluate the report to determine where the application is best suited to run. If there is no check mark for a technology, it is not supported on that WebSphere edition without a more substantial technology shift. If you point to a folder, a summary of the applications and the IBM platforms that fully support the technologies used by each application is included at the top of the report. You can select a particular application in the summary to see the details on the technologies used and where they are supported.</p>
+<figure id="attachment_17198" style="width: 980px" class="wp-caption alignnone"><a href="wp-content/uploads/sites/9/2016/06/report.jpg"><br />
+<img class="wp-image-17198 size-large" src="wp-content/uploads/sites/9/2016/06/report.jpg" alt="" width="980" height="744" /></a><br />
+<figcaption class="wp-caption-text">Application Evaluation Report</figcaption>
+</figure>
+<p>If you want a simple yes/no answer whether your application&#8217;s technologies are supported on a particular platform you might find the summary in the JSON report useful to provide the answer.</p>
+<pre>
+
+{
+   "report": "technology",
+   "version": "1.0",
+   "options": [
+   ],
+   "applications": [
+      "/apps/PlantsByWebSphereV7.ear"
+   ],
+
+   .... technology data is omitted
+
+   "summary": {
+      "bluemixLiberty": false,
+      "libertyCore": false,
+      "liberty": false,
+      "websphereTraditional": true,
+      "ndLiberty": false,
+      "ndTraditional": true,
+      "zosLiberty": false,
+      "zosTraditional": true
+   }
+}
+</pre>
+<p>You can also use the Migration Toolkit for Application Binaries to produce an inventory report of your applications. The inventory report helps you understand the content of the application such as how many Servlets, JPS files, EJBs, utility JAR files, and more. This information is useful when filling out the questionnaire in the <a href="http://ibm.biz/MigrationDiscovery">WebSphere Migration Discovery Tool</a> which is used to estimate the effort required for your migration project.</p>
+<p>Produce this report by running:</p>
+<pre>java -jar binaryAppScanner.jar MyApplication.ear --inventory</pre>
+<p>The default Application Inventory Report format is HTML as shown below. There is a lot more information in this new report than can be shown here, so check it out.</p>
+<figure id="attachment_xxxx" style="width: 800px" class="wp-caption alignnone"><a href="wp-content/uploads/sites/9/2016/09/inventoryReport.jpg"><br />
+<img class="wp-image-17198 size-large" src="wp-content/uploads/sites/9/2016/09/inventoryReport.jpg" alt="" width="800" /></a><br />
+<figcaption class="wp-caption-text">Application Inventory Report</figcaption>
+</figure>
+<p>&nbsp;</p>
+<h3>2. Detailed analysis</h3>
+<p>The next level of scanning can be done with either the Eclipse-based tool or using the Detailed Migration Analysis report from the binary scanning tool. With the detailed report from the binary scanning tool, you can investigate further without access to the source code. The binary scanning tool includes the same rules that the Eclipse-based Migration Toolkit provides for WebSphere version-to-version rules (V6.1+) and Java SE (V5+) migration rules. If you are moving your application from older releases (before WebSphere Application Server V6.1) or third-party application servers, you will need to use the Eclipse-based tool.</p>
+<p>Detailed analysis gives you insight to application issues such as:</p>
+<ul>
+<li>Cloud connectivity considerations</li>
+<li>
+<div>Changes to the Java™ Runtime Environment (JRE) encountered in Java SE 5, 6, 7 and 8</div>
+</li>
+<li>
+<div>Removal of previously deprecated features</div>
+</li>
+<li>
+<div>Behavior changes in product APIs</div>
+</li>
+<li>
+<div>Changes resulting from Java EE specification clarifications</div>
+</li>
+<li>
+<div>Deprecated features</div>
+</li>
+<li>
+<div>WebSphere APIs not available on Liberty</div>
+</li>
+<li>
+<div>Optional Java EE technologies not available on Liberty</div>
+</li>
+<li>
+<div>Differences in technology implementations</div>
+</li>
+<li>
+<div>Java EE 7 differences</div>
+</li>
+<li>Deployment descriptor differences when moving from third-party application servers.</li>
+</ul>
+<p>Using the <code>--analyze</code> parameter to run the binary scanner tool for detailed analysis, just set your source and target application server parameters. For example,</p>
+<pre>java -jar binaryAppScanner.jar MyApplication.ear --analyze
+          --sourceAppServer=was70 --targetAppServer=liberty --targetCloud=bluemix
+</pre>
+<p>Again, use <code>--help</code> for more options.</p>
+<h3>3. Application development</h3>
+<p>When you are ready to make code changes, use the Eclipse-based Migration Toolkit to scan your application and quickly associate application differences with the source code that needs changing. Where possible, the Eclipse-based tool has quick fixes that you can optionally use to make changes to your code. When a quick fix is provided, you can use a side-by-side compare tool to see and understand the changes being recommended before applying the fix.</p>
+<p>Configure the analysis tool by selecting the <strong>Run &gt; Analysis</strong> menu. Create a new Software Analyzer configuration. Choose the scope of the analysis and select the rules to run. Select a <strong>Rule Set</strong> and click <strong>Set</strong> to configure the right migration rules for your scenario.</p>
+<p><a href="wp-content/uploads/sites/9/2016/03/wamtConfigDlg.jpg"><br />
+<img class="alignnone wp-image-17248 " src="wp-content/uploads/sites/9/2016/03/wamtConfigDlg-1024x855.jpg" alt="" width="800" height="668" srcset="wp-content/uploads/sites/9/2016/03/wamtConfigDlg-1024x855.jpg 1024w, wp-content/uploads/sites/9/2016/03/wamtConfigDlg-300x250.jpg 300w, wp-content/uploads/sites/9/2016/03/wamtConfigDlg.jpg 1034w" sizes="(max-width: 800px) 100vw, 800px" /></a></p>
+<p>After you click <strong>Analyze</strong>, the results of your scan are displayed, and you can go through each result to determine the changes needed to your application. Whether in the configuration dialog or in the <strong>Software Analyzer Results</strong> view, select any rule and press <strong>F1</strong> (<strong>Shift+F1</strong> for Linux) to get rule-specific help.</p>
+<p>When you are in development mode, the IBM WebSphere Application Server Developer Tools for Liberty, available from <a href="downloads/websphere-application-server-migration-tools/index.html#filter/assetTypeFilters=TOOL;sortby=relevance;q=developer">WASdev.net</a> or Eclipse Marketplace, enables you to easily interact with the running Liberty server for deploying and debugging. As you deploy applications to the server, the tools also dynamically adds features to the server configuration that are required by the application.</p>
+<h3>4. Configuration migration</h3>
+<p>Depending on where you are migrating from, we have additional tools to help move configuration.</p>
+<p>When you are moving from Tomcat, the migration toolkit has a Tomcat configuration migration tool included to assist in moving Tomcat server and application configuration.</p>
+<p>When you are moving from JBoss, WebLogic, and WebSphere traditional, the <a href="downloads/websphere-application-server-migration-tools/index.html#asset/tools-WebSphere_Configuration_Migration_Tool" target="_blank">WebSphere Configuration Migration Tool</a> helps move Java EE resource configuration to the Liberty server.xml.</p>
+<p>No matter where you are migrating from, the feature list configuration generation available with the binary scanner tool is useful for getting your Liberty server ready to host your application. A feature list XML configuration file is generated when using the &#8211;featureList action. The feature list content can be copied to your Liberty server.xml, or the XML file can be included using the &lt;include&gt; element. The feature list information is also included in the Application Migration Report generated with the &#8211;all action.</p>
+<h3>Ready, Set, Go!</h3>
+<p>Take advantage of these free tools to step through the migration process with ease.</p>
+<p><span class="prs"><a class="pn-btn pn-btn-secondary" title="Install the Eclipse-based migration tools" href="downloads/websphere-application-server-migration-tools/index.html#asset/tools-WebSphere_Application_Server_Migration_Toolkit">Get the Eclipse-based tools!</a></span> <span class="prs"><a class="pn-btn pn-btn-secondary" title="Download the command-line migration tool" href="downloads/websphere-application-server-migration-tools/index.html#asset/tools-Migration_Toolkit_for_Application_Binaries">Get the command-line tool!</a></span></p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/cthigh/index.html">Cindy High</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			20 comments on"Move applications to Liberty using the Migration Toolkit"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-153354">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Akhil</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-153354">
+					July 30, 2018	         	</a>
+			</div>
+			      		<p>I prefer to use the Migration Toolkit for Application Binaries to scan application binaries but it always throws errors whenever I try to do &#8216;java -jar binaryAppScanner.jar C:\Git_repository\&#8230;..1.0.11.ear&#8217;</p>
+<p>Exception in thread &#8220;main&#8221; java.lang.reflect.InvocationTargetException<br />
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+        at java.lang.reflect.Method.invoke(Unknown Source)<br />
+        at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:58)<br />
+Caused by: java.lang.UnsupportedClassVersionError: com/ibm/ws/kernel/feature/resolver/FeatureResolver$Repository : Unsupported major.minor version 51.0<br />
+        at java.lang.ClassLoader.defineClass1(Native Method)</p>
+<p>Not sure of the root cause. Pleas advise.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-153354' onclick='return addComment.moveForm( "comment-153354", "153354", "respond", "11849" )' aria-label='Reply to Akhil'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor odd alt depth-2 pn-comment" id="comment-153365">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Cindy High</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-153365">
+					August 01, 2018	         	</a>
+			</div>
+			      		<p>Akhil, The root cause looks like the version of Java you are using.  Are you using Java 6?  Can you try at least Java 7 &#8211; preferably Java 8?  I see that the download page says that Java 6 is still supported. We will get that corrected.  Java 6 is no longer supported by the tool.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-153365' onclick='return addComment.moveForm( "comment-153365", "153365", "respond", "11849" )' aria-label='Reply to Cindy High'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-dalia even depth-3 pn-comment" id="comment-153367">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">DaliaAboSheasha</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-153367">
+					August 01, 2018	         	</a>
+			</div>
+			      		<p>If you can&#8217;t run the tool with Java 7 or higher, the following options still work with Java 6: &#8211;analyze, &#8211;evaluate, and &#8211;inventory. However, the default &#8211;all and the &#8211;featureList option are not supported with Java 6.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-153367' onclick='return addComment.moveForm( "comment-153367", "153367", "respond", "11849" )' aria-label='Reply to DaliaAboSheasha'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2 pn-comment" id="comment-153366">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Dalia Abo Sheasha</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-153366">
+					August 01, 2018	         	</a>
+			</div>
+			      		<p>Hey Akhil,</p>
+<p>I would advise you to run the tool with Java 7. Currently, we support the &#8220;&#8211;analyze&#8221;, &#8220;&#8211;evaluate&#8221;, and &#8220;&#8211;inventory&#8221; options with Java 6. However, the &#8220;&#8211;featureList&#8221; option is not supported with Java 6. </p>
+<p>If you are unable to run with Java 7, you can run the supported options separately with Java 6. </p>
+<p>Thanks,<br />
+Dalia</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-153366' onclick='return addComment.moveForm( "comment-153366", "153366", "respond", "11849" )' aria-label='Reply to Dalia Abo Sheasha'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-odd thread-alt depth-1 pn-comment" id="comment-151888">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='index.html%3Fp=24188.html' rel='external nofollow' class='url'>Check for application problems using the binary scanner - WASdev</a></span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151888">
+					January 12, 2018	         	</a>
+			</div>
+			      		<p>[&#8230;] question on the Move applications to Liberty using the Migration Toolkit article just reminded me that the binary scanner isn&#8217;t just for migration. Use the binary [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151888' onclick='return addComment.moveForm( "comment-151888", "151888", "respond", "11849" )' aria-label='Reply to Check for application problems using the binary scanner - WASdev'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-151868">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Walter</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151868">
+					January 09, 2018	         	</a>
+			</div>
+			      		<p>I&#8217;m having problems with the options parameters, can you tell me what&#8217;s incorrect with this custom call?</p>
+<p>java -jar binaryAppScanner.jar ../legacyApp.ear &#8211;all ‑‑sourceAppServer=was70 ‑‑sourceJava=ibm6 ‑‑targetAppServer=liberty ‑‑targetJava=ibm8 ‑‑targetJavaEE=ee6<br />
+SEVERE: The following option was not recognized: ‑‑sourceAppServer=was70<br />
+SEVERE: The following option was not recognized: ‑‑sourceJava=ibm6<br />
+SEVERE: The following option was not recognized: ‑‑targetAppServer=liberty<br />
+SEVERE: The following option was not recognized: ‑‑targetJava=ibm8<br />
+SEVERE: The following option was not recognized: ‑‑targetJavaEE=ee6</p>
+<p>Usage: java -jar binaryAppScanner.jar binaryInputPath [action] [options]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151868' onclick='return addComment.moveForm( "comment-151868", "151868", "respond", "11849" )' aria-label='Reply to Walter'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor even depth-2 pn-comment" id="comment-151874">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Cindy High</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151874">
+					January 10, 2018	         	</a>
+			</div>
+			      		<p>Hi Walter,<br />
+There is something incorrect about the dash &#8220;-&#8221; characters in your command.  First, the &#8220;all&#8221; parameter needs 2 dashes:  &#8211;all.  Also your other dash characters look like a x&#8217;2011&#8242; hex character rather than a x&#8217;2d&#8217;. Maybe you copy/pasted the string from a document or website that did a translation on the character?  If I past your command, change the app to a file I have and retype the dashes, it works.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151874' onclick='return addComment.moveForm( "comment-151874", "151874", "respond", "11849" )' aria-label='Reply to Cindy High'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-3 pn-comment" id="comment-151875">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Walter</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151875">
+					January 10, 2018	         	</a>
+			</div>
+			      		<p>Thanks a lot Cindy. I made some adjustments about the encoding and could run it correctly.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151875' onclick='return addComment.moveForm( "comment-151875", "151875", "respond", "11849" )' aria-label='Reply to Walter'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-151369">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">BinXiong</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151369">
+					October 17, 2017	         	</a>
+			</div>
+			      		<p>Why error msg keeps jumping out&#8230;<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+The file that is specified by the binaryInputPath parameter does not exist.<br />
+The specified binaryInputPath directory contains no supported binary file types.<br />
+The following option was not recognized: isc.ear<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+My command:  java -jar binaryAppScanner.jar binaryInputPath &#8211;all isc.ear</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151369' onclick='return addComment.moveForm( "comment-151369", "151369", "respond", "11849" )' aria-label='Reply to BinXiong'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cheryllk odd alt depth-2 pn-comment" id="comment-151434">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Cheryl_King</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-151434">
+					October 26, 2017	         	</a>
+			</div>
+			      		<p>Change your command to the following: java -jar binaryAppScanner.jar isc.ear &#8211;all</p>
+<p>You are meant to replace binaryInputPath with the path to your application binary.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-151434' onclick='return addComment.moveForm( "comment-151434", "151434", "respond", "11849" )' aria-label='Reply to Cheryl_King'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-147161">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Matthias</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-147161">
+					August 16, 2016	         	</a>
+			</div>
+			      		<p>In case I want to do a migration to Liberty there is a nice feature in the Eclipse plugin to generate a server.xml. Is it possible to generate this file also via command line? Or any other way except going via Eclipse? Thanks!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-147161' onclick='return addComment.moveForm( "comment-147161", "147161", "respond", "11849" )' aria-label='Reply to Matthias'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor odd alt depth-2 pn-comment" id="comment-147167">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">CindyHigh</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-147167">
+					August 17, 2016	         	</a>
+			</div>
+			      		<p>Hi Matthias,<br />
+The WebSphere Configuration Migration Tool that migrates WebSphere property based configuration to Liberty server.xml is currently only available in Eclipse.  Do you want to migrate properties based configuration to server.xml using the command-line?  Or, do you want a command-line tool to scan your application and create a skeleton server.xml?</p>
+<p>If it is the second, you can vote for <a href="https://www.ibm.com/developerworks/rfe/execute?use_case=viewRfe&#038;CR_ID=68893">https://www.ibm.com/developerworks/rfe/execute?use_case=viewRfe&#038;CR_ID=68893</a>.</p>
+<p>If it is the first, let me know and perhaps also open a new RFE.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-147167' onclick='return addComment.moveForm( "comment-147167", "147167", "respond", "11849" )' aria-label='Reply to CindyHigh'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-cheryllk even depth-2 pn-comment" id="comment-148438">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Cheryl_King</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-148438">
+					January 30, 2017	         	</a>
+			</div>
+			      		<p>Hello Matthias,<br />
+I just wanted to point out that the referenced RFE has been implemented and delivered in December 2016. Check out the new featureList action in the binary scanner command line tool described here: <a href="index.html%3Fp=21406.html">https://developer.ibm.com/wasdev/blog/2017/01/25/binary-scanner-not-just-migrations-anymore/</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-148438' onclick='return addComment.moveForm( "comment-148438", "148438", "respond", "11849" )' aria-label='Reply to Cheryl_King'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146910">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">NARENDRA NAIDU</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-146910">
+					July 03, 2016	         	</a>
+			</div>
+			      		<p>Can I add more custom rules to the toolkit?<br />
+For e.g. I want to add rules for Hibernate or a third-party library.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-146910' onclick='return addComment.moveForm( "comment-146910", "146910", "respond", "11849" )' aria-label='Reply to NARENDRA NAIDU'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor even depth-2 pn-comment" id="comment-147394">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">CindyHigh</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-147394">
+					September 16, 2016	         	</a>
+			</div>
+			      		<p>Hi Narendra,<br />
+Today we don&#8217;t have the capability of adding custom rules. Which tool are you looking for this functionality? The binary scanner or the Eclipse source scanner? </p>
+<p>You can create a request for enhancement at <a href="https://www.ibm.com/developerworks/rfe/?BRAND_ID=181">https://www.ibm.com/developerworks/rfe/?BRAND_ID=181</a>.</p>
+<p>Cindy</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-147394' onclick='return addComment.moveForm( "comment-147394", "147394", "respond", "11849" )' aria-label='Reply to CindyHigh'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-146409">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">James</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-146409">
+					May 15, 2016	         	</a>
+			</div>
+			      		<p>Tried this from Eclipse to migrate a Tomcat app.  Only seleced migrate app.  Just hangs.  Kill eclipse then try again.. says it&#8217;s been migrated to the server.. but there are compile errors since the app uses catalina classes etc. (import org.apache.catalina.realm.GenericPrincipal;)</p>
+<p>Probably didn&#8217;t complete at all.</p>
+<p>Will try again&#8230; and try to migrate server too.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-146409' onclick='return addComment.moveForm( "comment-146409", "146409", "respond", "11849" )' aria-label='Reply to James'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor even depth-2 pn-comment" id="comment-146416">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">CindyHigh</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-146416">
+					May 16, 2016	         	</a>
+			</div>
+			      		<p>Can you give a little more information on what hung?  Did you get analysis results.  Running analysis should have told you about the org.apache.catalina classes in use.  You will need to manually migrate use of those classes manually.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-146416' onclick='return addComment.moveForm( "comment-146416", "146416", "respond", "11849" )' aria-label='Reply to CindyHigh'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146206">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">lupin</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-146206">
+					April 16, 2016	         	</a>
+			</div>
+			      		<p>Hi,</p>
+<p>I tried to use the Websphere Configuration Migration Toolkit but the file input button isn&#8217;t showing. All I see is this messages</p>
+<p> Step 1: Specify Input<br />
+   &#8211; start<br />
+   &#8211; go to<br />
+   &#8211; Execute the following command</p>
+<p>I have the properties files but no way of putting it in as input.</p>
+<p>Cheer<br />
+lupin</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-146206' onclick='return addComment.moveForm( "comment-146206", "146206", "respond", "11849" )' aria-label='Reply to lupin'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-cthigh bypostauthor even depth-2 pn-comment" id="comment-146216">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">CindyHigh</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-146216">
+					April 18, 2016	         	</a>
+			</div>
+			      		<p>Hi,<br />
+Can you size the WebSphere Configuration Migration window?  It looks like there is a problem with automatic sizing of the wizard.</p>
+<p>Cindy</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-146216' onclick='return addComment.moveForm( "comment-146216", "146216", "respond", "11849" )' aria-label='Reply to CindyHigh'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-142585">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">vinoth</span> 	         	<a class="pn-comment__meta" href="docs/move-applications-liberty-using-migration-toolkit.html#comment-142585">
+					January 29, 2016	         	</a>
+			</div>
+			      		<p>very helpful in providing the inital considerations and planning for any migration</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='docs/move-applications-liberty-using-migration-toolkit.html#comment-142585' onclick='return addComment.moveForm( "comment-142585", "142585", "respond", "11849" )' aria-label='Reply to vinoth'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="docs/move-applications-liberty-using-migration-toolkit.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='11849' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="98ef50da5e" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="150"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="docs/move-applications-liberty-using-migration-toolkit.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="docs/move-applications-liberty-using-migration-toolkit.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="docs/move-applications-liberty-using-migration-toolkit.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fmove-applications-liberty-using-migration-toolkit&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fmove-applications-liberty-using-migration-toolkit"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

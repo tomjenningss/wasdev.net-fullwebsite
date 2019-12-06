@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Get started with CDI interceptors in WebSphere Liberty (Part 1)</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: 6 Reasons Why You Should Try Cdi 1.2 &#8211; Technology Up2date</title>
+		<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/#comment-147095</link>
+		<dc:creator><![CDATA[6 Reasons Why You Should Try Cdi 1.2 &#8211; Technology Up2date]]></dc:creator>
+		<pubDate>Tue, 02 Aug 2016 04:40:29 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12832#comment-147095</guid>
+		<description><![CDATA[[&#8230;] Read Ashley’s article to learn more about the interceptors and how to enable the interceptors globally. [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Read Ashley’s article to learn more about the interceptors and how to enable the interceptors globally. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anshu Garg</title>
+		<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/#comment-146789</link>
+		<dc:creator><![CDATA[Anshu Garg]]></dc:creator>
+		<pubDate>Mon, 20 Jun 2016 08:15:36 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12832#comment-146789</guid>
+		<description><![CDATA[Hi Davendra,
+
+Did you get success in implementing interceptor for your web service hosted on liberty ? If yes, could you please share few pointers here ?]]></description>
+		<content:encoded><![CDATA[<p>Hi Davendra,</p>
+<p>Did you get success in implementing interceptor for your web service hosted on liberty ? If yes, could you please share few pointers here ?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ashley</title>
+		<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/#comment-129843</link>
+		<dc:creator><![CDATA[Ashley]]></dc:creator>
+		<pubDate>Tue, 29 Sep 2015 08:57:01 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12832#comment-129843</guid>
+		<description><![CDATA[Hi Devendra,
+I need to ask a few questions to help solve your issue.
+Could I ask which version of CDI you are using? Is it CDI-1.0 or CDI-1.2?
+Also could you provide a copy of your beans.xml and the interceptor class?
+Are you seeing any error message? Also what does your package structure look like?
+Many Thanks,
+Ashley]]></description>
+		<content:encoded><![CDATA[<p>Hi Devendra,<br />
+I need to ask a few questions to help solve your issue.<br />
+Could I ask which version of CDI you are using? Is it CDI-1.0 or CDI-1.2?<br />
+Also could you provide a copy of your beans.xml and the interceptor class?<br />
+Are you seeing any error message? Also what does your package structure look like?<br />
+Many Thanks,<br />
+Ashley</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Devendra Singh</title>
+		<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/#comment-129382</link>
+		<dc:creator><![CDATA[Devendra Singh]]></dc:creator>
+		<pubDate>Tue, 15 Sep 2015 08:36:11 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12832#comment-129382</guid>
+		<description><![CDATA[I have used liberty profile 8.5.5.6 and jee6]]></description>
+		<content:encoded><![CDATA[<p>I have used liberty profile 8.5.5.6 and jee6</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Devendra Singh</title>
+		<link>https://developer.ibm.com/wasdev/docs/get-started-cdi-interceptors-websphere-liberty/#comment-129381</link>
+		<dc:creator><![CDATA[Devendra Singh]]></dc:creator>
+		<pubDate>Tue, 15 Sep 2015 08:33:05 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=12832#comment-129381</guid>
+		<description><![CDATA[How can we implement the same for JAX-WS webservice? As I created the same and it&#039;s working  with other classes except ServiceImpl.java. It never hits interceptor. I attached the CDI interceptor as below.
+@PerformanceLogger
+@Singleton
+@WebService(serviceName = &quot;Service_v01&quot;,
+        endpointInterface = &quot;Service&quot;,
+        targetNamespace = &quot;http://services/&quot;)
+@HandlerChain(file = &quot;/handlers.xml&quot;)
+@Addressing
+public class ServieImpl implements Service{ 
+/**
+*method to implement
+*/
+}
+//CDI interceptor
+@Inherited
+@InterceptorBinding
+@Target({ ElementType.METHOD, ElementType.TYPE })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PerformanceLogger {
+}
+//interceptor activation
+
+		PerformanceLoggerInterceptor
+]]></description>
+		<content:encoded><![CDATA[<p>How can we implement the same for JAX-WS webservice? As I created the same and it&#8217;s working  with other classes except ServiceImpl.java. It never hits interceptor. I attached the CDI interceptor as below.<br />
+@PerformanceLogger<br />
+@Singleton<br />
+@WebService(serviceName = &#8220;Service_v01&#8221;,<br />
+        endpointInterface = &#8220;Service&#8221;,<br />
+        targetNamespace = &#8220;http://services/&#8221;)<br />
+@HandlerChain(file = &#8220;/handlers.xml&#8221;)<br />
+@Addressing<br />
+public class ServieImpl implements Service{<br />
+/**<br />
+*method to implement<br />
+*/<br />
+}<br />
+//CDI interceptor<br />
+@Inherited<br />
+@InterceptorBinding<br />
+@Target({ ElementType.METHOD, ElementType.TYPE })<br />
+@Retention(RetentionPolicy.RUNTIME)<br />
+public @interface PerformanceLogger {<br />
+}<br />
+//interceptor activation</p>
+<p>		PerformanceLoggerInterceptor</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

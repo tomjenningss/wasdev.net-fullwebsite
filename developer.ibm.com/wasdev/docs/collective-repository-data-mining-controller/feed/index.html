@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Collective repository: Data mining the controller</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Cody Moore</title>
+		<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/#comment-148498</link>
+		<dc:creator><![CDATA[Cody Moore]]></dc:creator>
+		<pubDate>Thu, 16 Feb 2017 00:32:23 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4650#comment-148498</guid>
+		<description><![CDATA[Sorry I know this post is more than a year old, but I couldn&#039;t find an answer anywhere else.  Is there a supplied method to subscribe to push notifications for a custom node via the &quot;/ibm/api/collective/notify&quot; websocket?]]></description>
+		<content:encoded><![CDATA[<p>Sorry I know this post is more than a year old, but I couldn&#8217;t find an answer anywhere else.  Is there a supplied method to subscribe to push notifications for a custom node via the &#8220;/ibm/api/collective/notify&#8221; websocket?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michael C Thompson</title>
+		<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/#comment-146007</link>
+		<dc:creator><![CDATA[Michael C Thompson]]></dc:creator>
+		<pubDate>Tue, 15 Mar 2016 14:03:39 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4650#comment-146007</guid>
+		<description><![CDATA[We have recently added in Liberty 8.5.5.9 Swagger annotations for the Collective REST APIs. The application API in question is GET /ibm/api/collective/v1/applications. The documentation and details of this can be viewed in the REST API Explorer https://host:port/ibm/api/explorer/]]></description>
+		<content:encoded><![CDATA[<p>We have recently added in Liberty 8.5.5.9 Swagger annotations for the Collective REST APIs. The application API in question is GET /ibm/api/collective/v1/applications. The documentation and details of this can be viewed in the REST API Explorer <a href="https://host:port/ibm/api/explorer/">https://host:port/ibm/api/explorer/</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: lupin</title>
+		<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/#comment-145993</link>
+		<dc:creator><![CDATA[lupin]]></dc:creator>
+		<pubDate>Mon, 14 Mar 2016 00:12:13 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4650#comment-145993</guid>
+		<description><![CDATA[Michael,
+
+ Is there a documentation available for the REST API you mentioned?]]></description>
+		<content:encoded><![CDATA[<p>Michael,</p>
+<p> Is there a documentation available for the REST API you mentioned?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michael C Thompson</title>
+		<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/#comment-142460</link>
+		<dc:creator><![CDATA[Michael C Thompson]]></dc:creator>
+		<pubDate>Wed, 20 Jan 2016 17:43:32 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4650#comment-142460</guid>
+		<description><![CDATA[The data is persisted to disk in the collective controller&#039;s server configuration: ${server.output.dir}/resources/collective/
+Because the repository has a simple CRUD model and follows a path-based naming pattern, it should be easy to store and read application data into the repository.
+
+Both options seem reasonable, it really depends on what is the easiest for you to implement and wether or not your app would benefit from a shared data model like the collective. Of course, you can always use a database too!
+
+Discovering the web apps is easy, there is a REST API on the controller that can be used to discover apps in the collective. controller host:port/ibm/api/collective]]></description>
+		<content:encoded><![CDATA[<p>The data is persisted to disk in the collective controller&#8217;s server configuration: ${server.output.dir}/resources/collective/<br />
+Because the repository has a simple CRUD model and follows a path-based naming pattern, it should be easy to store and read application data into the repository.</p>
+<p>Both options seem reasonable, it really depends on what is the easiest for you to implement and wether or not your app would benefit from a shared data model like the collective. Of course, you can always use a database too!</p>
+<p>Discovering the web apps is easy, there is a REST API on the controller that can be used to discover apps in the collective. controller host:port/ibm/api/collective</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jim Miller-Cushon</title>
+		<link>https://developer.ibm.com/wasdev/docs/collective-repository-data-mining-controller/#comment-142445</link>
+		<dc:creator><![CDATA[Jim Miller-Cushon]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 17:03:01 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4650#comment-142445</guid>
+		<description><![CDATA[Is the data in the collective repository persisted?  If so, how and where?  We&#039;re interested in using it to store application-specific configuration data, and possibly exposing it in a UI via a custom tool for Liberty Admin Center.  Does that make sense?
+
+Or would it be more natural to expose a MBean that can be used to modify configuration stored local to the webapp(s)?  And use the collective to discover the webapp instances.]]></description>
+		<content:encoded><![CDATA[<p>Is the data in the collective repository persisted?  If so, how and where?  We&#8217;re interested in using it to store application-specific configuration data, and possibly exposing it in a UI via a custom tool for Liberty Admin Center.  Does that make sense?</p>
+<p>Or would it be more natural to expose a MBean that can be used to modify configuration stored local to the webapp(s)?  And use the collective to discover the webapp instances.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

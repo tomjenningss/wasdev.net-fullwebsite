@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-01-20",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Building a testing framework for Plants By WebSphere",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": ""
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Building a testing framework for Plants By WebSphere"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Building a testing framework for Plants By WebSphere - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="../../index.html%3Fp=16678.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Building a testing framework for Plants By WebSphere Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=16678.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fbuilding-a-testing-framework-for-plants-by-websphere%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fbuilding-a-testing-framework-for-plants-by-websphere%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-16678 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../index.html%3Fp=16678.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"></div><h1 class="entry-title">Building a testing framework for Plants By WebSphere</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../blog/author/pavittr/index.html">Ross Pavitt</a></span><br>Published on January 20, 2016<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="../../index.html%3Fp=16678.html#comments" class="pn_comments_icon">1 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../../docs.html">All Documentation</a><a href="../../index.html%3Fp=16678.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="../category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="../category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="../category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="../category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="../category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="../category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="../category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="../category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="../category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="../category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="../category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="../category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="../category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="../category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="../category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="../category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="../category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="../category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="../category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">Creating a testing framework for a monolithic application running on WAS classic in order to get fast feedback, and confidence, in evolving the application to microservices that will run on Liberty.</p>
+<p>In a previous article, <a href="https://developer.ibm.com/wasdev/docs/testing-microservices-plants-websphere">Testing microservices</a>, we laid out some rules of engagement for testing applications in the context of evolving a monolithic application. This came about from our experiences of testing the Plants by WebSphere application, where we were running it in WAS classic before starting to move parts of it into microservices that were running on Liberty.</p>
+<p>This article explores in more depth how we developed these thoughts, and goes through our creation of a framework to allow us to test the monolithic application running on WAS classic to get fast feedback and confidence for the evolution to microservices.</p>
+<h3>Getting started</h3>
+<p>When we started we were doing manual testing. This was mainly so that we could understand what the application was doing. We examined existing documentation and studied the source code. We also played with the existing Maven build system. This was a useful period for us because we began to develop a strong understanding of what the application was doing and where we could start to define areas that might need to be evolved into their own microservice.</p>
+<h3>Moving to automation</h3>
+<p>Once we had a reasonable idea of the shape of the application we began looking at separating the Image service. While we were happy with the simplicity of the changes, we realised that this wasn&#8217;t going to hold true in future. And now we were looking at Bluemix as our future deployment platform and we were starting to think about how we could run tests. So we looked at building some simple automation around our monolithic application.</p>
+<p>The automation process we wanted would do the following:</p>
+<ol>
+<li>Build the application using the existing build system.</li>
+<li>Run the unit tests.</li>
+<li>Deploy the application to a test server.</li>
+<li>Run the integration (functional) tests on the test server.</li>
+<li>If the tests pass, pass the build; otherwise fail the build.</li>
+</ol>
+<p>We decided to focus on integration testing because, fundamentally, we want to make sure that the outside behaviour remains the same. We are more concerned with parity of the externals because they represent the impact on the customer if you break something. Ensuring parity of the internals probably doesn&#8217;t make sense, because you know the internals will have to change in order for you to move to microservices. It&#8217;s always a good idea, though, as part of new modules and updating old modules, to add unit tests.</p>
+<p>Once we started looking at how to build a framework to support this we hit a few issues that would negatively affect the microservices developer experience and productivity:</p>
+<ul>
+<li>Installing WAS classic requires more steps than installing Liberty.</li>
+<li>Due to the larger amount of function loaded at start-up, starting a WAS classic server can take significantly longer than starting a WAS Liberty server.</li>
+<li>There is no current framework to deploy applications to a WAS classic server from Maven.</li>
+</ul>
+<p>This led us to a question: is it reasonable to not run the tests? If there are separate developers dedicated to maintaining the original WAS application, you don&#8217;t want to make their life harder. Also, the aim of building the automated test framework was to have a fast turnaround in developing and testing the microservice so that we can quickly be confident that we haven&#8217;t broken anything in the process of evolving the monolith application to microservices. If the server for the monolith application is slow to install and start, the whole framework becomes slower. So maybe some manual steps would be acceptable, as long as they&#8217;re infrequent and simple to understand.</p>
+<p>Here are the manual steps we came up with:</p>
+<ol>
+<li>Install WAS classic.</li>
+<li>Set up a server.</li>
+<li>Start the server.</li>
+<li>Configure the <code>monitoredDeployableApps</code> directory.</li>
+<li>Run the build of the monolith application, specifying the location of the WAS server.</li>
+</ol>
+<p>If the location of the WAS classic server installation isn&#8217;t specified, the tests don&#8217;t run. If it is specified, we deploy the app to the test server, check it has started, and then run the tests.</p>
+<p>This was a great solution for a fairly simple app where we had no automated deployment before. However, it&#8217;s worth noting that if you already have a setup to deploy your monolithic application, a lot of this may be business-as-usual, and you don&#8217;t need to worry. If you find yourself in a situation with no automated deployment method and you can&#8217;t use the <code>monitoredDeployableApps</code> directory, another route is to automate the application deployment using the <code>wsadmin</code> scripting mechanism. The <a href="https://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.nd.doc/ae/txml_callappinstall.html">Knowledge Center</a> contains more info on how to do this.</p>
+<h3>Deciding to test for parity</h3>
+<p>We started off using HTMLUnit and added a simple test to ensure the welcome page appeared. And almost immediately we hit an error:</p>
+<p><code>com.gargoylesoftware.htmlunit.ScriptException: TypeError: Cannot find function deselectMenu in object [object]</code></p>
+<p>We tracked this failure down to some boilerplate text in all the HTML files that we send back to the browser. The file containing the <code>deselectMenu</code> function is only available in the <code>orderInfo</code> page but it&#8217;s added to lots of other HTML pages. HTMLUnit is right and this code is wrong. But how do we fix it? Technically, the right thing to do is to fix the HTML. Either remove the reference (since it can&#8217;t actually be doing anything, right?) or add the function in; someone asked for it so they must have expected it to do something.</p>
+<p>This led us to one of our key points: we shouldn&#8217;t make changes while we are still figuring out what the app is doing. The primary reason for the test is to ensure that a page is being returned. The original pages have JavaScript issues so, at this stage, it doesn&#8217;t make sense to check that the JavaScript parses OK. Hence we disabled the JavaScript with this line:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+webClient.getOptions().setJavaScriptEnabled(false);
+</pre>
+<p>If you are anything like us, that&#8217;s going to feel uncomfortable. We now know something is broken but we&#8217;ve essentially hidden it from the testing. The compromise we accepted is that this shouldn&#8217;t be the long-term solution. Once our code has sufficient testing and we can feel confident altering things, we should go back and fix this. Until then, we need to focus on what&#8217;s changed, not on what&#8217;s right.</p>
+<p>This of course still leaves that discomfort around this stuff we &#8220;should go back and fix&#8221;. One aspect we have considered is to add another test suite of tests that will fail but do what we want, effectively building out the behaviour we want to see as we go. Once you have migrated the app you can then go back and re-enable those tests. We&#8217;ll be looking to do this to our tests soon.</p>
+<h3>The next stages</h3>
+<p>So far we have the monolithic application tested. Separately, when we added the Image service, we added tests to that. However, we still have tests from the monolithic application that now need to change or move. That then becomes our focus and introduces new concerns we need to think about, such as:</p>
+<ul>
+<li>How will we build the infrastructure to test the two separate parts?</li>
+<li>What do we need to do to test how two services interact?</li>
+<li>How do we assess the application&#8217;s behaviour when services go away? Or, perhaps more importantly, when they come back?</li>
+</ul>
+<p>These are real issues but they are well documented in the microservices world and there are good strategies to handle them. The key things to be aware of are to understand how the new microservices will be tested and where the boundaries are.</p>
+<p>We plan to follow this up with more content on testing microservices, so stay tuned for more. If you have any thoughts, please leave comments on this page.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../blog/author/pavittr/index.html">Ross Pavitt</a></span></p><ul class="byline__social"><li class="byline__social__twitter"><a href="https://www.twitter.com/rossyp83">Twitter</a></li></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			1 comment on"Building a testing framework for Plants By WebSphere"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-147023">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Karen Durston</span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=16678.html#comment-147023">
+					July 20, 2016	         	</a>
+			</div>
+			      		<p>Curious about the environment.  Which version of WAS &#8211; 9,beta or 8.5.?<br />
+I assume the Derby database.<br />
+Thanks for sharing this interesting work.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=16678.html#comment-147023' onclick='return addComment.moveForm( "comment-147023", "147023", "respond", "16678" )' aria-label='Reply to Karen Durston'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../index.html%3Fp=16678.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='16678' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="cfca8d5619" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="107"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../index.html%3Fp=16678.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../index.html%3Fp=16678.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../index.html%3Fp=16678.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fbuilding-a-testing-framework-for-plants-by-websphere&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fbuilding-a-testing-framework-for-plants-by-websphere"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

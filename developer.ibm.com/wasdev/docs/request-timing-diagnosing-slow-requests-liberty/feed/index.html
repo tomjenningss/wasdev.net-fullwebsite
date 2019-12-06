@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Request timing: Diagnosing slow requests on WAS Liberty</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Don Bourne</title>
+		<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/#comment-153583</link>
+		<dc:creator><![CDATA[Don Bourne]]></dc:creator>
+		<pubDate>Mon, 10 Sep 2018 15:48:05 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13018#comment-153583</guid>
+		<description><![CDATA[@Bobby, you can use the interruptHungRequests attribute in the requestTiming element to indicate that you want the server to try to terminate a request when it is determined to be hung.  See details in https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_requesttiming.html . 
+
+For example, to have the requestTiming feature attempt to abort the Arm10Servlet when it takes over 20s to run: 
+
+&lt;requestTiming slowRequestThreshold=&quot;10s&quot; hungRequestThreshold=&quot;10m&quot;&gt;
+  &lt;servletTiming servletName=&quot;Arm10Servlet&quot; hungRequestThreshold=”20s” interruptHungRequests=&quot;true&quot;/&gt;
+  &lt;servletTiming appName=&quot;SecurityExchangeApp” hungRequestThreshold=”2h”/&gt;
+&lt;/requestTiming&gt;]]></description>
+		<content:encoded><![CDATA[<p>@Bobby, you can use the interruptHungRequests attribute in the requestTiming element to indicate that you want the server to try to terminate a request when it is determined to be hung.  See details in <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_requesttiming.html">https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_requesttiming.html</a> . </p>
+<p>For example, to have the requestTiming feature attempt to abort the Arm10Servlet when it takes over 20s to run: </p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Bobby Thomas</title>
+		<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/#comment-153531</link>
+		<dc:creator><![CDATA[Bobby Thomas]]></dc:creator>
+		<pubDate>Sun, 02 Sep 2018 04:40:51 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13018#comment-153531</guid>
+		<description><![CDATA[Thanks for this article.  What configuration or timeout i can set to terminate the web request when i find it run longer than a predefined duration (slow request and hung request).  I was looking for a server configuration to terminate the slow requests.  I found quite a lot of timeouts but not for the web request.  I am using datasource for database connection.  I tried connectionTimeout, queryTimeout,  currentLockTimeout and totalTranLifetimeTimeout.  But none of this is helping.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for this article.  What configuration or timeout i can set to terminate the web request when i find it run longer than a predefined duration (slow request and hung request).  I was looking for a server configuration to terminate the slow requests.  I found quite a lot of timeouts but not for the web request.  I am using datasource for database connection.  I tried connectionTimeout, queryTimeout,  currentLockTimeout and totalTranLifetimeTimeout.  But none of this is helping.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: JasonGayton</title>
+		<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/#comment-150720</link>
+		<dc:creator><![CDATA[JasonGayton]]></dc:creator>
+		<pubDate>Thu, 10 Aug 2017 21:04:10 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13018#comment-150720</guid>
+		<description><![CDATA[Hi @pjhavariotis this feature is made available via the JMX interface in classic 
+http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110]]></description>
+		<content:encoded><![CDATA[<p>Hi @pjhavariotis this feature is made available via the JMX interface in classic<br />
+<a href="http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110">http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gayton</title>
+		<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/#comment-150719</link>
+		<dc:creator><![CDATA[gayton]]></dc:creator>
+		<pubDate>Thu, 10 Aug 2017 21:02:43 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13018#comment-150719</guid>
+		<description><![CDATA[Hi @pjhavariotis, the equivalent is made accessible via the JMX MBean interface as of 8.5.12 
+http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110]]></description>
+		<content:encoded><![CDATA[<p>Hi @pjhavariotis, the equivalent is made accessible via the JMX MBean interface as of 8.5.12<br />
+<a href="http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110">http://www-01.ibm.com/support/docview.wss?uid=swg1PI82110</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: pjhavariotis</title>
+		<link>https://developer.ibm.com/wasdev/docs/request-timing-diagnosing-slow-requests-liberty/#comment-129080</link>
+		<dc:creator><![CDATA[pjhavariotis]]></dc:creator>
+		<pubDate>Tue, 01 Sep 2015 05:23:54 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13018#comment-129080</guid>
+		<description><![CDATA[This feature is available also for WAS Full profile or not? 
+If not, what is the best aproach to find out &quot;which&quot; requests are slow and &quot;why&quot; in a WAS Full profile environment?]]></description>
+		<content:encoded><![CDATA[<p>This feature is available also for WAS Full profile or not?<br />
+If not, what is the best aproach to find out &#8220;which&#8221; requests are slow and &#8220;why&#8221; in a WAS Full profile environment?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

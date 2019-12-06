@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-06-22",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Getting started with WebSphere Liberty in Amazon Web Services",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": "DevOps"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Getting started with WebSphere Liberty in Amazon Web Services"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Getting started with WebSphere Liberty in Amazon Web Services - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="../index.html%3Fp=18303.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Getting started with WebSphere Liberty in Amazon Web Services Comments Feed" href="getting-started-websphere-liberty-amazon-web-services/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../index.html%3Fp=18303.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-websphere-liberty-amazon-web-services%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-websphere-liberty-amazon-web-services%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-18303 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../index.html%3Fp=18303.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="category/devops/index.html" rel="tag">DevOps</a></span></div><h1 class="entry-title">Getting started with WebSphere Liberty in Amazon Web Services</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../blog/author/mnuttall/index.html">Mark Nuttall</a></span><br>Published on June 22, 2016<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="../index.html%3Fp=18303.html#comments" class="pn_comments_icon">12 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../docs.html">All Documentation</a><a href="../index.html%3Fp=18303.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">This article demonstrates the use of IBM WebSphere Application Server in the Amazon Elastic Compute Cloud (Amazon EC2), in the Amazon Web Services (AWS) family. We show how WebSphere Liberty, a lightweight, dynamic Java application server can be scaled and load balanced by EC2 components.</p>
+<p><em>By MarkÂ Nuttall and Jeremy Hughes</em></p>
+<p>Nobody working in IT today can have missed the current trend towards <em>cloud computing</em>. This term refers to a move from companies owning and managing local machinery on which to run their websites and corporate IT systems, towards renting computing resource online. Amazon Web Services was one of the first successful providers of <em>Infrastructure as a service</em> (IaaS) &#8211; virtual machines and network infrastructure, available for hire on a &#8216;pay as you go&#8217; basis.</p>
+<p>This first article deals with the simplest interesting topic available to us: WebSphere Liberty running in <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> virtual machines, scaled and load balanced by the default EC2 services. In this model, we have one Liberty instance running per virtual machine (VM). Scaling is performed at the VM level: if load is too high, another VM is started, and then stopped once overall load has fallen.</p>
+<p><a href="../wp-content/uploads/sites/9/2016/06/AWS-article-1-overview.png"><br />
+<img class="alignnone size-full wp-image-18305" src="../wp-content/uploads/sites/9/2016/06/AWS-article-1-overview.png" alt="" width="988" height="556" srcset="../wp-content/uploads/sites/9/2016/06/AWS-article-1-overview.png 988w, ../wp-content/uploads/sites/9/2016/06/AWS-article-1-overview-300x169.png 300w" sizes="(max-width: 988px) 100vw, 988px" /></a></p>
+<p>You will need an Amazon Web Services account with access to EC2, VPC, and CloudFormation. We&#8217;ll take the following steps to get this sample working:</p>
+<ol>
+<li>Create an Amazon Machine Image (AMI).</li>
+<li>Decide where to deploy the sample.</li>
+<li>Install the sample using Cloud Formation.</li>
+<li>Test that the application works.</li>
+</ol>
+<h2>Building an AMI</h2>
+<p>The virtual machine is the simplest unit of scaling and load balancing in AWS EC2. An AutoScalingGroup has a particular virtual machine image that it uses as a template when creating new runtime instances. These snapshots are called <em>AMI</em>s, Amazon Machine Images. In our case we want an AMI for a simple Linux virtual machine which starts a Liberty server instance when the VM starts.</p>
+<p>There are many ways to create an AMI. We take the most manual route in the steps below. This involves creating a basic virtual machine, installing Liberty, and then creating an AMI from that instance by taking a snapshot from the web-based <a href="https://aws.amazon.com/console/">AWS Management Console</a>. This manual route is good for learning about the process but is typically automated in a real project. See for example the section <em>Building an AMI using Packer</em> in Arthur Barr&#8217;s recent <a href="https://www.ibm.com/developerworks/community/blogs/messaging/entry/mq_aws_basic?lang=en">MQdev Blog post</a>.</p>
+<p>Before getting started you should be able to launch virtual machine instances from the EC2 dashboard, and SSH into those instances. Exactly how you do this will depend on your local operating system. Once you have SSH working, follow these steps to manually create a Liberty AMI:</p>
+<ol>
+<li>From the EC2 dashboard launch an instance based on the Red Hat Enterprise Linux (RHEL) AMI or Amazon Linux. By default, this will create a new security group <code>launch-wizard-n</code> granting SSH access to the VM. Back in the EC2 Dashboard, find the new instance and its Public DNS so you can SSH to it.</li>
+<li>On RHEL only, install unzip: <code>sudo yum -y install unzip</code></li>
+<li>On RHEL only, install Java: <code>sudo yum -y install java</code></li>
+<li>Download Liberty: <code>curl -O http://repo1.maven.org/maven2/com/ibm/websphere/appserver/runtime/wlp-webProfile7/8.5.5.9/wlp-webProfile7-8.5.5.9.zip</code></li>
+<li>Unzip Liberty: <code>sudo sg ec2-user "unzip wlp-webProfile7-8.5.5.9.zip -d /opt/websphere"</code></li>
+<li>Set up environment variables:
+<ol>
+<li>Run <code>echo "PATH=/opt/websphere/wlp/bin:$PATH" &gt;&gt; ~/.bashrc</code></li>
+<li>Run <code>echo "export WLP_USER_DIR=~/liberty" &gt;&gt; ~/.bashrc</code></li>
+<li>Run <code>source ~/.bashrc</code></li>
+</ol>
+</li>
+<li>Create a Liberty server: <code>server create</code></li>
+<li>Install the <a href="https://github.com/WASdev/sample.ferret">ferret</a> sample application: <code>curl http://repo1.maven.org/maven2/net/wasdev/wlp/sample/ferret/1.0/ferret-1.0.war -o ~/liberty/servers/defaultServer/dropins/ferret-1.0.war</code></li>
+<li>Liberty is secure out of the box. The default configuration must be changed to permit remote HTTP access. Since we&#8217;re going to be enabling public internet access, edit the &#8220; stanza in <code>~/liberty/servers/defaultServer/server.xml</code>:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;
+                httpPort=&quot;9080&quot;
+                host=&quot;*&quot;
+                httpsPort=&quot;9443&quot; /&gt;
+  </pre>
+</p>
+</li>
+<li>Run the server: <code>server run</code></p>
+</li>
+<li>Test the instance! When you created the instance, EC2 created a new security group for you. Add a rule to that group for the port that Liberty is going to listen on:
+<ol>
+<li>Find <strong>Network &amp; Security > Security Groups</strong> in the EC2 Dashboard.</li>
+<li>Find the security group you just created (group name starts <code>launch-wizard-</code>). Select it.</li>
+<li>On the <strong>Inbound</strong> tab, click <strong>Edit > Add rule</strong> to create a custom tcp rule with a port range of <code>9080</code>, and a source of <code>Anywhere</code>.</li>
+<li>Using the Public DNS of the instance you used in the <code>ssh</code> command, access the sample app in a web browser: <code>http://[public dns]:9080/ferret</code> should show the running sample application.</li>
+</ol>
+</li>
+<li>Finally, create an AMI from the running instance:
+<ol>
+<li>Click <strong>Instances > instances</strong>.</li>
+<li>Locate the instance you just worked on.</li>
+<li>Right-click <strong>Image > Create image</strong>.</li>
+<li>Give it a name, click <strong>Create Image</strong>.</li>
+<li>You&#8217;ll get a pop-up saying the <code>Create Image request received</code>. Make a note of the image ID that starts <code>ami-</code></li>
+</ol>
+</li>
+</ol>
+<h2>Deploying to AWS EC2 using Cloud Formation</h2>
+<p>AWS Cloud Formation enables developers and administrators to create collections of AWS resources from templates stored as JSON files. This is an example of the <em>declarative</em> approach to treating infrastructure as code &#8211; see <a href="https://sdarchitect.wordpress.com/2012/12/13/infrastructure-as-code/">here</a> and <a href="http://techbeacon.com/infrastructure-code-engine-heart-devops">here</a> for overviews of the subject. The JSON template below is enough to create a scaled, load-balanced deployment.</p>
+<p>It is, however, only suitable for development purposes: there&#8217;s a lot more that needs to be done to create a production environment. For example, we use a single availability zone for simplicity, whereas Amazon recommend multiple availability zones for production deployments. See <a href="http://www.slideshare.net/AmazonWebServices/aws-deployment-best-practices-47899341">Andrew Sullivan&#8217;s excellent presentation</a> for an overview of the many issues that must be considered when building a production-ready environment. Also please note that we&#8217;re downloading Liberty from WASdev.net: see <a href="../index.html%3Fp=11661.html">this short article</a> which explains what you can use this download for.</p>
+<p>The JSON code below can be used to create an instance of the architecture shown in the diagram above. It takes several parameters:</p>
+<ul>
+<li>The identity of the Virtual Private Cloud (VPC) in which to create the deployment. We&#8217;ve tested this using the default VPC; the script may need modification in order to work with a different VPC.</li>
+<li>An availability zone &#8211; essentially a virtual local area network &#8211; within the VPC to deploy into.</li>
+<li>An Amazon Machine Image (AMI) identity from which to create virtual machine images.</li>
+</ul>
+<p>The only Liberty-specific section of this template is the <strong>UserData</strong> section of the Launch Configuration: this is the script that starts Liberty instances once a virtual machine instance is running.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+{
+  &quot;AWSTemplateFormatVersion&quot;: &quot;2010-09-09&quot;,
+  &quot;Parameters&quot;: {
+    &quot;myVPC&quot; : {
+      &quot;Type&quot; : &quot;String&quot;,
+      &quot;Description&quot; : &quot;VpcId of your existing Virtual Private Cloud (VPC)&quot;
+    },
+    &quot;availZone&quot; : {
+      &quot;Type&quot; : &quot;String&quot;,
+      &quot;Description&quot; : &quot;The Availability Zone to deploy into&quot;
+    },
+    &quot;ami&quot; : {
+      &quot;Type&quot; : &quot;String&quot;,
+      &quot;Description&quot; : &quot;The AMI to deploy&quot;
+    }
+  },
+  &quot;Resources&quot;: {
+    &quot;basicLb&quot;: {
+      &quot;Type&quot;: &quot;AWS::ElasticLoadBalancing::LoadBalancer&quot;,
+      &quot;Properties&quot;: {
+        &quot;AvailabilityZones&quot; : [
+          {
+            &quot;Ref&quot;: &quot;availZone&quot;
+          }
+        ],
+        &quot;HealthCheck&quot;: {
+          &quot;HealthyThreshold&quot;: &quot;5&quot;,
+          &quot;Interval&quot;: &quot;5&quot;,
+          &quot;Target&quot;: &quot;HTTP:9080/&quot;,
+          &quot;Timeout&quot;: &quot;3&quot;,
+          &quot;UnhealthyThreshold&quot;: &quot;2&quot;
+        },
+        &quot;ConnectionDrainingPolicy&quot;: {
+          &quot;Enabled&quot;: &quot;true&quot;,
+          &quot;Timeout&quot;: &quot;300&quot;
+        },
+        &quot;ConnectionSettings&quot;: {
+          &quot;IdleTimeout&quot;: &quot;60&quot;
+        },
+        &quot;CrossZone&quot;: &quot;true&quot;,
+        &quot;SecurityGroups&quot;: [
+          {
+            &quot;Ref&quot;: &quot;sgwebtraffic&quot;
+          }
+        ],
+        &quot;Listeners&quot;: [
+          {
+            &quot;InstancePort&quot;: &quot;9080&quot;,
+            &quot;LoadBalancerPort&quot;: &quot;80&quot;,
+            &quot;Protocol&quot;: &quot;HTTP&quot;,
+            &quot;InstanceProtocol&quot;: &quot;HTTP&quot;
+          }
+        ]
+      }
+    },
+    &quot;asg1&quot;: {
+      &quot;Type&quot;: &quot;AWS::AutoScaling::AutoScalingGroup&quot;,
+      &quot;Properties&quot;: {
+        &quot;AvailabilityZones&quot;: [
+          {
+            &quot;Ref&quot;: &quot;availZone&quot;
+          }
+        ],
+        &quot;Cooldown&quot;: &quot;300&quot;,
+        &quot;DesiredCapacity&quot;: &quot;2&quot;,
+        &quot;HealthCheckGracePeriod&quot;: &quot;300&quot;,
+        &quot;HealthCheckType&quot;: &quot;EC2&quot;,
+        &quot;MaxSize&quot;: &quot;5&quot;,
+        &quot;MinSize&quot;: &quot;2&quot;,
+        &quot;LaunchConfigurationName&quot;: {
+          &quot;Ref&quot;: &quot;lcBasicdemolaunchconfig&quot;
+        },
+        &quot;LoadBalancerNames&quot;: [
+          {
+            &quot;Ref&quot;: &quot;basicLb&quot;
+          }
+        ],
+        &quot;TerminationPolicies&quot;: [
+          &quot;Default&quot;
+        ]
+      }
+    },
+    &quot;lcBasicdemolaunchconfig&quot;: {
+      &quot;Type&quot;: &quot;AWS::AutoScaling::LaunchConfiguration&quot;,
+      &quot;Properties&quot;: {
+        &quot;ImageId&quot;: {
+            &quot;Ref&quot;: &quot;ami&quot;
+        },
+        &quot;InstanceType&quot;: &quot;t2.micro&quot;,
+        &quot;SecurityGroups&quot;: [
+          {
+            &quot;Ref&quot;: &quot;sgwebtraffic&quot;
+          }
+        ],
+        &quot;UserData&quot; : { &quot;Fn::Base64&quot; : { &quot;Fn::Join&quot; : [ &quot;&quot;, [
+          &quot;#!/bin/bash n&quot;,
+          &quot;runuser -l ec2-user -c 'server start' n&quot;
+        ]]}}
+      }
+    },
+    &quot;sgbase&quot;: {
+      &quot;Type&quot;: &quot;AWS::EC2::SecurityGroup&quot;,
+      &quot;Properties&quot;: {
+        &quot;GroupDescription&quot;: &quot;Basic - SSH open&quot;,
+        &quot;VpcId&quot;: { &quot;Ref&quot; : &quot;myVPC&quot; }
+      }
+    },
+    &quot;sgwebtraffic&quot;: {
+      &quot;Type&quot;: &quot;AWS::EC2::SecurityGroup&quot;,
+      &quot;Properties&quot;: {
+        &quot;GroupDescription&quot;: &quot;9000-9499&quot;,
+        &quot;VpcId&quot;: { &quot;Ref&quot; : &quot;myVPC&quot; }
+      }
+    },
+    &quot;scalingIncreaseGroupSize&quot;: {
+      &quot;Type&quot;: &quot;AWS::AutoScaling::ScalingPolicy&quot;,
+      &quot;Properties&quot;: {
+        &quot;AdjustmentType&quot;: &quot;ChangeInCapacity&quot;,
+        &quot;ScalingAdjustment&quot;: &quot;1&quot;,
+        &quot;AutoScalingGroupName&quot;: {
+          &quot;Ref&quot;: &quot;asg1&quot;
+        }
+      }
+    },
+    &quot;scalingDecreaseGroupSize&quot;: {
+      &quot;Type&quot;: &quot;AWS::AutoScaling::ScalingPolicy&quot;,
+      &quot;Properties&quot;: {
+        &quot;AdjustmentType&quot;: &quot;ChangeInCapacity&quot;,
+        &quot;ScalingAdjustment&quot;: &quot;-1&quot;,
+        &quot;AutoScalingGroupName&quot;: {
+          &quot;Ref&quot;: &quot;asg1&quot;
+        }
+      }
+    },
+    &quot;cpuTooHighAlarm&quot;: {
+      &quot;Type&quot;: &quot;AWS::CloudWatch::Alarm&quot;,
+      &quot;Properties&quot;: {
+        &quot;ActionsEnabled&quot;: &quot;true&quot;,
+        &quot;ComparisonOperator&quot;: &quot;GreaterThanOrEqualToThreshold&quot;,
+        &quot;EvaluationPeriods&quot;: &quot;1&quot;,
+        &quot;MetricName&quot;: &quot;CPUUtilization&quot;,
+        &quot;Namespace&quot;: &quot;AWS/EC2&quot;,
+        &quot;Period&quot;: &quot;300&quot;,
+        &quot;Statistic&quot;: &quot;Average&quot;,
+        &quot;Threshold&quot;: &quot;50.0&quot;,
+        &quot;AlarmActions&quot;: [
+          {
+            &quot;Ref&quot;: &quot;scalingIncreaseGroupSize&quot;
+          }
+        ],
+        &quot;Dimensions&quot;: [
+          {
+            &quot;Name&quot;: &quot;AutoScalingGroupName&quot;,
+            &quot;Value&quot;: &quot;auto scaling group 1&quot;
+          }
+        ]
+      }
+    },
+    &quot;cpuLowAlarm&quot;: {
+      &quot;Type&quot;: &quot;AWS::CloudWatch::Alarm&quot;,
+      &quot;Properties&quot;: {
+        &quot;ActionsEnabled&quot;: &quot;true&quot;,
+        &quot;ComparisonOperator&quot;: &quot;LessThanOrEqualToThreshold&quot;,
+        &quot;EvaluationPeriods&quot;: &quot;4&quot;,
+        &quot;MetricName&quot;: &quot;CPUUtilization&quot;,
+        &quot;Namespace&quot;: &quot;AWS/EC2&quot;,
+        &quot;Period&quot;: &quot;300&quot;,
+        &quot;Statistic&quot;: &quot;Average&quot;,
+        &quot;Threshold&quot;: &quot;30.0&quot;,
+        &quot;AlarmActions&quot;: [
+          {
+            &quot;Ref&quot;: &quot;scalingDecreaseGroupSize&quot;
+          }
+        ],
+        &quot;Dimensions&quot;: [
+          {
+            &quot;Name&quot;: &quot;AutoScalingGroupName&quot;,
+            &quot;Value&quot;: &quot;auto scaling group 1&quot;
+          }
+        ]
+      }
+    },
+    &quot;ingress19&quot;: {
+      &quot;Type&quot;: &quot;AWS::EC2::SecurityGroupIngress&quot;,
+      &quot;Properties&quot;: {
+        &quot;GroupId&quot;: {
+          &quot;Ref&quot;: &quot;sgwebtraffic&quot;
+        },
+        &quot;IpProtocol&quot;: &quot;tcp&quot;,
+        &quot;FromPort&quot;: &quot;80&quot;,
+        &quot;ToPort&quot;: &quot;80&quot;,
+        &quot;CidrIp&quot;: &quot;0.0.0.0/0&quot;
+      }
+    },
+    &quot;ingress20&quot;: {
+      &quot;Type&quot;: &quot;AWS::EC2::SecurityGroupIngress&quot;,
+      &quot;Properties&quot;: {
+        &quot;GroupId&quot;: {
+          &quot;Ref&quot;: &quot;sgwebtraffic&quot;
+        },
+        &quot;IpProtocol&quot;: &quot;tcp&quot;,
+        &quot;FromPort&quot;: &quot;9000&quot;,
+        &quot;ToPort&quot;: &quot;9499&quot;,
+        &quot;CidrIp&quot;: &quot;0.0.0.0/0&quot;
+      }
+    },
+    &quot;ingress21&quot;: {
+      &quot;Type&quot;: &quot;AWS::EC2::SecurityGroupIngress&quot;,
+      &quot;Properties&quot;: {
+        &quot;GroupId&quot;: {
+          &quot;Ref&quot;: &quot;sgwebtraffic&quot;
+        },
+        &quot;IpProtocol&quot;: &quot;tcp&quot;,
+        &quot;FromPort&quot;: &quot;443&quot;,
+        &quot;ToPort&quot;: &quot;443&quot;,
+        &quot;CidrIp&quot;: &quot;0.0.0.0/0&quot;
+      }
+    }
+  },
+  &quot;Description&quot;: &quot;Basic load balanced deployment&quot;
+}
+  </pre>
+<h2>Follow these steps to create a running, scaled Liberty deployment:</h2>
+<ol>
+<li>Make a note of the default VPC ID from the VPC Dashboard.</li>
+<li>Save the JSON above to a local file.</li>
+<li>Run the JSON through Amazon Cloud Formation: from the Cloud Formation page, click <strong>Create Stack</strong>. Within the <strong>Choose template</strong> section, browse to your locally saved copy of the JSON.</li>
+<li>Give the stack a name, provide the Liberty AMI ID and the VPC ID you noted from the steps above, and provide the availability zone you prefer to use. For example, <code>us-east-1b</code>. Click <strong>Next</strong>, then <strong>Create</strong>. The stack takes a few minutes to create.</li>
+<li>From the EC2 Dashboard, select <strong>Load Balancers</strong> and select the newly created load balancer. The Description page lists the DNS name of the load balancer. Use this public internet address of the created Load Balancer from the EC2 Dashboard menu and access that address using a web browser: you should see the default Liberty landing page.</li>
+<li>Access the <code>/ferret</code> endpoint to see the running ferret sample application.</li>
+</ol>
+<p>You&#8217;ll need a more demanding web application before you can use a performance test harness to drive CPU load above the threshold required to instantiate more servers, even if you reduce the thresholds from those in our sample. You can use <a href="https://aws.amazon.com/cloudwatch/">Amazon&#8217;s CloudWatch</a> service to monitor the state and health of your virtual machine instances. Once you&#8217;re done testing your application you can delete the entire stack from the Cloud Formation menu.</p>
+<h2>Summary and next steps</h2>
+<p>We&#8217;ve shown how to get a sample Liberty application up and running in Amazon AWS, using the default Amazon scaling and load-balancing facilities. While some parts of the process were nicely automated, there was some manual work required to build an AMI. We also rather glossed over the application code, simply downloading a finished binary from well-known location. We intend to demonstrate more extensive automation in a future article.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../blog/author/mnuttall/index.html">Mark Nuttall</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			12 comments on"Getting started with WebSphere Liberty in Amazon Web Services"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-150598">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Mad Pil</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-150598">
+					July 23, 2017	         	</a>
+			</div>
+			      		<p>Hi,<br />
+The latest version of Liberty is 17.0.0.2. However i see that you are using 8.5.5.9. Can you clarify the difference? I am trying to download Liberty latest version and confused with the above. Thanks in advance.<br />
+Regards, Mad Pil</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-150598' onclick='return addComment.moveForm( "comment-150598", "150598", "respond", "18303" )' aria-label='Reply to Mad Pil'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-2 pn-comment" id="comment-150614">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Mark Nuttall</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-150614">
+					July 26, 2017	         	</a>
+			</div>
+			      		<p>Hello,<br />
+Liberty moved to a year-based version numbering scheme last year as per this article: <a href="../index.html%3Fp=18337.html">https://developer.ibm.com/wasdev/blog/2016/06/24/16-0-0-2-beyond-liberty-continuous-single-stream-fix-pack-delivery/</a>. That version change happened a little after this article was published. 17.0.0.2 is simply the second quarter 2017 Liberty build &#8211; it&#8217;s the latest level of the codebase that has evolved continuously since it was numbered 8.5.5.x.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-150614' onclick='return addComment.moveForm( "comment-150614", "150614", "respond", "18303" )' aria-label='Reply to Mark Nuttall'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-148401">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">sarath</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148401">
+					January 18, 2017	         	</a>
+			</div>
+			      		<p>Even after server start and adding security groups with 8090 it does not shows up in browser. Still getting &#8220;This site canâ€™t be reached&#8221;.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148401' onclick='return addComment.moveForm( "comment-148401", "148401", "respond", "18303" )' aria-label='Reply to sarath'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-laurac odd alt depth-2 pn-comment" id="comment-148405">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://www.lauracowen.co.uk' rel='external nofollow' class='url'>Laura Cowen</a></span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148405">
+					January 19, 2017	         	</a>
+			</div>
+			      		<p>Hi, it sounds like it might be worth asking for help on the Amazon AWS forums as that doesn&#8217;t sound like it&#8217;s related to Liberty.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148405' onclick='return addComment.moveForm( "comment-148405", "148405", "respond", "18303" )' aria-label='Reply to Laura Cowen'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-148411">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">sarath</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148411">
+					January 20, 2017	         	</a>
+			</div>
+			      		<p>Okay Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148411' onclick='return addComment.moveForm( "comment-148411", "148411", "respond", "18303" )' aria-label='Reply to sarath'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-4 pn-comment" id="comment-148415">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">sarath</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148415">
+					January 24, 2017	         	</a>
+			</div>
+			      		<p>when I changed the server.xml file with the following code&#8230;</p>
+<p>welcome to liberty page shows up for me. Thanks Mark Nuttall for this article.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148415' onclick='return addComment.moveForm( "comment-148415", "148415", "respond", "18303" )' aria-label='Reply to sarath'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-5 pn-comment" id="comment-148426">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">sarath</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148426">
+					January 26, 2017	         	</a>
+			</div>
+			      		<p>I am trying to comment the xml code but its not showing up.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148426' onclick='return addComment.moveForm( "comment-148426", "148426", "respond", "18303" )' aria-label='Reply to sarath'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-148353">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">jags</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148353">
+					January 06, 2017	         	</a>
+			</div>
+			      		<p>In this example, ELB is used to load balance liberty profile servers. In case of cluster or ND case, Do you think the same configuration can be applied? I guess the current Network Deployment requires use of the Web Server in front of the liberty server. I am not sure if there is really a need for  web server when using ELB.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148353' onclick='return addComment.moveForm( "comment-148353", "148353", "respond", "18303" )' aria-label='Reply to jags'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-2 pn-comment" id="comment-148356">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Mark Nuttall</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-148356">
+					January 06, 2017	         	</a>
+			</div>
+			      		<p>Hi Jags,<br />
+You might need to use IBM HTTP Server (IHS) if you were using some of the application-aware routing capabilities in WebSphere ND, or if you had run up against some other technical limitation in Amazon ELB that was solved in IHS. I would expect Amazon ELB to be sufficient for many usage scenarios. One area I haven&#8217;t investigated is, what if you&#8217;re hosting large amounts of static content? You typically don&#8217;t want to serve that from an application server, so IHS could be useful in those cases, unless Amazon provides a better means of doing so. </p>
+<p>Regards,<br />
+Mark</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-148356' onclick='return addComment.moveForm( "comment-148356", "148356", "respond", "18303" )' aria-label='Reply to Mark Nuttall'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-147233">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Mark Nuttall</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-147233">
+					September 01, 2016	         	</a>
+			</div>
+			      		<p>Hi again Raj,<br />
+Can I just check if you&#8217;re asking about WebSphere traditional or WebSphere liberty, please? Obviously the previous link is only applicable to WAS traditional. Many thanks, </p>
+<p>&#8212; Mark</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-147233' onclick='return addComment.moveForm( "comment-147233", "147233", "respond", "18303" )' aria-label='Reply to Mark Nuttall'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-147226">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Name Mark Nuttall</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-147226">
+					August 31, 2016	         	</a>
+			</div>
+			      		<p>Hi Raj,<br />
+I&#8217;ve just finished testing WAS traditional ND clusters in AWS EC2. I&#8217;m not sure that there&#8217;s a lot to add to our existing documentation and design guidelines, because AWS EC2 virtual machines look just like any other remote datacenter. It&#8217;s not my specialist subject but I believe that Tom Alcott&#8217;s &#8216;Can I run a WebSphere Application Server cell over multiple data centers?&#8217; at <a href="http://www.ibm.com/developerworks/websphere/techjournal/0606_col_alcott/0606_col_alcott.html">http://www.ibm.com/developerworks/websphere/techjournal/0606_col_alcott/0606_col_alcott.html</a> is still as relevant as ever. </p>
+<p>Regards,<br />
+Mark</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-147226' onclick='return addComment.moveForm( "comment-147226", "147226", "respond", "18303" )' aria-label='Reply to Name Mark Nuttall'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-147220">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Raj</span> 	         	<a class="pn-comment__meta" href="../index.html%3Fp=18303.html#comment-147220">
+					August 30, 2016	         	</a>
+			</div>
+			      		<p>Hi,</p>
+<p>Nice article.   Do you have any documents, pointers to setup Web Sphere Cluster and replicating the cluster to a DR region in AWS?</p>
+<p>thanks</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../index.html%3Fp=18303.html#comment-147220' onclick='return addComment.moveForm( "comment-147220", "147220", "respond", "18303" )' aria-label='Reply to Raj'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../index.html%3Fp=18303.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='18303' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="07c27a33dc" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="111"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../index.html%3Fp=18303.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../index.html%3Fp=18303.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../index.html%3Fp=18303.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-websphere-liberty-amazon-web-services&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-websphere-liberty-amazon-web-services"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

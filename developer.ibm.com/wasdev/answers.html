@@ -1,0 +1,3350 @@
+<!DOCTYPE HTML>
+
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml" style="margin-left: 0px; width: 100%;"> <!--<![endif]-->
+
+
+<head>
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+    <!-- meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" -->
+    <meta charset="utf-8">
+
+	<title>Questions in WASdev space - WASdev &middot; IBM Developer Answers</title>
+    <meta name="description" content="Question and answer forum for any and all topics related to IBM products and technologies.  Badges and reputation points reflect expertise and earned trust.  Connect with experts and get the answer to your technical question.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="developer.ibm.com"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://pbs.twimg.com/profile_images/576466300500779008/egJLokz-_400x400.jpeg" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Questions in WASdev space">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Question and answer forum for any and all topics related to IBM products and technologies.  Badges and reputation points reflect expertise and earned trust.  Connect with experts and get the answer to your technical question." />
+
+	<!-- JTA 20161201 Northstar -->
+	<link rel="icon" href="https://www.ibm.com/favicon.ico">
+ 
+	<meta name="dcterms.date" content="2016-12-01">
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016">
+	<meta name="geo.country" content="US">
+	<meta name="keywords" content="IBM Developer Answers">
+	<meta name="robots" content="index,follow">
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- JTA 20160405 coremetrics -->
+    <meta name="IBM.WTMSite" content="DWNEXT"/> 
+	<meta scheme="IBM_WTMCategory" name="IBM.WTMCategory" content="SOFDCANSZZ" />
+
+	<!-- JTA 20160908 no caching (20161215 commenting out to see if it helps frequent users to not have to clear cache and cookies) -->
+	<!-- meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" / -->
+	<!-- meta http-equiv="Pragma" content="no-cache" / -->
+	<!-- meta http-equiv="Expires" content="0" / -->
+	
+	<!-- JTA 20161201 v.18 footer -->
+	<link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+	<link href="https://dw1.s81c.com/developerworks/css/dw-mf/v18/dw-mf-v18.css" rel="stylesheet" />
+	
+<link rel="canonical" href="https://developer.ibm.com/answers/" />
+<meta property="og:url" content="https://developer.ibm.com/answers/" />
+
+
+<script type="text/javascript">
+    var askFormURL = '/answers/questions/ask.html';
+    var logoutURL = '/answers/users/logout.html';
+    var voteUpJsonURL = '/answers/commands/0/voteup.json';
+    var voteDownJsonURL = '/answers/commands/0/votedown.json';
+    var getVotesJsonUrl = '/answers/%7Bnode%7D/getVotes.json';
+    var related_questions_url = '/answers/search.json';
+    var emailCheckerURL = '/answers/users/temporaryLogin/dupsUserEmailCheck.json';
+
+    var authorizedFileTypes = 'gif,png,jpg,jpeg,zip,tar.gz,pdf,txt'.split(",");
+    var authorizedImageTypes = 'gif,png,jpg,jpeg'.split(",");
+
+    var flashMessages = [];
+
+    var pageContext = {
+        currentUser: {
+            id: '',
+            username: 'Anonymous',
+            url: '#',
+            avatar: '',
+            reputation: '',
+            follows: null,
+            canCreateTopics: false
+        },
+        i18n: {
+            confirm: "Are you sure?",
+            yes: "Yes",
+            no: "No",
+            save: "Save",
+            cancel: "Cancel",
+            close: "Close",
+            edit: "Edit",
+            insert: "Insert",
+            upload: "Upload",
+            download: "Download",
+            choose: "Choose",
+            deleted: "Deleted",
+            ok: "Ok",
+            by: "by",
+            word: "word",
+            words: "words",
+            character: "character",
+            characters: "characters",
+            login: "Sign in",
+            register: "Register",
+            timeAgo: "{0} ago",
+            timeAt: "at",
+            day: "day",
+            days: "days",
+            hour: "hour",
+            hours: "hours",
+            minute: "minute",
+            minutes: "minutes",
+            second: "sec",
+            seconds: "secs",
+            justNow: "just now",
+            retag: "retag",
+            comment: "Comment",
+            comments: "Comments",
+            showOneComment: "<i class='icon-comments'></i> Show 1",
+            hideOneComment: "<i class='icon-comments'></i> Hide 1",
+            showNComments: "<i class='icon-comments'></i> Show $n",
+            hideNComments: "<i class='icon-comments'></i> Hide $n",
+            question: "question",
+            questions: "Questions",
+            answer: "Answer",
+            answers: "Answers",
+            posts: "Posts",
+            wiki: "Wiki",
+            reputation: "Reputation",
+            unlike: "Unlike",
+            like: "Like",
+            likes: "Likes",
+            follow: "Follow",
+            unfollow: "Unfollow",
+            following: "Following",
+            followers: "Followers",
+            awarded: "Awarded",
+            completedBy: "Recently completed by",
+            joined: "Joined",
+            authorizedTypes: "Allowed upload types",
+            uploadDialog: {
+                uploadFile: "Choose a file to upload",
+                doUpload: "Upload",
+                fileTooBig: "Your attachment must be $size or smaller.",
+                invalidAttachmentType: "Your attachment must be one of: gif,png,jpg,jpeg,zip,tar.gz,pdf,txt",
+                invalidImageType: "Your image must be one of: gif,png,jpg,jpeg"
+            },
+            previewAndCropDialog: {
+                previewAndResize: "Preview and resize",
+                accept: "Accept"
+            },
+
+            closeQuestionTitle: "Close or flag",
+            lockPostModalTitle: "Lock",
+            reportQuestionModalTitle: "Report",
+            confirmModalTitle: "Please confirm",
+            convertToAnswerText: "Are you sure you want to convert this comment to an answer?",
+            unlockPostModalText: "Are you sure you want to allow comments on this post?",
+            cancelReportModalText: "Are you sure you want to undo reporting this post?",
+
+            reportSuccessText: "This post has been successfully reported.",
+            reportCancelText: "Your report on this post has been sucessfully canceled.",
+
+            commandsMoveToSpace: "Move",
+            commandsGiveReputation: "Reward user",
+            commandsGiveReputationSuccess: "Thank you for awarding points.",
+            commandsConvertToCommentTitle: "Select comment location",
+            uploadProfilePictureSelectButton: "Select photo from your computer",
+            changeAvatarSelectButton: "Select photo from your computer",
+            changeAvatarSelectNoPhoto: "No photo selected",
+            postControlsRedirectTitle: "Redirect",
+
+            WMDImageDialogText: "Enter image url",
+            WMDLinkDialogText: "Enter url",
+            WMDUploadImage: "upload image",
+            WMDBold: "Strong <strong> Ctrl+B",
+            WMDItalic: "Emphasis <em> Ctrl+I",
+            WMDLink: "Hyperlink <a> Ctrl+L",
+            WMDQuote: "Blockquote <blockquote> Ctrl+Q",
+            WMDCode: "Code Sample <pre><code> Ctrl+K",
+            WMDImage: "Image <img> Ctrl+G",
+            WMDAttachment: "Attachment Ctrl+U",
+            WMDOrderedList: "Numbered List <ol> Ctrl+O",
+            WMDUnorderedList: "Bulleted List <ul> Ctrl+U",
+            WMDHeading: "Heading <h1>/<h2> Ctrl+H",
+            WMDHorizontalRule: "Horizontal Rule <hr> Ctrl+R",
+            WMDUndo: "Undo - Ctrl+Z",
+            WMDRedoWin: "Redo - Ctrl+Y",
+            WMDRedoOther: "Redo - Ctrl+Shift+Z",
+            WMDHelp: "Markdown Help",
+
+            draftMessage: "We noticed that you were previously working on TYPO. What would you like to do now?",
+            draftSaveMessage: "Saving draft...",
+            draftLoadButton: "Load draft",
+            draftDeleteButton: "Delete draft",
+
+            linkMenuInsertLink: "Insert link",
+            linkMenuEditLink: "Edit link",
+            linkMenuUnlink: "Remove link",
+            linkMenuAnchor: "Anchor",
+            linkMenuMailto: "Email",
+            inputTextPrompt: "Text",
+            inputWebPrompt: "URL",
+            inputLinkNewTab: "Open link in a new tab",
+            inputImageForm: "Update image",
+            inputImageTitle: "Title",
+            inputImagePosition: "Position",
+            inputImagePositionNone: "None",
+            inputImagePositionLeft: "Left",
+            inputImagePositionRight: "Right",
+
+            formattingLabel: "Formatting",
+            formattingParagraph: "Normal text",
+            formattingQuote: "Quote",
+            formattingCode: "Code",
+            formattingHeader: "Header",
+            formattingBold: "Bold",
+            formattingItalic: "Italic",
+            formattingUnderline: "Underline",
+            formattingFontColor: "Font Color",
+            formattingBackColor: "Back Color",
+            formattingIndent: "Indent",
+            formattingOutdent: "Outdent",
+            formattingAlignment: "Alignment",
+            formattingAlignLeft: "Align text to the left",
+            formattingAlignCenter: "Center text",
+            formattingAlignRight: "Align text to the right",
+            formattingAlignJustify: "Justify text",
+            formattingHorizontalRule: "Insert Horizontal Rule",
+
+            toolTipsInsertImage: "Insert image",
+            toolTipsInsertFile: "Insert file",
+            toolTipsInsertCode: "Insert code",
+            toolTipsInsertVideo: "Insert video",
+            toolTipsInsertTable: "Insert table",
+            toolTipsorderedList: "Ordered list",
+            toolTipsunorderedList: "Unordered list",
+            toolTipLink: "Link",
+
+            tableInsert: "Insert table",
+            tableRows: "Rows",
+            tableColumns: "Columns",
+            tableInsertRowAbove: "Add row above",
+            tableInsertRowBelow: "Add row below",
+            tableInsertColumnLeft: "Add column left",
+            tableInsertColumnRight: "Add column right",
+            tableDelete: "Delete table",
+            tableDeleteColumn: "Delete column",
+            tableDeleteRow: "Delete row",
+            tableAddHead: "Add header",
+            tableDeleteHead: "Delete header",
+
+            uploadOrChoose: "Or choose",
+            uploadDropFileHere: "Drop file here",
+            uploadFilenameOptional: "Name (optional)",
+
+            emailValidationPrompt: "Resend validation email",
+            emailValidationPromptBody: "Do you want to resend email validation?",
+            invalidReputation: "Error: You must enter a valid Integer without commas."
+        },
+        url: {
+            login: "/answers/users/login.html",
+            register: "/answers/users/register.html",
+            getRevision: "/answers/revisions/get-revision.json",
+            getComments: "/answers/comments/%25ID%25/list.json",
+            uploadFile: "/answers/uploadFile.html",
+            uploadProgress: "/answers/uploadProgress.json",
+            uploadPreview: "/answers/uploadPreview.html",
+            cropUpload: "/answers/cropUpload.json",
+            cancelUpload: "/answers/cancelUpload.json",
+            markdownHelp: "/answers/static/markdown/help.html",
+            updateMarkdown: "/answers/commands/updateMarkdown.json",
+            profile: "/answers/users/{id}/{plug}.html",
+            extractKeywords: "/answers/extract-keywords.json",
+            follow: "/answers/follow/%7BobjId%7D/%7Btype%7D.json",
+            unfollow: "/answers/unfollow/%7BobjId%7D/%7Btype%7D.json",
+            getUserFollows: "/answers/%7Buser%7D/getUserFollows.json",
+            condensedProfileUrl: "/answers/users/%7Buser%7D/condensedProfile.json",
+            viewTopicJSON: "/answers/topics/%7Btopic%7D/view.json",
+            topicIcon: "/answers/topics/%7Btopic%7D/icon.html",
+            topic: "/answers/topics/%7Btopic%7D.html",
+            topicSearch: "/answers/search/topics.json",
+            awardListUrl: "/answers/badge/%7BawardType%7D/%7Bdesc%7D.json",
+            usersSearch: "/answers/users/list.json",
+            usersLookup: "/answers/users/lookup.json",
+            mentionsSearch: "/answers/users/mentionsSearch.json",
+            searchJson: "/answers/search.json",
+            trackJs: "/answers/static/trackJs.json",
+            userAvatar: "/answers/users/%7BuserId%7D/photo/view.html",
+            revisionView: "/answers/revisions/{nodeId}.html",
+            authorizeAttachmentsUrl: "/answers/authorizeAttachment.json"
+        },
+        extraScripts: {
+            jcrop: {
+                js: '/answers/themes/thub/scripts/jcrop/js/jquery.Jcrop.js',
+                css: '/answers/themes/thub/scripts/jcrop/css/jquery.Jcrop.css'
+            }
+        },
+        options: {
+        	maxTopics: '8',
+            gravatarEnabled: true,
+	       	attachments: {
+	               'question': {
+	                   enabled: true,
+	                   maxSizeBytes: 524288,
+	                   maxSizeBytesTotal: 1048576
+	               },
+	               'answer': {
+	                   enabled: true,
+	                   maxSizeBytes: 1048576,
+	                   maxSizeBytesTotal: 4194304
+	               },
+	               'comment': {
+	                   enabled: true,
+	                   maxSizeBytes: 1048576,
+	                   maxSizeBytesTotal: 4194304
+	               },
+	       	}
+        },
+        additional: {"TH_CSRF":"a5791004017135873771"},
+        useRelativeTime: false,
+        userRealName: true
+    };
+    pageContext.i18n["delete"] = "Delete";
+</script>
+	<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="dW Answers (developerWorks)"/>
+    
+  	<!-- JTA 20161201 v18 footer -->
+ 	<script>
+	    digitalData = {
+	        page: {
+	            category: {
+	                primaryCategory: "SB03"
+	            },
+	            pageInfo: {
+	                effectiveDate: "2016-12-01",
+	                expiryDate: "2017-12-01",
+	                language: "en-US",
+	                publishDate: "2016-12-01",
+	                publisher: "IBM Corporation",
+	                version: "v18",
+	                ibm: {
+	                    contentDelivery: "",
+	                    contentProducer: "",
+	                    country: "US",
+	                    industry: "B,U",
+	                    owner: "Jeff Antley/Raleigh/IBM",
+	                    siteID: "DWNEXT",
+	                    subject: "SW492",
+	                    type: "CT305"
+	                }
+	            }
+	        }
+	    };
+		window._analytics = {
+		        "segment_key":'HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby',
+				"coremetrics": false,
+				"optimizely": false,
+				"googleAddServices": false,
+				"addRoll": false,
+				"intercom": false, 
+				"fullStory": false, 
+				"hotjar": false, 
+				"tealeaf": false,
+				"nps": false
+		};
+		if (typeof window._analytics !== "undefined" && location.hostname !== "developer.ibm.com") {
+        	window._analytics["enabled"] = false;
+        };
+	</script>
+   
+    <!--[if lte IE 10]>
+    <script src="/answers/themes/base/scripts/compatibility/indexOf.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="/answers/themes/base/scripts/compatibility/document.getSelection.js" type="text/javascript"></script>
+    <script src="/answers/themes/base/scripts/compatibility/ierange-m2-packed.js" type="text/javascript"></script>
+    <style type="text/css">
+        input[type="password"] {
+            font-family: Arial;
+        }
+    </style>
+    <![endif]-->
+    
+<script type="text/javascript" src="https://developer.ibm.com/answers/themes/ibmdw2/pack/combined.js.h-2064813341.pack" charset="utf-8"></script>    <script src="https://developer.ibm.com/answers/themes/thub/scripts/jquery.tmpl.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="https://developer.ibm.com/answers/themes/thub/images/favicon.ico"/>
+
+    <!-- Core Bootstrap css + Kickstrap styles -->
+<link rel="stylesheet" type="text/css" href="https://developer.ibm.com/answers/themes/ibmdw2/pack/combined.css.h-1967571793.pack" charset="utf-8"/><link rel="stylesheet" type="text/css" href="https://developer.ibm.com/answers/themes/ibmdw2/pack/combined.css.h-789729781.pack" charset="utf-8"/>
+	<!-- 20161208 JTA moved from base-head.ftl -->
+	<link rel='stylesheet' id='standalone' href='https://developer.ibm.com/answers/css/boomer.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='standalone' href='https://developer.ibm.com/answers/css/header-footer.css' type='text/css' media='screen' />
+	
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $style;
+            $style = $('<style type="text/css">:before,:after{content:none !important}</style>');
+            $('head').append($style);
+            return setTimeout((function() {
+                return $style.remove();
+            }), 0);
+        });
+    </script>
+    <![endif]-->
+
+	<!-- JTA 20180503 removing this line necessary to prevent ida_production.js from being added to header -->
+    <!-- @teamhub.widgets location="system.head/after" nocontainer=true / -->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+		// PCYIM 20170720 fix for session timeouts in 1.6.3.9, may not be needed in 1.6.6
+		// JTA 20180104 reintroducing above based on usability problems reported
+        // JTA 20180112 removing again due to OOM error problems
+        // JTA 20180209 deleting section entirely
+        
+        	pageContext.options.commentsAttachmentsEnabled = true;
+			// JTA 20170425 campaign code on bluemix links
+			$('a').each(function(){
+	        	if(this.href.match('bluemix.net')){
+	            	if(this.search){
+	            		this.href = this.href + '&cm_sp=dw-bluemix-_-WASdev-_-answers';
+	             	} else {
+	             		this.href = this.href + '?cm_sp=dw-bluemix-_-WASdev-_-answers';
+	        		}
+            	}
+			});
+        });
+    </script>
+    
+    <!-- JTA 20160405 coremetrics -->
+    <!-- JTA 20180319 updated link -->
+    <script src="https://1.www.s81c.com/common/stats/ida_stats.js"></script>    
+    <!-- script type='text/javascript' src='//1.www.s81c.com/common/js/dojo/www.js'></script -->
+    <script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+    
+	<script>
+		// jQuery(document).ready(function(){
+		   // var $ = jQuery; // $ is jQuery
+		   // Process feedback link in footer
+		   // function injectFeedbackLink () {
+		   //     $('.dw-footer-corporate-links .ibm-feedbacklink').on("click", function (evt) {
+		   //         evt.preventDefault();
+		   //         var iframeWidth = 970;
+		   //     
+		   //         if (window.innerWidth < 900) {
+		   //             iframeWidth = window.innerWidth - 80;
+		   //         }
+		   //     
+		   //         IBMCore.common.widget.surveyccfintercept.initFeedback({
+		   //             survey: {
+		   //                 height: 700,
+		   //                 id: "web-exp",
+		   //                 metaData: "",
+		   //                 type: "medallia",
+		   //                 width: iframeWidth
+		   //             }
+		   //         });
+		   //     });
+		   // };
+		   // Call feedback link function
+		   // injectFeedbackLink();
+		// });
+	</script>
+	<script>
+		// 20180322 JTA disabling surveys on dW Answers
+   		IBMCore.common.util.config.set({
+       		// Default percentage is 5. Maximum is 25.
+         
+   			survey: {
+         		global_percent: 0
+           	}
+        });
+  	</script>
+	<style type="text/css">
+		ul > li::before, ol > li::before {
+		    content: "";
+		}
+	
+		.ibm-marketplace-link::before {
+		    content: "";
+		}
+		
+		.ibm-ind-link a[class*="ibm-btn-"][class*="-btn"] {
+		    padding-left: 1.1em;
+		    padding-right: 1em;
+		}
+		
+		ul li + li, ol li + li {
+		    padding-top: 0px;
+		}
+		ul > li, ol > li {
+		    padding-left: 0px;
+		}
+		
+		.pnext-top-nav .dw-nav .icon-nav > ul > li.pn-search-form .pn-search-submit::before {
+		    position: auto (or absolute);
+		}
+		
+		#q {
+		    width: 259px;
+		    border-bottom-style: solid;
+		    border-bottom-width: 1px;
+		    border-bottom-color: #eee;
+		    border-right-color: #eee;
+		    border-left-color: #eee;
+		}
+		
+		ul li ul, ul li ol, ol li ul, ol li ol {
+		    padding-top: 0px;
+		}
+		
+		.dwa-icon-search::before
+		    font-family: FontAwesome;
+		    content: "";
+		    color: #999999;
+		    font-size: 22px;
+		    right: 9px;
+		    top: 9px;
+		}
+		
+		#ibm-search.ibm-search-link::before {
+		   background-image: ;
+		   background-repeat: no-repeat;
+		   background-size: 1.5rem;
+		   background-position: center center;
+		   font-size: 1.5rem;
+		}
+		
+		.pnext-top-nav .dw-nav .icon-nav > ul > li.pn-search form .pn-search-submit::before {
+			position: absolute;
+		}
+		
+		div#space-selector > span.select2-container--default {
+			display: none;
+		}
+		
+		.btn-group > .btn + .dropdown-toggle {
+			margin-right: 0px;
+		}
+ 	</style>
+
+    
+
+</head>
+
+<body role="main">
+
+<div class="code_adorn_announcement" id="code_announcement">
+   <div class="code_content__wrap">
+
+<style>
+  .dc-announcement{
+    background: #e9e9e9;
+    min-height: 53px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .dc-announcement p{
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    font-weight: 300;
+  }
+  .dc-announcement a p{
+    display: table;
+    color: #1e1e1e;
+    width: auto;
+    margin: 0 auto;
+  }
+  .dc-announcement a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .dc-announcement a p strong{
+    color: #fff !important;
+    padding: 10px 20px !important;
+    margin-left: 10px;
+    display: inline-block;
+    background-color: rgb(0, 98, 255);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .dc-announcement a p i{
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  .code_adorn_announcement .code_content__wrap .announcement_close svg {
+   width: 20px;
+   height: 20px;
+   fill: #ffffff;
+   }
+
+   .code_adorn_announcement .code_content__wrap .announcement_close {
+   position: absolute;
+   right: 1rem;
+   top: 1rem;
+}	
+</style>
+<script>
+$announcementClose = document.getElementById('announcement_close');
+if($announcementClose != null){
+  $announcementClose.addEventListener('click', function(event) {
+    $elm = document.getElementById('code_announcement');
+    $elm.parentNode.removeChild($elm);
+    document.body.classList.remove('no-fixed-menu');
+    ibmcode.setCookie('Code_Annouce_Closed','true',0);
+  });
+}
+</script>
+<div class="dc-announcement">
+<a href="https://developer.ibm.com/digitalconference/?lnk=ibmdev-ddc">
+<p><span style="font-weight: 600">Digital Developer Conference:</span> a FREE half-day online conference focused on AI &amp; Cloud – North America: Nov 2 – India: Nov 9 – Europe: Nov 14 – Asia Nov 23 <strong>Register now</strong></p>
+</a>
+</div>
+<a href="answers.html#" class="announcement_close" id="announcement_close"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="will-change: transform;"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12-5.4 12-12 12z"></path><path d="M21.4 23L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9l1.6 1.6-5.4 5.4 5.4 5.4z"></path><title>Close outline</title></svg></a></div>
+</div>
+
+<!-- script type="text/javascript" src="//1.www.s81c.com/common/js/dojo/www.js">//</script -->
+<!-- script type='text/javascript' src='//1.www.s81c.com/common/v18/js/www.js'></script -->
+<!-- JTA bluemix banner removed 20160212 -->
+
+<div id="ibm-masthead" role="banner" aria-label="IBM" style="display:none !important;">
+	<div id="ibm-mast-options">
+		<ul role="toolbar" aria-labelledby="ibm-masthead">
+			<li id="ibm-geo" role="presentation"><a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United states selected - Choose a country">United States</a> </li>
+		</ul>
+	</div>
+	<div id="ibm-universal-nav">
+		<nav role="navigation" aria-label="IBM">
+			<div id="ibm-home"><span translate=0><a href="http://www.ibm.com/us/en/">IBM?</a></span></div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+		</nav>
+		<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+			<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+				<label for="q">IBM</label>
+				<input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search" />
+				<input type="hidden" value="18" name="v" />
+				<input type="hidden" value="utf" name="en" />
+				<input type="hidden" value="en" name="lang" />
+				<input type="hidden" value="us" name="cc" />
+				<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit" />
+			</form>
+		</div>
+	</div>
+</div> <!-- #ibm-masthead -->
+
+
+	<div id="site-navigation" class="pnext-top-nav">
+		<header class="dw-nav" role="banner">
+			<div class="dw-nav-left">
+				<span translate=0><a href="http://www.ibm.com/us/en/?lnk=m" class="ibm-header-logo">IBM?</a></span>
+				<span translate=0></span>
+    			<!-- span class="ibm-icon-nolink ibm-chevron-right-regular-link">&nbsp;</span>
+    			<a class="dw-centers" href="//ibm.com/developerworks/connect">Developer Centers</a -->
+			</div>
+			<div class="dw-nav-right">
+				<nav id="site-second-nav" class="main-navigation icon-nav" role="navigation">
+					<ul aria-label="Tools" role="menubar" class="boomer-masthead-iconsonly">
+						<li>
+							<p class="ibm-mh-marketplace-link ibm-ind-link ibm-fleft ibm-padding-bottom-0" style="">
+								<a class="ibm-btn-small ibm-marketplace-link ibm-btn-sec ibm-btn-blue-50" href="http://www.ibm.com/marketplace/?lnk=mp">Marketplace</a>
+							</p>
+						</li>
+						<li class="pn-search">							
+							<form role="search" class="pn-search-form" method="get" id="ibm_search_form" action="https://www.ibm.com/Search/">
+	  	  						<a href="answers.html#" id="pn-searchclose-trigger" class="search-close-trigger ibm-close-link"><i>Close</i></a>							
+		  						<label for="pnext-search-input" class="screen-reader-text">Search</label>
+		  						<!-- input placeholder="_______" required aria-required="true" id="pnext-search-input" class="pn-search-input pn-nav-search-input fl" name="visual_q" size="70" type="text" -->
+		  						<input type="text" size="70" class="pn-search-input fl" id="pnext-search-input" aria-required="true" required="" placeholder="Search" id="q" name="q" aria-label="Search" value="" maxlength="100" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-owns="ibm-search-typeahead-container" style="color: #555;">
+		  						<input type="hidden" value="mhsrch" name="lnk">
+								<input type="hidden" name="v" value="18">
+								<input type="hidden" name="en" value="utf">
+								<input type="hidden" name="lang" value="en">
+								<input type="hidden" name="cc" value="us">
+								<!-- span class="ibm-search-scope ibm-fadeout">
+									<input id="ibm-mh-scopeoption" class="ibm-styled-checkbox" type="checkbox" value="" name="sn" data-init="false">
+									<label for="ibm-mh-scopeoption">In Marketplace</label>
+								</span -->
+		  						<button id="ibm-search" type="submit" class="pn-search-submit ibm-search-link">
+									<span>Search</span>
+		  						</button>		  
+							</form>
+							<!-- form id="ibm-default-scope-form" class="ibm-hide" method="get" action="https://www.ibm.com/marketplace/search/us/en-us/">
+								<input type="text" name="terms">
+								<input type="hidden" value="mhmpsrch" name="lnk">
+							</form -->
+							<a class="search-open-trigger ibm-search-link" href="answers.html#" id="pn-search-trigger"><i>Search</i></a>
+						</li>
+							<li class="menu-item menu-item-has-children">
+								<a class="ibm-profile-v18" href="answers.html#"><i>Sign in</i></a>
+								<ul class="sub-menu">
+									<li class="menu-chevrons"><a href="https://developer.ibm.com/answers/users/login.html">Sign in</a></li>
+									<li class="menu-chevrons"><a href="https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fanswers%2F">Register</a></li>
+								</ul>
+							</li>
+						<li><a id="mobile-menu-trigger" class="ibm-menu-link" href="answers.html#"><i>IBM Navigation</i></a></li>
+					</ul>
+				</nav><!-- #site-navigation -->
+			</div>
+		</header>
+		<header class="dc-nav" role="banner" aria-label="Main Navigation" style="z-index: 200;">
+			<div class="dc-nav-left">
+				<div class="site-logo">
+				<a rel="home" class="pn-nav-home-v18" href="https://developer.ibm.com/answers/">
+					<span translate="0">IBM Developer Answers</span>
+	      		</a>
+	      		</div>
+			</div>
+			<div class="dc-nav-right">
+				<nav class="main-navigation" role="navigation">
+					<div class="menu-main-container">
+						<ul class="menu" id="primary-menu">
+							<li class="sub-menu-columns menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+								<a href="answers.html#">Spaces</a>
+								<ul class="sub-menu" style="width:300px;">
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/blockchain/" data-analytics-category="Forum" data-analytics-action="Smartspace Blockchain dropdown clicked">Blockchain</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/bluemix/" data-analytics-category="Forum" data-analytics-action="Smartspace Bluemix dropdown clicked">IBM Cloud platform</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/internet-of-things/" data-analytics-category="Forum" data-analytics-action="Smartspace Internet of Things dropdown clicked">Internet of Things</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/predictiveanalytics/" data-analytics-category="Forum" data-analytics-action="Smartspace Predictive Analytics dropdown clicked">Predictive Analytics</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/watson/" data-analytics-category="Forum" data-analytics-action="Smartspace Watson dropdown clicked">Watson</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/static/spaces.html">See all spaces</a></li>
+								</ul>
+							</li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/topics.html">Tags</a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/users/index.html">Users</a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/badge/types.html">Badges</a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/static/faq.html" />FAQ</a></li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://developer.ibm.com/answers/smartspace/dw-answers-help/" />Help</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+	</div>
+	<!-- banner for each space; moved here to prevent overlap problem -->
+	<div id="community-banner"></div>
+	
+	<div id="mobilemenu-overlay" class="pn-mobile-overlay"></div>
+	<section id="mobile-menu" class="pn-mobile-menu">
+		<div class="inner">
+		<div class="pn-mobilemenu-close">
+			<!-- a id="pn-mobilemenu-close"class="ibm-close-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">Close</a -->
+			<a id="pn-mobilemenu-close"class="ibm-close-link" href="answers.html#">Close</a>
+		</div>
+		<nav class="pn-mobile-menu__theme">
+			<!-- h4><?php echo get_bloginfo( 'name' ); ?></h4 -->
+			<h4>Name</h4>
+			<!-- ?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ? -->
+		</nav>
+		<nav>
+			<h4>Community</h4>
+			<ul aria-label="" role="toolbar" >
+				<li><a href="http://www.ibm.com/developerworks/learn/">Learn</a></li>
+				<li><a href="http://www.ibm.com/developerworks/develop/">Develop</a></li>
+				<li><a href="http://www.ibm.com/developerworks/connect/">Connect</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<h4>Discover IBM</h4>
+			<ul aria-label="" role="toolbar">
+				<li><a href="http://www.ibm.com/marketplace/cloud/us/en-us?lnk=hmmp">ConnectMarketplace</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/products/en-us/?lnk=hmpr">Products</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/services/en-us/?lnk=hmse">Services</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/industries/en-us/?lnk=hmin">Industries</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/employment/?lnk=hmem">Careers</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/partnerworld/?lnk=hmpw">Partners</a></li>
+				<li class="ibm-masthead-unav-link" role="presentation"><a role="button" href="http://www.ibm.com/support/en-us/?lnk=hmsu">Support</a></li>
+			</ul>
+		</nav>
+		</div>
+	</section>
+	
+<!-- end v18 banner -->
+
+	<script>
+ smartSpaceShortName = "wasdev";
+</script>
+<script>
+var spaceName = (typeof smartSpaceShortName !== 'undefined') ? smartSpaceShortName : "wasdev".trim();
+if (spaceName.length <= 0) {
+   var spaceName = ''
+}
+
+spaceName = (spaceName=="internet-of-things") ? "iotplatform" : (spaceName=="linux-on-power") ? "linuxonpower" : (spaceName=="watson-content-hub") ? "wch" : spaceName;
+spaceName = (spaceName=="qradar-app-development") ? "qradar" : (spaceName=="watson-health") ? "watsonhealth" : (spaceName=="application-performance-management") ? "apm" : spaceName;
+spaceName = (spaceName=="cloud-object-storage") ? "cloudobjectstorage" : (spaceName=="powerai") ? "deep-learning-powerai" : (spaceName=="ibm-maximo-developer") ? "assetmanagement" : spaceName;
+
+if (typeof bannerStore == 'undefined') {
+  bannerStore = sessionStorage;
+}
+function getBanner() {
+    $.get("/wp-admin/admin-ajax.php?action=request_site_menu&site=" + spaceName,
+        function(data) {
+            $("#community-banner").ready(function() {
+                data && data != 0 && $('<div>' + data + '</div>').find('#pnext-top-menu').length == 1 &&
+                  $("#community-banner").html(data);
+
+                // save to session storage
+                if (bannerStore) { 
+                  bannerStore[spaceName + "_banner"] = data;
+                }
+            });
+        });
+
+}
+// load the banner from wordpress server
+if (spaceName.length > 0) {
+  if(bannerStore) {
+    var data = bannerStore[spaceName + "_banner"];
+    if (data) {
+        $("#community-banner").ready(function() {
+          data && data != 0 && $('<div>' + data + '</div>').find('#pnext-top-menu').length == 1 &&
+            $("#community-banner").html(data);
+        });
+    } else {
+        getBanner();
+    }
+  } else {
+    getBanner();
+  }
+}
+
+</script>
+
+<span id="clientIP" style="display:none">10.190.13.195</span>
+
+
+	<!-- trigger for the mobile menu.  Should probably get moved  -->
+	<script>
+		(function($) {
+			$(document).ready(function(){
+				$('#mobile-menu-trigger, #mobilemenu-overlay, #pn-mobilemenu-close').on('click.toggleMenu',function(e){
+					e.preventDefault();
+					$('body').toggleClass('mobile-menu-open');
+					//if the menu is open, set the focus to the close link
+					$('#pn-mobilemenu-close').focus();
+				})
+				//showing and hiding the header search
+				$('#pn-search-trigger').on('click.showsearch',function(e){
+					e.preventDefault();
+					$('#site-second-nav').find('.pn-search').addClass('pn-search__open');
+					$('#pnext-search-input').focus();
+				})
+				$('#pn-searchclose-trigger').on('click.closesearch',function(e){
+					e.preventDefault();
+					$('#site-second-nav').find('.pn-search').removeClass('pn-search__open');
+				})
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+
+
+<div id="not-footer">
+
+<div id="main-navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner"">
+        <div class="container">
+        	<div class="row-fluid">
+        		<h1 id="breadcrumb-title">
+        		</h1>
+        	</div>
+        	<!-- end .row-fluid-->
+            <div class="row-fluid">
+                <div class="search-wrapper span8">
+                    <a type="button" class="btn btn-navbar off-canvas-nav-btn" href="answers.html#sidr">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </a>
+                    <form action="https://developer.ibm.com/answers/search.html" method="get" class="navbar-search" accept-charset="UTF-8">
+                        <input type="hidden" id="search-filters" name="f" value=""/>
+                        <input type="hidden" id="search-types" name="type"
+                               value="question" />
+                        <input type="hidden" id="search-redirect" name="redirect"
+                               value="search/search"/>
+                        <input type="hidden" id="search-sort" name="sort"
+                               value="relevance"/>
+                        <input id="space-search-input" type="hidden" name="smartspace" value="wasdev"/>
+                    
+                    <div class="search-query-wrapper">
+	                    	<div class="space-scope">
+	  		  					<a translate="0" id="space-selected" rel="tag" style="cursor: pointer;" title="Click to remove WASdev filter and search all.">WASdev<span>&times;</span> </a>
+	        				</div>
+  						<label for="search-query" style="display:none;">Search</label> <!--hidden label for accessibility-->
+                        <input type="text"
+                               class="search-query"
+                               value=""
+                               name="q"
+                               id="search-query"
+                               data-provide="typeahead"
+                               data-items="4"
+                               autocomplete="off"
+                               placeholder="Search IBM Developer Answers"
+                               required
+                               style="width:50%"
+                               />
+                        <button type="submit" style="top:-6px;margin-right:-9px"><i class="icon-search dwa-icon-search"></i></button>
+                        <script type="text/javascript">
+                            function htmlEnc(str) {
+                               return str.replace(/&/g, '&amp;')
+                                  .replace(/</g, '&lt;')
+                                  .replace(/>/g, '&gt;')
+                                  .replace(/'/g, '&#39;')
+                                  .replace(/"/g, '&quot;');                            
+                            }
+                            $(document).ready(function () {
+//                                var ie7 = $.browser.msie && $.browser.version <= 7;
+
+                                var label = $('.navbar-search label[for=search_box]')
+                                label.css({
+                                    position: 'absolute',
+                                    top: 4,
+                                    left: 17,
+                                    zindex: 10
+                                });
+                                $('#search_box')
+                                        .focus(function () {
+                                            label.hide()
+                                        })
+                                        .blur(function () {
+                                            this.value == "" ? label.show() : label.hide()
+                                        });
+                                
+                                var query = "";
+                                if (query !== '') {
+                            			var tags = [];
+	                            					tags.push('+%5Bwasdev%5D');
+	                            		
+	                            		// take out user-entered tags that match smart space tags
+	                            		$.each(tags, function(index, tag) {
+	                            			query = query.replace(new RegExp(escapeRegExp(tag), 'gi'), '');
+	                            		});
+	                            	query = $.trim(query);
+                                	$('#search-query').val($("<div>").html(query).text());
+                                	$('#search-query-title').html(query);
+                                }        
+                            });
+                            $('#space-selected').click(function() {
+                            	    // Remove space-scope
+                            		$(this).remove();
+                            		$(".space-scope").remove();
+                            		// Search all
+                            		$('#space-search-input').val('');
+                            		// Expand search input width
+                            		$('#search-query').css('width', '100%');
+                            }); 
+                            $('.navbar-search').submit(function(event) { 
+                            	// scope exists
+                            	if ($('.space-scope').length > 0) {  
+                            		event.preventDefault();
+                            			var tags = [];
+	                            					tags.push('%5Bwasdev%5D');
+	                            		// append tags to the search query
+	                            		var dataString = $( this ).serialize().replace(/q=(.+)?($|&)/, 'q=$1 ' + tags.join(' '));
+	                            		location.href = '/answers/search.html?' + dataString;
+                            	}
+                            });
+                            $('#search-query').on('input',function(e){
+                               var instr = $('#search-query').val();
+                               var n1str = instr.replace("+[","[");
+                               var instr = n1str.replace("-[","[");
+                               var n1str = instr.replace(":","");
+                               var instr = n1str.replace("/","");
+                               var n1str = instr.replace("\\","");
+                               $('#search-query').val(n1str);
+                            });
+                        </script>
+                        <div id="searchResultsAutoComplete"></div>
+                    </form>
+                    </div>
+                    <div class="cf pn-search-tips"><button type="button" class="fr search-tips" id="pn-search-tips">Search tips</button></div>
+                    <div class="pn-search-grey"></div>
+                    <div class="pn-search-white"></div>
+                    <div id="advanced-search-panel" class="pam pn-advance-search-panel" tabindex="0">
+							<p>Refine your search by using the following advanced search options.</p>
+							<table class="mtm gray-table">
+								<tr>
+									<th>Criteria</th>
+									<th>Usage</th>
+								</tr>
+								<tr>
+									<td>Questions with keyword1 or keyword2</td>
+									<td>keyword1 keyword2</td>
+								</tr>
+								<tr>
+									<td>Questions with a mandatory word, e.g. keyword2</td>
+									<td>keyword1 <span class="highlight">+keyword2</span></td>
+								</tr>
+								<tr>
+									<td>Questions excluding a word, e.g. keyword2</td>
+									<td>keyword1 <span class="highlight">-keyword2</span></td>
+								</tr>
+								<tr>
+									<td>Questions with keyword(s) and a specific tag</td>
+									<td>keyword1 <span class="highlight">[tag1]</span></td>
+								</tr>
+								<tr>
+									<td>Questions with keyword(s) and either of two or more specific tags</td>
+									<td>keyword1 <span class="highlight">[tag1] [tag2]</span></td>
+								</tr>
+								<tr>
+									<td style="line-height: 1em; padding-top: 10px;" colspan="2">To search for all posts by a user or all posts with a specific tag, start typing and choose from the suggestion list.  <span class="highlight">Do not</span> use a plus or minus sign with a tag, e.g., +[tag1].</td>
+								</tr>
+							</table>
+						</div>
+                </div>
+                
+                <div class="span3">
+	                <ul class="nav-links">
+	                    <li>
+	                            <div class="btn-group navbar-action">
+	                                <a id="create-button" class="btn btn-success" href="https://developer.ibm.com/answers/questions/ask.html?smartspace=wasdev">Ask a question</a>
+	                            </div>
+	                    </li>
+	                </ul>
+	            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <section id="middle">
+
+        <div class="main">
+
+            <div class="main-inner">
+
+                <div class="container">
+                    <div class="row">
+                                <div class="span9 mainContent">
+
+                                        
+
+
+
+
+
+<div class="sticky-posts-list">
+    <p><a href="https://developer.ibm.com/answers/questions/511467/were-moving-our-ibm-support-forum-content-is-movin.html">Support Q&A's are moving! Many of our IBM Support business areas are migrating their support forum content to a new Support forum!</a></p>
+</div>
+
+<div class="widget">
+    <div class="widget-header">
+        <i class="icon-list-alt"></i>
+            <h2 id="question-list-title">Questions in WASdev space</h2>
+	         	<!--build smart space tags list-->
+	    					<div id="smart-space-tags">
+		    				<p>All questions tagged with <span class="tags" translate="0">
+		    					<a class="tag" nodeId="160138" rel="topic" no-popover="1" title="see questions tagged 'wasdev'" 
+		    					href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev">wasdev</a> 
+		    				</span>
+		    				</p></div>
+	    	<div class="pn-il">
+		        <span class="pn-subtab " >
+	        			<span class="pn-subtab-text"><strong>All</strong></span>
+	        	</span>
+	        	<span class="pn-subtab ">
+	        			<a title="These questions have 0 answers" href="https://developer.ibm.com/answers/smart-spaces/unanswered/24.html">Unanswered</a>
+	        	</span>
+	        	</span>
+	        </div> 
+<ul class="nav nav-pills sort prm">
+<li title="Active" class="active"><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?sort=active&amp;smartspace=wasdev">Active</a></li>
+<li title="Newest" ><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?sort=newest&amp;smartspace=wasdev">Newest</a></li>
+<li title="Likes" ><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?sort=votes&amp;smartspace=wasdev">Likes</a></li>
+<li title="Views" ><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?sort=viewCount&amp;smartspace=wasdev">Views</a></li>
+</ul>
+<span id="nav-sort-label">Sort by:</span>    </div>
+
+    <div class="widget-content" id="id_topic_content">
+
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/521374/config-file-web-application-not-found-on-was-liber.html?smartspace=wasdev">Config file web application not found on WAS liberty (docker)</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/429636/chanon-w.html"
+rel="user" nodeId="429636">Chanon W.</a></span> (<a href="https://developer.ibm.com/answers/users/429636/chanon-w.html"
+rel="user" nodeId="429636">1</a>) asked
+        	 | <span title="Oct 31, 2019 1:05:45 AM">Oct 31, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/docker.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="161356">docker</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-521374-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>56</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/288757/websphere-liberty-openid-connect-client-groupident.html?smartspace=wasdev">Websphere Liberty OpenID Connect Client groupIdentifier nested Claim</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/424545/ivant.html"
+rel="user" nodeId="424545">IvanT</a></span> (<a href="https://developer.ibm.com/answers/users/424545/ivant.html"
+rel="user" nodeId="424545">0</a>) commented
+        	 | <span title="Oct 24, 2019 4:34:48 AM">Oct 24, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere-liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160300">websphere-liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/openid.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160552">openid</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-288757-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>839</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/306787/liberty-does-not-appear-to-set-a-keep-alive-or-kee.html?smartspace=wasdev">Liberty does not appear to set a Keep-Alive or Keep-Alive-Info header even when Keep-Alive explicitly set</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/321062/christophbuck.html"
+rel="user" nodeId="321062">ChristophBuck</a></span> (<a href="https://developer.ibm.com/answers/users/321062/christophbuck.html"
+rel="user" nodeId="321062">131</a>) answered
+        	 | <span title="Oct 22, 2019 11:38:03 AM">Oct 22, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/keepalive.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="190954">keepalive</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-306787-score-wrapper" class="votes">
+            <span>1</span> Likes</p>
+        <p class="views"><span>608</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/517551/websphere-liberty-timeout-issue.html?smartspace=wasdev">Websphere Liberty Timeout Issue?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/312108/tomalcott.html"
+rel="user" nodeId="312108">TomAlcott</a></span> (<a href="https://developer.ibm.com/answers/users/312108/tomalcott.html"
+rel="user" nodeId="312108">0</a>) answered
+        	 | <span title="Sep 16, 2019 10:13:58 AM">Sep 16, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty+profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="177311">liberty profile</a>             
+<a href="https://developer.ibm.com/answers/topics/virtual+host.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="186163">virtual host</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-517551-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>30</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/517196/how-to-get-use-auto-expand-and-contextroot-togethe.html?smartspace=wasdev">How to get use auto expand and contextroot together?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/422237/fabiandj.html"
+rel="user" nodeId="422237">FabiandJ</a></span> (<a href="https://developer.ibm.com/answers/users/422237/fabiandj.html"
+rel="user" nodeId="422237">3</a>) answered
+        	 | <span title="Sep 16, 2019 9:24:50 AM">Sep 16, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty+profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="177311">liberty profile</a>             
+<a href="https://developer.ibm.com/answers/topics/virtual+host.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="186163">virtual host</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>2</span> Answers</p>
+
+        <p id="post-517196-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>46</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/516453/portlet-features-in-liberty-profile.html?smartspace=wasdev">portlet features in Liberty Profile</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/765/brianspaskin.html"
+rel="user" nodeId="765">BrianSPaskin</a></span> (<a href="https://developer.ibm.com/answers/users/765/brianspaskin.html"
+rel="user" nodeId="765">1990</a>) answered
+        	 | <span title="Sep 3, 2019 6:14:43 AM">Sep 3, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty+profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="177311">liberty profile</a>             
+<a href="https://developer.ibm.com/answers/topics/portlet.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="161072">portlet</a>             
+<a href="https://developer.ibm.com/answers/topics/portlets.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="161603">portlets</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-516453-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>69</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/172820/running-wlp-as-non-root-vs-file-system-permissions.html?smartspace=wasdev">Running WLP as non-root Vs. file system permissions</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/383086/paranee2.html"
+rel="user" nodeId="383086">Paranee2</a></span> (<a href="https://developer.ibm.com/answers/users/383086/paranee2.html"
+rel="user" nodeId="383086">1</a>) answered
+        	 | <span title="Aug 16, 2019 10:19:38 AM">Aug 16, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/linux.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160086">linux</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty-beta.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="162084">liberty-beta</a>             
+<a href="https://developer.ibm.com/answers/topics/wlp.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160274">wlp</a>             
+<a href="https://developer.ibm.com/answers/topics/filesystem.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160963">filesystem</a>             
+<a href="https://developer.ibm.com/answers/topics/centos7.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="172818">centos7</a>             
+<a href="https://developer.ibm.com/answers/topics/systemd.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="172819">systemd</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>2</span> Answers</p>
+
+        <p id="post-172820-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">2.6k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/514547/http-405-method-not-allowed-with-x-http-method-ove.html?smartspace=wasdev">HTTP 405 Method Not Allowed with X-HTTP-Method-Override in WAS 9.0.5</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/926/andymc.html"
+rel="user" nodeId="926">andymc_</a></span> (<a href="https://developer.ibm.com/answers/users/926/andymc.html"
+rel="user" nodeId="926">486</a>) answered
+        	 | <span title="Aug 14, 2019 4:28:04 PM">Aug 14, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/was8.5.5.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160232">was8.5.5</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>1</span> Answer</p>
+
+        <p id="post-514547-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>52</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/427921/liberty-avoid-logging-of-cwwko0801e-when-http-conn.html?smartspace=wasdev">Liberty  - Avoid logging of CWWKO0801E when http connection attempted on https port</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/3930/tiloblue.html"
+rel="user" nodeId="3930">TiloBlue</a></span> (<a href="https://developer.ibm.com/answers/users/3930/tiloblue.html"
+rel="user" nodeId="3930">149</a>) answered
+        	 | <span title="Aug 9, 2019 7:54:28 PM">Aug 9, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>3</span> Answers</p>
+
+        <p id="post-427921-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">1.2k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/281916/how-can-i-deploy-an-ear-to-a-docker-container-runn.html?smartspace=wasdev">How can I deploy an ear to a Docker container running websphere-traditional</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/424326/maranda.html"
+rel="user" nodeId="424326">maranda</a></span> (<a href="https://developer.ibm.com/answers/users/424326/maranda.html"
+rel="user" nodeId="424326">1</a>) edited
+        	 | <span title="Aug 2, 2019 8:57:36 AM">Aug 2, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/docker.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="161356">docker</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere-8.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160437">websphere-8</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>3</span> Answers</p>
+
+        <p id="post-281916-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">3.4k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/512530/the-app-server-ibm-application-bndxml-file-doesnt.html?smartspace=wasdev">The app server ibm-application-bnd.xml file doesnt update security roles via script from the DMGR but dmgr ibm-application-bnd.xml file updates.</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/765/brianspaskin.html"
+rel="user" nodeId="765">BrianSPaskin</a></span> (<a href="https://developer.ibm.com/answers/users/765/brianspaskin.html"
+rel="user" nodeId="765">1990</a>) commented
+        	 | <span title="Jul 23, 2019 6:13:41 AM">Jul 23, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere+application+server.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="165173">websphere application server</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere-liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160300">websphere-liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/aix.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160400">aix</a>             
+<a href="https://developer.ibm.com/answers/topics/synchronization.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="162083">synchronization</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere+8.5.5.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="183225">websphere 8.5.5</a>             
+<a href="https://developer.ibm.com/answers/topics/syncnode.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="197072">syncnode</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-512530-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>98</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/512392/gdps-gui-liberty-server-geosrv1-uses-random-port.html?smartspace=wasdev">GDPS Gui Liberty Server (GEOSRV1) uses random Port</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/423508/juergenmayer.html"
+rel="user" nodeId="423508">juergenmayer</a></span> (<a href="https://developer.ibm.com/answers/users/423508/juergenmayer.html"
+rel="user" nodeId="423508">1</a>) asked
+        	 | <span title="Jul 22, 2019 2:37:05 AM">Jul 22, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-512392-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>72</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/511776/websphere-application-server-developer-licence-ibm.html?smartspace=wasdev">websphere application server developer licence & ibm db2 for developers & docker</a>
+         <span class="label">Closed</span></h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/256147/wermarc.html"
+rel="user" nodeId="256147">wermarc</a></span> (<a href="https://developer.ibm.com/answers/users/256147/wermarc.html"
+rel="user" nodeId="256147">77</a>) published
+        	 | <span title="Jul 17, 2019 5:14:09 AM">Jul 17, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/db2.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160043">db2</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-511776-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>141</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/15897/websphere-application-server-for-trail.html?smartspace=wasdev">Websphere application server for trail?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/349443/solt77777.html"
+rel="user" nodeId="349443">Solt77777</a></span> (<a href="https://developer.ibm.com/answers/users/349443/solt77777.html"
+rel="user" nodeId="349443">5</a>) published
+        	 | <span title="Jul 17, 2019 3:10:55 AM">Jul 17, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160249">websphere</a>             
+<a href="https://developer.ibm.com/answers/topics/application.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160294">application</a>             
+<a href="https://developer.ibm.com/answers/topics/ibmcloud.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="415619">ibmcloud</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>5</span> Answers</p>
+
+        <p id="post-15897-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">1.8k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/6536/how-to-monitor-jdbc-connection-pool-on-liberty-with-jconsole.html?smartspace=wasdev">How to monitor JDBC connection pool on Liberty with JConsole ?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/251730/27ps-michael-hill.html"
+rel="user" nodeId="251730">27PS_Michael_Hill</a></span> (<a href="https://developer.ibm.com/answers/users/251730/27ps-michael-hill.html"
+rel="user" nodeId="251730">1808</a>) edited
+        	 | <span title="Jul 10, 2019 3:30:29 PM">Jul 10, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-6536-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>978</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/510597/how-to-use-virtual-hosts-with-websphere-liberty.html?smartspace=wasdev">How to use virtual hosts with Websphere Liberty?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/624/eric-covener.html"
+rel="user" nodeId="624">Eric Covener</a></span> (<a href="https://developer.ibm.com/answers/users/624/eric-covener.html"
+rel="user" nodeId="624">1231</a>) commented
+        	 | <span title="Jul 5, 2019 8:39:16 AM">Jul 5, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty+profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="177311">liberty profile</a>             
+<a href="https://developer.ibm.com/answers/topics/virtual+host.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="186163">virtual host</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>2</span> Answers</p>
+
+        <p id="post-510597-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>160</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/205332/how-to-import-certificate-in-liberty.html?smartspace=wasdev">How to import certificate in liberty</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/422241/parivesh.html"
+rel="user" nodeId="422241">Parivesh</a></span> (<a href="https://developer.ibm.com/answers/users/422241/parivesh.html"
+rel="user" nodeId="422241">1</a>) answered
+        	 | <span title="Jul 1, 2019 3:58:39 PM">Jul 1, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>4</span> Answers</p>
+
+        <p id="post-205332-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">3.8k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/162433/launch-the-installation-wizard-for-websphere-appli.html?smartspace=wasdev">Launch the installation wizard for WebSphere Application Server for Developers</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/250326/johnjurecek.html"
+rel="user" nodeId="250326">JohnJurecek</a></span> (<a href="https://developer.ibm.com/answers/users/250326/johnjurecek.html"
+rel="user" nodeId="250326">1246</a>) edited
+        	 | <span title="Jun 27, 2019 7:58:36 PM">Jun 27, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere+application+server.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="165173">websphere application server</a>             
+<a href="https://developer.ibm.com/answers/topics/installation.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160135">installation</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>1</span> Answer</p>
+
+        <p id="post-162433-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">1.3k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/508801/cannot-install-was9-ilan-using-the-repository-url-3.html?smartspace=wasdev">Cannot install WAS9 ILAN using the repository URL</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/261776/tiu.html"
+rel="user" nodeId="261776">tiu</a></span> (<a href="https://developer.ibm.com/answers/users/261776/tiu.html"
+rel="user" nodeId="261776">56</a>) commented
+        	 | <span title="Jun 21, 2019 9:51:12 AM">Jun 21, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere+application+server.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="165173">websphere application server</a>             
+<a href="https://developer.ibm.com/answers/topics/was9.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="195214">was9</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-508801-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>116</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/507631/is-it-possible-to-disable-aio-async-io-in-webspher.html?smartspace=wasdev">Is it possible to disable AIO (async IO) in WebSphere Liberty Profile ?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/271230/alasdair.html"
+rel="user" nodeId="271230">alasdair@rtp</a></span> (<a href="https://developer.ibm.com/answers/users/271230/alasdair.html"
+rel="user" nodeId="271230">136</a>) answered
+        	 | <span title="Jun 12, 2019 11:39:42 AM">Jun 12, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/technote.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="268924">technote</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere-liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160300">websphere-liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/swg21366862.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="490063">swg21366862</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-507631-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>153</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/507721/wasrequrl-cookie-path-missing-for-applications-wit.html?smartspace=wasdev">WASReqURL cookie path missing for applications with context root set to "/" when webAppSecurity's includePathInWASReqURL="true"  ?</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/270282/martinproulx.html"
+rel="user" nodeId="270282">MartinProulx</a></span> (<a href="https://developer.ibm.com/answers/users/270282/martinproulx.html"
+rel="user" nodeId="270282">107</a>) edited
+        	 | <span title="Jun 12, 2019 11:20:14 AM">Jun 12, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/security.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160033">security</a>             
+<a href="https://developer.ibm.com/answers/topics/authentication.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160571">authentication</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers  unanswered" >
+                <span>0</span> Answers</p>
+
+        <p id="post-507721-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>540</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/507122/liberty-maven-interim-fixes.html?smartspace=wasdev">Liberty Maven Interim Fixes</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/271230/alasdair.html"
+rel="user" nodeId="271230">alasdair@rtp</a></span> (<a href="https://developer.ibm.com/answers/users/271230/alasdair.html"
+rel="user" nodeId="271230">136</a>) answered
+        	 | <span title="Jun 5, 2019 1:15:59 PM">Jun 5, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/maven-liberty-plugin.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="165535">maven-liberty-plugin</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/9/help.html">dWAnswers Help</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-507122-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>161</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/245151/ntlm-windows-authentication-in-was-liberty.html?smartspace=wasdev">NTLM Windows authentication in WAS Liberty</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/252937/ramarika.html"
+rel="user" nodeId="252937">ramarika</a></span> (<a href="https://developer.ibm.com/answers/users/252937/ramarika.html"
+rel="user" nodeId="252937">9874</a>) edited
+        	 | <span title="Jun 5, 2019 12:03:12 PM">Jun 5, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/login.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160246">login</a>             
+<a href="https://developer.ibm.com/answers/topics/authentication.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160571">authentication</a>             
+<a href="https://developer.ibm.com/answers/topics/windows.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160190">windows</a>             
+<a href="https://developer.ibm.com/answers/topics/ntlm.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="234439">ntlm</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>2</span> Answers</p>
+
+        <p id="post-245151-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span><span class="thousand">1.9k</span></span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/370580/generate-ddl-for-messaging-engine-table-creation.html?smartspace=wasdev">generate ddl for messaging engine table creation</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/7170/ayron-fears.html"
+rel="user" nodeId="7170">Ayron Fears</a></span> (<a href="https://developer.ibm.com/answers/users/7170/ayron-fears.html"
+rel="user" nodeId="7170">2565</a>) edited
+        	 | <span title="Jun 4, 2019 9:02:07 PM">Jun 4, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere+application+server.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="165173">websphere application server</a>             
+<a href="https://developer.ibm.com/answers/topics/db2.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160043">db2</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>1</span> Answer</p>
+
+        <p id="post-370580-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>553</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/299421/liberty-doesnt-work-as-expected.html?smartspace=wasdev">liberty  cors doesn't work as expected</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/3930/tiloblue.html"
+rel="user" nodeId="3930">TiloBlue</a></span> (<a href="https://developer.ibm.com/answers/users/3930/tiloblue.html"
+rel="user" nodeId="3930">149</a>) answered
+        	 | <span title="Jun 3, 2019 1:16:44 PM">Jun 3, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/cors.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160317">cors</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers " >
+                <span>2</span> Answers</p>
+
+        <p id="post-299421-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>731</span> Views</p>
+    </div>
+</div>
+<div class="node-list-item question-list-item" role="listitem">
+    <div class="info">
+        <h4 class="title"><a href="https://developer.ibm.com/answers/questions/182377/when-installing-wlp-extras-to-existing-wlp-directo.html?smartspace=wasdev">When installing wlp-extras to existing wlp directory getting error</a>
+        </h4>
+        <p class="posting-user">
+        	<span translate="0"><a href="https://developer.ibm.com/answers/users/7135/jeanette-daly.html"
+rel="user" nodeId="7135">Jeanette Daly</a></span> (<a href="https://developer.ibm.com/answers/users/7135/jeanette-daly.html"
+rel="user" nodeId="7135">2625</a>) edited
+        	 | <span title="May 25, 2019 4:40:49 PM">May 25, '19</span>
+        </p>
+
+        <div class="tags-wrapper">
+            <span class="tags" translate="0">
+<a href="https://developer.ibm.com/answers/topics/was.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160259">was</a>             
+<a href="https://developer.ibm.com/answers/topics/wasdev.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160138">wasdev</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160225">liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/liberty+profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="177311">liberty profile</a>             
+<a href="https://developer.ibm.com/answers/topics/websphere-liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160300">websphere-liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/wlp.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="160274">wlp</a>             
+<a href="https://developer.ibm.com/answers/topics/was_liberty.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="448922">was_liberty</a>             
+<a href="https://developer.ibm.com/answers/topics/was_liberty_profile.html?smartspace=wasdev"
+class="tag"
+rel="topic" nodeId="448923">was_liberty_profile</a>            
+            </span>
+            <!--in <a
+                class="space-name" href="/answers/spaces/8/default.html">Default</a>-->
+        	
+        </div>
+    </div>
+    <div class="counts">
+            <p class="answers accepted" title="This question has an accepted answer">
+                <span>1</span> Answer</p>
+
+        <p id="post-182377-score-wrapper" class="votes">
+            <span>0</span> Likes</p>
+        <p class="views"><span>421</span> Views</p>
+    </div>
+</div>
+<div class="pagination">
+<ul>
+<li class="active"><a >1</a></li>
+<li><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=2&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev">2</a></li>
+<li><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=3&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev">3</a></li>
+<li><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=4&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev">4</a></li>
+<li><a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=5&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev">5</a></li>
+<li class="next">
+<a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=2&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev" title="Next">&rsaquo;</a>
+</li>
+<li class="last">
+<a href="https://developer.ibm.com/answers/smartspace/wasdev/index.html?page=73&amp;pageSize=26&amp;sort=active&amp;smartspace=wasdev" title="Last (73)">&raquo;</a>
+</li>
+</ul>
+</div>    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="span3 sidebarTwo">
+                                        
+			<div class="boxC">
+			   <div class="questions-count">
+			       <!--<span>1881 questions</span>-->
+			       <span>1881</span> questions
+			   </div>
+			</div>
+
+        <div>
+            
+        </div>
+        <div>
+            
+
+
+
+
+   
+   
+   
+   
+
+
+        </div>
+        <div>
+            
+<!-- br/>
+
+<div class="widget" id="drone-contest">
+   <a href="https://developer.ibm.com/contest/?cm_mmc=ibmdev-_-drone_-internal-_-answers" target="_blank">
+      <img src="/answers/images/drone-contest.jpg" alt="IBM Developer Drone Contest - Enter to Win" style="border: 0px;">
+   </a>
+</div -->
+
+<div class="widget" id="top-users-widget">
+
+   <div class="widget-header">
+
+       <h3>Top dW users</h3>
+
+   </div>
+
+       <div class="pn-module-body">
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/264425/bettinaw.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="264425"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=270003V8C6"
+alt="270003V8C6 gravatar image"
+title="BettinaW"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/252557/gzaetz.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="252557"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=120000AS0J"
+alt="120000AS0J gravatar image"
+title="GZaetz"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/251301/rickett.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="251301"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=2000002RXD"
+alt="2000002RXD gravatar image"
+title="rickett"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/6668/marlyn-quinones.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="6668"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=110000CNEN"
+alt="110000CNEN gravatar image"
+title="Marlyn_Quinones"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/7367/110000pnbc.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="7367"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=110000PNBC"
+alt="110000PNBC gravatar image"
+title="&#64;chughts"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/256955/normankrueger.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="256955"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=110000QH3M"
+alt="110000QH3M gravatar image"
+title="NormanKrueger"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/3055/billbulfin.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="3055"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=1000004JHC"
+alt="1000004JHC gravatar image"
+title="BillBulfin"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/266659/adrip.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="266659"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=270003GJYH"
+alt="270003GJYH gravatar image"
+title="Adri.P"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/250033/restuser.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="250033"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=restuser"
+alt="restuser gravatar image"
+title="restuser"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/256888/gregork.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="256888"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=2700013SN6"
+alt="2700013SN6 gravatar image"
+title="GregorK"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/257451/jimhutchinson.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="257451"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=06000187VH"
+alt="06000187VH gravatar image"
+title="JimHutchinson"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/7630/odmgd.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="7630"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=270005YS1Y"
+alt="270005YS1Y gravatar image"
+title="odmgd"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/250113/odmfp.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="250113"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=270002V45P"
+alt="270002V45P gravatar image"
+title="odmfp"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/252937/ramarika.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="252937"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=060000KXHE"
+alt="060000KXHE gravatar image"
+title="ramarika"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/292684/silviugligore.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="292684"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=27000777MT"
+alt="27000777MT gravatar image"
+title="SilviuGligore"
+/>
+</a>					
+				</span>
+			</span>
+		  	<span class="top_user">
+				<span class="thumb gravatar tinyborder">
+<a href="https://developer.ibm.com/answers/users/321026/guihongzhang.html"
+style="display: inline-block; max-width: 32px;"
+rel="user" nodeId="321026"> <img class="gravatar "
+width="32"
+src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=270006DEGE"
+alt="270006DEGE gravatar image"
+title="GuihongZhang"
+/>
+</a>					
+				</span>
+			</span>
+	   </div>
+
+</div>
+        </div>
+        <div>
+            <div class="widget" id="recent-topics-widget">
+		    <div class="widget-header">
+		        <i class="icon-tags"></i>
+		        <h3>Global tags</h3>
+		    </div>
+		<div class="widget-content topic-block tags" style="position: relative;">
+			    <script type="text/javascript">
+			        $(document).ready(function () {
+			        	var topicURLs = [];
+			    			topicURLs.push({'url': '/answers/topics/ibm-cloud.html?smartspace=wasdev', 
+			    							'id': '414913',
+			    							'title': 'ibm-cloud'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/spss.html?smartspace=wasdev', 
+			    							'id': '160068',
+			    							'title': 'spss'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/spsslicensing.html?smartspace=wasdev', 
+			    							'id': '257998',
+			    							'title': 'spsslicensing'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/bpm.html?smartspace=wasdev', 
+			    							'id': '160765',
+			    							'title': 'bpm'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/statistics.html?smartspace=wasdev', 
+			    							'id': '164403',
+			    							'title': 'statistics'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/itmv6.html?smartspace=wasdev', 
+			    							'id': '189175',
+			    							'title': 'itmv6'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/qradar.html?smartspace=wasdev', 
+			    							'id': '175717',
+			    							'title': 'qradar'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/datacap.html?smartspace=wasdev', 
+			    							'id': '237653',
+			    							'title': 'datacap'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/spssstudent.html?smartspace=wasdev', 
+			    							'id': '185682',
+			    							'title': 'spssstudent'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/urbancode.html?smartspace=wasdev', 
+			    							'id': '160172',
+			    							'title': 'urbancode'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/ecmsupport.html?smartspace=wasdev', 
+			    							'id': '160851',
+			    							'title': 'ecmsupport'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/was.html?smartspace=wasdev', 
+			    							'id': '160259',
+			    							'title': 'was'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/portal.html?smartspace=wasdev', 
+			    							'id': '160606',
+			    							'title': 'portal'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/mq.html?smartspace=wasdev', 
+			    							'id': '160281',
+			    							'title': 'mq'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/streamsdev.html?smartspace=wasdev', 
+			    							'id': '160001',
+			    							'title': 'streamsdev'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/iib.html?smartspace=wasdev', 
+			    							'id': '160937',
+			    							'title': 'iib'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/technote.html?smartspace=wasdev', 
+			    							'id': '268924',
+			    							'title': 'technote'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/ilmt.html?smartspace=wasdev', 
+			    							'id': '166510',
+			    							'title': 'ilmt'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/digexp.html?smartspace=wasdev', 
+			    							'id': '161567',
+			    							'title': 'digexp'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/icn.html?smartspace=wasdev', 
+			    							'id': '187988',
+			    							'title': 'icn'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/wasdev.html?smartspace=wasdev', 
+			    							'id': '160138',
+			    							'title': 'wasdev'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/websphere+application+server.html?smartspace=wasdev', 
+			    							'id': '165173',
+			    							'title': 'websphere application server'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/db2.html?smartspace=wasdev', 
+			    							'id': '160043',
+			    							'title': 'db2'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/ibmodm.html?smartspace=wasdev', 
+			    							'id': '160995',
+			    							'title': 'ibmodm'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/modeler.html?smartspace=wasdev', 
+			    							'id': '161768',
+			    							'title': 'modeler'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/devops-services.html?smartspace=wasdev', 
+			    							'id': '160743',
+			    							'title': 'devops-services'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/watson-assistant.html?smartspace=wasdev', 
+			    							'id': '440042',
+			    							'title': 'watson-assistant'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/liberty.html?smartspace=wasdev', 
+			    							'id': '160225',
+			    							'title': 'liberty'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/api.html?smartspace=wasdev', 
+			    							'id': '160589',
+			    							'title': 'api'
+			    							});
+			    			topicURLs.push({'url': '/answers/topics/extensibility.html?smartspace=wasdev', 
+			    							'id': '214594',
+			    							'title': 'extensibility'
+			    							});
+			    		var widgcont = $('#recent-topics-widget .widget-content');
+			    		$.each(topicURLs, function(i, el) {
+			    			this.url = this.url.replace(/[\?&]smartspace=.+?(&.+)*$/,'');
+			    			widgcont.append('<div><a translate="0" class="tag" nodeId="' + this.id + '" rel="topic" no-popover="1" title="See questions tagged ' + this.title + 
+			    			'" href="https://developer.ibm.com/answers/smartspace/wasdev/'&#32;+&#32;this.url&#32;+&#32;'">' + this.title + '</a>');
+			    		});
+			    		
+			    		widgcont.append('<br/><a href="https://developer.ibm.com/answers/topics.html">View all</a>');
+			        });
+			     </script>
+		
+		</div>
+</div>
+
+        </div>
+        <div>
+            
+        </div>
+
+                                        
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <div class="push"></div>
+</div>
+
+
+<section id="bottom">
+	<footer role="contentinfo" aria-label="IBM Developer">
+	    <div id="dw-footer-module">
+	    </div>
+	    <div id="dw-footer" class="ibm-padding-normal ibm-alternate">
+	        <div class="ibm-columns">
+	            <div class="ibm-col-1-1">
+	                <div class="dw-footer-corporate-links">
+	                    <ul>
+	                        <li><a href="https://developer.ibm.com/feedback">Contact</a></li>
+	                        <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+	                        <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">IBM Developer Terms of use</a></li>
+	                        <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+	                        <li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+	                        <!-- li class="ibm-feedbacklink"><a href="#">Feedback</a></li -->
+	                        <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="answers.html#">Cookie Preferences</a></li>
+	                    </ul>                 
+	                </div>
+	                <div id="ibm-footer-locale-selector"></div>
+	            </div>
+	            <div class="ibm-col-1-1">
+			        <div class="row">
+		            	<div class="span12 text-center">
+		                	<p class="footer-copyright">
+		                    	<a href="http://www.dzonesoftware.com/products/answerhub-question-answer-software?utm_source=appfooter&utm_medium=web&utm_campaign=Application%2BReferral%2B">
+Powered by AnswerHub		                        </a>
+		                    </p>
+		            	</div>
+		            </div> <!-- /row -->
+		        </div>	            
+	        </div>
+	    </div>        
+	</footer>
+</section>
+
+
+<a class="dummy-navbar-link hidden" tabindex="-1" role="link"><span>Authentication check. Please ignore.</span></a>
+<div class="off-canvas-nav" id="sidr" style="display:none;">
+<ul class="nav nav-list">
+    <li class="nav-header">
+Anonymous    </li>
+    <li>
+        <a href="https://developer.ibm.com/answers/users/login.html">Sign in</a>
+    </li>
+    <li class="nav-header">Create</li>
+    <li>
+        <a href="https://developer.ibm.com/answers/questions/ask.html">Ask a question</a>
+    </li>
+
+
+    <li class="nav-header">Spaces</li>
+
+
+
+                        <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/apiconnect/index.html">API Connect</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/515/analytic-hybrid-cloud-core.html">Analytic Hybrid Cloud Core</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/apm/index.html">Application Performance Management</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/appsecdev/index.html">Appsecdev</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/bpm/index.html">BPM</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/blockchain/index.html">Blockchain</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/bti/index.html">Business Transaction Intelligence</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/capi/index.html">CAPI</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/capi-snap/index.html">CAPI SNAP</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cics/index.html">CICS</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cloud-analytics/index.html">Cloud Analytics</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cloudautomation/index.html">Cloud Automation</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cloudobjectstorage/index.html">Cloud Object Storage</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cloud-marketplace/index.html">Cloud marketplace</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/collaboration/index.html">Collaboration</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/cloudcontentservices/index.html">Content Services (ECM)</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/testing/index.html">Continuous Testing</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/courses/index.html">Courses</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/customerexperienceanalytics/index.html">Customer Experience Analytics</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/db2luw/index.html">DB2 LUW</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/521/data-and-ai.html">Data and AI</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/datapower/index.html">DataPower</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/docloud/index.html">Decision Optimization</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/533/devops-build_2.html">DevOps Build</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/devops-services/index.html">DevOps Services</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/developers-ibm-mx/index.html">Developers IBM MX</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/digitalcommerce/index.html">Digital Commerce</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/digital-experience/index.html">Digital Experience</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/finance/index.html">Finance</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/gep/index.html">Global Entrepreneur Program</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/hadoop/index.html">Hadoop</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/514/hybrid-cloud-core.html">Hybrid Cloud Core</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/541/hyper-protect.html">Hyper Protect</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/bluemix/index.html">IBM Cloud platform</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/ibm-design/index.html">IBM Design</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/ibm-forms-experience-builder/index.html">IBM Forms Experience Builder</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/ibm-maximo-dev/index.html">IBM Maximo Developer</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/storediq-connectorsdk/index.html">IBM StoredIQ</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/storediq/index.html">IBM StoredIQ-Cartridges</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/iidr/index.html">IIDR</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/itoa/index.html">ITOA</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/informationserver/index.html">InformationServer</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/integration-bus/index.html">Integration Bus</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/internet-of-things/index.html">Internet of Things</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/kenexa/index.html">Kenexa</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/331/linux-on-power.html">Linux on Power</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/linuxone/index.html">LinuxONE</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/mdm/index.html">MDM</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/mainframe/index.html">Mainframe</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/messaging/index.html">Messaging</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/nodejs/index.html">Node.js</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/odm/index.html">ODM</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/open/index.html">Open</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/551/partnerworld-developer-support.html">PartnerWorld Developer Support</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/powerai/index.html">PowerAI</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/powervc/index.html">PowerVC</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/predictiveanalytics/index.html">Predictive Analytics</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/productinsights/index.html">Product Insights</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/puredata-for-analytics/index.html">PureData for Analytics</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/push/index.html">Push</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/321/qradar-app-development.html">QRadar App Development</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/rba/index.html">Run Book Automation</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/searchinsights/index.html">Search Insights</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/511/security-core.html">Security Core</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/storage/index.html">Storage</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/513/storage-core.html">Storage Core</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/streamsdev/index.html">Streamsdev</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/scbn/index.html">Supply Chain Business Network</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/sci/index.html">Supply Chain Insights</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/swift/index.html">Swift</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/ubx-capture/index.html">UBX Capture</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/ubx/index.html">Universal Behavior Exchange</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/urbancode/index.html">UrbanCode</a>
+            </li>
+            <li class="active">
+                <a class="main-nav" href="answers.html">WASdev</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/wsrr/index.html">WSRR</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/watson/index.html">Watson</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/watson-campaign-automation/index.html">Watson Campaign Automation</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/wch/index.html">Watson Content Hub</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/watsonmarketinginsights/index.html">Watson Marketing Insights</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/dw-answers-help/index.html">dW Answers Help</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/premium/index.html">dW Premium</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smart-spaces/421/developerworks-sandbox.html">developerWorks Sandbox</a>
+            </li>
+            <li >
+                <a class="main-nav" href="https://developer.ibm.com/answers/smartspace/developerworks/index.html">developerWorks Team</a>
+            </li>
+
+                    <li class="divider"></li>
+                        <li >
+                <a class="main-nav"
+                   href="https://developer.ibm.com/answers/space/watsonhealth/index.html">Watson Health</a>
+
+
+
+        <li class="nav-header">More</li>
+        <li>
+            <a href="https://developer.ibm.com/answers/topics.html">Tags</a>
+        </li>
+
+        <li>
+            <a href="https://developer.ibm.com/answers/questions/index.html">Questions</a>
+        </li>
+
+        <li>
+            <a href="https://developer.ibm.com/answers/users/index.html">Users</a>
+        </li>
+
+        <li>
+            <a href="https://developer.ibm.com/answers/badge/types.html">Badges</a>
+        </li>
+</ul>
+</div><script type="text/x-jquery-tmpl" id="user-popover">
+    <div class="user-popover ahub-popover">
+        <div class="ahub-popover-content">
+            <div class="header">
+                <div class="popover-gravatar">
+                    <a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}">
+                        <img class="gravatar " height="84" width="84" title="${profileUser.displayName}" alt="${profileUser.displayName} gravatar image" src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=${profileUser.username}">
+                    </a>
+                </div>
+                <p class="nameAndTagline" translate="0">
+                    <a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}" class="username">${profileUser.displayName}</a><br>
+                    {{if profileUser.tagline}}<span class="tagline">${profileUser.tagline}</span>{{else}}{{if profileUser.location}}<span class="location">${profileUser.location}</span>{{/if}}{{/if}}
+                </p>
+                {{if currentUser.id != profileUser.id}}<a class="btn btn-follow {{if currentUserFollowing}}on btn-info{{/if}}" command="follow" data-node-type="user" nodeId="${profileUser.id}" role="link" aria-label="link" tabindex="0"></a>{{/if}}
+            </div>
+            <div class="body">
+                <div class="stats-wrapper">
+                    <ul class="stats unstyled">
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}"><span class="count">${profileUser.reputation}</span><br>${i18n.reputation}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}"><span class="count">${profileUser.postCount}</span><br>${i18n.posts}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}"><span class="count">${profileUser.userFollowCount}</span><br>${i18n.following}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}"><span class="count">${profileUser.followerCount}</span><br>${i18n.followers}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${profileUser.profileUrl}"><span class="count">${profileUser.creationDateObj.getMonth() + 1 + "/" + profileUser.creationDateObj.getFullYear().toString().substring(2,4)}</span><br>${i18n.joined}</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script><script type="text/x-jquery-tmpl" id="topic-popover">
+    <div class="topic-popover ahub-popover">
+        <div class="ahub-popover-content">
+            <div class="header">
+            <!---
+                <div class="popover-icon">
+                    <a href="${topic.url}">
+                        <img id="" class="gravatar " height="84" width="84" title="${topic.name}" alt="${topic.name} icon" src="${topic.icon}">
+                    </a>
+                </div>
+                -->
+                <p class="name"><a href="https://developer.ibm.com/answers/smartspace/wasdev/${topic.url}">${topic.name}</a></p>
+                <a class="btn btn-follow {{if currentUserFollowing}}on btn-info{{/if}}" command="follow" data-node-type="topic" nodeId="${topic.name}" role="link" aria-label="link" tabindex="0"></a>
+            </div>
+            <div class="body">
+                <div class="stats-wrapper">
+                    <ul class="stats unstyled">
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${topic.url}"><span class="count">${followerCount}</span><br>${i18n.followers}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${topic.url}"><span class="count">${questionCount}</span><br>${i18n.questions}</a></li>
+                        <li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${topic.url}"><span class="count">${answerCount}</span><br>${i18n.answers}</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                {{if description}}<div class="description">{{html description}}</div>{{/if}}
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-jquery-tmpl" id="badge-popover">
+    <div class="badge-popover ahub-popover">
+        <div class="ahub-popover-content">
+            <div class="header">
+                <div class="pull-left">
+                    <img class="gravatar award-icon" height="84" width="84" title="${awardType.name}" alt="avatar image" src="https://developer.ibm.com/answers/smartspace/wasdev/${awardType.awardIconSrc}">
+                </div>
+                <p class="nameAndTagline">
+                    <a href="https://developer.ibm.com/answers/smartspace/wasdev/${awardType.awardUrl}" class="name">${awardType.name}</a><br>
+                    <span class="tagline">${awardType.description}</span>
+                </p>   
+            </div>
+            <div class="body">
+                	<div class="stats-wrapper">
+	                	<ul class="stats unstyled">
+							<li><a href="https://developer.ibm.com/answers/smartspace/wasdev/${awardType.awardUrl}"><span class="count">${awardPager.totalCount}</span><br>${i18n.awarded}</a></li>
+	                		<li>
+	                			<ul class="users unstyled">
+	                				<li><span class="user-list-title">${i18n.completedBy}:</span></li>
+			                		{{each awardPager.list}}
+				                		<li>
+					                		<a href="https://developer.ibm.com/answers/smartspace/wasdev/${$value.user.profileUrl}" title="${$value.user.username}">
+					                			<img class="gravatar " width="32" height="32" src="https://developer.ibm.com/answers/smartspace/wasdev/${$value.user.avatar}?s=32">
+					                		</a>
+					                	</li>
+				                	{{/each}}
+				                	<div class="clearfix"></div>
+		                		</ul>
+	                		</li>
+	                		<div class="clearfix"></div>
+	                	</ul>
+	                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">
+    var searchItemMouseDown = false;
+    var $searchAuto = $("#search-query").autocomplete({
+        open: function () {
+            $searchAuto.addClass("open");
+            $("#searchResultsAutoComplete").find("a").mousedown(function (e) {
+                searchItemMouseDown = true;
+            });
+        },
+        close: function (e) {
+            $searchAuto.removeClass("open");
+        },
+        appendTo: '#searchResultsAutoComplete',
+        autoFocus: false,
+        highlight: function (match, keywords) {
+            keywords = keywords.split(' ').join('|');
+            return match.replace(new RegExp("(" + keywords + ")", "gi"), '<b>$1</b>');
+        },
+        source: function (request, response) {
+            var query = request.term;
+            var labelText = $('<div/>').text(request.term).html();
+
+            /*if (!/\s$/.test(query)) {
+                query += "*";
+            }*/
+
+            $.ajax({
+                url: '/answers/search.json',
+                dataType: 'json',
+                minLength: 0,
+                delay: 30,
+                data: { q: query, page: 1, pageSize: 7, type: "object", compact: 'false' },
+                success: function (data) {
+                    var $results = $.map(data.searchResults.results, function (item, index) {
+                        if (item != null) {
+                            if (item.username){
+                                var name = item.username;
+                                if(item.realname){
+                                	name = item.realname;
+                                }
+                                return {
+
+                                    label: name.replace(
+                                            new RegExp(
+                                                            "(?![^&;]+;)(?!<[^<>]*)(" +
+                                                            $.ui.autocomplete.escapeRegex(request.term) +
+                                                            ")(?![^<>]*>)(?![^&;]+;)", "gi"
+                                            ), "<strong>$1</strong>"),
+                                    url: "/answers/users/%7Bid%7D/%7Bplug%7D.html", //item.id
+                                    value: name,
+                                    id: item.id,
+                                    plug: item.plug,
+                                    type: "User",
+                                    emailHash: item.emailHash,
+                                    userid: item.username
+                                };
+                            }
+                            switch (item.type) {
+                                case 'topic':
+                                    return {
+                                        label: item.name.replace(
+                                                new RegExp(
+                                                        "(?![^&;]+;)(?!<[^<>]*)(" +
+                                                                $.ui.autocomplete.escapeRegex(request.term) +
+                                                                ")(?![^<>]*>)(?![^&;]+;)", "gi"
+                                                ), "<strong>$1</strong>"),
+                                        url: "/answers/topics/%7Bid%7D.html?smartspace=wasdev", //item.id
+                                        value: item.name,
+                                        id: item.name,
+                                        plug: item.plug,
+                                        type: "Topic"
+                                    };
+                                case 'user':
+                                    var name = item.username;
+                                    if(item.realname){
+                                        name = item.realname;
+                                    }
+                                    return {
+
+                                        label: name.replace(
+                                                new RegExp(
+                                                        "(?![^&;]+;)(?!<[^<>]*)(" +
+                                                                $.ui.autocomplete.escapeRegex(request.term) +
+                                                                ")(?![^<>]*>)(?![^&;]+;)", "gi"
+                                                ), "<strong>$1</strong>"),
+                                        url: "/answers/users/%7Bid%7D/%7Bplug%7D.html", //item.id
+                                        value: name,
+                                        id: item.id,
+                                        plug: item.plug,
+                                        type: "User",
+                                        emailHash: item.emailHash,
+                                        userid: item.username
+                                    };
+                                case 'question':
+                                    return {
+                                        label: item.title.replace(
+                                                new RegExp(
+                                                        "(?![^&;]+;)(?!<[^<>]*)(" +
+                                                                $.ui.autocomplete.escapeRegex(request.term) +
+                                                                ")(?![^<>]*>)(?![^&;]+;)", "gi"
+                                                ), "<strong>$1</strong>"),
+                                        url: "/answers/questions/%7Bid%7D/%7Bplug%7D.html?smartspace=wasdev", //item.id
+                                        value: item.title,
+                                        id: item.id,
+                                        plug: item.plug,
+                                        type: item.type
+                                    };
+                                default:
+                                    return {
+                                        label: item.title.replace(
+                                                new RegExp(
+                                                        "(?![^&;]+;)(?!<[^<>]*)(" +
+                                                                $.ui.autocomplete.escapeRegex(request.term) +
+                                                                ")(?![^<>]*>)(?![^&;]+;)", "gi"
+                                                ), "<strong>$1</strong>"),
+                                        url: "/answers/content/%7Btype%7D/%7Bid%7D/%7Bplug%7D.html", //item.id
+                                        value: item.title,
+                                        id: item.id,
+                                        plug: item.plug,
+                                        type: item.type
+                                    };
+                            }
+                        }
+                    });
+                    $results.push({
+                        label: "Search: " + "\"" + $.trim(labelText) + "\"",
+                        url: "/answers/search.html?q={query}",
+                        query: request.term,
+                        value: request.term
+                    });
+                    $results.push({
+                        label: "Add question: <strong>\"$q\"<\/strong>".replace("$q", $.trim(labelText)),
+                        url: "/answers/questions/ask.html?a=true&q={query}&smartspace=wasdev",
+                        query: request.term,
+                        value: request.term
+                    });
+
+                    response($results);
+                }
+            });
+        },
+        select: function (event, ui) {
+            var url = ui.item.url.replace("%7Bid%7D", ui.item.id);
+            url = url.replace("%7Bplug%7D", ui.item.plug);
+            url = url.replace("{query}", ui.item.query);
+            url = url.replace("%7Btype%7D", ui.item.type);
+            window.location = url;
+            return false;
+        }
+    }).keydown(function () {
+                $(this).css('color', '#000');
+            });
+
+    if ($searchAuto.length) {
+        $searchAuto.data("uiAutocomplete")._renderItem = function (ul, item) { 
+            var type_str = "";
+            if (item.type == "Topic")
+                    type_str = "<span class='autocomplete-type'>" + "Tag" + "</span>";
+            return $("<li></li>")
+                    .data("item.autocomplete", item)
+                    .append("<a>" + (item.type == 'User' ? '<img class="gravatar" align="left" width="16" height="16" style="margin-right: 5px;" src="https://www.ibm.com/developerworks/community/profiles/photo.do?userid=' 
+                    + item.userid + '"/>' : '') + " " + item.label + " " + type_str + "</a>")
+                    .appendTo(ul);
+        };
+    }
+</script><script type="text/javascript">
+
+    $(document).ready(function () {
+        $bottom = $("#bottom");
+        $notFooter = $("#not-footer");
+        $push = $(".push");
+        $push.css("height", $bottom.outerHeight() + "px");
+        $notFooter.css("margin-bottom", "-" + $bottom.outerHeight() + "px");
+
+        $(".dummy-navbar-link").sidr();
+
+        $(".off-canvas-nav-btn").on("click", function(){
+            $.sidr(
+                "open",
+                "sidr",
+                function(){
+                    $(document.body).prepend("<div class='cover'></div>");
+                    $(".cover").fadeIn().on("click", function(){
+                        $.sidr('close', 'sidr');
+                        $(this).remove();
+                    });
+                }
+            );
+        });
+    });
+
+
+    $(".answer-body pre").addClass("prettyprint").addClass("linenums");
+    $(".question-body pre").addClass("prettyprint").addClass("linenums");
+    prettyPrint();
+
+</script>
+
+<script type="text/javascript">
+	
+	$(window).load(function() {
+		$('img.gravatar').each(function() {
+			if (!IsImageOk(this)) {
+				$(this).attr('src', '/answers//images/default_profile.png');
+			}
+		});
+	});
+	
+	
+	$(document).ready(function () {
+		$('a.tag').each(function(idx, el) {
+			var href = $(el).attr('href');
+			if (href && href.indexOf('/topics/') > 0) {
+				var lastIdx = href.lastIndexOf('/');
+				var topic = href.substring(lastIdx+1).replace(/\+/g, "%20");
+				$(el).attr('href', href.substring(0, lastIdx) + '/' + topic);
+			}
+		});
+		
+		
+		location.hostname.indexOf('local') == -1 &&
+			$('a[href]').each(function(i, el) {
+				if (this.href.search(/(dwanswers\.rtp|developer\.ibm)/) != -1 && this.href.search(/(questions|topics|users|badge)/i) != -1) {
+					this.href = this.href.replace(/\.html/i, '/');
+				}
+			});
+		
+		$('a[href*="follow"], a[href*="unfollow"]').each(function(i, el) {
+			this.href += (this.href.search(/\?/) != -1) ? "&" : "?" + 'smartspace=wasdev';
+		});	
+		
+		$('#report-abuse').attr('href', 'https://www.ibm.com/developerworks/secure/reportabuse?referingURL=' + encodeURIComponent(location.href) );
+	});
+		
+	
+	/***** search tips ******/
+	$(function() {
+		//updated 14 Nov 2014 KLM 
+		//to allow click outside panel to close
+		var search_panel_status = 'closed';
+		document.getElementById('pn-search-tips').addEventListener('click', function(e){
+			e.stopPropagation(); 
+			search_panel_status = toggleAdvancedSearchPanel(); 
+		});
+		$('#advanced-search-panel').click(function(e){
+			e.stopPropagation();
+		});
+		$(document).click(function(e){
+			if (search_panel_status == 'open'){
+				search_panel_status = toggleAdvancedSearchPanel();
+			}
+		});
+	});
+	
+	function toggleAdvancedSearchPanel() {
+		var search_panel = $('#advanced-search-panel');
+		if ($('#advanced-search-panel').css('display') == 'none') {
+			search_panel.show();
+			$('.search-wrapper .pn-search-grey').show();
+			$('.search-wrapper .pn-search-white').show();
+		    return 'open';
+		}
+		else {
+			search_panel.hide();
+			$('.search-wrapper .pn-search-grey').hide();
+			$('.search-wrapper .pn-search-white').hide();
+		    return 'closed';
+		}
+	};
+	
+    
+    /**** helper functions *****/
+
+    // capitalize the first letter of a string
+	String.prototype.toTitleCaseString = function() {
+	    return this.replace(/^\w/, function(txt){return txt.toUpperCase()});
+	};
+
+    function browserTester(browserString) {
+		return navigator.userAgent.toLowerCase().indexOf(browserString) > -1;
+	}
+	
+	// grab the param value from url
+	function getURLParameter(sParam) {
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) {
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) {
+				return sParameterName[1];
+			}
+		}
+	
+		return '';
+	}
+	
+	function delaySubmit(form) {
+		setTimeout(function(){
+            /*
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            */
+            form && form.submit();
+            
+        }, 400);
+	}
+	
+	function IsImageOk(img) {
+		// source: http://blog.sajithmr.me/javascript-check-an-image-is-loaded-or-not
+	    // During the onload event, IE correctly identifies any images that
+	    // weren���t downloaded as not complete. Others should too. Gecko-based
+	    // browsers act like NS4 in that they report this incorrectly.
+	    if (!img.complete) {
+	        return false;
+	    }
+	
+	    // However, they do have two very useful properties: naturalWidth and
+	    // naturalHeight. These give the true size of the image. If it failed
+	    // to load, either of these should be zero.
+	
+	    if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
+	        return false;
+	    }
+	
+	    // No other way of checking: assume it���s ok.
+	    return true;
+	}
+	
+	function escapeRegExp(string) {
+ 	   return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+	}	
+</script>

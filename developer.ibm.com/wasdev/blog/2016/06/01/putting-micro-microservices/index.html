@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-06-01",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Putting the &#8216;Micro&#8217; into Microservices with Raspberry Pis",
+						"contentType": "post",
+						"wpid":"9",
+						"topics":"Docker,",
+						"contentArea": "Blog"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,",
+		      "description":"Putting the &#8216;Micro&#8217; into Microservices with Raspberry Pis"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Putting the &#039;Micro&#039; into Microservices with Raspberry Pis - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="../../../../../index.html%3Fp=17974.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../../../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Putting the &#8216;Micro&#8217; into Microservices with Raspberry Pis Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../../../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../../../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../../../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../../../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../../../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../../../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../../../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../../../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../../../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../../../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../../../../index.html%3Fp=17974.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F06%2F01%2Fputting-micro-microservices%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F06%2F01%2Fputting-micro-microservices%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="post-template-default single single-post postid-17974 single-format-standard ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../../../../index.html%3Fp=17974.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../../../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../../../../../docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../../../../../docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../../../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../../../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../../../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../../../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../../../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+
+	<div id="primary" class="content-area-restricted ibm-fluid pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b> in</b> <a href="../../../../category/blog/index.html" rel="category tag">Blog</a></span></div><h1 class="entry-title">Putting the &#8216;Micro&#8217; into Microservices with Raspberry Pis</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../../../author/cumminsh/index.html">Holly_Cummins</a></span><br>Published on June 1, 2016<i> / Updated on July 20, 2016</i></div><div class="pn_slic"><a href="../../../../../index.html%3Fp=17974.html#comments" class="pn_comments_icon">0 <i>Comments</i></a></div></div></header>			<main id="main" class="site-main " role="main">
+				<article id="post-17974" class="post-17974 post type-post status-publish format-standard hentry category-blog tag-docker">
+		<div class="entry-content">
+		<p>I&#8217;ve given several talks on <a href="http://www.redbooks.ibm.com/abstracts/sg248275.html?Open">microservices</a> lately (at <a href="https://jaxlondon.com/">JAX London</a>, <a href="http://www.jfokus.se/jfokus/">JFokus</a>, and <a href="https://www.javaland.eu/de/home/">JavaLand</a>, all wonderful conferences). Microservices are an interesting way of dealing with some of the complexity in a non-trivial software project by partitioning the system and, like many of the technology choices we make, there are trade-offs.</p>
+<p>I wanted to explain these trade-offs in my talks by ensuring they were all included in my demo. This was &#8211; I hope &#8211; educational, but it was definitely not good for my blood pressure. I don&#8217;t want to duplicate the great microservices content already out there, but let me share the three most critical learnings for me.</p>
+<h2>Distributed systems and failure</h2>
+<p>Microservices replaces monolithic systems with distributed systems. Almost by definition, this means an explosion of moving parts. In a demo context, when everything is running on a single laptop, it&#8217;s easy to forget that a microservices architecture really is a system with lots of different things trying to communicate with one another over an unreliable network. Even in a &#8216;real&#8217; system, with virtualization and containers, it&#8217;s not always obvious how much complexity is involved in the aggregated system &#8211; as long as things work well. After all, the reason <a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing">the fallacies of distributed computing</a> are known as fallacies is because they&#8217;re assumptions we <i>all</i> tend to make.</p>
+<p>I decided to really put the &#8216;micro&#8217; into &#8216;microservices&#8217;, so I prepared a system of <a href="https://www.raspberrypi.org/">Raspberry Pis</a> and <a href="http://www.linksprite.com/linksprite-pcduino/">pcDuinos</a>. <a href="../../../../../getstarted/index.html">WebSphere Liberty</a> is so lightweight that it can easily run on a Pi, and it&#8217;s so small and cheap that I can easily build up a collection of computers. I called it the &#8216;data centre in a handbag.&#8217;  Because each machine really is a machine, the topology is more obvious:</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/05/datacentreinahandbag.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/05/datacentreinahandbag.png" alt="datacentreinahandbag" width="500" height="375" class="alignnone size-full wp-image-17987" srcset="../../../../../wp-content/uploads/sites/9/2016/05/datacentreinahandbag.png 500w, ../../../../../wp-content/uploads/sites/9/2016/05/datacentreinahandbag-300x225.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>The complexity of the connections also becomes really obvious (this picture isn&#8217;t staged!):</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/05/complexity.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/05/complexity.png" alt="complexity" width="500" height="400" class="alignnone size-full wp-image-17986" srcset="../../../../../wp-content/uploads/sites/9/2016/05/complexity.png 500w, ../../../../../wp-content/uploads/sites/9/2016/05/complexity-300x240.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>Shortly after this picture was taken I switched to using wifi for network communication, just because I couldn&#8217;t deal with the ethernet cables anymore. Having lots of little computers makes the nature of microservices architectures more tangible, but it also makes getting a demo working a lot more challenging. To be honest, this is kind of a good thing. Building a solid microservices architecture means building in failure tolerance &#8211; trial-ing such an architecture on a bunch of embeddable computers ensures this tolerance definitely isn&#8217;t forgotten! (Remember, you&#8217;re replacing the API calls in your application with HTTP calls in a system.)</p>
+<h2>Service discovery</h2>
+<p>The nice thing about a data centre in a handbag is it&#8217;s pretty portable; I&#8217;ve taken mine all over Europe. To keep things portable I used DHCP, so every time I moved my system, all the IP addresses changed.</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/05/unknownipaddresses.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/05/unknownipaddresses.png" alt="In a distributed topology, the IP addresses of service providers may not be known" width="500" height="287" class="alignnone size-full wp-image-17989" srcset="../../../../../wp-content/uploads/sites/9/2016/05/unknownipaddresses.png 500w, ../../../../../wp-content/uploads/sites/9/2016/05/unknownipaddresses-300x172.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>This made service discovery vital. Service discovery allows microservices to talk to other microservices without hard-coding the IP address or hostname in advance.</p>
+<p>There are a few reasons why IP addresses aren&#8217;t good enough. If a system goes down, its replacement would have to have the exact same address; otherwise, all calls to the service from other components would fail, even though a replacement service was up. Because my computers would be moving between different subnets (and buildings, and countries!) they really had to use DHCP, and that&#8217;s incompatible with having a fixed IP address. More seriously, if we want to scale out a service, we don&#8217;t have any way of distributing traffic across the service instances if the endpoint IP addresses are hardcoded.</p>
+<p><a href="../../../../../wp-content/uploads/sites/9/2016/05/nameddnsaddress.png"><br />
+<img src="../../../../../wp-content/uploads/sites/9/2016/05/nameddnsaddress.png" alt="distributed topology where each service has a dedicated DNS entry" width="500" height="276" class="alignnone size-full wp-image-17988" srcset="../../../../../wp-content/uploads/sites/9/2016/05/nameddnsaddress.png 500w, ../../../../../wp-content/uploads/sites/9/2016/05/nameddnsaddress-300x166.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></a></p>
+<p>We can get some of the way if we have good control of our DNS registry, and a load-balancer also helps &#8211; but at this point, we&#8217;re halfway to a service discovery solution.</p>
+<p>Service discovery is an emerging technology, and there are a number of popular solutions. At the moment, <a href="http://techblog.netflix.com/2012/09/eureka.html">Eureka</a>, <a href="https://zookeeper.apache.org/">Apache Zookeeper</a> + <a href="https://zookeeper.apache.org/">Curator</a>, <a href="http://kubernetes.io/">Kubernetes</a>, <a href="https://coreos.com/etcd/">etcd</a>, and <a href="https://www.consul.io/">Consul</a> are all popular. <a href="https://developer.ibm.com/wasdev/blog/2016/06/01/putting-micro-microservices/%E2%80%9Chttps://www.consul.io%E2%80%9D">Consul by Hashicorp</a> is growing in popularity and has a number of attractive features, including broad platform support and a DNS interface. Bluemix also includes a <a href="https://console.ng.bluemix.net/docs/services/ServiceDiscovery/index.html">beta service discovery feature</a>, and a complementary <a href="https://console.ng.bluemix.net/docs/services/ServiceProxy/index.html">service proxy feature</a> (also in beta).</p>
+<p>I noticed that almost every service discovery framework left responsibility for registering services with the application itself. Being lazy, and with five applications to manage, this seemed like a lot of hard work. The application server knows whether it&#8217;s up (obviously), and it knows exactly what REST endpoints it&#8217;s exposing, so why not extend it to handle service registration?</p>
+<p>WebSphere Liberty has really good extensibility, so it was easy to hook into the start and stop events for each application which exposed JAX-RS endpoints. Then the extension can re-use the annotation scan already done by the server to work out the names of each REST endpoint and register it as a service. I use Consul as my service registry but the same principle could be used for any registry. The <a href="https://github.com/WASdev/sample.consulservicediscovery">source code for the plug-in</a> is available on GitHub. (As well as demonstrating how to integrate Consul and Liberty, it&#8217;s a useful sample on how to hook Liberty&#8217;s annotation scanning, which has all sorts of uses.)</p>
+<h3>Scaling out to the cloud</h3>
+<p>While it’s a lot of fun, the data centre in a handbag probably isn’t the most realistic topology for a production system, and the Raspberry Pis were a bit too good at demonstrating the distributed computing fallacies. I also deployed the same set of applications across four Bluemix nodes running Liberty.</p>
+<p>I had to make a couple of changes to accommodate the different environment in a managed cloud.  In particular, when things are running in a container, the IP address that applications running inside the container see is not the same one as the rest of the world sees. This breaks service discovery self-registration. It turns out this is a <a href="https://github.com/docker/docker/issues/3778">common problem for service discovery in containers</a>.</p>
+<p>It also happens that knowing the IP address of a server is less important in Bluemix; both Cloud Foundry applications and container groups have a named route, and that can be used to address the service. Bluemix also takes care of load balancing, so a single route may be served by a number of servers. This made service discovery less essential, but still useful:</p>
+<ul>
+<li>I still wanted to track how many of my services were up on the Consul dashboard.</li>
+<li>I wanted to support a hybrid environment with Raspberry Pis and Bluemix services working together, and that <em>definitely</em> needed service discovery. For example, a web front-end running on a Pi could talk to a Consul server running on a Bluemix Docker container, and use some services running on other Pis as well as some services running on Bluemix.</li>
+<li>I wanted common code for both the handbag and cloud topologies.</li>
+</ul>
+<p>Normally, the only way to let a containerised application register itself with a service registry is to tell it what IP address or hostname it should use, via an environment variable. Bluemix does this for  us, so the public hostname of an application is available in the <code>VCAP_APPLICATION</code> environment variable. It&#8217;s also injected into Liberty&#8217;s <code>server.xml</code> as <code>${application_uris}</code>, which is even more convenient.</p>
+<p>I added an extra check to my hostname introspection logic to check for the <code>VCAP_APPLICATION</code> environment variable, and parse it if available. (Because it&#8217;s integrated with the Bluemix infrastructure, the Bluemix Service Discovery service takes care of the mapping between the private IP address and the public one, so services register themselves using their private IP address, but are advertised by the registry using the public one.)</p>
+<h2>JAX-RS is pretty awesome</h2>
+<p>The first thing I did in my demo was refactor a monolith into microservices. There are a lot of things which can make this really hard: testing changes completely, poor encapsulation will have to be sorted out, and the DevOps pipeline will be a completely new beast. However, one thing was actually pretty easy: I&#8217;d used CDI to handle communication between the different elements of my original application and it was basically a one-for-one swap to using <a href="http://www.adeveloperdiary.com/java/webservice/rest/how-to-configure-rest-service-jax-rs-in-ibm-liberty-profile/">JAX-RS</a> to publish and consume RESTful services.</p>
+<p>JAX-RS is part of the Java EE specification and is, of course, <a href="../../../../../index.html%3Fp=5356.html">built-in to Liberty</a>. It does a great job of abstracting away the details of REST. Even though my services were going over the wire using HTTP and JSON, none of that was exposed to my code. To publish, I didn&#8217;t have to change the APIs at all, just swap out the CDI annotation for a JAX-RS one.</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Produces(MediaType.APPLICATION_JSON)
+    @GET
+</pre>
+<p>To consume a service took about three lines of code:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+Client client = ClientBuilder.newClient();
+WebTarget target = client.target(“http://catastrophe-cats.mybluemix.net:9080&quot;).path(“/rest/cats”);
+Set&lt;Cat&gt; cats = target.request(MediaType.APPLICATION_JSON).get(new GenericType&lt;&gt;(Set.class));
+</pre>
+<p>If you&#8217;re wondering about the names &#8211; all good internet content involves cats. Mine was a live demo, and I have some experience of live demos, so I called it &#8211; of course &#8211; <em>cat-astrophe</em>.</p>
+<h2>Final thoughts</h2>
+<p>So what have I learned at the end of my microservices adventure? Microservices are hard work. If you&#8217;re thinking about microservices, you better think about what infrastructure you&#8217;re going to put in place to support service discovery, circuit breakers, logging, and testing. Our industry is moving really fast, so the best solution at the beginning of my journey (like Consul), wasn&#8217;t necessarily the best solution by the time I&#8217;d got to the end (now that we have <a href="https://developer.ibm.com/bluemix/2016/02/04/bluemix-service-discovery/">Bluemix Service Discovery</a>). Oh, and Liberty extensibility rocks. But we knew that already, right?</p>
+<h2>Further Reading</h2>
+<p>Microservices is a huge subject. Here is some of the material I found useful:</p>
+<ul>
+<li><a href="http://www.redbooks.ibm.com/abstracts/sg248275.html?Open">Microservices from Theory to Practice (IBM Redbooks)</a></li>
+<li><a href="../../../../../index.html%3Fp=14231.html">Liberty and Microservices</a></li>
+<li>Toby Clemson (in cooperation with Martin Fowler) has written the master-guide to <a href="http://martinfowler.com/articles/microservice-testing/">Testing Microservices</a></li>
+<li>My colleague Kate Stanley has been speaking on Testing Microservices, and has done <a href="http://nighthacking.com/katherine-stanley-testing-microservices/">a NightHacking interview</a></li>
+<li>I&#8217;ve written <a href="https://jaxenter.com/microservices-storm-in-a-teacup-or-teacups-in-a-storm-120388.html">another blog post about microservices, teacups, and storms</a> over at JAXenter
+</ul>
+<p></body></p>
+			</div><!-- .entry-content -->
+	<footer class="entry-footer">
+		<div class="tags-links">Tags <a href="../../../../tag/docker/index.html" rel="tag">Docker</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../../../author/cumminsh/index.html">Holly_Cummins</a></span></p><ul class="byline__social"><li class="byline__social__twitter"><a href="https://www.twitter.com/holly_cummins">Twitter</a></li></ul><p class="byline__bio">Holly is the Technical Lead in IBM's London Bluemix Garage.</p></div></div>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../../../../index.html%3Fp=17974.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='17974' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="6a650be082" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="154"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+			</main><!-- #main -->
+
+				</div><!-- #primary -->
+
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../../../../index.html%3Fp=17974.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../../../../index.html%3Fp=17974.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../../../../index.html%3Fp=17974.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><script type='text/javascript' src='../../../../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../../../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../../../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F06%2F01%2Fputting-micro-microservices&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fblog%2F2016%2F06%2F01%2Fputting-micro-microservices"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: WebSphere Liberty threading (and why you probably don&#8217;t need to tune it)</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Nathan Rauh</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-153772</link>
+		<dc:creator><![CDATA[Nathan Rauh]]></dc:creator>
+		<pubDate>Wed, 17 Oct 2018 21:20:13 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-153772</guid>
+		<description><![CDATA[Liberty managed executors have since been enhanced with the ability to limit maximum concurrency.
+For information on this, refer to the following knowledge center topics,
+https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_config_managedexecutor.html
+https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.liberty.autogen.nd.doc/ae/rwlp_config_concurrencyPolicy.html]]></description>
+		<content:encoded><![CDATA[<p>Liberty managed executors have since been enhanced with the ability to limit maximum concurrency.<br />
+For information on this, refer to the following knowledge center topics,<br />
+<a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_config_managedexecutor.html">https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_config_managedexecutor.html</a><br />
+<a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.liberty.autogen.nd.doc/ae/rwlp_config_concurrencyPolicy.html">https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.liberty.autogen.nd.doc/ae/rwlp_config_concurrencyPolicy.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gpicher</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-131201</link>
+		<dc:creator><![CDATA[gpicher]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 15:09:32 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-131201</guid>
+		<description><![CDATA[Hi Peter, unfortunately there&#039;s no way in Liberty to throttle certain things by restricting the number of available threads.  Depending on the specific thing you&#039;re trying to throttle there may be a different way of accomplishing your end goal, for example, you can use connection pool tuning to throttle connections to a database.  But throttling via thread pools is not an option.]]></description>
+		<content:encoded><![CDATA[<p>Hi Peter, unfortunately there&#8217;s no way in Liberty to throttle certain things by restricting the number of available threads.  Depending on the specific thing you&#8217;re trying to throttle there may be a different way of accomplishing your end goal, for example, you can use connection pool tuning to throttle connections to a database.  But throttling via thread pools is not an option.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Peter</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-131198</link>
+		<dc:creator><![CDATA[Peter]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 11:47:53 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-131198</guid>
+		<description><![CDATA[Yes that&#039;s pretty much it.
+However as we;re talking about the Liberty threading and the possibility to throttle certain thing by restricting the amount of available threads (that may be used for another reasons as well) - what are the best options with Liberty then?
+
+With WAS classic we usually used CommonJ work managers with thread pool limits. In WAS Liberty this doesn&#039;t seem to be directly possible (what concurrent feature currently offers (especially managed executor service) doesn&#039;t allow that (not configurable at app server level). There&#039;s an already mentioned possibility with utilizing managed thread factory to create a thread pool with fixed size, but that has to be done programatically then - it&#039;s not so elegant when it comes to the configurability right at the application server.]]></description>
+		<content:encoded><![CDATA[<p>Yes that&#8217;s pretty much it.<br />
+However as we;re talking about the Liberty threading and the possibility to throttle certain thing by restricting the amount of available threads (that may be used for another reasons as well) &#8211; what are the best options with Liberty then?</p>
+<p>With WAS classic we usually used CommonJ work managers with thread pool limits. In WAS Liberty this doesn&#8217;t seem to be directly possible (what concurrent feature currently offers (especially managed executor service) doesn&#8217;t allow that (not configurable at app server level). There&#8217;s an already mentioned possibility with utilizing managed thread factory to create a thread pool with fixed size, but that has to be done programatically then &#8211; it&#8217;s not so elegant when it comes to the configurability right at the application server.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gpicher</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130867</link>
+		<dc:creator><![CDATA[gpicher]]></dc:creator>
+		<pubDate>Fri, 30 Oct 2015 18:23:11 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130867</guid>
+		<description><![CDATA[Here is a response from my colleague, Venu, who is very familiar with JMS:
+
+&quot;I have gone through it.. and I feel it may not be possible to control from front end.. as soon as connection is available to front end.. messages can be sent.. thus putting them into Queue immediately.  Only way is to throttle this flow to reduce the availability of threads and connections for front end. However as you mentioned in your mail.. this may not be feasible as messages can be flood with limited connections and threads.
+ 
+Fom back ground i.e activation specification.. it can be done using the following parameters:
+ 
+Maximum concurrent endpoints
+Maximum batch size
+ 
+Here is in-detailed explanation by cWAS infocenter(https://www-01.ibm.com/support/knowledgecenter/SSAW57_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/tjn0027_.html).. however it is relevant to Librty also.
+ 
+***************************************************************
+Maximum concurrent endpoints
+
+The default messaging provider enables the throttling of message delivery to a message-driven bean through the Maximum concurrent endpoints configuration option on the JMS activation specification used to deploy the bean.
+The maximum number of instances of each message-driven bean is controlled by the Maximum concurrent endpoint setting in the activation specification used to deploy the message-driven bean. This maximum concurrency limit helps prevent a temporary build up of messages from starting too many MDB instances. By default, the maximum number of concurrent MDB instances is set to 10.
+The Maximum concurrent endpoints field limits the number of endpoints (instances of a given message-driven bean) that process messages concurrently. If the maximum has been reached, new messages are not accepted from the messaging engine for delivery until an endpoint finishes its current processing.
+If the available message count (queue depth) associated with a message-driven bean is frequently high, and if your server can handle more concurrent work, you can benefit from increasing the maximum concurrency setting.
+If you set the maximum concurrency for a message-driven bean, be sure that you specify a value smaller than the maximum number of endpoint instances that can be created by the adapter that the message-driven bean is bound to. If necessary, increase the endpoint instance limit.
+ 
+Maximum batch size
+An activation specification also has a Maximum batch size that refers to how many messages can be allocated to an endpoint in one batch for serial delivery. So, for example, if you have set the Maximum concurrent endpoints property to 10 and the Maximum batch Size property to 3, then there can be up to 10 endpoints each processing up to 3 messages giving a total of 30 messages allocated to that message-driven bean. If there are multiple message-driven beans deployed against a single activation specification then these maximum values apply to each message-driven bean individually.
+***************************************************************
+ 
+There is one more new JMS 2.0 feature called delivery delay.. this can be set in their front end. Delivery delay is JMS API which has to be set while sending the messages. This will ensures the message is eligible to deliver to consumer (i.e MDB) only after delivery delay elapses. 
+http://www.oracle.com/technetwork/articles/java/jms2messaging-1954190.html ( Please look for delivery delay).&quot;
+
+Note that he mentioned it might be possible to throttle on the front end by limiting threads / connections, but although this MIGHT work it very much depends on how quickly those threads are processing the file.  If they process it very quickly, it is still possible for a small number of threads to overwhelm the queue.  This isn&#039;t a &quot;hard throttle&quot;, but just an attempt to slow things down enough.
+
+The backend really seems like the place to control this, with the queue absorbing the messages from the frontend while the backend catches up at its own pace.
+
+Hope this helps!]]></description>
+		<content:encoded><![CDATA[<p>Here is a response from my colleague, Venu, who is very familiar with JMS:</p>
+<p>&#8220;I have gone through it.. and I feel it may not be possible to control from front end.. as soon as connection is available to front end.. messages can be sent.. thus putting them into Queue immediately.  Only way is to throttle this flow to reduce the availability of threads and connections for front end. However as you mentioned in your mail.. this may not be feasible as messages can be flood with limited connections and threads.</p>
+<p>Fom back ground i.e activation specification.. it can be done using the following parameters:</p>
+<p>Maximum concurrent endpoints<br />
+Maximum batch size</p>
+<p>Here is in-detailed explanation by cWAS infocenter(<a href="https://www-01.ibm.com/support/knowledgecenter/SSAW57_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/tjn0027_.html">https://www-01.ibm.com/support/knowledgecenter/SSAW57_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/tjn0027_.html</a>).. however it is relevant to Librty also.</p>
+<p>***************************************************************<br />
+Maximum concurrent endpoints</p>
+<p>The default messaging provider enables the throttling of message delivery to a message-driven bean through the Maximum concurrent endpoints configuration option on the JMS activation specification used to deploy the bean.<br />
+The maximum number of instances of each message-driven bean is controlled by the Maximum concurrent endpoint setting in the activation specification used to deploy the message-driven bean. This maximum concurrency limit helps prevent a temporary build up of messages from starting too many MDB instances. By default, the maximum number of concurrent MDB instances is set to 10.<br />
+The Maximum concurrent endpoints field limits the number of endpoints (instances of a given message-driven bean) that process messages concurrently. If the maximum has been reached, new messages are not accepted from the messaging engine for delivery until an endpoint finishes its current processing.<br />
+If the available message count (queue depth) associated with a message-driven bean is frequently high, and if your server can handle more concurrent work, you can benefit from increasing the maximum concurrency setting.<br />
+If you set the maximum concurrency for a message-driven bean, be sure that you specify a value smaller than the maximum number of endpoint instances that can be created by the adapter that the message-driven bean is bound to. If necessary, increase the endpoint instance limit.</p>
+<p>Maximum batch size<br />
+An activation specification also has a Maximum batch size that refers to how many messages can be allocated to an endpoint in one batch for serial delivery. So, for example, if you have set the Maximum concurrent endpoints property to 10 and the Maximum batch Size property to 3, then there can be up to 10 endpoints each processing up to 3 messages giving a total of 30 messages allocated to that message-driven bean. If there are multiple message-driven beans deployed against a single activation specification then these maximum values apply to each message-driven bean individually.<br />
+***************************************************************</p>
+<p>There is one more new JMS 2.0 feature called delivery delay.. this can be set in their front end. Delivery delay is JMS API which has to be set while sending the messages. This will ensures the message is eligible to deliver to consumer (i.e MDB) only after delivery delay elapses.<br />
+<a href="http://www.oracle.com/technetwork/articles/java/jms2messaging-1954190.html">http://www.oracle.com/technetwork/articles/java/jms2messaging-1954190.html</a> ( Please look for delivery delay).&#8221;</p>
+<p>Note that he mentioned it might be possible to throttle on the front end by limiting threads / connections, but although this MIGHT work it very much depends on how quickly those threads are processing the file.  If they process it very quickly, it is still possible for a small number of threads to overwhelm the queue.  This isn&#8217;t a &#8220;hard throttle&#8221;, but just an attempt to slow things down enough.</p>
+<p>The backend really seems like the place to control this, with the queue absorbing the messages from the frontend while the backend catches up at its own pace.</p>
+<p>Hope this helps!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gpicher</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130825</link>
+		<dc:creator><![CDATA[gpicher]]></dc:creator>
+		<pubDate>Thu, 29 Oct 2015 13:59:56 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130825</guid>
+		<description><![CDATA[Hi Joe, just wanted to let you know that I didn&#039;t forget about your question.  I personally don&#039;t have JMS experience, but I&#039;m trying to locate someone who does and who can answer your question.]]></description>
+		<content:encoded><![CDATA[<p>Hi Joe, just wanted to let you know that I didn&#8217;t forget about your question.  I personally don&#8217;t have JMS experience, but I&#8217;m trying to locate someone who does and who can answer your question.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Peter</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130311</link>
+		<dc:creator><![CDATA[Peter]]></dc:creator>
+		<pubDate>Sun, 11 Oct 2015 22:25:35 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130311</guid>
+		<description><![CDATA[I would normally suggest the use of managed executor service or managed thread factory (concurrent-1.0 feature in WAS liberty) with the max. amount of threads limited to the desired value, however I&#039;m not aware of any directly configurable method to limit the amount of threads here (yes, it can be done programatically using the thread factory, but that isn&#039;t that elegant as work manager with thread limit in WAS classic). So I&#039;m also curious.]]></description>
+		<content:encoded><![CDATA[<p>I would normally suggest the use of managed executor service or managed thread factory (concurrent-1.0 feature in WAS liberty) with the max. amount of threads limited to the desired value, however I&#8217;m not aware of any directly configurable method to limit the amount of threads here (yes, it can be done programatically using the thread factory, but that isn&#8217;t that elegant as work manager with thread limit in WAS classic). So I&#8217;m also curious.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joe</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130239</link>
+		<dc:creator><![CDATA[Joe]]></dc:creator>
+		<pubDate>Fri, 09 Oct 2015 01:47:33 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130239</guid>
+		<description><![CDATA[What you said about the activation spec is interesting...and am interested in the kind of support that WLP has...though typically I probably will have different JMS endpoints for different priority workload in the first place.
+
+But actually my case is WLP as the front-end server (running a batch job), and need to throttle how quickly messages get placed ONTO the queue (to the other end which is mainframe).]]></description>
+		<content:encoded><![CDATA[<p>What you said about the activation spec is interesting&#8230;and am interested in the kind of support that WLP has&#8230;though typically I probably will have different JMS endpoints for different priority workload in the first place.</p>
+<p>But actually my case is WLP as the front-end server (running a batch job), and need to throttle how quickly messages get placed ONTO the queue (to the other end which is mainframe).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gpicher</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130224</link>
+		<dc:creator><![CDATA[gpicher]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2015 14:06:44 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130224</guid>
+		<description><![CDATA[Ooops, I posted a new comment instead of replying directly to yours.  Please see above for my response.]]></description>
+		<content:encoded><![CDATA[<p>Ooops, I posted a new comment instead of replying directly to yours.  Please see above for my response.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: gpicher</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130223</link>
+		<dc:creator><![CDATA[gpicher]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2015 14:05:36 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130223</guid>
+		<description><![CDATA[Hi Joe, let me get some clarifications on your scenario.  In your example, where is the Liberty server; is it the front-end server running the batch job, or is it the backend server pulling messages off of the queue and processing them?
+
+Are you using the thread pool to throttle how quickly messages get placed ONTO the queue by the frontend, or how quickly they are picked up by an activation spec (or listener port) on the backend?  I&#039;m assuming that you are talking about the latter.
+
+If that is the case, I will have to check with the JMS folks about what kind of throttles exist on the activation spec.  If you didn&#039;t throttle the activation spec at all, then what would happen is that messages would get picked up and placed onto the global queue of the default executor at a very fast pace.  The size of the global queue would increase quite rapidly.
+
+The actual throughput of the server should be okay, because the auto-tuning algorithm is still going to adjust the number of threads to obtain max throughput.  For example, if 1,000 messages got pulled off the queue and queued to the default executor global queue on a 2 processor system, the auto-tuning algorithm still probably won&#039;t create more than 8 or so threads on average.  This can vary wildly depending on how CPU vs I/O intensive the work is, but the algorithm will handle it.  The messages will get processed at a solid, hopefully optimal, rate.
+
+The downside here is that all of these messages on the global queue will block other work, so if you have mixed workload (some HTTP work going into the server, for example), it might get stuck on the global queue behind the messages.
+
+So for that reason, I can definitely see why throttling at the activation spec layer would be desirable.  I&#039;m not sure what kind of support exists for that.  If you could please just let me know that I understand your question correctly, I will then follow up with the JMS folks and get you an answer.]]></description>
+		<content:encoded><![CDATA[<p>Hi Joe, let me get some clarifications on your scenario.  In your example, where is the Liberty server; is it the front-end server running the batch job, or is it the backend server pulling messages off of the queue and processing them?</p>
+<p>Are you using the thread pool to throttle how quickly messages get placed ONTO the queue by the frontend, or how quickly they are picked up by an activation spec (or listener port) on the backend?  I&#8217;m assuming that you are talking about the latter.</p>
+<p>If that is the case, I will have to check with the JMS folks about what kind of throttles exist on the activation spec.  If you didn&#8217;t throttle the activation spec at all, then what would happen is that messages would get picked up and placed onto the global queue of the default executor at a very fast pace.  The size of the global queue would increase quite rapidly.</p>
+<p>The actual throughput of the server should be okay, because the auto-tuning algorithm is still going to adjust the number of threads to obtain max throughput.  For example, if 1,000 messages got pulled off the queue and queued to the default executor global queue on a 2 processor system, the auto-tuning algorithm still probably won&#8217;t create more than 8 or so threads on average.  This can vary wildly depending on how CPU vs I/O intensive the work is, but the algorithm will handle it.  The messages will get processed at a solid, hopefully optimal, rate.</p>
+<p>The downside here is that all of these messages on the global queue will block other work, so if you have mixed workload (some HTTP work going into the server, for example), it might get stuck on the global queue behind the messages.</p>
+<p>So for that reason, I can definitely see why throttling at the activation spec layer would be desirable.  I&#8217;m not sure what kind of support exists for that.  If you could please just let me know that I understand your question correctly, I will then follow up with the JMS folks and get you an answer.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joe</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-liberty-threading-and-why-you-probably-dont-need-to-tune-it/#comment-130210</link>
+		<dc:creator><![CDATA[Joe]]></dc:creator>
+		<pubDate>Thu, 08 Oct 2015 01:54:57 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14790#comment-130210</guid>
+		<description><![CDATA[Good article, explains it very well.
+
+I suspect with the control settings in the classic, people might be using it for things you might not have anticipated. So maybe here is one.....we used to run a batch job that process rows in an incoming file and send a MQ message to the backend. We do not want the backend to be overwhelmed if out of the blue someone drops an unexpected large file. So we limit the concurrency with the max thread settings of the thread pool allocated to this job.
+
+Now if in WLP we can&#039;t have a dedicated pool for this job, what are the alternatives? I think a dedicated JMS connection pool for this job with its own max conn setting?]]></description>
+		<content:encoded><![CDATA[<p>Good article, explains it very well.</p>
+<p>I suspect with the control settings in the classic, people might be using it for things you might not have anticipated. So maybe here is one&#8230;..we used to run a batch job that process rows in an incoming file and send a MQ message to the backend. We do not want the backend to be overwhelmed if out of the blue someone drops an unexpected large file. So we limit the concurrency with the max thread settings of the thread pool allocated to this job.</p>
+<p>Now if in WLP we can&#8217;t have a dedicated pool for this job, what are the alternatives? I think a dedicated JMS connection pool for this job with its own max conn setting?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

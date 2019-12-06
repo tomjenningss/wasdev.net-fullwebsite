@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Running the WAS Java EE 7 samples on Liberty without Eclipse</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/running-the-was-java-ee-7-samples-on-liberty-without-eclipse/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/running-the-was-java-ee-7-samples-on-liberty-without-eclipse/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Luis Enrique Cisneros Nieto</title>
+		<link>https://developer.ibm.com/wasdev/docs/running-the-was-java-ee-7-samples-on-liberty-without-eclipse/#comment-144413</link>
+		<dc:creator><![CDATA[Luis Enrique Cisneros Nieto]]></dc:creator>
+		<pubDate>Tue, 09 Feb 2016 20:23:48 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=16376#comment-144413</guid>
+		<description><![CDATA[Hi, in which step is this happening?, also which OS are you using?
+
+Try to re-install Maven in your OS and in console command try $ mvn -v and post the result.
+
+Also try to install Maven in sample directory and something like this must appear at the end:
+
+
+[INFO] Installing /sample.javaee7.websocket/pom.xml to /root/.m2/repository/net/wasdev/wlp/sample/javaee7/sample.javaee7.websocket/1.0-SNAPSHOT/sample.javaee7.websocket-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.650 s
+[INFO] Finished at: 2016-02-09T15:16:32-05:00
+[INFO] Final Memory: 22M/35M
+[INFO] ------------------------------------------------------------------------
+
+if this doesn&#039;t appear, please try to re-install Maven in your OS and in console command try $ mvn -v and post the result.
+
+I have Apache Maven 3.3.9 and I&#039;ve deployed the sample in both options in a Linux based OS without any problem if you can explain a little more about the problem i will try to help you more.
+
+Regards.]]></description>
+		<content:encoded><![CDATA[<p>Hi, in which step is this happening?, also which OS are you using?</p>
+<p>Try to re-install Maven in your OS and in console command try $ mvn -v and post the result.</p>
+<p>Also try to install Maven in sample directory and something like this must appear at the end:</p>
+<p>[INFO] Installing /sample.javaee7.websocket/pom.xml to /root/.m2/repository/net/wasdev/wlp/sample/javaee7/sample.javaee7.websocket/1.0-SNAPSHOT/sample.javaee7.websocket-1.0-SNAPSHOT.pom<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[INFO] BUILD SUCCESS<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[INFO] Total time: 5.650 s<br />
+[INFO] Finished at: 2016-02-09T15:16:32-05:00<br />
+[INFO] Final Memory: 22M/35M<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>if this doesn&#8217;t appear, please try to re-install Maven in your OS and in console command try $ mvn -v and post the result.</p>
+<p>I have Apache Maven 3.3.9 and I&#8217;ve deployed the sample in both options in a Linux based OS without any problem if you can explain a little more about the problem i will try to help you more.</p>
+<p>Regards.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: openeis</title>
+		<link>https://developer.ibm.com/wasdev/docs/running-the-was-java-ee-7-samples-on-liberty-without-eclipse/#comment-142376</link>
+		<dc:creator><![CDATA[openeis]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2016 05:42:40 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=16376#comment-142376</guid>
+		<description><![CDATA[failed.error message:
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Java EE 7 WebSocket Sample 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven
+-install-plugin/2.4/maven-install-plugin-2.4.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:17 min
+[INFO] Finished at: 2016-01-12T12:21:19+08:00
+[INFO] Final Memory: 11M/155M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Plugin org.apache.maven.plugins:maven-install-plugin:2.4 or one of its d
+ependencies could not be resolved: Failed to read artifact descriptor for org.ap
+ache.maven.plugins:maven-install-plugin:jar:2.4: Could not transfer artifact org
+.apache.maven.plugins:maven-install-plugin:pom:2.4 from/to central (https://repo
+.maven.apache.org/maven2): Remote host closed connection during handshake: SSL p
+eer shut down incorrectly -&#062; [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e swit
+ch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please rea
+d the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginResoluti
+onException]]></description>
+		<content:encoded><![CDATA[<p>failed.error message:<br />
+[INFO] Scanning for projects&#8230;<br />
+[INFO]<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[INFO] Building Java EE 7 WebSocket Sample 1.0-SNAPSHOT<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+Downloading: <a href="https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven">https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven</a><br />
+-install-plugin/2.4/maven-install-plugin-2.4.pom<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[INFO] BUILD FAILURE<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[INFO] Total time: 01:17 min<br />
+[INFO] Finished at: 2016-01-12T12:21:19+08:00<br />
+[INFO] Final Memory: 11M/155M<br />
+[INFO] &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+[ERROR] Plugin org.apache.maven.plugins:maven-install-plugin:2.4 or one of its d<br />
+ependencies could not be resolved: Failed to read artifact descriptor for org.ap<br />
+ache.maven.plugins:maven-install-plugin:jar:2.4: Could not transfer artifact org<br />
+.apache.maven.plugins:maven-install-plugin:pom:2.4 from/to central (<a href="https://repo">https://repo</a><br />
+.maven.apache.org/maven2): Remote host closed connection during handshake: SSL p<br />
+eer shut down incorrectly -&gt; [Help 1]<br />
+[ERROR]<br />
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e swit<br />
+ch.<br />
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.<br />
+[ERROR]<br />
+[ERROR] For more information about the errors and possible solutions, please rea<br />
+d the following articles:<br />
+[ERROR] [Help 1] <a href="http://cwiki.apache.org/confluence/display/MAVEN/PluginResoluti">http://cwiki.apache.org/confluence/display/MAVEN/PluginResoluti</a><br />
+onException</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

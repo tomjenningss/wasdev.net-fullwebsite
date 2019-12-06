@@ -1,0 +1,1320 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Testing database connections in Open Liberty apps with REST APIs - OpenLiberty.io</title><meta name="description" content="A simple way to test your database connections via REST endpoints that are automatically enabled by combining the restConnector-2.0 feature with features supporting configuration validation. The REST endpoints exercise the same code paths as your applications, giving you confidence in your server configuration."><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link rel="icon" type="image/x-icon" href="https://openliberty.io/favicon.ico"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/openliberty-417cdd85f6072483030360356f930c017bd4dcc1f64ab74a65569803624b1b95.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/coderay-custom-ab54124e3170f1f31f9b8fdd361c302b78a5238d19a86f6c6f34c4688e2e8d35.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/header-cfe7ef8714fbbd62359ea8e5e9c5c9b8673f6ad390ba49622ead556a69934b8e.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/post-15d7f1b9ed2f378fef35059bc2db9eb853848dd082ec79feb51cbb8c13253346.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/header-light-5d7e497a97a9696b4de3d40b5591d7eb36c5d1f479a07fba5ed816e731c5d437.css"> <script>!function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="https://www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-TKP3KJ7")</script><link rel="canonical" href="index.html"><link rel="alternate" type="application/rss+xml" title="Open Liberty" href="https://openliberty.io/feed.xml"><link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet"><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@OpenLibertyIO"/><meta name="twitter:title" content="Testing database connections in Open Liberty apps with REST APIs - OpenLiberty.io"/><meta name="twitter:description" content="A simple way to test your database connections via REST endpoints that are automatically enabled by combining the restConnector-2.0 feature with features supporting configuration validation. The REST endpoints exercise the same code paths as your applications, giving you confidence in your server configuration."/><meta name="twitter:image" content="https://openliberty.io/img/twitter_card.jpg"/><meta name="google-site-verification" content="h2P030H9b66CyL1nEmWfrZB8Fr14h9LmVMG7Ur0caBs"/><script async defer src="https://buttons.github.io/buttons.js"></script></head><body> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKP3KJ7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header><nav class="navbar navbar-expand-lg navbar-dark bg-custom"><div id="tablet_nav" class="container"> <a class="navbar-brand" href="https://openliberty.io/" aria-label="Home"> <img id="ol_logo" src="https://openliberty.io/img/docs_openliberty_logo.png" alt="Open Liberty Logo"><p id="ol_nav_title" class="d-lg-none d-xl-none">Open Liberty</p> </a> <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> <img class="close_button" src="https://openliberty.io/img/nav_close_x.svg" alt="close button"> </button></div><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item"> <a class="nav-link" href="https://openliberty.io/docs">Docs</a></li><li class="nav-item"> <a class="nav-link" href="https://openliberty.io/downloads">Get Started</a></li><li class="nav-item"> <a class="nav-link" href="https://openliberty.io/support">Support</a></li></ul><div id="float_right_section"> <a id="fork_button" class="nav-link" href="https://github.com/OpenLiberty/open-liberty" target="_blank" rel="noopener noreferrer">Fork the code</a></div><div id="header_round_links_container" class="d-lg-none d-xl-none"> <a id="header_twitter_link" class="header_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="header_stackoverflow_link" class="header_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="header_groupsio_link" class="header_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div> <img id="tablet_images" class="d-none d-md-block d-lg-none" src="https://openliberty.io/img/tab_nav_ufoclouds.svg" alt="tab_images"></div> </nav></header><main aria-label="Content"><div id="article_container" class="container-fluid"> <article class="post" aria-label="article"> <header id="post_header"><div class="container"> <a id="blog_link" href="https://openliberty.io/blog"><img id="arrow" src="https://openliberty.io/img/post_arrow.svg" alt="back to all blogs">See all blog posts</a><div class="share_post_container"> <a class="twitter_link" href="https://twitter.com/intent" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Testing database connections in Open Liberty apps with REST APIs') + '&amp;url=' + encodeURIComponent(window.location)); return false" aria-label="Twitter link"></a> <a class="reddit_link" href="https://www.reddit.com/submit" onclick="window.open('//www.reddit.com/submit?url=' + encodeURIComponent(window.location)); return false" aria-label="Reddit link"></a></div><h1 id="post_title">Testing database connections in Open Liberty apps with REST APIs</h1><div id="post_information_container"><div class="author_images_container"> <img src="https://avatars3.githubusercontent.com/u/30153613" class="author_image" alt="image of author"></div> <a class="author_name" href="https://github.com/nmittles" target="_blank" rel="noopener noreferrer">Nathan Mittlestat</a> <span id="post_date">on Sep 13, 2019</span></div><div class="post_tags_container"></div></div> </header><div id="article_body" class="container"><div id="preamble"><div class="sectionbody"><div class="paragraph"><p>Looking for a simple way to test your database connections? You can now, in <a href="https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html">Open Liberty 19.0.0.9</a>, validate your connections via REST endpoints that are automatically enabled by combining the Rest Connector 2.0 (<code>restConnector-2.0</code>) feature with features supporting configuration validation. In addition to being simple, these REST endpoints exercise the same code paths as your applications, giving you confidence in your server configuration.</p></div><div class="paragraph"><p>By itself, the Rest Connector 2.0 feature allows viewing of a server’s current configuration via the <code>/ibm/api/config</code> endpoint. REST endpoints capable of validating specific resources become available under the <code>/ibm/api/validation</code> parent endpoint, when the Rest Connector 2.0 feature is combined with features that implement configuration validation. Validation of JDBC, JCA, Cloudant, and JMS configuration elements are currently supported. Looking for more validation support? Start a thread on <a href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer">our Groups.io account</a> and let us know.</p></div><div class="paragraph"><p>Both the validation and config endpoints are generated using a combination of the config element name, and unique ID:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="code">/ibm/api/config/{configElementName}/{uid}
+/ibm/api/validation/{configElementName}/{uid}</code></pre></div></div><div class="paragraph"><p><a href="index.html#openapi">OpenAPI documents</a> on these endpoints become available when a MicroProfile OpenAPI feature is enabled.</p></div><div class="paragraph"><p><strong>A note on security:</strong> Access to these endpoints requires authenticating as a user with the <code>administrator-role</code> role. The examples we will be walking through use either <code>quickStartSecurity</code> or <code>basicRegistry</code> with the <code>appSecurity-2.0</code> feature to setup secure access. However, any Liberty supported user registry will work.</p></div><div class="paragraph"><p>Now, let’s take a look at how you can use this new REST API to validate your configuration.</p></div><div class="paragraph"><p>Here is a sample <code>server.xml</code> configuration that uses the Configuration Validator and JDBC features:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;server&gt;</span>
+  <span class="tag">&lt;featureManager&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>appSecurity-2.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>restConnector-2.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>jdbc-4.2<span class="tag">&lt;/feature&gt;</span>
+  <span class="tag">&lt;/featureManager&gt;</span>
+
+  <span class="tag">&lt;keyStore</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">defaultKeyStore</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">Liberty</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;quickStartSecurity</span> <span class="attribute-name">userName</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdmin</span><span class="delimiter">"</span></span> <span class="attribute-name">userPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdminPassword</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;library</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;file</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">${server.config.dir}/derby/derby.jar</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/library&gt;</span>
+
+  <span class="tag">&lt;dataSource</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;jdbcDriver</span> <span class="attribute-name">libraryRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="comment">&lt;!-- Example properties referencing an in-memory Derby Embedded database --&gt;</span>
+    <span class="tag">&lt;properties.derby.embedded</span> <span class="attribute-name">databaseName</span>=<span class="string"><span class="delimiter">"</span><span class="content">memory:defaultdb</span><span class="delimiter">"</span></span> <span class="attribute-name">createDatabase</span>=<span class="string"><span class="delimiter">"</span><span class="content">create</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">dbuser</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">dbpass</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/dataSource&gt;</span>
+...
+<span class="tag">&lt;/server&gt;</span></code></pre></div></div></div></div><div class="sect1"><h2 id="validating-a-data-source">Validating a data source</h2><div class="sectionbody"><div class="paragraph"><p>Let’s say we want to directly test a database connection that an application depends on. We can do this using a REST endpoint found under <code><a href="https://localhost:9443/ibm/api/validation/dataSource/%7Buid%7D" class="bare">https://localhost:9443/ibm/api/validation/dataSource/{uid}</a></code>. For our case this endpoint is <a href="https://localhost:9443/ibm/api/validation/dataSource/DefaultDataSource" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/validation/dataSource/DefaultDataSource</a>.</p></div><div class="paragraph"><p>When the data source is working properly, a success message is shown:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">successful</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">info</span><span class="delimiter">"</span></span>: {
+      <span class="key"><span class="delimiter">"</span><span class="content">databaseProductName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Apache Derby</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">databaseProductVersion</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">10.11.1.1 - (1616546)</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">jdbcDriverName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Apache Derby Embedded JDBC Driver</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">jdbcDriverVersion</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">10.11.1.1 - (1616546)</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">schema</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DBUSER</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dbuser</span><span class="delimiter">"</span></span>
+   }
+}</code></pre></div></div><div class="paragraph"><p>If there is a problem, details about the failure are displayed. For instance if the <code>&lt;jdbcDriver&gt;</code> element references a <code>&lt;library&gt;</code> that does not contain a valid <code>DataSource</code> implementation, the following result is given:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">failure</span><span class="delimiter">"</span></span>: {
+    <span class="key"><span class="delimiter">"</span><span class="content">class</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">java.sql.SQLNonTransientException</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">stack</span><span class="delimiter">"</span></span>: [
+      <span class="string"><span class="delimiter">"</span><span class="content">com.ibm.ws.jdbc.internal.JDBCDriverService.classNotFound(JDBCDriverService.java:195)</span><span class="delimiter">"</span></span>,
+      <span class="string"><span class="delimiter">"</span><span class="content">com.ibm.ws.jdbc.internal.JDBCDriverService.create(JDBCDriverService.java:297)</span><span class="delimiter">"</span></span>,
+      <span class="string"><span class="delimiter">"</span><span class="content">com.ibm.ws.jdbc.internal.JDBCDriverService.createDefaultDataSource(JDBCDriverService.java:396)</span><span class="delimiter">"</span></span>,
+      <span class="error">/</span><span class="error">/</span> <span class="error">s</span><span class="error">t</span><span class="error">a</span><span class="error">c</span><span class="error">k</span> <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">c</span><span class="error">e</span> <span class="error">c</span><span class="error">u</span><span class="error">t</span> <span class="error">s</span><span class="error">h</span><span class="error">o</span><span class="error">r</span><span class="error">t</span>
+      <span class="string"><span class="delimiter">"</span><span class="content">java.lang.Thread.run(Thread.java:785)</span><span class="delimiter">"</span></span>
+    ],
+    <span class="key"><span class="delimiter">"</span><span class="content">cause</span><span class="delimiter">"</span></span>: {
+      <span class="key"><span class="delimiter">"</span><span class="content">class</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">java.lang.ClassNotFoundException</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">org.apache.derby.jdbc.EmbeddedXADataSource40</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">stack</span><span class="delimiter">"</span></span>: [
+        <span class="string"><span class="delimiter">"</span><span class="content">com.ibm.ws.classloading.internal.AppClassLoader.findClassCommonLibraryClassLoaders(AppClassLoader.java:499)</span><span class="delimiter">"</span></span>,
+        <span class="error">/</span><span class="error">/</span> <span class="error">s</span><span class="error">t</span><span class="error">a</span><span class="error">c</span><span class="error">k</span> <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">c</span><span class="error">e</span> <span class="error">c</span><span class="error">u</span><span class="error">t</span> <span class="error">s</span><span class="error">h</span><span class="error">o</span><span class="error">r</span><span class="error">t</span>
+        <span class="string"><span class="delimiter">"</span><span class="content">java.lang.Thread.run(Thread.java:785)</span><span class="delimiter">"</span></span>
+      ]
+    }
+  }
+}</code></pre></div></div></div></div><div class="sect1"><h2 id="viewing-data-source-configuration">Viewing data source configuration</h2><div class="sectionbody"><div class="paragraph"><p>To view all data source configurations, we start the server and visit the following endpoint <a href="https://localhost:9443/ibm/api/config/dataSource/" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/config/dataSource/</a>. In this case there is only one data source to view, the <code>DefaultDataSource</code>:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">[
+   {
+      <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dataSource</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">beginTranForResultSetScrollingAPIs</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">beginTranForVendorAPIs</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">connectionSharing</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">MatchOriginalRequest</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">enableConnectionCasting</span><span class="delimiter">"</span></span>: <span class="value">false</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">jdbcDriverRef</span><span class="delimiter">"</span></span>: [
+         {
+            <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">jdbcDriver</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dataSource[DefaultDataSource]/jdbcDriver[default-0]</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">libraryRef</span><span class="delimiter">"</span></span>: [
+               {
+                  <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">library</span><span class="delimiter">"</span></span>,
+                  <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span>,
+                  <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span>,
+                  <span class="key"><span class="delimiter">"</span><span class="content">apiTypeVisibility</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">spec,ibm-api,api,stable</span><span class="delimiter">"</span></span>,
+                  <span class="key"><span class="delimiter">"</span><span class="content">fileRef</span><span class="delimiter">"</span></span>: [
+                     {
+                        <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">file</span><span class="delimiter">"</span></span>,
+                        <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">library[derby]/file[default-0]</span><span class="delimiter">"</span></span>,
+                        <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">/home/nmittles/git/liberty/open-liberty/dev/build.image/wlp/usr/servers/blog/derby/derby.jar</span><span class="delimiter">"</span></span>
+                     }
+                  ]
+               }
+            ]
+         }
+      ],
+      <span class="key"><span class="delimiter">"</span><span class="content">statementCacheSize</span><span class="delimiter">"</span></span>: <span class="integer">10</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">syncQueryTimeoutWithTransactionTimeout</span><span class="delimiter">"</span></span>: <span class="value">false</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">transactional</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">properties.derby.embedded</span><span class="delimiter">"</span></span>: [
+         {
+            <span class="key"><span class="delimiter">"</span><span class="content">createDatabase</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">create</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">databaseName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">memory:defaultdb</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dbuser</span><span class="delimiter">"</span></span>
+         }
+      ],
+      <span class="key"><span class="delimiter">"</span><span class="content">api</span><span class="delimiter">"</span></span>: [
+         <span class="string"><span class="delimiter">"</span><span class="content">/ibm/api/validation/dataSource/DefaultDataSource</span><span class="delimiter">"</span></span>
+      ]
+   }
+]</code></pre></div></div><div class="paragraph"><p>To view an individual data source, append the data source’s <code>uid</code> as seen from viewing the configuration. In our case this is <code>DefaultDataSource</code>, and results in a URL of: <a href="https://localhost:9443/ibm/api/config/dataSource/DefaultDataSource" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/config/dataSource/DefaultDataSource</a></p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dataSource</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultDataSource</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">beginTranForResultSetScrollingAPIs</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">beginTranForVendorAPIs</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">connectionSharing</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">MatchOriginalRequest</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">enableConnectionCasting</span><span class="delimiter">"</span></span>: <span class="value">false</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">jdbcDriverRef</span><span class="delimiter">"</span></span>: [
+      {
+         <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">jdbcDriver</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dataSource[DefaultDataSource]/jdbcDriver[default-0]</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">libraryRef</span><span class="delimiter">"</span></span>: [
+            {
+               <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">library</span><span class="delimiter">"</span></span>,
+               <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span>,
+               <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">derby</span><span class="delimiter">"</span></span>,
+               <span class="key"><span class="delimiter">"</span><span class="content">apiTypeVisibility</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">spec,ibm-api,api,stable</span><span class="delimiter">"</span></span>,
+               <span class="key"><span class="delimiter">"</span><span class="content">fileRef</span><span class="delimiter">"</span></span>: [
+                  {
+                     <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">file</span><span class="delimiter">"</span></span>,
+                     <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">library[derby]/file[default-0]</span><span class="delimiter">"</span></span>,
+                     <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">/home/nmittles/git/liberty/open-liberty/dev/build.image/wlp/usr/servers/blog/derby/derby.jar</span><span class="delimiter">"</span></span>
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   <span class="key"><span class="delimiter">"</span><span class="content">statementCacheSize</span><span class="delimiter">"</span></span>: <span class="integer">10</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">syncQueryTimeoutWithTransactionTimeout</span><span class="delimiter">"</span></span>: <span class="value">false</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">transactional</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">properties.derby.embedded</span><span class="delimiter">"</span></span>: [
+      {
+         <span class="key"><span class="delimiter">"</span><span class="content">createDatabase</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">create</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">databaseName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">memory:defaultdb</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">dbuser</span><span class="delimiter">"</span></span>
+      }
+   ],
+   <span class="key"><span class="delimiter">"</span><span class="content">api</span><span class="delimiter">"</span></span>: [
+      <span class="string"><span class="delimiter">"</span><span class="content">/ibm/api/validation/dataSource/DefaultDataSource</span><span class="delimiter">"</span></span>
+   ]
+}</code></pre></div></div></div></div><div class="sect1"><h2 id="openapi">OpenAPI documents</h2><div class="sectionbody"><div class="paragraph"><p>To make accessing the validation and config REST endpoints easier, their API documentation can viewed as dynamically generated OpenAPI documents when any MicroProfile OpenApi feature is enabled (<code>mpOpenApi-1.0</code> or higher):</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="code">/openapi/platform/config
+/openapi/platform/validation</code></pre></div></div><div class="paragraph"><p>These OpenAPI documents can be retrieved in either YAML or JSON format by specifying the <code>format</code> parameter on the URL, with the default being YAML. Here is a sample of the validation OpenAPI document viewed as YAML (<a href="https://localhost:9443/openapi/platform/validation" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/openapi/platform/validation</a>):</p></div><div class="paragraph"><p></p><div class="listingblock"><div class="content"> <pre style="height: 50vh; overflow-y:auto; overflow-x:auto;" class="CodeRay highlight"><code data-lang="xml">openapi: 3.0.2
+info:
+  title: Validation API
+  description: The Validation REST endpoint tests the basic configuration of resources
+    by attempting to perform a simple operation on them.
+  version: "1.0"
+servers:
+- url: https://127.0.0.1:9443/ibm/api
+security:
+- basicAuth: []
+paths:
+  /validation/cloudantDatabase/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all Cloudant Database configurations
+      description: Retrieves the validation results for all cloudantDatabase configuration
+        elements. Validation involves establishing a connection to the database and
+        querying basic metadata information.
+      parameters:
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.cloudantDatabase.result'
+  /validation/cloudantDatabase/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a Cloudant Database configuration
+      description: Retrieves the validation result for the specified cloudantDatabase
+        configuration element. Validation involves establishing a connection to the
+        database and querying basic metadata information.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a cloudantDatabase element configured
+          at top level, this is the value of the `id` attribute, if present. Otherwise,
+          it is a generated value, such as *cloudantDatabase[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: MyCloudantDB
+        examples:
+          example-cloudantdb-id:
+            summary: Top-level cloudantDatabase element with id
+            description: In this case, the uid is the same as the id.
+            value: myConFactory
+          example-cloudantdb-no-id:
+            summary: Top-level cloudantDatabase element without id
+            description: A generated uid for top-level cloudantDatabase configuration
+              element which lack an id is computed based on the order of appearance
+              within server config, starting at 0.
+            value: cloudantDatabase[default-0]
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.cloudantDatabase.result'
+  /validation/connectionFactory/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all Connection Factories
+      description: Retrieves the validation results for all connection factories (apart
+        from JMS, which uses different config elements). Validation involves establishing
+        a connection to the backend, querying basic metadata information, and performing
+        additional interface-specific operations. For JDBC connection factories, the
+        `java.sql.Connection.isValid` operation is invoked. For CCI connection factories,
+        the `javax.resource.cci.Connection.createInteraction` operation is invoked.
+      parameters:
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.connectionFactory.result'
+  /validation/connectionFactory/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a Connection Factory
+      description: Retrieves the validation result for the specified connection factory.
+        Validation involves establishing a connection to the backend, querying basic
+        metadata information, and performing additional interface-specific operations.
+        For JDBC connection factories, the `java.sql.Connection.isValid` operation
+        is invoked. For CCI connection factories, the `javax.resource.cci.Connection.createInteraction`
+        operation is invoked.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a connection factory configured at
+          top level, this is the value of the `id` attribute, if present. Otherwise,
+          it is a generated value, such as *connectionFactory[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: MyConFactory
+        examples:
+          example-cf-id:
+            summary: Top-level connection factory with id
+            description: In this case, the uid is the same as the id.
+            value: myConFactory
+          example-cf-no-id:
+            summary: Top-level connection factory without id
+            description: A generated uid for top-level connection factories which
+              lack an id is computed based on the order of appearance within server
+              config, starting at 0.
+            value: connectionFactory[default-0]
+          example-cf-app-def:
+            summary: App-defined connection factory
+            description: References a connection factory defined by @ConnectionFactoryDefinition
+              within the MyApp application, with a name of java:app/env/eis/cf1
+            value: application[MyApp]/connectionFactory[java:app/env/eis/cf1]
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.connectionFactory.result'
+  /validation/dataSource/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all Data Sources
+      description: Retrieves the validation results for all data sources. Validation
+        involves establishing a connection to the database, querying basic metadata
+        information, and performing the `java.sql.Connection.isValid` operation.
+      parameters:
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.dataSource.result'
+  /validation/dataSource/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a Data Source
+      description: Retrieves the validation result for the specified data source.
+        Validation involves establishing a connection to the database, querying basic
+        metadata information, and performing the `java.sql.Connection.isValid` operation.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a data source configured at top level,
+          this is the value of the `id` attribute, if present. Otherwise, it is a
+          generated value, such as *databaseStore[defaultDatabaseStore]/dataSource[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: DefaultDataSource
+        examples:
+          example-ds-id:
+            summary: Top-level dataSource with id
+            description: The default data source is configured at top-level and has
+              an id of DefaultDataSource.
+            value: DefaultDataSource
+          example-ds-no-id:
+            summary: Top-level dataSource without id
+            description: A generated uid for top-level data sources which lack an
+              id is computed based on the order of appearance within server config,
+              starting at 0.
+            value: dataSource[default-0]
+          example-ds-nested:
+            summary: Nested dataSource without id
+            description: References the first dataSource (index 0) that is nested
+              under the databaseStore element with id of defaultDatabaseStore.
+            value: databaseStore[defaultDatabaseStore]/dataSource[default-0]
+          example-ds-nested-under-singleton:
+            summary: Nested dataSource (without id) under singleton
+            description: References the first dataSource (index 0) that is nested
+              under the transaction element. The transaction element is a singleton
+              and cannot have an id.
+            value: transaction/dataSource[default-0]
+          example-ds-app-def:
+            summary: App-defined data source
+            description: References a data source defined by @DataSourceDefinition
+              within the MyApp application, in the MyWebModule module, with a name
+              of java:module/env/jdbc/ds1
+            value: application[MyApp]/module[MyWebModule]/dataSource[java:module/env/jdbc/ds1]
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.dataSource.result'
+  /validation/jmsConnectionFactory/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all basic JMS Connection Factories
+      description: Retrieves the validation results for all basic JMS connection factories
+        (apart from QueueConnectionFactory and TopicConnectionFactory, which uses
+        different config elements). Validation involves establishing a connection
+        to the backend, querying basic metadata information, and creating &amp; closing
+        a session.
+      parameters:
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.jms.result'
+  /validation/jmsConnectionFactory/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a basic JMS Connection Factory
+      description: Retrieves the validation result for the specified basic JMS connection
+        factory. Validation involves establishing a connection to the backend, querying
+        basic metadata information, and creating &amp; closing a session.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a JMS connection factory configured
+          at top level, this is the value of the `id` attribute, if present. Otherwise,
+          it is a generated value, such as *jmsConnectionFactory[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: DefaultJMSConnectionFactory
+        examples:
+          example-jmscf-id:
+            summary: Top-level JMS connection factory with id
+            description: In this case, the uid is the same as the id.
+            value: DefaultJMSConnectionFactory
+          example-jmscf-no-id:
+            summary: Top-level JMS connection factory without id
+            description: A generated uid for top-level JMS connection factories which
+              lack an id is computed based on the order of appearance within server
+              config, starting at 0.
+            value: jmsConnectionFactory[default-0]
+          example-jmscf-app-def:
+            summary: App-defined JMS connection factory
+            description: References a JMS connection factory defined by @JMSConnectionFactoryDefinition
+              within the MyApp application, with a name of java:app/env/jms/cf1
+            value: application[MyApp]/jmsConnectionFactory[java:app/env/jms/cf1]
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.jms.result'
+  /validation/jmsQueueConnectionFactory/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all JMS Queue Connection Factories
+      description: Retrieves the validation results for all JMS queue connection factories.
+        Validation involves establishing a connection to the backend, querying basic
+        metadata information, and creating &amp; closing a session.
+      parameters:
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.jms.result'
+  /validation/jmsQueueConnectionFactory/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a JMS Queue Connection Factory
+      description: Retrieves the validation result for the specified JMS queue connection
+        factory. Validation involves establishing a connection to the backend, querying
+        basic metadata information, and creating &amp; closing a session.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a JMS queue connection factory configured
+          at top level, this is the value of the `id` attribute, if present. Otherwise,
+          it is a generated value, such as *jmsQueueConnectionFactory[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: MyQueueConFactory
+        examples:
+          example-qcf-id:
+            summary: Top-level JMS queue connection factory with id
+            description: In this case, the uid is the same as the id.
+            value: myQueueConFactory
+          example-qcf-no-id:
+            summary: Top-level JMS queue connection factory without id
+            description: A generated uid for top-level JMS queue connection factories
+              which lack an id is computed based on the order of appearance within
+              server config, starting at 0.
+            value: jmsQueueConnectionFactory[default-0]
+          example-qcf-app-def:
+            summary: App-defined JMS queue connection factory
+            description: References a JMS queue connection factory defined by @JMSConnectionFactoryDefinition
+              within the MyApp application, in the MyWebModule module, with a name
+              of java:module/env/jms/qcf1
+            value: application[MyApp]/module[MyWebModule]/jmsQueueConnectionFactory[java:module/env/jms/qcf1]
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.jms.result'
+  /validation/jmsTopicConnectionFactory/:
+    get:
+      tags:
+      - Validation
+      summary: Validation of all JMS Topic Connection Factories
+      description: Retrieves the validation results for all JMS topic connection factories.
+        Validation involves establishing a connection to the backend, querying basic
+        metadata information, and creating &amp; closing a session.
+      parameters:
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation results retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/validation.jms.result'
+  /validation/jmsTopicConnectionFactory/{uid}:
+    get:
+      tags:
+      - Validation
+      summary: Validation of a JMS Topic Connection Factory
+      description: Retrieves the validation result for the specified JMS topic connection
+        factory. Validation involves establishing a connection to the backend, querying
+        basic metadata information, and creating &amp; closing a session.
+      parameters:
+      - name: uid
+        in: path
+        description: '**Unique identifier**. For a JMS topic connection factory configured
+          at top level, this is the value of the `id` attribute, if present. Otherwise,
+          it is a generated value, such as *jmsTopicConnectionFactory[default-0]*.'
+        required: true
+        explode: false
+        schema:
+          type: string
+          example: MyTopicConFactory
+        examples:
+          example-tcf-id:
+            summary: Top-level JMS topic connection factory with id
+            description: In this case, the uid is the same as the id.
+            value: myTopicConFactory
+          example-tcf-no-id:
+            summary: Top-level JMS topic connection factory without id
+            description: A generated uid for top-level JMS topic connection factories
+              which lack an id is computed based on the order of appearance within
+              server config, starting at 0.
+            value: jmsTopicConnectionFactory[default-0]
+          example-tcf-app-def:
+            summary: App-defined JMS topic connection factory
+            description: References a JMS topic connection factory defined by @JMSConnectionFactoryDefinition
+              within the MyApp application, in the MyWebModule module, with a name
+              of java:comp/env/jms/tcf1
+            value: application[MyApp]/module[MyWebModule]/jmsTopicConnectionFactory[java:copy/env/jms/tcf1]
+      - $ref: '#/components/parameters/X-Validation-User'
+      - $ref: '#/components/parameters/X-Validation-Password'
+      - $ref: '#/components/parameters/auth'
+      - $ref: '#/components/parameters/authAlias'
+      - $ref: '#/components/parameters/loginConfig'
+      - $ref: '#/components/parameters/X-Login-Config-Props'
+      - $ref: '#/components/parameters/headerParamsURLEncoded'
+      responses:
+        200:
+          description: Validation result retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/validation.jms.result'
+components:
+  schemas:
+    validation.cloudantDatabase.result:
+      required:
+      - uid
+      - successful
+      type: object
+      properties:
+        uid:
+          type: string
+          description: unique identifier
+        id:
+          type: string
+          description: id of cloudantDatabase
+        jndiName:
+          type: string
+          description: jndiName of cloudantDatabase
+        successful:
+          type: boolean
+          description: result of validation
+        info:
+          type: object
+          properties:
+            uri:
+              type: string
+            serverVersion:
+              type: string
+            vendorName:
+              type: string
+            vendorVersion:
+              type: string
+            vendorVariant:
+              type: string
+        failure:
+          $ref: '#/components/schemas/cause'
+      example:
+        uid: myCloudantDB
+        id: myCloudantDB
+        jndiName: cloudant/db1
+        successful: true
+        info:
+          uri: http://myhost.rchland.ibm.com:5984/exampledb1
+          serverVersion: 2.0.0
+          vendorName: IBM Cloudant
+          vendorVersion: 1.1.0
+          vendorVariant: local
+    validation.connectionFactory.result:
+      required:
+      - uid
+      - successful
+      type: object
+      properties:
+        uid:
+          type: string
+          description: unique identifier
+        id:
+          type: string
+          description: id of connectionFactory
+        jndiName:
+          type: string
+          description: jndiName of connectionFactory
+        successful:
+          type: boolean
+          description: result of validation
+        info:
+          anyOf:
+          - type: object
+            properties:
+              resourceAdapterName:
+                type: string
+              resourceAdapterVersion:
+                type: string
+              resourceAdapterVendor:
+                type: string
+              resourceAdapterDescription:
+                type: string
+              connectorSpecVersion:
+                type: string
+              eisProductName:
+                type: string
+              eisProductVersion:
+                type: string
+              user:
+                type: string
+          - $ref: '#/components/schemas/info'
+        failure:
+          $ref: '#/components/schemas/cause'
+      example:
+        uid: myConnectionFactory
+        id: myConnectionFactory
+        jndiName: eis/conFactory1
+        successful: false
+        info:
+          resourceAdapterName: LibConnect Adapter
+          resourceAdapterVersion: 104.153.185
+          resourceAdapterVendor: OpenLiberty
+          resourceAdapterDescription: This isn't a real resource adapter.
+          connectorSepcVersion: "1.7"
+          eisProductName: VeryFast Enterprise DB
+          eisProductVersion: 44.117.125
+          user: dbuser1
+        failure:
+          errorCode: ERR_NOT_AUTHORIZED
+          class: javax.resource.spi.SecurityException
+          message: User has insufficient privileges to access the backend data store.
+          stack:
+          - org.example.lca.ConnectionImpl.createInteraction(ConnectionImpl.java:146)
+          - com.ibm.ws.rest.handler.validator.jca.ConnectionFactoryValidator.validateCCIConnectionFactory(ConnectionFactoryValidator.java:304)
+          - com.ibm.ws.rest.handler.validator.jca.ConnectionFactoryValidator.validate(ConnectionFactoryValidator.java:169)
+          - com.ibm.ws.rest.handler.validator.internal.ValidatorRestHandler.handleSingleInstance(ValidatorRestHandler:231)
+          cause:
+            class: javax.security.auth.login.LoginException
+            message: unauthorized
+            stack:
+            - org.example.lca.AuthHelper.verifyPrivileges(AuthHelper.java:82)
+            - org.example.lca.ConnectionImpl.authenticate(EFConnection.java:223)
+            - org.example.lca.ConnectionImpl.deferredLogin(EFConnection.java:385)
+    validation.dataSource.result:
+      required:
+      - uid
+      - successful
+      type: object
+      properties:
+        uid:
+          type: string
+          description: unique identifier
+        id:
+          type: string
+          description: id of dataSource
+        jndiName:
+          type: string
+          description: jndiName of dataSource
+        successful:
+          type: boolean
+          description: result of validation
+        info:
+          $ref: '#/components/schemas/info'
+        failure:
+          $ref: '#/components/schemas/cause'
+      example:
+        uid: myDataSource
+        id: myDataSource
+        jndiName: jdbc/ds1
+        successful: false
+        info:
+          databaseProductName: VeryFast Enterprise DB
+          databaseProductVersion: 44.117.125
+          jdbcProductName: EvenFaster JDBC
+          jdbcProductVersion: 52.165.173
+          catalog: exampledb
+          schema: MYSCHEMA
+          user: dbuser1
+        failure:
+          sqlState: "08004"
+          errorCode: "9409"
+          class: java.sql.SQLInvalidAuthorizationSpecException
+          message: User has insufficient privileges to access database.
+          stack:
+          - org.example.efjdbc.EFConnection.isValid(EFConnection.java:253)
+          - com.ibm.ws.rest.handler.validator.jdbc.DataSourceValidator(DataSourceValidator.java:129)
+          - com.ibm.ws.rest.handler.validator.internal.ValidatorRestHandler.handleSingleInstance(ValidatorRestHandler:231)
+          cause:
+            class: javax.security.auth.login.LoginException
+            message: unauthorized
+            stack:
+            - org.example.efjdbc.AuthHelper.verifyPrivileges(AuthHelper.java:82)
+            - org.example.efjdbc.EFConnection.authenticate(EFConnection.java:223)
+            - org.example.efjdbc.EFConnection.deferredLogin(EFConnection.java:385)
+    validation.jms.result:
+      required:
+      - uid
+      - successful
+      type: object
+      properties:
+        uid:
+          type: string
+          description: unique identifier
+        id:
+          type: string
+          description: id of config element
+        jndiName:
+          type: string
+          description: jndiName of config element
+        successful:
+          type: boolean
+          description: result of validation
+        info:
+          type: object
+          properties:
+            jmsProviderName:
+              type: string
+            jmsProviderVersion:
+              type: string
+            jmsProviderSpecVersion:
+              type: string
+            clientID:
+              type: string
+        failure:
+          $ref: '#/components/schemas/cause'
+      example:
+        uid: myJMS1
+        id: myJMS1
+        jndiName: jms/cf1
+        successful: false
+        info:
+          jmsProviderName: OpenL Messaging Provider
+          jmsProviderVersion: 39.80.89
+          jmsProviderSpecVersion: "2.0"
+          clientID: MyClient
+        failure:
+          errorCode: ERR_UNAUTHORIZED
+          class: javax.jms.SecurityException
+          message: User lacks authority to send or receive messages.
+          stack:
+          - org.example.am.JMSConnectionImpl.createSession(JMSConnectionImpl.java:71)
+          - com.ibm.ws.rest.handler.validator.jms.JMSConnectionFactoryValidator.validate(JMSConnectionFactoryValidator.java:150)
+          - com.ibm.ws.rest.handler.validator.jca.ConnectionFactoryValidator.validate(ConnectionFactoryValidator.java:189)
+          - com.ibm.ws.rest.handler.validator.internal.ValidatorRestHandler.handleSingleInstance(ValidatorRestHandler:231)
+          cause:
+            class: javax.security.auth.login.LoginException
+            message: unauthorized
+            stack:
+            - org.example.lca.AuthHelper.verifyPrivileges(AuthHelper.java:82)
+            - org.example.lca.ConnectionImpl.authenticate(EFConnection.java:223)
+            - org.example.lca.ConnectionImpl.deferredLogin(EFConnection.java:385)
+    info:
+      type: object
+      properties:
+        databaseProductName:
+          type: string
+        databaseProductVersion:
+          type: string
+        jdbcDriverName:
+          type: string
+        jdbcDriverVersion:
+          type: string
+        catalog:
+          type: string
+        schema:
+          type: string
+        user:
+          type: string
+    cause:
+      type: object
+      properties:
+        sqlState:
+          type: string
+        errorCode:
+          type: string
+        class:
+          type: string
+        message:
+          type: string
+        stack:
+          type: array
+          items:
+            type: string
+        cause:
+          $ref: '#/components/schemas/cause'
+  parameters:
+    X-Validation-User:
+      name: X-Validation-User
+      in: header
+      description: '**User**. Supplies a user name when not using Container-managed
+        authentication. All non-ASCII characters and other characters not allowed
+        in a header must be URL encoded, in which case be sure to specify the *headerParamsURLEncoded*
+        parameter.'
+      required: false
+      explode: false
+      schema:
+        type: string
+    X-Validation-Password:
+      name: X-Validation-Password
+      in: header
+      description: '**Password**. Supplies a password when not using Container-managed
+        authentication. All non-ASCII characters and other characters not allowed
+        in a header must be URL encoded, in which case be sure to specify the *headerParamsURLEncoded*
+        parameter.'
+      required: false
+      explode: false
+      schema:
+        type: string
+        format: password
+    auth:
+      name: auth
+      in: query
+      description: '**Authentication**. Determines whether to use a resource reference
+        with Application-managed or Container-managed authentication, or no resource
+        reference.'
+      required: false
+      explode: false
+      schema:
+        type: string
+        enum:
+        - application
+        - container
+    authAlias:
+      name: authAlias
+      in: query
+      description: '**Authentication Alias**. Supplies the `id` of an `authData` to
+        use for Container-managed authentication.'
+      required: false
+      explode: false
+      schema:
+        type: string
+    loginConfig:
+      name: loginConfig
+      in: query
+      description: '**Custom Login**. Supplies the `name` of a `jaasLoginContextEntry`
+        to use for Container-managed authentication.'
+      required: false
+      explode: false
+      schema:
+        type: string
+    X-Login-Config-Props:
+      name: X-Login-Config-Props
+      in: header
+      description: '**Login Config Properties**. Supply login config properties as
+        name/value pairs. Each name/value pair is a list element, within which the
+        name and value are delimited by the first `=` character. For example, *prop1=value1*.
+        All non-ASCII characters and other characters not allowed in a header must
+        be URL encoded, in which case be sure to specify the *headerParamsURLEncoded*
+        parameter.'
+      required: false
+      explode: false
+      schema:
+        type: array
+        items:
+          type: string
+    headerParamsURLEncoded:
+      name: headerParamsURLEncoded
+      in: query
+      description: Enable this if you URL-encode values for header parameters, such
+        as X-Validation-User, X-Validation-Password, or X-Login-Config-Props. URL
+        encoding is necessary to supply values that include non-ASCII characters and
+        other characters that are not allowed in a header.
+      required: false
+      explode: false
+      schema:
+        type: boolean
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+ </code></pre></div></div></div><div class="paragraph"><p>Now lets view the config API description as JSON (<a href="https://localhost:9443/openapi/platform/config?format=json" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/openapi/platform/config?format=json</a>):</p></div><div class="paragraph"><p></p><div class="listingblock"><div class="content"> <pre style="height: 50vh; overflow-y:auto; overflow-x:auto;" class="CodeRay highlight"><code data-lang="xml">{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Config API",
+    "description" : "The Config REST endpoint retrieves information about configured elements and lists available REST API for each.",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://127.0.0.1:9443/ibm/api"
+  } ],
+  "security" : [ {
+    "basicAuth" : [ ]
+  } ],
+  "paths" : {
+    "/config/" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Shows configuration of all elements",
+        "description" : "Retrieves configuration detail for instances of all configuration element types.",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/queryParams"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Configuration info retrieved",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/config.result"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/config/{elementName}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Shows configurations of the requested config element type",
+        "description" : "Retrieves configuration detail for instances of the requested type of configuration element.",
+        "parameters" : [ {
+          "name" : "elementName",
+          "in" : "path",
+          "description" : "**Configuration element name**. The type of configuration element, such as `dataSource` or `application`.",
+          "required" : true,
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "dataSource"
+          }
+        }, {
+          "$ref" : "#/components/parameters/queryParams"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Configuration info retrieved",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/config.result"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/config/{elementName}/{uid}" : {
+      "get" : {
+        "tags" : [ "Config" ],
+        "summary" : "Shows configuration of a single instance of the requested type",
+        "description" : "Retrieves configuration detail for a single configuration element, uniquely qualfied by its unique identifier.",
+        "parameters" : [ {
+          "name" : "elementName",
+          "in" : "path",
+          "description" : "**Configuration element name**. The type of configuration element, such as `dataSource` or `application`.",
+          "required" : true,
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "dataSource"
+          }
+        }, {
+          "name" : "uid",
+          "in" : "path",
+          "description" : "**Unique identifier**. For an element configured at top level, this is the value of the `id` attribute, if present. Otherwise, it is a generated value, such as *dataSource[default-0]*.",
+          "required" : true,
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "example" : "DefaultDataSource"
+          },
+          "examples" : {
+            "example-id" : {
+              "summary" : "Top-level element with id",
+              "description" : "The uid of a top-level config element is the value of its `id` attribute, if present.",
+              "value" : "DefaultDataSource"
+            },
+            "example-no-id" : {
+              "summary" : "Top-level element without id",
+              "description" : "The uid of a top-level config element without an `id` attribute is computed based on the order of appearance within server config, starting at 0.",
+              "value" : "jmsConnectionFactory[default-0]"
+            },
+            "example-nested" : {
+              "summary" : "Nested element without id",
+              "description" : "This example shows a generated uid for the first connectionManager (index 0, lacking an id) that is nested under a dataSource element with id of DefaultDataSource.",
+              "value" : "dataSource[DefaultDataSource]/connectionManager[default-0]"
+            },
+            "example-nested-under-singleton" : {
+              "summary" : "Nested element (without id) under singleton",
+              "description" : "This example shows a generated uid for the first dataSource (index 0, lacking an id) that is nested under the transaction element. The transaction element is a singleton and cannot have an id.",
+              "value" : "transaction/dataSource[default-0]"
+            },
+            "example-app-def" : {
+              "summary" : "App-defined resource",
+              "description" : "The uid for application-defined resources, such as @DataSourceDefinition and @JMSConnectionFactoryDefinition, is computed based on the configured name and qualified by its scope. This example is for a @DataSourceDefinition in the MyApp application, in the MyWebModule module, with a name of java:module/env/jdbc/ds1",
+              "value" : "application[MyApp]/module[MyWebModule]/dataSource[java:module/env/jdbc/ds1]"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Configuration info retrieved",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/config.result"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "config.result" : {
+        "required" : [ "configElementName" ],
+        "type" : "object",
+        "properties" : {
+          "configElementName" : {
+            "type" : "string",
+            "description" : "config element name"
+          },
+          "uid" : {
+            "type" : "string",
+            "description" : "unique identifier"
+          },
+          "id" : {
+            "type" : "string",
+            "description" : "id of configuration element"
+          },
+          "jndiName" : {
+            "type" : "string",
+            "description" : "jndiName of configuration element"
+          },
+          "api" : {
+            "type" : "array",
+            "description" : "relative paths to available REST endpoints for this configuration element",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "example" : {
+          "configElementName" : "dataSource",
+          "uid" : "DefaultDataSource",
+          "id" : "DefaultDataSource",
+          "beginTranForResultSetScrollingAPIs" : true,
+          "beginTranForVendorAPIs" : true,
+          "connectionSharing" : "MatchOriginalRequest",
+          "containerAuthDataRef" : {
+            "configElementName" : "containerAuthData",
+            "uid" : "dataSource[DefaultDataSource]/containerAuthData[default-0]",
+            "password" : "******",
+            "user" : "derbyuser1"
+          },
+          "enableConnectionCasting" : false,
+          "jdbcDriverRef" : {
+            "configElementName" : "jdbcDriver",
+            "uid" : "dataSource[DefaultDataSource]/jdbcDriver[default-0]",
+            "libraryRef" : {
+              "configElementName" : "library",
+              "uid" : "Derby",
+              "id" : "Derby",
+              "apiTypeVisibility" : "spec,ibm-api,api,stable",
+              "fileRef" : [ {
+                "configElementName" : "file",
+                "uid" : "library[Derby]/file[default-0]",
+                "name" : "/Users/myself/drivers/derby/derby.jar"
+              } ]
+            }
+          },
+          "statementCacheSize" : "10,",
+          "syncQueryTimeoutWithTransactionTimeout" : "false,",
+          "transactional" : "true,",
+          "properties.derby.embedded" : {
+            "createDatabase" : "create",
+            "databaseName" : "memory:derbydb"
+          },
+          "api" : [ "/ibm/api/validation/dataSource/DefaultDataSource" ]
+        },
+        "additionalProperties" : {
+          "anyOf" : [ {
+            "type" : "boolean"
+          }, {
+            "type" : "number"
+          }, {
+            "type" : "string"
+          }, {
+            "$ref" : "#/components/schemas/config.result"
+          }, {
+            "type" : "object"
+          }, {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/config.result"
+            }
+          } ]
+        }
+      }
+    },
+    "parameters" : {
+      "queryParams" : {
+        "name" : "queryParams",
+        "in" : "query",
+        "description" : "**Query Parameters**. Supply additional query parameters in JSON as key/value pairs. For example, the following parameters could be specified for an application-defined data source: *{ \"application\": \"MyApp\", \"jndiName\": \"java:app/env/jdbc/MyDataSource\" }*",
+        "required" : false,
+        "explode" : false,
+        "schema" : {
+          "type" : "object",
+          "example" : { },
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "basicAuth" : {
+        "type" : "http",
+        "scheme" : "basic"
+      }
+    }
+  }
+}
+ </code></pre></div></div></div></div></div><div class="sect1"><h2 id="validating-a-jca-connection-factory">Validating a JCA connection factory</h2><div class="sectionbody"><div class="paragraph"><p>Here is a sample <code>server.xml</code> configuration that uses the Configuration Validator and JCA features:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;server&gt;</span>
+  <span class="tag">&lt;featureManager&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>appSecurity-2.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>restConnector-2.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>jca-1.7<span class="tag">&lt;/feature&gt;</span>
+  <span class="tag">&lt;/featureManager&gt;</span>
+
+  <span class="tag">&lt;keyStore</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">defaultKeyStore</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">Liberty</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;basicRegistry&gt;</span>
+    <span class="tag">&lt;user</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdmin</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdminPwd</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;user</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogUser</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogUserPwd</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;/basicRegistry&gt;</span>
+  <span class="tag">&lt;administrator-role&gt;</span>
+    <span class="tag">&lt;user&gt;</span>blogAdmin<span class="tag">&lt;/user&gt;</span>
+  <span class="tag">&lt;/administrator-role&gt;</span>
+
+  <span class="tag">&lt;authData</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">auth2</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">containerAuthUser2</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">2containerAuthUser</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;connectionFactory</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span> <span class="attribute-name">jndiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">eis/cf1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;containerAuthData</span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">containerAuthUser1</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">1containerAuthUser</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;properties.TestValidationAdapter.ConnectionFactory</span> <span class="attribute-name">hostName</span>=<span class="string"><span class="delimiter">"</span><span class="content">myhost.openliberty.io</span><span class="delimiter">"</span></span> <span class="attribute-name">portNumber</span>=<span class="string"><span class="delimiter">"</span><span class="content">9876</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/connectionFactory&gt;</span>
+...
+<span class="tag">&lt;/server&gt;</span></code></pre></div></div><div class="paragraph"><p>The REST endpoints for validating a connection factory can be found at <a href="https://localhost:9443/ibm/api/validation/connectionFactory/%7Buid%7D" class="bare">https://localhost:9443/ibm/api/validation/connectionFactory/{uid}</a>. To test <code>cf1</code> using container authentication we can use the following URL: <a href="https://localhost:9443/ibm/api/validation/connectionFactory/cf1?auth=container" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/validation/connectionFactory/cf1?auth=container</a>:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">jndiName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">eis/cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">successful</span><span class="delimiter">"</span></span>: <span class="value">true</span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">info</span><span class="delimiter">"</span></span>: {
+      <span class="key"><span class="delimiter">"</span><span class="content">resourceAdapterName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">TestValidationAdapter</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">resourceAdapterVersion</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">28.45.53</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">resourceAdapterJCASupport</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">1.7</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">resourceAdapterVendor</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">resourceAdapterDescription</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">This tiny resource adapter doesn't do much at all.</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">eisProductName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">TestValidationEIS</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">eisProductVersion</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">33.56.65</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">containerAuthUser1</span><span class="delimiter">"</span></span>
+   }
+}</code></pre></div></div><div class="paragraph"><p>Validation of a connection factory supports both container and application authentication by the <code>auth</code> parameter being included on the URL. Additionally, when using <code>?auth=application</code>, a user can be specified by including the <code>X-Validation-User</code> and <code>X-Validation-Password</code> headers. Finally, the authentication alias can be specified using the <code>authAlias</code> parameter. For example, this could look like <a href="https://localhost:9443/ibm/api/validation/connectionFactory/cf1?auth=container&amp;authAlias=auth2" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/validation/connectionFactory/cf1?auth=container&amp;authAlias=auth2</a>.</p></div></div></div><div class="sect1"><h2 id="viewing-jca-connection-factories">Viewing JCA Connection Factories</h2><div class="sectionbody"><div class="paragraph"><p>JCA connection factory configuration can be viewed similar to that of data sources. The endpoint to view all connection factories becomes <a href="https://localhost:9443/ibm/api/config/connectionFactory" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/config/connectionFactory</a>. Again, our simple example only has one config element:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">[
+   {
+      <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">jndiName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">eis/cf1</span><span class="delimiter">"</span></span>,
+      <span class="key"><span class="delimiter">"</span><span class="content">containerAuthDataRef</span><span class="delimiter">"</span></span>: [
+         {
+            <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">containerAuthData</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">connectionFactory[cf1]/containerAuthData[default-0]</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">containerAuthUser1</span><span class="delimiter">"</span></span>
+         }
+      ],
+      <span class="key"><span class="delimiter">"</span><span class="content">properties.TestValidationAdapter.ConnectionFactory</span><span class="delimiter">"</span></span>: [
+         {
+            <span class="key"><span class="delimiter">"</span><span class="content">hostName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">myhost.openliberty.io</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">portNumber</span><span class="delimiter">"</span></span>: <span class="integer">9876</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">userName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultUserName</span><span class="delimiter">"</span></span>
+         }
+      ]
+   }
+]</code></pre></div></div><div class="paragraph"><p>To view an individual connection factory append the <code>uid</code>. In our case this will be <a href="https://localhost:9443/ibm/api/config/connectionFactory/cf1" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/config/connectionFactory/cf1</a>:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">connectionFactory</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">jndiName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">eis/cf1</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">containerAuthDataRef</span><span class="delimiter">"</span></span>: [
+      {
+         <span class="key"><span class="delimiter">"</span><span class="content">configElementName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">containerAuthData</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">uid</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">connectionFactory[cf1]/containerAuthData[default-0]</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">user</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">containerAuthUser1</span><span class="delimiter">"</span></span>
+      }
+   ],
+   <span class="key"><span class="delimiter">"</span><span class="content">properties.TestValidationAdapter.ConnectionFactory</span><span class="delimiter">"</span></span>: [
+      {
+         <span class="key"><span class="delimiter">"</span><span class="content">hostName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">myhost.openliberty.io</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">password</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">******</span><span class="delimiter">"</span></span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">portNumber</span><span class="delimiter">"</span></span>: <span class="integer">9876</span>,
+         <span class="key"><span class="delimiter">"</span><span class="content">userName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">DefaultUserName</span><span class="delimiter">"</span></span>
+      }
+   ]
+}</code></pre></div></div></div></div><div class="sect1"><h2 id="cloudant-database">Cloudant Database</h2><div class="sectionbody"><div class="paragraph"><p>Cloudant databases can be viewed and validated as well.</p></div><div class="paragraph"><p>Let’s use the following server config snippets:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;server&gt;</span>
+  <span class="tag">&lt;featureManager&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>appSecurity-2.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>cloudant-1.0<span class="tag">&lt;/feature&gt;</span>
+    <span class="tag">&lt;feature&gt;</span>restConnector-2.0<span class="tag">&lt;/feature&gt;</span>
+  <span class="tag">&lt;/featureManager&gt;</span>
+
+  <span class="tag">&lt;keyStore</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">defaultKeyStore</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">Liberty</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;basicRegistry&gt;</span>
+    <span class="tag">&lt;user</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdmin</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogAdminPwd</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;user</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogUser</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">blogUserPwd</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;/basicRegistry&gt;</span>
+  <span class="tag">&lt;administrator-role&gt;</span>
+    <span class="tag">&lt;user&gt;</span>blogAdmin<span class="tag">&lt;/user&gt;</span>
+  <span class="tag">&lt;/administrator-role&gt;</span>
+
+  <span class="tag">&lt;library</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">CloudantLib</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;fileset</span> <span class="attribute-name">dir</span>=<span class="string"><span class="delimiter">"</span><span class="content">${server.config.dir}/cloudant</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/library&gt;</span>
+
+  <span class="tag">&lt;authData</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">cloudantAuthData</span><span class="delimiter">"</span></span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">${CLOUDANT_USER}</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">${CLOUDANT_PASS}</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;cloudant</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">myCloudant</span><span class="delimiter">"</span></span> <span class="attribute-name">jndiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cloudant/myCloudant</span><span class="delimiter">"</span></span> <span class="attribute-name">libraryRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">CloudantLib</span><span class="delimiter">"</span></span> <span class="attribute-name">url</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://localhost:5984</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;containerAuthData</span> <span class="attribute-name">user</span>=<span class="string"><span class="delimiter">"</span><span class="content">cloudantUser</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">cloudantPass</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/cloudant&gt;</span>
+
+  <span class="tag">&lt;cloudantDatabase</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">myCloudantDB</span><span class="delimiter">"</span></span> <span class="attribute-name">jndiName</span>=<span class="string"><span class="delimiter">"</span><span class="content">cloudant/myCloudantDB</span><span class="delimiter">"</span></span> <span class="attribute-name">cloudantRef</span>=<span class="string"><span class="delimiter">"</span><span class="content">myCloudant</span><span class="delimiter">"</span></span> <span class="attribute-name">databaseName</span>=<span class="string"><span class="delimiter">"</span><span class="content">testdb</span><span class="delimiter">"</span></span> <span class="attribute-name">create</span>=<span class="string"><span class="delimiter">"</span><span class="content">true</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+
+  <span class="tag">&lt;keyStore</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">defaultKeyStore</span><span class="delimiter">"</span></span> <span class="attribute-name">password</span>=<span class="string"><span class="delimiter">"</span><span class="content">Liberty</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;quickStartSecurity</span> <span class="attribute-name">userName</span>=<span class="string"><span class="delimiter">"</span><span class="content">adminuser</span><span class="delimiter">"</span></span> <span class="attribute-name">userPassword</span>=<span class="string"><span class="delimiter">"</span><span class="content">adminpwd</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/server&gt;</span></code></pre></div></div><div class="paragraph"><p>The Cloudant config can be viewed at <a href="https://localhost:9443/ibm/api/config/cloudantDatabase" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/config/cloudantDatabase</a>, while the <code>myCloudantDB</code> database can be tested using container authentication at <a href="https://localhost:9443/ibm/api/validation/cloudantDatabase/myCloudantDB?auth=container" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/validation/cloudantDatabase/myCloudantDB?auth=container</a>. Similar to JCA connection factories, Cloudant validation supports <code>auth</code> types of <code>container</code> and <code>application</code>. The authentication alias can be specified as a parameter as well. For example, <a href="https://localhost:9443/ibm/api/validation/cloudantDatabase/myCloudantDB?auth=Application&amp;authAlias=cloudantAuthData" class="notranslate bare" target="_blank" rel="noopener noreferrer">https://localhost:9443/ibm/api/validation/cloudantDatabase/myCloudantDB?auth=Application&amp;authAlias=cloudantAuthData</a> can be used to test the <code>myCloudantDB</code> database using <code>Application</code> authentication with an authentication alias of <code>cloudantAuthData</code>.</p></div><div class="paragraph"><p>So there you have it. You can now test database connections and other resources supporting configuration validation using REST APIs. If you have any feedback, questions, or suggestions about further support that would be useful, let us know by posting to <a href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer">our Groups.io account</a>.</p></div></div></div><div class="sect1"><h2 id="try-it-now">Try it now</h2><div class="sectionbody"><div class="paragraph"><p>Get <a href="https://openliberty.io/blog/2019/09/13/microprofile-reactive-messaging-19009.html">Open Liberty 19.0.0.9</a>.</p></div></div></div><div class="share_post_container"> <a class="twitter_link" href="https://twitter.com/intent" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Testing database connections in Open Liberty apps with REST APIs') + '&amp;url=' + encodeURIComponent(window.location)); return false" aria-label="Twitter link"></a> <a class="reddit_link" href="https://www.reddit.com/submit" onclick="window.open('//www.reddit.com/submit?url=' + encodeURIComponent(window.location)); return false" aria-label="Reddit link"></a></div><div id="blog_link_container"> <a id="blog_link_bottom" href="https://openliberty.io/blog"><img id="arrow" src="https://openliberty.io/img/post_arrow.svg" alt="back to all blogs">See all blog posts</a></div></div><div class="tags_container_bottom"><div class="container"><p id="tags">Tags</p><div class="post_tags_container"></div></div></div> </article></div><div class="d-none"> <img src="https://openliberty.io/img/twitter_link_hover.svg"> <img src="https://openliberty.io/img/reddit_link_hover.svg"></div></main><footer><div id="footer_gray_background"><div id="footer_top_container" class="footer_container container-fluid"><div id="footer_project_container"> <span id="footer_open_liberty"></span><p id="footer_project">an IBM open source project</p></div><div id="footer_round_links_container"> <a id="footer_github_link" class="footer_round_btn" href="https://github.com/OpenLiberty/" target="_blank" rel="noopener noreferrer" aria-label="Github"></a> <a id="footer_twitter_link" class="footer_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="footer_stackoverflow_link" class="footer_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="footer_groupsio_link" class="footer_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div></div></div><div id="footer_bottom_container" class="footer_container container-fluid"><div id="footer_bottom_left_section"><p id="footer_copyright">© Copyright IBM Corp. 2017, 2019</p><p class="vertical_bar">|</p> <a id="footer_privacy_policy_link" href="https://www.ibm.com/privacy/" target="_blank" rel="noopener noreferrer" class="left_footer_link">Privacy policy</a><p class="vertical_bar">|</p> <a id="footer_license_link" href="https://github.com/OpenLiberty/open-liberty/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="left_footer_link">License</a></div><div id="footer_bottom_right_section"> <a id="footer_docs_link" href="https://openliberty.io/docs" aria-label="Open Liberty Docs" class="right_footer_link blue_link_light_background">Docs</a> <a id="footer_blog_link" href="https://openliberty.io/blog" aria-label="Open Liberty Blogs" class="right_footer_link blue_link_light_background">Blog</a> <a id="footer_support_link" href="https://openliberty.io/support" aria-label="Open Liberty Support" class="right_footer_link blue_link_light_background">Support</a></div></div> </footer><div class="d-none hidden"> <img src="https://openliberty.io/img/Footer_GitCat_Hover.svg" alt="OpenLiberty Github link"> <img src="https://openliberty.io/img/Footer_TwitterBird_Hover.svg" alt="OpenLibertyIO Twitter link"> <img src="https://openliberty.io/img/Footer_StackO_Hover.svg" alt="Open-liberty Stack Overflow link"> <img src="https://openliberty.io/img/Footer_GroupsIO_Hover.svg" alt="Openliberty Groups IO link"></div> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script src="https://openliberty.io/assets/devEnvironment-1534f5b3d86298872bff0c998dc072080c30665ac1e9f1d3087393aeba41be1b.js"></script><script src="https://openliberty.io/assets/header-d405bd49656b9225ee0406d4235bdb9d94577ed774cccd00b4bf2431152ab70b.js"></script><script src="https://openliberty.io/assets/post-315ec2726897e27cf07b78db43da01eba6bf0d5013f8c9fbd290879fb64388fa.js"></script></body></html>

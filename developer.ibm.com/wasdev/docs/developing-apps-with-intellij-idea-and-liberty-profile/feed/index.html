@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Get started with a Hello World app on Liberty using IntelliJ IDEA</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Vignesh</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-156530</link>
+		<dc:creator><![CDATA[Vignesh]]></dc:creator>
+		<pubDate>Sun, 24 Nov 2019 15:51:44 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-156530</guid>
+		<description><![CDATA[Hello,
+
+If I make Java changes, stop the server and start it again, my changes are not getting reflected the first time. But it is working from the second time if I launch the application again. Latest code changes are used only from the second launch. 
+
+I am using Intellij 2019.2(Ultimate edition) and Liberty 18.0.0.3.
+
+Am I missing any configuration? TIA.]]></description>
+		<content:encoded><![CDATA[<p>Hello,</p>
+<p>If I make Java changes, stop the server and start it again, my changes are not getting reflected the first time. But it is working from the second time if I launch the application again. Latest code changes are used only from the second launch. </p>
+<p>I am using Intellij 2019.2(Ultimate edition) and Liberty 18.0.0.3.</p>
+<p>Am I missing any configuration? TIA.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Lars Besselmann</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-151568</link>
+		<dc:creator><![CDATA[Lars Besselmann]]></dc:creator>
+		<pubDate>Wed, 15 Nov 2017 19:07:28 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-151568</guid>
+		<description><![CDATA[Please also take a look at the IntelliJ help page at https://www.jetbrains.com/help/idea/run-debug-configuration-websphere-server.html#d17085e2045
+which describes the support for WAS Traditional and Liberty.]]></description>
+		<content:encoded><![CDATA[<p>Please also take a look at the IntelliJ help page at <a href="https://www.jetbrains.com/help/idea/run-debug-configuration-websphere-server.html#d17085e2045">https://www.jetbrains.com/help/idea/run-debug-configuration-websphere-server.html#d17085e2045</a><br />
+which describes the support for WAS Traditional and Liberty.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: hce</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-147341</link>
+		<dc:creator><![CDATA[hce]]></dc:creator>
+		<pubDate>Sat, 10 Sep 2016 10:04:57 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-147341</guid>
+		<description><![CDATA[Once more with escaped xml:
+
+In IntelliJ 2016 you dont have to edit the server.xml manually.
+IntelliJ provides a Fix Button in Step 17, when running websphere.
+The Fix-Button performs the changes in the server.xml:
+
+&#060;?xml version=&#034;1.0&#034; encoding=&#034;UTF-8&#034;?&#062;
+&#060;server description=&#034;new server&#034;&#062;
+  &#060;!-- Enable features --&#062;
+  &#060;featureManager&#062;
+    &#060;feature&#062;webProfile-7.0&#060;/feature&#062;
+    &#060;feature&#062;localConnector-1.0&#060;/feature&#062;
+  &#060;/featureManager&#062;
+  &#060;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&#034;*&#034; --&#062;
+  &#060;httpEndpoint id=&#034;defaultHttpEndpoint&#034; httpPort=&#034;9080&#034; httpsPort=&#034;9443&#034; /&#062;
+  &#060;!-- Automatically expand WAR files and EAR files --&#062;
+  &#060;applicationManager autoExpand=&#034;true&#034; /&#062;
+  &#060;applicationMonitor updateTrigger=&#034;mbean&#034; /&#062;
+&#060;/server&#062;]]></description>
+		<content:encoded><![CDATA[<p>Once more with escaped xml:</p>
+<p>In IntelliJ 2016 you dont have to edit the server.xml manually.<br />
+IntelliJ provides a Fix Button in Step 17, when running websphere.<br />
+The Fix-Button performs the changes in the server.xml:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br />
+&lt;server description=&quot;new server&quot;&gt;<br />
+  &lt;!&#8211; Enable features &#8211;&gt;<br />
+  &lt;featureManager&gt;<br />
+    &lt;feature&gt;webProfile-7.0&lt;/feature&gt;<br />
+    &lt;feature&gt;localConnector-1.0&lt;/feature&gt;<br />
+  &lt;/featureManager&gt;<br />
+  &lt;!&#8211; To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; &#8211;&gt;<br />
+  &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot; httpPort=&quot;9080&quot; httpsPort=&quot;9443&quot; /&gt;<br />
+  &lt;!&#8211; Automatically expand WAR files and EAR files &#8211;&gt;<br />
+  &lt;applicationManager autoExpand=&quot;true&quot; /&gt;<br />
+  &lt;applicationMonitor updateTrigger=&quot;mbean&quot; /&gt;<br />
+&lt;/server&gt;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: hce</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-147340</link>
+		<dc:creator><![CDATA[hce]]></dc:creator>
+		<pubDate>Sat, 10 Sep 2016 09:57:54 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-147340</guid>
+		<description><![CDATA[In IntelliJ 2016 you dont have to edit the server.xml manually.
+IntelliJ provides a Fix Button in Step 17, when running websphere.
+The Fix-Button performs the changes in the server.xml:
+
+
+
+  &lt;!-- Enable features --&gt;
+  
+    webProfile-7.0
+    localConnector-1.0
+  
+  &lt;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&gt;
+  
+  &lt;!-- Automatically expand WAR files and EAR files --&gt;
+  
+  
+]]></description>
+		<content:encoded><![CDATA[<p>In IntelliJ 2016 you dont have to edit the server.xml manually.<br />
+IntelliJ provides a Fix Button in Step 17, when running websphere.<br />
+The Fix-Button performs the changes in the server.xml:</p>
+<p>  <!-- Enable features --></p>
+<p>    webProfile-7.0<br />
+    localConnector-1.0</p>
+<p>  <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" --></p>
+<p>  <!-- Automatically expand WAR files and EAR files --></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-146015</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Wed, 16 Mar 2016 15:51:04 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-146015</guid>
+		<description><![CDATA[Hi S, sorry for not replying sooner (like a year ago!). On the off-chance that this is still a problem, could you post it on Stack Overflow (http://stackoverflow.com/questions/ask/?tags=websphere-liberty) please so that more people will see it and hopefully reply?
+
+Thanks,
+
+Laura]]></description>
+		<content:encoded><![CDATA[<p>Hi S, sorry for not replying sooner (like a year ago!). On the off-chance that this is still a problem, could you post it on Stack Overflow (<a href="http://stackoverflow.com/questions/ask/?tags=websphere-liberty">http://stackoverflow.com/questions/ask/?tags=websphere-liberty</a>) please so that more people will see it and hopefully reply?</p>
+<p>Thanks,</p>
+<p>Laura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-146014</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Wed, 16 Mar 2016 15:47:59 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-146014</guid>
+		<description><![CDATA[Hi Mike,
+
+The article has been updated for v15.0.4. As we&#039;re not so familiar with IntelliJ IDEA, please feel free to shout if there&#039;s something you think should be done differently. :)
+
+Cheers,
+
+Laura]]></description>
+		<content:encoded><![CDATA[<p>Hi Mike,</p>
+<p>The article has been updated for v15.0.4. As we&#8217;re not so familiar with IntelliJ IDEA, please feel free to shout if there&#8217;s something you think should be done differently. 🙂</p>
+<p>Cheers,</p>
+<p>Laura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-145893</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Fri, 26 Feb 2016 11:27:53 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-145893</guid>
+		<description><![CDATA[Thanks, Mike. I&#039;ll get the article updated but your comments will help in the meantime. :)]]></description>
+		<content:encoded><![CDATA[<p>Thanks, Mike. I&#8217;ll get the article updated but your comments will help in the meantime. 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: MikeKinney</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-145892</link>
+		<dc:creator><![CDATA[MikeKinney]]></dc:creator>
+		<pubDate>Fri, 26 Feb 2016 01:47:42 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-145892</guid>
+		<description><![CDATA[Looks like I lost the xml characters... trying to convert them to html
+
+&#060;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&#062;
+&#060;server description=&quot;new server&quot;&#062;
+  &#060;featureManager&#062;
+    &#060;feature&#062;adminCenter-1.0&#060;/feature&#062;
+    &#060;feature&#062;localConnector-1.0&#060;/feature&#062;
+    &#060;feature&#062;restConnector-1.0&#060;/feature&#062;
+    &#060;feature&#062;ssl-1.0&#060;/feature&#062;
+    &#060;feature&#062;webProfile-7.0&#060;/feature&#062;
+  &#060;/featureManager&#062;
+  &#060;!-- Define a keystore for the HTTPS port --&#062;
+  &#060;keyStore id=&quot;defaultKeyStore&quot; password=&quot;Liberty&quot; /&#062;
+  &#060;basicRegistry id=&quot;basic&quot; realm=&quot;BasicRealm&quot;&#062;
+    &#060;user name=&quot;mike&quot; password=&quot;mike&quot; /&#062;
+  &#060;/basicRegistry&#062;
+  &#060;administrator-role&#062;
+    &#060;user&#062;mike&#060;/user&#062;
+  &#060;/administrator-role&#062;
+  &#060;!-- Allows remote file access for config changes --&#062;
+  &#060;remoteFileAccess&#062;
+    &#060;writeDir&#062;${server.config.dir}&#060;/writeDir&#062;
+  &#060;/remoteFileAccess&#062;
+  &#060;!-- to get rid of the &#039;weak Diffie-Hellman&#039; message from chrome --&#062;
+  &#060;ssl id=&quot;defaultSSLConfig&quot; keyStoreRef=&quot;defaultKeyStore&quot; securityLevel=&quot;CUSTOM&quot; enabledCiphers=&quot;TLS_RSA_WITH_AES_128_CBC_SHA TLS_RSA_WITH_AES_128_CBC_SHA256 &quot; /&#062;
+  &#060;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&#062;
+  &#060;httpEndpoint id=&quot;defaultHttpEndpoint&quot; httpPort=&quot;9080&quot; httpsPort=&quot;9443&quot; /&#062;
+  &#060;!-- Automatically expand WAR files and EAR files --&#062;
+  &#060;applicationManager autoExpand=&quot;true&quot; /&#062;
+  &#060;applicationMonitor updateTrigger=&quot;mbean&quot; /&#062;
+&#060;/server&#062;]]></description>
+		<content:encoded><![CDATA[<p>Looks like I lost the xml characters&#8230; trying to convert them to html</p>
+<p>&lt;?xml version=&#8221;1.0&#8243; encoding=&#8221;UTF-8&#8243;?&gt;<br />
+&lt;server description=&#8221;new server&#8221;&gt;<br />
+  &lt;featureManager&gt;<br />
+    &lt;feature&gt;adminCenter-1.0&lt;/feature&gt;<br />
+    &lt;feature&gt;localConnector-1.0&lt;/feature&gt;<br />
+    &lt;feature&gt;restConnector-1.0&lt;/feature&gt;<br />
+    &lt;feature&gt;ssl-1.0&lt;/feature&gt;<br />
+    &lt;feature&gt;webProfile-7.0&lt;/feature&gt;<br />
+  &lt;/featureManager&gt;<br />
+  &lt;!&#8211; Define a keystore for the HTTPS port &#8211;&gt;<br />
+  &lt;keyStore id=&#8221;defaultKeyStore&#8221; password=&#8221;Liberty&#8221; /&gt;<br />
+  &lt;basicRegistry id=&#8221;basic&#8221; realm=&#8221;BasicRealm&#8221;&gt;<br />
+    &lt;user name=&#8221;mike&#8221; password=&#8221;mike&#8221; /&gt;<br />
+  &lt;/basicRegistry&gt;<br />
+  &lt;administrator-role&gt;<br />
+    &lt;user&gt;mike&lt;/user&gt;<br />
+  &lt;/administrator-role&gt;<br />
+  &lt;!&#8211; Allows remote file access for config changes &#8211;&gt;<br />
+  &lt;remoteFileAccess&gt;<br />
+    &lt;writeDir&gt;${server.config.dir}&lt;/writeDir&gt;<br />
+  &lt;/remoteFileAccess&gt;<br />
+  &lt;!&#8211; to get rid of the &#8216;weak Diffie-Hellman&#8217; message from chrome &#8211;&gt;<br />
+  &lt;ssl id=&#8221;defaultSSLConfig&#8221; keyStoreRef=&#8221;defaultKeyStore&#8221; securityLevel=&#8221;CUSTOM&#8221; enabledCiphers=&#8221;TLS_RSA_WITH_AES_128_CBC_SHA TLS_RSA_WITH_AES_128_CBC_SHA256 &#8221; /&gt;<br />
+  &lt;!&#8211; To access this server from a remote client add a host attribute to the following element, e.g. host=&#8221;*&#8221; &#8211;&gt;<br />
+  &lt;httpEndpoint id=&#8221;defaultHttpEndpoint&#8221; httpPort=&#8221;9080&#8243; httpsPort=&#8221;9443&#8243; /&gt;<br />
+  &lt;!&#8211; Automatically expand WAR files and EAR files &#8211;&gt;<br />
+  &lt;applicationManager autoExpand=&#8221;true&#8221; /&gt;<br />
+  &lt;applicationMonitor updateTrigger=&#8221;mbean&#8221; /&gt;<br />
+&lt;/server&gt;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: MikeKinney</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-145891</link>
+		<dc:creator><![CDATA[MikeKinney]]></dc:creator>
+		<pubDate>Fri, 26 Feb 2016 01:35:10 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-145891</guid>
+		<description><![CDATA[These instructions are a little dated with IntelliJ v15.
+
+1. unzip the WebSphere Liberty from herehttps://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments/
+
+2. install admin center
+ bin/installUtility install adminCenter-1.0
+
+3. Modify config  usr/servers/defaultServer/server.xml
+
+
+
+  
+    adminCenter-1.0
+    localConnector-1.0
+    restConnector-1.0
+    ssl-1.0
+    webProfile-7.0
+  
+  &lt;!-- Define a keystore for the HTTPS port --&gt;
+  
+  
+    
+  
+  
+    mike
+  
+  &lt;!-- Allows remote file access for config changes --&gt;
+  
+    ${server.config.dir}
+  
+  &lt;!-- to get rid of the &#039;weak Diffie-Hellman&#039; message from chrome --&gt;
+  
+  &lt;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&gt;
+  
+  &lt;!-- Automatically expand WAR files and EAR files --&gt;
+  
+  
+
+
+4. ensure it starts okay
+     bin/server start
+https://localhost:9443/adminCenter/   (username: mike password: mike)
+     bin/server stop
+
+5. new project, &#039;Java Enterprise&#039;, &#039;Web Application&#039;
+6. make changes as above
+
+Hope that helps someone else.]]></description>
+		<content:encoded><![CDATA[<p>These instructions are a little dated with IntelliJ v15.</p>
+<p>1. unzip the WebSphere Liberty from herehttps://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments/</p>
+<p>2. install admin center<br />
+ bin/installUtility install adminCenter-1.0</p>
+<p>3. Modify config  usr/servers/defaultServer/server.xml</p>
+<p>    adminCenter-1.0<br />
+    localConnector-1.0<br />
+    restConnector-1.0<br />
+    ssl-1.0<br />
+    webProfile-7.0</p>
+<p>  <!-- Define a keystore for the HTTPS port --></p>
+<p>    mike</p>
+<p>  <!-- Allows remote file access for config changes --></p>
+<p>    ${server.config.dir}</p>
+<p>  <!-- to get rid of the 'weak Diffie-Hellman' message from chrome --></p>
+<p>  <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" --></p>
+<p>  <!-- Automatically expand WAR files and EAR files --></p>
+<p>4. ensure it starts okay<br />
+     bin/server start<br />
+<a href="https://localhost:9443/adminCenter/">https://localhost:9443/adminCenter/</a>   (username: mike password: mike)<br />
+     bin/server stop</p>
+<p>5. new project, &#8216;Java Enterprise&#8217;, &#8216;Web Application&#8217;<br />
+6. make changes as above</p>
+<p>Hope that helps someone else.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: s</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-116494</link>
+		<dc:creator><![CDATA[s]]></dc:creator>
+		<pubDate>Mon, 16 Mar 2015 22:10:01 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-116494</guid>
+		<description><![CDATA[whatever i copy past from this site didnt show, i was referring to Update the configuration in 
+https://developer.ibm.com/wasdev/docs/creating-a-simple-helloworld-spring-servlet]]></description>
+		<content:encoded><![CDATA[<p>whatever i copy past from this site didnt show, i was referring to Update the configuration in<br />
+<a href="https://developer.ibm.com/wasdev/docs/creating-a-simple-helloworld-spring-servlet">https://developer.ibm.com/wasdev/docs/creating-a-simple-helloworld-spring-servlet</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: s</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-apps-with-intellij-idea-and-liberty-profile/#comment-116492</link>
+		<dc:creator><![CDATA[s]]></dc:creator>
+		<pubDate>Mon, 16 Mar 2015 21:57:23 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=5737#comment-116492</guid>
+		<description><![CDATA[but when i add maven part of my project , this stop working,
+what i got:
+jar project that use spring, rap in war rap in ear
+then when i deploy the ear using intellj it give me null error each time i call something in spring,
+tried to change server.xml to 
+    
+
+
+it didnt work,, what i need to do?]]></description>
+		<content:encoded><![CDATA[<p>but when i add maven part of my project , this stop working,<br />
+what i got:<br />
+jar project that use spring, rap in war rap in ear<br />
+then when i deploy the ear using intellj it give me null error each time i call something in spring,<br />
+tried to change server.xml to </p>
+<p>it didnt work,, what i need to do?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

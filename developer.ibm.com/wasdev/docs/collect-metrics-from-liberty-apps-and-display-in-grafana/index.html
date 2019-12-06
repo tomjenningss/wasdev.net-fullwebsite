@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2017-08-02",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Collect metrics from Liberty apps and display in Grafana",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": "Coding, DevOps"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Collect metrics from Liberty apps and display in Grafana"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Collect metrics from Liberty apps and display in Grafana - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="How to collect metrics from Liberty applications using the Dropwizard metrics Java API, JMX MBeans, collectd, Graphite, and display them in Grafana."/>
+<link rel="canonical" href="../../index.html%3Fp=22936.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Collect metrics from Liberty apps and display in Grafana Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=22936.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcollect-metrics-from-liberty-apps-and-display-in-grafana%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcollect-metrics-from-liberty-apps-and-display-in-grafana%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-22936 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../index.html%3Fp=22936.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="../category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="../category/devops/index.html" rel="tag">DevOps</a></span></div><h1 class="entry-title">Collect metrics from Liberty apps and display in Grafana</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../blog/author/pgunapal/index.html">Prashanth_G</a></span><br>Published on August 2, 2017</div><div class="pn_slic"><a href="../../index.html%3Fp=22936.html#comments" class="pn_comments_icon">0 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../../docs.html">All Documentation</a><a href="../../index.html%3Fp=22936.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="../category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="../category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="../category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="../category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="../category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="../category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="../category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="../category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="../category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="../category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="../category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="../category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="../category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="../category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="../category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="../category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="../category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="../category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="../category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p><em>Co-authored with Frank Ji.</em></p>
+<p>When you deploy microservices, monitoring your servers is an important part of knowing whether they are running as expected and how they are performing. You can collect metrics from Liberty about its key components and you can add your own custom metrics to monitor how your applications are behaving.</p>
+<p>This article demonstrates how to add custom metrics to your Liberty application using <a href="http://www.dropwizard.io/">Dropwizard Metrics API</a>. It also demonstrates how to monitor your Liberty metrics (base and custom) using <a href="https://collectd.org/">collectd</a>, <a href="https://graphiteapp.org/">Graphite</a>, and <a href="https://grafana.com/">Grafana</a>&#8211;a collection of open source technologies for collecting, storing, and viewing your data in dashboards.</p>
+<p><strong><a href="http://metrics.dropwizard.io/">Dropwizard metrics Java API</a></strong> is a library that provides measuring instruments for Java applications. By using the Dropwizard metrics API in your Liberty applications you can measure the behaviour of your Liberty application and customize the available metrics to your liking.</p>
+<p><strong><a href="https://collectd.org/documentation.shtml">collectd</a></strong> is a daemon that periodically collects metrics data emitted by the system &#8212; in this case, your Liberty server and its applications. collectd can output the collected data in various formats. This article shows how to produce the output in a format that can be consumed by Graphite.</p>
+<p><strong><a href="https://graphiteapp.org">Graphite</a></strong> acts as a listener for metrics and stores the data. The collected metrics can be viewed in graphs using the Graphite dashboard but, to get better visualization options, these metrics can also be viewed using Grafana.</p>
+<p><strong><a href="https://grafana.com">Grafana</a></strong> is a metrics analysis platform, which allows you to query, visualize, and understand your metrics data, through graphs and dashboards.</p>
+<p><a href="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248.png" alt="" width="1095" height="622" class="aligncenter size-full wp-image-22939" srcset="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248.png 1095w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248-300x170.png 300w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248-768x436.png 768w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-04-06-at-12.21.29-PM-e1498585867248-1024x582.png 1024w" sizes="(max-width: 1095px) 100vw, 1095px" /></a></p>
+<h2>Before you begin</h2>
+<p>To run the demonstration, we&#8217;ll clone a sample Liberty application from GitHub, build it using Maven, and then run the app and the other parts of the demonstration in Docker containers. Make sure you have installed Java 8, <a href="https://docs.docker.com/engine/installation/">Docker</a>, <a href="https://maven.apache.org/install.html">Maven</a>, and <a href="https://git-scm.com/downloads">Git</a>.</p>
+<p>The sample code, configuration, and Dockerfiles are available in the <a href="https://github.com/WASdev/sample.metrics">sample.metrics repo in GitHub</a>. You can run the demonstration from the instructions in the README in the GitHub repository. This article describes how the demonstration works.</p>
+<h2>Adding metrics to your application using the Dropwizard metrics API</h2>
+<p>If you want to learn how to write the application yourself, the following instructions describe how to add metrics to a simple servlet sample. The <a href="https://github.com/WASdev/sample.metrics">Metrics Sample application</a> in GitHub is based on the <a href="https://github.com/WASdev/sample.servlet">Servlet Sample</a>. The following instructions describe how to create the application yourself from the Servlet Sample (alternatively, you can just clone the Metrics Sample and review the completed code yourself):</p>
+<ol>
+<li>Clone the Servlet sample from GitHub:
+<pre><code>git clone https://github.com/WASdev/sample.servlet.git
+</code></pre>
+</li>
+<li>In the IDE or editor of your choice, open the <code>pom.xml</code> file, which is in the root of the project.</li>
+<li>Add the Dropwizard.metrics dependencies to the <code>&lt;dependencies&gt;</code> section of the <code>pom.xml</code> file. We are using Dropwizard.metrics 3.2.2 (the most recent version at the time of writing) in this example:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.dropwizard.metrics&lt;/groupId&gt;
+        &lt;artifactId&gt;metrics-core&lt;/artifactId&gt;
+        &lt;version&gt;3.2.2&lt;/version&gt;
+    &lt;/dependency&gt;
+</pre>
+</p>
+</li>
+<li>
+<p>In the <code>LibertyServlet</code> servlet class in the <code>src/main/java/application/servlet</code> directory, replace the <code>doGet</code> method with the following code to print this message:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    response.getWriter().println(&quot;Welcome to the Metrics Sample app&quot;);
+}
+</pre>
+</p>
+</li>
+<li>
+<p>Create a Dropwizard <code>MetricRegistry</code> object to register all of the metrics created in the application. Then, define a counter and a timer metric which will be used for this demonstration:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+//declare a metrics registry object to register our metrics
+public static MetricRegistry METRIC_REGISTRY = new MetricRegistry();
+//define 2 metrics
+private Counter counter1; 
+private Timer timer1; 
+</pre>
+<p>Also add the imports for these classes:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+import com.codahale.metrics.Counter;
+import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.Timer;
+</pre>
+</p>
+</li>
+<li>
+<p>Add the code needed to initialize the metrics registry in the servlet&#8217;s <code>init()</code> method:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+@Override
+public void init() throws ServletException
+{
+    counter1 = METRIC_REGISTRY.counter(&quot;counter1&quot;);
+    timer1 = METRIC_REGISTRY.timer(&quot;timer1&quot;);
+    System.out.println(&quot;Servlet &quot; + this.getServletName() + &quot; has started.&quot;);
+    final JmxReporter reporter = JmxReporter.forRegistry(METRIC_REGISTRY).build();
+    reporter.start();
+}
+</pre>
+<p>Here, the counter is named <code>counter1</code> and timer is <code>timer1</code>. In the code above you also create a <code>JmxReporter</code> object so that <code>counter1</code> and <code>timer1</code> can be exposed as MBeans via JMX. We&#8217;ll use the exposed MBeans with collectd.</p>
+<p>Also add the import for the JMX class:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+import com.codahale.metrics.JmxReporter;
+</pre>
+</p>
+</li>
+<li>
+<p>In <code>src/main/webapp</code>, create an HTML file <code>index.html</code> and put the following code in it:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+&lt;html&gt;
+&lt;body&gt;
+&lt;h2&gt;Metrics Sample Application&lt;/h2&gt;
+
+&lt;a href=&quot;servlet&quot;&gt;Click here to start monitoring&lt;/a&gt;.
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</li>
+<li>
+<p>Next, instrument the servlet using the metrics just created. The counter, <code>counter1</code>, is used as a request counter, and <code>timer1</code> is used to track the process time of each request. Update the <code>doGet</code> method of the LibertyServlet class with the highlighted lines of the following code:</p>
+<pre class="brush: java; highlight: [3,4,6,7,8,9,10,11,12]; title: ; notranslate" title="">
+protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+throws ServletException, IOException {
+    //calculate request time
+    Timer.Context context = timer1.time();
+    response.getWriter().println(&quot;Welcome to the Metrics Sample app&quot;);
+    response.getWriter().println(&quot;&quot;);
+    //increment request counter by 1
+    counter1.inc();
+    context.stop();
+    response.getWriter().println(String.format(&quot;Request count: %d&quot;, counter1.getCount()));
+    response.getWriter().println(String.format(&quot;Time to process the request: %fms&quot;,
+ timer1.getMeanRate()));
+}
+</pre>
+</p>
+</li>
+<li>
+<p>Update the value of the <code>&lt;warContext&gt;servlet&lt;/warContext&gt;</code> field in the <code>pom.xml</code> so that the context is defined as <code>&lt;warContext&gt;MetricsExample&lt;/warContext&gt;</code>.</p>
+</li>
+<li>
+<p>Update the value of the <code>&lt;artifactId&gt;sample.servlet&lt;/artifactId&gt;</code> field in the <code>pom.xml</code> so that the WAR file name is defined as <code>&lt;artifactId&gt;MetricsSample&lt;/artifactId&gt;</code>.</p>
+</li>
+<li>
+<p>Update the tests that Maven runs when it builds the app, otherwise the build will fail (or delete the <code>test</code> directory):</p>
+<ol>
+<li>Update the text string in the tests in <code>src/test/java/it/ApplicationIT.java</code> to <code>"Click here to start monitoring"</code>.</li>
+<li>Update the text string in the test in <code>src/test/java/it/servlet/LibertyServletIT.java</code> to <code>"Welcome to the Metrics Sample app"</code>.</li>
+</ol>
+</li>
+<li>Edit the <code>server.xml</code> so that it contains the following configuration:
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;server description=&quot;MetricsSample&quot;&gt;
+
+    &lt;featureManager&gt;
+      &lt;feature&gt;monitor-1.0&lt;/feature&gt;
+    	&lt;feature&gt;restConnector-2.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+
+    &lt;httpEndpoint httpPort=&quot;${default.http.port}&quot; httpsPort=&quot;${default.https.port}&quot; host=&quot;*&quot;
+        id=&quot;defaultHttpEndpoint&quot;&gt;
+    &lt;tcpOptions soReuseAddr=&quot;true&quot;/&gt;
+    
+    &lt;/httpEndpoint&gt;
+
+    &lt;application name=&quot;Metrics Sample&quot; context-root=&quot;${appContext}&quot; location=&quot;${appLocation}&quot; type=&quot;war&quot;&gt;&lt;/application&gt;
+    &lt;quickStartSecurity userName=&quot;user&quot; userPassword=&quot;{xor}Lz4sLCgwLTs=&quot;&gt;&lt;/quickStartSecurity&gt;
+    &lt;keyStore id=&quot;defaultKeyStore&quot; password=&quot;Liberty&quot;&gt;
+    &lt;/keyStore&gt;
+&lt;/server&gt;
+</pre>
+<ul>
+<li>The <code>monitor-1.0</code> and <code>restConnector-2.0</code> features are enabled to collect the custom metrics and Liberty runtime metrics from the Liberty application.</li>
+<li>The <code>httpPort</code> and <code>httpsPort</code> attributes are set to the default ports of <code>9080</code> and <code>9443</code> respectively (the values are defined in the <code>pom.xml</code> which generates a <code>bootstrap.properties</code> file in the same directory as the <code>server.xml</code> when the application is built).</li>
+<li>A single user security configuration is set for the Liberty server, with attributes <code>userName</code> as <code>user</code> and <code>userPassword</code> as <code>password</code>, using the <code>&lt;quickStartSecurity&gt;</code>.</li>
+<li>Using the <code>&lt;keyStore&gt;</code> element, the keystore (<code>key.jks</code>) that the Liberty server should use is set, with the appropriate password. The keystore is created using the securityUtility tool in our DockerFile, with the <code>CommonName</code> and password both set to <code>Liberty</code>, for the Liberty server.</li>
+</ul>
+</li>
+<li>Now everything is all set so, from the directory that contains the <code>pom.xml</code> file, build the Maven project:
+<pre><code>mvn clean install
+</code></pre>
+</li>
+<li>You can test that the Metrics Sample app runs by running the following command:
+<pre><code>mvn liberty:run-server
+</code></pre>
+</li>
+<li>Open a web browser at:
+<pre><code>http://localhost:9080/MetricsExample
+</code></pre>
+<p>In the browser, click the link to send a request and increase the counter. The count and response time of the request are displayed in the page.</p>
+</li>
+<li>
+<p>Stop the server before continuing (otherwise the port will be taken).</p>
+</li>
+</ol>
+<p>A <code>MetricsSample.war</code> file is created inside the project&#8217;s <code>target</code> directory. This is the WAR file that will run on Liberty in Docker, along with the <code>server.xml</code>. A <code>bootstrap.properties</code> file is generated by the Maven build from the <code>Liberty server properties</code> section of the <code>pom.xml</code>. The <code>bootstrap.properties</code> file resolves the variables in the <code>server.xml</code> file that specify the name of the WAR file, the location of the WAR file at run time, and the HTTP and HTTPS ports that the app will use at run time.</p>
+<p>Your application should match the application in the <code>sample.metrics</code> repo on GitHub. In the next sections, if you want to use the sample you have just created, download the following file and directories of files and place them in the root of your sample:</p>
+<ul>
+<li><a href="https://github.com/WASdev/sample.metrics/blob/master/Dockerfile"><code>Dockerfile</code></a></li>
+<li><a href="https://github.com/WASdev/sample.metrics/tree/master/collectd"><code>collectd</code> directory</a> and all its contents</li>
+<li><a href="https://github.com/WASdev/sample.metrics/tree/master/grafana"><code>grafana</code> directory</a> and its contents</li>
+</ul>
+<p>Alternatively, just clone the <a href="https://github.com/WASdev/sample.metrics"><code>sample.metrics</code></a> sample as it is.</p>
+<h2>Build and run the application on Liberty using Docker</h2>
+<p>Either clone the <a href="https://github.com/WASdev/sample.metrics"><code>sample.metrics</code></a> sample or ensure the sample app you have created has all the configuration files in the right place (see above).</p>
+<p>To run the application on Liberty using Docker, we build the Liberty application using Maven, build the Docker image using the Dockerfile (which also copies the necessary Metrics Sample files to the image), and runs the Docker container:</p>
+<ol>
+<li>In the directory that contains the <code>pom.xml</code> file, build the Liberty sample app:
+<pre><code>mvn clean install
+</code></pre>
+</li>
+<li>Build the Liberty Docker image from the sample DockerFile in the same directory:
+<pre><code>docker build -t example:liberty .
+</code></pre>
+</li>
+<li>Run the Liberty container from the image you just created:
+<pre><code>docker run --name liberty -d -p 9080:9080 -p 9443:9443 example:liberty
+</code></pre>
+</li>
+<li>Check that the application is running by visiting the following URL in a web browser:
+<pre><code>http://localhost:9080/MetricsExample
+</code></pre>
+</li>
+</ol>
+<p>Take a look at the Dockerfile for the Liberty Docker image:</p>
+<ul>
+<li>The latest version of Liberty is downloaded from DockerHub and a new Liberty server called <code>server1</code> is created.</li>
+<li>The <code>MetricsSample.war</code> file is copied from the Maven build <code>target</code> directory to the Liberty server <code>server1</code> directory.</li>
+<li>The sample <code>server.xml</code> and <code>boostrap.properties</code> is copied from the Maven build <code>target</code> directory to the Liberty server <code>server1</code> directory.</li>
+<li>The <code>key.jks</code> file that is set in the <code>server.xml</code> is created using the securityUtility tool.</li>
+</ul>
+<p>Next, we need to collect the metrics that your Liberty app and server are producing.</p>
+<h2>Collect metrics from your Liberty application and the server runtime using collectd and Graphite</h2>
+<p>We&#8217;ll now configure collectd to start gathering metrics from the Liberty server runtime and your application.</p>
+<p>The Metrics Sample app contains a <code>collectd</code> directory which contains some configuration files for collectd and another Dockerfile for running collectd in a Docker container. When run, the Dockerfile downloads the latest version of Ubuntu in a Docker image, installs collectd into it, and copies the collectd configuration files to the Docker image. The Dockerfile also copies to the image the Liberty REST library (<code>restConnector.jar</code>) and the keystore (<code>key.jks</code>), which are required by collectd.</p>
+<p>collectd gathers the metrics from the Liberty application and server runtime and sends them to Graphite using the TCP protocol on port 2003 and Graphite stores the data:</p>
+<ol>
+<li>In a terminal, change to the <code>collectd</code> directory.<br />
+(As a shortcut, you can run all of the commands in the below steps in one script: <code>collectd_graphite_setup.sh</code>.)</p>
+</li>
+<li>
+<p>Copy the Liberty REST library (<code>restConnector.jar</code>) and keystore (<code>key.jks</code>, which is generated each time Liberty starts) files to the local system and into the <code>collectd</code> directory, from the running Liberty container:</p>
+<pre><code>docker cp liberty:/opt/ibm/wlp/clients/restConnector.jar .
+
+docker cp liberty:/opt/ibm/wlp/output/server1/resources/security/key.jks .
+</code></pre>
+</li>
+<li>Build the collectd Docker image, which contains a configured installation of collectd:
+<pre><code>docker build -t example:collectd .
+</code></pre>
+</li>
+<li>Run the Graphite container from DockerHub. There is a Graphite Docker image in DockerHub that we can use (we don&#8217;t need to build this image ourselves):
+<pre><code>docker run --name graphite -d -p 80:80 -p 2003:2003 hopsoft/graphite-statsd
+</code></pre>
+</li>
+<li>Run the collectd container, linking it to the Graphite and Liberty containers so that they can communicate:
+<pre><code>docker run --name collectd -d --link liberty --link graphite example:collectd
+</code></pre>
+</li>
+<li>Check that the Graphite web-dashboard is accessible. In a web browser, visit the following URL:
+<pre><code>http://localhost:80
+</code></pre>
+</li>
+<li>Check that Graphite is storing the collected metrics by expanding <strong>Metrics > collectd > liberty > GenericJMX-dropwizard-counter > count-count</strong>. Click the link in the Liberty Metrics Sample app browser window to increase the request count and check that the count is displayed in the Graphite dashboard (you might need to press the clock icon on the Graphite Browser to change the period of time displayed to see the line):</li>
+</ol>
+<p><a href="../../wp-content/uploads/sites/9/2017/07/Graphite-count.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/07/Graphite-count.png" alt="" width="940" height="504" class="alignnone size-full wp-image-23295 screenshot" srcset="../../wp-content/uploads/sites/9/2017/07/Graphite-count.png 940w, ../../wp-content/uploads/sites/9/2017/07/Graphite-count-300x161.png 300w, ../../wp-content/uploads/sites/9/2017/07/Graphite-count-768x412.png 768w" sizes="(max-width: 940px) 100vw, 940px" /></a></p>
+<p>collectd collects the data using JMX MBeans. The <code>jmx-metrics.conf</code> (in the <code>collectd</code> directory) specifies the MBeans expected by collectd and defines the connection information required to connect to the MBean server of the Liberty instance. collectd connects to the REST JMX service in Liberty using the REST connector and the security details you configured in the Liberty server.</p>
+<h2>Visualize the metrics data in Grafana</h2>
+<p>Now we&#8217;re ready to display the metrics in dashboards using Grafana:</p>
+<ol>
+<li>Run the Grafana container from DockerHub:
+<pre><code>docker run -i --name grafana -d -p 3000:3000 --link graphite grafana/grafana
+</code></pre>
+</li>
+<li>Connect Grafana to the datastore in Graphite:
+<ol>
+<li>In a web browser, visit <code>http://localhost:3000</code> and log in using <code>admin</code> for both username and password.</li>
+<li>Click <strong>Add data source</strong>.</li>
+<li>Enter a name for the data source (e.g. My Liberty Metrics), and for <strong>Type</strong> select <strong>Graphite</strong>.</li>
+<li>For <strong>URL</strong>, enter the Graphite URL: <code>http://localhost:80</code>, and for <strong>Access</strong>, select <strong>Direct</strong>.</li>
+<li>Click <strong>Add</strong>, then <strong>Save &amp; Test</strong>, and then return to the main dashboard page.</li>
+</ol>
+<p><a href="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-2.44.51-PM.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-2.44.51-PM.png" alt="" width="597" height="670" class="aligncenter size-full wp-image-23323" srcset="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-2.44.51-PM.png 597w, ../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-2.44.51-PM-267x300.png 267w" sizes="(max-width: 597px) 100vw, 597px" /></a></li>
+</p>
+</li>
+<li>
+<p>Configure the Grafana dashboard to display the metrics data:</p>
+<ol>
+<li>Click <strong>Home</strong> at the top of the screen to display the list of available dashboards (there is only the default Home dashboard in the list).</li>
+<li>Click the <strong>Import Dashboard</strong> button to open the Import Dashboard dialog.</li>
+<li>Import the <code>.json</code> file from the <code>grafana</code> directory of the <code>sample.metrics</code> Git repository. The supplied dashboard opens.<br />
+<a href="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-3.45.39-PM.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-3.45.39-PM-1024x484.png" alt="" width="640" height="303" class="aligncenter size-large wp-image-23330" srcset="../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-3.45.39-PM-1024x484.png 1024w, ../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-3.45.39-PM-300x142.png 300w, ../../wp-content/uploads/sites/9/2017/07/Screen-Shot-2017-07-27-at-3.45.39-PM-768x363.png 768w" sizes="(max-width: 640px) 100vw, 640px" /></a></li>
+<li>To edit any of the panels in the dashboard, click the panel title then click <strong>Edit</strong>.</li>
+<li>To add a new query to a panel, click <strong>Add Query</strong> then click <strong>select metric</strong>. Select <strong>collectd > liberty</strong>, then select any available Dropwizard or WebSphere metric MBeans and its corresponding attributes or wildcards:</li>
+</ol>
+<p><a href="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.22.19-AM.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.22.19-AM.png" alt="" width="699" height="305" class="aligncenter size-full wp-image-23063" srcset="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.22.19-AM.png 699w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.22.19-AM-300x131.png 300w" sizes="(max-width: 699px) 100vw, 699px" /></a></p>
+<p>For example, select <strong>collectd > liberty > GenericJMX-dropwizard-counter > count-count</strong>. The data for the selected metric in the query is plotted on the graph and updated in real time. In our example, the data for the request count of the servlet, which we added as a custom metric in our example Liberty application, is plotted on the graph:</p>
+<p><a href="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.26.58-AM.png"><br />
+<img src="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.26.58-AM-1024x209.png" alt="" width="640" height="131" class="aligncenter size-large wp-image-23064" srcset="../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.26.58-AM-1024x209.png 1024w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.26.58-AM-300x61.png 300w, ../../wp-content/uploads/sites/9/2017/06/Screen-Shot-2017-03-29-at-11.26.58-AM-768x156.png 768w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>The following custom Dropwizard metrics and Liberty runtime metrics MBeans are available:</p>
+<ul>
+<li><strong>DropWizard-Counter</strong> &#8211; Counts the number of requests the sample HelloWorld Servlet received</li>
+<li><strong>DropWizard-Timer</strong> &#8211; Contains various timer metrics attributes, such as min, max, mean, stddev, etc.</li>
+<li><strong>WebSphere-JVMStats</strong> &#8211; Contains data about the Liberty JVM (FreeMemory, UsedMemory, ProcessCPU, etc.)</li>
+<li><strong>WebSphere-ServletStats</strong> &#8211; Contains data about the servlet&#8217;s RequestCount and ResponseTime</li>
+<li><strong>WebSphere-SessionStats</strong> &#8211; Contains data about the session, such as LiveCount, ActiveCount, CreateCount, etc.</li>
+<li><strong>WebSphere-ThreadPoolStats</strong> &#8211; Contains the thread&#8217;s PoolSize and ActiveThreads count data</li>
+</ul>
+</li>
+</ol>
+<p>You now have Liberty and your Liberty app emitting metrics that collectd is collecting and storing in Graphite. Grafana then produces some nice graphs of the data for you.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../blog/author/pgunapal/index.html">Prashanth_G</a></span></p><ul class="byline__social"></ul><p class="byline__bio">Prashanth is a Software Engineer, focused on WebSphere Application Server traditional and Liberty Development.</p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../index.html%3Fp=22936.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='22936' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0d84449d88" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="16"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../index.html%3Fp=22936.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../index.html%3Fp=22936.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../index.html%3Fp=22936.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcollect-metrics-from-liberty-apps-and-display-in-grafana&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcollect-metrics-from-liberty-apps-and-display-in-grafana"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

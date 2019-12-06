@@ -1,0 +1,438 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Testing microservices with Arquillian managed container</title><meta name="description" content="A tutorial on how to test your microservices with the Arquillian managed container for Open Liberty"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><link rel="icon" type="image/x-icon" href="https://openliberty.io/favicon.ico"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/openliberty-417cdd85f6072483030360356f930c017bd4dcc1f64ab74a65569803624b1b95.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/coderay-custom-ab54124e3170f1f31f9b8fdd361c302b78a5238d19a86f6c6f34c4688e2e8d35.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/doc-header-c309828408a64fdb82836c8eaf45589dd3f0470483d903e0bc55c6abaf963889.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/toc-a0b9110a3e9da7f42eb13f4ba8d64a205bbc2f3f406cb0d504af6fc79ea8f859.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/end-of-guide-78aa63e591c3ad3c94c61dfb23e1b0c417aab50a64d4e17b0062aab22a17137e.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-card-e0f001e61d331b9f363725e180d548fafef865e09c5806c90c25ae6c73b7f361.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-4de01bc72769767a332497a26743e5a2b7324eae873bb57bdc7a6fe6b1b8a889.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-multipane-6e79e71c68e01ccfcd4021fc6ba6a7c0137c6929e87aadb566929234592bca19.css"> <script>!function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="https://www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-TKP3KJ7")</script><link rel="canonical" href="https://openliberty.io/guides/arquillian-managed"><link rel="alternate" type="application/rss+xml" title="Open Liberty" href="https://openliberty.io/feed.xml"><link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet"><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@OpenLibertyIO"/><meta name="twitter:title" content="Testing microservices with Arquillian managed container"/><meta name="twitter:description" content="A tutorial on how to test your microservices with the Arquillian managed container for Open Liberty"/><meta name="twitter:image" content="https://openliberty.io/img/twitter_card.jpg"/><meta name="google-site-verification" content="h2P030H9b66CyL1nEmWfrZB8Fr14h9LmVMG7Ur0caBs"/><script async defer src="https://buttons.github.io/buttons.js"></script></head><body> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKP3KJ7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header> <nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"> <button id="navbar_responsive_button" class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="https://openliberty.io/" aria-label="Open Liberty Home Page"> <img id="doc_logo" src="https://openliberty.io/img/docs_openliberty_logo.png" class="img-responsive" alt="Home"> </a><div id="doc_title"> <img src="https://openliberty.io/img/doc_header_title.svg" alt="Docs"></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-left"><li> <a href="https://openliberty.io/guides">Guides</a></li><li id="reference_dropdown_container" class="btn-group"> <button type="button" class="btn btn-default dropdown-toggle reference_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Reference <span id="reference_caret" class="hidden-md hidden-lg"></span> </button><ul class="dropdown-menu"><li><a href="https://openliberty.io/docs/ref/javaee/">Java EE API</a></li><li><a href="https://openliberty.io/docs/ref/microprofile/">MicroProfile API</a></li><li><a href="https://openliberty.io/docs/ref/config/">Server Config</a></li><li><a href="https://openliberty.io/docs/ref/feature/">Server Features</a></li><li><a href="https://openliberty.io/docs/ref/command/">Server Commands</a></li><li><a href="https://openliberty.io/docs/ref/general/">General</a></li></ul></li></ul><div id="header_round_links_container" class="visible-xs"> <a id="header_twitter_link" class="header_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="header_stackoverflow_link" class="header_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="header_groupsio_link" class="header_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div></div><div id="breadcrumb_row"> <button id="breadcrumb_hamburger" class="toc-toggle collapsed" type="button" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <img src="https://openliberty.io/img/toc_close_green.svg" id="header_close_toc_svg" class="hidden img-responsive" alt="Table of contents close button"> </button><ol class="breadcrumb fluid-container"><li> <a href="https://openliberty.io/docs">Docs</a></li><li> <a href="https://openliberty.io/guides">Guides</a></li><li class="active">Testing microservices with the Arquillian managed container</li></ol></div></div> </nav><div id="header_background"></div><div class="hidden"> <img src="https://openliberty.io/img/small_logo_white.svg"> <img src="https://openliberty.io/img/github_navbar_hover.svg"></div> </header><main aria-label="Content"><div id="background_container"><div id="toc_hotspot"></div><div id="toc_column" class="collapse inline open"><div id="toc_inner"><div id="close_container"> <img id="toc_close_white" src="https://openliberty.io/img/toc_close_white.svg" alt="Close the table of contents" tabindex="0"></div><div id="mobile_close_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"> <img src="https://openliberty.io/img/toc_close_green.svg" alt="Table of contents close button" tabindex="0"></div><h3 id="toc_title">Contents</h3><div id="toc_container"><ul class="sectlevel1"><li><a href="index.html#what-youll-learn">What you’ll learn</a></li><li> <a href="index.html#getting-started">Getting started</a><ul class="sectlevel2"><li><a href="index.html#try-what-youll-build">Try what you’ll build</a></li></ul></li><li><a href="index.html#developing-arquillian-tests">Developing Arquillian tests</a></li><li> <a href="index.html#configuring-arquillian-with-liberty">Configuring Arquillian with Liberty</a><ul class="sectlevel2"><li><a href="index.html#configuring-your-test-build">Configuring your test build</a></li><li><a href="index.html#configuring-the-server-xml-file">Configuring the server.xml file</a></li></ul></li><li><a href="index.html#running-the-tests">Running the tests</a></li><li><a href="index.html#great-work-youre-done">Great work! You’re done!</a></li><li><a href="index.html#guide-attribution">Guide Attribution</a></li></ul></div><div id="toc_separator"></div><h3 id="tag_title">Tags</h3><div id="tags_container"> <a href="https://openliberty.io/guides?search=Maven&amp;key=tag">Maven</a></div></div></div><div id="toc_indicator" tabindex="0" aria-label="Open the table of contents" class="hidden"> <img src="https://openliberty.io/img/arrow_white.svg" alt="arrow"></div><div id="toc_line" class="open"></div><div id="guide_column" class="position_relative open"><div id="guide_content"><div id="guide_meta" class="sect1" tabindex="0"><h1 id="guide_title">Testing microservices with the Arquillian managed container</h1><div id="duration_container"> <img src="https://openliberty.io/img/guide_duration_clock_icon_large.svg" alt="duration"> <span id="guide_duration">15 minutes</span></div><div id="mobile_prereqs_section"><p id="mobile_prereqs_title">Prerequisites:</p><div class="prereqs_list"></div></div></div><div class="scroller_anchor"></div><div id="mobile_toc_accordion_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"><div id="mobile_toc_accordion"> <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <img src="https://openliberty.io/img/toc_close_green.svg" class="TOC_Close_SVG hidden img-responsive" alt="Table of contents close button"> </button> <span>Table of contents</span></div></div><div id="preamble"><div class="sectionbody"><div class="admonitionblock note hidden"><table><tr><td class="icon"> <i class="fa icon-note" title="Note"></i></td><td class="content"> This repository contains the guide documentation source. To view the guide in published form, view it on the <a href="index.html">Open Liberty website</a>.</td></tr></table></div><div class="paragraph"><p>Learn how to develop tests for your microservices with the Arquillian managed container and run the tests on Open Liberty.</p></div></div></div><div class="sect1"><h2 id="what-youll-learn">What you’ll learn</h2><div class="sectionbody"><div class="paragraph"><p>You will learn how to develop tests for your microservices by using the <a href="https://github.com/OpenLiberty/liberty-arquillian/tree/master/liberty-managed" target="_blank" rel="noopener noreferrer">Arquillian Liberty Managed container</a> and JUnit with Maven on Open Liberty. <a href="http://arquillian.org/" target="_blank" rel="noopener noreferrer">Arquillian</a> is a testing framework to develop automated functional, integration and acceptance tests for your Java applications. Arquillian sets up the test environment and handles the application server lifecycle for you so you can focus on writing tests.</p></div><div class="paragraph"><p>You will develop Arquillian tests that use JUnit as the runner and build your tests with Maven using the Liberty Maven plug-in. This technique simplifies the process of managing Arquillian dependencies and the setup of your Arquillian managed container.</p></div><div class="paragraph"><p>You will work with an <code>inventory</code> microservice, which stores information about various systems. The <code>inventory</code> service communicates with the <code>system</code> service on a particular host to retrieve its system properties and store them. You will develop functional and integration tests for the microservices. You will also learn about the Maven and server configurations so that you can run your tests on Open Liberty with the Arquillian Liberty Managed container.</p></div></div></div><div class="sect1 command"><h2 id="getting-started">Getting started</h2><div class="sectionbody"><div class="paragraph"><p>The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>git clone https://github.com/openliberty/guide-arquillian-managed.git
+cd guide-arquillian-managed</code></pre></div></div><div class="paragraph"><p>The <code>start</code> directory contains the starting project that you will build upon.</p></div><div class="paragraph"><p>The <code>finish</code> directory contains the finished project that you will build.</p></div><div class="sect2"><h3 id="try-what-youll-build">Try what you’ll build</h3><div class="paragraph"><p>To try out the finished Arquillian tests, first navigate to the <code>finish</code> directory and then run the following Maven goal to build the application and run the tests on Open Liberty:</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>mvn install</code></pre></div></div><div class="paragraph"><p>In the console output, you can see that the build was successful and the tests passed.</p></div></div></div></div><div class="sect1"><h2 id="developing-arquillian-tests">Developing Arquillian tests</h2><div class="sectionbody"><div class="paragraph"><p>Navigate to the <code>start</code> directory to begin.</p></div><div class="paragraph"><p>You’ll develop tests that use Arquillian and JUnit to verify the <code>inventory</code> microservice as an endpoint and the functions of the <code>InventoryResource</code> class. The code for the microservices is in the <code>src/main/java/io/openliberty/guides</code> directory.</p></div><div class="listingblock code_command"><div class="content"> <pre><mark>Create the <code>InventoryArquillianTests</code> test class.</mark>
+<code>src/test/java/it/io/openliberty/guides/inventory/InventoryArquillianTests.java</code></pre></div></div><div class="paragraph"><p>InventoryArquillianTests.java</p></div><div class="listingblock code_column hide_tags=copyright"><div class="content"> <pre class="CodeRay highlight"><code data-lang="Java"><span class="line-numbers">  1</span><span class="comment">// tag::copyright[]</span>
+<span class="line-numbers">  2</span><span class="comment">/*******************************************************************************</span>
+<span class="line-numbers">  3</span><span class="comment"> * Copyright (c) 2019 IBM Corporation and others.</span>
+<span class="line-numbers">  4</span><span class="comment"> * All rights reserved. This program and the accompanying materials</span>
+<span class="line-numbers">  5</span><span class="comment"> * are made available under the terms of the Eclipse Public License v1.0</span>
+<span class="line-numbers">  6</span><span class="comment"> * which accompanies this distribution, and is available at</span>
+<span class="line-numbers">  7</span><span class="comment"> * http://www.eclipse.org/legal/epl-v10.html</span>
+<span class="line-numbers">  8</span><span class="comment"> *</span>
+<span class="line-numbers">  9</span><span class="comment"> * Contributors:</span>
+<span class="line-numbers"> 10</span><span class="comment"> *     IBM Corporation - Initial implementation</span>
+<span class="line-numbers"> 11</span><span class="comment"> *******************************************************************************/</span>
+<span class="line-numbers"> 12</span><span class="comment">// end::copyright[]</span>
+<span class="line-numbers"> 13</span><span class="keyword">package</span> <span class="namespace">it.io.openliberty.guides.inventory</span>;
+<span class="line-numbers"> 14</span>
+<span class="line-numbers"> 15</span><span class="keyword">import</span> <span class="include">java.net.URL</span>;
+<span class="line-numbers"> 16</span><span class="keyword">import</span> <span class="include">java.util.List</span>;
+<span class="line-numbers"> 17</span>
+<span class="line-numbers"> 18</span><span class="keyword">import</span> <span class="include">javax.inject.Inject</span>;
+<span class="line-numbers"> 19</span><span class="keyword">import</span> <span class="include">javax.json.JsonObject</span>;
+<span class="line-numbers"> 20</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.Client</span>;
+<span class="line-numbers"> 21</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.ClientBuilder</span>;
+<span class="line-numbers"> 22</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.WebTarget</span>;
+<span class="line-numbers"> 23</span><span class="keyword">import</span> <span class="include">javax.ws.rs.core.Response</span>;
+<span class="line-numbers"> 24</span>
+<span class="line-numbers"> 25</span><span class="keyword">import</span> <span class="include">org.apache.cxf.jaxrs.provider.jsrjsonp.JsrJsonpProvider</span>;
+<span class="line-numbers"> 26</span><span class="keyword">import</span> <span class="include">org.jboss.arquillian.container.test.api.Deployment</span>;
+<span class="line-numbers"> 27</span><span class="keyword">import</span> <span class="include">org.jboss.arquillian.container.test.api.RunAsClient</span>;
+<span class="line-numbers"> 28</span><span class="keyword">import</span> <span class="include">org.jboss.arquillian.junit.Arquillian</span>;
+<span class="line-numbers"> 29</span><span class="keyword">import</span> <span class="include">org.jboss.arquillian.junit.InSequence</span>;
+<span class="line-numbers"> 30</span><span class="keyword">import</span> <span class="include">org.jboss.arquillian.test.api.ArquillianResource</span>;
+<span class="line-numbers"> 31</span><span class="keyword">import</span> <span class="include">org.jboss.shrinkwrap.api.ShrinkWrap</span>;
+<span class="line-numbers"> 32</span><span class="keyword">import</span> <span class="include">org.jboss.shrinkwrap.api.spec.WebArchive</span>;
+<span class="line-numbers"> 33</span><span class="keyword">import</span> <span class="include">org.junit.Assert</span>;
+<span class="line-numbers"> 34</span><span class="keyword">import</span> <span class="include">org.junit.Test</span>;
+<span class="line-numbers"> 35</span><span class="keyword">import</span> <span class="include">org.junit.runner.RunWith</span>;
+<span class="line-numbers"> 36</span>
+<span class="line-numbers"> 37</span><span class="keyword">import</span> <span class="include">io.openliberty.guides.inventory.InventoryResource</span>;
+<span class="line-numbers"> 38</span><span class="keyword">import</span> <span class="include">io.openliberty.guides.inventory.model.InventoryList</span>;
+<span class="line-numbers"> 39</span><span class="keyword">import</span> <span class="include">io.openliberty.guides.inventory.model.SystemData</span>;
+<span class="line-numbers"> 40</span>
+<span class="line-numbers"> 41</span><span class="comment">// tag::RunWith[]</span>
+<span class="line-numbers"> 42</span><span class="annotation">@RunWith</span>(Arquillian.class)
+<span class="line-numbers"> 43</span><span class="comment">// end::RunWith[]</span>
+<span class="line-numbers"> 44</span><span class="directive">public</span> <span class="type">class</span> <span class="class">InventoryArquillianTests</span> {
+<span class="line-numbers"> 45</span>
+<span class="line-numbers"> 46</span>    <span class="comment">// tag::warName[]</span>
+<span class="line-numbers"> 47</span>    <span class="directive">private</span> <span class="directive">final</span> <span class="directive">static</span> <span class="predefined-type">String</span> WARNAME = <span class="string"><span class="delimiter">"</span><span class="content">arquillian-managed.war</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 48</span>    <span class="comment">// end::warName[]</span>
+<span class="line-numbers"> 49</span>    <span class="directive">private</span> <span class="directive">final</span> <span class="predefined-type">String</span> INVENTORY_SYSTEMS = <span class="string"><span class="delimiter">"</span><span class="content">inventory/systems</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 50</span>    <span class="directive">private</span> Client client = ClientBuilder.newClient();
+<span class="line-numbers"> 51</span>
+<span class="line-numbers"> 52</span>    <span class="comment">// tag::Deployment[]</span>
+<span class="line-numbers"> 53</span>    <span class="comment">// tag::Testable[]</span>
+<span class="line-numbers"> 54</span>    <span class="annotation">@Deployment</span>(testable = <span class="predefined-constant">true</span>)
+<span class="line-numbers"> 55</span>    <span class="comment">// end::Testable[]</span>
+<span class="line-numbers"> 56</span>    <span class="directive">public</span> <span class="directive">static</span> WebArchive createDeployment() {
+<span class="line-numbers"> 57</span>        <span class="comment">// tag::WebArchive[]</span>
+<span class="line-numbers"> 58</span>        WebArchive archive = ShrinkWrap.create(WebArchive.class, WARNAME)
+<span class="line-numbers"> 59</span>        <span class="comment">// end::WebArchive[]</span>
+<span class="line-numbers"> 60</span>                                       .addPackages(<span class="predefined-constant">true</span>, <span class="string"><span class="delimiter">"</span><span class="content">io.openliberty.guides</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 61</span>        <span class="keyword">return</span> archive;
+<span class="line-numbers"> 62</span>    }
+<span class="line-numbers"> 63</span>    <span class="comment">// end::Deployment[]</span>
+<span class="line-numbers"> 64</span>
+<span class="line-numbers"> 65</span>    <span class="comment">// tag::ArquillianResource[]</span>
+<span class="line-numbers"> 66</span>    <span class="annotation">@ArquillianResource</span>
+<span class="line-numbers"> 67</span>    <span class="comment">// end::ArquillianResource[]</span>
+<span class="line-numbers"> 68</span>    <span class="directive">private</span> <span class="predefined-type">URL</span> baseURL;
+<span class="line-numbers"> 69</span>
+<span class="line-numbers"> 70</span>    <span class="comment">// tag::InventoryResource[]</span>
+<span class="line-numbers"> 71</span>    <span class="annotation">@Inject</span>
+<span class="line-numbers"> 72</span>    InventoryResource invSrv;
+<span class="line-numbers"> 73</span>    <span class="comment">// end::InventoryResource[]</span>
+<span class="line-numbers"> 74</span>
+<span class="line-numbers"> 75</span>    <span class="annotation">@Test</span>
+<span class="line-numbers"> 76</span>    <span class="comment">// tag::RunAsClient[]</span>
+<span class="line-numbers"> 77</span>    <span class="annotation">@RunAsClient</span>
+<span class="line-numbers"> 78</span>    <span class="comment">// end::RunAsClient[]</span>
+<span class="line-numbers"> 79</span>    <span class="comment">// tag::InSequence1[]</span>
+<span class="line-numbers"> 80</span>    <span class="annotation">@InSequence</span>(<span class="integer">1</span>)
+<span class="line-numbers"> 81</span>    <span class="comment">// end::InSequence1[]</span>
+<span class="line-numbers"> 82</span>    <span class="comment">// tag::testInventoryEndpoints[]</span>
+<span class="line-numbers"> 83</span>    <span class="directive">public</span> <span class="type">void</span> testInventoryEndpoints() <span class="directive">throws</span> <span class="exception">Exception</span> {
+<span class="line-numbers"> 84</span>        <span class="predefined-type">String</span> localhosturl = baseURL + INVENTORY_SYSTEMS + <span class="string"><span class="delimiter">"</span><span class="content">/localhost</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 85</span>
+<span class="line-numbers"> 86</span>        client.register(JsrJsonpProvider.class);
+<span class="line-numbers"> 87</span>        WebTarget localhosttarget = client.target(localhosturl);
+<span class="line-numbers"> 88</span>        Response localhostresponse = localhosttarget.request().get();
+<span class="line-numbers"> 89</span>
+<span class="line-numbers"> 90</span>        Assert.assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">Incorrect response code from </span><span class="delimiter">"</span></span> + localhosturl, <span class="integer">200</span>,
+<span class="line-numbers"> 91</span>                            localhostresponse.getStatus());
+<span class="line-numbers"> 92</span>
+<span class="line-numbers"> 93</span>        JsonObject localhostobj = localhostresponse.readEntity(JsonObject.class);
+<span class="line-numbers"> 94</span>        Assert.assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">The system property for the local and remote JVM </span><span class="delimiter">"</span></span>
+<span class="line-numbers"> 95</span>                        + <span class="string"><span class="delimiter">"</span><span class="content">should match</span><span class="delimiter">"</span></span>, <span class="predefined-type">System</span>.getProperty(<span class="string"><span class="delimiter">"</span><span class="content">os.name</span><span class="delimiter">"</span></span>),
+<span class="line-numbers"> 96</span>                            localhostobj.getString(<span class="string"><span class="delimiter">"</span><span class="content">os.name</span><span class="delimiter">"</span></span>));
+<span class="line-numbers"> 97</span>
+<span class="line-numbers"> 98</span>        <span class="predefined-type">String</span> invsystemsurl = baseURL + INVENTORY_SYSTEMS;
+<span class="line-numbers"> 99</span>
+<span class="line-numbers">100</span>        WebTarget invsystemstarget = client.target(invsystemsurl);
+<span class="line-numbers">101</span>        Response invsystemsresponse = invsystemstarget.request().get();
+<span class="line-numbers">102</span>
+<span class="line-numbers">103</span>        Assert.assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">Incorrect response code from </span><span class="delimiter">"</span></span> + localhosturl, <span class="integer">200</span>,
+<span class="line-numbers">104</span>                            invsystemsresponse.getStatus());
+<span class="line-numbers">105</span>
+<span class="line-numbers">106</span>        JsonObject invsystemsobj = invsystemsresponse.readEntity(JsonObject.class);
+<span class="line-numbers">107</span>
+<span class="line-numbers">108</span>        <span class="type">int</span> expected = <span class="integer">1</span>;
+<span class="line-numbers">109</span>        <span class="type">int</span> actual = invsystemsobj.getInt(<span class="string"><span class="delimiter">"</span><span class="content">total</span><span class="delimiter">"</span></span>);
+<span class="line-numbers">110</span>        Assert.assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">The inventory should have one entry for localhost</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">111</span>                            expected, actual);
+<span class="line-numbers">112</span>        localhostresponse.close();
+<span class="line-numbers">113</span>    }
+<span class="line-numbers">114</span>    <span class="comment">// end::testInventoryEndpoints[]</span>
+<span class="line-numbers">115</span>
+<span class="line-numbers">116</span>    <span class="annotation">@Test</span>
+<span class="line-numbers">117</span>    <span class="comment">// tag::InSequence2[]</span>
+<span class="line-numbers">118</span>    <span class="annotation">@InSequence</span>(<span class="integer">2</span>)
+<span class="line-numbers">119</span>    <span class="comment">// end::InSequence2[]</span>
+<span class="line-numbers">120</span>    <span class="comment">// tag::testInventoryResourceFunctions[]</span>
+<span class="line-numbers">121</span>    <span class="directive">public</span> <span class="type">void</span> testInventoryResourceFunctions() {
+<span class="line-numbers">122</span>
+<span class="line-numbers">123</span>        <span class="comment">// Listing the inventory contents that were stored in the previous test</span>
+<span class="line-numbers">124</span>        <span class="comment">// tag::listContents[]</span>
+<span class="line-numbers">125</span>        InventoryList invList = invSrv.listContents();
+<span class="line-numbers">126</span>        <span class="comment">// end::listContents[]</span>
+<span class="line-numbers">127</span>        Assert.assertEquals(<span class="integer">1</span>, invList.getTotal());
+<span class="line-numbers">128</span>
+<span class="line-numbers">129</span>        <span class="predefined-type">List</span>&lt;SystemData&gt; systemDataList = invList.getSystems();
+<span class="line-numbers">130</span>        Assert.assertTrue(systemDataList.get(<span class="integer">0</span>).getHostname().equals(<span class="string"><span class="delimiter">"</span><span class="content">localhost</span><span class="delimiter">"</span></span>));
+<span class="line-numbers">131</span>
+<span class="line-numbers">132</span>        Assert.assertTrue(systemDataList.get(<span class="integer">0</span>).getProperties().get(<span class="string"><span class="delimiter">"</span><span class="content">os.name</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">133</span>                                        .equals(<span class="predefined-type">System</span>.getProperty(<span class="string"><span class="delimiter">"</span><span class="content">os.name</span><span class="delimiter">"</span></span>)));
+<span class="line-numbers">134</span>    }
+<span class="line-numbers">135</span>    <span class="comment">// end::testInventoryResourceFunctions[]</span>
+<span class="line-numbers">136</span>}</code></pre></div></div><div class="paragraph"><p>Notice that the JUnit Arquillian runner runs the tests instead of the standard JUnit runner. The <code class="hotspot=RunWith">@RunWith</code> annotation preceding the class tells JUnit to run the tests by using Arquillian.</p></div><div class="paragraph"><p>The method annotated by <code class="hotspot=Deployment">@Deployment</code> defines the content of the web archive, which is going to be deployed onto the Open Liberty server. The tests are either run on or against the server. The <code class="hotspot=Testable">testable = true</code> attribute enables the deployment to run the tests "in container", that is the tests are run on the server.</p></div><div class="paragraph"><p>Notice the <code class="hotspot=warName hotspot=WebArchive">arquillian-managed.war</code> name that is used for the web archive. This name is necessary if you don’t want a randomly generated web archive name.</p></div><div class="paragraph"><p>The ShrinkWrap API is used to create the web archive. All of the packages in the <code>inventory</code> service must be added to the web archive; otherwise, the code compiles successfully but fails at runtime when the injection of the <code>InventoryResource</code> class takes place. You can learn about the ShrinkWrap archive configuration in this <a href="http://arquillian.org/guides/shrinkwrap_introduction/" target="_blank" rel="noopener noreferrer">Arquillian guide</a>.</p></div><div class="paragraph"><p>The <code class="hotspot=ArquillianResource">@ArquillianResource</code> annotation is used to retrieve the <code>http://localhost:9080/arquillian-managed/</code> base URL for this web service. The annotation provides the host name, port number and web archive information for this service, so you don’t need to hardcode these values in the test case. The <code>arquillian-managed</code> path in the URL comes from the WAR name you specified when you created the web archive in the <code class="hotspot=Deployment">@Deployment</code> annotated method. It’s needed when the <code>inventory</code> service communicates with the <code>system</code> service to get the system properties.</p></div><div class="paragraph"><p>The <code class="hotspot=testInventoryEndpoints">testInventoryEndpoints</code> method is an integration test to test the <code>inventory</code> service endpoints. The <code class="hotspot=RunAsClient">@RunAsClient</code> annotation added in this test case indicates that this test case is to be run on the client side. By running the tests on the client side, the tests are run against the managed container. The endpoint test case first calls the <code>http://localhost:9080/{WARNAME}/inventory/systems/{hostname}</code> endpoint with the <code>localhost</code> host name to add its system properties to the inventory. The test verifies that the system property for the local and service JVM match. Then, the test method calls the <code>http://localhost:9080/{WARNAME}/inventory/systems</code> endpoint. The test checks that the inventory has one host and that the host is <code>localhost</code>. The test also verifies that the system property stored in the inventory for the local and service JVM match.</p></div><div class="paragraph"><p>Contexts and Dependency Injection (CDI) is used to inject an instance of the <code class="hotspot=InventoryResource">InventoryResource</code> class into this test class. You can learn more about CDI in the <a href="https://openliberty.io/guides/cdi-intro.html" target="_blank" rel="noopener">Injecting dependencies into microservices</a> guide.</p></div><div class="paragraph"><p>The injected <code class="hotspot=InventoryResource">InventoryResource</code> instance is then tested by the <code class="hotspot=testInventoryResourceFunctions">testInventoryResourceFunctions</code> method. This test case calls the <code class="hotspot=listContents">listContents()</code> method to get all systems that are stored in this inventory and verifies that <code>localhost</code> is the only system being found. Notice the functional test case doesn’t store any system in the inventory, the <code>localhost</code> system is from the endpoint test case that ran before this test case. The <code class="hotspot=InSequence1 hotspot=InSequence2">@InSequence</code> Arquillian annotation guarantees the test sequence. The sequence is important for the two tests, as the results in the first test impact the second one.</p></div><div class="paragraph"><p>The test cases are ready to run. You will configure the Maven build and the Liberty application server to run them.</p></div></div></div><div class="sect1"><h2 id="configuring-arquillian-with-liberty">Configuring Arquillian with Liberty</h2><div class="sectionbody"><div class="paragraph"><p>Configure your build to use the Arquillian Liberty Managed container and set up your Open Liberty server to run your test cases by configuring the <code>server.xml</code> file.</p></div><div class="sect2"><h3 id="configuring-your-test-build">Configuring your test build</h3><div class="paragraph"><p>First, configure your test build with Maven. All of the Maven configuration takes place in the <code class="hotspot">pom.xml</code> file, which is provided for you.</p></div><div class="paragraph"><p>pom.xml</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="xml"><span class="line-numbers">  1</span><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="line-numbers">  2</span><span class="tag">&lt;project</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0</span><span class="delimiter">"</span></span> <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">"</span></span>
+<span class="line-numbers">  3</span>    <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">"</span><span class="content">http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="line-numbers">  4</span>
+<span class="line-numbers">  5</span>    <span class="tag">&lt;modelVersion&gt;</span>4.0.0<span class="tag">&lt;/modelVersion&gt;</span>
+<span class="line-numbers">  6</span>
+<span class="line-numbers">  7</span>    <span class="comment">&lt;!-- tag::liberty-maven-app-parent[] --&gt;</span>
+<span class="line-numbers">  8</span>    <span class="tag">&lt;parent&gt;</span>
+<span class="line-numbers">  9</span>        <span class="tag">&lt;groupId&gt;</span>net.wasdev.wlp.maven.parent<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 10</span>        <span class="tag">&lt;artifactId&gt;</span>liberty-maven-app-parent<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 11</span>        <span class="tag">&lt;version&gt;</span>RELEASE<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 12</span>    <span class="tag">&lt;/parent&gt;</span>
+<span class="line-numbers"> 13</span>    <span class="comment">&lt;!-- end::liberty-maven-app-parent[] --&gt;</span>
+<span class="line-numbers"> 14</span>
+<span class="line-numbers"> 15</span>    <span class="tag">&lt;groupId&gt;</span>io.openliberty.guides<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 16</span>    <span class="tag">&lt;artifactId&gt;</span>guide-arquillian-managed<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 17</span>    <span class="tag">&lt;version&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 18</span>    <span class="tag">&lt;packaging&gt;</span>war<span class="tag">&lt;/packaging&gt;</span>
+<span class="line-numbers"> 19</span>
+<span class="line-numbers"> 20</span>    <span class="tag">&lt;properties&gt;</span>
+<span class="line-numbers"> 21</span>        <span class="tag">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="tag">&lt;/project.build.sourceEncoding&gt;</span>
+<span class="line-numbers"> 22</span>        <span class="tag">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span class="tag">&lt;/project.reporting.outputEncoding&gt;</span>
+<span class="line-numbers"> 23</span>        <span class="tag">&lt;maven.compiler.source&gt;</span>1.8<span class="tag">&lt;/maven.compiler.source&gt;</span>
+<span class="line-numbers"> 24</span>        <span class="tag">&lt;maven.compiler.target&gt;</span>1.8<span class="tag">&lt;/maven.compiler.target&gt;</span>
+<span class="line-numbers"> 25</span>        <span class="tag">&lt;app.name&gt;</span>LibertyProject<span class="tag">&lt;/app.name&gt;</span>
+<span class="line-numbers"> 26</span>        <span class="tag">&lt;testServerHttpPort&gt;</span>9080<span class="tag">&lt;/testServerHttpPort&gt;</span>
+<span class="line-numbers"> 27</span>        <span class="tag">&lt;testServerHttpsPort&gt;</span>9443<span class="tag">&lt;/testServerHttpsPort&gt;</span>
+<span class="line-numbers"> 28</span>        <span class="tag">&lt;package.file&gt;</span>${project.build.directory}/${app.name}.zip<span class="tag">&lt;/package.file&gt;</span>
+<span class="line-numbers"> 29</span>        <span class="tag">&lt;packaging.type&gt;</span>usr<span class="tag">&lt;/packaging.type&gt;</span>
+<span class="line-numbers"> 30</span>    <span class="tag">&lt;/properties&gt;</span>
+<span class="line-numbers"> 31</span>
+<span class="line-numbers"> 32</span>    <span class="tag">&lt;dependencyManagement&gt;</span>
+<span class="line-numbers"> 33</span>        <span class="tag">&lt;dependencies&gt;</span>
+<span class="line-numbers"> 34</span>            <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 35</span>                <span class="tag">&lt;groupId&gt;</span>io.openliberty.features<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 36</span>                <span class="tag">&lt;artifactId&gt;</span>features-bom<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 37</span>                <span class="tag">&lt;version&gt;</span>RELEASE<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 38</span>                <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers"> 39</span>                <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 40</span>            <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 41</span>            <span class="comment">&lt;!-- tag::arquillian-bom[] --&gt;</span>
+<span class="line-numbers"> 42</span>            <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 43</span>                <span class="tag">&lt;groupId&gt;</span>org.jboss.arquillian<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 44</span>                <span class="tag">&lt;artifactId&gt;</span>arquillian-bom<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 45</span>                <span class="tag">&lt;version&gt;</span>1.4.0.Final<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 46</span>                <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers"> 47</span>                <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 48</span>            <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 49</span>            <span class="comment">&lt;!-- end::arquillian-bom[] --&gt;</span>
+<span class="line-numbers"> 50</span>
+<span class="line-numbers"> 51</span>        <span class="tag">&lt;/dependencies&gt;</span>
+<span class="line-numbers"> 52</span>    <span class="tag">&lt;/dependencyManagement&gt;</span>
+<span class="line-numbers"> 53</span>
+<span class="line-numbers"> 54</span>    <span class="tag">&lt;dependencies&gt;</span>
+<span class="line-numbers"> 55</span>        <span class="comment">&lt;!-- For tests --&gt;</span>
+<span class="line-numbers"> 56</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 57</span>            <span class="tag">&lt;groupId&gt;</span>junit<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 58</span>            <span class="tag">&lt;artifactId&gt;</span>junit<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 59</span>            <span class="tag">&lt;version&gt;</span>4.12<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 60</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 61</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 62</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 63</span>            <span class="tag">&lt;groupId&gt;</span>org.apache.cxf<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 64</span>            <span class="tag">&lt;artifactId&gt;</span>cxf-rt-rs-client<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 65</span>            <span class="tag">&lt;version&gt;</span>3.1.11<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 66</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 67</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 68</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 69</span>            <span class="tag">&lt;groupId&gt;</span>org.apache.cxf<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 70</span>            <span class="tag">&lt;artifactId&gt;</span>cxf-rt-rs-extension-providers<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 71</span>            <span class="tag">&lt;version&gt;</span>3.1.11<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 72</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 73</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 74</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 75</span>            <span class="tag">&lt;groupId&gt;</span>org.glassfish<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 76</span>            <span class="tag">&lt;artifactId&gt;</span>javax.json<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 77</span>            <span class="tag">&lt;version&gt;</span>1.0.4<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers"> 78</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 79</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 80</span>        <span class="comment">&lt;!-- Open Liberty features --&gt;</span>
+<span class="line-numbers"> 81</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 82</span>            <span class="tag">&lt;groupId&gt;</span>io.openliberty.features<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 83</span>            <span class="tag">&lt;artifactId&gt;</span>jaxrs-2.1<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 84</span>            <span class="tag">&lt;type&gt;</span>esa<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers"> 85</span>            <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 86</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 87</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 88</span>            <span class="tag">&lt;groupId&gt;</span>io.openliberty.features<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 89</span>            <span class="tag">&lt;artifactId&gt;</span>jsonp-1.1<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 90</span>            <span class="tag">&lt;type&gt;</span>esa<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers"> 91</span>            <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 92</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 93</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers"> 94</span>            <span class="tag">&lt;groupId&gt;</span>io.openliberty.features<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers"> 95</span>            <span class="tag">&lt;artifactId&gt;</span>cdi-2.0<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers"> 96</span>            <span class="tag">&lt;type&gt;</span>esa<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers"> 97</span>            <span class="tag">&lt;scope&gt;</span>provided<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers"> 98</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers"> 99</span>        <span class="comment">&lt;!-- For JDK 9 &amp; above Support --&gt;</span>
+<span class="line-numbers">100</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">101</span>            <span class="tag">&lt;groupId&gt;</span>javax.xml.bind<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">102</span>            <span class="tag">&lt;artifactId&gt;</span>jaxb-api<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">103</span>            <span class="tag">&lt;version&gt;</span>2.2.11<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">104</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">105</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">106</span>            <span class="tag">&lt;groupId&gt;</span>com.sun.xml.bind<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">107</span>            <span class="tag">&lt;artifactId&gt;</span>jaxb-core<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">108</span>            <span class="tag">&lt;version&gt;</span>2.2.11<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">109</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">110</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">111</span>            <span class="tag">&lt;groupId&gt;</span>com.sun.xml.bind<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">112</span>            <span class="tag">&lt;artifactId&gt;</span>jaxb-impl<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">113</span>            <span class="tag">&lt;version&gt;</span>2.2.11<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">114</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">115</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">116</span>            <span class="tag">&lt;groupId&gt;</span>javax.activation<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">117</span>            <span class="tag">&lt;artifactId&gt;</span>activation<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">118</span>            <span class="tag">&lt;version&gt;</span>1.1.1<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">119</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">120</span>        <span class="comment">&lt;!-- tag::arquillian-liberty-managed-junit[] --&gt;</span>
+<span class="line-numbers">121</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">122</span>            <span class="tag">&lt;groupId&gt;</span>io.openliberty.arquillian<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">123</span>            <span class="tag">&lt;artifactId&gt;</span>arquillian-liberty-managed-junit<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">124</span>            <span class="tag">&lt;version&gt;</span>1.1.6<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">125</span>            <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers">126</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers">127</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">128</span>        <span class="comment">&lt;!-- end::arquillian-liberty-managed-junit[] --&gt;</span>
+<span class="line-numbers">129</span>        <span class="comment">&lt;!-- tag::shrinkwrap-api[] --&gt;</span>
+<span class="line-numbers">130</span>        <span class="tag">&lt;dependency&gt;</span>
+<span class="line-numbers">131</span>            <span class="tag">&lt;groupId&gt;</span>org.jboss.shrinkwrap<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">132</span>            <span class="tag">&lt;artifactId&gt;</span>shrinkwrap-api<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">133</span>            <span class="tag">&lt;scope&gt;</span>test<span class="tag">&lt;/scope&gt;</span>
+<span class="line-numbers">134</span>        <span class="tag">&lt;/dependency&gt;</span>
+<span class="line-numbers">135</span>        <span class="comment">&lt;!-- end::shrinkwrap-api[] --&gt;</span>
+<span class="line-numbers">136</span>    <span class="tag">&lt;/dependencies&gt;</span>
+<span class="line-numbers">137</span>
+<span class="line-numbers">138</span>    <span class="tag">&lt;build&gt;</span>
+<span class="line-numbers">139</span>        <span class="tag">&lt;plugins&gt;</span>
+<span class="line-numbers">140</span>            <span class="tag">&lt;plugin&gt;</span>
+<span class="line-numbers">141</span>                <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">142</span>                <span class="tag">&lt;artifactId&gt;</span>maven-war-plugin<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">143</span>                <span class="tag">&lt;version&gt;</span>3.2.2<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">144</span>                <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">145</span>                    <span class="tag">&lt;failOnMissingWebXml&gt;</span>false<span class="tag">&lt;/failOnMissingWebXml&gt;</span>
+<span class="line-numbers">146</span>                    <span class="tag">&lt;packagingExcludes&gt;</span>pom.xml<span class="tag">&lt;/packagingExcludes&gt;</span>
+<span class="line-numbers">147</span>                <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">148</span>            <span class="tag">&lt;/plugin&gt;</span>
+<span class="line-numbers">149</span>            <span class="comment">&lt;!-- tag::maven-failsafe-plugin[] --&gt;</span>
+<span class="line-numbers">150</span>            <span class="tag">&lt;plugin&gt;</span>
+<span class="line-numbers">151</span>                <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">152</span>                <span class="tag">&lt;artifactId&gt;</span>maven-failsafe-plugin<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">153</span>                <span class="tag">&lt;version&gt;</span>3.0.0-M1<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">154</span>                <span class="tag">&lt;executions&gt;</span>
+<span class="line-numbers">155</span>                    <span class="tag">&lt;execution&gt;</span>
+<span class="line-numbers">156</span>                        <span class="tag">&lt;id&gt;</span>failsafe-integration-test<span class="tag">&lt;/id&gt;</span>
+<span class="line-numbers">157</span>                        <span class="tag">&lt;phase&gt;</span>integration-test<span class="tag">&lt;/phase&gt;</span>
+<span class="line-numbers">158</span>                        <span class="tag">&lt;goals&gt;</span>
+<span class="line-numbers">159</span>                            <span class="tag">&lt;goal&gt;</span>integration-test<span class="tag">&lt;/goal&gt;</span>
+<span class="line-numbers">160</span>                        <span class="tag">&lt;/goals&gt;</span>
+<span class="line-numbers">161</span>                        <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">162</span>                            <span class="tag">&lt;includes&gt;</span>
+<span class="line-numbers">163</span>                                <span class="tag">&lt;include&gt;</span>**/it/**/*.java<span class="tag">&lt;/include&gt;</span>
+<span class="line-numbers">164</span>                            <span class="tag">&lt;/includes&gt;</span>
+<span class="line-numbers">165</span>                        <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">166</span>                    <span class="tag">&lt;/execution&gt;</span>
+<span class="line-numbers">167</span>                    <span class="tag">&lt;execution&gt;</span>
+<span class="line-numbers">168</span>                        <span class="tag">&lt;id&gt;</span>failsafe-verify<span class="tag">&lt;/id&gt;</span>
+<span class="line-numbers">169</span>                        <span class="tag">&lt;phase&gt;</span>verify<span class="tag">&lt;/phase&gt;</span>
+<span class="line-numbers">170</span>                        <span class="tag">&lt;goals&gt;</span>
+<span class="line-numbers">171</span>                            <span class="tag">&lt;goal&gt;</span>verify<span class="tag">&lt;/goal&gt;</span>
+<span class="line-numbers">172</span>                        <span class="tag">&lt;/goals&gt;</span>
+<span class="line-numbers">173</span>                    <span class="tag">&lt;/execution&gt;</span>
+<span class="line-numbers">174</span>                <span class="tag">&lt;/executions&gt;</span>
+<span class="line-numbers">175</span>                <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">176</span>                    <span class="tag">&lt;summaryFile&gt;</span>
+<span class="line-numbers">177</span>                      ${project.build.directory}/test-reports/it/failsafe-summary.xml
+<span class="line-numbers">178</span>                    <span class="tag">&lt;/summaryFile&gt;</span>
+<span class="line-numbers">179</span>                    <span class="tag">&lt;reportsDirectory&gt;</span>
+<span class="line-numbers">180</span>                      ${project.build.directory}/test-reports/it
+<span class="line-numbers">181</span>                    <span class="tag">&lt;/reportsDirectory&gt;</span>
+<span class="line-numbers">182</span>                <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">183</span>            <span class="tag">&lt;/plugin&gt;</span>
+<span class="line-numbers">184</span>            <span class="comment">&lt;!-- end::maven-failsafe-plugin[] --&gt;</span>
+<span class="line-numbers">185</span>            <span class="comment">&lt;!-- tag::liberty-maven-plugin[] --&gt;</span>
+<span class="line-numbers">186</span>            <span class="tag">&lt;plugin&gt;</span>
+<span class="line-numbers">187</span>                <span class="tag">&lt;groupId&gt;</span>net.wasdev.wlp.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">188</span>                <span class="tag">&lt;artifactId&gt;</span>liberty-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">189</span>                <span class="tag">&lt;extensions&gt;</span>true<span class="tag">&lt;/extensions&gt;</span>
+<span class="line-numbers">190</span>                <span class="comment">&lt;!-- Specify configuration, executions for liberty-maven-plugin --&gt;</span>
+<span class="line-numbers">191</span>                <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">192</span>                    <span class="tag">&lt;serverName&gt;</span>ArquillianManagedServer<span class="tag">&lt;/serverName&gt;</span>
+<span class="line-numbers">193</span>                    <span class="tag">&lt;assemblyArtifact&gt;</span>
+<span class="line-numbers">194</span>                        <span class="tag">&lt;groupId&gt;</span>io.openliberty<span class="tag">&lt;/groupId&gt;</span>
+<span class="line-numbers">195</span>                        <span class="tag">&lt;artifactId&gt;</span>openliberty-runtime<span class="tag">&lt;/artifactId&gt;</span>
+<span class="line-numbers">196</span>                        <span class="tag">&lt;version&gt;</span>[18.0.0.4,)<span class="tag">&lt;/version&gt;</span>
+<span class="line-numbers">197</span>                        <span class="tag">&lt;type&gt;</span>zip<span class="tag">&lt;/type&gt;</span>
+<span class="line-numbers">198</span>                    <span class="tag">&lt;/assemblyArtifact&gt;</span>
+<span class="line-numbers">199</span>                    <span class="tag">&lt;configFile&gt;</span>src/main/liberty/config/server.xml<span class="tag">&lt;/configFile&gt;</span>
+<span class="line-numbers">200</span>                    <span class="tag">&lt;packageFile&gt;</span>${package.file}<span class="tag">&lt;/packageFile&gt;</span>
+<span class="line-numbers">201</span>                    <span class="tag">&lt;include&gt;</span>${packaging.type}<span class="tag">&lt;/include&gt;</span>
+<span class="line-numbers">202</span>                    <span class="tag">&lt;bootstrapProperties&gt;</span>
+<span class="line-numbers">203</span>                        <span class="tag">&lt;default.http.port&gt;</span>${testServerHttpPort}<span class="tag">&lt;/default.http.port&gt;</span>
+<span class="line-numbers">204</span>                        <span class="tag">&lt;default.https.port&gt;</span>${testServerHttpsPort}<span class="tag">&lt;/default.https.port&gt;</span>
+<span class="line-numbers">205</span>                    <span class="tag">&lt;/bootstrapProperties&gt;</span>
+<span class="line-numbers">206</span>                    <span class="comment">&lt;!-- tag::skipTestServer[] --&gt;</span>
+<span class="line-numbers">207</span>                    <span class="tag">&lt;skipTestServer&gt;</span>true<span class="tag">&lt;/skipTestServer&gt;</span>
+<span class="line-numbers">208</span>                    <span class="comment">&lt;!-- end::skipTestServer[] --&gt;</span>
+<span class="line-numbers">209</span>                <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">210</span>                <span class="tag">&lt;executions&gt;</span>
+<span class="line-numbers">211</span>                    <span class="tag">&lt;execution&gt;</span>
+<span class="line-numbers">212</span>                        <span class="tag">&lt;id&gt;</span>install-apps<span class="tag">&lt;/id&gt;</span>
+<span class="line-numbers">213</span>                        <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">214</span>                            <span class="tag">&lt;looseApplication&gt;</span>true<span class="tag">&lt;/looseApplication&gt;</span>
+<span class="line-numbers">215</span>                            <span class="tag">&lt;stripVersion&gt;</span>true<span class="tag">&lt;/stripVersion&gt;</span>
+<span class="line-numbers">216</span>                            <span class="tag">&lt;installAppPackages&gt;</span>project<span class="tag">&lt;/installAppPackages&gt;</span>
+<span class="line-numbers">217</span>                        <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">218</span>                    <span class="tag">&lt;/execution&gt;</span>
+<span class="line-numbers">219</span>                    <span class="tag">&lt;execution&gt;</span>
+<span class="line-numbers">220</span>                        <span class="tag">&lt;id&gt;</span>package-app<span class="tag">&lt;/id&gt;</span>
+<span class="line-numbers">221</span>                        <span class="tag">&lt;configuration&gt;</span>
+<span class="line-numbers">222</span>                            <span class="tag">&lt;outputDirectory&gt;</span>target/wlp-package<span class="tag">&lt;/outputDirectory&gt;</span>
+<span class="line-numbers">223</span>                        <span class="tag">&lt;/configuration&gt;</span>
+<span class="line-numbers">224</span>                    <span class="tag">&lt;/execution&gt;</span>
+<span class="line-numbers">225</span>                    <span class="tag">&lt;execution&gt;</span>
+<span class="line-numbers">226</span>                        <span class="tag">&lt;id&gt;</span>configure-arquillian-xml<span class="tag">&lt;/id&gt;</span>
+<span class="line-numbers">227</span>                        <span class="tag">&lt;phase&gt;</span>pre-integration-test<span class="tag">&lt;/phase&gt;</span>
+<span class="line-numbers">228</span>                        <span class="tag">&lt;goals&gt;</span>
+<span class="line-numbers">229</span>                            <span class="comment">&lt;!-- tag::configure-arquillian[] --&gt;</span>
+<span class="line-numbers">230</span>                            <span class="tag">&lt;goal&gt;</span>configure-arquillian<span class="tag">&lt;/goal&gt;</span>
+<span class="line-numbers">231</span>                            <span class="comment">&lt;!-- end::configure-arquillian[] --&gt;</span>
+<span class="line-numbers">232</span>                        <span class="tag">&lt;/goals&gt;</span>
+<span class="line-numbers">233</span>                    <span class="tag">&lt;/execution&gt;</span>
+<span class="line-numbers">234</span>                <span class="tag">&lt;/executions&gt;</span>
+<span class="line-numbers">235</span>            <span class="tag">&lt;/plugin&gt;</span>
+<span class="line-numbers">236</span>            <span class="comment">&lt;!-- end::liberty-maven-plugin[] --&gt;</span>
+<span class="line-numbers">237</span>        <span class="tag">&lt;/plugins&gt;</span>
+<span class="line-numbers">238</span>    <span class="tag">&lt;/build&gt;</span>
+<span class="line-numbers">239</span><span class="tag">&lt;/project&gt;</span></code></pre></div></div><div class="paragraph"><p>Let’s look into each of the required elements for this configuration. You need the <code class="hotspot=liberty-maven-app-parent">liberty-maven-app-parent</code> block, which configures the Liberty Maven plug-in with the default executions necessary for setting up your managed Liberty server.</p></div><div class="paragraph"><p>You also need the <code class="hotspot=arquillian-bom">arquillian-bom</code> Bill of Materials. It’s a Maven artifact that defines the versions of Arquillian dependencies to make dependency management easier.</p></div><div class="paragraph"><p>The <code class="hotspot=arquillian-liberty-managed-junit">arquillian-liberty-managed-junit</code> dependency bundle, which includes all the core dependencies, is required to run the Arquillian tests on a managed Liberty container that uses JUnit. You can learn more about the <a href="https://github.com/OpenLiberty/arquillian-liberty-dependencies" target="_blank" rel="noopener noreferrer">Arquillian Liberty dependency bundles</a>. The <code class="hotspot=shrinkwrap-api">shrinkwrap-api</code> dependency allows you to create your test archive, which is packaged into a WAR file and deployed to the Open Liberty server.</p></div><div class="paragraph"><p>The <code class="hotspot=maven-failsafe-plugin">maven-failsafe-plugin</code> artifact runs your Arquillian integration tests by using JUnit.</p></div><div class="paragraph"><p>Lastly, specify the <code class="hotspot=liberty-maven-plugin">liberty-maven-plugin</code> configuration that defines your Open Liberty runtime configuration and use the <code class="hotspot=configure-arquillian">configure-arquillian</code> goal to configure your Arquillian container. This goal automatically retrieves core server parameters from the <code>liberty-maven-plugin</code> configuration and enables you to customize your Arquillian container configuration directly in your POM file if necessary. You can learn more about the <code class="hotspot=configure-arquillian">configure-arquillian</code> goal in its <a href="https://github.com/WASdev/ci.maven/blob/master/docs/configure-arquillian.md" target="_blank" rel="noopener noreferrer">documentation</a>.</p></div><div class="paragraph"><p>Notice in the <code>liberty-maven-plugin</code> configuration that the <code class="hotspot=skipTestServer">skipTestServer</code> element is set to <code>true</code> to skip the <code>test-start-server</code> and <code>test-stop-server</code> goals defined in the <code class="hotspot=liberty-maven-app-parent">liberty-maven-app-parent</code> parent configuration. The test server configuration is skipped because Arquillian is managing the server lifecycle when it runs the tests.</p></div></div><div class="sect2"><h3 id="configuring-the-server-xml-file">Configuring the server.xml file</h3><div class="paragraph"><p>Now that you’re done configuring your Maven build, set up your Open Liberty server to run your test cases by configuring the <code class="hotspot">server.xml</code> file.</p></div><div class="paragraph"><p>Take a look at the <code class="hotspot">server.xml</code> file.</p></div><div class="paragraph"><p>server.xml</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="xml"><span class="line-numbers"> 1</span><span class="tag">&lt;server</span> <span class="attribute-name">description</span>=<span class="string"><span class="delimiter">"</span><span class="content">new server</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span>  <span class="tag">&lt;featureManager&gt;</span>
+<span class="line-numbers"> 4</span>    <span class="tag">&lt;feature&gt;</span>jaxrs-2.1<span class="tag">&lt;/feature&gt;</span>
+<span class="line-numbers"> 5</span>    <span class="tag">&lt;feature&gt;</span>jsonp-1.1<span class="tag">&lt;/feature&gt;</span>
+<span class="line-numbers"> 6</span>    <span class="tag">&lt;feature&gt;</span>cdi-2.0<span class="tag">&lt;/feature&gt;</span>
+<span class="line-numbers"> 7</span>
+<span class="line-numbers"> 8</span>    <span class="comment">&lt;!-- Enable the following features to run tests with Arquillian managed container --&gt;</span>
+<span class="line-numbers"> 9</span>    <span class="comment">&lt;!-- tag::localConnector[] --&gt;</span>
+<span class="line-numbers">10</span>    <span class="tag">&lt;feature&gt;</span>localConnector-1.0<span class="tag">&lt;/feature&gt;</span>
+<span class="line-numbers">11</span>    <span class="comment">&lt;!-- end::localConnector[] --&gt;</span>
+<span class="line-numbers">12</span>    <span class="comment">&lt;!-- tag::Servlet[] --&gt;</span>
+<span class="line-numbers">13</span>    <span class="tag">&lt;feature&gt;</span>servlet-4.0<span class="tag">&lt;/feature&gt;</span>
+<span class="line-numbers">14</span>    <span class="comment">&lt;!-- end::Servlet[] --&gt;</span>
+<span class="line-numbers">15</span>  <span class="tag">&lt;/featureManager&gt;</span>
+<span class="line-numbers">16</span>
+<span class="line-numbers">17</span>  <span class="tag">&lt;httpEndpoint</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">defaultHttpEndpoint</span><span class="delimiter">"</span></span> <span class="attribute-name">httpPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">9080</span><span class="delimiter">"</span></span> <span class="attribute-name">httpsPort</span>=<span class="string"><span class="delimiter">"</span><span class="content">9443</span><span class="delimiter">"</span></span> <span class="tag">/&gt;</span>
+<span class="line-numbers">18</span>  <span class="tag">&lt;webApplication</span> <span class="attribute-name">location</span>=<span class="string"><span class="delimiter">"</span><span class="content">guide-arquillian-managed.war</span><span class="delimiter">"</span></span> <span class="attribute-name">context-root</span>=<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers">19</span><span class="tag">&lt;/server&gt;</span></code></pre></div></div><div class="paragraph"><p>The <code class="hotspot=localConnector">localConnector</code> feature is required by the Arquillian Liberty Managed container to connect to and communicate with the Open Liberty runtime. The <code class="hotspot=Servlet">servlet</code> feature is required during the deployment of the Arquillian tests in which servlets are created to perform the in-container testing.</p></div></div></div></div><div class="sect1"><h2 id="running-the-tests">Running the tests</h2><div class="sectionbody"><div class="paragraph"><p>It’s now time to build and run your Arquillian tests. Run the Maven build command in the <code>start</code> directory.</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>mvn install</code></pre></div></div><div class="paragraph"><p>In the test output, you can see that the application server launched, and that the web archive, <code>arquillian-managed</code>, started as an application in the server. You can also see that the tests are running and that the results are reported.</p></div><div class="paragraph"><p>After the tests stop running, the test application is automatically undeployed and the server shuts down. You should then get a message indicating that the build and tests are successful.</p></div><div class="listingblock no_copy"><div class="content"> <pre class="CodeRay highlight"><code>[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running it.io.openliberty.guides.inventory.InventoryArquillianTests
+...
+[AUDIT   ] CWWKE0001I: The server ArquillianManagedServer has been launched.
+[INFO    ] CWWKE0002I: The kernel started after 2.069 seconds
+[INFO    ] CWWKF0007I: Feature update started.
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+[INFO    ] CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host localhost  (IPv4: 127.0.0.1) port 9080.
+[INFO    ] CWWKZ0018I: Starting application guide-arquillian-managed.
+...
+[INFO    ] SRVE0169I: Loading Web Module: guide-arquillian-managed.
+[INFO    ] SRVE0250I: Web Module guide-arquillian-managed has been bound to default_host.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/
+[AUDIT   ] CWWKZ0001I: Application guide-arquillian-managed started in 4.276 seconds.
+[INFO    ] SESN0176I: A new session context will be created for application key default_host/
+[INFO    ] CWWKZ0018I: Starting application arquillian-managed.
+...
+[AUDIT   ] CWWKF0011I: The server ArquillianManagedServer is ready to run a smarter planet.
+...
+[INFO    ] SRVE0169I: Loading Web Module: arquillian-managed.
+[INFO    ] SRVE0250I: Web Module arquillian-managed has been bound to default_host.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/arquillian-managed/
+...
+[AUDIT   ] CWWKZ0001I: Application arquillian-managed started in 0.957 seconds.
+...
+[INFO    ] Setting the server's publish address to be /inventory/
+[INFO    ] SRVE0242I: [arquillian-managed] [/arquillian-managed] [io.openliberty.guides.inventory.InventoryApplication]: Initialization successful.
+[INFO    ] Setting the server's publish address to be /system/
+[INFO    ] SRVE0242I: [guide-arquillian-managed] [/] [io.openliberty.guides.system.SystemApplication]: Initialization successful.
+[INFO    ] SRVE0242I: [arquillian-managed] [/arquillian-managed] [ArquillianServletRunner]: Initialization successful.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9080/arquillian-managed/
+[INFO    ] SRVE0253I: [arquillian-managed] [/arquillian-managed] [ArquillianServletRunner]: Destroy successful.
+[INFO    ] SRVE0253I: [arquillian-managed] [/arquillian-managed] [io.openliberty.guides.inventory.InventoryApplication]: Destroy successful.
+[AUDIT   ] CWWKZ0009I: The application arquillian-managed has stopped successfully.
+...
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.355 s - in it.io.openliberty.guides.inventory.InventoryArquillianTests
+...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.875 s
+[INFO] Finished at: 2019-02-12T14:40:43-05:00
+[INFO] ------------------------------------------------------------------------</code></pre></div></div></div></div><div class="sect1"><h2 id="great-work-youre-done">Great work! You’re done!</h2><div class="sectionbody"><div class="paragraph"><p>You just built some functional and integration tests with the Arquillian managed container and ran the tests for your microservices on Open Liberty.</p></div><div class="paragraph"><p>Try one of the related guides to learn more about the technologies that you come across in this guide.</p></div></div></div><div class="sect1"><h2 id="guide-attribution">Guide Attribution</h2><div class="sectionbody"><div class="paragraph"><p>Testing microservices with the Arquillian managed container <span class="licensedClass">by</span> Open Liberty <span class="licensedClass">is licensed under</span> CC BY-ND 4.0</p></div></div></div></div><div id="guide_section_copied_confirmation">Copied to clipboard</div> <img id="copy_to_clipboard" src="https://openliberty.io/img/guides_copy_button.svg" alt="Copy code block" title="Copy code block"></div><div id="code_column" class="position_relative" tabindex="0"><div id="code_column_title_container"><div id="code_column_tabs_container" class="dimmed"><ul id="code_column_tabs" class="nav" role="tablist"></ul></div><div class="copyFileButton" tabindex="0"> <img src="https://openliberty.io/img/guides_copy_button.svg" alt="Copy file contents" title="Copy file contents"></div></div><div id="code_column_content"></div><div id="prereqs_container"><p id="prereqs_title">Prerequisites:</p><div class="prereqs_list"></div></div> <button id="dismiss_button" aria-label="Back to text" tabindex="0">Back to text</button></div></div><div id="end_of_guide"><h2 tabindex="0">Nice work! Where to next?</h2><div id="end_of_guide_left_section"><p id="guide_attribution"></p><h3 id="feedback_rating_question">What did you think of this guide?</h3><div id="feedback_ratings"> <img class="guide_rating" id="extreme_dislike" src="https://openliberty.io/img/1_Extreme_Dislike.png" onclick="$('#dislike_popup').show(),$('.popup_content').focus()" alt="Extreme Dislike" data-guide-rating="1" tabindex="0" aria-label="Rate this guide as extreme dislike"> <img class="guide_rating" id="dislike" src="https://openliberty.io/img/2_Dislike.png" onclick="$('#dislike_popup').show(),$('.popup_content').focus()" alt="Dislike" data-guide-rating="2" tabindex="0" aria-label="Rate this guide as dislike"> <img class="guide_rating" id="like" src="https://openliberty.io/img/3_Like.png" onclick="$('#like_popup').show(),$('.popup_content').focus()" alt="Like" data-guide-rating="3" tabindex="0" aria-label="Rate this guide as like"> <img class="guide_rating" id="extreme_like" src="https://openliberty.io/img/4_Extreme_Like.png" onclick="$('#like_popup').show(),$('.popup_content').focus()" alt="Extreme Like" data-guide-rating="4" tabindex="0" aria-label="Rate this guide as extreme like"></div><div id="like_popup" class="popup"><div class="popup_content" tabindex="0"><p class="popup_title">Thank you for your feedback!</p> <button id="close_button" class="popup_button" onclick="$('#like_popup').hide()">Close</button></div></div><div id="dislike_popup" class="popup"><div class="popup_content" tabindex="0"><p class="popup_title">Thank you for your feedback!</p><p id="open_issue">Would you like to open an issue in GitHub?</p> <a href="https://github.com/OpenLiberty/guide-arquillian-managed/issues/new" target="_blank" id="yes_button" class="popup_button" onclick="$('#dislike_popup').hide()" rel="noopener noreferrer">Yes</a> <button id="no_button" class="popup_button" onclick="$('#dislike_popup').hide()">No, thank you</button></div></div><h3 id="improve_guide_feedback">What could make this guide better?</h3><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-arquillian-managed/issues">Raise an issue</a> to share feedback</p><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-arquillian-managed/pulls">Create a pull request</a> to contribute to this guide</p><h3 id="need_help">Need help?</h3><p><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/open-liberty">Ask a question on Stack Overflow</a></p><h3>Like Open Liberty? Star our repo on GitHub.</h3> <a class="github-button" href="https://github.com/OpenLiberty/open-liberty" data-icon="octicon-star" aria-label="Star OpenLiberty/open-liberty on GitHub" target="_blank" rel="noopener noreferrer">Star</a></div><div id="end_of_guide_right_section"><h3 id="where_to_next">Where to next?</h3><div id="related-guides"><div id="related-guides-cards" class="row"><div class="col-sm-12 col-lg-6"> <a href="https://openliberty.io/guides/cdi-intro.html" class="small_guide_item"><div class="guide_title_container"><h3 class="guide_title">Injecting dependencies into microservices</h3></div> <img class="duration_clock_icon" src="https://openliberty.io/img/guide_duration_clock_icon_small.svg" alt="Duration"> <span class="guide_duration">15 minutes</span> </a></div><div class="col-sm-12 col-lg-6"> <a href="https://openliberty.io/guides/rest-intro.html" class="small_guide_item"><div class="guide_title_container"><h3 class="guide_title">Creating a RESTful web service</h3></div> <img class="duration_clock_icon" src="https://openliberty.io/img/guide_duration_clock_icon_small.svg" alt="Duration"> <span class="guide_duration">30 minutes</span> </a></div></div></div></div></div></main><footer><div id="footer_gray_background"><div id="footer_top_container" class="footer_container container-fluid"><div id="footer_project_container"> <span id="footer_open_liberty"></span><p id="footer_project">an IBM open source project</p></div><div id="footer_round_links_container"> <a id="footer_github_link" class="footer_round_btn" href="https://github.com/OpenLiberty/" target="_blank" rel="noopener noreferrer" aria-label="Github"></a> <a id="footer_twitter_link" class="footer_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="footer_stackoverflow_link" class="footer_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="footer_groupsio_link" class="footer_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div></div></div><div id="footer_bottom_container" class="footer_container container-fluid"><div id="footer_bottom_left_section"><p id="footer_copyright">© Copyright IBM Corp. 2017, 2019</p><p class="vertical_bar">|</p> <a id="footer_privacy_policy_link" href="https://www.ibm.com/privacy/" target="_blank" rel="noopener noreferrer" class="left_footer_link">Privacy policy</a><p class="vertical_bar">|</p> <a id="footer_license_link" href="https://github.com/OpenLiberty/open-liberty/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="left_footer_link">License</a></div><div id="footer_bottom_right_section"> <a id="footer_docs_link" href="https://openliberty.io/docs" aria-label="Open Liberty Docs" class="right_footer_link blue_link_light_background">Docs</a> <a id="footer_blog_link" href="https://openliberty.io/blog" aria-label="Open Liberty Blogs" class="right_footer_link blue_link_light_background">Blog</a> <a id="footer_support_link" href="https://openliberty.io/support" aria-label="Open Liberty Support" class="right_footer_link blue_link_light_background">Support</a></div></div> </footer><div class="d-none hidden"> <img src="https://openliberty.io/img/Footer_GitCat_Hover.svg" alt="OpenLiberty Github link"> <img src="https://openliberty.io/img/Footer_TwitterBird_Hover.svg" alt="OpenLibertyIO Twitter link"> <img src="https://openliberty.io/img/Footer_StackO_Hover.svg" alt="Open-liberty Stack Overflow link"> <img src="https://openliberty.io/img/Footer_GroupsIO_Hover.svg" alt="Openliberty Groups IO link"></div> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><script src="https://openliberty.io/assets/devEnvironment-1534f5b3d86298872bff0c998dc072080c30665ac1e9f1d3087393aeba41be1b.js"></script><script src="https://openliberty.io/assets/guide-utils-1bc9c95c7a39c5aed996a9daa39e02bfe2587ae5cb4e6295e95953f57ab7b24a.js"></script><script src="https://openliberty.io/assets/toc-9f2c0762562ac94cfdc5a228800ba66c04c7b5d7bc6acbf83b1f5b475eaad995.js"></script><script src="https://openliberty.io/assets/guide-608dca3e839e274e1af63578c774065d6357bd7e40e8c4f939821395b2c3d669.js"></script><script src="https://openliberty.io/assets/guide-multipane-b593df5e24233d10a69719b81b4ed58aa8e285752947c5ca52a04b26f8d77d5b.js"></script></body></html>

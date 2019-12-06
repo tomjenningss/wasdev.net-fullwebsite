@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="devops,chef," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2013-12-20",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Getting started with the Chef cookbooks for Liberty",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"devops,chef,",
+						"contentArea": "DevOps"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"devops,chef,",
+		      "description":"Getting started with the Chef cookbooks for Liberty"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Getting started with the Chef cookbooks for Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Getting up and running using the Chef cookbooks for Liberty profile. Set up a virtual machine running a Liberty server with a sample application deployed."/>
+<link rel="canonical" href="index.html%3Fp=7248.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Getting started with the Chef cookbooks for Liberty Comments Feed" href="docs/getting-started-chef-cookbooks-liberty-profile/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=7248.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-chef-cookbooks-liberty-profile%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-chef-cookbooks-liberty-profile%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-7248 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=7248.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/devops/index.html" rel="tag">DevOps</a></span></div><h1 class="entry-title">Getting started with the Chef cookbooks for Liberty</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/ant-elder/index.html">antelder</a></span><br>Published on December 20, 2013<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=7248.html#comments" class="pn_comments_icon">8 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=7248.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A quick guide to getting up and running using the Chef cookbooks for WebSphere Liberty. Set up a virtual machine running a Liberty server with a sample application deployed.</p>
+<p>There have been several releases of the Chef cookbooks for WebSphere Liberty. Here is a quick guide to getting up and running using those cookbooks. The cookbooks set up a virtual machine running a Liberty server with a sample application deployed.</p>
+<p><a href="http://www.getchef.com/chef/">Opscode Chef</a> is a popular DevOps solution for automating infrastructure configuration. Using Chef, you configure from the operating system up; applying system updates, modifying configuration files, restarting any necessary system services, applying and configuring middleware and applications.</p>
+<p>You do this through Chef cookbooks, which contain recipes, templates, and attributes. It is these which control the infrastructure automation. You can write your own cookbook or take advantage of the community-contributed cookbooks published on the <a href="http://community.opscode.com/">Opscode community</a>. Cookbooks for many popular software packages are available including ones for IBM&#8217;s WebSphere Liberty.</p>
+<h2>Set up the Chef environment on your workstation</h2>
+<p>The steps to set up your Chef environment are described in the <a title="Chef QuickStart Guide " href="https://learnchef.opscode.com/quickstart/">Chef QuickStart guide,</a> which to summarize says:</p>
+<ul>
+<li><a title="Install Chef" href="http://www.getchef.com/chef/install/">Install Chef</a></li>
+<li><a title="Install Vagrant" href="http://downloads.vagrantup.com">Install Vagrant</a></li>
+<li><a title="Install VirtualBox" href="https://www.virtualbox.org/wiki/Downloads">Install VirtualBox</a></li>
+<li><a title="Install Git" href="http://git-scm.com/downloads">Install Git</a></li>
+</ul>
+<p>Accept all the default options when installing those products.</p>
+<p>Chef needs to know your preferred editor. If you use Windows and WordPad enter the following at a command prompt:</p>
+<pre>setx EDITOR ""%ProgramFiles%Windows NTAccessorieswordpad.exe""</pre>
+<p>The next time you start a command prompt EDITOR will be set appropriately.</p>
+<p>If you use Linux and vi enter the following on the command line:</p>
+<pre>export EDITOR=vi</pre>
+<p>Or put the following line in the .chef/knife.rb file in your chef-repo directory:</p>
+<pre>knife[:editor]="vi"</pre>
+<h2>Create a Chef account and download the Chef StarterKit</h2>
+<ol>
+<li>Create yourself an <a title="Create Enterprise Chef Account" href="https://getchef.opscode.com/signup">Enterprise Chef account</a>.</li>
+<li>Open your <a title="Chef Organizations" href="http://preview.opscode.com/organizations">Chef organizations page</a> and select your organization.</li>
+<li>Click <strong>download StarterKit</strong> and unzip the downloaded package to your local file system. This creates a directory named <code>chef-repo</code>.</li>
+</ol>
+<h2>Set up git, and install the cookbooks and their dependencies</h2>
+<ol>
+<li>Open a Git Bash prompt at your StarterKit chef-repo directory.</li>
+<li>Initialize Git with the following commands:
+<pre>$ git init .
+$ git add .
+$ git commit -m "Initial commit"</pre>
+</li>
+<li>Install the Chef cookbooks to your local <code>chef-repo</code> directory. This also automatically installs all the dependent cookbooks such as the <code>wlp</code> and <code>java</code> cookbooks:
+<pre>$ knife cookbook site install apt
+$ knife cookbook site install application_wlp</pre>
+</li>
+</ol>
+<h2>Create a recipe to deploy the JSPExample application</h2>
+<ol>
+<li>In your <code>chef-repo</code> directory, go to <code>cookbooksstarterrecipes</code>.</li>
+<li>Create a file named <code>JSPExamples.rb</code> with the following contents:
+<pre>application "JSPExamples" do
+
+  repository "http://central.maven.org/maven2/org/apache/geronimo/samples/jsp-examples-war/3.0-M1/jsp-examples-war-3.0-M1.war"
+  path "/usr/local/JSPExamples"
+  scm_provider Chef::Provider::RemoteFile::Deploy
+  owner node[:wlp][:user]
+  group node[:wlp][:group]
+
+  wlp_application do
+    server_name "JSPExamples"
+    features [ "jsp-2.2", "servlet-3.0" ]
+  end
+
+end
+
+# start server if it is not running already
+wlp_server "JSPExamples" do
+  action :start
+end</pre>
+</li>
+<li>In your <code>chef-repo</code> directory, edit the file <code>cookbooksstartermetadata.rb</code> and, at the bottom of the file, add the line:
+<pre>depends "application_wlp"</pre>
+</li>
+<li>At the Git Bash prompt again enter:
+<pre>$ knife cookbook upload --all</pre>
+</li>
+</ol>
+<h2>Configure and bring up VirtualBox using Vagrant</h2>
+<ol>
+<li>Edit the <code>Vagrantfile</code> configuration file in the <code>chef-repo</code> directory and change <code>8080</code> to <code>9080</code> on the line:
+<pre>config.vm.network :forwarded_port, guest: 8080, host: 9090</pre>
+</li>
+<li>To bring up your virtual machine, at a Git Bash prompt in your <code>chef-repo</code> directory enter:
+<pre>$ vagrant up</pre>
+<p>That will take a good few minutes the first time as it downloads the vm image.</li>
+</ol>
+<h2>Bootstrap the VM so it can poll the Chef server for configuration updates</h2>
+<ol>
+<li>When the VM is up, configure Chef on the VM with the following command:
+<pre>$ knife bootstrap localhost  --ssh-user vagrant --ssh-password vagrant --sudo --run-list "recipe[apt]" --ssh-port 2222</pre>
+<p>That installs the Chef client and does some configuration of the VM.</li>
+<li>Download the IBM Java and Liberty installation files (you could use non-IBM Java too but for this example we&#8217;re using an IBM one):
+<ul>
+<li>Download Java SE Version 7 for the 32-bit x86 platform from IBM developerWorks and put the file (ibm-java-i386-sdk-7.1-1.0.bin) in your chef-repo directory</li>
+<li>Download the Liberty runtime jar and the extended content jar from <a title="IBM WASdev" href="downloads/liberty-profile-using-non-eclipse-environments/index.html">IBM WASdev</a> and put the jars in your chef-repo directory<br />
+Note: they need to be in the chef-repo directory as Vagrant maps this to the /vagrant directory in the VM.
+</li>
+</ul>
+</li>
+</ol>
+<h2>Set your node&#8217;s configuration to configure the example application and dependencies</h2>
+<ol>
+<li>Use the following command to update the Chef node with the attributes required to configure the Liberty cookbooks:
+<pre>$ knife node edit &lt;yourName&gt;-starter</pre>
+<p>(where <code>&lt;yourName&gt;</code> is your Enterprise Chef account user ID)</p>
+<p>That should bring up an editor with some JSON text.</li>
+<li>In the editor, add the following text highlighted in <span style="color: #ff0000;">red</span> so that your file matches, and save the file:
+<pre>{
+  "name": "&lt;yourName&gt;-starter",
+  "chef_environment": "_default",
+  "normal": {
+    <span style="color: #ff0000;">"wlp": {</span>
+<span style="color: #ff0000;">      "archive": {</span>
+<span style="color: #ff0000;">        "accept_license": "true",</span>
+<span style="color: #ff0000;">        "base_url": "file:///vagrant/"</span>
+<span style="color: #ff0000;">      }</span>
+<span style="color: #ff0000;">    },</span>
+<span style="color: #ff0000;">    "java": {</span>
+<span style="color: #ff0000;">      "install_flavor": "ibm",</span>
+<span style="color: #ff0000;">      "ibm": {</span>
+<span style="color: #ff0000;">        "url": "file:///vagrant/ibm-java-i386-sdk-7.1-1.0.bin",</span>
+<span style="color: #ff0000;">        "accept_ibm_download_terms": "true"</span>
+<span style="color: #ff0000;">      }</span>
+<span style="color: #ff0000;">    }</span>
+  },
+  "run_list": [
+    "recipe[apt]"<span style="color: #ff0000;">,  </span>
+<span style="color: #ff0000;">    "recipe[starter::JSPExamples]"</span>
+  ]
+}</pre>
+<p>This directs Chef to accept the Liberty and IBM Java licenses at installation time, on your behalf. They are the same licenses you accepted when you downloaded them from ibm.com.</li>
+<li>Go into your VM with the following command:
+<pre>$ vagrant ssh</pre>
+</li>
+<li>At the prompt enter the following command to manually run the chef-client:
+<pre>~$ sudo chef-client</pre>
+<p>Usually, chef-client would run as a cron job, polling the Chef server for updates to its JSON-based configuration.</p>
+<p>It will take a while to install IBM Java and Liberty, then create and start a Liberty server with the JSPExamples application deployed.</li>
+</ol>
+<p>That&#8217;s it. The Liberty server should be up and running with the sample application available. In a web browser, go to <code>http://localhost:9090/JSPExamples/</code> and you should see the application web page.</p>
+<p>Weâ€™d love your feedback. Post your questions to the <a href="https://developer.ibm.com/answers/smart-spaces/24/wasdev.html">WASdev forum</a> or on <a href="http://stackoverflow.com/questions/tagged/websphere-liberty">Stack Overflow</a>, or open issues in our GitHub repositories: <a href="https://github.com/WASdev/ci.chef.wlp">WASdev/ci.chef.wlp</a> and <a href="https://github.com/WASdev/ci.chef.wlp.application">WASdev/ci.chef.wlp.application</a>.</p>
+<p>To learn more about and experiment with Chef take a look at the Opscode <a href="https://learnchef.opscode.com/">#learnchef</a> page.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/dev-ops/index.html" rel="tag">devops</a>, <a href="blog/tag/chef/index.html" rel="tag">chef</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/ant-elder/index.html">antelder</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			8 comments on"Getting started with the Chef cookbooks for Liberty"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-131630">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Joy</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-131630">
+					December 01, 2015	         	</a>
+			</div>
+			      		<p>Hello,<br />
+I tried to download cookbook  and getting following error:<br />
+&gt; knife cookbook site install application_wlp<br />
+Installing application_wlp to C:/opscode/chef/chef-repo/cookbooks<br />
+Checking out the master branch.<br />
+Pristine copy branch (chef-vendor-application_wlp) exists, switching to it.<br />
+Downloading application_wlp from the cookbooks site at version 0.2.0 to C:/opscode/chef/chef-repo/cookbooks/application_wlp.tar.gz<br />
+Cookbook saved: C:/opscode/chef/chef-repo/cookbooks/application_wlp.tar.gz<br />
+Removing pre-existing version.<br />
+Uncompressing application_wlp version 0.2.0.<br />
+removing downloaded tarball<br />
+15 files updated, committing changes<br />
+ERROR: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received &#8216;1&#8217;<br />
+&#8212;- Begin output of git commit -m &#8220;Import application_wlp version 0.2.0&#8221; &#8212; application_wlp &#8212;-<br />
+STDOUT: On branch chef-vendor-application_wlp<br />
+Changes not staged for commit:<br />
+        deleted:    ../.chef/trusted_certs/vm-04da-b3ec_nam_nsroot_net.crt</p>
+<p>no changes added to commit<br />
+STDERR:<br />
+&#8212;- End output of git commit -m &#8220;Import application_wlp version 0.2.0&#8221; &#8212; application_wlp &#8212;-<br />
+Ran git commit -m &#8220;Import application_wlp version 0.2.0&#8221; &#8212; application_wlp returned 1</p>
+<p>Any idea what is wrong?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-131630' onclick='return addComment.moveForm( "comment-131630", "131630", "respond", "7248" )' aria-label='Reply to Joy'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-ashwin-bittu odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-128567">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">QAUW_Ashwin_Radhakrishnan</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-128567">
+					August 12, 2015	         	</a>
+			</div>
+			      		<p>Can I do configuration management for WAS ND 7/8/liberty profile using Chef ? By Configuration management what I mean is for ex: WAS ND 7, would I be able to write a recipe which will create/modify/delete JDBC data source/JMS Topic/Queue, Share library, Users modifications etc on a WAS ND 7 instance without using Jython/JACL or any other scripts. The point is update run time configurations for a product solely using Chef recipe or Chef + Docker, if its possible kindly let me know how.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-128567' onclick='return addComment.moveForm( "comment-128567", "128567", "respond", "7248" )' aria-label='Reply to QAUW_Ashwin_Radhakrishnan'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-jeremy-hughes even thread-even depth-1 pn-comment" id="comment-109567">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Jeremy Hughes</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-109567">
+					February 16, 2015	         	</a>
+			</div>
+			      		<p>I think you&#8217;re using the wrong port when viewing from the host. The instructions above say:</p>
+<p>Edit the Vagrantfile configuration file in the chef-repo directory and change 8080 to 9080 on the line:</p>
+<p>config.vm.network :forwarded_port, guest: 8080, host: 9090</p>
+<p>so you should end up with<br />
+config.vm.network :forwarded_port, guest: 9080, host: 9090</p>
+<p>Then when you hit localhost:9090 it should work.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-109567' onclick='return addComment.moveForm( "comment-109567", "109567", "respond", "7248" )' aria-label='Reply to Jeremy Hughes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-2 pn-comment" id="comment-110203">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Aditya</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-110203">
+					February 19, 2015	         	</a>
+			</div>
+			      		<p>Thank you. I changed the port forwarding line to config.vm.network :forwarded_port, guest: 9080, host: 9090 and I could not access localhost:9090. I tried with different ports higher than 9999 and I still cannot get port forwarding to work. I actually have another Vagrant box where I was able to forward port 3030 (dashing.io) and a non Vagrant box with port 8080 (Jenkins). They were not running when I was running the VM with WAS Liberty.</p>
+<p>I gave up on the port forwarding and followed every step of this blogpost. I am stuck at sudo chef-client. The only thing different in my chef-repo is the version if ibm java (ibm-java-x86_64-sdk-7.1-2.10.bin). I entered the installer&#8217;s name correctly in the node configuration (knife node edit NODE). </p>
+<p>The VM console has this error message when I executed sudo chef-client.</p>
+<p>[2015-02-19T16:30:17+00:00] WARN: Error on deploying /usr/local/JSPExamples/releases/ca2e64130c52bdca0b245a19d67c8b476b856efb4579fa1b6730412364fc6397: can&#8217;t find group for wlp-admin<br />
+[2015-02-19T16:30:17+00:00] INFO: Removing failed deploy /usr/local/JSPExamples/releases/ca2e64130c52bdca0b245a19d67c8b476b856efb4579fa1b6730412364fc6397<br />
+[0m<br />
+================================================================================[0m<br />
+[31mError executing action `deploy` on resource &#8216;deploy_revision[JSPExamples]'[0m<br />
+================================================================================[0m</p>
+<p>[0mArgumentError[0m<br />
+&#8212;&#8212;&#8212;&#8212;-[0m<br />
+can&#8217;t find group for wlp-admin[0m</p>
+<p>The bottom of the console says:<br />
+[2015-02-19T16:30:17+00:00] ERROR: Running exception handlers<br />
+[2015-02-19T16:30:17+00:00] ERROR: Exception handlers complete<br />
+[2015-02-19T16:30:17+00:00] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out<br />
+[2015-02-19T16:30:17+00:00] INFO: Sending resource update report (run-id: fd66c35e-58c5-4e2d-b857-d0a2229e182f)<br />
+[2015-02-19T16:30:34+00:00] ERROR: deploy_revision[JSPExamples] (/var/chef/cache/cookbooks/application/providers/default.rb line 130) had an error: ArgumentError: can&#8217;t find group for wlp-admin<br />
+[2015-02-19T16:30:34+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)</p>
+<p>I am not familiar with chef. Did I miss something?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-110203' onclick='return addComment.moveForm( "comment-110203", "110203", "respond", "7248" )' aria-label='Reply to Aditya'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-110245">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Aditya</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-110245">
+					February 19, 2015	         	</a>
+			</div>
+			      		<p>I logged into the Vagrant box where the sudo chef-client command failed and manually started the wlp server. It was running without any issues. I was even able to access it from my host from localhost:9090. There were no war files deployed in JSPExamples, but I was able to see the Websphere Liberty default page.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-110245' onclick='return addComment.moveForm( "comment-110245", "110245", "respond", "7248" )' aria-label='Reply to Aditya'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-jeremy-hughes odd alt depth-3 pn-comment" id="comment-110349">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Jeremy Hughes</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-110349">
+					February 20, 2015	         	</a>
+			</div>
+			      		<p>Hi, I see the real problem now. There&#8217;s a bug in our JSPExamples.rb file above. We were using:</p>
+<p>  owner "wlp"<br />
+  group "wlp-admin"</p>
+<p>Elsewhere the default group is created which is now wlpadmin rather than wlp-admin. It would be safer to use:</p>
+<p>  owner node[:wlp][:user]<br />
+  group node[:wlp][:group]</p>
+<p>I&#8217;ll get the article changed. Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-110349' onclick='return addComment.moveForm( "comment-110349", "110349", "respond", "7248" )' aria-label='Reply to Jeremy Hughes'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-4 pn-comment" id="comment-110459">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Aditya Inapurapu</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-110459">
+					February 21, 2015	         	</a>
+			</div>
+			      		<p>Thank you. That worked out great. I now have a Chef provisioned, Vagrant box with Websphere Liberty installed and running. </p>
+<p>There is one minor change I had to make under &#8216;Configure and bring up VirtualBox using Vagrant&#8217;. I executed &#8216;vagrant init hashicorp/precise64&#8217; to create my vagrant file. Later, when I executed &#8216;knife node list&#8217;, I noticed that my node was named &#8216;precise64&#8217; rather than &#8216;-starter&#8217;. I used precise64 in the JSON text and proceeded with the rest of the steps successfully.</p>
+<p>Is there a different vagrant box you would recommend for this?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-110459' onclick='return addComment.moveForm( "comment-110459", "110459", "respond", "7248" )' aria-label='Reply to Aditya Inapurapu'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-109474">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Aditya</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=7248.html#comment-109474">
+					February 15, 2015	         	</a>
+			</div>
+			      		<p>I installed a wlp-developers-runtime-8.5.5.4.jar in a vagrant box. I setup port forwarding for guest: 9080 host: 8080. I deployed a simple war file to the dropins directory. I confirmed that the WAS server is up and running. I am able to view localhost:9080 on the VM, but I am not able to access from the host (localhost:8080). What am I missing?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=7248.html#comment-109474' onclick='return addComment.moveForm( "comment-109474", "109474", "respond", "7248" )' aria-label='Reply to Aditya'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=7248.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='7248' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="64eca1eddd" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="78"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=7248.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=7248.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=7248.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-chef-cookbooks-liberty-profile&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fgetting-started-chef-cookbooks-liberty-profile"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

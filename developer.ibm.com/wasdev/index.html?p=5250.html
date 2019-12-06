@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="JAXB,Liberty,XJC," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-06-06",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Developing applications that use JAXB on Liberty",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"JAXB,Liberty,XJC,",
+						"contentArea": "Coding, Java EE"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"JAXB,Liberty,XJC,",
+		      "description":"Developing applications that use JAXB on Liberty"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Developing applications that use JAXB on Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A short tutorial to develop a sample application that uses JAXB on Liberty."/>
+<link rel="canonical" href="index.html%3Fp=5250.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Developing applications that use JAXB on Liberty Comments Feed" href="docs/jaxb-on-liberty-profile/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=5250.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fjaxb-on-liberty-profile%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fjaxb-on-liberty-profile%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-5250 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=5250.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a></span></div><h1 class="entry-title">Developing applications that use JAXB on Liberty</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/adeshpa1/index.html">Amol Deshpande</a></span><br>Published on June 6, 2016<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=5250.html#comments" class="pn_comments_icon">5 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=5250.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A short tutorial to develop a sample application that uses JAXB on Liberty.</p>
+<p>JAXB is the Java EE standard for XML binding. JAX-WS and JAX-RS standards intrinsically use JAXB (Java Architecture for XML Bindings) for marshalling and un-marshalling operations. It’s a very simple API that can be used to convert Java objects to XML and XML to Java. You can develop applications that use JAXB on Liberty which supports JAXB 2.2.</p>
+<p>JAXB is an annotation-driven framework which provides simple annotations for managing JAXB artifacts. In most cases, simple annotations are enough for writing applications. It also supports schema validation against marshalling and un-marshalling activities. Validation should be used with care because it can be a significant performance concern.</p>
+<p>Liberty ships with the tools for JAXB application development. In <code>&lt;wlp.install.dir&gt;binjaxb</code> there are two scripts: <code>xjc</code> and <code>schemagen</code>. Xjc is used for generating Java artifacts from a schema source (contract first) and schemagen is used for generating a schema from Java source (code first).</p>
+<h2>Before you start</h2>
+<ol>
+<li>Install the <a href="downloads/websphere-application-server-migration-tools/index.html#asset/features-com.ibm.websphere.appserver.jaxb-2.2">Java Architecture for XML Bindings feature</a> into your Liberty runtime installation.</li>
+<li>Create a Liberty server.</li>
+</ol>
+<h2>Creating the application using JAXB on Liberty</h2>
+<p>The sample application shows how to marshal Java objects to XML and demonstrates schema validation as well. We&#8217;ll generate a <code>Book</code> class from the <code>BookSchema.xsd</code> schema using the xjc tool. The <code>BookSchema.xsd</code> specifies the schema definition with a restriction on the title field which we’ll use to demonstrate validation.</p>
+<ol>
+<li>Create a Dynamic Web Project called <code>JAXB_Liberty_Test</code> (clear the <strong>Add project to an EAR</strong> check box):<a href="wp-content/uploads/sites/9/2013/08/New_Project.png"><br />
+<img class="alignnone size-full wp-image-5251" alt="New_Project" src="wp-content/uploads/sites/9/2013/08/New_Project.png" width="500" height="400" /></a></li>
+<li>Create a Liberty server.</li>
+<li>Enable the <code>jaxb-2.2</code> feature. In the <code>server.xml</code> file, add <code>&lt;feature&gt;jaxb-2.2&lt;/feature&gt;</code> (if you have enabled other features that depend on the JAXB feature, it might already be enabled). For example:
+<pre class="brush: xml; highlight: [6]; title: ; notranslate" title="">
+  &lt;server description=&quot;new server&quot;&gt;
+
+    &lt;!-- Enable features --&gt;
+    &lt;featureManager&gt;
+        &lt;feature&gt;jsp-2.3&lt;/feature&gt;
+        &lt;feature&gt;jaxb-2.2&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+    &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;
+                  host=&quot;localhost&quot;
+                  httpPort=&quot;9080&quot;
+                  httpsPort=&quot;9443&quot; /&gt;
+&lt;/server&gt;
+  </pre>
+</p>
+</li>
+<li>Create an HTML web page called <code>index.html</code> in the project and paste the following HTML into it. Users will enter data into the web page which will capture the data as form variables, or XML, for each book entry:
+<pre class="brush: xml; title: ; notranslate" title="">
+  &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Welcome to JAXB Test with Liberty&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 align=&quot;center&quot;&gt;Welcome to JAXB Test with Liberty&lt;/h1&gt;&lt;br&gt;
+&lt;h2&gt;With this Application we'll demo JAXB marshalling and un-marshalling usage using Liberty.&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3&gt;Please enter book information below:&lt;/h3&gt;
+&lt;br&gt;
+&lt;form action=&quot;./servlet/JAXBTest?operation=marshal&quot; method=&quot;POST&quot; id=&quot;JAXBMarshalForm&quot;&gt;
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;Enter Book ISBN&lt;/td&gt;    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;isbn&quot; id=&quot;isbn&quot; value=&quot;I39939B93&quot; size=&quot;30&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Enter Book Title&lt;/td&gt;   &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;title&quot; id=&quot;title&quot; value=&quot;Liberty&quot; size=&quot;30&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Enter Book Author&lt;/td&gt;  &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;author&quot; id=&quot;author&quot; value=&quot;Amol Deshpande&quot; size=&quot;30&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Enter Book Category&lt;/td&gt;
+    &lt;td&gt;&lt;SELECT name=&quot;category&quot; id=&quot;category&quot;&gt;
+            &lt;option&gt;Computer Science Engineering&lt;/option&gt;
+            &lt;option&gt;Physics&lt;/option&gt;
+            &lt;option&gt;Mathematics&lt;/option&gt;
+        &lt;/SELECT&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Enter Book Price&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;price&quot; id=&quot;price&quot; value=&quot;333&quot; size=&quot;30&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;&lt;input type=&quot;Submit&quot; value=&quot;Post Book&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;form action=&quot;./servlet/JAXBTest?operation=unmarshal&quot; method=&quot;POST&quot; id=&quot;JAXBUnmarshallForm&quot;&gt;
+&lt;h3&gt;Enter XML to convert to Book Object&lt;/h3&gt;
+&lt;textarea name = &quot;bookXML&quot; id=&quot;bookXML&quot; cols=&quot;66&quot; rows=&quot;15&quot;&gt;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;book bookIsbn=&quot;I39939B93&quot; xmlns=&quot;http://model.jaxbtest.com/&quot;&gt;
+	&lt;bookTitle&gt;Liberty&lt;/bookTitle&gt;
+	&lt;author&gt;Amol Deshpande&lt;/author&gt;
+	&lt;price&gt;333.0&lt;/price&gt;
+	&lt;category&gt;Computer Science Engineering&lt;/category&gt;
+&lt;/book&gt;&lt;/textarea&gt;
+&lt;br&gt;&lt;input type=&quot;Submit&quot; value=&quot;Post Book XML&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</p>
+</li>
+<li>Create an XML Schema file called <code>BookSchema.xsd</code> in the <code>WebContent</code> folder of the project. The <code>BookSchema.xsd</code> file specifies the schema that Book XML should follow. Copy the following XML code into the file. Notice that there is a <code>minLength</code> restriction on the <code>bookTitle</code> field.
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;http://model.jaxbtest.com/&quot;
+xmlns:tns=&quot;http://model.jaxbtest.com/&quot;
+elementFormDefault=&quot;qualified&quot;&gt;
+
+&lt;complexType name=&quot;Book&quot;&gt;
+        &lt;sequence&gt;
+&lt;element name=&quot;bookTitle&quot; type=&quot;tns:MinTitle&quot; nillable=&quot;false&quot;&gt;&lt;/element&gt;
+            &lt;element name=&quot;author&quot; type=&quot;string&quot;&gt;&lt;/element&gt;
+            &lt;element name=&quot;price&quot; type=&quot;double&quot;&gt;&lt;/element&gt;
+            &lt;element name=&quot;category&quot; type=&quot;string&quot;&gt;&lt;/element&gt;
+        &lt;/sequence&gt;
+        &lt;attribute name=&quot;bookIsbn&quot; type=&quot;string&quot;&gt;&lt;/attribute&gt;
+    &lt;/complexType&gt;
+    &lt;simpleType name=&quot;MinTitle&quot;&gt;
+        &lt;restriction base=&quot;string&quot;&gt;
+            &lt;minLength value=&quot;5&quot;&gt;&lt;/minLength&gt;
+        &lt;/restriction&gt;
+    &lt;/simpleType&gt;
+    &lt;element name=&quot;book&quot; type=&quot;tns:Book&quot; /&gt;
+
+&lt;/schema&gt;
+  </pre>
+</p>
+</li>
+<li>From the command line, create the JAXB model class <code>Book.java</code> using the xjc tool:
+<ol>
+<li>Change to the project directory in your Eclipse workspace.</li>
+<li>Run the following command (or the equivalent on Linux or Mac):</li>
+</ol>
+<pre><em>&lt;install_dir&gt;</em>binjaxbxjc -target 2.1 -d src .WebContentBookSchema.xsd</pre>
+<p>Where <em>&lt;install_dir&gt;</em> is the location of the Liberty runtime installation.</p>
+<p>The command generates three assets in the <code>src</code> directory of the project:</p>
+<ul>
+<li><code>Book.java</code> model file</li>
+<li><code>ObjectFactory.java</code> file, a factory for creating JAXB Book elements</li>
+<li><code>package-info.java</code> file for specific package level annotations</li>
+</ul>
+</li>
+<li>Edit the <code>Book.java</code> file to add the <code>toString</code> implementation:
+<pre class="brush: java; title: ; notranslate" title="">
+public String toString() {
+
+        return &quot; ISBN : &quot; + bookIsbn
+                + &quot;, Title : &quot; + bookTitle
+                + &quot;, author : &quot; + author
+                + &quot;, price : &quot; + price;
+    }
+
+  </pre>
+</p>
+</li>
+<li>Create the JAXBTest servlet class, which does all the magic of marshalling and un-marshalling. The servlet first creates the Book object from request parameters. Based on the value of the operation parameter, the servlet does the marshalling or un-marshalling.
+<pre class="brush: java; title: ; notranslate" title="">
+response.setCharacterEncoding(&quot;UTF-8&quot;);
+    String operation = request.getParameter(&quot;operation&quot;);
+    PrintWriter pw = response.getWriter();
+    BufferedWriter bw = new BufferedWriter(pw);
+
+    if(operation!=null &amp;&amp; operation.equalsIgnoreCase(&quot;marshal&quot;)){
+        // Marshalling code here
+}else if (operation!=null &amp;&amp; operation.equalsIgnoreCase(&quot;unmarshal&quot;)){
+    // Un-marshalling code here
+}
+  </pre>
+</p>
+</li>
+<li>
+<p>Create the JAXB marshaller, which primarily converts the JAXB model instance <code>book:Book</code> and marshals it into the equivalent XML:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+/*
+* Takes a Book object and marshalls it into an XML string return.
+* Takes Validation XSD into account by
+* feeding into the marshaller.
+*
+*/
+private String getBookAsXML(Book book,String path) {
+
+String bookAsXML = &quot;&quot;;
+    try {
+    JAXBContext ctx = JAXBContext.newInstance(&quot;com.jaxbtest.model&quot;);
+    StringWriter writer = new StringWriter();
+    Marshaller marshaller = ctx.createMarshaller();
+marshaller.setSchema(SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(new File(path +&quot;/BookSchema.xsd&quot;)));
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+    ObjectFactory objectFactory = new ObjectFactory();
+    JAXBElement&lt;Book&gt; bookElement = objectFactory.createBook(book);
+    marshaller.marshal(bookElement, writer);
+    bookAsXML = writer.getBuffer().toString();
+
+    } catch (JAXBException e) {
+        e.printStackTrace();
+bookAsXML = &quot;&lt;error&gt;&lt;errorCode&gt;100&lt;/errorCode&gt;&lt;errorDescription&gt;&quot; + e.getCause().getMessage()+&quot;&lt;/errorDescription&gt;&lt;/error&gt;&quot;;
+
+    } catch (SAXException sax){
+        sax.printStackTrace();
+bookAsXML = &quot;&lt;error&gt;&lt;errorCode&gt;101&lt;/errorCode&gt;&lt;errorDescription&gt;&quot; + sax.getCause().getMessage()+&quot;&lt;/errorDescription&gt;&lt;/error&gt;&quot;;
+    }
+    return bookAsXML;
+}
+
+  </pre>
+<p>If there is an exception, the class picks the error code and prints the error in XML format to the browser.</li>
+</p>
+</li>
+<li>
+<p>Create the JAXB unmarshaller, which does the reverse job of taking an XML and converting to a Java object:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+/**
+ *
+ * Takes book as XML string and returns an object.
+ * @param bookXML
+ * @param path
+ * @return
+ */
+
+private Book getBookAsObject(String bookXML,String path)
+{
+    Book book = null;
+    try{
+    JAXBContext ctx = JAXBContext.newInstance(&quot;com.jaxbtest.model&quot;);
+    Unmarshaller unMarshaller = ctx.createUnmarshaller();
+unMarshaller.setSchema(SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(new File(path +&quot;/BookSchema.xsd&quot;)));
+
+JAXBElement&lt;Book&gt; bookElement = (JAXBElement&lt;Book&gt;)unMarshaller.unmarshal(new StringReader(bookXML));
+
+    book = bookElement.getValue();
+
+    }catch(JAXBException e){
+        e.printStackTrace();
+        book=null;
+} catch (Exception e) {
+        e.printStackTrace();
+        book=null;
+    }
+
+return book;
+}
+  </pre>
+<p>Note that we provide schema <code>BookSchema.xsd</code> to the Marshaller to validate against it. We have provided <code>minLength</code> to be 5 in our schema.</p>
+</li>
+</ol>
+<h2>Running the sample application</h2>
+<ol>
+<li>Deploy the application to the server. The web page is automatically opened.</li>
+<li>To test the JAXB marshalling feature, type some sample values in the form in the top half of the page, then click <strong>Post Book</strong>:<a href="wp-content/uploads/sites/9/2013/12/jaxb-webpage.png"><br />
+<img class="alignnone size-full wp-image-7116" alt="jaxb-webpage" src="wp-content/uploads/sites/9/2013/12/jaxb-webpage.png" width="715" height="828" srcset="wp-content/uploads/sites/9/2013/12/jaxb-webpage.png 715w, wp-content/uploads/sites/9/2013/12/jaxb-webpage-259x300.png 259w" sizes="(max-width: 715px) 100vw, 715px" /></a></li>
+<li>
+<p>If everything goes well, you should see following XML output in the browser:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;book bookIsbn=&quot;I39939B93&quot;&gt;
+   &lt;bookTitle&gt;Liberty&lt;/bookTitle&gt;
+   &lt;author&gt;Amol Deshpande&lt;/author&gt;
+   &lt;price&gt;333.0&lt;/price&gt;
+   &lt;category&gt;Computer Science Engineering&lt;/category&gt;
+&lt;/book&gt;
+  </pre>
+<p>Note that <code>bookIsbn</code> is modeled as an XML attribute.</p>
+</li>
+<li>
+<p>To test the JAXB schema validation feature, go to the <code>index.html</code> page and specify the values in form. Ensure that the value of the <strong>Title</strong> field is less than 5 characters (eg <code>ABCD</code>), then click <strong>Post Book</strong> button. You should see the following output in the browser:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;error&gt;&lt;errorCode&gt;100&lt;/errorCode&gt;&lt;errorDescription&gt;cvc-minLength-valid: Value 'ABCD' with length = '4' is not facet-valid with respect to minLength '5' for type 'MinTitle'.&lt;/errorDescription&gt;&lt;/error&gt;
+  </pre>
+<p>This demonstrates that the schema validation has raised the exception that a 4-character value is not valid.</p>
+</li>
+<li>
+<p>To test the JAXB unmarshalling feature for our Book example, you need the Book XML representation to convert to Java object. For example, we&#8217;ve provided the Book XML marshalling output in the text area in the bottom half of the web page. Click <strong>Post Book XML</strong>. You should see the following output:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+ISBN : I39939B93, Title : Liberty, author : Amol Deshpande, price : 333.0
+  </pre>
+</p>
+</li>
+</ol>
+<h2>Using schemagen tool</h2>
+<p>If you prefer the code-first approach, you can also use schemagen tool from <code>&lt;wlp.intall.dir&gt;binjaxb</code> with the specified parameters to generate the schema.</p>
+<h2>See also:</h2>
+<ul>
+<li><a href="http://pic.dhe.ibm.com/infocenter/wasinfo/v8r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Ftwbs_jaxbschema2java.html" target="#blank">Using JAXB xjc tooling to generate JAXB classes from an XML schema file</a></li>
+<li><a href="http://jcp.org/en/jsr/detail?id=222" target="_blank">JSR 222 for JAXB </a></li>
+</ul>
+<p>(First published 2013-12-14.)</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/jaxb/index.html" rel="tag">JAXB</a>, <a href="blog/tag/liberty/index.html" rel="tag">Liberty</a>, <a href="blog/tag/xjc/index.html" rel="tag">XJC</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/adeshpa1/index.html">Amol Deshpande</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			5 comments on"Developing applications that use JAXB on Liberty"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-146308">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Paul B</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=5250.html#comment-146308">
+					May 06, 2016	         	</a>
+			</div>
+			      		<p>Thanks for the tutorial. This was easy to implement to show for a JAX-B/Liberty demo.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=5250.html#comment-146308' onclick='return addComment.moveForm( "comment-146308", "146308", "respond", "5250" )' aria-label='Reply to Paul B'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-adeshpa1 bypostauthor odd alt depth-2 pn-comment" id="comment-146624">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Amol Deshpande</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=5250.html#comment-146624">
+					June 02, 2016	         	</a>
+			</div>
+			      		<p>Thanks Paul.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=5250.html#comment-146624' onclick='return addComment.moveForm( "comment-146624", "146624", "respond", "5250" )' aria-label='Reply to Amol Deshpande'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-137">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Hågen Hasle</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=5250.html#comment-137">
+					December 19, 2013	         	</a>
+			</div>
+			      		<p>What if we want to do this in our Maven build?  Requiring Eclipse and a server installation to be able to generate java classes from a schema is not very devops-friendly.. 🙂</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=5250.html#comment-137' onclick='return addComment.moveForm( "comment-137", "137", "respond", "5250" )' aria-label='Reply to Hågen Hasle'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-2 pn-comment" id="comment-140">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Guest</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=5250.html#comment-140">
+					December 26, 2013	         	</a>
+			</div>
+			      		<p>Hi,</p>
+<p>That&#8217;s correct. None of that is mandatory. One can use XJCTask with ANT for XJC automation. Another option with ANT is  configuration with . Same goes for schemagen. One can use SchemaGenTask with ANT.  -&gt;  should also work.<br />
+Liberty has meta jars under LIBERTY_HOMEbinjaxbtools for xjc and schemagen. These point to LIBERTY_HOMElibcom.ibm.ws.jaxb.tools.2.2.3_1.0.0.jar for tooling.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=5250.html#comment-140' onclick='return addComment.moveForm( "comment-140", "140", "respond", "5250" )' aria-label='Reply to Guest'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even depth-2 pn-comment" id="comment-141">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">amol333</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=5250.html#comment-141">
+					December 26, 2013	         	</a>
+			</div>
+			      		<p>With Maven, there is jaxb2-maven-plugin plugin to automate.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=5250.html#comment-141' onclick='return addComment.moveForm( "comment-141", "141", "respond", "5250" )' aria-label='Reply to amol333'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=5250.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5250' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="74cbc1bf52" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="76"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=5250.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=5250.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=5250.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fjaxb-on-liberty-profile&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fjaxb-on-liberty-profile"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Getting Java apps talking to Arduino</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-153470</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Fri, 17 Aug 2018 09:04:12 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-153470</guid>
+		<description><![CDATA[Hi, you&#039;ll need to install the Liberty Arduino user feature - it&#039;s not officially supported but you can get it from our GitHub repo: https://github.com/WASdev/sample.arduino (see the readme for instructions). I think that should give you everything you need.
+Cheers,
+Laura]]></description>
+		<content:encoded><![CDATA[<p>Hi, you&#8217;ll need to install the Liberty Arduino user feature &#8211; it&#8217;s not officially supported but you can get it from our GitHub repo: <a href="https://github.com/WASdev/sample.arduino">https://github.com/WASdev/sample.arduino</a> (see the readme for instructions). I think that should give you everything you need.<br />
+Cheers,<br />
+Laura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Kally</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-153468</link>
+		<dc:creator><![CDATA[Kally]]></dc:creator>
+		<pubDate>Fri, 17 Aug 2018 02:25:03 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-153468</guid>
+		<description><![CDATA[How can I get &quot;com.ibm.wasdev.arduino.*&quot; files? I cant found it anywhere.]]></description>
+		<content:encoded><![CDATA[<p>How can I get &#8220;com.ibm.wasdev.arduino.*&#8221; files? I cant found it anywhere.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: antelder</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-131197</link>
+		<dc:creator><![CDATA[antelder]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 08:33:31 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-131197</guid>
+		<description><![CDATA[Hi ally, there are two parts to doing that, your Bluetooth device needs to support the Serial Port Profile (SPP), and then you need some software to enable Java to interact with the Serial Port. A lot of Bluetooth devices do support SPP so that likely may well just work. Next you need software for Java applications to interact with the Serial Port. There used to be a standard Java Communications API for this but that is no longer part of standard Java, however there are some third party packages that provide this now. This article you&#039;re commenting on is about one of those - the Liberty Arduino Feature - which enables Java programs running in WebSphere Liberty Application Server to interact with an Arduino. The Liberty Arduino Feature does also run outside of Liberty though, and you could use it to have you Java Eclipse program communicate with an Arduino. You can see examples of doing this in the feature&#039;s testcases, for example:
+ 
+https://github.com/WASdev/sample.arduino/blob/master/Liberty/org.ibm.ws.arduino.test/src/com/ibm/wasdev/arduino/test/InvokerTestcase.java
+
+Happy to help further if you need more help on how to set that up.]]></description>
+		<content:encoded><![CDATA[<p>Hi ally, there are two parts to doing that, your Bluetooth device needs to support the Serial Port Profile (SPP), and then you need some software to enable Java to interact with the Serial Port. A lot of Bluetooth devices do support SPP so that likely may well just work. Next you need software for Java applications to interact with the Serial Port. There used to be a standard Java Communications API for this but that is no longer part of standard Java, however there are some third party packages that provide this now. This article you&#8217;re commenting on is about one of those &#8211; the Liberty Arduino Feature &#8211; which enables Java programs running in WebSphere Liberty Application Server to interact with an Arduino. The Liberty Arduino Feature does also run outside of Liberty though, and you could use it to have you Java Eclipse program communicate with an Arduino. You can see examples of doing this in the feature&#8217;s testcases, for example:</p>
+<p><a href="https://github.com/WASdev/sample.arduino/blob/master/Liberty/org.ibm.ws.arduino.test/src/com/ibm/wasdev/arduino/test/InvokerTestcase.java">https://github.com/WASdev/sample.arduino/blob/master/Liberty/org.ibm.ws.arduino.test/src/com/ibm/wasdev/arduino/test/InvokerTestcase.java</a></p>
+<p>Happy to help further if you need more help on how to set that up.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ally</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-131190</link>
+		<dc:creator><![CDATA[ally]]></dc:creator>
+		<pubDate>Wed, 11 Nov 2015 16:08:45 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-131190</guid>
+		<description><![CDATA[Hello, How can we communicate java eclipse program with arduino via bluetooth? I have a desktop application using java language and need to received and send data to my arduino program.]]></description>
+		<content:encoded><![CDATA[<p>Hello, How can we communicate java eclipse program with arduino via bluetooth? I have a desktop application using java language and need to received and send data to my arduino program.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: antelder</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-14516</link>
+		<dc:creator><![CDATA[antelder]]></dc:creator>
+		<pubDate>Tue, 17 Jun 2014 08:38:50 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-14516</guid>
+		<description><![CDATA[CC3000&#039;s use SPI for communication not UART so wont run with the current Arduino feature release out-of-the box. It will need some wrapper code around the CC3000 library to provide a stream style interface that the Arduino feature can use. The code i have for nRF24L01s does that so i&#039;ll try to get this committed in the github repo soon with an example of how to use it.]]></description>
+		<content:encoded><![CDATA[<p>CC3000&#8217;s use SPI for communication not UART so wont run with the current Arduino feature release out-of-the box. It will need some wrapper code around the CC3000 library to provide a stream style interface that the Arduino feature can use. The code i have for nRF24L01s does that so i&#8217;ll try to get this committed in the github repo soon with an example of how to use it.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Hirsch</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-14270</link>
+		<dc:creator><![CDATA[Phil Hirsch]]></dc:creator>
+		<pubDate>Mon, 16 Jun 2014 14:00:56 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-14270</guid>
+		<description><![CDATA[Thanks for the detailed reply!
+
+I have a CC3000 WiFi shield from Adafruit, and as you say it does eat up a lot of power. It&#039;s nice that I can communicate with it via normal TCP sockets, but I&#039;ve been meaning to look into some of the more lightweight wireless technologies too -- this gives me another good reason to do that!]]></description>
+		<content:encoded><![CDATA[<p>Thanks for the detailed reply!</p>
+<p>I have a CC3000 WiFi shield from Adafruit, and as you say it does eat up a lot of power. It&#8217;s nice that I can communicate with it via normal TCP sockets, but I&#8217;ve been meaning to look into some of the more lightweight wireless technologies too &#8212; this gives me another good reason to do that!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: antelder</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-14264</link>
+		<dc:creator><![CDATA[antelder]]></dc:creator>
+		<pubDate>Mon, 16 Jun 2014 13:25:02 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-14264</guid>
+		<description><![CDATA[Hi Phil, yes it is, and there is already some support for doing that.
+
+In the server.xml instead using the name of a serial port an Arduino is using you can give it the ip/port of a remote Arduino on the network. So far this has only been tested with an Arduino using and RN-XV WiFly module, and as there are no standards for Arduino WiFi shields and they often work slightly differently there are likely minor updates required for other types of modules. If you have a particular one to use in mind I&#039;m happy to go have a look.
+
+I agree with your comment about the more interesting applications probably require an untethered Arduino. We&#039;ve already been using this with several other types of wireless technologies commonly used with Arduinos, and some of these are more appropriate than WiFi which can be expensive compared to the price of the Arduino and uses a lot of power so isn&#039;t so good for battery powered remote devices.
+
+The Arduino feature works well over Bluetooth using things like HC-05 and HC-06 Bluetooth cards, one of the demos at the IBM Impact conference showed using this with an Arduino connected with an HC-06. The Ciseco SRF transceivers are easy to use and work with this too, we had a demo using one of those at the Devox conference last week, which you happen to be able to see in this photo - https://twitter.com/WASdevnet/status/477094169786449921 - its the thing with the green LED hanging over the hackathon sign. 
+
+I&#039;ve also been using nRF24L01s which are really cheap and flexible. The code for that hasn&#039;t been included in this first release yet but i hope to get that out soon. And also support for Bluetooth LE with the Arduino feature providing central role support and so able to support all the API features when connecting to Bluetooth LE Arduino peripheral nodes.]]></description>
+		<content:encoded><![CDATA[<p>Hi Phil, yes it is, and there is already some support for doing that.</p>
+<p>In the server.xml instead using the name of a serial port an Arduino is using you can give it the ip/port of a remote Arduino on the network. So far this has only been tested with an Arduino using and RN-XV WiFly module, and as there are no standards for Arduino WiFi shields and they often work slightly differently there are likely minor updates required for other types of modules. If you have a particular one to use in mind I&#8217;m happy to go have a look.</p>
+<p>I agree with your comment about the more interesting applications probably require an untethered Arduino. We&#8217;ve already been using this with several other types of wireless technologies commonly used with Arduinos, and some of these are more appropriate than WiFi which can be expensive compared to the price of the Arduino and uses a lot of power so isn&#8217;t so good for battery powered remote devices.</p>
+<p>The Arduino feature works well over Bluetooth using things like HC-05 and HC-06 Bluetooth cards, one of the demos at the IBM Impact conference showed using this with an Arduino connected with an HC-06. The Ciseco SRF transceivers are easy to use and work with this too, we had a demo using one of those at the Devox conference last week, which you happen to be able to see in this photo &#8211; <a href="https://twitter.com/WASdevnet/status/477094169786449921">https://twitter.com/WASdevnet/status/477094169786449921</a> &#8211; its the thing with the green LED hanging over the hackathon sign. </p>
+<p>I&#8217;ve also been using nRF24L01s which are really cheap and flexible. The code for that hasn&#8217;t been included in this first release yet but i hope to get that out soon. And also support for Bluetooth LE with the Arduino feature providing central role support and so able to support all the API features when connecting to Bluetooth LE Arduino peripheral nodes.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Phil Hirsch</title>
+		<link>https://developer.ibm.com/wasdev/docs/getting-java-apps-talking-arduino/#comment-13408</link>
+		<dc:creator><![CDATA[Phil Hirsch]]></dc:creator>
+		<pubDate>Fri, 13 Jun 2014 17:55:10 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=9040#comment-13408</guid>
+		<description><![CDATA[Is it possible to make this work via WiFi (to an Arduino that has a WiFi shield and can communicate via TCP/IP by using that shield) rather than via a COM port? I&#039;m thinking that the more interesting applications probably require an untethered Arduino.]]></description>
+		<content:encoded><![CDATA[<p>Is it possible to make this work via WiFi (to an Arduino that has a WiFi shield and can communicate via TCP/IP by using that shield) rather than via a COM port? I&#8217;m thinking that the more interesting applications probably require an untethered Arduino.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

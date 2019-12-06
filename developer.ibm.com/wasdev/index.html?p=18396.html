@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2016-08-03",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Developing a Swagger-enabled REST API using WebSphere Developer Tools",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": "Coding, Java EE"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Developing a Swagger-enabled REST API using WebSphere Developer Tools"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Developing a Swagger-enabled REST API using WebSphere Developer Tools - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Swagger-based REST API definitions allow services to be easily understood by consumers. UseWDT to create, edit, deploy your REST API on the Liberty runtime."/>
+<link rel="canonical" href="index.html%3Fp=18396.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Developing a Swagger-enabled REST API using WebSphere Developer Tools Comments Feed" href="docs/developing-swagger-enabled-rest-api-using-websphere-developer-tools/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=18396.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-swagger-enabled-rest-api-using-websphere-developer-tools%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-swagger-enabled-rest-api-using-websphere-developer-tools%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-18396 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=18396.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a></span></div><h1 class="entry-title">Developing a Swagger-enabled REST API using WebSphere Developer Tools</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/ktsao/index.html">ktsao</a></span><br>Published on August 3, 2016<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=18396.html#comments" class="pn_comments_icon">3 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=18396.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">Swagger-based REST API definitions allow services to be easily understood by consumers in a language-neutral way. Use WebSphere Developer Tools to create, edit and deploy your REST API for discovery on the Liberty runtime.</p>
+<p>Writing up a Swagger REST API document can be an error-prone task.  Whether you&#8217;re building a file from the ground up or trying to edit a large document, there can be a lot of trial and error in the process just to ensure your syntax is valid and is aligned with the specification.  If your main objective is to build an application without having to deal with the small stuff, then the good news is, starting in WDT 8.5.5.9, there are tools to help you create, edit and validate your REST API docs.  You can also use these tools to build POJO or JAX-RS servlets to test out your REST API on Liberty.</p>
+<p>To highlight some of the tooling capabilities, we will go through the steps to build a simple, top-down, REST API application, an online bookstore.</p>
+<h2>Creating and editing a Swagger-based REST API document</h2>
+<p>Before we begin, ensure that Liberty 8.5.5.9 server is installed.</p>
+<p>First, we need to create a Web project to generate a new Swagger REST API doc:</p>
+<ol>
+<li>Create a new Web 3.1 project called <code>Bookstore</code> and target it to the Liberty runtime. </li>
+<li>To generate a <code>swagger.json</code> file, select the <strong>Bookstore</strong> project and right-click <strong>New > Swagger REST API Definition file</strong>.  In the dialog that opens, select the type of file that you want to generate.
+<p>For this application, we&#8217;ll opt for the defaults and generate a skeletal <code>swagger.json</code> file.</p>
+<img src="wp-content/uploads/sites/9/2016/06/genSwagger.png" alt="Alt" title="Swagger file generation dialog" />
+<p>This produces a well-formed document consisting of the required top-level fields, which you can use as a starting point for editing:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+    &quot;swagger&quot;: &quot;2.0&quot;,
+    &quot;info&quot;: {
+        &quot;title&quot;: &quot;&quot;,
+        &quot;description&quot;: &quot;GENERATED Swagger template&quot;,
+        &quot;termsOfService&quot;: &quot;&quot;,
+        &quot;contact&quot;:{
+           &quot;name&quot;: &quot;&quot;,
+           &quot;email&quot;: &quot;&quot;,
+           &quot;url&quot;: &quot;&quot;
+        },
+        &quot;license&quot;:{
+          &quot;name&quot;:&quot;&quot;,
+          &quot;url&quot;:&quot;&quot;
+        },
+        &quot;version&quot;: &quot;1.0.0&quot;        
+    },
+    &quot;paths&quot;:{
+    
+    }
+
+}
+</pre>
+</p>
+</li>
+<li>The file opens in the default JSON editor.  We&#8217;ll provide a common title and description, called <code>Bookstore API</code>:
+<pre class="brush: plain; highlight: [3,4]; title: ; notranslate" title="">
+&quot;swagger&quot;: &quot;2.0&quot;,
+&quot;info&quot;: {
+   &quot;title&quot;: &quot;Bookstore API&quot;,
+   &quot;description&quot;: &quot;Bookstore API&quot;,
+  </pre>
+</p>
+</li>
+<li>Next, we&#8217;ll define a path object <code>/books/{isbn}</code> and POST operation for the Book API.  If the file is saved at this point, you&#8217;ll see an error marker indicating that a response object is missing. This is something that is required by the spec and is typically a valid HTTP response code:
+<pre class="brush: plain; highlight: [2,3,4,5]; title: ; notranslate" title="">
+    &quot;paths&quot;:{
+        &quot;/books/{isbn}&quot;:{
+            &quot;post&quot;:{
+            }
+        }
+    }
+  </pre>
+<img src="wp-content/uploads/sites/9/2016/06/postError.png" alt="Alt" title="Validation error for post operation" />
+</li>
+<li>To correct this problem, add the HTTP 200 response code and save the file:
+<pre class="brush: plain; highlight: [4,5,6]; title: ; notranslate" title="">
+    &quot;paths&quot;:{
+        &quot;/books/{isbn}&quot;:{
+            &quot;post&quot;:{
+                &quot;200&quot;:{
+                    &quot;description&quot;: &quot;Book is successfully added&quot;
+                }
+            }
+        }
+    }
+  </pre>
+</p>
+</li>
+<li>Next, you&#8217;ll notice the path URI contains a variable <code>{isbn}</code>.  According to the Swagger spec, we should define a corresponding path parameter with that name, but let&#8217;s say you add just an empty parameter structure before completing the definition.  This will result in two errors in your file:
+<pre class="brush: plain; highlight: [7,8,9]; title: ; notranslate" title="">
+    &quot;paths&quot;:{
+        &quot;/books/{isbn}&quot;:{
+            &quot;post&quot;:{
+                &quot;200&quot;:{
+                    &quot;description&quot;: &quot;Book is successfully added&quot;
+                }
+            },
+            &quot;parameters&quot;:[{
+            }]
+        }
+    }
+  </pre>
+<img src="wp-content/uploads/sites/9/2016/06/paramObjValidation.png" alt="Alt" title="Validation errors" />
+<p>The first error marker indicates that the <code>{isbn}</code> variable does not have a corresponding path parameter definition. The second error marker indicates that the required <code>name</code> field is missing.  By filling out all the required fields, we now have a well-formed path parameter:</p>
+<pre class="brush: plain; highlight: [2,3,4,5,6]; title: ; notranslate" title="">
+&quot;parameters&quot;:[{
+   &quot;name&quot;:&quot;isbn&quot;,
+   &quot;in&quot;: &quot;path&quot;,
+   &quot;type&quot;: &quot;string&quot;,
+   &quot;required&quot;: true
+}
+  </pre>
+</p>
+</li>
+<li>
+<p>To round out the rest of the parameter definitions, we&#8217;ll add a body parameter detailing what the properties of the book should be.  Within this definition, we have a reference to the <code>bookBody</code> schema:</p>
+<pre class="brush: plain; highlight: [7,8,9,10,11,12]; title: ; notranslate" title="">
+&quot;parameters&quot;:[{
+   &quot;name&quot;:&quot;isbn&quot;,
+   &quot;in&quot;: &quot;path&quot;,
+   &quot;type&quot;: &quot;string&quot;,
+   &quot;required&quot;: true
+},
+{
+   &quot;name&quot;:&quot;bookBody&quot;,
+   &quot;in&quot;:&quot;body&quot;,
+   &quot;schema&quot;: {
+      &quot;$ref&quot;: &quot;#/definitions/bookBody&quot;
+   }
+}]
+  </pre>
+</p>
+</li>
+<li>
+<p>The <code>bookBody</code> schema would then be defined under the <code>definitions</code> object (see the final document below for the exact location in the document):</p>
+<pre class="brush: plain; highlight: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]; title: ; notranslate" title="">
+&quot;definitions&quot;:{
+	&quot;bookBody&quot;:{
+		&quot;type&quot;:&quot;object&quot;,
+		&quot;description&quot;: &quot;The properties of a book&quot;,
+		&quot;properties&quot;:{
+			&quot;isbn&quot;:&quot;string&quot;,
+			&quot;title&quot;:{
+				&quot;type&quot;:&quot;string&quot;,
+				&quot;example&quot;:&quot;To Kill a Mockingbird&quot;
+			},
+			&quot;author&quot;:{
+				&quot;type&quot;:&quot;string&quot;,
+				&quot;example&quot;:&quot;Harper Lee&quot;
+			
+			}
+		}
+	}
+}
+</pre>
+</p>
+</li>
+</ol>
+<p>The final document should look like this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+	&quot;swagger&quot;: &quot;2.0&quot;,
+	&quot;info&quot;: {
+		&quot;title&quot;: &quot;Bookstore API&quot;,
+		&quot;description&quot;: &quot;Bookstore API&quot;,
+		&quot;termsOfService&quot;: &quot;&quot;,
+		&quot;contact&quot;:{
+		   &quot;name&quot;: &quot;&quot;,
+		   &quot;email&quot;: &quot;&quot;,
+		   &quot;url&quot;: &quot;&quot;
+		},
+		&quot;license&quot;:{
+		  &quot;name&quot;:&quot;&quot;,
+		  &quot;url&quot;:&quot;&quot;
+		},
+		&quot;version&quot;: &quot;1.0.0&quot;		
+	},
+	&quot;paths&quot;:{
+		&quot;/books/{isbn}&quot;:{
+			&quot;post&quot;:{
+				&quot;responses&quot;:{
+					&quot;200&quot;:{
+						&quot;description&quot;: &quot;Book is successfully added&quot;
+					}
+				},
+				&quot;parameters&quot;:[{
+					&quot;name&quot;:&quot;isbn&quot;,
+					&quot;in&quot;: &quot;path&quot;,
+					&quot;type&quot;: &quot;string&quot;,
+					&quot;required&quot;: true
+				},
+				{
+					&quot;name&quot;:&quot;bookBody&quot;,
+					&quot;in&quot;:&quot;body&quot;,
+			        &quot;schema&quot;: {
+	        	      &quot;$ref&quot;: &quot;#/definitions/bookBody&quot;
+	        	     }
+					
+				}]
+			}
+		}
+	},
+	&quot;definitions&quot;:{
+		&quot;bookBody&quot;:{
+			&quot;type&quot;:&quot;object&quot;,
+			&quot;description&quot;: &quot;The properties of a book&quot;,
+			&quot;properties&quot;:{
+				&quot;isbn&quot;:&quot;string&quot;,
+				&quot;title&quot;:{
+					&quot;type&quot;:&quot;string&quot;,
+					&quot;example&quot;:&quot;To Kill a Mockingbird&quot;
+				},
+				&quot;author&quot;:{
+					&quot;type&quot;:&quot;string&quot;,
+					&quot;example&quot;:&quot;Harper Lee&quot;
+				
+				}
+			}
+		}
+	}
+
+}
+  </pre>
+<p>So far, we have created a basic REST API definition that details what the contents of the Book API would look like.  While editing the API in the JSON editor, you can expect your file to be validated, which will help you create well-formed Swagger docs for clean deployment to the server.</p>
+<p>Next, we&#8217;ll create a simple POJO servlet to test this API.</p>
+<h2>Creating a POJO servlet</h2>
+<p>In the Bookstore project, we will create a new HTTP servlet called <code>BookServlet</code>:</p>
+<ol>
+<li>Select the <strong>Bookstore</strong> project, right-click <strong>New > Servlet</strong>.  Fill out the <strong>Java package</strong> (<code>bookstore.servlet</code>) and <strong>Class Name</strong> (<code>BookServlet</code>) fields and click <strong>Next</strong>:<br />
+<img src="wp-content/uploads/sites/9/2016/06/servletCreation.png" alt="Alt" title="Create a new Servlet" />
+</li>
+<li>
+<p>Edit the <strong>URL mappings</strong> field to contain the pattern <code>/books/*</code>, then click <strong>Finish</strong></p>
+<img src="wp-content/uploads/sites/9/2016/06/URLMapping.png" alt="Alt" title="URL mapping" />
+</li>
+<li>Click <strong>Finish</strong>. Your generated servlet should have the annotation <code>@WebServlet("/books/*")</code>.</li>
+<li>
+<p>Add an implementation for the <code>doPost</code> method.  The implementation will extract the <code>isbn</code> value from the request URI and construct a response body with it:</p>
+<pre class="brush: java; title: ; notranslate" title=""> 
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String booksURL = &quot;/books&quot;;
+		String uri = request.getRequestURI();
+		uri = uri.substring(request.getContextPath().length());
+		if(uri.startsWith(booksURL)){
+			//extract the isbn
+			String isbn = uri.substring(booksURL.length()+1);
+			createResponse(request, response, isbn);
+			return;
+		}
+		super.doPost(request, response);
+	}
+</pre>
+</li>
+<li>
+<p>Create another method called <code>createResponse</code> to parse the JSON and add the <code>isbn</code> to the object:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+private void createResponse(HttpServletRequest req, HttpServletResponse resp, String isbn){
+		try {
+			JSONObject jbook = JSONObject.parse(req.getReader());
+			jbook.put(&quot;isbn&quot;, isbn);
+			resp.setContentType(&quot;application/json&quot;);
+			resp.setStatus(200);
+			if(jbook!=null)
+			{
+				try {
+					String json = jbook.serialize();
+					resp.setContentLength(json.length());
+					resp.getWriter().write(json);
+				} catch (IOException e) {
+				}
+			}			
+	
+		} catch (IOException e) {
+		}
+		finally {
+
+		}
+	}
+</pre>
+</li>
+<li>Press Ctrl + Shift + O to import packages that are missing.</li>
+</ol>
+<p>You are now ready to deploy and test your REST API application.</p>
+<h2>Deploy and test</h2>
+<ol>
+<li>Right-click your Liberty server and click <strong>Add and Remove</strong>.</li>
+<li>Select the <strong>Bookstore</strong> web module.</li>
+<li>The presence of the <code>swagger.json</code> file in your application automatically adds the <code>apiDiscovery-1.0</code> feature to your <code>server.xml</code>.      </li>
+<li>Configure a user name and password and a keystore to access the API doc:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;keyStore id=&quot;defaultKeyStore&quot; password=&quot;Liberty&quot;/&gt;
+    &lt;basicRegistry&gt;
+      &lt;user id=&quot;user&quot; name=&quot;user&quot; password=&quot;pwd&quot;/&gt;
+    &lt;/basicRegistry&gt;
+</pre>
+</li>
+<li>Once that&#8217;s in place, open up a web browser and type in this URL: <code>https://localhost:9443/ibm/api/explorer/</code> (change the HTTPS port to match what you have in your <code>server.xml</code>).</li>
+<li>
+<p>Type in your user name and password to access the site and you should see a rendering of your API:</p>
+<img src="wp-content/uploads/sites/9/2016/06/renderedAPI.png" alt="Alt" title="API discovery page" />
+</li>
+<li>
+<p>To test out the POST operation, expand the section and fill in the form:</p>
+<ol>
+<li>Enter <code>111-111</code> in the <strong>isbn</strong> field.</li>
+<li>Click the example schema to copy over the <code>bookBody</code> content:<br />
+<img src="wp-content/uploads/sites/9/2016/06/sample.png" alt="Alt" title="Sample data" />
+</li>
+<li>
+<p>Click the <strong>Try it out!</strong> button:</p>
+<img src="wp-content/uploads/sites/9/2016/06/postOperationAction.png" alt="Alt" title="Try it out!" />
+</li>
+</ol>
+</li>
+<li>
+<p>When the operation is successful, you can expect to see the HTTP 200 response code, as well as the response body which contains the <code>isbn</code> you provided as input:</p>
+<img src="wp-content/uploads/sites/9/2016/06/postOpResponse.png" alt="Alt" title="Results" />
+</li>
+</ol>
+<p>And there you have a simple REST API application with Swagger REST API documentation.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/ktsao/index.html">ktsao</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			3 comments on"Developing a Swagger-enabled REST API using WebSphere Developer Tools"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment byuser comment-author-arthurdm even thread-even depth-1 pn-comment" id="comment-148577">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Arthur De Magalhaes</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=18396.html#comment-148577">
+					March 01, 2017	         	</a>
+			</div>
+			      		<p>Hi Gaurav,</p>
+<p>Where have you located your swagger.json file?   It needs to be in the folder META-INF of your web app.   And are you requesting JSON or YAML from /ibm/api/docs?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=18396.html#comment-148577' onclick='return addComment.moveForm( "comment-148577", "148577", "respond", "18396" )' aria-label='Reply to Arthur De Magalhaes'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-148480">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Gaurav</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=18396.html#comment-148480">
+					February 12, 2017	         	</a>
+			</div>
+			      		<p>can someone share web.xml for this web module?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=18396.html#comment-148480' onclick='return addComment.moveForm( "comment-148480", "148480", "respond", "18396" )' aria-label='Reply to Gaurav'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-148479">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Gaurav</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=18396.html#comment-148479">
+					February 12, 2017	         	</a>
+			</div>
+			      		<p>my local liberty server can&#8217;t locate swagger.json file from my web app. I can see following message in the console:<br />
+[WARNING ] CWWKO1101W: A document of type Swagger_20_YAML was not returned by the APIProvider SwaggerWebProvider={contextRoot=/Bookstore}.<br />
+What can be the reason and workaround for this situation?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=18396.html#comment-148479' onclick='return addComment.moveForm( "comment-148479", "148479", "respond", "18396" )' aria-label='Reply to Gaurav'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=18396.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='18396' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fe1f8ff949" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="73"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=18396.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=18396.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=18396.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-swagger-enabled-rest-api-using-websphere-developer-tools&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-swagger-enabled-rest-api-using-websphere-developer-tools"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-11-12",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Using access tokens to secure microservices",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": "Java EE, Security"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Using access tokens to secure microservices"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Using access tokens to secure microservices - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="This sample application demonstrates how to use OpenID Connect and access tokens to secure an application that makes calls to other applications on behalf of the user."/>
+<link rel="canonical" href="../../index.html%3Fp=15420.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Using access tokens to secure microservices Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=15420.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-access-tokens-secure-microservices%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-access-tokens-secure-microservices%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-15420 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../index.html%3Fp=15420.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="../category/java-ee/index.html" rel="tag">Java EE</a><i>, </i><a href="../category/security/index.html" rel="tag">Security</a></span></div><h1 class="entry-title">Using access tokens to secure microservices</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../blog/author/ozzy/index.html">Ozzy Osborne</a></span><br>Published on November 12, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="../../index.html%3Fp=15420.html#comments" class="pn_comments_icon">5 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../../docs.html">All Documentation</a><a href="../../index.html%3Fp=15420.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="../category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="../category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="../category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="../category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="../category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="../category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="../category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="../category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="../category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="../category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="../category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="../category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="../category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="../category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="../category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="../category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="../category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="../category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="../category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">This sample application demonstrates how to use OpenID Connect and access tokens to secure an application that makes calls to other applications on behalf of the user.</p>
+<p>Microservice-based architecture, described as <a href="http://martinfowler.com/articles/microservices.html">&#8220;a particular way of designing software applications as suites of independently deployable services&#8221;</a>, is becoming more common. The result of the transition to this kind of application composition is a lot of network traffic.</p>
+<p>A single request from the user can lead to many subsequent requests being made across the collection of services that together implement the app. Each of these subsequent requests should ideally be made in a secure way: you want to know that any given request being handled by any given service originated from a known user. In other words, any given request should be part of the normal expected flow within the application, and not an abuse of your app architecture by someone who noticed that your backend services just happened to also be reachable from wherever they were.</p>
+<h2>An Overview of OpenID Connect</h2>
+<p><em>&#8220;The RP has the user talk to the OP which then talks back to the RP which then talks back to the OP before talking to the RS that replies to the RP that then replies to the user.&#8221;</em></p>
+<p>Clear? Excellent!</p>
+<p>If not, then don&#8217;t worry: the only thing really clear is that OpenID Connect seems to love using lots of acronyms (it even abbreviates its own name as <em>OIDC</em>). Let&#8217;s start by translating that overview from OpenID-security-speak into something a little more consumable by a human (the definitive source for all this info is really in the OpenID Connect specs, but they can be hard going if you are coming at them cold).</p>
+<p>From the user experience point of view, you have the ugly-but-functional browser-provided form used for <em>Basic Auth</em>, and the much better experience of customized login forms with <em>I forgot my password</em> buttons. From the server side, both of these approaches involve validating the the user credentials against some configured data store (database, LDAP, &#8230; ). If that data store hasn&#8217;t been set up by folks who know what they&#8217;re doing, you have a repository full of user credentials that look like a frosted cupcake to a hungry hacker.</p>
+<hr />
+<h4><em>&#8220;..you have a repository full of user credentials that look like a frosted cupcake to a hungry hacker.&#8221;</em></h4>
+<hr />
+<p>There has been a realization that you (mostly) don&#8217;t (actually) want to look after that data yourself. All you really want to know is: &#8220;Who is the user?&#8221;. As many of those users already have email accounts or social media accounts that they authorize themselves with regularly, it would be fantastic (for all concerned) to allow the user to use those credentials to log into your web app, instead of them (and you) creating yet another user ID and password to look after.</p>
+<p>And that&#8217;s where OpenID Connect steps in. It provides a way for applications to verify the identity of their users without being responsible for managing the authentication or authorization of those users.</p>
+<p>OpenID Connect requires at least two services: one that acts as the authenticator, and one that relies upon the authenticator. The first is known as the <em>OpenID Provider</em> (OP) and the second is known as the <em>Relying Party</em> (RP). In our scenario, we also have a third service in the mix: the app the user talks to is the RP, but it talks to another service, which we&#8217;ll call the <em>Relying Service</em> (RS).</p>
+<p>Liberty can be configured to act as an OpenID Provider (that&#8217;s the OP), or it can be configured to protect applications as Relying Parties (RPs). Out of the box however, it does not currently offer a built-in way to protect the onward invocation of other services or apps (RS) by the Relying Party application.</p>
+<h2>Access Token Propagation</h2>
+<p>OpenID Connect has the concept of an access token that can be queried via the OpenID Provider to retrieve the info about the user who authenticated. This token is one of the artifacts that you end up with after performing an OpenID Connect authentication.</p>
+<p>The general sequence of events during the authentication is:</p>
+<ol>
+<li>The user accesses the application (RP)</li>
+<li>The RP redirects the user to the OpenID Provider (OP) to authenticate</li>
+<li>The OP authenticates the user.</li>
+<li>The OP redirects the user back to the RP with an auth_token</li>
+<li>The RP then exchanges that auth_token with the OP for an access_token and an id_token</li>
+<li>Profit!</li>
+</ol>
+<img src="../../wp-content/uploads/sites/9/2015/11/Basic_Client_Profile_graphic.gif" alt="OP/RP overview image." />
+<p>(For more information on this flow, see <a href="https://www.ibm.com/support/knowledgecenter/SSD28V_8.5.5/com.ibm.websphere.wlp.core.doc/ae/cwlp_openid_connect.html">the Knowledge Center</a>)</p>
+<p>This sequence may seem complex but odds are you&#8217;ve already been through it if you have ever signed into a site using your Facebook, Google, or Twitter credentials:</p>
+<ul>
+<li>First you went to the app (the RP) (let&#8217;s imagine it&#8217;s a discussion forum) and clicked the <strong>Sign in with Facebook</strong> button.</li>
+<li>That sent you to a Facebook page (the OP).</li>
+<li>There, you authenticated and possibly agreed to which types of access you wished the app to have to your Facebook profile.</li>
+<li>And you were then returned to the discussion forum, signed in with your Facebook ID. The last part of the flow, which is the forum exchanging the <code>auth_token</code> for the <code>access_token</code> and <code>id_token</code>, is not visible to you.</li>
+</ul>
+<p>While the authentication/authorization has been delegated to a third party, the application still has a notion of who <em>you</em> are, a user ID, username, handle.. you know the drill.</p>
+<hr />
+<h4><em>&#8220;.. the authentication/authorization has been delegated to a third party, the application still has a notion of who &#8220;you&#8221; are.&#8221;</em></h4>
+<hr />
+<p>Our hypothetical forum application needs to invoke other microservices on behalf of the user to obtain private messages for the user or to build the list of unread posts. In each case, the other service needs to know the identity of the user and possibly which types of information (aka <em>scopes</em>) the user agreed to share when they authenticated.</p>
+<p>While the forum application (RP) could just pass the user ID along to each of the other microservices, this would be very insecure. There would be no way for the target microservices to check if the user ID they received matched the user that made the initial request, or to know if that user was even still logged in.</p>
+<p>Instead of passing the user ID, the RP could forward the <code>access_token</code> obtained during the initial interaction with the OP when it invokes other services. Each service instance (RS) could then contact the OP with the <code>access_token</code> to obtain their own version of the <code>id_token</code>, which will relay to them the user&#8217;s identity and scopes. With this, the service can then tailor the response for that user without ever having to authenticate the user themselves.</p>
+<p>Note the general flow: each service receives the <code>access_token</code> (this could be the RP, or a subsequent service in the invocation chain), and contacts the OP to exchange that for an <code>id_token</code>. This approach has a benefit, in that each service has an opportunity to notice that the <code>access_token</code> has expired and react appropriately. It also has a flaw, in that communication with the OP can become a bottleneck.</p>
+<p>Consideration must be made as to how the application (overall) will handle the impact of a token expiring or being revoked in the &#8216;middle&#8217; of a request. Handling conditions like this gracefully can have a significant impact on application complexity.</p>
+<h2>About the sample</h2>
+<p>We&#8217;ve devised a sample application (available on <a href="https://github.com/WASdev/sample.microservices.security">Github</a>) to demonstrate how you can propagate access tokens. It has three Liberty servers configured, each performing one of the three roles of <em>OpenID Provider</em> (OP), <em>Relying Party</em> (RP), and <em>Relying Service</em> (RS). It is possible to have these roles combined in a single server but we&#8217;ve separated them out to avoid role confusion.</p>
+<h2>OpenID Provider (OP)</h2>
+<p>We&#8217;ve created a sample OpenID Provider (OP) to demonstrate what that actor does without relying on watching network traffic going to the usual suspects (Facebook, Google, Twitter, &#8230; ).</p>
+<h3>User registry</h3>
+<p>The OP has the job of authenticating the users, and Liberty provides a simple way to define a basic user registry right within the <code>server.xml</code>, which is good enough for our purposes.</p>
+<p>The server configuration we need for this sample is in the &#8216;access-token-op-wlpcfg&#8217; project:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!-- This is our example user registry.. it has just the one user --&gt; 
+    &lt;basicRegistry id=&quot;basic&quot; realm=&quot;BasicRealm&quot;&gt; 
+        &lt;user name=&quot;user&quot; password=&quot;password&quot; /&gt; 
+    &lt;/basicRegistry&gt;
+  </pre>
+<p>This snippet defines a user registry with just one user called <em>user</em> with a password of <em>password</em>. Clearly this isn&#8217;t intended for production! Liberty can be configured to other methods for authenticating (like LDAP, for example), but we&#8217;re trying to focus on access token propagation here, so we&#8217;ll stick with the simple way to keep things simple.</p>
+<p>The <code>basicRegistry</code> config element requires the <code>appSecurity</code> feature to be present, so we add this to our <code>featureManager</code> block in the config:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+  </pre>
+<h3>OAuth provider</h3>
+<p>We need to configure the server as an OAuth provider, configuring which clients are allowed to connect to the OP for authentication. In this example we have only two direct clients of the OP: the RP (our web app) and the RS (the service the app will talk to):</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!-- For simplicity, we're using a client db defined here in the 
+          server.xml. Here we register the clients that will access the 
+          provider. For this example, that's the RP, and the RS. 
+      --&gt; 
+    &lt;oauthProvider id=&quot;Oauth&quot;&gt; 
+        &lt;localStore&gt; 
+            &lt;client name=&quot;rp&quot; 
+                secret=&quot;fish&quot; 
+                displayname=&quot;The user facing webapp&quot; 
+                redirect=&quot;https://127.0.0.1:9401/oidcclient/redirect/RP&quot;
+                scope=&quot;openid stock account&quot; 
+                preAuthorizedScope=&quot;openid&quot; 
+                enabled=&quot;true&quot;/&gt; 
+            &lt;client name=&quot;rs&quot; 
+                secret=&quot;pies&quot; 
+                displayname=&quot;The microservice&quot; 
+                introspectTokens=&quot;true&quot; 
+                scope=&quot;openid&quot; 
+                preAuthorizedScope=&quot;openid&quot; 
+                enabled=&quot;true&quot;/&gt; 
+        &lt;/localStore&gt; 
+    &lt;/oauthProvider&gt; 
+
+    &lt;oauth-roles&gt; 
+        &lt;authenticated&gt; 
+            &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt; 
+        &lt;/authenticated&gt; 
+    &lt;/oauth-roles&gt; 
+  </pre>
+<p>For each client (the RP and the RS), the <code>name</code> and <code>secret</code> are used to authenticate the client connecting to the OP. We&#8217;ll see those again in their respective server configs. Here we&#8217;ve left the secrets as plain text but, if you chose to, you could encode them using the <code>securityUtility</code> (see <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/cwlp_pwd_encrypt.html?cp=SSEQTP_8.5.5">the Knowledge Center here</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/rwlp_command_securityutil.html">the Knowledge Center here</a> The <code>redirect</code> URL is the post-authentication redirect target: the OP will redirect the client (usually a browser) there after the user has authenticated. The RS doesn&#8217;t need a redirect URL because it&#8217;s not being protected by OpenID Connect.</p>
+<p>When handling OAuth requests, Liberty will do the work of converting the <code>access_token</code> into an <code>id_token</code>. For RPs, this is nice and convenient but it doesn&#8217;t help the RS much. The <code>introspectTokens=true</code> attribute grants the RS the special permission required to use introspection to swap an <code>access_token</code> for an <code>id_token</code>.</p>
+<p>We don&#8217;t need to explicitly add any features to the <code>server.xml</code> for our OAuth configuration because we&#8217;ll be using OpenID Connect, which will automatically bring in the required OAuth functionality for us.</p>
+<h3>OpenID Connect Provider</h3>
+<p>Now that we have a user registry and an OAuth provider defined, we need to put the OpenID Connect ribbon on, and configure the server as an OpenID provider.</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;keyStore id=&quot;oidckeystore&quot; .... /&gt;
+
+    &lt;!-- This is the OpenID Provider configuration. 
+           We're using Asymmetric RS256 signing, so we must supply a 
+           keystore and identify which key we should sign with. 
+    --&gt; 
+    &lt;openidConnectProvider id=&quot;OP&quot; 
+           oauthProviderRef=&quot;Oauth&quot; 
+           signatureAlgorithm=&quot;RS256&quot; 
+           keyStoreRef=&quot;oidckeystore&quot; 
+           keyAliasName=&quot;oidckey&quot;&gt; 
+    &lt;/openidConnectProvider&gt; 
+  </pre>
+<p>There are a few things to explain here:</p>
+<ul>
+<li>The <code>id</code> attribute will be used as part of the URL for the OpenID Provider. We&#8217;ve used <em>OP</em> for obviousness, you&#8217;ll see where it ends up in the URLs. </li>
+<li>The <code>keystoreRef</code> is required because we&#8217;ve opted to use asymmetrically signed <code>id_tokens</code>. We also have to declare which <code>keyAliasName</code> from the referenced keystore we&#8217;d like to use to sign the tokens. </li>
+<li>The <code>oauthProviderRef</code> is the reference to the OAuth element we defined above.</li>
+</ul>
+<p>In a production configuration, it&#8217;s unlikely the clients would be declared like this within the <code>server.xml</code> and, more likely, they will be managed in a database. See <a href="http://www-01.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_client_registration.html">the Knowledge Center</a> for more info.</p>
+<p>There is no application declared for the OP server. The functionality to act as the OP comes purely from features provided by Liberty itself, as part of the <code>openidConnectServer</code> feature. We also need the <code>appSecurity-2.0</code> feature to support our basic registry, which brings our total combined <code>featureManager</code> block for the OP to look like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;openidConnectServer-1.0&lt;/feature&gt;
+        &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+  </pre>
+<h2>Relying Party (RP)</h2>
+<p>The Relying Party (RP) is the first point of contact with a user. The app itself is simple and intends to show the chained invocation of a RS with the propagated access token.</p>
+<p>The &#8216;access-token-rp-wlpcfg&#8217; project contains the configuration for the RP, which is simpler than that for the OP:</p>
+<pre class="brush: xml; title: ; notranslate" title=""> 
+    &lt;!--oidc client config.. 
+         We must have a secret to obtain a token, and 
+         we need a trust store to verify the signing key of the token from the OP. 
+         The EndpointUrls must point back to the OP. 
+    --&gt; 
+    &lt;openidConnectClient id=&quot;RP&quot; 
+        clientId=&quot;rp&quot; 
+        clientSecret=&quot;fish&quot; 
+        signatureAlgorithm=&quot;RS256&quot; 
+        trustAliasName=&quot;oidckey&quot; 
+        trustStoreRef=&quot;oidctruststore&quot; 
+        scope=&quot;openid stock account&quot; 
+        authorizationEndpointUrl=&quot;https://127.0.0.1:9400/oidc/endpoint/OP/authorize&quot;
+        tokenEndpointUrl=&quot;https://127.0.0.1:9400/oidc/endpoint/OP/token&quot;&gt;
+    &lt;/openidConnectClient&gt; 
+  </pre>
+<p>More notes:</p>
+<ul>
+<li>The <code>id</code> is important, it is part of the URL that we register in the OP for the redirect. We&#8217;ve chosen the id &#8220;RP&#8221;, and if you glance back at the oauthProvider config, you&#8217;ll see there: <code>https://127.0.0.1:9401/oidcclient/redirect/RP</code>.</li>
+<li>The <code>clientId</code> and <code>clientSecret</code> are required, and must match the RP&#8217;s client definition in the OP. </li>
+<li>We tell the client to expect asymmetrically signed tokens, and tell it which keystore and key to use to verify that signature by specifying the <code>trustStoreRef</code> and <code>trustAliasName</code>. </li>
+<li>And, lastly, we configure the authorization and token endpoint URLs for the OP. Note that <code>OP</code> is in the URL (just as we told you it would be). If you aren&#8217;t creating your own OpenID Provider, the values here will be obtained via cut and paste.</li>
+</ul>
+<p>As with the server, we enable support for <code>openidConnectClient</code> by adding the feature to our <code>featureManager</code> block in the <code>server.xml</code>. We&#8217;re also using <code>appSecurity</code> (which brings in SSL) and servlet to host the application:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;servlet-3.1&lt;/feature&gt;
+        &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+        &lt;feature&gt;openidConnectClient-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+  </pre>
+<p>That just leaves the definition for the app itself:</p>
+<pre class="brush: xml; title: ; notranslate" title=""> 
+    &lt;!-- Declare the application and the security roles enabled for the app. --&gt; 
+    &lt;application type=&quot;war&quot; id=&quot;access-token-rp-application&quot; name=&quot;access-token-rp-application&quot; 
+         location=&quot;${server.config.dir}/apps/access-token-rp-application.war&quot;&gt; 
+        &lt;application-bnd&gt; 
+            &lt;security-role name=&quot;All Role&quot;&gt; 
+                &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt; 
+            &lt;/security-role&gt; 
+        &lt;/application-bnd&gt; 
+    &lt;/application&gt; 
+  </pre>
+<p>You&#8217;ll note there&#8217;s no explicit binding saying <em>protect this app with openID Connect</em>. When you declare an <code>openidConnectClient</code> within your Liberty server configuration, it applies to all apps. You can configure a server to have multiple <code>openidConnectClients</code> that use <code>authFilterRefs</code> to decide which apps are protected by which client definition, see <a href="http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_config_oidc_rp.html">the Knowledge Center</a> for more.</p>
+<h3>The RP application implementation</h3>
+<p>The <code>openIdConnectClient</code> configured above handles a lot for the application. By the time the request reaches the application code, the user has already been redirected to the OP, authenticated, and Liberty has performed the token exchange to obtain the <code>id_token</code> and <code>access_token</code> from the OP. This is good stuff! But the service we&#8217;ve written needs to call another service. This means we need to do a bit of digging to get back the original token used to authenticate the invocation of the RP.</p>
+<p>Thankfully that&#8217;s not too tricky. It&#8217;s available via the <code>com.ibm.websphere.security.auth.WSSubject</code> interface, as in the following snippet:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+        //we were authenticated using OIDC, and we want to obtain the access_token that's part of this session. 
+        Subject s; 
+        try{ 
+             s = WSSubject.getRunAsSubject(); 
+        }catch( WSSecurityException e){ 
+             throw new IOException(e); 
+        } 
+          
+        Set&lt;Hashtable&gt; privateHashtableCreds = s.getPrivateCredentials(Hashtable.class); 
+ 
+        //there could be many.. we'll just take the one with access_token. 
+        Hashtable theChosenOne = null; 
+        for(Hashtable test : privateHashtableCreds){ 
+         if(test.containsKey(&quot;access_token&quot;)){ 
+           theChosenOne = test; 
+         } 
+        } 
+ 
+        //now we have found the credentials holding the current access_token 
+        //we will cache it locally so we can invoke the RS with it. 
+        String access_token = theChosenOne.get(&quot;access_token&quot;).toString(); 
+  </pre>
+<p>With the token as a string, we can now invoke the RS, which we could do via JAX-RS or any other route, as long as we pass that access token as one of the parameters.  There is no standard way to do this, though stuffing it into an HTTP request header is common. Whatever mechanism you decide on should be hardened as part of the RS service API.</p>
+<p>The following snippet invokes the request using HttpURLConnection, and adds the <code>access_token</code> as a GET parameter:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+        //invoke the RS app, passing the access token as a get parameter 
+        String line,buffer=&quot;&quot;; 
+        URL rsurl = new URL(&quot;https://127.0.0.1:9402/access-token-rs-application/Test?token=&quot;+access_token);
+        HttpURLConnection conn = (HttpURLConnection)rsurl.openConnection(); 
+        conn.setRequestMethod(&quot;GET&quot;); 
+ 
+        //read back the response from the RS app. 
+        int responseCode = conn.getResponseCode(); 
+        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream())); 
+        
+        while((line=br.readLine())!=null){ 
+         buffer+=line; 
+        } 
+        br.close(); 
+  </pre>
+<p>In a real application, there would likely be subsequent processing of a real result, including handling error conditions or token revocation/expiry. The response could be anything from JSON to binary data. In our our example, it&#8217;s just a string that details the processing the RS carried out as a result of the request.</p>
+<h2>Relying Service (RS)</h2>
+<p>So that leaves the Relying Service (RS) which, compared to its sibling servers, looks remarkably spartan. It has the usual SSL keystore elements and then just the app declaration (and in this case, even that is optional; you could chuck this one in <code>dropins</code>).</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;application type=&quot;war&quot; id=&quot;access-token-rs-application&quot; name=&quot;access-token-rs-application&quot; 
+         location=&quot;${server.config.dir}/apps/access-token-rs-application.war&quot;&gt; 
+    &lt;/application&gt; 
+  </pre>
+<p>To keep our app configuration in the <code>server.xml</code> and out of the code, we also define our client ID, secret, and the introspection URL to be part of our server configuration. We&#8217;ll look these up in the app later:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!-- oidc client info for the app --&gt;
+    &lt;jndiEntry jndiName=&quot;oidcClientId&quot; value=&quot;rs&quot;/&gt;
+    &lt;jndiEntry jndiName=&quot;oidcClientPw&quot; value=&quot;pies&quot;/&gt;
+    &lt;jndiEntry jndiName=&quot;introspectUrl&quot; value=&quot;https://127.0.0.1:9400/oidc/endpoint/OP/introspect&quot;/&gt;
+  </pre>
+<p>We&#8217;re using the SSL and servlet features to host the RS application. To save ourselves a little work, we&#8217;re also using the Liberty JSONP feature for JSON parsing. All that adds up to a <code>featureManager</code> block that looks like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;ssl-1.0&lt;/feature&gt;
+        &lt;feature&gt;jsonp-1.0&lt;/feature&gt;
+        &lt;feature&gt;servlet-3.1&lt;/feature&gt;
+    &lt;/featureManager&gt;
+  </pre>
+<p>The RS has no server configuration for OpenID Connect because the authentication is all handled in the application code itself.</p>
+<h3>The RS application implementation</h3>
+<p>The application has to take the provided <code>access_token</code>, and check it with the OP. To begin, we get the <code>access_token</code> as supplied by the requester (in our example, it&#8217;s just a request parameter):</p>
+<pre class="brush: java; title: ; notranslate" title="">
+        //obtain the access_token from the request. 
+        //in this case, we're passing it as a request parameter. 
+        String access_token = request.getParameter(&quot;token&quot;); 
+  </pre>
+<p>Then we need to use the introspect URL on the OP to retrieve the <code>id_token</code>. This snippet uses <code>HttpURLConnection</code> to make a POST request to the OP with the <code>access_token</code> as a parameter. The RS authenticates to the OP using its own client ID and secret, which we declared back in the OP&#8217;s <code>server xml</code>. For more information on the introspection endpoint, read <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_oidc_introspection_endpoint.html">the Knowledge Center</a>. For an overview of all supported Liberty endpoint URLs when using OpenID Connect, see <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/rwlp_oidc_endpoint_urls.html">the Knowledge Center</a>:</p>
+<p>We&#8217;re using JDNI here to pull the introspection URL, client ID, and secret from the <code>server.xml</code> where we stored them earlier. The values in the <code>server.xml</code> could even have been set as environment variables, enabling the RS to be pushed out to cloud style deployments without altering the <code>server.xml</code>:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+                //get our client info from the server.xml
+                String clientid = null;
+                String clientsecret = null;
+                String introspectUrl = null;
+                try{
+                        clientid = new InitialContext().lookup(&quot;oidcClientId&quot;).toString();
+                        clientsecret = new InitialContext().lookup(&quot;oidcClientPw&quot;).toString();
+                        introspectUrl = new InitialContext().lookup(&quot;introspectUrl&quot;).toString();
+                }catch(NamingException e){
+                        throw new IOException(e);
+                }
+
+                //call the OP with the access_token to introspect the id info.
+                String line,buffer=&quot;&quot;;
+                URL introspectourl = new URL(introspectUrl);
+                HttpURLConnection conn = (HttpURLConnection)introspectourl.openConnection();
+                conn.setRequestMethod(&quot;POST&quot;);
+
+                //Basic auth, using clientid &amp; secret for microservice1 in OP
+                String auth = clientid+&quot;:&quot;+clientsecret;
+                String basic = &quot;Basic &quot;+DatatypeConverter.printBase64Binary(auth.getBytes());
+
+                //add the Auth header.
+                conn.setRequestProperty(&quot;Authorization&quot;,basic);
+
+                //invoke the request, sending the access_token as the post paramter 'token'
+                conn.setDoOutput(true);
+                OutputStreamWriter wrToken = new OutputStreamWriter(conn.getOutputStream());
+                wrToken.write(&quot;token=&quot; + access_token);
+                wrToken.flush();
+                wrToken.close(); 
+  </pre>
+<p>That much is enough to transmit the request. It&#8217;s a lot shorter if you use a library like <code>HttpClient</code> rather than <code>HttpURLConnection</code> but the basics are the same.</p>
+<p>After sending the request, we need to read back the token response and act upon it, like so:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+        //take the result back as a json object. 
+        InputStream is = conn.getInputStream(); 
+        JsonReader jsonReader = Json.createReader(is); 
+        JsonObject obj = jsonReader.readObject(); 
+        jsonReader.close(); 
+        is.close(); 
+ 
+        //query the result to test if the token is still active. 
+        //it may have expired if the request has been sent using a cached 
+        //token, the OP tells us if the access_token  is still active in the response. 
+        Boolean isActive = obj.getBoolean(&quot;active&quot;); 
+  </pre>
+<p>The response to an introspection request is a JSON object with various fields, only one of which is interesting to us at this stage: the <code>active</code> field of the JSON object will state if the <code>access_token</code> is still valid or not. Here we&#8217;re using the <code>jsonp-1.0</code> feature in Liberty to parse the JSON response from the OP and pull out the active field so we can act upon it.</p>
+<p>Finally, we can perform our regular RS processing (or not):</p>
+<pre class="brush: java; title: ; notranslate" title="">
+        if(isActive){ 
+            out.println(&quot;Token is still active.&lt;br&gt;&quot;); 
+            out.println(&quot;Subject : &quot;+obj.getString(&quot;sub&quot;)+&quot;&lt;br&gt;&quot;); 
+            out.println(&quot;  Scope : &quot;+obj.getString(&quot;scope&quot;)+&quot;&lt;br&gt;&quot;); 
+ 
+            //here we could now filter our processing on if a given scope is present 
+            //in the scope set. 
+ 
+            //instead we'll just dump the full token, so you can see all the other info 
+            //that came back from the introspection. 
+            out.println(&quot;Full Introspection Response : &quot;+obj.toString()); 
+ 
+        } else{ 
+            out.println(&quot;Token has expired. RS will not do further processing&quot;); 
+        } 
+  </pre>
+<p>As this is just an example of how to propagate identity using the <code>access_token</code>, we don&#8217;t really have any processing to do, so we just dump a little info on the<br />
+token to our output. If the token is expired, we output a message saying that instead.</p>
+<p>With a little work, you could easily move this logic out into a <code>ServletWrapper</code>, leaving the app itself to focus on its own logic.</p>
+<h3>A word or two on keys and keystores</h3>
+<p>This sample is using both SSL and signed ID tokens (as part of the OpenID Connect flows). As such, we end up having to play with SSL certificates and keys. We have quite a few of them being used by the three servers:</p>
+<ul>
+<li>Keystores used by the OpenID Provider server:
+<ul>
+<li>OpenID Connect KeyStore: Contains the private key used by the Provider to sign the id_tokens returned to Relying Parties.</li>
+<li>OpenID Provider KeyStore: Contains the private key used by the Provider to protect it&#8217;s SSL communications.</li>
+</ul>
+</li>
+<li>Keystores used by the Relying Party server:
+<ul>
+<li>Relying Party KeyStore: Contains the private key used by the Relying Party to protect it&#8217;s SSL communications.</li>
+<li>OpenID Provider TrustStore: Contains the public key used by the Relying Party to verify the signatures on the id_tokens from the OpenID Provider.</li>
+<li>Relying Party TrustStore: Contains the public keys for the Relying Service SSL, and for the OpenID Provider SSL.</li>
+</ul>
+</li>
+<li>Keystores used by the Relying Service server:</li>
+<li>Relying Service KeyStore: Contains the private key used to protect its SSL communications.</li>
+<li>Relying Service TrustStore: Contains the public key for the OP SSL, allowing the app to communicate with the OP.</li>
+</ul>
+<p>Building the sample with Gradle will create each of the keystores and export/import the public keys as required. This ensures that the keys have expiration dates that are still valid when the sample is created. In a production environment, it&#8217;s unlikely that the SSL keystores will have self-signed certificates. Open ID keystores should also contain certificates signed by a trusted root authority.</p>
+<h2>Gradle</h2>
+<p>Having three servers and two apps makes for lots of fun in compiling, deploying, and testing, but thankfully, we&#8217;ve written some Gradle to glue it all together.</p>
+<p>Running <code>gradle build</code> against the parent folder will download Liberty, install the required features (we&#8217;re taking the minimum sets here), create the keystores, compile the code into WAR applications, and deploy the applications to the servers.</p>
+<p>Some setup is required:</p>
+<ol>
+<li>For the keystore generation, we must set <code>JAVA_HOME</code> to point at our JDF, else the Gradle won&#8217;t be able to find the keytool binary it needs to invoke to generate the keystores.</li>
+<li>For downloading Liberty to work, we need to add the license code into the <code>gradle.properties</code> file. We can&#8217;t put that in there by default, as placing of the license code into the properties indicates that the license has been read and accepted. You can obtain the license code by reading the <a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/8.5.5.5/lafiles/runtime/en.html">current license</a> and looking for the <code>D/N:</code> line.</li>
+</ol>
+<p>Once you&#8217;ve done that, enter the command:</p>
+<pre><code>gradle build publishToMavenLocal 
+</code></pre>
+<p>That builds all the code and deploy the applications. If you then want to test the application, enter:</p>
+<pre><code>gradle access-token:start
+</code></pre>
+<p>That starts the three servers (OP,RP,RS) that form part of the <code>access-token</code> sample. Similarly, to shut down the servers:</p>
+<pre><code>gradle access-token:stop
+</code></pre>
+<p>While the servers are running you can visit:</p>
+<pre><code>https://127.0.0.1:9401/access-token-rp-application
+</code></pre>
+<p>That starts you on the whole <em>authenticate via the OP</em> process. Sign in using the user ID <code>user</code> and the password <code>password</code> as we configured back in the OP <code>server.xml</code>.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../blog/author/ozzy/index.html">Ozzy Osborne</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			5 comments on"Using access tokens to secure microservices"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="pingback even thread-even depth-1 pn-comment" id="comment-132228">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='../../index.html%3Fp=15794.html' rel='external nofollow' class='url'>Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev</a></span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=15420.html#comment-132228">
+					December 17, 2015	         	</a>
+			</div>
+			      		<p>[&#8230;] Using access tokens to secure microservices is the first of two from Ozzy. He explains how the access tokens created as a result of working with OAuth and OpenID Connect work and are used within a microservices architecture. [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=15420.html#comment-132228' onclick='return addComment.moveForm( "comment-132228", "132228", "respond", "15420" )' aria-label='Reply to Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-131589">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">H책gen</span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=15420.html#comment-131589">
+					November 28, 2015	         	</a>
+			</div>
+			      		<p>What if I have an application that in some scenarios act as a RP, and in other scenarios act as a RS, can I configure liberty and openidconnect to support this? Or do I have to break my application up into several pieces with more distinct roles (RP vs RS)?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=15420.html#comment-131589' onclick='return addComment.moveForm( "comment-131589", "131589", "respond", "15420" )' aria-label='Reply to H책gen'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-131204">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">H책gen</span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=15420.html#comment-131204">
+					November 12, 2015	         	</a>
+			</div>
+			      		<p>Thanks for a great article! How does this interact with the ltpa token/mechanism?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=15420.html#comment-131204' onclick='return addComment.moveForm( "comment-131204", "131204", "respond", "15420" )' aria-label='Reply to H책gen'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-ayoho odd alt depth-2 pn-comment" id="comment-131305">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">ayoho</span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=15420.html#comment-131305">
+					November 17, 2015	         	</a>
+			</div>
+			      		<p>OpenID Connect and LTPA tokens are distinct single sign-on constructs in Liberty. They are both mechanisms used for granting access to protected resources, however they do not necessarily share any kind of interaction.</p>
+<p>When authenticating to a Liberty server acting as an OpenID Provider (OP), an LTPA token is generated for that particular user to facilitate single sign-on with the OP. When authenticating to a Liberty server acting as an OpenID Connect Relying Party (RP), an LTPA token may be generated for subsequent request to the RP. However, that LTPA token (the one generated for the RP) behaves more like a session token and cannot be shared with other servers (the token is returned using a different cookie name and might have been generated using a different LTPA key which could render it useless to other servers).</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=15420.html#comment-131305' onclick='return addComment.moveForm( "comment-131305", "131305", "respond", "15420" )' aria-label='Reply to ayoho'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-jlu even depth-3 pn-comment" id="comment-147550">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">JacobLu</span> 	         	<a class="pn-comment__meta" href="../../index.html%3Fp=15420.html#comment-147550">
+					October 13, 2016	         	</a>
+			</div>
+			      		<p>Hi ayoho,</p>
+<p>We configured our websphere as OpenID connect RP. It generates a JsessionID as well as an WAS_* cookie (which I believe is the LTPA token). Is it possible to turn off LTPA cookie and rely solely on the JsessionId to identity the user session? Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='../../index.html%3Fp=15420.html#comment-147550' onclick='return addComment.moveForm( "comment-147550", "147550", "respond", "15420" )' aria-label='Reply to JacobLu'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../index.html%3Fp=15420.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='15420' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fa41d988fb" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="38"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../index.html%3Fp=15420.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../index.html%3Fp=15420.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../index.html%3Fp=15420.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-access-tokens-secure-microservices&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-access-tokens-secure-microservices"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

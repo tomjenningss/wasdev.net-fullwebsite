@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Creating a custom user registry as a Liberty user feature</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Ursus</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-150538</link>
+		<dc:creator><![CDATA[Ursus]]></dc:creator>
+		<pubDate>Tue, 11 Jul 2017 13:58:13 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-150538</guid>
+		<description><![CDATA[Hi Teddy
+
+Works!
+My custom login module now can look up and make use of the UserRegistry.
+
+Thanks a lot,
+Ursus]]></description>
+		<content:encoded><![CDATA[<p>Hi Teddy</p>
+<p>Works!<br />
+My custom login module now can look up and make use of the UserRegistry.</p>
+<p>Thanks a lot,<br />
+Ursus</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Teddy_J_Torres</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-150530</link>
+		<dc:creator><![CDATA[Teddy_J_Torres]]></dc:creator>
+		<pubDate>Mon, 10 Jul 2017 13:05:31 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-150530</guid>
+		<description><![CDATA[Hi Ursus,
+
+The com.ibm.wsspi.security.registry.RegistryHelper API can be used to get the current UserRegistry instance in the same Liberty server.  For example,
+
+UserRegistry userRegistry = RegistryHelper.getUserRegistry(null);
+
+For more details and a full example of how to use the RegistryHelper API, please see https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_sec_apis.html .
+
+Thank you for using WebSphere Application Server Liberty,
+
+Teddy J. Torres]]></description>
+		<content:encoded><![CDATA[<p>Hi Ursus,</p>
+<p>The com.ibm.wsspi.security.registry.RegistryHelper API can be used to get the current UserRegistry instance in the same Liberty server.  For example,</p>
+<p>UserRegistry userRegistry = RegistryHelper.getUserRegistry(null);</p>
+<p>For more details and a full example of how to use the RegistryHelper API, please see <a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_sec_apis.html">https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_sec_apis.html</a> .</p>
+<p>Thank you for using WebSphere Application Server Liberty,</p>
+<p>Teddy J. Torres</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ursus</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-150493</link>
+		<dc:creator><![CDATA[Ursus]]></dc:creator>
+		<pubDate>Tue, 04 Jul 2017 08:46:32 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-150493</guid>
+		<description><![CDATA[Hi all
+
+In WAS 8, I was able to look up the custom user registry with
+  UserRegistry userRegistry = (UserRegistry) new InitialContext().lookup(&quot;UserRegistry&quot;);
+With Websphere Liberty, this throws an NamingException.
+
+Searching the Web, I found this comment:
+&quot;In the Liberty profile the UserRegistry is not available in JNDI namespace. There is an API that can be used to get hold of it in its place.&quot;
+Unfortunately, it doesn&#039;t say what API.
+
+How can I get hold of the user registry in Liberty?
+
+Thanks,
+Ursus]]></description>
+		<content:encoded><![CDATA[<p>Hi all</p>
+<p>In WAS 8, I was able to look up the custom user registry with<br />
+  UserRegistry userRegistry = (UserRegistry) new InitialContext().lookup(&#8220;UserRegistry&#8221;);<br />
+With Websphere Liberty, this throws an NamingException.</p>
+<p>Searching the Web, I found this comment:<br />
+&#8220;In the Liberty profile the UserRegistry is not available in JNDI namespace. There is an API that can be used to get hold of it in its place.&#8221;<br />
+Unfortunately, it doesn&#8217;t say what API.</p>
+<p>How can I get hold of the user registry in Liberty?</p>
+<p>Thanks,<br />
+Ursus</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Geoff Alexander</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-149041</link>
+		<dc:creator><![CDATA[Geoff Alexander]]></dc:creator>
+		<pubDate>Wed, 03 May 2017 00:58:44 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-149041</guid>
+		<description><![CDATA[To answer my own question, I found that I needed to
+
+(1) Create a new &quot;WebSphere Application Server Liberty&quot; by right clicking in the server view and selecting New -&#062; Server, selecting a server type of IBM -&#062; WebSphere Application Server Liberty, and stepping thru the wizard to complete creation of the server.
+
+(2) Setting my OSGi Bundle project&#039;s targeted runtime, by right clicking on the project and selecting Properties.  Then in the properties dialog, selecting Targeted Runtimes and checking &quot;WebSphere Application Server Liberty&quot;.
+
+Once I did that,  Preferences -&#062; Plug-in Development -&#062; Target Platform then showed &quot;WebSphere Application Server Liberty&quot; and &quot;WebSphere Application Server Liberty with SPI&quot; as target platform choices in addition to &quot;Running Platform&quot;.  I selected &quot;WebSphere Application Server Liberty with SPI&quot; as the active target platform.  However, that still did not get rid of my compile errors.  
+
+To resolve the compile errors, I had to open my OSGi Bundles project&#039;s BundleContent\META-INF\MANIFEST.MF file and add the following as Imported Packages:
+
+- com.ibm.websphere.security
+- com.ibm.websphere.secruity.cred
+- org.osgi.service.cm]]></description>
+		<content:encoded><![CDATA[<p>To answer my own question, I found that I needed to</p>
+<p>(1) Create a new &#8220;WebSphere Application Server Liberty&#8221; by right clicking in the server view and selecting New -&gt; Server, selecting a server type of IBM -&gt; WebSphere Application Server Liberty, and stepping thru the wizard to complete creation of the server.</p>
+<p>(2) Setting my OSGi Bundle project&#8217;s targeted runtime, by right clicking on the project and selecting Properties.  Then in the properties dialog, selecting Targeted Runtimes and checking &#8220;WebSphere Application Server Liberty&#8221;.</p>
+<p>Once I did that,  Preferences -&gt; Plug-in Development -&gt; Target Platform then showed &#8220;WebSphere Application Server Liberty&#8221; and &#8220;WebSphere Application Server Liberty with SPI&#8221; as target platform choices in addition to &#8220;Running Platform&#8221;.  I selected &#8220;WebSphere Application Server Liberty with SPI&#8221; as the active target platform.  However, that still did not get rid of my compile errors.  </p>
+<p>To resolve the compile errors, I had to open my OSGi Bundles project&#8217;s BundleContent\META-INF\MANIFEST.MF file and add the following as Imported Packages:</p>
+<p>&#8211; com.ibm.websphere.security<br />
+&#8211; com.ibm.websphere.secruity.cred<br />
+&#8211; org.osgi.service.cm</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Geoff Alexander</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-149040</link>
+		<dc:creator><![CDATA[Geoff Alexander]]></dc:creator>
+		<pubDate>Tue, 02 May 2017 22:10:41 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-149040</guid>
+		<description><![CDATA[I&#039;m trying the sample Custom User Registry in Eclipse Neon.3.  I&#039;ve installed the IBM WebSphere Application Liberty Developer Tools for Neon from the Eclipse Marketplace.  I&#039;m getting a number of compile errors in the Activator.java and FileRegistrySample.java due to missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes. I looked at setting the target platform to the &quot;with SPI&quot; server target as suggested, but I only have &quot;Running Platform&quot; as a choice.  How to I get a &quot;with SPI&quot; server as a target platform choice?  Or is there some other way to update my OSGi Bundle project&#039;s build path to find the missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes?]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m trying the sample Custom User Registry in Eclipse Neon.3.  I&#8217;ve installed the IBM WebSphere Application Liberty Developer Tools for Neon from the Eclipse Marketplace.  I&#8217;m getting a number of compile errors in the Activator.java and FileRegistrySample.java due to missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes. I looked at setting the target platform to the &#8220;with SPI&#8221; server target as suggested, but I only have &#8220;Running Platform&#8221; as a choice.  How to I get a &#8220;with SPI&#8221; server as a target platform choice?  Or is there some other way to update my OSGi Bundle project&#8217;s build path to find the missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hiroko Takamiya</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-148409</link>
+		<dc:creator><![CDATA[Hiroko Takamiya]]></dc:creator>
+		<pubDate>Thu, 19 Jan 2017 18:52:29 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-148409</guid>
+		<description><![CDATA[Hi, I am from WebSphere Liberty support team.    A customer kindly shared following experience with us while following this page.   It may or may not apply to all environment but posting here.  Thanks!  
+
+Environment:  
+WebSphere Liberty Dev Tools version is:  WebSphere® Application Server Liberty Tools                16.0.4000.v20161213_2112           com.ibm.websphere.wdt.server.tools.main.feature.group         IBM on Eclipse Neon Version: Neon.2 Release (4.6.2) Build id: 20161208-0600
+
+Issue:  After adding any javax.* package into MANIFEST.MF,  future can no longer be deployed or exported to Liberty. 
+
+Solution:  Activate &quot;OSGi Bundle&quot; Facet
+
+--  Error message ----- 
+Feature update failed. The server may still be using the feature resources. Stopping the server and trying the update again may resolve the problem.
+Reason:
+Error occurred while exporting Liberty feature: Extended Operation failure:
+com.ibm.etools.aries.internal.core.datatransfer.exportmodel.ApplicationExportOperation
+ ------------------------------------------------------------------]]></description>
+		<content:encoded><![CDATA[<p>Hi, I am from WebSphere Liberty support team.    A customer kindly shared following experience with us while following this page.   It may or may not apply to all environment but posting here.  Thanks!  </p>
+<p>Environment:<br />
+WebSphere Liberty Dev Tools version is:  WebSphere® Application Server Liberty Tools                16.0.4000.v20161213_2112           com.ibm.websphere.wdt.server.tools.main.feature.group         IBM on Eclipse Neon Version: Neon.2 Release (4.6.2) Build id: 20161208-0600</p>
+<p>Issue:  After adding any javax.* package into MANIFEST.MF,  future can no longer be deployed or exported to Liberty. </p>
+<p>Solution:  Activate &#8220;OSGi Bundle&#8221; Facet</p>
+<p>&#8212;  Error message &#8212;&#8211;<br />
+Feature update failed. The server may still be using the feature resources. Stopping the server and trying the update again may resolve the problem.<br />
+Reason:<br />
+Error occurred while exporting Liberty feature: Extended Operation failure:<br />
+com.ibm.etools.aries.internal.core.datatransfer.exportmodel.ApplicationExportOperation<br />
+ &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jessica Pamdeth</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-146248</link>
+		<dc:creator><![CDATA[Jessica Pamdeth]]></dc:creator>
+		<pubDate>Thu, 28 Apr 2016 04:26:44 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-146248</guid>
+		<description><![CDATA[With all the interest in relational database based user registries, is it possible to get an example of using that?  This seems a more practical example than the file based one provided now.]]></description>
+		<content:encoded><![CDATA[<p>With all the interest in relational database based user registries, is it possible to get an example of using that?  This seems a more practical example than the file based one provided now.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Joe Kesselman</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-142583</link>
+		<dc:creator><![CDATA[Joe Kesselman]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 20:49:58 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-142583</guid>
+		<description><![CDATA[Something that may not be obvious: The com.ibm.ws.samples.cur package in the sample Custom User Registry needs OSGi access to the Liberty SPI layer, not just APIs. To recompile it under Eclipse, you will probably need to go to Preferences/Plug-in Development/Target Platform, and explicitly switch to the &quot;with SPI&quot; server target. If you don&#039;t, you&#039;ll get compilation errors.]]></description>
+		<content:encoded><![CDATA[<p>Something that may not be obvious: The com.ibm.ws.samples.cur package in the sample Custom User Registry needs OSGi access to the Liberty SPI layer, not just APIs. To recompile it under Eclipse, you will probably need to go to Preferences/Plug-in Development/Target Platform, and explicitly switch to the &#8220;with SPI&#8221; server target. If you don&#8217;t, you&#8217;ll get compilation errors.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: André</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-129849</link>
+		<dc:creator><![CDATA[André]]></dc:creator>
+		<pubDate>Tue, 29 Sep 2015 17:44:51 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-129849</guid>
+		<description><![CDATA[Hi Teddy, 
+thanks for your answer. We are in fact using a custom JAAS module to authenticate users, and also assign them roles. I think what I stumbled over was that JAAS can authenticate any user even users that are not(!) configured in the user registry - but roles do not work this way. They need to be configured in the user registry. 
+
+As we are using a static set of roles, we can configure them in the basic user registry, and are set with our JAAS provider, without need for a JACC module.
+
+Regards,
+André]]></description>
+		<content:encoded><![CDATA[<p>Hi Teddy,<br />
+thanks for your answer. We are in fact using a custom JAAS module to authenticate users, and also assign them roles. I think what I stumbled over was that JAAS can authenticate any user even users that are not(!) configured in the user registry &#8211; but roles do not work this way. They need to be configured in the user registry. </p>
+<p>As we are using a static set of roles, we can configure them in the basic user registry, and are set with our JAAS provider, without need for a JACC module.</p>
+<p>Regards,<br />
+André</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Teddy_J_Torres</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-129602</link>
+		<dc:creator><![CDATA[Teddy_J_Torres]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2015 23:17:39 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-129602</guid>
+		<description><![CDATA[Hi Fachat,
+
+I am glad that the Custom User Registry is now working for you.  Let us clarify some terminology to avoid problems or confusion.  Please let me know if you meant JACC instead of JAAS.  JAAS is used during the authentication phase.  It is also during that phase when the custom registry is used to verify the user is who it says it is.  On the other hand, when a JACC provider is configured it is used during the authorization phase after the authentication has taken place.  If you still need to use the custom registry from the JACC provider, then a service reference should be added to the JACC provider for the custom user registry.  That might not be necessary since the WSCredential in the Subject should already contain the groups the authenticated used is in.  A JACC provider is necessary if the role is not already mapped in the server.xml or in the bindings (ibm-application-bnd.xml, or the ibm-application-bnd.xmi file).  SSO will work regardless of registry type or whether JACC is used or not.  The one requirement is that the user should exist in the user registry of the server where the request is being sent to.
+
+Regards,
+Teddy J. Torres]]></description>
+		<content:encoded><![CDATA[<p>Hi Fachat,</p>
+<p>I am glad that the Custom User Registry is now working for you.  Let us clarify some terminology to avoid problems or confusion.  Please let me know if you meant JACC instead of JAAS.  JAAS is used during the authentication phase.  It is also during that phase when the custom registry is used to verify the user is who it says it is.  On the other hand, when a JACC provider is configured it is used during the authorization phase after the authentication has taken place.  If you still need to use the custom registry from the JACC provider, then a service reference should be added to the JACC provider for the custom user registry.  That might not be necessary since the WSCredential in the Subject should already contain the groups the authenticated used is in.  A JACC provider is necessary if the role is not already mapped in the server.xml or in the bindings (ibm-application-bnd.xml, or the ibm-application-bnd.xmi file).  SSO will work regardless of registry type or whether JACC is used or not.  The one requirement is that the user should exist in the user registry of the server where the request is being sent to.</p>
+<p>Regards,<br />
+Teddy J. Torres</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: A. Fachat</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-129496</link>
+		<dc:creator><![CDATA[A. Fachat]]></dc:creator>
+		<pubDate>Fri, 18 Sep 2015 07:59:11 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-129496</guid>
+		<description><![CDATA[Hi Terry, thank you for your answer!
+
+In the meantime I managed to get it to work. Liberty calls the &quot;getUniqueGroupIds(user)&quot; method, which in the File Registry Sample uses the users file. I overlooked that because I found the groups/user mapping in the groups file. So then mapping the registry group to the JEE group in server.xml worked, which is ok.
+
+Unfortunately I also use a custom JAAS provider together with the custom user registry. I had understood that JAAS would allow that user/role mapping, but with liberty obviously not.
+
+Now when using a JAAS provider, the getUniqueGroupIds(user) method is not called anymore. Some questions:
+
+1) what do I need to do in the JAAS provider to have the roles checked with the custom user registry?
+2) Is a JAAS provider necessary when I have a custom user registry and implement its checkPassword() method? 
+3) Can I use this (setup from 2.) with Bluemix ID as a Service Single-Sign-On &quot;password&quot; checks as well? (i.e. call out via HTTP to another service?)
+
+Many thanks!]]></description>
+		<content:encoded><![CDATA[<p>Hi Terry, thank you for your answer!</p>
+<p>In the meantime I managed to get it to work. Liberty calls the &#8220;getUniqueGroupIds(user)&#8221; method, which in the File Registry Sample uses the users file. I overlooked that because I found the groups/user mapping in the groups file. So then mapping the registry group to the JEE group in server.xml worked, which is ok.</p>
+<p>Unfortunately I also use a custom JAAS provider together with the custom user registry. I had understood that JAAS would allow that user/role mapping, but with liberty obviously not.</p>
+<p>Now when using a JAAS provider, the getUniqueGroupIds(user) method is not called anymore. Some questions:</p>
+<p>1) what do I need to do in the JAAS provider to have the roles checked with the custom user registry?<br />
+2) Is a JAAS provider necessary when I have a custom user registry and implement its checkPassword() method?<br />
+3) Can I use this (setup from 2.) with Bluemix ID as a Service Single-Sign-On &#8220;password&#8221; checks as well? (i.e. call out via HTTP to another service?)</p>
+<p>Many thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Teddy_J_Torres</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-129469</link>
+		<dc:creator><![CDATA[Teddy_J_Torres]]></dc:creator>
+		<pubDate>Thu, 17 Sep 2015 14:54:48 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-129469</guid>
+		<description><![CDATA[Hi Fachat,
+
+Thank you for using WAS Liberty. The authorization is configured separately from the user registry. Since you want to use the role mapping in a database, then you can use JACC to achieve this. For more details on how to develop a JACC provider, please see the Knowledge Center article http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-dist&amp;topic=twlp_developing_jacc_auth_provider
+
+If you do not use JACC, then the role mapping for authorization must be configured either in the server.xml, the ibm-application-bnd.xml, or the ibm-application-bnd.xmi file as described in this other article, http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-dist&amp;topic=twlp_sec_rolebased 
+
+Once the role mapping for authorization is done using any of the above methods and the user or the group it is in is mapped to the role, the user will be authorized and the message CWWKS9104A will not be issued.
+
+The WSCredential API is included in the jar file com.ibm.websphere.appserver.api.basics_1.0.2.jar that is located in the wlp/dev/api/ibm directory.  Please ensure that this jar file is in the classpath when editing or compiling your classes.
+
+Regards,
+Teddy J. Torres]]></description>
+		<content:encoded><![CDATA[<p>Hi Fachat,</p>
+<p>Thank you for using WAS Liberty. The authorization is configured separately from the user registry. Since you want to use the role mapping in a database, then you can use JACC to achieve this. For more details on how to develop a JACC provider, please see the Knowledge Center article <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_developing_jacc_auth_provider">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_developing_jacc_auth_provider</a></p>
+<p>If you do not use JACC, then the role mapping for authorization must be configured either in the server.xml, the ibm-application-bnd.xml, or the ibm-application-bnd.xmi file as described in this other article, <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_sec_rolebased">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_sec_rolebased</a> </p>
+<p>Once the role mapping for authorization is done using any of the above methods and the user or the group it is in is mapped to the role, the user will be authorized and the message CWWKS9104A will not be issued.</p>
+<p>The WSCredential API is included in the jar file com.ibm.websphere.appserver.api.basics_1.0.2.jar that is located in the wlp/dev/api/ibm directory.  Please ensure that this jar file is in the classpath when editing or compiling your classes.</p>
+<p>Regards,<br />
+Teddy J. Torres</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: A. Fachat</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-129431</link>
+		<dc:creator><![CDATA[A. Fachat]]></dc:creator>
+		<pubDate>Wed, 16 Sep 2015 06:42:45 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-129431</guid>
+		<description><![CDATA[I can&#039;t seem to make the groups part working. Of course with a custom user registry I do not want to map users to roles in the server.xml file, but in the database.
+However, when I remove the  for example so that only specific users have for example the servletRole. I added 
+&quot;servletRole:006:user1&quot; to the groups file, but the only thing I get is this error log:
+[AUDIT   ] CWWKS9104A: Authorization failed for user user1:defaultRealm while invoking SecureEJBSampleEAR on /. The user is not granted access to any of the required roles: [servletRole].
+
+What am I missing here?
+
+Btw: we are using liberty 8.5.5 and the sample seems to be written to an older API version. I get complaints about the WSCredential class not being part of the API for example.]]></description>
+		<content:encoded><![CDATA[<p>I can&#8217;t seem to make the groups part working. Of course with a custom user registry I do not want to map users to roles in the server.xml file, but in the database.<br />
+However, when I remove the  for example so that only specific users have for example the servletRole. I added<br />
+&#8220;servletRole:006:user1&#8221; to the groups file, but the only thing I get is this error log:<br />
+[AUDIT   ] CWWKS9104A: Authorization failed for user user1:defaultRealm while invoking SecureEJBSampleEAR on /. The user is not granted access to any of the required roles: [servletRole].</p>
+<p>What am I missing here?</p>
+<p>Btw: we are using liberty 8.5.5 and the sample seems to be written to an older API version. I get complaints about the WSCredential class not being part of the API for example.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Teddy_J_Torres</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-119347</link>
+		<dc:creator><![CDATA[Teddy_J_Torres]]></dc:creator>
+		<pubDate>Thu, 26 Mar 2015 21:13:27 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-119347</guid>
+		<description><![CDATA[Hi Akshat,
+
+Thank you for using the custom user registry support.  There is no API to extract the user or password for a DB in server.xml. The OSGi service component xml file should be configured to receive configuration and the service should process the configuration during its activation.  Also, please note the restrictions on using a datasource from a custom user registry as documented in http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-iseries&#038;topic=tsectbucs.  It indicates to use the JDBC java.sql.DriverManager interface to connect to the database.
+
+Regards,
+
+Teddy J. Torres]]></description>
+		<content:encoded><![CDATA[<p>Hi Akshat,</p>
+<p>Thank you for using the custom user registry support.  There is no API to extract the user or password for a DB in server.xml. The OSGi service component xml file should be configured to receive configuration and the service should process the configuration during its activation.  Also, please note the restrictions on using a datasource from a custom user registry as documented in <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-iseries&#038;topic=tsectbucs">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-iseries&#038;topic=tsectbucs</a>.  It indicates to use the JDBC java.sql.DriverManager interface to connect to the database.</p>
+<p>Regards,</p>
+<p>Teddy J. Torres</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Akshat</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-119004</link>
+		<dc:creator><![CDATA[Akshat]]></dc:creator>
+		<pubDate>Wed, 25 Mar 2015 11:54:42 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-119004</guid>
+		<description><![CDATA[I am trying to implement a similar customUserRegistry but with database.
+In my user registry class i need to make a DB connection.
+Is there any API i can use to read my DB credentials (schema, user, password, etc) form server.xml.]]></description>
+		<content:encoded><![CDATA[<p>I am trying to implement a similar customUserRegistry but with database.<br />
+In my user registry class i need to make a DB connection.<br />
+Is there any API i can use to read my DB credentials (schema, user, password, etc) form server.xml.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-81164</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Tue, 09 Dec 2014 18:22:07 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-81164</guid>
+		<description><![CDATA[Please see this thread on how to validate server.xml file with custom features: https://developer.ibm.com/answers/questions/26283/server-xml-xml-validation-error-when-using-custom-feature.html]]></description>
+		<content:encoded><![CDATA[<p>Please see this thread on how to validate server.xml file with custom features: <a href="https://developer.ibm.com/answers/questions/26283/server-xml-xml-validation-error-when-using-custom-feature.html">https://developer.ibm.com/answers/questions/26283/server-xml-xml-validation-error-when-using-custom-feature.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Stefan Sell</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-81104</link>
+		<dc:creator><![CDATA[Stefan Sell]]></dc:creator>
+		<pubDate>Tue, 09 Dec 2014 15:00:51 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-81104</guid>
+		<description><![CDATA[I have installed the CustomUserRegistry sample feature and added the feature to my server. If I add the configuration information to the corresponding server.xml file my eclipse (editor) show the statement  as being in error since  is not recognized by my eclipse (syntax checker). However that statement is recognized by my server and the attributes are passed to the feature which is working fine.
+Is there a way to define  as a valid xml tag or is there something missing in the feature definition.
+
+Thanks and kind regards
+Stefan Sell]]></description>
+		<content:encoded><![CDATA[<p>I have installed the CustomUserRegistry sample feature and added the feature to my server. If I add the configuration information to the corresponding server.xml file my eclipse (editor) show the statement  as being in error since  is not recognized by my eclipse (syntax checker). However that statement is recognized by my server and the attributes are passed to the feature which is working fine.<br />
+Is there a way to define  as a valid xml tag or is there something missing in the feature definition.</p>
+<p>Thanks and kind regards<br />
+Stefan Sell</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-24946</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 21:35:42 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-24946</guid>
+		<description><![CDATA[I also posted similar question on the wasdev forum: https://developer.ibm.com/answers/questions/25716/packaging-of-jpa-code-that-needs-to-be-shared-between-web-app-and-customregistry/?community=wasdev]]></description>
+		<content:encoded><![CDATA[<p>I also posted similar question on the wasdev forum: <a href="https://developer.ibm.com/answers/questions/25716/packaging-of-jpa-code-that-needs-to-be-shared-between-web-app-and-customregistry/?community=wasdev">https://developer.ibm.com/answers/questions/25716/packaging-of-jpa-code-that-needs-to-be-shared-between-web-app-and-customregistry/?community=wasdev</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-24942</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 20:38:57 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-24942</guid>
+		<description><![CDATA[Your file based registry sample works well for me, but now I am changing it to the database and here is the question - I have JPA based classes that deal with users in the database in my web app that runs on Liberty 8.5.5.3. I am developing in Eclipse.
+
+I want to use the same JPA classes inside of the custom user registry. What is the best way to package and share these classes between my web app and the custom registry? 
+
+Shall I create a separate Java project for my persistent classes and bundle the jar file with custom registry as well as web app? (this will cause duplication of classes) Or shall I create some shared library with my JPA classes and use it with both custom registry and web app? Or does it need to be OSGi bundle? I am afraid I am going to have problem doing JPA resource injection in OSGi bundle...]]></description>
+		<content:encoded><![CDATA[<p>Your file based registry sample works well for me, but now I am changing it to the database and here is the question &#8211; I have JPA based classes that deal with users in the database in my web app that runs on Liberty 8.5.5.3. I am developing in Eclipse.</p>
+<p>I want to use the same JPA classes inside of the custom user registry. What is the best way to package and share these classes between my web app and the custom registry? </p>
+<p>Shall I create a separate Java project for my persistent classes and bundle the jar file with custom registry as well as web app? (this will cause duplication of classes) Or shall I create some shared library with my JPA classes and use it with both custom registry and web app? Or does it need to be OSGi bundle? I am afraid I am going to have problem doing JPA resource injection in OSGi bundle&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Teddy_J_Torres</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-23339</link>
+		<dc:creator><![CDATA[Teddy_J_Torres]]></dc:creator>
+		<pubDate>Wed, 27 Aug 2014 20:12:12 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-23339</guid>
+		<description><![CDATA[Hi,
+The SecurityEJBSample.ear is included in the sample CustomUserRegistrySample.jar download file.  The sample can be downloaded from https://developer.ibm.com/wasdev/downloads/#asset/samples-Custom_User_Registry
+
+There is also another sample page dedicated to just the Secure EJB sample and it can be found here, https://developer.ibm.com/wasdev/downloads/#asset/samples-Secure_EJB_Sample]]></description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+The SecurityEJBSample.ear is included in the sample CustomUserRegistrySample.jar download file.  The sample can be downloaded from <a href="https://developer.ibm.com/wasdev/downloads/#asset/samples-Custom_User_Registry">https://developer.ibm.com/wasdev/downloads/#asset/samples-Custom_User_Registry</a></p>
+<p>There is also another sample page dedicated to just the Secure EJB sample and it can be found here, <a href="https://developer.ibm.com/wasdev/downloads/#asset/samples-Secure_EJB_Sample">https://developer.ibm.com/wasdev/downloads/#asset/samples-Secure_EJB_Sample</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: CHK1_pushka_pushka</title>
+		<link>https://developer.ibm.com/wasdev/docs/creating-a-custom-user-registry-as-a-liberty-user-feature/#comment-22902</link>
+		<dc:creator><![CDATA[CHK1_pushka_pushka]]></dc:creator>
+		<pubDate>Sun, 24 Aug 2014 13:11:03 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=4558#comment-22902</guid>
+		<description><![CDATA[Where is the sources of SecureEJBSample.ear? Can&#039;t finish this tutorial without it. Please, publish. Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Where is the sources of SecureEJBSample.ear? Can&#8217;t finish this tutorial without it. Please, publish. Thanks.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Traditional WebSphere or Liberty: how to choose?</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Tarmizi</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-148866</link>
+		<dc:creator><![CDATA[Tarmizi]]></dc:creator>
+		<pubDate>Thu, 06 Apr 2017 09:44:12 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-148866</guid>
+		<description><![CDATA[Dear All,
+If we develope an application using Liberty and the production using WAS, do we need more configuration on production?
+
+
+Thanks]]></description>
+		<content:encoded><![CDATA[<p>Dear All,<br />
+If we develope an application using Liberty and the production using WAS, do we need more configuration on production?</p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: AlexMulholland</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-148010</link>
+		<dc:creator><![CDATA[AlexMulholland]]></dc:creator>
+		<pubDate>Thu, 15 Dec 2016 14:18:35 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-148010</guid>
+		<description><![CDATA[Thanks for your question and your interest in Liberty.  There isn&#039;t a table showing those differences but I agree that would be a useful addition, perhaps we can get that into the next update of the paper.
+There are basically two things you can do for management of non-ND licensed servers in a Collective:
+1) Use the controller as a JMX proxy to the servers.  This means you can connect to the controller (through your own client, a generic JMX client like Console, or using the Liberty Admin Center web GUI) to deploy, view and manage the servers.  Manage in this sense includes stopping and starting, pushing out files (for config updates), viewing and editing the server&#039;s configuration files, viewing the monitoring graphs etc.
+2) By adding the dynamic routing feature to the controller, you enable dynamic routing for all members of the collective - this means you don&#039;t have to manage web server plug-in configurations for the individual app servers, and any changes to routing (adding a server/application, stopping a server/application etc) are immediately reflected in the routing of HTTP requests by the web server.  It&#039;s a very handy capability.
+Looking at it from the other side, the 3 functions that you only get for ND-licensed app servers in a collective are these:
+1) the ability to group servers into static clusters (management groups) for more convenient management as a group
+2) auto scaling of servers in a cluster (starting/stopping/provisioning in response to workload changes)
+3) health policies (automatic responses to breaches in configured parameters)
+I hope this helps
+Regards, Alex.]]></description>
+		<content:encoded><![CDATA[<p>Thanks for your question and your interest in Liberty.  There isn&#8217;t a table showing those differences but I agree that would be a useful addition, perhaps we can get that into the next update of the paper.<br />
+There are basically two things you can do for management of non-ND licensed servers in a Collective:<br />
+1) Use the controller as a JMX proxy to the servers.  This means you can connect to the controller (through your own client, a generic JMX client like Console, or using the Liberty Admin Center web GUI) to deploy, view and manage the servers.  Manage in this sense includes stopping and starting, pushing out files (for config updates), viewing and editing the server&#8217;s configuration files, viewing the monitoring graphs etc.<br />
+2) By adding the dynamic routing feature to the controller, you enable dynamic routing for all members of the collective &#8211; this means you don&#8217;t have to manage web server plug-in configurations for the individual app servers, and any changes to routing (adding a server/application, stopping a server/application etc) are immediately reflected in the routing of HTTP requests by the web server.  It&#8217;s a very handy capability.<br />
+Looking at it from the other side, the 3 functions that you only get for ND-licensed app servers in a collective are these:<br />
+1) the ability to group servers into static clusters (management groups) for more convenient management as a group<br />
+2) auto scaling of servers in a cluster (starting/stopping/provisioning in response to workload changes)<br />
+3) health policies (automatic responses to breaches in configured parameters)<br />
+I hope this helps<br />
+Regards, Alex.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: LibertyEvaluator</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-147966</link>
+		<dc:creator><![CDATA[LibertyEvaluator]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2016 11:09:41 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-147966</guid>
+		<description><![CDATA[We are currently looking at extending/upgrading our JEE application server estate (test/pre-prod/production) for a large JEE application which is currently based on WAS ND v7. The corporate technical strategy is to move away from WAS to an alternative such as JBoss EAP to reduce licencing costs but there is a risk that this could be disruptive for existing applications such as this one so I have started looking to see whether Liberty could offer us a more cost effective licencing model whilst reducing the risk of porting to a different JEE application server. The document is helpful but I&#039;m confused by one aspect:
+&quot;Another benefit of the Liberty collective is in the licensing options. A number of management features can be configured in the controller and the member servers, which provide varying levels of management capability. The controller feature itself is only provided by the WAS-ND product, but the basic collective member feature is included in all WAS products, including the low-end Liberty Core edition. This means that Liberty servers that are licensed for Liberty Core or WAS (base) can still be part of a collective, and can be managed from the central collective controller. In addition, Dynamic routing (see Intelligent Management) can also be used in this mixed-license configuration.&quot;
+However, when I have read through InfoCenter it would seem that other than possibly managing the application server configurations, this model wouldn&#039;t actually deliver even basic functionality that we would expect from the equivalent cluster in Classic ND (e.g. stopping/starting JVMs). Have I misunderstood this? Is there a table which would summarise what features are available to collective members which are not ND licensed vs those which are ND licensed?]]></description>
+		<content:encoded><![CDATA[<p>We are currently looking at extending/upgrading our JEE application server estate (test/pre-prod/production) for a large JEE application which is currently based on WAS ND v7. The corporate technical strategy is to move away from WAS to an alternative such as JBoss EAP to reduce licencing costs but there is a risk that this could be disruptive for existing applications such as this one so I have started looking to see whether Liberty could offer us a more cost effective licencing model whilst reducing the risk of porting to a different JEE application server. The document is helpful but I&#8217;m confused by one aspect:<br />
+&#8220;Another benefit of the Liberty collective is in the licensing options. A number of management features can be configured in the controller and the member servers, which provide varying levels of management capability. The controller feature itself is only provided by the WAS-ND product, but the basic collective member feature is included in all WAS products, including the low-end Liberty Core edition. This means that Liberty servers that are licensed for Liberty Core or WAS (base) can still be part of a collective, and can be managed from the central collective controller. In addition, Dynamic routing (see Intelligent Management) can also be used in this mixed-license configuration.&#8221;<br />
+However, when I have read through InfoCenter it would seem that other than possibly managing the application server configurations, this model wouldn&#8217;t actually deliver even basic functionality that we would expect from the equivalent cluster in Classic ND (e.g. stopping/starting JVMs). Have I misunderstood this? Is there a table which would summarise what features are available to collective members which are not ND licensed vs those which are ND licensed?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-147825</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Thu, 24 Nov 2016 10:16:14 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-147825</guid>
+		<description><![CDATA[The links in the article above now point to the 16.0.0.4 version.]]></description>
+		<content:encoded><![CDATA[<p>The links in the article above now point to the 16.0.0.4 version.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Alex Mulholland</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-147742</link>
+		<dc:creator><![CDATA[Alex Mulholland]]></dc:creator>
+		<pubDate>Wed, 09 Nov 2016 15:42:00 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-147742</guid>
+		<description><![CDATA[Hello Philippe, I&#039;m working on an update to the paper for the Liberty 16.0.0.4 release next month.
+Regards, Alex.]]></description>
+		<content:encoded><![CDATA[<p>Hello Philippe, I&#8217;m working on an update to the paper for the Liberty 16.0.0.4 release next month.<br />
+Regards, Alex.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Philippe Gregoire</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-147735</link>
+		<dc:creator><![CDATA[Philippe Gregoire]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 14:24:14 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-147735</guid>
+		<description><![CDATA[Hello,
+Would there be an update to this paper now that WAS v9 is out and J2EE 7 is also supported by Classic?
+Thanks!
+PhG]]></description>
+		<content:encoded><![CDATA[<p>Hello,<br />
+Would there be an update to this paper now that WAS v9 is out and J2EE 7 is also supported by Classic?<br />
+Thanks!<br />
+PhG</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: frowe</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-146445</link>
+		<dc:creator><![CDATA[frowe]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 15:59:15 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-146445</guid>
+		<description><![CDATA[The DB2 automatic client reroute function can be used to failover between a local and a remote DB2 instance as described at https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011976.html?lang=en
+however, you can not mix client JDBC types as the client doesn&#039;t change during a failover, only the logical connection to the databases.  A config sample of configuring automatic client reroute for the type 4 driver can be found at http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_config_reroute_db2.html?cp=SSEQTP_8.5.5&#038;lang=en]]></description>
+		<content:encoded><![CDATA[<p>The DB2 automatic client reroute function can be used to failover between a local and a remote DB2 instance as described at <a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011976.html?lang=en">https://www.ibm.com/support/knowledgecenter/SSEPGG_9.7.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011976.html?lang=en</a><br />
+however, you can not mix client JDBC types as the client doesn&#8217;t change during a failover, only the logical connection to the databases.  A config sample of configuring automatic client reroute for the type 4 driver can be found at <a href="http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_config_reroute_db2.html?cp=SSEQTP_8.5.5&#038;lang=en">http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_config_reroute_db2.html?cp=SSEQTP_8.5.5&#038;lang=en</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: DatapowerRookie</title>
+		<link>https://developer.ibm.com/wasdev/docs/was-classic-or-was-liberty-how-to-choose/#comment-146350</link>
+		<dc:creator><![CDATA[DatapowerRookie]]></dc:creator>
+		<pubDate>Tue, 10 May 2016 18:04:40 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=13311#comment-146350</guid>
+		<description><![CDATA[Is there a provision to mix local and remote DB2 instances as primary and failover options with Liberty?. If so, can we mix jdbc type 2 and 4 drivers to accomplish this?. Sample server.xml configuration would be nice to have.
+
+Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Is there a provision to mix local and remote DB2 instances as primary and failover options with Liberty?. If so, can we mix jdbc type 2 and 4 drivers to accomplish this?. Sample server.xml configuration would be nice to have.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

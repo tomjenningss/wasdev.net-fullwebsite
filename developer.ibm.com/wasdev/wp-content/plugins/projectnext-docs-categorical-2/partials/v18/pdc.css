@@ -1,0 +1,63 @@
+.page_listings{}
+.page_listings li{
+	position: relative;
+	font-size: 15px;
+	font-size: .9375rem;
+}
+.page_listings li a{
+	padding: 5px 0 5px 5px;
+	line-height: 1.4;
+}
+.page_listings li:before{
+	content: '';
+}
+.page_listings .children {
+	display: none;
+}
+.page_listings .current-cat .children,
+.page_listings .current-cat-parent .children{
+  display: block;
+}
+.page_listings .children li{
+	position: relative;
+}
+.page_listings .children li:before{
+	x-content: '○';
+	content: '•';
+}
+.page_listings li.arrowryt:before {
+	content: '▸';
+	color: #333;
+}
+.page_listings li.arrowdwn:before {
+	content: '▾';
+	color: #333;
+}
+.page_listings li.current_page_item > a{
+	background-color: #f0f0f4;
+}
+
+/* styling the list on the archive page. */
+.doc-archive-list article{
+  margin:0 0 30px 0;
+}
+.doc-archive-list article .pdc_entry-header .entry-title{
+  font-size:20px;
+	font-size:1.25rem;
+  font-family: "HelveticaNeue-Light", "HelvLightIBM", Arial, sans-serif;
+  padding:0;
+  line-height: 1.2;
+  margin-bottom:8px;
+}
+.doc-archive-list article .pdc_entry-content p,
+.doc-archive-list article .pdc_entry-content .pdc_cats{
+  font-size: 14px;
+  font-size: .875rem;
+  color: #323232;
+  line-height: 1.6;
+  font-family: "HelveticaNeue-Light", "HelvLightIBM", Arial, sans-serif;
+}
+.doc-archive-list article .pdc_entry-content .pdc_cats{
+  font-size: 13px;
+  font-size: .8125rem;
+}

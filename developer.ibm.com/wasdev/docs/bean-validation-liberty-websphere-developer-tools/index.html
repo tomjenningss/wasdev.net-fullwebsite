@@ -1,0 +1,651 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bean Validation tutorial</title><meta name="description" content="How to validate JavaBeans in microservices using Java EE 8 Bean Validation"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><link rel="icon" type="image/x-icon" href="https://openliberty.io/favicon.ico"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/openliberty-417cdd85f6072483030360356f930c017bd4dcc1f64ab74a65569803624b1b95.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/coderay-custom-ab54124e3170f1f31f9b8fdd361c302b78a5238d19a86f6c6f34c4688e2e8d35.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/doc-header-c309828408a64fdb82836c8eaf45589dd3f0470483d903e0bc55c6abaf963889.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/toc-a0b9110a3e9da7f42eb13f4ba8d64a205bbc2f3f406cb0d504af6fc79ea8f859.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/end-of-guide-78aa63e591c3ad3c94c61dfb23e1b0c417aab50a64d4e17b0062aab22a17137e.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-card-e0f001e61d331b9f363725e180d548fafef865e09c5806c90c25ae6c73b7f361.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-4de01bc72769767a332497a26743e5a2b7324eae873bb57bdc7a6fe6b1b8a889.css"><link type="text/css" rel="stylesheet" href="https://openliberty.io/assets/guide-multipane-6e79e71c68e01ccfcd4021fc6ba6a7c0137c6929e87aadb566929234592bca19.css"> <script>!function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="https://www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-TKP3KJ7")</script><link rel="canonical" href="https://openliberty.io/guides/bean-validation"><link rel="alternate" type="application/rss+xml" title="Open Liberty" href="https://openliberty.io/feed.xml"><link href="https://fonts.googleapis.com/css?family=Asap:400,500" rel="stylesheet"><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@OpenLibertyIO"/><meta name="twitter:title" content="Bean Validation tutorial"/><meta name="twitter:description" content="How to validate JavaBeans in microservices using Java EE 8 Bean Validation"/><meta name="twitter:image" content="https://openliberty.io/img/twitter_card.jpg"/><meta name="google-site-verification" content="h2P030H9b66CyL1nEmWfrZB8Fr14h9LmVMG7Ur0caBs"/><script async defer src="https://buttons.github.io/buttons.js"></script></head><body> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKP3KJ7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header> <nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"> <button id="navbar_responsive_button" class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="https://openliberty.io/" aria-label="Open Liberty Home Page"> <img id="doc_logo" src="https://openliberty.io/img/docs_openliberty_logo.png" class="img-responsive" alt="Home"> </a><div id="doc_title"> <img src="https://openliberty.io/img/doc_header_title.svg" alt="Docs"></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-left"><li> <a href="https://openliberty.io/guides">Guides</a></li><li id="reference_dropdown_container" class="btn-group"> <button type="button" class="btn btn-default dropdown-toggle reference_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Reference <span id="reference_caret" class="hidden-md hidden-lg"></span> </button><ul class="dropdown-menu"><li><a href="https://openliberty.io/docs/ref/javaee/">Java EE API</a></li><li><a href="https://openliberty.io/docs/ref/microprofile/">MicroProfile API</a></li><li><a href="https://openliberty.io/docs/ref/config/">Server Config</a></li><li><a href="https://openliberty.io/docs/ref/feature/">Server Features</a></li><li><a href="https://openliberty.io/docs/ref/command/">Server Commands</a></li><li><a href="https://openliberty.io/docs/ref/general/">General</a></li></ul></li></ul><div id="header_round_links_container" class="visible-xs"> <a id="header_twitter_link" class="header_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="header_stackoverflow_link" class="header_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="header_groupsio_link" class="header_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div></div><div id="breadcrumb_row"> <button id="breadcrumb_hamburger" class="toc-toggle collapsed" type="button" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <img src="https://openliberty.io/img/toc_close_green.svg" id="header_close_toc_svg" class="hidden img-responsive" alt="Table of contents close button"> </button><ol class="breadcrumb fluid-container"><li> <a href="https://openliberty.io/docs">Docs</a></li><li> <a href="https://openliberty.io/guides">Guides</a></li><li class="active">Validating constraints with microservices</li></ol></div></div> </nav><div id="header_background"></div><div class="hidden"> <img src="https://openliberty.io/img/small_logo_white.svg"> <img src="https://openliberty.io/img/github_navbar_hover.svg"></div> </header><main aria-label="Content"><div id="background_container"><div id="toc_hotspot"></div><div id="toc_column" class="collapse inline open"><div id="toc_inner"><div id="close_container"> <img id="toc_close_white" src="https://openliberty.io/img/toc_close_white.svg" alt="Close the table of contents" tabindex="0"></div><div id="mobile_close_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"> <img src="https://openliberty.io/img/toc_close_green.svg" alt="Table of contents close button" tabindex="0"></div><h3 id="toc_title">Contents</h3><div id="toc_container"><ul class="sectlevel1"><li><a href="index.html#what-youll-learn">What you’ll learn</a></li><li> <a href="index.html#getting-started">Getting started</a><ul class="sectlevel2"><li><a href="index.html#try-what-youll-build">Try what you’ll build</a></li></ul></li><li><a href="index.html#applying-constraints-on-the-javabeans">Applying constraints on the JavaBeans</a></li><li><a href="index.html#creating-custom-constraints">Creating custom constraints</a></li><li><a href="index.html#programmatically-validating-constraints">Programmatically validating constraints</a></li><li><a href="index.html#building-and-running-the-application">Building and running the application</a></li><li> <a href="index.html#testing-the-constraints">Testing the constraints</a><ul class="sectlevel2"><li><a href="index.html#running-the-tests">Running the tests</a></li></ul></li><li><a href="index.html#great-work-youre-done">Great work! You’re done!</a></li><li><a href="index.html#guide-attribution">Guide Attribution</a></li></ul></div><div id="toc_separator"></div><h3 id="tag_title">Tags</h3><div id="tags_container"> <a href="https://openliberty.io/guides?search=Jakarta%20EE&amp;key=tag">Jakarta EE</a></div></div></div><div id="toc_indicator" tabindex="0" aria-label="Open the table of contents" class="hidden"> <img src="https://openliberty.io/img/arrow_white.svg" alt="arrow"></div><div id="toc_line" class="open"></div><div id="guide_column" class="position_relative open"><div id="guide_content"><div id="guide_meta" class="sect1" tabindex="0"><h1 id="guide_title">Validating constraints with microservices</h1><div id="duration_container"> <img src="https://openliberty.io/img/guide_duration_clock_icon_large.svg" alt="duration"> <span id="guide_duration">20 minutes</span></div><div id="mobile_prereqs_section"><p id="mobile_prereqs_title">Prerequisites:</p><div class="prereqs_list"></div></div></div><div class="scroller_anchor"></div><div id="mobile_toc_accordion_container" data-toggle="collapse" data-target="#toc_column" aria-expanded="false" aria-controls="toc_column"><div id="mobile_toc_accordion"> <button class="breadcrumb_hamburger toc-toggle collapsed" type="button" tabindex="0"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <img src="https://openliberty.io/img/toc_close_green.svg" class="TOC_Close_SVG hidden img-responsive" alt="Table of contents close button"> </button> <span>Table of contents</span></div></div><div id="preamble"><div class="sectionbody"><div class="admonitionblock note hidden"><table><tr><td class="icon"> <i class="fa icon-note" title="Note"></i></td><td class="content"> This repository contains the guide documentation source. To view the guide in published form, view it on the <a href="index.html">Open Liberty website</a>.</td></tr></table></div><div class="paragraph"><p>Explore the use of bean validation to validate user input data for microservices.</p></div></div></div><div class="sect1"><h2 id="what-youll-learn">What you’ll learn</h2><div class="sectionbody"><div class="paragraph"><p>You will learn the basics of writing and testing a microservice that uses bean validation and the new functionality of Bean Validation 2.0. The service uses bean validation to validate that the supplied JavaBeans meet the defined constraints.</p></div><div class="paragraph"><p>Bean Validation is a Java specification that simplifies data validation and error checking. Bean validation uses a standard way to validate data stored in JavaBeans. Validation can be performed manually or with integration with other specifications and frameworks, such as Contexts and Dependency Injection (CDI), Java Persistence API (JPA), or JavaServer Faces (JSF). To set rules on data, apply constraints by using annotations or XML configuration files. Bean validation provides both built-in constraints and the ability to create custom constraints. Bean validation allows for validation of both JavaBean fields and methods. For method-level validation, both the input parameters and return value can be validated.</p></div><div class="paragraph"><p>Several additional built-in constraints are included in Bean Validation 2.0, which reduces the need for custom validation in common validation scenarios. Some of the new built-in constraints include <code>@Email</code>, <code>@NotBlank</code>, <code>@Positive</code>, and <code>@Negative</code>. Also in Bean Validation 2.0, you can now specify constraints on type parameters.</p></div><div class="paragraph"><p>The example microservice uses both field-level and method-level validation as well as several of the built-in constraints and a custom constraint.</p></div></div></div><div class="sect1 command"><h2 id="getting-started">Getting started</h2><div class="sectionbody"><div class="paragraph"><p>The fastest way to work through this guide is to clone the Git repository and use the projects that are provided inside:</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>git clone https://github.com/openliberty/guide-bean-validation.git
+cd guide-bean-validation</code></pre></div></div><div class="paragraph"><p>The <code>start</code> directory contains the starting project that you will build upon.</p></div><div class="paragraph"><p>The <code>finish</code> directory contains the finished project that you will build.</p></div><div class="sect2 command"><h3 id="try-what-youll-build">Try what you’ll build</h3><div class="paragraph"><p>The <code>finish</code> directory in the root of this guide contains the finished application. Give it a try before you proceed.</p></div><div class="paragraph"><p>To try out the application, first navigate to the <code>finish</code> directory and then run the following Maven goal to build the application and run it inside Open Liberty:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>cd finish
+mvn install liberty:start-server</code></pre></div></div><div class="paragraph"><p>Point your browser to the <a href="http://localhost:9080/openapi/ui" target="_blank" rel="noopener noreferrer" class="notranslate">http://localhost:9080/openapi/ui</a> URL. You see the OpenAPI user interface documenting the REST endpoints used in this guide. If you are interested in learning more about OpenAPI, read <a href="https://openliberty.io/guides/microprofile-openapi.html" target="_blank" rel="noopener">Documenting RESTful APIs</a>. Expand the <code>/beanvalidation/validatespacecraft POST request to validate your spacecraft bean</code> section and click <strong>Try it out</strong>. Copy the following example input into the text box:</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>{
+  "astronaut": {
+    "name": "Libby",
+    "age": 25,
+    "emailAddress": "<a href="https://openliberty.io/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="264a4f44445f44495266495643484a4f444354525f084f49">[email&#160;protected]</a>"
+  },
+  "destinations": {
+    "Mars": 500
+  },
+  "serialNumber": "Liberty0001"
+}</code></pre></div></div><div class="paragraph"><p>Click <code>Execute</code> and you receive the response <code>No Constraint Violations</code> because the values specified pass the constraints you will create in this guide. Now try copying the following value into the box:</p></div><div class="listingblock command"><div class="content"> <pre class="CodeRay highlight"><code>{
+  "astronaut": {
+    "name": "Libby",
+    "age": 12,
+    "emailAddress": "<a href="https://openliberty.io/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92fefbf0f0ebf0fde6d2fde2f7fcfefbf0f7e0e6ebbcfbfd">[email&#160;protected]</a>"
+  },
+  "destinations": {
+    "Mars": 500
+  },
+  "serialNumber": "Liberty0001"
+}</code></pre></div></div><div class="paragraph"><p>This time you receive <code>Constraint Violation Found: must be greater than or equal to 18</code> as a response because the age specified was under the minimum age of 18. Try other combinations of values to get a feel for the constraints that will be defined in this guide.</p></div><div class="paragraph command"><p>After you are done checking out the application, stop the Open Liberty server:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn liberty:stop-server</code></pre></div></div></div></div></div><div class="sect1"><h2 id="applying-constraints-on-the-javabeans">Applying constraints on the JavaBeans</h2><div class="sectionbody"><div class="paragraph"><p>Navigate to the <code>start</code> directory to begin.</p></div><div class="paragraph"><p>First, create the JavaBeans to be constrained.</p></div><div class="listingblock code_command hotspot file=0"><div class="content"> <pre><mark>Create the <code>Astronaut</code> class.</mark>
+<code>src/main/java/io/openliberty/guides/beanvalidation/Astronaut.java</code></pre></div></div><div class="paragraph"><p>Astronaut.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Max</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Min</span>;
+<span class="line-numbers"> 6</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Email</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">10</span>
+<span class="line-numbers">11</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Astronaut</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">12</span>
+<span class="line-numbers">13</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span>    <span class="annotation">@NotBlank</span>
+<span class="line-numbers">16</span>    <span class="directive">private</span> <span class="predefined-type">String</span> name;
+<span class="line-numbers">17</span>
+<span class="line-numbers">18</span>    <span class="annotation">@Min</span>(<span class="integer">18</span>)
+<span class="line-numbers">19</span>    <span class="annotation">@Max</span>(<span class="integer">100</span>)
+<span class="line-numbers">20</span>    <span class="directive">private</span> <span class="predefined-type">Integer</span> age;
+<span class="line-numbers">21</span>
+<span class="line-numbers">22</span>    <span class="annotation">@Email</span>
+<span class="line-numbers">23</span>    <span class="directive">private</span> <span class="predefined-type">String</span> emailAddress;
+<span class="line-numbers">24</span>
+<span class="line-numbers">25</span>    <span class="directive">public</span> Astronaut() {}
+<span class="line-numbers">26</span>
+<span class="line-numbers">27</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getName() {
+<span class="line-numbers">28</span>        <span class="keyword">return</span> name;
+<span class="line-numbers">29</span>    }
+<span class="line-numbers">30</span>
+<span class="line-numbers">31</span>    <span class="directive">public</span> <span class="predefined-type">Integer</span> getAge() {
+<span class="line-numbers">32</span>        <span class="keyword">return</span> age;
+<span class="line-numbers">33</span>    }
+<span class="line-numbers">34</span>
+<span class="line-numbers">35</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getEmailAddress() {
+<span class="line-numbers">36</span>        <span class="keyword">return</span> emailAddress;
+<span class="line-numbers">37</span>    }
+<span class="line-numbers">38</span>
+<span class="line-numbers">39</span>    <span class="directive">public</span> <span class="type">void</span> setName(<span class="predefined-type">String</span> name) {
+<span class="line-numbers">40</span>        <span class="local-variable">this</span>.name = name;
+<span class="line-numbers">41</span>    }
+<span class="line-numbers">42</span>
+<span class="line-numbers">43</span>    <span class="directive">public</span> <span class="type">void</span> setAge(<span class="predefined-type">Integer</span> age) {
+<span class="line-numbers">44</span>        <span class="local-variable">this</span>.age = age;
+<span class="line-numbers">45</span>    }
+<span class="line-numbers">46</span>
+<span class="line-numbers">47</span>    <span class="directive">public</span> <span class="type">void</span> setEmailAddress(<span class="predefined-type">String</span> emailAddress) {
+<span class="line-numbers">48</span>        <span class="local-variable">this</span>.emailAddress = emailAddress;
+<span class="line-numbers">49</span>    }
+<span class="line-numbers">50</span>  }</code></pre></div></div><div class="paragraph"><p>The bean stores the attributes of an astronaut, <code class="hotspot=16 file=0">name</code>, <code class="hotspot=20 file=0">age</code>, and <code class="hotspot=23 file=0">emailAddress</code>, and provides getters and setters to access and set the values.</p></div><div class="paragraph"><p>The <code class="hotspot=11-50 file=0">Astronaut</code> class has the following constraints applied:</p></div><div class="ulist"><ul><li><p>The astronaut needs to have a name. Bean Validation 2.0 provides a built-in <code class="hotspot=15 file=0">@NotBlank</code> constraint, which ensures the value is not null and contains one non-whitespace character. The annotation constrains the <code class="hotspot=16 file=0">name</code> field.</p></li><li><p>The email supplied needs to be a valid email address. Another built-in constraint in Bean Validation 2.0 is <code class="hotspot=22 file=0">@Email</code>, which can validate that the <code class="hotspot=11-50 file=0">Astronaut</code> bean includes a correctly formatted email address. The annotation constrains the <code class="hotspot=23 file=0">emailAddress</code> field.</p></li><li><p>The astronaut needs to be between 18 and 100 years old. Bean validation allows you to specify multiple constraints on a single field. The <code class="hotspot=18 file=0">@Min</code> and <code class="hotspot=19 file=0">@Max</code> built-in constraints applied to the <code class="hotspot=20 file=0">age</code> field check that the astronaut is between the ages of 18 and 100.</p></li></ul></div><div class="paragraph"><p>In this example, the annotation is on the field value itself. You can also place the annotation on the getter method, which has the same effect.</p></div><div class="listingblock code_command hotspot file=1"><div class="content"> <pre><mark>Create the <code>Spacecraft</code> class.</mark>
+<code>src/main/java/io/openliberty/guides/beanvalidation/Spacecraft.java</code></pre></div></div><div class="paragraph"><p>Spacecraft.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">java.util.Map</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">java.util.HashMap</span>;
+<span class="line-numbers"> 6</span>
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Positive</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotNull</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.AssertTrue</span>;
+<span class="line-numbers">11</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers">12</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">13</span><span class="keyword">import</span> <span class="include">javax.validation.Valid</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span><span class="annotation">@Named</span>
+<span class="line-numbers">16</span><span class="annotation">@RequestScoped</span>
+<span class="line-numbers">17</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Spacecraft</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">18</span>
+<span class="line-numbers">19</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">20</span>
+<span class="line-numbers">21</span>    <span class="annotation">@Valid</span>
+<span class="line-numbers">22</span>    <span class="directive">private</span> Astronaut astronaut;
+<span class="line-numbers">23</span>
+<span class="line-numbers">24</span>    <span class="directive">private</span> <span class="predefined-type">Map</span>&lt;<span class="annotation">@NotBlank</span> <span class="predefined-type">String</span>, <span class="annotation">@Positive</span> <span class="predefined-type">Integer</span>&gt; destinations;
+<span class="line-numbers">25</span>
+<span class="line-numbers">26</span>    <span class="annotation">@SerialNumber</span>
+<span class="line-numbers">27</span>    <span class="directive">private</span> <span class="predefined-type">String</span> serialNumber;
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>    <span class="directive">public</span> Spacecraft() {
+<span class="line-numbers">30</span>        destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers">31</span>    }
+<span class="line-numbers">32</span>
+<span class="line-numbers">33</span>    <span class="directive">public</span> <span class="type">void</span> setAstronaut(Astronaut astronaut) {
+<span class="line-numbers">34</span>        <span class="local-variable">this</span>.astronaut = astronaut;
+<span class="line-numbers">35</span>    }
+<span class="line-numbers">36</span>
+<span class="line-numbers">37</span>    <span class="directive">public</span> <span class="type">void</span> setDestinations(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Integer</span>&gt; destinations) {
+<span class="line-numbers">38</span>        <span class="local-variable">this</span>.destinations = destinations;
+<span class="line-numbers">39</span>    }
+<span class="line-numbers">40</span>
+<span class="line-numbers">41</span>    <span class="directive">public</span> <span class="type">void</span> setSerialNumber(<span class="predefined-type">String</span> serialNumber) {
+<span class="line-numbers">42</span>        <span class="local-variable">this</span>.serialNumber = serialNumber;
+<span class="line-numbers">43</span>    }
+<span class="line-numbers">44</span>
+<span class="line-numbers">45</span>    <span class="directive">public</span> Astronaut getAstronaut() {
+<span class="line-numbers">46</span>        <span class="keyword">return</span> astronaut;
+<span class="line-numbers">47</span>    }
+<span class="line-numbers">48</span>
+<span class="line-numbers">49</span>    <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; getDestinations() {
+<span class="line-numbers">50</span>        <span class="keyword">return</span> destinations;
+<span class="line-numbers">51</span>    }
+<span class="line-numbers">52</span>
+<span class="line-numbers">53</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getSerialNumber() {
+<span class="line-numbers">54</span>        <span class="keyword">return</span> serialNumber;
+<span class="line-numbers">55</span>    }
+<span class="line-numbers">56</span>
+<span class="line-numbers">57</span>    <span class="annotation">@AssertTrue</span>
+<span class="line-numbers">58</span>    <span class="directive">public</span> <span class="type">boolean</span> launchSpacecraft(<span class="annotation">@NotNull</span> <span class="predefined-type">String</span> launchCode) {
+<span class="line-numbers">59</span>        <span class="keyword">if</span>(launchCode.equals(<span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>))
+<span class="line-numbers">60</span>            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+<span class="line-numbers">61</span>        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+<span class="line-numbers">62</span>    }
+<span class="line-numbers">63</span>}</code></pre></div></div><div class="paragraph"><p>The <code class="hotspot=17-63 file=1">Spacecraft</code> bean contains 3 fields, <code class="hotspot=22 file=1">astronaut</code>, <code class="hotspot=27 file=1">serialNumber</code>, and <code class="hotspot=24 file=1">destinations</code>. The JavaBean needs to be a CDI managed bean to allow for method-level validation, which uses CDI interceptions. Because the <code class="hotspot=17-63 file=1">Spacecraft</code> bean is a CDI managed bean, a scope is necessary. A request scope is used in this example. To learn more about CDI, see <a href="https://openliberty.io/guides/cdi-intro.html" target="_blank" rel="noopener">Injecting dependencies into microservices</a>.</p></div><div class="paragraph"><p>The <code class="hotspot=17-63 file=1">Spacecraft</code> class has the following constraints applied:</p></div><div class="ulist"><ul><li><p>Every destination that is specified needs a name and a positive distance. In Bean Validation 2.0, you can specify constraints on type parameters. The <code class="hotspot=24 file=1">@NotBlank</code> and <code class="hotspot=24 file=1">@Positive</code> annotations constrain the <code class="hotspot=24 file=1">destinations</code> map so that the destination name is not blank, and the distance is positive. The <code class="hotspot=24 file=1">@Positive</code> constraint ensures that numeric value fields are greater than 0.</p></li><li><p>A correctly formatted serial number is required. In addition to specifying the built-in constraints, you can create custom constraints to allow user-defined validation rules. The <code class="hotspot=26 file=1">@SerialNumber</code> annotation that constrains the <code class="hotspot=27 file=1">serialNumber</code> field is a custom constraint, which will be created later.</p></li></ul></div><div class="paragraph"><p>Because you already specified constraints on the <code class="hotspot=11-50 file=0">Astronaut</code> bean, the constraints do not need to be respecified in the <code class="hotspot=17-63 file=1">Spacecraft</code> bean. Instead, because of the <code class="hotspot=21 file=1">@Valid</code> annotation on the field, all the nested constraints on the <code class="hotspot=11-50 file=0">Astronaut</code> bean are validated.</p></div><div class="paragraph"><p>You can also use bean validation with CDI to provide method-level validation. The <code class="hotspot=58-62 file=1">launchSpacecraft</code> method on the <code class="hotspot=17-63 file=1">Spacecraft</code> bean accepts a <code class="hotspot=58 file=1">launchCode</code> parameter, and if the <code class="hotspot=58 file=1">launchCode</code> parameter is <code class="hotspot=59 file=1">OpenLiberty</code>, the method returns <code class="hotspot=60 file=1">true</code> that the spacecraft is launched. Otherwise, the method returns <code class="hotspot=61 file=1">false</code>. The <code class="hotspot=58-62 file=1">launchSpacecraft</code> method uses both parameter and return value validation. The <code class="hotspot=58 file=1">@NotNull</code> constraint eliminates the need to manually check within the method that the parameter is not null. Additionally, the method has the <code class="hotspot=57 file=1">@AssertTrue</code> return-level constraint to enforce that the method must return the <code>true</code> boolean.</p></div></div></div><div class="sect1"><h2 id="creating-custom-constraints">Creating custom constraints</h2><div class="sectionbody"><div class="paragraph"><p>To create the custom constraint for <code class="hotspot=26 file=0">@SerialNumber</code>, begin by creating an annotation.</p></div><div class="paragraph"><p>Spacecraft.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">java.util.Map</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">java.util.HashMap</span>;
+<span class="line-numbers"> 6</span>
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Positive</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotNull</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.AssertTrue</span>;
+<span class="line-numbers">11</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers">12</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">13</span><span class="keyword">import</span> <span class="include">javax.validation.Valid</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span><span class="annotation">@Named</span>
+<span class="line-numbers">16</span><span class="annotation">@RequestScoped</span>
+<span class="line-numbers">17</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Spacecraft</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">18</span>
+<span class="line-numbers">19</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">20</span>
+<span class="line-numbers">21</span>    <span class="annotation">@Valid</span>
+<span class="line-numbers">22</span>    <span class="directive">private</span> Astronaut astronaut;
+<span class="line-numbers">23</span>
+<span class="line-numbers">24</span>    <span class="directive">private</span> <span class="predefined-type">Map</span>&lt;<span class="annotation">@NotBlank</span> <span class="predefined-type">String</span>, <span class="annotation">@Positive</span> <span class="predefined-type">Integer</span>&gt; destinations;
+<span class="line-numbers">25</span>
+<span class="line-numbers">26</span>    <span class="annotation">@SerialNumber</span>
+<span class="line-numbers">27</span>    <span class="directive">private</span> <span class="predefined-type">String</span> serialNumber;
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>    <span class="directive">public</span> Spacecraft() {
+<span class="line-numbers">30</span>        destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers">31</span>    }
+<span class="line-numbers">32</span>
+<span class="line-numbers">33</span>    <span class="directive">public</span> <span class="type">void</span> setAstronaut(Astronaut astronaut) {
+<span class="line-numbers">34</span>        <span class="local-variable">this</span>.astronaut = astronaut;
+<span class="line-numbers">35</span>    }
+<span class="line-numbers">36</span>
+<span class="line-numbers">37</span>    <span class="directive">public</span> <span class="type">void</span> setDestinations(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Integer</span>&gt; destinations) {
+<span class="line-numbers">38</span>        <span class="local-variable">this</span>.destinations = destinations;
+<span class="line-numbers">39</span>    }
+<span class="line-numbers">40</span>
+<span class="line-numbers">41</span>    <span class="directive">public</span> <span class="type">void</span> setSerialNumber(<span class="predefined-type">String</span> serialNumber) {
+<span class="line-numbers">42</span>        <span class="local-variable">this</span>.serialNumber = serialNumber;
+<span class="line-numbers">43</span>    }
+<span class="line-numbers">44</span>
+<span class="line-numbers">45</span>    <span class="directive">public</span> Astronaut getAstronaut() {
+<span class="line-numbers">46</span>        <span class="keyword">return</span> astronaut;
+<span class="line-numbers">47</span>    }
+<span class="line-numbers">48</span>
+<span class="line-numbers">49</span>    <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; getDestinations() {
+<span class="line-numbers">50</span>        <span class="keyword">return</span> destinations;
+<span class="line-numbers">51</span>    }
+<span class="line-numbers">52</span>
+<span class="line-numbers">53</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getSerialNumber() {
+<span class="line-numbers">54</span>        <span class="keyword">return</span> serialNumber;
+<span class="line-numbers">55</span>    }
+<span class="line-numbers">56</span>
+<span class="line-numbers">57</span>    <span class="annotation">@AssertTrue</span>
+<span class="line-numbers">58</span>    <span class="directive">public</span> <span class="type">boolean</span> launchSpacecraft(<span class="annotation">@NotNull</span> <span class="predefined-type">String</span> launchCode) {
+<span class="line-numbers">59</span>        <span class="keyword">if</span>(launchCode.equals(<span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>))
+<span class="line-numbers">60</span>            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+<span class="line-numbers">61</span>        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+<span class="line-numbers">62</span>    }
+<span class="line-numbers">63</span>}</code></pre></div></div><div class="listingblock code_command hotspot file=1"><div class="content"> <pre><mark>Create the annotation.</mark>
+<code>src/main/java/io/openliberty/guides/beanvalidation/SerialNumber.java</code></pre></div></div><div class="paragraph"><p>SerialNumber.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.lang.annotation.Documented</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">java.lang.annotation.Retention</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">java.lang.annotation.Target</span>;
+<span class="line-numbers"> 6</span><span class="keyword">import</span> <span class="include">static</span> <span class="include">java.lang.annotation.ElementType.FIELD</span>;
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">static</span> <span class="include">java.lang.annotation.RetentionPolicy.RUNTIME</span>;
+<span class="line-numbers"> 8</span>
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.validation.Constraint</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.validation.Payload</span>;
+<span class="line-numbers">11</span>
+<span class="line-numbers">12</span><span class="annotation">@Target</span>({ FIELD })
+<span class="line-numbers">13</span><span class="annotation">@Retention</span>(RUNTIME)
+<span class="line-numbers">14</span><span class="annotation">@Documented</span>
+<span class="line-numbers">15</span><span class="annotation">@Constraint</span>(validatedBy = { SerialNumberValidator.class })
+<span class="line-numbers">16</span><span class="directive">public</span> <span class="annotation">@interface</span> SerialNumber {
+<span class="line-numbers">17</span>
+<span class="line-numbers">18</span>    <span class="predefined-type">String</span> message() <span class="keyword">default</span> <span class="string"><span class="delimiter">"</span><span class="content">serial number is not valid.</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">19</span>
+<span class="line-numbers">20</span>    <span class="predefined-type">Class</span>&lt;?&gt;<span class="type">[]</span> groups() <span class="keyword">default</span> {};
+<span class="line-numbers">21</span>
+<span class="line-numbers">22</span>    <span class="predefined-type">Class</span>&lt;? <span class="directive">extends</span> Payload&gt;<span class="type">[]</span> payload() <span class="keyword">default</span> {};
+<span class="line-numbers">23</span>}</code></pre></div></div><div class="paragraph"><p>The <code class="hotspot=12 file=1">@Target</code> annotation indicates the element types to which you can apply the custom constraint. Because the <code class="hotspot=26 file=0">@SerialNumber</code> constraint is used only on a field, only the <code class="hotspot=12 file=1">FIELD</code> target is specified.</p></div><div class="paragraph"><p>When you define a constraint annotation, the specification requires the <code class="hotspot=13 file=1">RUNTIME</code> retention policy.</p></div><div class="paragraph"><p>The <code class="hotspot=15 file=1">@Constraint</code> annotation specifies the class that contains the validation logic for the custom constraint.</p></div><div class="paragraph"><p>In the <code class="hotspot=16-23 file=1">SerialNumber</code> body, the <code class="hotspot=18 file=1">message()</code> method provides the message that is output when a validation constraint is violated. The <code class="hotspot=20 file=1">groups()</code> and <code class="hotspot=22 file=1">payload()</code> methods associate this constraint only with certain groups or payloads. The defaults are used in the example.</p></div><div class="paragraph"><p>Now, create the class that provides the validation for the <code class="hotspot=26 file=0">@SerialNumber</code> constraint.</p></div><div class="listingblock code_command hotspot file=2"><div class="content"> <pre><mark>Create the <code>SerialNumberValidator</code> class.</mark>
+<code>src/main/java/io/openliberty/guides/beanvalidation/SerialNumberValidator.java</code></pre></div></div><div class="paragraph"><p>SerialNumberValidator.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">javax.validation.ConstraintValidator</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">javax.validation.ConstraintValidatorContext</span>;
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span><span class="directive">public</span> <span class="type">class</span> <span class="class">SerialNumberValidator</span> <span class="directive">implements</span> ConstraintValidator&lt;SerialNumber,
+<span class="line-numbers"> 7</span>                                                                  <span class="predefined-type">Object</span>&gt; {
+<span class="line-numbers"> 8</span>
+<span class="line-numbers"> 9</span>    <span class="annotation">@Override</span>
+<span class="line-numbers">10</span>    <span class="directive">public</span> <span class="type">boolean</span> isValid(<span class="predefined-type">Object</span> arg0, ConstraintValidatorContext arg1) {
+<span class="line-numbers">11</span>        <span class="comment">//Serial Numbers must start with Liberty followed by four numbers</span>
+<span class="line-numbers">12</span>        <span class="type">boolean</span> isValid = <span class="predefined-constant">false</span>;
+<span class="line-numbers">13</span>        <span class="keyword">if</span> (arg0 == <span class="predefined-constant">null</span>)
+<span class="line-numbers">14</span>            <span class="keyword">return</span> isValid;
+<span class="line-numbers">15</span>        <span class="predefined-type">String</span> serialNumber = arg0.toString();
+<span class="line-numbers">16</span>        isValid = serialNumber.length() == <span class="integer">11</span> &amp;&amp; serialNumber.startsWith(<span class="string"><span class="delimiter">"</span><span class="content">Liberty</span><span class="delimiter">"</span></span>);
+<span class="line-numbers">17</span>        <span class="keyword">try</span> {
+<span class="line-numbers">18</span>            <span class="predefined-type">Integer</span>.parseInt(serialNumber.substring(<span class="integer">7</span>));
+<span class="line-numbers">19</span>        } <span class="keyword">catch</span> (<span class="exception">Exception</span> ex) {
+<span class="line-numbers">20</span>            isValid = <span class="predefined-constant">false</span>;
+<span class="line-numbers">21</span>        }
+<span class="line-numbers">22</span>        <span class="keyword">return</span> isValid;
+<span class="line-numbers">23</span>    }
+<span class="line-numbers">24</span>}</code></pre></div></div><div class="paragraph"><p>The <code class="hotspot=6-24 file=2">SerialNumberValidator</code> class has one method, <code class="hotspot=10-23 file=2">isValid()</code>, which contains the custom validation logic. In this case, the serial number must start with <code class="hotspot=16 file=2">Liberty</code> followed by 4 numbers, such as <code>Liberty0001</code>. If the supplied serial number matches the constraint, <code class="hotspot=10-23 file=2">isValid</code> returns <code>true</code>. If the serial number does not match, it returns <code>false</code>.</p></div></div></div><div class="sect1"><h2 id="programmatically-validating-constraints">Programmatically validating constraints</h2><div class="sectionbody"><div class="paragraph"><p>Finally, create a service that can be used to programmatically validate the constraints on the <code class="hotspot=17-63 file=0">Spacecraft</code> and <code class="hotspot=11-50 file=1">Astronaut</code> JavaBeans.</p></div><div class="paragraph"><p>Spacecraft.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">java.util.Map</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">java.util.HashMap</span>;
+<span class="line-numbers"> 6</span>
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Positive</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotNull</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.AssertTrue</span>;
+<span class="line-numbers">11</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers">12</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">13</span><span class="keyword">import</span> <span class="include">javax.validation.Valid</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span><span class="annotation">@Named</span>
+<span class="line-numbers">16</span><span class="annotation">@RequestScoped</span>
+<span class="line-numbers">17</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Spacecraft</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">18</span>
+<span class="line-numbers">19</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">20</span>
+<span class="line-numbers">21</span>    <span class="annotation">@Valid</span>
+<span class="line-numbers">22</span>    <span class="directive">private</span> Astronaut astronaut;
+<span class="line-numbers">23</span>
+<span class="line-numbers">24</span>    <span class="directive">private</span> <span class="predefined-type">Map</span>&lt;<span class="annotation">@NotBlank</span> <span class="predefined-type">String</span>, <span class="annotation">@Positive</span> <span class="predefined-type">Integer</span>&gt; destinations;
+<span class="line-numbers">25</span>
+<span class="line-numbers">26</span>    <span class="annotation">@SerialNumber</span>
+<span class="line-numbers">27</span>    <span class="directive">private</span> <span class="predefined-type">String</span> serialNumber;
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>    <span class="directive">public</span> Spacecraft() {
+<span class="line-numbers">30</span>        destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers">31</span>    }
+<span class="line-numbers">32</span>
+<span class="line-numbers">33</span>    <span class="directive">public</span> <span class="type">void</span> setAstronaut(Astronaut astronaut) {
+<span class="line-numbers">34</span>        <span class="local-variable">this</span>.astronaut = astronaut;
+<span class="line-numbers">35</span>    }
+<span class="line-numbers">36</span>
+<span class="line-numbers">37</span>    <span class="directive">public</span> <span class="type">void</span> setDestinations(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Integer</span>&gt; destinations) {
+<span class="line-numbers">38</span>        <span class="local-variable">this</span>.destinations = destinations;
+<span class="line-numbers">39</span>    }
+<span class="line-numbers">40</span>
+<span class="line-numbers">41</span>    <span class="directive">public</span> <span class="type">void</span> setSerialNumber(<span class="predefined-type">String</span> serialNumber) {
+<span class="line-numbers">42</span>        <span class="local-variable">this</span>.serialNumber = serialNumber;
+<span class="line-numbers">43</span>    }
+<span class="line-numbers">44</span>
+<span class="line-numbers">45</span>    <span class="directive">public</span> Astronaut getAstronaut() {
+<span class="line-numbers">46</span>        <span class="keyword">return</span> astronaut;
+<span class="line-numbers">47</span>    }
+<span class="line-numbers">48</span>
+<span class="line-numbers">49</span>    <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; getDestinations() {
+<span class="line-numbers">50</span>        <span class="keyword">return</span> destinations;
+<span class="line-numbers">51</span>    }
+<span class="line-numbers">52</span>
+<span class="line-numbers">53</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getSerialNumber() {
+<span class="line-numbers">54</span>        <span class="keyword">return</span> serialNumber;
+<span class="line-numbers">55</span>    }
+<span class="line-numbers">56</span>
+<span class="line-numbers">57</span>    <span class="annotation">@AssertTrue</span>
+<span class="line-numbers">58</span>    <span class="directive">public</span> <span class="type">boolean</span> launchSpacecraft(<span class="annotation">@NotNull</span> <span class="predefined-type">String</span> launchCode) {
+<span class="line-numbers">59</span>        <span class="keyword">if</span>(launchCode.equals(<span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>))
+<span class="line-numbers">60</span>            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+<span class="line-numbers">61</span>        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+<span class="line-numbers">62</span>    }
+<span class="line-numbers">63</span>}</code></pre></div></div><div class="paragraph"><p>Astronaut.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Max</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Min</span>;
+<span class="line-numbers"> 6</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Email</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">10</span>
+<span class="line-numbers">11</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Astronaut</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">12</span>
+<span class="line-numbers">13</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span>    <span class="annotation">@NotBlank</span>
+<span class="line-numbers">16</span>    <span class="directive">private</span> <span class="predefined-type">String</span> name;
+<span class="line-numbers">17</span>
+<span class="line-numbers">18</span>    <span class="annotation">@Min</span>(<span class="integer">18</span>)
+<span class="line-numbers">19</span>    <span class="annotation">@Max</span>(<span class="integer">100</span>)
+<span class="line-numbers">20</span>    <span class="directive">private</span> <span class="predefined-type">Integer</span> age;
+<span class="line-numbers">21</span>
+<span class="line-numbers">22</span>    <span class="annotation">@Email</span>
+<span class="line-numbers">23</span>    <span class="directive">private</span> <span class="predefined-type">String</span> emailAddress;
+<span class="line-numbers">24</span>
+<span class="line-numbers">25</span>    <span class="directive">public</span> Astronaut() {}
+<span class="line-numbers">26</span>
+<span class="line-numbers">27</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getName() {
+<span class="line-numbers">28</span>        <span class="keyword">return</span> name;
+<span class="line-numbers">29</span>    }
+<span class="line-numbers">30</span>
+<span class="line-numbers">31</span>    <span class="directive">public</span> <span class="predefined-type">Integer</span> getAge() {
+<span class="line-numbers">32</span>        <span class="keyword">return</span> age;
+<span class="line-numbers">33</span>    }
+<span class="line-numbers">34</span>
+<span class="line-numbers">35</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getEmailAddress() {
+<span class="line-numbers">36</span>        <span class="keyword">return</span> emailAddress;
+<span class="line-numbers">37</span>    }
+<span class="line-numbers">38</span>
+<span class="line-numbers">39</span>    <span class="directive">public</span> <span class="type">void</span> setName(<span class="predefined-type">String</span> name) {
+<span class="line-numbers">40</span>        <span class="local-variable">this</span>.name = name;
+<span class="line-numbers">41</span>    }
+<span class="line-numbers">42</span>
+<span class="line-numbers">43</span>    <span class="directive">public</span> <span class="type">void</span> setAge(<span class="predefined-type">Integer</span> age) {
+<span class="line-numbers">44</span>        <span class="local-variable">this</span>.age = age;
+<span class="line-numbers">45</span>    }
+<span class="line-numbers">46</span>
+<span class="line-numbers">47</span>    <span class="directive">public</span> <span class="type">void</span> setEmailAddress(<span class="predefined-type">String</span> emailAddress) {
+<span class="line-numbers">48</span>        <span class="local-variable">this</span>.emailAddress = emailAddress;
+<span class="line-numbers">49</span>    }
+<span class="line-numbers">50</span>  }</code></pre></div></div><div class="listingblock code_command hotspot file=2"><div class="content"> <pre><mark>Create the <code>BeanValidationEndpoint</code> class.</mark>
+<code>src/main/java/io/openliberty/guides/beanvalidation/BeanValidationEndpoint.java</code></pre></div></div><div class="paragraph"><p>BeanValidationEndpoint.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.util.Set</span>;
+<span class="line-numbers"> 4</span>
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">javax.inject.Inject</span>;
+<span class="line-numbers"> 6</span><span class="keyword">import</span> <span class="include">javax.validation.Validator</span>;
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.ConstraintViolation</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.validation.ConstraintViolationException</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.ws.rs.Consumes</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.ws.rs.POST</span>;
+<span class="line-numbers">11</span><span class="keyword">import</span> <span class="include">javax.ws.rs.Path</span>;
+<span class="line-numbers">12</span><span class="keyword">import</span> <span class="include">javax.ws.rs.Produces</span>;
+<span class="line-numbers">13</span><span class="keyword">import</span> <span class="include">javax.ws.rs.core.MediaType</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span><span class="keyword">import</span> <span class="include">org.eclipse.microprofile.openapi.annotations.Operation</span>;
+<span class="line-numbers">16</span><span class="keyword">import</span> <span class="include">org.eclipse.microprofile.openapi.annotations.media.Content</span>;
+<span class="line-numbers">17</span><span class="keyword">import</span> <span class="include">org.eclipse.microprofile.openapi.annotations.media.Schema</span>;
+<span class="line-numbers">18</span><span class="keyword">import</span> <span class="include">org.eclipse.microprofile.openapi.annotations.parameters.RequestBody</span>;
+<span class="line-numbers">19</span>
+<span class="line-numbers">20</span><span class="annotation">@Path</span>(<span class="string"><span class="delimiter">"</span><span class="content">/</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">21</span><span class="directive">public</span> <span class="type">class</span> <span class="class">BeanValidationEndpoint</span> {
+<span class="line-numbers">22</span>
+<span class="line-numbers">23</span>    <span class="annotation">@Inject</span>
+<span class="line-numbers">24</span>    <span class="predefined-type">Validator</span> validator;
+<span class="line-numbers">25</span>
+<span class="line-numbers">26</span>    <span class="annotation">@Inject</span>
+<span class="line-numbers">27</span>    Spacecraft bean;
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>    <span class="annotation">@POST</span>
+<span class="line-numbers">30</span>    <span class="annotation">@Path</span>(<span class="string"><span class="delimiter">"</span><span class="content">/validatespacecraft</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">31</span>    <span class="annotation">@Produces</span>(MediaType.TEXT_PLAIN)
+<span class="line-numbers">32</span>    <span class="annotation">@Consumes</span>(MediaType.APPLICATION_JSON)
+<span class="line-numbers">33</span>    <span class="annotation">@Operation</span>(summary = <span class="string"><span class="delimiter">"</span><span class="content">POST request to validate your spacecraft bean</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">34</span>    <span class="directive">public</span> <span class="predefined-type">String</span> validateSpacecraft(
+<span class="line-numbers">35</span>                <span class="annotation">@RequestBody</span>(description = <span class="string"><span class="delimiter">"</span><span class="content">Specify the values to create the </span><span class="delimiter">"</span></span>
+<span class="line-numbers">36</span>                           + <span class="string"><span class="delimiter">"</span><span class="content">Astronaut and Spacecraft beans.</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">37</span>                       content = <span class="annotation">@Content</span>(mediaType = <span class="string"><span class="delimiter">"</span><span class="content">application/json</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">38</span>                schema = <span class="annotation">@Schema</span>(implementation = Spacecraft.class)))
+<span class="line-numbers">39</span>                Spacecraft spacecraft) {
+<span class="line-numbers">40</span>
+<span class="line-numbers">41</span>        <span class="predefined-type">Set</span>&lt;ConstraintViolation&lt;Spacecraft&gt;&gt; violations
+<span class="line-numbers">42</span>        = validator.validate(spacecraft);
+<span class="line-numbers">43</span>
+<span class="line-numbers">44</span>        <span class="keyword">if</span>(violations.size() == <span class="integer">0</span>) {
+<span class="line-numbers">45</span>            <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">No Constraint Violations</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">46</span>        }
+<span class="line-numbers">47</span>
+<span class="line-numbers">48</span>        <span class="predefined-type">StringBuilder</span> sb = <span class="keyword">new</span> <span class="predefined-type">StringBuilder</span>();
+<span class="line-numbers">49</span>        <span class="keyword">for</span>(ConstraintViolation&lt;Spacecraft&gt; violation : violations) {
+<span class="line-numbers">50</span>            sb.append(<span class="string"><span class="delimiter">"</span><span class="content">Constraint Violation Found: </span><span class="delimiter">"</span></span>).append(violation.getMessage())
+<span class="line-numbers">51</span>            .append(<span class="predefined-type">System</span>.lineSeparator());
+<span class="line-numbers">52</span>        }
+<span class="line-numbers">53</span>        <span class="keyword">return</span> sb.toString();
+<span class="line-numbers">54</span>    }
+<span class="line-numbers">55</span>
+<span class="line-numbers">56</span>    <span class="annotation">@POST</span>
+<span class="line-numbers">57</span>    <span class="annotation">@Path</span>(<span class="string"><span class="delimiter">"</span><span class="content">/launchspacecraft</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">58</span>    <span class="annotation">@Produces</span>(MediaType.TEXT_PLAIN)
+<span class="line-numbers">59</span>    <span class="annotation">@Operation</span>(summary = <span class="string"><span class="delimiter">"</span><span class="content">POST request to specify a launch code</span><span class="delimiter">"</span></span>)
+<span class="line-numbers">60</span>    <span class="directive">public</span> <span class="predefined-type">String</span> launchSpacecraft(
+<span class="line-numbers">61</span>            <span class="annotation">@RequestBody</span>(description = <span class="string"><span class="delimiter">"</span><span class="content">Enter the launch code.  Must not be </span><span class="delimiter">"</span></span>
+<span class="line-numbers">62</span>                            + <span class="string"><span class="delimiter">"</span><span class="content">null and must equal OpenLiberty for successful launch.</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">63</span>            content = <span class="annotation">@Content</span>(mediaType = <span class="string"><span class="delimiter">"</span><span class="content">text/plain</span><span class="delimiter">"</span></span>))
+<span class="line-numbers">64</span>            <span class="predefined-type">String</span> launchCode) {
+<span class="line-numbers">65</span>        <span class="keyword">try</span> {
+<span class="line-numbers">66</span>            bean.launchSpacecraft(launchCode);
+<span class="line-numbers">67</span>            <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">launched</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">68</span>        } <span class="keyword">catch</span>(ConstraintViolationException ex) {
+<span class="line-numbers">69</span>            <span class="keyword">return</span> ex.getMessage();
+<span class="line-numbers">70</span>        }
+<span class="line-numbers">71</span>    }
+<span class="line-numbers">72</span>}</code></pre></div></div><div class="paragraph"><p>Two resources, a validator and an instance of the <code class="hotspot=27 file=2">Spacecraft</code> JavaBean, are injected into the class. The default validator is used and is obtained through CDI injection. However, you can also obtain the default validator with resource injection or a JNDI lookup. The <code class="hotspot=17-63 file=0">Spacecraft</code> JavaBean is injected so that the method-level constraints can be validated.</p></div><div class="paragraph"><p>The programmatic validation takes place in the <code class="hotspot=34-54 file=2">validateSpacecraft</code> method. To validate the data, the <code class="hotspot=42 file=2">validate</code> method is called on the <code class="hotspot=17-63 file=0">Spacecraft</code> bean. Because the <code class="hotspot=17-63 file=0">Spacecraft</code> bean contains the <code class="hotspot=21 file=0">@Valid</code> constraint on the <code class="hotspot=11-50 file=1">Astronaut</code> bean, both JavaBeans are validated. Any constraint violations found during the call to the <code class="hotspot=42 file=2">validate</code> method are returned as a set of <code class="hotspot=41 file=2">ConstraintViolation</code> objects.</p></div><div class="paragraph"><p>The method level validation occurs in the <code class="hotspot=60-71 file=2">launchSpacecraft</code> method. A call is then made to the <code class="hotspot=58-62 file=0">launchSpacecraft</code> method on the <code class="hotspot=17-63 file=0">Spacecraft</code> bean, which throws a <code>ConstraintViolationException</code> exception if either of the method-level constraints is violated.</p></div></div></div><div class="sect1 command"><h2 id="building-and-running-the-application">Building and running the application</h2><div class="sectionbody"><div class="paragraph"><p>To build the application, run the Maven <code>install</code> phase from the command line in the <code>start</code> directory:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn install</code></pre></div></div><div class="paragraph"><p>This command builds the application and creates a <code>.war</code> file in the target directory. It also configures and installs Open Liberty into the <code>target/liberty/wlp</code> directory.</p></div><div class="paragraph"><p>Next, run the Maven <code>liberty:start-server</code> goal:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn liberty:start-server</code></pre></div></div><div class="paragraph"><p>This goal starts an Open Liberty server instance. Your Maven <code>pom.xml</code> is already configured to start the application in this server instance.</p></div><div class="paragraph"><p>Navigate to the <a href="http://localhost:9080/openapi/ui" target="_blank" rel="noopener noreferrer" class="notranslate">http://localhost:9080/openapi/ui</a> URL. Expand the <code>/beanvalidation/validatespacecraft POST request to validate your spacecraft bean</code> section and click <code>Try it out</code>. Copy the following example input into the text box:</p></div><div class="listingblock command"><div class="content"> <pre>{
+  "astronaut": {
+    "name": "Libby",
+    "age": 25,
+    "emailAddress": "<a href="https://openliberty.io/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6babfb4b4afb4b9a296b9a6b3b8babfb4b3a4a2aff8bfb9">[email&#160;protected]</a>"
+  },
+  "destinations": {
+    "Mars": 500
+  },
+  "serialNumber": "Liberty0001"
+}</pre></div></div><div class="paragraph"><p>Click <code>Execute</code> and you receive the response <code>No Constraint Violations</code> because the values specified pass previously defined constraints.</p></div><div class="paragraph"><p>Next, modify the following values, all of which break the previously defined constraints:</p></div><div class="listingblock no_copy"><div class="content"> <pre class="CodeRay highlight"><code>Age = 10
+Email = libbybot
+SerialNumber = Liberty1</code></pre></div></div><div class="paragraph"><p>After you click <code>Execute</code>, the response contains the following constraint violations:</p></div><div class="listingblock no_copy"><div class="content"> <pre class="CodeRay highlight"><code>Constraint Violation Found: serial number is not valid.
+Constraint Violation Found: must be greater than or equal to 18
+Constraint Violation Found: must be a well-formed email address</code></pre></div></div><div class="paragraph"><p>To try the method-level validation expand the <code>/beanvalidation/launchspacecraft POST request to specify a launch code</code> section. Enter <code>OpenLiberty</code> in the text box to note that <code>launched</code> is returned because the launch code passes the defined constraints. Replace OpenLiberty with anything else to note that a constraint violation is returned.</p></div><div class="paragraph command"><p>If you make changes to the code, use the Maven <code>compile</code> goal to rebuild the application and have the running Open Liberty server pick them up automatically:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn compile</code></pre></div></div><div class="paragraph"><p>To stop the Open Liberty server, run the Maven <code>liberty:stop-server</code> goal:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn liberty:stop-server</code></pre></div></div></div></div><div class="sect1"><h2 id="testing-the-constraints">Testing the constraints</h2><div class="sectionbody"><div class="paragraph"><p>Now, write automated tests to drive the previously created service.</p></div><div class="listingblock code_command hotspot"><div class="content"> <pre><mark>Create <code>BeanValidationTest</code> class.</mark>
+<code>src/test/java/it/io/openliberty/guides/beanvalidation/BeanValidationTest.java</code></pre></div></div><div class="paragraph"><p>BeanValidationTest.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers">  1</span><span class="keyword">package</span> <span class="namespace">it.io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers">  2</span>
+<span class="line-numbers">  3</span><span class="keyword">import</span> <span class="include">org.junit.Test</span>;
+<span class="line-numbers">  4</span>
+<span class="line-numbers">  5</span><span class="keyword">import</span> <span class="include">io.openliberty.guides.beanvalidation.Astronaut</span>;
+<span class="line-numbers">  6</span><span class="keyword">import</span> <span class="include">io.openliberty.guides.beanvalidation.Spacecraft</span>;
+<span class="line-numbers">  7</span>
+<span class="line-numbers">  8</span><span class="keyword">import</span> <span class="include">static</span> <span class="include">org.junit.Assert.assertEquals</span>;
+<span class="line-numbers">  9</span><span class="keyword">import</span> <span class="include">static</span> <span class="include">org.junit.Assert.assertTrue</span>;
+<span class="line-numbers"> 10</span><span class="keyword">import</span> <span class="include">java.util.HashMap</span>;
+<span class="line-numbers"> 11</span>
+<span class="line-numbers"> 12</span><span class="keyword">import</span> <span class="include">javax.json.bind.Jsonb</span>;
+<span class="line-numbers"> 13</span><span class="keyword">import</span> <span class="include">javax.json.bind.JsonbBuilder</span>;
+<span class="line-numbers"> 14</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.Client</span>;
+<span class="line-numbers"> 15</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.ClientBuilder</span>;
+<span class="line-numbers"> 16</span><span class="keyword">import</span> <span class="include">javax.ws.rs.client.Entity</span>;
+<span class="line-numbers"> 17</span><span class="keyword">import</span> <span class="include">javax.ws.rs.core.MediaType</span>;
+<span class="line-numbers"> 18</span><span class="keyword">import</span> <span class="include">javax.ws.rs.core.Response</span>;
+<span class="line-numbers"> 19</span>
+<span class="line-numbers"> 20</span><span class="keyword">import</span> <span class="include">org.junit.After</span>;
+<span class="line-numbers"> 21</span><span class="keyword">import</span> <span class="include">org.junit.Before</span>;
+<span class="line-numbers"> 22</span>
+<span class="line-numbers"> 23</span><span class="directive">public</span> <span class="type">class</span> <span class="class">BeanValidationTest</span> {
+<span class="line-numbers"> 24</span>
+<span class="line-numbers"> 25</span>    <span class="directive">private</span> Client client;
+<span class="line-numbers"> 26</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="predefined-type">String</span> port;
+<span class="line-numbers"> 27</span>
+<span class="line-numbers"> 28</span>    <span class="annotation">@Before</span>
+<span class="line-numbers"> 29</span>    <span class="directive">public</span> <span class="type">void</span> setup() {
+<span class="line-numbers"> 30</span>        client = ClientBuilder.newClient();
+<span class="line-numbers"> 31</span>        port = <span class="predefined-type">System</span>.getProperty(<span class="string"><span class="delimiter">"</span><span class="content">liberty.test.port</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 32</span>    }
+<span class="line-numbers"> 33</span>
+<span class="line-numbers"> 34</span>    <span class="annotation">@After</span>
+<span class="line-numbers"> 35</span>    <span class="directive">public</span> <span class="type">void</span> teardown() {
+<span class="line-numbers"> 36</span>        client.close();
+<span class="line-numbers"> 37</span>    }
+<span class="line-numbers"> 38</span>
+<span class="line-numbers"> 39</span>    <span class="annotation">@Test</span>
+<span class="line-numbers"> 40</span>    <span class="directive">public</span> <span class="type">void</span> testNoFieldLevelConstraintViolations() <span class="directive">throws</span> <span class="exception">Exception</span> {
+<span class="line-numbers"> 41</span>        Astronaut astronaut = <span class="keyword">new</span> Astronaut();
+<span class="line-numbers"> 42</span>        astronaut.setAge(<span class="integer">25</span>);
+<span class="line-numbers"> 43</span>        astronaut.setEmailAddress(<span class="string"><span class="delimiter">"</span><span class="content"><a href="https://openliberty.io/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660a0f04041f26091603080a0f040314121f480f09">[email&#160;protected]</a></span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 44</span>        astronaut.setName(<span class="string"><span class="delimiter">"</span><span class="content">Libby</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 45</span>
+<span class="line-numbers"> 46</span>        Spacecraft spacecraft = <span class="keyword">new</span> Spacecraft();
+<span class="line-numbers"> 47</span>        spacecraft.setAstronaut(astronaut);
+<span class="line-numbers"> 48</span>        spacecraft.setSerialNumber(<span class="string"><span class="delimiter">"</span><span class="content">Liberty1001</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 49</span>
+<span class="line-numbers"> 50</span>        <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers"> 51</span>        destinations.put(<span class="string"><span class="delimiter">"</span><span class="content">Mars</span><span class="delimiter">"</span></span>, <span class="integer">1500</span>);
+<span class="line-numbers"> 52</span>        destinations.put(<span class="string"><span class="delimiter">"</span><span class="content">Pluto</span><span class="delimiter">"</span></span>, <span class="integer">10000</span>);
+<span class="line-numbers"> 53</span>        spacecraft.setDestinations(destinations);
+<span class="line-numbers"> 54</span>
+<span class="line-numbers"> 55</span>        Jsonb jsonb = JsonbBuilder.create();
+<span class="line-numbers"> 56</span>        <span class="predefined-type">String</span> spacecraftJSON = jsonb.toJson(spacecraft);
+<span class="line-numbers"> 57</span>        Response response = postResponse(getURL(port, <span class="string"><span class="delimiter">"</span><span class="content">validatespacecraft</span><span class="delimiter">"</span></span>),
+<span class="line-numbers"> 58</span>                spacecraftJSON, <span class="predefined-constant">false</span>);
+<span class="line-numbers"> 59</span>        <span class="predefined-type">String</span> actualResponse = response.readEntity(<span class="predefined-type">String</span>.class);
+<span class="line-numbers"> 60</span>        <span class="predefined-type">String</span> expectedResponse = <span class="string"><span class="delimiter">"</span><span class="content">No Constraint Violations</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 61</span>
+<span class="line-numbers"> 62</span>        assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">Unexpected response when validating beans.</span><span class="delimiter">"</span></span>,
+<span class="line-numbers"> 63</span>                expectedResponse, actualResponse);
+<span class="line-numbers"> 64</span>    }
+<span class="line-numbers"> 65</span>
+<span class="line-numbers"> 66</span>    <span class="annotation">@Test</span>
+<span class="line-numbers"> 67</span>    <span class="directive">public</span> <span class="type">void</span> testFieldLevelConstraintViolation() <span class="directive">throws</span> <span class="exception">Exception</span> {
+<span class="line-numbers"> 68</span>        Astronaut astronaut = <span class="keyword">new</span> Astronaut();
+<span class="line-numbers"> 69</span>        astronaut.setAge(<span class="integer">25</span>);
+<span class="line-numbers"> 70</span>        astronaut.setEmailAddress(<span class="string"><span class="delimiter">"</span><span class="content">libby</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 71</span>        astronaut.setName(<span class="string"><span class="delimiter">"</span><span class="content">Libby</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 72</span>
+<span class="line-numbers"> 73</span>        Spacecraft spacecraft = <span class="keyword">new</span> Spacecraft();
+<span class="line-numbers"> 74</span>        spacecraft.setAstronaut(astronaut);
+<span class="line-numbers"> 75</span>        spacecraft.setSerialNumber(<span class="string"><span class="delimiter">"</span><span class="content">Liberty123</span><span class="delimiter">"</span></span>);
+<span class="line-numbers"> 76</span>
+<span class="line-numbers"> 77</span>        <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers"> 78</span>        destinations.put(<span class="string"><span class="delimiter">"</span><span class="content">Mars</span><span class="delimiter">"</span></span>, -<span class="integer">100</span>);
+<span class="line-numbers"> 79</span>        spacecraft.setDestinations(destinations);
+<span class="line-numbers"> 80</span>
+<span class="line-numbers"> 81</span>        Jsonb jsonb = JsonbBuilder.create();
+<span class="line-numbers"> 82</span>        <span class="predefined-type">String</span> spacecraftJSON = jsonb.toJson(spacecraft);
+<span class="line-numbers"> 83</span>        Response response = postResponse(getURL(port, <span class="string"><span class="delimiter">"</span><span class="content">validatespacecraft</span><span class="delimiter">"</span></span>),
+<span class="line-numbers"> 84</span>                spacecraftJSON, <span class="predefined-constant">false</span>);
+<span class="line-numbers"> 85</span>        <span class="predefined-type">String</span> actualResponse = response.readEntity(<span class="predefined-type">String</span>.class);
+<span class="line-numbers"> 86</span>
+<span class="line-numbers"> 87</span>        <span class="predefined-type">String</span> expectedDestinationResponse = <span class="string"><span class="delimiter">"</span><span class="content">must be greater than 0</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 88</span>        assertTrue(<span class="string"><span class="delimiter">"</span><span class="content">Expected response to contain: </span><span class="delimiter">"</span></span> + expectedDestinationResponse,
+<span class="line-numbers"> 89</span>                actualResponse.contains(expectedDestinationResponse));
+<span class="line-numbers"> 90</span>
+<span class="line-numbers"> 91</span>        <span class="predefined-type">String</span> expectedEmailResponse = <span class="string"><span class="delimiter">"</span><span class="content">must be a well-formed email address</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 92</span>        assertTrue(<span class="string"><span class="delimiter">"</span><span class="content">Expected response to contain: </span><span class="delimiter">"</span></span> + expectedEmailResponse,
+<span class="line-numbers"> 93</span>                actualResponse.contains(expectedEmailResponse));
+<span class="line-numbers"> 94</span>
+<span class="line-numbers"> 95</span>        <span class="predefined-type">String</span> expectedSerialNumberResponse = <span class="string"><span class="delimiter">"</span><span class="content">serial number is not valid</span><span class="delimiter">"</span></span>;
+<span class="line-numbers"> 96</span>        assertTrue(<span class="string"><span class="delimiter">"</span><span class="content">Expected response to contain: </span><span class="delimiter">"</span></span> + expectedSerialNumberResponse,
+<span class="line-numbers"> 97</span>                actualResponse.contains(expectedSerialNumberResponse));
+<span class="line-numbers"> 98</span>    }
+<span class="line-numbers"> 99</span>
+<span class="line-numbers">100</span>    <span class="annotation">@Test</span>
+<span class="line-numbers">101</span>    <span class="directive">public</span> <span class="type">void</span> testNoMethodLevelConstraintViolations() <span class="directive">throws</span> <span class="exception">Exception</span> {
+<span class="line-numbers">102</span>        <span class="predefined-type">String</span> launchCode = <span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">103</span>        Response response = postResponse(getURL(port, <span class="string"><span class="delimiter">"</span><span class="content">launchspacecraft</span><span class="delimiter">"</span></span>),
+<span class="line-numbers">104</span>                launchCode, <span class="predefined-constant">true</span>);
+<span class="line-numbers">105</span>
+<span class="line-numbers">106</span>        <span class="predefined-type">String</span> actualResponse = response.readEntity(<span class="predefined-type">String</span>.class);
+<span class="line-numbers">107</span>        <span class="predefined-type">String</span> expectedResponse = <span class="string"><span class="delimiter">"</span><span class="content">launched</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">108</span>
+<span class="line-numbers">109</span>        assertEquals(<span class="string"><span class="delimiter">"</span><span class="content">Unexpected response from call to launchSpacecraft</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">110</span>                expectedResponse, actualResponse);
+<span class="line-numbers">111</span>
+<span class="line-numbers">112</span>    }
+<span class="line-numbers">113</span>
+<span class="line-numbers">114</span>    <span class="annotation">@Test</span>
+<span class="line-numbers">115</span>    <span class="directive">public</span> <span class="type">void</span> testMethodLevelConstraintViolation() <span class="directive">throws</span> <span class="exception">Exception</span> {
+<span class="line-numbers">116</span>        <span class="predefined-type">String</span> launchCode = <span class="string"><span class="delimiter">"</span><span class="content">incorrectCode</span><span class="delimiter">"</span></span>;
+<span class="line-numbers">117</span>        Response response = postResponse(getURL(port, <span class="string"><span class="delimiter">"</span><span class="content">launchspacecraft</span><span class="delimiter">"</span></span>),
+<span class="line-numbers">118</span>                launchCode, <span class="predefined-constant">true</span>);
+<span class="line-numbers">119</span>
+<span class="line-numbers">120</span>        <span class="predefined-type">String</span> actualResponse = response.readEntity(<span class="predefined-type">String</span>.class);
+<span class="line-numbers">121</span>        assertTrue(<span class="string"><span class="delimiter">"</span><span class="content">Unexpected response from call to launchSpacecraft</span><span class="delimiter">"</span></span>,
+<span class="line-numbers">122</span>        actualResponse.contains(<span class="string"><span class="delimiter">"</span><span class="content">must be true</span><span class="delimiter">"</span></span>));
+<span class="line-numbers">123</span>    }
+<span class="line-numbers">124</span>
+<span class="line-numbers">125</span>    <span class="directive">private</span> Response postResponse(<span class="predefined-type">String</span> url, <span class="predefined-type">String</span> value,
+<span class="line-numbers">126</span>                                  <span class="type">boolean</span> isMethodLevel) {
+<span class="line-numbers">127</span>        <span class="keyword">if</span>(isMethodLevel)
+<span class="line-numbers">128</span>            <span class="keyword">return</span> client.target(url).request().post(<span class="predefined-type">Entity</span>.text(value));
+<span class="line-numbers">129</span>        <span class="keyword">else</span>
+<span class="line-numbers">130</span>            <span class="keyword">return</span> client.target(url).request().post(<span class="predefined-type">Entity</span>.entity(value,
+<span class="line-numbers">131</span>                MediaType.APPLICATION_JSON));
+<span class="line-numbers">132</span>    }
+<span class="line-numbers">133</span>
+<span class="line-numbers">134</span>    <span class="directive">private</span> <span class="predefined-type">String</span> getURL(<span class="predefined-type">String</span> port, <span class="predefined-type">String</span> function) {
+<span class="line-numbers">135</span>        <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">http://localhost:</span><span class="delimiter">"</span></span> + port + <span class="string"><span class="delimiter">"</span><span class="content">/Spacecraft/beanvalidation/</span><span class="delimiter">"</span></span> +
+<span class="line-numbers">136</span>                function;
+<span class="line-numbers">137</span>    }
+<span class="line-numbers">138</span>}</code></pre></div></div><div class="paragraph"><p>The <code class="hotspot=28 file=0">@Before</code> annotation causes the <code class="hotspot=29-32 file=0">setup</code> method to execute before the test cases. The <code class="hotspot=29-32 file=0">setup</code> method retrieves the port number for the Open Liberty server and creates a <code class="hotspot=30 file=0">Client</code> that is used throughout the tests, which are described as follows:</p></div><div class="ulist"><ul><li><p>The <code class="hotspot=40-64 file=0">testNoFieldLevelConstraintViolations</code> test case verifies that constraint violations do not occur when valid data is supplied to the <code class="hotspot=41-44 file=0">Astronaut</code> and <code class="hotspot=46-48 file=0">Spacecraft</code> bean attributes.</p></li><li><p>The <code class="hotspot=67-98 file=0">testFieldLevelConstraintViolation</code> test case verifies that the appropriate constraint violations occur when data that is supplied to the <code>Astronaut</code> and <code>Spacecraft</code> attributes violates the defined constraints. Because 3 constraint violations are defined, 3 <code>ConstraintViolation</code> objects are returned as a set from the <code class="hotspot=83-84 file=0">validate</code> call. The 3 expected messages are <code class="hotspot=87 file=0">"must be greater than 0"</code> for the negative distance specified in the destination map, <code class="hotspot=91 file=0">"must be a well-formed email address"</code> for the incorrect email address, and the custom <code class="hotspot=95 file=0">"serial number is not valid"</code> message for the serial number.</p></li><li><p>The <code class="hotspot=101-112 file=0">testNoMethodLevelConstraintViolations</code> test case verifies that the method-level constraints that are specified on the <code class="hotspot=58-62 file=1">launchSpacecraft</code> method of the <code class="hotspot=17-63 file=1">Spacecraft</code> bean are validated when the method is called with no violations. In this test, the call to the <code class="hotspot=103-104 file=0">launchSpacecraft</code> method is made with the <code class="hotspot=102 file=0">OpenLiberty</code> argument. A value of <code>true</code> is returned, which passes the specified constraints.</p></li><li><p>The <code class="hotspot=115-123 file=0">testMethodLevelConstraintViolation</code> test case verifies that a <code>ConstraintViolationException</code> exception is thrown when one of the method-level constraints is violated. A call with an incorrect parameter, <code class="hotspot=116 file=0">incorrectCode</code>, is made to the <code class="hotspot=58-62 file=1">launchSpacecraft</code> method of the <code class="hotspot=17-63 file=1">Spacecraft</code> bean. The method returns <code>false</code>, which violates the defined constraint, and a <code>ConstraintViolationException</code> exception is thrown. The exception includes the constraint violation message, which is <code class="hotspot=122 file=0">must be true</code> in this example.</p></li></ul></div><div class="paragraph"><p>Spacecraft.java</p></div><div class="listingblock code_column"><div class="content"> <pre class="CodeRay highlight"><code data-lang="java"><span class="line-numbers"> 1</span><span class="keyword">package</span> <span class="namespace">io.openliberty.guides.beanvalidation</span>;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="keyword">import</span> <span class="include">java.io.Serializable</span>;
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">java.util.Map</span>;
+<span class="line-numbers"> 5</span><span class="keyword">import</span> <span class="include">java.util.HashMap</span>;
+<span class="line-numbers"> 6</span>
+<span class="line-numbers"> 7</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotBlank</span>;
+<span class="line-numbers"> 8</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.Positive</span>;
+<span class="line-numbers"> 9</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.NotNull</span>;
+<span class="line-numbers">10</span><span class="keyword">import</span> <span class="include">javax.validation.constraints.AssertTrue</span>;
+<span class="line-numbers">11</span><span class="keyword">import</span> <span class="include">javax.inject.Named</span>;
+<span class="line-numbers">12</span><span class="keyword">import</span> <span class="include">javax.enterprise.context.RequestScoped</span>;
+<span class="line-numbers">13</span><span class="keyword">import</span> <span class="include">javax.validation.Valid</span>;
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span><span class="annotation">@Named</span>
+<span class="line-numbers">16</span><span class="annotation">@RequestScoped</span>
+<span class="line-numbers">17</span><span class="directive">public</span> <span class="type">class</span> <span class="class">Spacecraft</span> <span class="directive">implements</span> <span class="predefined-type">Serializable</span> {
+<span class="line-numbers">18</span>
+<span class="line-numbers">19</span>    <span class="directive">private</span> <span class="directive">static</span> <span class="directive">final</span> <span class="type">long</span> serialVersionUID = <span class="integer">1L</span>;
+<span class="line-numbers">20</span>
+<span class="line-numbers">21</span>    <span class="annotation">@Valid</span>
+<span class="line-numbers">22</span>    <span class="directive">private</span> Astronaut astronaut;
+<span class="line-numbers">23</span>
+<span class="line-numbers">24</span>    <span class="directive">private</span> <span class="predefined-type">Map</span>&lt;<span class="annotation">@NotBlank</span> <span class="predefined-type">String</span>, <span class="annotation">@Positive</span> <span class="predefined-type">Integer</span>&gt; destinations;
+<span class="line-numbers">25</span>
+<span class="line-numbers">26</span>    <span class="annotation">@SerialNumber</span>
+<span class="line-numbers">27</span>    <span class="directive">private</span> <span class="predefined-type">String</span> serialNumber;
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>    <span class="directive">public</span> Spacecraft() {
+<span class="line-numbers">30</span>        destinations = <span class="keyword">new</span> <span class="predefined-type">HashMap</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt;();
+<span class="line-numbers">31</span>    }
+<span class="line-numbers">32</span>
+<span class="line-numbers">33</span>    <span class="directive">public</span> <span class="type">void</span> setAstronaut(Astronaut astronaut) {
+<span class="line-numbers">34</span>        <span class="local-variable">this</span>.astronaut = astronaut;
+<span class="line-numbers">35</span>    }
+<span class="line-numbers">36</span>
+<span class="line-numbers">37</span>    <span class="directive">public</span> <span class="type">void</span> setDestinations(<span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>,<span class="predefined-type">Integer</span>&gt; destinations) {
+<span class="line-numbers">38</span>        <span class="local-variable">this</span>.destinations = destinations;
+<span class="line-numbers">39</span>    }
+<span class="line-numbers">40</span>
+<span class="line-numbers">41</span>    <span class="directive">public</span> <span class="type">void</span> setSerialNumber(<span class="predefined-type">String</span> serialNumber) {
+<span class="line-numbers">42</span>        <span class="local-variable">this</span>.serialNumber = serialNumber;
+<span class="line-numbers">43</span>    }
+<span class="line-numbers">44</span>
+<span class="line-numbers">45</span>    <span class="directive">public</span> Astronaut getAstronaut() {
+<span class="line-numbers">46</span>        <span class="keyword">return</span> astronaut;
+<span class="line-numbers">47</span>    }
+<span class="line-numbers">48</span>
+<span class="line-numbers">49</span>    <span class="directive">public</span> <span class="predefined-type">Map</span>&lt;<span class="predefined-type">String</span>, <span class="predefined-type">Integer</span>&gt; getDestinations() {
+<span class="line-numbers">50</span>        <span class="keyword">return</span> destinations;
+<span class="line-numbers">51</span>    }
+<span class="line-numbers">52</span>
+<span class="line-numbers">53</span>    <span class="directive">public</span> <span class="predefined-type">String</span> getSerialNumber() {
+<span class="line-numbers">54</span>        <span class="keyword">return</span> serialNumber;
+<span class="line-numbers">55</span>    }
+<span class="line-numbers">56</span>
+<span class="line-numbers">57</span>    <span class="annotation">@AssertTrue</span>
+<span class="line-numbers">58</span>    <span class="directive">public</span> <span class="type">boolean</span> launchSpacecraft(<span class="annotation">@NotNull</span> <span class="predefined-type">String</span> launchCode) {
+<span class="line-numbers">59</span>        <span class="keyword">if</span>(launchCode.equals(<span class="string"><span class="delimiter">"</span><span class="content">OpenLiberty</span><span class="delimiter">"</span></span>))
+<span class="line-numbers">60</span>            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+<span class="line-numbers">61</span>        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+<span class="line-numbers">62</span>    }
+<span class="line-numbers">63</span>}</code></pre></div></div><div class="sect2 command"><h3 id="running-the-tests">Running the tests</h3><div class="paragraph"><p>If the server is still running from the previous steps, stop it using the Maven <code>liberty:stop-server</code> goal from command line in the <code>start</code> directory:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn liberty:stop-server</code></pre></div></div><div class="paragraph"><p>Then, verify that the tests pass using the Maven <code>verify</code> goal:</p></div><div class="listingblock"><div class="content"> <pre class="CodeRay highlight"><code>mvn verify</code></pre></div></div><div class="paragraph"><p>It may take some time before build is complete. If the tests pass, you will see a similar output to the following:</p></div><div class="listingblock no_copy"><div class="content"> <pre class="CodeRay highlight"><code>-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running it.io.openliberty.guides.beanvalidation.BeanValidationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.493 sec - in
+it.io.openliberty.guides.beanvalidation.BeanValidationTest
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0</code></pre></div></div></div></div></div><div class="sect1"><h2 id="great-work-youre-done">Great work! You’re done!</h2><div class="sectionbody"><div class="paragraph"><p>You developed and tested a Java microservice by using bean validation and Open Liberty.</p></div></div></div><div class="sect1"><h2 id="guide-attribution">Guide Attribution</h2><div class="sectionbody"><div class="paragraph"><p>Validating constraints with microservices <span class="licensedClass">by</span> Open Liberty <span class="licensedClass">is licensed under</span> CC BY-ND 4.0</p></div></div></div></div><div id="guide_section_copied_confirmation">Copied to clipboard</div> <img id="copy_to_clipboard" src="https://openliberty.io/img/guides_copy_button.svg" alt="Copy code block" title="Copy code block"></div><div id="code_column" class="position_relative" tabindex="0"><div id="code_column_title_container"><div id="code_column_tabs_container" class="dimmed"><ul id="code_column_tabs" class="nav" role="tablist"></ul></div><div class="copyFileButton" tabindex="0"> <img src="https://openliberty.io/img/guides_copy_button.svg" alt="Copy file contents" title="Copy file contents"></div></div><div id="code_column_content"></div><div id="prereqs_container"><p id="prereqs_title">Prerequisites:</p><div class="prereqs_list"></div></div> <button id="dismiss_button" aria-label="Back to text" tabindex="0">Back to text</button></div></div><div id="end_of_guide"><h2 tabindex="0">Nice work! Where to next?</h2><div id="end_of_guide_left_section"><p id="guide_attribution"></p><h3 id="feedback_rating_question">What did you think of this guide?</h3><div id="feedback_ratings"> <img class="guide_rating" id="extreme_dislike" src="https://openliberty.io/img/1_Extreme_Dislike.png" onclick="$('#dislike_popup').show(),$('.popup_content').focus()" alt="Extreme Dislike" data-guide-rating="1" tabindex="0" aria-label="Rate this guide as extreme dislike"> <img class="guide_rating" id="dislike" src="https://openliberty.io/img/2_Dislike.png" onclick="$('#dislike_popup').show(),$('.popup_content').focus()" alt="Dislike" data-guide-rating="2" tabindex="0" aria-label="Rate this guide as dislike"> <img class="guide_rating" id="like" src="https://openliberty.io/img/3_Like.png" onclick="$('#like_popup').show(),$('.popup_content').focus()" alt="Like" data-guide-rating="3" tabindex="0" aria-label="Rate this guide as like"> <img class="guide_rating" id="extreme_like" src="https://openliberty.io/img/4_Extreme_Like.png" onclick="$('#like_popup').show(),$('.popup_content').focus()" alt="Extreme Like" data-guide-rating="4" tabindex="0" aria-label="Rate this guide as extreme like"></div><div id="like_popup" class="popup"><div class="popup_content" tabindex="0"><p class="popup_title">Thank you for your feedback!</p> <button id="close_button" class="popup_button" onclick="$('#like_popup').hide()">Close</button></div></div><div id="dislike_popup" class="popup"><div class="popup_content" tabindex="0"><p class="popup_title">Thank you for your feedback!</p><p id="open_issue">Would you like to open an issue in GitHub?</p> <a href="https://github.com/OpenLiberty/guide-bean-validation/issues/new" target="_blank" id="yes_button" class="popup_button" onclick="$('#dislike_popup').hide()" rel="noopener noreferrer">Yes</a> <button id="no_button" class="popup_button" onclick="$('#dislike_popup').hide()">No, thank you</button></div></div><h3 id="improve_guide_feedback">What could make this guide better?</h3><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-bean-validation/issues">Raise an issue</a> to share feedback</p><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/OpenLiberty/guide-bean-validation/pulls">Create a pull request</a> to contribute to this guide</p><h3 id="need_help">Need help?</h3><p><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/tagged/open-liberty">Ask a question on Stack Overflow</a></p><h3>Like Open Liberty? Star our repo on GitHub.</h3> <a class="github-button" href="https://github.com/OpenLiberty/open-liberty" data-icon="octicon-star" aria-label="Star OpenLiberty/open-liberty on GitHub" target="_blank" rel="noopener noreferrer">Star</a></div><div id="end_of_guide_right_section"><h3 id="where_to_next">Where to next?</h3><div id="related-guides"><div id="related-guides-cards" class="row"><div class="col-sm-12 col-lg-6"> <a href="https://openliberty.io/guides/cdi-intro.html" class="small_guide_item"><div class="guide_title_container"><h3 class="guide_title">Injecting dependencies into microservices</h3></div> <img class="duration_clock_icon" src="https://openliberty.io/img/guide_duration_clock_icon_small.svg" alt="Duration"> <span class="guide_duration">15 minutes</span> </a></div></div></div></div></div></main><footer><div id="footer_gray_background"><div id="footer_top_container" class="footer_container container-fluid"><div id="footer_project_container"> <span id="footer_open_liberty"></span><p id="footer_project">an IBM open source project</p></div><div id="footer_round_links_container"> <a id="footer_github_link" class="footer_round_btn" href="https://github.com/OpenLiberty/" target="_blank" rel="noopener noreferrer" aria-label="Github"></a> <a id="footer_twitter_link" class="footer_round_btn" href="https://twitter.com/OpenLibertyIO" target="_blank" rel="noopener noreferrer" aria-label="Twitter"></a> <a id="footer_stackoverflow_link" class="footer_round_btn" href="https://stackoverflow.com/questions/tagged/open-liberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty questions on Stack Overflow"></a> <a id="footer_groupsio_link" class="footer_round_btn" href="https://groups.io/g/openliberty" target="_blank" rel="noopener noreferrer" aria-label="Open Liberty Groups.io"></a></div></div></div><div id="footer_bottom_container" class="footer_container container-fluid"><div id="footer_bottom_left_section"><p id="footer_copyright">© Copyright IBM Corp. 2017, 2019</p><p class="vertical_bar">|</p> <a id="footer_privacy_policy_link" href="https://www.ibm.com/privacy/" target="_blank" rel="noopener noreferrer" class="left_footer_link">Privacy policy</a><p class="vertical_bar">|</p> <a id="footer_license_link" href="https://github.com/OpenLiberty/open-liberty/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="left_footer_link">License</a></div><div id="footer_bottom_right_section"> <a id="footer_docs_link" href="https://openliberty.io/docs" aria-label="Open Liberty Docs" class="right_footer_link blue_link_light_background">Docs</a> <a id="footer_blog_link" href="https://openliberty.io/blog" aria-label="Open Liberty Blogs" class="right_footer_link blue_link_light_background">Blog</a> <a id="footer_support_link" href="https://openliberty.io/support" aria-label="Open Liberty Support" class="right_footer_link blue_link_light_background">Support</a></div></div> </footer><div class="d-none hidden"> <img src="https://openliberty.io/img/Footer_GitCat_Hover.svg" alt="OpenLiberty Github link"> <img src="https://openliberty.io/img/Footer_TwitterBird_Hover.svg" alt="OpenLibertyIO Twitter link"> <img src="https://openliberty.io/img/Footer_StackO_Hover.svg" alt="Open-liberty Stack Overflow link"> <img src="https://openliberty.io/img/Footer_GroupsIO_Hover.svg" alt="Openliberty Groups IO link"></div> <script data-cfasync="false" src="https://openliberty.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script><script src="https://openliberty.io/assets/devEnvironment-1534f5b3d86298872bff0c998dc072080c30665ac1e9f1d3087393aeba41be1b.js"></script><script src="https://openliberty.io/assets/guide-utils-1bc9c95c7a39c5aed996a9daa39e02bfe2587ae5cb4e6295e95953f57ab7b24a.js"></script><script src="https://openliberty.io/assets/toc-9f2c0762562ac94cfdc5a228800ba66c04c7b5d7bc6acbf83b1f5b475eaad995.js"></script><script src="https://openliberty.io/assets/guide-608dca3e839e274e1af63578c774065d6357bd7e40e8c4f939821395b2c3d669.js"></script><script src="https://openliberty.io/assets/guide-multipane-b593df5e24233d10a69719b81b4ed58aa8e285752947c5ca52a04b26f8d77d5b.js"></script></body></html>

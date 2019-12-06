@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Introducing the Liberty Profile</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Dhiren</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-148525</link>
+		<dc:creator><![CDATA[Dhiren]]></dc:creator>
+		<pubDate>Tue, 21 Feb 2017 16:10:08 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-148525</guid>
+		<description><![CDATA[I have a Liberty profile and the build is done using maven for the web apps that I have configured. How can I use the dynamic capability of not restarting server for JSP , Java code changes at the same time use maven file path ? 
+another option I am also fine with is if I can also  use both capability having a maven build as well as Add app through Add /Remove for dynamic hot code replacement capability ?
+
+
+Thanks
+DJ]]></description>
+		<content:encoded><![CDATA[<p>I have a Liberty profile and the build is done using maven for the web apps that I have configured. How can I use the dynamic capability of not restarting server for JSP , Java code changes at the same time use maven file path ?<br />
+another option I am also fine with is if I can also  use both capability having a maven build as well as Add app through Add /Remove for dynamic hot code replacement capability ?</p>
+<p>Thanks<br />
+DJ</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Mike</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-25609</link>
+		<dc:creator><![CDATA[Mike]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2014 14:46:23 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-25609</guid>
+		<description><![CDATA[I&#039;m having the same issue with this.  My servlet mapping in web.xml is 
+
+		Faces Servlet
+		javax.faces.webapp.FacesServlet
+		
+	
+  		Faces Servlet
+ 		*.jsf
+ 	
+and the context root in the ear application.xml is /home]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;m having the same issue with this.  My servlet mapping in web.xml is </p>
+<p>		Faces Servlet<br />
+		javax.faces.webapp.FacesServlet</p>
+<p>  		Faces Servlet<br />
+ 		*.jsf</p>
+<p>and the context root in the ear application.xml is /home</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ron</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-21299</link>
+		<dc:creator><![CDATA[Ron]]></dc:creator>
+		<pubDate>Fri, 15 Aug 2014 18:39:38 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-21299</guid>
+		<description><![CDATA[Tom, thanks for the reply and yes the web app restarted by the server. Actually I got the right solution. We do need to have the app pick up whatever changes right away through the mbean (we can not disable it). It works. Thanks again.]]></description>
+		<content:encoded><![CDATA[<p>Tom, thanks for the reply and yes the web app restarted by the server. Actually I got the right solution. We do need to have the app pick up whatever changes right away through the mbean (we can not disable it). It works. Thanks again.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: TomBanks</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-21253</link>
+		<dc:creator><![CDATA[TomBanks]]></dc:creator>
+		<pubDate>Fri, 15 Aug 2014 10:40:26 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-21253</guid>
+		<description><![CDATA[Hi Ron,
+
+Looking at the log you posted the server is not restarting - it is the application &quot;springsecurity&quot; that is restarting (the difference between a server and an app restart is other applications deployed to a server are not restarted when an app restarts). This is the default behavior in the runtime - to change it you can open the server.xml and change the application update trigger setting from mbean (or polled) to &quot;disabled&quot; - this will stop the application being restarted unless you manually restart the server (there are a few different options on the behavior, this one disabling automatic updates). More information can be found by clicking on &quot;applicationMonitor&quot; on the following knowledgecenter page: http://www-01.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/autodita/rwlp_metatype_4ic.html?cp=SSAW57_8.5.5%2F1-3-11-0-3-0&amp;lang=en]]></description>
+		<content:encoded><![CDATA[<p>Hi Ron,</p>
+<p>Looking at the log you posted the server is not restarting &#8211; it is the application &#8220;springsecurity&#8221; that is restarting (the difference between a server and an app restart is other applications deployed to a server are not restarted when an app restarts). This is the default behavior in the runtime &#8211; to change it you can open the server.xml and change the application update trigger setting from mbean (or polled) to &#8220;disabled&#8221; &#8211; this will stop the application being restarted unless you manually restart the server (there are a few different options on the behavior, this one disabling automatic updates). More information can be found by clicking on &#8220;applicationMonitor&#8221; on the following knowledgecenter page: <a href="http://www-01.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/autodita/rwlp_metatype_4ic.html?cp=SSAW57_8.5.5%2F1-3-11-0-3-0&#038;lang=en">http://www-01.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/autodita/rwlp_metatype_4ic.html?cp=SSAW57_8.5.5%2F1-3-11-0-3-0&#038;lang=en</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ron</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-21005</link>
+		<dc:creator><![CDATA[Ron]]></dc:creator>
+		<pubDate>Wed, 13 Aug 2014 22:03:10 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-21005</guid>
+		<description><![CDATA[How do you make the WLP not restart the server when you make changes to a java class? I tried on my desktop with a simple app, I changed the java class, and saved it, and then I see the server restarted. See this:
+Launching MyTestServer (WebSphere Application Server 8.5.5.2/wlp-1.0.5.cl50220140403-1858) on IBM J9 VM, version jvmwi3260sr7-20100219_54049 (en_US)
+[AUDIT   ] CWWKE0001I: The server MyTestServer has been launched.
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications. 
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/springsecurity/
+[AUDIT   ] CWWKZ0001I: Application springsecurity started in 1.527 seconds.
+[AUDIT   ] CWWKF0011I: The server MyTestServer is ready to run a smarter planet.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9080/springsecurity/
+[AUDIT   ] CWWKZ0009I: The application springsecurity has stopped successfully.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/springsecurity/
+[AUDIT   ] CWWKZ0003I: The application springsecurity updated in 0.871 seconds.
+
+The server.xml is like this:
+
+    &lt;!-- Enable features --&gt;
+    
+        jsp-2.2
+        servlet-3.0
+        localConnector-1.0
+    
+
+    &lt;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&gt;
+    
+
+    
+
+    
+]]></description>
+		<content:encoded><![CDATA[<p>How do you make the WLP not restart the server when you make changes to a java class? I tried on my desktop with a simple app, I changed the java class, and saved it, and then I see the server restarted. See this:<br />
+Launching MyTestServer (WebSphere Application Server 8.5.5.2/wlp-1.0.5.cl50220140403-1858) on IBM J9 VM, version jvmwi3260sr7-20100219_54049 (en_US)<br />
+[AUDIT   ] CWWKE0001I: The server MyTestServer has been launched.<br />
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.<br />
+[AUDIT   ] CWWKT0016I: Web application available (default_host): <a href="http://localhost:9080/springsecurity/">http://localhost:9080/springsecurity/</a><br />
+[AUDIT   ] CWWKZ0001I: Application springsecurity started in 1.527 seconds.<br />
+[AUDIT   ] CWWKF0011I: The server MyTestServer is ready to run a smarter planet.<br />
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): <a href="http://localhost:9080/springsecurity/">http://localhost:9080/springsecurity/</a><br />
+[AUDIT   ] CWWKZ0009I: The application springsecurity has stopped successfully.<br />
+[AUDIT   ] CWWKT0016I: Web application available (default_host): <a href="http://localhost:9080/springsecurity/">http://localhost:9080/springsecurity/</a><br />
+[AUDIT   ] CWWKZ0003I: The application springsecurity updated in 0.871 seconds.</p>
+<p>The server.xml is like this:</p>
+<p>    <!-- Enable features --></p>
+<p>        jsp-2.2<br />
+        servlet-3.0<br />
+        localConnector-1.0</p>
+<p>    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" --></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-20116</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Wed, 06 Aug 2014 09:54:39 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-20116</guid>
+		<description><![CDATA[Wes, would you mind re-posting your question on the WASdev forum (https://developer.ibm.com/answers/questions/?community=wasdev)? More people will see it and someone will probably be able to answer pretty quickly.
+
+Thanks,
+
+Laura]]></description>
+		<content:encoded><![CDATA[<p>Wes, would you mind re-posting your question on the WASdev forum (<a href="https://developer.ibm.com/answers/questions/?community=wasdev">https://developer.ibm.com/answers/questions/?community=wasdev</a>)? More people will see it and someone will probably be able to answer pretty quickly.</p>
+<p>Thanks,</p>
+<p>Laura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Wes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-20090</link>
+		<dc:creator><![CDATA[Wes]]></dc:creator>
+		<pubDate>Wed, 06 Aug 2014 03:07:50 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-20090</guid>
+		<description><![CDATA[Anyone know if the following is possible?  My Java based application has a lot of security roles defined in the web.xml.  Every time I deploy a new version of the application to WebSphere, I have to map tons of application defined roles to the LDAP groups  via the WebSphere &quot;role to user group&quot; functionality.  Is there a way for me to define the mapping itself in the application, so when I deploy the war in WebSphere, it picks up on what the map pings are?
+
+Wes]]></description>
+		<content:encoded><![CDATA[<p>Anyone know if the following is possible?  My Java based application has a lot of security roles defined in the web.xml.  Every time I deploy a new version of the application to WebSphere, I have to map tons of application defined roles to the LDAP groups  via the WebSphere &#8220;role to user group&#8221; functionality.  Is there a way for me to define the mapping itself in the application, so when I deploy the war in WebSphere, it picks up on what the map pings are?</p>
+<p>Wes</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-176</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Wed, 05 Feb 2014 18:23:00 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-176</guid>
+		<description><![CDATA[Hi,
+
+
+Can I just check something?
+
+
+Have you got a web.xml with servlet mappings in it pointing to the correct location/classes?
+
+
+Let me know how it goes and I&#039;ll investigate further if necessary. :)]]></description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>Can I just check something?</p>
+<p>Have you got a web.xml with servlet mappings in it pointing to the correct location/classes?</p>
+<p>Let me know how it goes and I&#8217;ll investigate further if necessary. 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: FranciscoRiveros</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/03/29/introducing_the_liberty_profile/#comment-173</link>
+		<dc:creator><![CDATA[FranciscoRiveros]]></dc:creator>
+		<pubDate>Tue, 04 Feb 2014 15:30:00 +0000</pubDate>
+		<guid isPermaLink="false">http://ibmdw.net/wasdev/introducing_the_liberty_profile6/#comment-173</guid>
+		<description><![CDATA[Very good initiative but I tested and I have one problem I don&#039;t know if you can help me. I have always developed in Tomcat integrated with STS, so I have downloaded and integrated the WAS liberty Server with STS, and I cannot execute my application since appears Context Root Not Found and in the Console appears:
+[WARNING ] jsf.warn.ri.listener.for.myfaces.app
+[WARNING ] SRVE0274W: Error while adding servlet mapping for path--&#062;/spring/*, wrapper--&#062;ServletWrapper[Spring MVC Dispatcher Servlet:[/spring/*]], application--&#062;MyWebapp
+[WARNING ] SRVE0274W: Error while adding servlet mapping for path--&#062;/messadmin, wrapper--&#062;ServletWrapper[MessAdminServlet:[/messadmin]], application--&#062;MyWebapp[WARNING ] SRVE0274W: Error while adding servlet mapping for path--&#062;/IsLogout, wrapper--&#062;ServletWrapper[com.logoutlistener.IsLogout:[/IsLogout]], application--&#062;MyWebapp[WARNING ] jsf.warn.ri.listener.for.myfaces.app
+
+My Web App is an Spring Webflow with JSF with Mojarra and Primefaces application.
+
+Thanks]]></description>
+		<content:encoded><![CDATA[<p>Very good initiative but I tested and I have one problem I don&#8217;t know if you can help me. I have always developed in Tomcat integrated with STS, so I have downloaded and integrated the WAS liberty Server with STS, and I cannot execute my application since appears Context Root Not Found and in the Console appears:<br />
+[WARNING ] jsf.warn.ri.listener.for.myfaces.app<br />
+[WARNING ] SRVE0274W: Error while adding servlet mapping for path&#8211;&gt;/spring/*, wrapper&#8211;&gt;ServletWrapper[Spring MVC Dispatcher Servlet:[/spring/*]], application&#8211;&gt;MyWebapp<br />
+[WARNING ] SRVE0274W: Error while adding servlet mapping for path&#8211;&gt;/messadmin, wrapper&#8211;&gt;ServletWrapper[MessAdminServlet:[/messadmin]], application&#8211;&gt;MyWebapp[WARNING ] SRVE0274W: Error while adding servlet mapping for path&#8211;&gt;/IsLogout, wrapper&#8211;&gt;ServletWrapper[com.logoutlistener.IsLogout:[/IsLogout]], application&#8211;&gt;MyWebapp[WARNING ] jsf.warn.ri.listener.for.myfaces.app</p>
+<p>My Web App is an Spring Webflow with JSF with Mojarra and Primefaces application.</p>
+<p>Thanks</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

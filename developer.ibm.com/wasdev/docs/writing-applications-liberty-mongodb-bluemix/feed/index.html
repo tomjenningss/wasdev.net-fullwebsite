@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Writing applications for Liberty and MongoDB on IBM Cloud</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Aravind</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-130098</link>
+		<dc:creator><![CDATA[Aravind]]></dc:creator>
+		<pubDate>Mon, 05 Oct 2015 13:27:32 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-130098</guid>
+		<description><![CDATA[i used the same jar files and code but i got error
+
+[ERROR   ] Error occurred during error handling, give up!
+No MongoDB service is bound to this app!!
+	at com.ibm.cloudoe.samples.HelloResource.getServiceURI(HelloResource.java:55)
+	at [internal classes]]]></description>
+		<content:encoded><![CDATA[<p>i used the same jar files and code but i got error</p>
+<p>[ERROR   ] Error occurred during error handling, give up!<br />
+No MongoDB service is bound to this app!!<br />
+	at com.ibm.cloudoe.samples.HelloResource.getServiceURI(HelloResource.java:55)<br />
+	at [internal classes]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandip</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-129738</link>
+		<dc:creator><![CDATA[Sandip]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2015 08:53:03 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-129738</guid>
+		<description><![CDATA[Thanks Sunil, I can compile now. I selected the Jar file from the source you provided. I understand that the Java files needs to be pushed to the Bluemix after making the change to refer the correct Momgo Database. Though my requirement is to access the Mongo database in my Mobile App. As in mobile App we just need App Id, Route and Token to access MobileData.]]></description>
+		<content:encoded><![CDATA[<p>Thanks Sunil, I can compile now. I selected the Jar file from the source you provided. I understand that the Java files needs to be pushed to the Bluemix after making the change to refer the correct Momgo Database. Though my requirement is to access the Mongo database in my Mobile App. As in mobile App we just need App Id, Route and Token to access MobileData.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sunil George</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-129674</link>
+		<dc:creator><![CDATA[Sunil George]]></dc:creator>
+		<pubDate>Thu, 24 Sep 2015 06:42:43 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-129674</guid>
+		<description><![CDATA[Hi Sandip,
+   Please confirm if you have the right cloud foundry jar file http://maven-repository.com/artifact/org.cloudfoundry/cloudfoundry-runtime.
+   If the error persists we may have to trouble shoot it further. We can take a look at it if you can post the query to https://developer.ibm.com/answers/topics/bluemix/?smartspace=bluemix
+
+Thanks,
+Sunil.]]></description>
+		<content:encoded><![CDATA[<p>Hi Sandip,<br />
+   Please confirm if you have the right cloud foundry jar file <a href="http://maven-repository.com/artifact/org.cloudfoundry/cloudfoundry-runtime">http://maven-repository.com/artifact/org.cloudfoundry/cloudfoundry-runtime</a>.<br />
+   If the error persists we may have to trouble shoot it further. We can take a look at it if you can post the query to <a href="https://developer.ibm.com/answers/topics/bluemix/?smartspace=bluemix">https://developer.ibm.com/answers/topics/bluemix/?smartspace=bluemix</a></p>
+<p>Thanks,<br />
+Sunil.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandip</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-129647</link>
+		<dc:creator><![CDATA[Sandip]]></dc:creator>
+		<pubDate>Wed, 23 Sep 2015 12:37:40 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-129647</guid>
+		<description><![CDATA[I am getting error at the below line, Eclipse asking me to replace getServiceDataByLabels with getServiceDataByName. But the change doesn&#039;t work as well. I have given below the classes being imported.
+if ( environment.getServiceDataByLabels(&quot;mongodb&quot;).size() == 0 ) {
+
+//Cloud Foundry and MongoDB specific imports
+import org.cloudfoundry.runtime.env.CloudEnvironment;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;]]></description>
+		<content:encoded><![CDATA[<p>I am getting error at the below line, Eclipse asking me to replace getServiceDataByLabels with getServiceDataByName. But the change doesn&#8217;t work as well. I have given below the classes being imported.<br />
+if ( environment.getServiceDataByLabels(&#8220;mongodb&#8221;).size() == 0 ) {</p>
+<p>//Cloud Foundry and MongoDB specific imports<br />
+import org.cloudfoundry.runtime.env.CloudEnvironment;</p>
+<p>import com.mongodb.BasicDBObject;<br />
+import com.mongodb.DB;<br />
+import com.mongodb.DBCollection;<br />
+import com.mongodb.DBCursor;<br />
+import com.mongodb.MongoClient;<br />
+import com.mongodb.MongoClientURI;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sunil George</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-124407</link>
+		<dc:creator><![CDATA[Sunil George]]></dc:creator>
+		<pubDate>Wed, 06 May 2015 18:00:43 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-124407</guid>
+		<description><![CDATA[Many thanks Rene. You have really highlighted the benefits very well.
+Regards,
+Sunil.]]></description>
+		<content:encoded><![CDATA[<p>Many thanks Rene. You have really highlighted the benefits very well.<br />
+Regards,<br />
+Sunil.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rene Zubcevic</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-118181</link>
+		<dc:creator><![CDATA[Rene Zubcevic]]></dc:creator>
+		<pubDate>Sun, 22 Mar 2015 18:35:03 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-118181</guid>
+		<description><![CDATA[mongo/mymongo if mymongo is your service name]]></description>
+		<content:encoded><![CDATA[<p>mongo/mymongo if mymongo is your service name</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rene Zubcevic</title>
+		<link>https://developer.ibm.com/wasdev/docs/writing-applications-liberty-mongodb-bluemix/#comment-118180</link>
+		<dc:creator><![CDATA[Rene Zubcevic]]></dc:creator>
+		<pubDate>Sun, 22 Mar 2015 18:34:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=11135#comment-118180</guid>
+		<description><![CDATA[What&#039;s worth to mention is that if you bind a MongoDB service to your application in a liberty profile, a number of things happen:
+
+1) a mongodb library is placed on the classpath of the server
+2) a &quot;mongo/&quot; JNDI resource to a mongodb is added in your server configuration
+3) all required mongodb credentials are added to your liberty server configuration so that you can just do a JNDI lookup
+4) do not add your own mongodb library in case you are planning to use the above features based on the mongodb feature.]]></description>
+		<content:encoded><![CDATA[<p>What&#8217;s worth to mention is that if you bind a MongoDB service to your application in a liberty profile, a number of things happen:</p>
+<p>1) a mongodb library is placed on the classpath of the server<br />
+2) a &#8220;mongo/&#8221; JNDI resource to a mongodb is added in your server configuration<br />
+3) all required mongodb credentials are added to your liberty server configuration so that you can just do a JNDI lookup<br />
+4) do not add your own mongodb library in case you are planning to use the above features based on the mongodb feature.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

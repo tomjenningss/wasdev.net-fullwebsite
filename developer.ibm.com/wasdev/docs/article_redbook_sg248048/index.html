@@ -1,0 +1,342 @@
+<!DOCTYPE html><!--<html>
+<head>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+--><html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <link rel="shortcut icon" href="http://www.redbooks.ibm.com/favicon.ico" />
+    
+	<link rel="canonical" href="index.html" />
+	<meta name="geo.country" content="US" /> 
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" /> 
+	<meta name="dcterms.date" content="2016-09-30" /> 
+	<meta name="description" content="This IBM® Redbooks® publication helps you plan and execute the migration of J2EE applications that are developed for Oracle WebLogic Server, Oracle Application Server, JBoss, and Apache Tomcat, ..." /> 
+	<meta name="keywords" content="SG24-8048-00, SG248048, " /> 
+	<meta name="robots" content="index, follow" /> 
+    <meta name="generator" content="IBM Northstar Template Generator 1.1" />
+    <title>WebSphere Application Server V8.5 Migration Guide | IBM Redbooks</title>
+    
+	<script> 
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":""
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2012-11-02",
+		      "language":"en-US",
+		      "publishDate":"2012-11-02",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "coremetrics": {
+		 	     "clientID":"50200037",
+			      "enabled":"true"
+		      },
+		      "hotjar": {
+            			"enabled":"true"
+          		      },
+		      "pageID":"",
+		      "ibm":{
+		        "contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 1.1",
+		        "country":"US",
+		        "industry":"ZZ",
+		        "owner":"Redbooks at IBM/Raleigh/IBM",
+		        "siteID":"REDBOOKS",
+		        "subject":"SS4QY3",
+		        "type":"CT313",
+         contactModuleConfiguration: {
+            contactInformationBundleKey: {
+               focusArea: "",
+               languageCode: "en",
+               regionCode: "US"
+            },
+            contactModuleTranslationKey: {
+               languageCode: "en",
+               regionCode: "US"
+            }
+         }
+		      }
+		    }
+		  }
+		}; 
+	 </script>
+    <script src="http://1.www.s81c.com/common/stats/ida_stats.js" defer></script>
+    <link href="http://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+   <link href="http://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet" />
+    <script src="http://1.www.s81c.com/common/v18/js/www.js"></script>
+   <script src="http://1.www.s81c.com/common/v18/js/dyntabs.js"></script>
+<!-- scoped search -->
+<link href="http://1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<script src="http://1.www.s81c.com/common/v18/js/forms.js"></script>
+<!-- end scoped search -->
+<link href="http://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+<script src="http://1.www.s81c.com/common/v18/js/tables.js"></script>
+<script src="http://www.redbooks.ibm.com/v18/localsearchkc.js"></script>
+	
+	<script>
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+		  "footer":{
+		    "type":"alternate"
+		  }
+		});  
+	 </script>
+    
+  </head>
+  <body id="ibm-com" class="ibm-type">
+    <div id="ibm-top" class="ibm-landing-page">
+      
+<!-- MASTHEAD_BEGIN --><div id="ibm-masthead" role="banner" aria-label="IBM">
+<div id="ibm-mast-options">
+<ul role="toolbar" aria-labelledby="ibm-masthead">
+<li id="ibm-geo" role="presentation">
+<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a></li>
+</ul>
+</div>
+<div id="ibm-universal-nav">
+<div id="ibm-home"><a href="http://www.ibm.com/us-en/">IBM®</a></div>
+<ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+</ul>
+<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+<form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get">
+<p>
+<label for="q"><span class="ibm-access">Search</span></label>
+<input type="text" maxlength="100" value="" name="q" id="q"/>
+<input type="hidden" value="18" name="v"/>
+<input type="hidden" value="utf" name="en"/>
+<input type="hidden" value="en" name="lang"/>
+<input type="hidden" value="us" name="cc"/>
+<span class="ibm-search-scope"><input type="checkbox" name="sn" value="Redbooks" checked id="scopeoption"> <label for="scopeoption">Search Redbooks</label></span>
+<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+</p>
+</form>
+    <form class="ibm-hide" id="ibm-scoped-search" onSubmit="" action="http://www.redbooks.ibm.com/Redbooks.nsf/searchsite" method="get">
+      <input type="hidden" name="SearchView">
+        <input type="text" name="query">
+         <input type="hidden" name="SearchWV" value="true">
+    </form>
+</div>
+</div>
+</div>
+<!-- MASTHEAD_END -->      
+      <div id="ibm-content-wrapper">
+      
+        <!-- LEADSPACE_BEGIN -->
+        <header>
+      
+<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+<div class="ibm-sitenav-menu-name"> <a href="http://www.redbooks.ibm.com">
+       	     <img width="182" height="34" alt="IBM Redbooks®" src="http://www.redbooks.ibm.com/images/rbhome_r.gif" style="padding-top:8px"/>
+  	      </a></div>
+  <div class="ibm-sitenav-menu-list">
+    <ul role="menubar">
+      <li role="presentation" class="ibm-haschildlist">
+        <span role="menuitem">IT Infrastructure</span>
+	<ul role="menu">
+		<li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/zsystems?Open">IBM Z</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/linuxone?Open">LinuxONE</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/power?Open">Power Systems</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/redhat?Open">Red Hat</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/spectrumcomputing?Open">Spectrum Computing</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/business?Open">IT Business Perspectives</a></li>
+	 </ul>
+      </li>
+      <li role="presentation"  class="ibm-haschildlist">
+        <span role="menuitem">Software</span>
+	<ul role="menu">
+		<li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/analytics?Open">Analytics</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/cloud?Open">Cloud</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/data?Open">Data Management</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/ecm?Open">Enterprise Content Management</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/zsoftware?Open">IBM Z Software</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/middleware?Open">Middleware</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/security?Open">Security</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/watson?Open">Watson</a></li>
+	</ul>
+      </li>
+      <li role="presentation" class="ibm-haschildlist">
+        <span role="menuitem">Storage</span>
+      <ul role="menu">
+       		<li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/disk?Open">Disk storage</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/flash?Open">Flash storage</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/sds?Open">Software Defined Storage</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/san?Open">Storage Networking</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/storagesoftware?Open">Storage Software</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/storagesolutions?Open">Storage Solutions</a></li><li role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/tape?Open">Tape storage</a></li>
+      </ul>
+      <li role="presentation" class="ibm-haschildlist">
+        <span role="menuitem">Training</span>
+      <ul role="menu">
+	<li class="" role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/residents.nsf/ResIndex?OpenView">Be an Author</a></li>
+	<li class="" role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/redbooks.nsf/pages/badges?Open">Digital Badges</a></li>
+	<li class="" role="presentation"><a role="menuitem" href="http://www.ibm.com/training/events/">Systems Technical Events</a></li>
+      </ul>
+    </li>
+      <li role="presentation"  class="ibm-haschildlist ">
+       <span role="menuitem">About Redbooks</span>
+      <ul role="menu">
+	<li class="" role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/redbooks.nsf/pages/about?Open">What we do</a></li>
+	<li class="" role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/redbooks.nsf/pages/copyright?Open">Copyright information</a></li>
+	<li class="" role="presentation"><a role="menuitem" href="https://www.redbooks.ibm.com/redbooks.nsf/subscribe?OpenForm">Newsletter</a></li>
+	<li class="" role="presentation"><a role="menuitem" href="http://www.redbooks.ibm.com/redbooks.nsf/pages/contact?Open">Contact us</a></li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+         
+         <!-- LEADSPACE_END -->
+        </header>
+       <main role="main" aria-labelledby="ibm-pagetitle-h1">
+          <div id="ibm-pcon">
+            <div id="ibm-content">
+              <div id="ibm-content-body" class="ibm-padding-top-0">
+                <div id="ibm-content-main">
+<div class="ibm-columns">
+	<div class="ibm-col-1-1 ibm-padding-top-1">
+<nav role="navigation" aria-label="Breadcrumb">
+    <ul class="ibm-padding-top-0 ibm-padding-bottom-0" id="ibm-navigation-trail" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="http://www.redbooks.ibm.com/"><span itemprop="name">IBM Redbooks</span></a><meta itemprop="position" content="1"></li>
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="http://www.redbooks.ibm.com/Redbooks.nsf/domains/middleware?Open"><span itemprop="name">Middleware</span></a><meta itemprop="position" content="2"></li>
+    </ul>
+</nav>
+	<h1 class="ibm-h1 ibm-padding-top-1 ibm-padding-bottom-0" id="ibm-pagetitle-h1">WebSphere Application Server V8.5 Migration Guide</h1>
+	<h4 class="ibm-h4">An IBM Redbooks publication</h4>
+	</div>
+</div>
+<div class="ibm-columns"><div class="ibm-col-1-1">
+<p class="ibm-small">Published 02 November 2012
+</p>
+</div></div>
+<div class="ibm-band ibm-background-cool-white-30">
+<!-- 3 COLUMNS -->
+<div class="ibm-columns">
+	<div class="ibm-col-12-3 ibm-col-medium-12-6 ibm-col-small-12-4">
+	<div class="ibm-padding-content">
+		<img src="http://www.redbooks.ibm.com/images/thumbs/sg24-8048-00_x2.jpg" width="240" alt="cover image" class="ibm-downsize" style="border: 1px solid #666666">
+		<p class="ibm-small">
+		ISBN-10: 0738437247<br />
+		ISBN-13: 9780738437248<br />
+		IBM Form #: SG24-8048-00<br />
+		(472 pages)
+		</p>
+	</div>
+	</div>
+	<div class="ibm-col-6-2 ibm-col-medium-6-3">
+		<h2><b>View online</b></h2>
+			<ul class="ibm-link-list">
+			<li class="ibm-first"><a class="ibm-pdf-link" href="http://www.redbooks.ibm.com/redbooks/pdfs/sg248048.pdf"><b>Download PDF</b><span class="ibm-item-note"> (6.5&nbsp;MB)</span></a></li>
+			<li><a href="http://www.redbooks.ibm.com/Redbooks.nsf/pages/pdftips?Open" class="ibm-information-link">Tips for viewing</a></li>
+			</ul>
+<div class="ibm-rule"><hr /></div>
+<div class="ibm-container">
+		<h2>Other Language Versions</h2>
+			<div class="ibm-container-body">
+			<ul class="ibm-link-list">
+<li><a class="ibm-pdf-link" href="http://www.redbooks.ibm.com/redbooks/pdfs/sg248048-zh.pdf"><b>Chinese</b> <span class="ibm-item-note">(4.39 MB, partial translation)</span></a></li>
+			</ul>
+			<p class="ibm-item-note-alternate">Note: Other language versions may not be as current as the English edition.</p>
+			</div>
+</div>	</div>
+	<div class="ibm-col-6-2  ibm-col-medium-6-3">
+		<h2><b>More options</b></h2>
+			<ul class="ibm-link-list">
+			<li><a href="ftp://www.redbooks.ibm.com/redbooks/SG248048" class="ibm-download-link"><b>Additional Material</b></a></li>
+			</ul>
+			<div class="ibm-rule"><hr /></div>
+			<ul class="ibm-link-list">
+			</ul>
+			<ul class="ibm-link-list">
+			<li><a href="index.html" class="ibm-link-link">Permanent link</a></li>
+			<li><a class="ibm-external-link ibm-leaving-prompt" href="http://store.vervante.com/c/v/0738437247.html" onclick="0">Order Hardcopy</a>			</li>
+			</ul>
+<h2><b>Rate and comment</b></h2>
+			<p class="ibm-ind-link"><a href="https://www.redbooks.ibm.com/Redbooks.nsf/evaluation?OpenForm&amp;ParentUNID=B86B78FB38ACB569852579DB0070B459" class="ibm-forward-link">Tell us what you think</a></p>
+
+	</div>
+</div>
+</div>
+<div class="ibm-columns"><div class="ibm-col-1-1">
+<p class="ibm-small"><b>Authors:</b> Ersan Arik, Burak Cakil, Kurtcebe Eroglu, Vasfi Gucer, Rispna Jain, Levent Kaya, Sinan Konya, Hatice Meric, Ross Pavitt, Dave Vines, Hakan Yildirim, Tayfun Yurdagul</p>
+</div></div>
+<!-- OUTLINED SUBHEAD BAR WITH YOUTUBE VIDEO -->
+<div class="ibm-band ibm-background-blue-core ibm-alternate-background">
+<div class="ibm-columns">
+<div class="ibm-col-6-3">
+	<h4 class="ibm-h4">Introductory video</h4>
+<div data-videoid="3o7msLso0Ik" data-videotype="youtube" data-widget="videoplayer" id="ytp1"><a href="https://www.youtube.com/watch?v=3o7msLso0Ik&index=1&list=WL">Watch the video</a></div>
+
+	</div>
+	<div class="ibm-col-6-3">
+	<h4 class="ibm-h4">More videos</h4>
+		<ul class="ibm-link-list">
+<li><a  data-widget="videoplayer" data-videodisplay="overlay" data-videoid="WpNZ7tS2qt0" data-videotype="youtube" data-showvideoduration="true" data-overlayplayersize="large" class="ibm-video-link" href="https://www.youtube.com/watch?v=WpNZ7tS2qt0">Author interviews</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="ibm-band ibm-background-white-core">
+	<div class="ibm-columns">
+		<div class="ibm-col-1-1">
+<h3 class="ibm-h3">Abstract</h3>
+	<p>This IBM® Redbooks® publication helps you plan and execute the migration of J2EE applications that are developed for Oracle WebLogic Server, Oracle Application Server, JBoss, and Apache Tomcat, so that they run on IBM WebSphere® Application Server V8.5. In addition, this book covers migration from earlier versions of WebSphere Application Server to WebSphere Application Server V8.5.</p><p>This book provides detailed information to plan migrations, suggested approaches for developing portable applications, and migrating working examples for each of the platforms from which we migrated in our examples. The primary tool that is used in the migration scenarios that are covered in this book is the IBM WebSphere Application Server Migration Toolkit V3.5.</p><p>It is not our intention to provide a feature-by-feature comparison of these application servers versus WebSphere Application Server, but to produce practical technical advice for developers who must migrate applications from these vendors to WebSphere Application Server V8.5.</p><p>This publication is an update of WebSphere Application Server V7: Competitive Migration Guide, SG24-7870.</p><p>The book is intended as a migration guide for IT specialists who are working on migrating applications that are written for other application servers or earlier versions of WebSphere Application Server to WebSphere Application Server V8.5.</p>
+		</div>
+	</div>
+</div><div class="ibm-band ibm-background-neutral-white-30">
+<div class="ibm-columns">
+	<div class="ibm-col-6-3">
+	<h3 class="ibm-h3">Table of contents</h3>
+		<p>Part 1. WebSphere Application Server V8.5: Concepts and architecture<br>Chapter 1. Overview of WebSphere Application Server V8.5<br>Part 2. Migrating methodology and common issues for migration<br>Chapter 2. Migration strategy and planning<br>Chapter 3. Common migration issues<br>Part 3. Migrating your applications to WebSphere Application Server V8.5<br>Chapter 4. Installation and configuration of the Application Migration Tools<br>Chapter 5. Differences between Eclipse and Rational Application Developer<br>Chapter 6. Migrating from Oracle WebLogic<br>Chapter 7. Migrating from Oracle Application Server<br>Chapter 8. Migrating from JBoss<br>Chapter 9. Migrating from Apache Tomcat<br>Chapter 10. Application Framework migration<br>Part 4. Migrating from earlier versions of WebSphere Application Server<br>Chapter 11. Installation and configuration of the Application Migration Tool - WebSphere Version to Version<br>Chapter 12. Migrating from earlier versions of WebSphere Application Server<br>Appendix A. Migration questionnaires<br>Appendix B. Additional material</p>
+	</div>
+	<div class="ibm-col-6-3"><h3 class="ibm-h3">Others who read this publication also read</h3>
+	<ul class="ibm-link-list">
+		<li><a class="ibm-forward-link" href="http://www.redbooks.ibm.com/abstracts/sg247430.html?Open">AIX V6 Advanced Security Features Introduction and Configuration<span class="ibm-item-note">, SG24-7430-00</span></a>
+		<li><a class="ibm-forward-link" href="http://www.redbooks.ibm.com/abstracts/sg248056.html?Open">WebSphere Application Server V8.5 Administration and Configuration Guide for the Full Profile<span class="ibm-item-note">, SG24-8056-01</span></a>
+		<li><a class="ibm-forward-link" href="http://www.redbooks.ibm.com/abstracts/sg248022.html?Open">WebSphere Application Server V8.5 Concepts, Planning, and Design Guide<span class="ibm-item-note">, SG24-8022-01</span></a>
+	</ul>
+	</div>
+</div>
+</div>
+<IMG SRC="http://www.redbooks.ibm.com/cgi-bin/redbooks/count.cgi?id=SG248048" ALT="" WIDTH="0" HEIGHT="0" BORDER="0" NOSAVE><!-- CONTACTS_BEGIN -->
+<!-- component/contact-band_v18 -->
+<div class="ibm-band ibm-alternate-background ibm-nospacing ibm-background-blue-80">
+	<div class="ibm-columns ibm-padding-top-30">
+		<div class="ibm-col-5-3">
+			<p><a class="ibm-email-link ibm-inlinelink" href="https://www.redbooks.ibm.com/Redbooks.nsf/subscribe?OpenForm">&nbsp;Subscribe to newsletter</a>
+			</p>
+		</div>
+		<div class="ibm-col-5-1 ibm-right ibm-hidden-small">
+			<p>Follow IBM Redbooks</p>
+		</div>
+		<div class="ibm-col-5-1 ibm-hidden-large ibm-hidden-xlarge ibm-hidden-medium">
+			<p>Follow IBM Redbooks</p>
+		</div>
+		<div class="ibm-col-5-1">
+			<p class="ibm-icononly"><a href="http://facebook.com/IBMRedbooks"  class="ibm-facebook-encircled-link">Facebook</a><a href="http://twitter.com/IBMRedbooks"  class="ibm-twitter-encircled-link">Twitter</a> <a href="http://www.linkedin.com/groups/2130806"  class="ibm-linkedin-encircled-link">LinkedIn</a> <a href="http://www.youtube.com/user/ibmredbooks"  class="ibm-youtube-encircled-link">Youtube</a> <a href="http://www.redbooks.ibm.com/rss/all.xml?Open"  class="ibm-rss-link">RSS</a></p>
+		</div>
+	</div>
+</div>
+                                    </div> <!-- end content-main -->
+              </div>  <!-- end content-body -->
+            </div>  <!-- end content -->
+          </div> <!-- end pcon -->
+        </main>
+        
+        <div id="ibm-related-content">
+          <div id="ibm-merchandising-module">
+            <!-- MTE will generate this -->
+            <!-- <aside role="complementary" aria-label="Related content"> MTE dynamic modules populate in here. <aside> -->
+            <!-- /MTE -->
+          </div>
+        </div>
+      
+      </div><!-- #ibm-content-wrapper END -->
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer-module">
+</div>
+<footer role="contentinfo" aria-label="IBM">
+	<div id="ibm-footer">
+		<h2 class="ibm-access">Footer links
+		</h2>
+		<ul>
+		<li><a href="http://www.ibm.com/contact/us/en/">Contact</a></li>
+		<li><a href="http://www.ibm.com/privacy/us/en/">Privacy</a></li>
+		<li><a href="http://www.ibm.com/legal/us/en/">Terms of use</a></li>
+		<li><a href="http://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+		</ul>
+	</div>
+</footer>
+<!-- FOOTER_END -->
+</div> <!-- end ibm-top -->
+</body>
+</html>

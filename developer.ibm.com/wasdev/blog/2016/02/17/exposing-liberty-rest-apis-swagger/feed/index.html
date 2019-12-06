@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Exposing WebSphere Liberty REST APIs with Swagger</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-153285</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Tue, 17 Jul 2018 14:04:53 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-153285</guid>
+		<description><![CDATA[Hey Luigi,
+Thanks for your feedback!  Unfortunately, as you noted, the annotation aggregation of this feature was only works when the resources are inside the same project.    If you want keep your project structure you could add a YAML or JSON Swagger file (static doc) to your WAR file, which would expose your APIs correctly.  You can do that by putting all the resources in a single project, grabbing the output from api/docs, then saving that in your WAR - then you can go back to the original structure.  
+
+By the way, have you checked out the new MicroProfile OpenAPI feature?  https://openliberty.io/blog/2018/05/22/microprofile-openapi-intro.html
+
+Thanks,
+Arthur]]></description>
+		<content:encoded><![CDATA[<p>Hey Luigi,<br />
+Thanks for your feedback!  Unfortunately, as you noted, the annotation aggregation of this feature was only works when the resources are inside the same project.    If you want keep your project structure you could add a YAML or JSON Swagger file (static doc) to your WAR file, which would expose your APIs correctly.  You can do that by putting all the resources in a single project, grabbing the output from api/docs, then saving that in your WAR &#8211; then you can go back to the original structure.  </p>
+<p>By the way, have you checked out the new MicroProfile OpenAPI feature?  <a href="https://openliberty.io/blog/2018/05/22/microprofile-openapi-intro.html">https://openliberty.io/blog/2018/05/22/microprofile-openapi-intro.html</a></p>
+<p>Thanks,<br />
+Arthur</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Luigi Biai</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-153236</link>
+		<dc:creator><![CDATA[Luigi Biai]]></dc:creator>
+		<pubDate>Wed, 11 Jul 2018 13:26:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-153236</guid>
+		<description><![CDATA[Hi Arthur,
+thanks a lot for your article, but I am not able to display the REST APIs doc following your tutorial.
+My project is composed by an EAR and JAXRS REST APIs involves in 3 projects:
+- War project with the web.xml file and JaxRs Application class with the method getSingletons that returns all resources.
+- Java jar file with interfaces for rest resources. The interfaces contain the JAX-RS annotations
+- Java jar file with the resource implementation, each class extends the interface
+Seems that apiDiscovery is not able to detect the resources.
+If I create only one project with all resources inside it, the APIs are discovered well and all, but I need to use the scenario below.
+Thanks a lot for your help]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur,<br />
+thanks a lot for your article, but I am not able to display the REST APIs doc following your tutorial.<br />
+My project is composed by an EAR and JAXRS REST APIs involves in 3 projects:<br />
+&#8211; War project with the web.xml file and JaxRs Application class with the method getSingletons that returns all resources.<br />
+&#8211; Java jar file with interfaces for rest resources. The interfaces contain the JAX-RS annotations<br />
+&#8211; Java jar file with the resource implementation, each class extends the interface<br />
+Seems that apiDiscovery is not able to detect the resources.<br />
+If I create only one project with all resources inside it, the APIs are discovered well and all, but I need to use the scenario below.<br />
+Thanks a lot for your help</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-151936</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 24 Jan 2018 16:28:14 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-151936</guid>
+		<description><![CDATA[Hey Alon.    What you did is correct.    I suspect that these errors are coming from other web modules that you have deployed in your same Liberty application server?     You can disable api discovery for specific modules by using the `webModuleDoc` element (see this page for an example that disables a particular web module: https://www.ibm.com/support/knowledgecenter/en/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_api_discovery.html)
+
+Thanks,
+Arthur]]></description>
+		<content:encoded><![CDATA[<p>Hey Alon.    What you did is correct.    I suspect that these errors are coming from other web modules that you have deployed in your same Liberty application server?     You can disable api discovery for specific modules by using the `webModuleDoc` element (see this page for an example that disables a particular web module: <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_api_discovery.html">https://www.ibm.com/support/knowledgecenter/en/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_api_discovery.html</a>)</p>
+<p>Thanks,<br />
+Arthur</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Alon Amiramov</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-151920</link>
+		<dc:creator><![CDATA[Alon Amiramov]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2018 15:34:45 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-151920</guid>
+		<description><![CDATA[Dear Arthur,
+First of all thank you for your post. 
+Second, when im trying to run my JVM server with the apiDiscovery feture that i included in my server.xml file, my CICS procedure facing a lot of Dumps and errors which disable the proper behavior of the system. 
+Can you please tell me what do i need to implement before i enabled the apiDiscovery feature and what do i need to implement afterwards ? Because I think that i miss some step for making this work.. 
+The things that i done : 
+1. Enabled apiDiscovery feature in server.xml file.
+2. Created Swagger.json file under the META-INF directory in my service project.
+That&#039;s it.
+Thak you very much.]]></description>
+		<content:encoded><![CDATA[<p>Dear Arthur,<br />
+First of all thank you for your post.<br />
+Second, when im trying to run my JVM server with the apiDiscovery feture that i included in my server.xml file, my CICS procedure facing a lot of Dumps and errors which disable the proper behavior of the system.<br />
+Can you please tell me what do i need to implement before i enabled the apiDiscovery feature and what do i need to implement afterwards ? Because I think that i miss some step for making this work..<br />
+The things that i done :<br />
+1. Enabled apiDiscovery feature in server.xml file.<br />
+2. Created Swagger.json file under the META-INF directory in my service project.<br />
+That&#8217;s it.<br />
+Thak you very much.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-147804</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Mon, 21 Nov 2016 15:03:01 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-147804</guid>
+		<description><![CDATA[Hey Jim,
+
+I agree.  Keep an eye out for the December beta driver, it might have something along those lines.]]></description>
+		<content:encoded><![CDATA[<p>Hey Jim,</p>
+<p>I agree.  Keep an eye out for the December beta driver, it might have something along those lines.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jim</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-147784</link>
+		<dc:creator><![CDATA[Jim]]></dc:creator>
+		<pubDate>Thu, 17 Nov 2016 14:38:28 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-147784</guid>
+		<description><![CDATA[I second the request for a no https/login option with apidiscovery.  Prototype SSL is simple, yes, production SSL is a pain, and in constant flux.]]></description>
+		<content:encoded><![CDATA[<p>I second the request for a no https/login option with apidiscovery.  Prototype SSL is simple, yes, production SSL is a pain, and in constant flux.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ignacio4d</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-147211</link>
+		<dc:creator><![CDATA[ignacio4d]]></dc:creator>
+		<pubDate>Mon, 29 Aug 2016 02:48:41 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-147211</guid>
+		<description><![CDATA[Thanks Arthur. I have added 
+`@SwaggerDefinition(tags = { @Tag(name = &quot;AwesomeAPI&quot;, description = &quot;some description&quot;) })` to my Application class
+and `@Api(tags={&quot;AwesomeAPI&quot;})` to all my resource classes and now everything is grouped nicely in &quot;AwesomeAPI&quot; group :)]]></description>
+		<content:encoded><![CDATA[<p>Thanks Arthur. I have added<br />
+`@SwaggerDefinition(tags = { @Tag(name = &#8220;AwesomeAPI&#8221;, description = &#8220;some description&#8221;) })` to my Application class<br />
+and `@Api(tags={&#8220;AwesomeAPI&#8221;})` to all my resource classes and now everything is grouped nicely in &#8220;AwesomeAPI&#8221; group 🙂</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146875</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 29 Jun 2016 16:26:04 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146875</guid>
+		<description><![CDATA[Hi Prajakta,
+
+The most common issue is having duplicate method names within your jaxrs app (ie: same method in 2 different resources).   Do you have that?  Can you offer more information about your app? (how is it structured, how many resources, are you using web.xml or purely annotations, etc)]]></description>
+		<content:encoded><![CDATA[<p>Hi Prajakta,</p>
+<p>The most common issue is having duplicate method names within your jaxrs app (ie: same method in 2 different resources).   Do you have that?  Can you offer more information about your app? (how is it structured, how many resources, are you using web.xml or purely annotations, etc)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Prajakta</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146813</link>
+		<dc:creator><![CDATA[Prajakta]]></dc:creator>
+		<pubDate>Wed, 22 Jun 2016 04:55:22 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146813</guid>
+		<description><![CDATA[Hello Arthur,
+
+I configured apiDiscovery but I don&#039;t see apis being discovered. I&#039;m using WebSphere Liberty 8.5.5.9. The logs aren&#039;t helping. Any pointers you can give?
+
+Thanks
+Prajakta]]></description>
+		<content:encoded><![CDATA[<p>Hello Arthur,</p>
+<p>I configured apiDiscovery but I don&#8217;t see apis being discovered. I&#8217;m using WebSphere Liberty 8.5.5.9. The logs aren&#8217;t helping. Any pointers you can give?</p>
+<p>Thanks<br />
+Prajakta</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146428</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Mon, 16 May 2016 17:39:50 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146428</guid>
+		<description><![CDATA[Hi Rocky.  Unfortunately WAS 8.5.5.0 does not have any native Swagger support, as it started with Liberty 8.5.58 and 8.5.5.9.
+
+However, you can integrate our open source &quot;offline swagger processor&quot; (https://github.com/WASdev/tool.swagger.docgen) into your build system to extract a Swagger definition (either JSON or YAML) from your applications, using the exact same logic as Liberty uses.
+
+Thanks,
+Arthur]]></description>
+		<content:encoded><![CDATA[<p>Hi Rocky.  Unfortunately WAS 8.5.5.0 does not have any native Swagger support, as it started with Liberty 8.5.58 and 8.5.5.9.</p>
+<p>However, you can integrate our open source &#8220;offline swagger processor&#8221; (<a href="https://github.com/WASdev/tool.swagger.docgen">https://github.com/WASdev/tool.swagger.docgen</a>) into your build system to extract a Swagger definition (either JSON or YAML) from your applications, using the exact same logic as Liberty uses.</p>
+<p>Thanks,<br />
+Arthur</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rocky</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146427</link>
+		<dc:creator><![CDATA[Rocky]]></dc:creator>
+		<pubDate>Mon, 16 May 2016 15:26:55 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146427</guid>
+		<description><![CDATA[Hi,
+
+I am using WAS 8.5.5.0, and want to add swagger to the REST service.
+Can i add swagger? What are the other options with this WAS version?
+
+thanks in advance]]></description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>I am using WAS 8.5.5.0, and want to add swagger to the REST service.<br />
+Can i add swagger? What are the other options with this WAS version?</p>
+<p>thanks in advance</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hans</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146247</link>
+		<dc:creator><![CDATA[Hans]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2016 18:15:10 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146247</guid>
+		<description><![CDATA[Hi Arthur, thanks for a swift response and good suggestion. It does the trick nicely as a workaround and I believe it is the way to go until excluding runtime endpoints with a setting in the server.xml drops from your radar and onto your desk :-) I&#039;m staying tuned and certainly looking forward to seeing what you come up with.]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur, thanks for a swift response and good suggestion. It does the trick nicely as a workaround and I believe it is the way to go until excluding runtime endpoints with a setting in the server.xml drops from your radar and onto your desk 🙂 I&#8217;m staying tuned and certainly looking forward to seeing what you come up with.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146237</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Tue, 26 Apr 2016 14:01:05 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146237</guid>
+		<description><![CDATA[Thanks Hans!  Be sure to check out the newest blog about this topic (with videos), at https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/
+
+At the moment we don&#039;t have a mechanism to automatically exclude runtime endpoints, such as the jmx connector, but that&#039;s definitely on our radar and being considered.
+
+What you can do is take advantage of our multi-cardinality query param callled &quot;root&quot;.   So for example, if you have 2 apps, with corresponding context roots of /myApp1 and /myApp2, you can call &quot;/ibm/api/docs?root=/myApp1&amp;root=/myApp2&quot; and the Swagger 2.0 doc from that call will only contain those 2 apps, nothing else.
+
+The exact same filtering is available in the UI side by using the filter input box, where you can type in &quot;/myApp1, /myApp2&quot;]]></description>
+		<content:encoded><![CDATA[<p>Thanks Hans!  Be sure to check out the newest blog about this topic (with videos), at <a href="https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/">https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/</a></p>
+<p>At the moment we don&#8217;t have a mechanism to automatically exclude runtime endpoints, such as the jmx connector, but that&#8217;s definitely on our radar and being considered.</p>
+<p>What you can do is take advantage of our multi-cardinality query param callled &#8220;root&#8221;.   So for example, if you have 2 apps, with corresponding context roots of /myApp1 and /myApp2, you can call &#8220;/ibm/api/docs?root=/myApp1&#038;root=/myApp2&#8221; and the Swagger 2.0 doc from that call will only contain those 2 apps, nothing else.</p>
+<p>The exact same filtering is available in the UI side by using the filter input box, where you can type in &#8220;/myApp1, /myApp2&#8221;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hans</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146235</link>
+		<dc:creator><![CDATA[Hans]]></dc:creator>
+		<pubDate>Sun, 24 Apr 2016 22:29:34 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146235</guid>
+		<description><![CDATA[Hi Arthur, great stuff you are presenting here :-) One question though, how can you exclude the /IBMJMXConnectorREST in Liberty from your Swagger docs? I really wouldn&#039;t want to expose that one. Br, Hans]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur, great stuff you are presenting here 🙂 One question though, how can you exclude the /IBMJMXConnectorREST in Liberty from your Swagger docs? I really wouldn&#8217;t want to expose that one. Br, Hans</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Johan</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146215</link>
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2016 06:35:16 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146215</guid>
+		<description><![CDATA[Thats correct. But 2 services, with different context root can have the same api paths after the context. Such as /health
+The explorer is then exposing them as &quot;health&quot; and &quot;health1&quot; which is kinda ugly.
+I would guess we are not the only ones having an health endpoint in all of our services - therefor it would be quite awesome if the explorer would group services (contexts)!]]></description>
+		<content:encoded><![CDATA[<p>Thats correct. But 2 services, with different context root can have the same api paths after the context. Such as /health<br />
+The explorer is then exposing them as &#8220;health&#8221; and &#8220;health1&#8221; which is kinda ugly.<br />
+I would guess we are not the only ones having an health endpoint in all of our services &#8211; therefor it would be quite awesome if the explorer would group services (contexts)!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146202</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Fri, 15 Apr 2016 14:09:13 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146202</guid>
+		<description><![CDATA[Hey,
+
+The two services couldn&#039;t have the same context root, by virtue of that not being allowed in a web container.  But even if they contributed two swagger definitions with /health as the basepath, that&#039;s fine because our aggregator will combine each of their basepaths with their URLs.   So the two services wouldn&#039;t have the same basepath + URL combinations.]]></description>
+		<content:encoded><![CDATA[<p>Hey,</p>
+<p>The two services couldn&#8217;t have the same context root, by virtue of that not being allowed in a web container.  But even if they contributed two swagger definitions with /health as the basepath, that&#8217;s fine because our aggregator will combine each of their basepaths with their URLs.   So the two services wouldn&#8217;t have the same basepath + URL combinations.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Johan</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146201</link>
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Fri, 15 Apr 2016 13:14:54 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146201</guid>
+		<description><![CDATA[What if there are two services on the same WLP server, containing /health? That would be kinda bad?]]></description>
+		<content:encoded><![CDATA[<p>What if there are two services on the same WLP server, containing /health? That would be kinda bad?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146195</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 13 Apr 2016 15:32:16 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146195</guid>
+		<description><![CDATA[Hey,
+
+(a) Because /ibm/api/docs is an aggregation of all the restful endpoints in that Liberty instance, we have logic that adds the basepath of the individual APIs into the path themselves, since likely not all APIs will share the same basepath.  Same goes for the version.  We have some improvements we are considering for the future, related to when you filter the docs into a specific app, by using the &quot;root&quot; query param (ie: /ibm/api/docs?root=/myApp)
+
+(b) The grouping in the UI is based on the Swagger tags used.  So if you use a common tag with your resources they will be grouped together.]]></description>
+		<content:encoded><![CDATA[<p>Hey,</p>
+<p>(a) Because /ibm/api/docs is an aggregation of all the restful endpoints in that Liberty instance, we have logic that adds the basepath of the individual APIs into the path themselves, since likely not all APIs will share the same basepath.  Same goes for the version.  We have some improvements we are considering for the future, related to when you filter the docs into a specific app, by using the &#8220;root&#8221; query param (ie: /ibm/api/docs?root=/myApp)</p>
+<p>(b) The grouping in the UI is based on the Swagger tags used.  So if you use a common tag with your resources they will be grouped together.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146194</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 13 Apr 2016 15:28:29 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146194</guid>
+		<description><![CDATA[Hey Johan,
+
+At the moment it always requires https and login.  We will take this feedback into consideration for our future iterations.  Thanks!]]></description>
+		<content:encoded><![CDATA[<p>Hey Johan,</p>
+<p>At the moment it always requires https and login.  We will take this feedback into consideration for our future iterations.  Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: WASdev &#124; Deploying Swagger-enabled endpoints with WebSphere Liberty, Bluemix, and API Connect - WASdev</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146192</link>
+		<dc:creator><![CDATA[WASdev &#124; Deploying Swagger-enabled endpoints with WebSphere Liberty, Bluemix, and API Connect - WASdev]]></dc:creator>
+		<pubDate>Wed, 13 Apr 2016 12:16:30 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146192</guid>
+		<description><![CDATA[[&#8230;] blog is a follow-up to our WebSphere Liberty API discovery introduction and takes you on the journey of adding Swagger support to your assets, exposing them on-premise, [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] blog is a follow-up to our WebSphere Liberty API discovery introduction and takes you on the journey of adding Swagger support to your assets, exposing them on-premise, [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Johan</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146185</link>
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 15:57:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146185</guid>
+		<description><![CDATA[2. Forgot one thing, which I think is kinda missing.
+ a) base url: /PlayerAccount , api version: 1.0.0 
+ b) Grouping of contexts? (Actually haven&#039;t tested this one yet)]]></description>
+		<content:encoded><![CDATA[<p>2. Forgot one thing, which I think is kinda missing.<br />
+ a) base url: /PlayerAccount , api version: 1.0.0<br />
+ b) Grouping of contexts? (Actually haven&#8217;t tested this one yet)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Johan</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146184</link>
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Tue, 12 Apr 2016 15:38:30 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146184</guid>
+		<description><![CDATA[1. Does it really need to require https/login? It would be nice if my users would not need that, it&#039;s only used in dev and not needed at all for us.]]></description>
+		<content:encoded><![CDATA[<p>1. Does it really need to require https/login? It would be nice if my users would not need that, it&#8217;s only used in dev and not needed at all for us.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: James</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146178</link>
+		<dc:creator><![CDATA[James]]></dc:creator>
+		<pubDate>Mon, 11 Apr 2016 17:44:07 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146178</guid>
+		<description><![CDATA[Thanks Arthur.. Will give that a try!]]></description>
+		<content:encoded><![CDATA[<p>Thanks Arthur.. Will give that a try!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146177</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Mon, 11 Apr 2016 13:29:37 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146177</guid>
+		<description><![CDATA[Hi James,
+
+The name &quot;default&quot; is used when the app doesn&#039;t contain any Swagger Tags.   You can add a tag (or more than 1) to your app by using the SwaggerDefinition annotation.  See an example here: https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/JAXRSApp.java
+
+Then you have to reference that tag from a resource, by using the @API(&quot;tagname&quot;) annotation, as seen in https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/TasksResource.java
+
+You could override each tag for a specific operation by using the @APIOperation annotation, http://docs.swagger.io/swagger-core/v1.5.0/apidocs/io/swagger/annotations/ApiOperation.html#tags()
+
+Thanks,
+Arthur]]></description>
+		<content:encoded><![CDATA[<p>Hi James,</p>
+<p>The name &#8220;default&#8221; is used when the app doesn&#8217;t contain any Swagger Tags.   You can add a tag (or more than 1) to your app by using the SwaggerDefinition annotation.  See an example here: <a href="https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/JAXRSApp.java">https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/JAXRSApp.java</a></p>
+<p>Then you have to reference that tag from a resource, by using the @API(&#8220;tagname&#8221;) annotation, as seen in <a href="https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/TasksResource.java">https://github.com/WASdev/sample.swagger/blob/master/swagger-sample-application/src/main/java/net/wasdev/swaggersample/jaxrs/TasksResource.java</a></p>
+<p>You could override each tag for a specific operation by using the @APIOperation annotation, <a href="http://docs.swagger.io/swagger-core/v1.5.0/apidocs/io/swagger/annotations/ApiOperation.html#tags()">http://docs.swagger.io/swagger-core/v1.5.0/apidocs/io/swagger/annotations/ApiOperation.html#tags()</a></p>
+<p>Thanks,<br />
+Arthur</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: James</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-146170</link>
+		<dc:creator><![CDATA[James]]></dc:creator>
+		<pubDate>Thu, 07 Apr 2016 12:20:37 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-146170</guid>
+		<description><![CDATA[Hi,
+
+I have this working fine for my app using (WebSphere Application Server 2016.3.0.0/wlp-1.0.12.20160305-0200).  Only question is how do I &#039;name&#039; my API for use in the explorer?  It shows up as &#039;default&#039;.
+
+I thought that by &#039;default&#039;, it would be my context root... but I don&#039;t see any way to influence that?
+
+Many thanks!
+
+james]]></description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>I have this working fine for my app using (WebSphere Application Server 2016.3.0.0/wlp-1.0.12.20160305-0200).  Only question is how do I &#8216;name&#8217; my API for use in the explorer?  It shows up as &#8216;default&#8217;.</p>
+<p>I thought that by &#8216;default&#8217;, it would be my context root&#8230; but I don&#8217;t see any way to influence that?</p>
+<p>Many thanks!</p>
+<p>james</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145911</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2016 15:02:31 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145911</guid>
+		<description><![CDATA[I agree, that&#039;s a good point.  I will take this feedback into consideration for our current set of improvements to this feature.  Thanks again for your input!]]></description>
+		<content:encoded><![CDATA[<p>I agree, that&#8217;s a good point.  I will take this feedback into consideration for our current set of improvements to this feature.  Thanks again for your input!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Adam</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145908</link>
+		<dc:creator><![CDATA[Adam]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2016 08:56:59 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145908</guid>
+		<description><![CDATA[Hi Arthur,
+Thanks for the hint with @ApiOperation.nickname. Don&#039;t you think however that it is a bit awkward to expect methods name to be globally unique? Using fully qualified name instead would be more justified in my humble opinion.
+
+Regards,
+Adam]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur,<br />
+Thanks for the hint with @ApiOperation.nickname. Don&#8217;t you think however that it is a bit awkward to expect methods name to be globally unique? Using fully qualified name instead would be more justified in my humble opinion.</p>
+<p>Regards,<br />
+Adam</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145907</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2016 01:41:36 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145907</guid>
+		<description><![CDATA[Hey Adam,
+
+The operation ID must be unique within your web module, which can be achieved by choosing unique method names for your JAXRS methods, or by using the ApiOperation annotation (http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html), with its nickname attribute.
+
+Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Hey Adam,</p>
+<p>The operation ID must be unique within your web module, which can be achieved by choosing unique method names for your JAXRS methods, or by using the ApiOperation annotation (<a href="http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html">http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html</a>), with its nickname attribute.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: adam</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145904</link>
+		<dc:creator><![CDATA[adam]]></dc:creator>
+		<pubDate>Wed, 02 Mar 2016 16:05:31 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145904</guid>
+		<description><![CDATA[Hi Arthur,
+downloading beta that helps :) 
+
+Now I have another issue:
+io.swagger.models.SwaggerException: CWWKO1204E: Can not have multiple operations with the same operation ID: create
+
+This is not a surprise as operationId is created based on method name and my application contains many webservices so the method name is not unique. Could you fix that or report that issue to the right people.
+
+BR,
+Adam]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur,<br />
+downloading beta that helps 🙂 </p>
+<p>Now I have another issue:<br />
+io.swagger.models.SwaggerException: CWWKO1204E: Can not have multiple operations with the same operation ID: create</p>
+<p>This is not a surprise as operationId is created based on method name and my application contains many webservices so the method name is not unique. Could you fix that or report that issue to the right people.</p>
+<p>BR,<br />
+Adam</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145903</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 02 Mar 2016 14:05:59 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145903</guid>
+		<description><![CDATA[Hi Adam.   It looks like you&#039;re using Liberty 8558, which doesn&#039;t support API discovery from annotations.  That support is in the current Beta, https://developer.ibm.com/wasdev/downloads/liberty-profile-beta.   
+
+Can you download the Beta and give it another try?
+
+Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Hi Adam.   It looks like you&#8217;re using Liberty 8558, which doesn&#8217;t support API discovery from annotations.  That support is in the current Beta, <a href="https://developer.ibm.com/wasdev/downloads/liberty-profile-beta">https://developer.ibm.com/wasdev/downloads/liberty-profile-beta</a>.   </p>
+<p>Can you download the Beta and give it another try?</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: adam</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145902</link>
+		<dc:creator><![CDATA[adam]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2016 16:28:12 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145902</guid>
+		<description><![CDATA[I try once again as my xml was escaped in a wrong way
+
+&#060;server description=&#034;test server&#034;&#062;
+
+	&#060;featureManager&#062;
+	    &#060;feature&#062;apiDiscovery-1.0&#060;/feature&#062;
+		&#060;feature&#062;jaxrs-1.1&#060;/feature&#062;
+		&#060;feature&#062;jdbc-4.0&#060;/feature&#062;
+		&#060;feature&#062;json-1.0&#060;/feature&#062;
+		&#060;feature&#062;localConnector-1.0&#060;/feature&#062;
+		&#060;feature&#062;ejbLite-3.1&#060;/feature&#062;
+		&#060;feature&#062;restConnector-1.0&#060;/feature&#062;
+		&#060;feature&#062;servlet-3.0&#060;/feature&#062;
+		&#060;feature&#062;jndi-1.0&#060;/feature&#062;
+		&#060;feature&#062;cdi-1.0&#060;/feature&#062;
+	    &#060;feature&#062;jpa-2.0&#060;/feature&#062;
+	    &#060;feature&#062;ssl-1.0&#060;/feature&#062;	    
+    &#060;/featureManager&#062;
+
+    &#060;httpEndpoint host=&#034;localhost&#034; httpPort=&#034;9080&#034; httpsPort=&#034;9143&#034; id=&#034;defaultHttpEndpoint&#034;/&#062;
+
+	&#060;library id=&#034;DB2JCC4Lib&#034;&#062;
+		&#060;fileset dir=&#034;C:\IBM\SQLLIB\java&#034; includes=&#034;db2jcc4.jar db2jcc_license_cisuz.jar&#034;/&#062;
+	&#060;/library&#062;
+	&#060;dataSource id=&#034;db2&#034; jndiName=&#034;jdbc/ebookingDS&#034;&#062;
+		&#060;jdbcDriver libraryRef=&#034;DB2JCC4Lib&#034;/&#062;
+		&#060;properties.db2.jcc databaseName=&#034;DORDER&#034; password=&#034;foobar&#034; portNumber=&#034;50000&#034; serverName=&#034;localhost&#034; user=&#034;db2admin&#034;/&#062;
+	&#060;/dataSource&#062;
+	&#060;keyStore password=&#034;mysecret&#034;&#062;&#060;/keyStore&#062;
+	&#060;basicRegistry id=&#034;basic&#034; realm=&#034;customRealm&#034;&#062;
+	     &#060;user name=&#034;adam&#034; password=&#034;foobar&#034; /&#062;
+	&#060;/basicRegistry&#062;
+
+	&#060;applicationMonitor updateTrigger=&#034;mbean&#034;/&#062;
+	&#060;logging consoleLogLevel=&#034;INFO&#034; maxFileSize=&#034;20&#034; maxFiles=&#034;10&#034; traceFileName=&#034;trace.log&#034; traceFormat=&#034;BASIC&#034; traceSpecification=&#034;*=info:com.dsv.*=finest:com.ibm.ws.rsadapter.jdbc.WSJdbcConnection=finer&#034;/&#062;
+
+    &#060;webApplication id=&#034;RestArtifact&#034; location=&#034;RestArtifact.war&#034; name=&#034;RestArtifact&#034;/&#062;
+&#060;/server&#062;]]></description>
+		<content:encoded><![CDATA[<p>I try once again as my xml was escaped in a wrong way</p>
+<p>&lt;server description=&quot;test server&quot;&gt;</p>
+<p>	&lt;featureManager&gt;<br />
+	    &lt;feature&gt;apiDiscovery-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;jaxrs-1.1&lt;/feature&gt;<br />
+		&lt;feature&gt;jdbc-4.0&lt;/feature&gt;<br />
+		&lt;feature&gt;json-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;localConnector-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;ejbLite-3.1&lt;/feature&gt;<br />
+		&lt;feature&gt;restConnector-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;servlet-3.0&lt;/feature&gt;<br />
+		&lt;feature&gt;jndi-1.0&lt;/feature&gt;<br />
+		&lt;feature&gt;cdi-1.0&lt;/feature&gt;<br />
+	    &lt;feature&gt;jpa-2.0&lt;/feature&gt;<br />
+	    &lt;feature&gt;ssl-1.0&lt;/feature&gt;<br />
+    &lt;/featureManager&gt;</p>
+<p>    &lt;httpEndpoint host=&quot;localhost&quot; httpPort=&quot;9080&quot; httpsPort=&quot;9143&quot; id=&quot;defaultHttpEndpoint&quot;/&gt;</p>
+<p>	&lt;library id=&quot;DB2JCC4Lib&quot;&gt;<br />
+		&lt;fileset dir=&quot;C:\IBM\SQLLIB\java&quot; includes=&quot;db2jcc4.jar db2jcc_license_cisuz.jar&quot;/&gt;<br />
+	&lt;/library&gt;<br />
+	&lt;dataSource id=&quot;db2&quot; jndiName=&quot;jdbc/ebookingDS&quot;&gt;<br />
+		&lt;jdbcDriver libraryRef=&quot;DB2JCC4Lib&quot;/&gt;<br />
+		&lt;properties.db2.jcc databaseName=&quot;DORDER&quot; password=&quot;foobar&quot; portNumber=&quot;50000&quot; serverName=&quot;localhost&quot; user=&quot;db2admin&quot;/&gt;<br />
+	&lt;/dataSource&gt;<br />
+	&lt;keyStore password=&quot;mysecret&quot;&gt;&lt;/keyStore&gt;<br />
+	&lt;basicRegistry id=&quot;basic&quot; realm=&quot;customRealm&quot;&gt;<br />
+	     &lt;user name=&quot;adam&quot; password=&quot;foobar&quot; /&gt;<br />
+	&lt;/basicRegistry&gt;</p>
+<p>	&lt;applicationMonitor updateTrigger=&quot;mbean&quot;/&gt;<br />
+	&lt;logging consoleLogLevel=&quot;INFO&quot; maxFileSize=&quot;20&quot; maxFiles=&quot;10&quot; traceFileName=&quot;trace.log&quot; traceFormat=&quot;BASIC&quot; traceSpecification=&quot;*=info:com.dsv.*=finest:com.ibm.ws.rsadapter.jdbc.WSJdbcConnection=finer&quot;/&gt;</p>
+<p>    &lt;webApplication id=&quot;RestArtifact&quot; location=&quot;RestArtifact.war&quot; name=&quot;RestArtifact&quot;/&gt;<br />
+&lt;/server&gt;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Adam</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/02/17/exposing-liberty-rest-apis-swagger/#comment-145901</link>
+		<dc:creator><![CDATA[Adam]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2016 16:24:32 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=16853#comment-145901</guid>
+		<description><![CDATA[Hi Arthur,
+I am trying to configure that but my api is not discovered. Could you please advice what am I doing wrong.
+
+C:\Program-extras\wlp-webProfile7-8.5.5.8\wlp\bin&#062;productInfo version
+Product name: WebSphere Application Server
+Product version: 8.5.5.8
+Product edition: BASE_ILAN
+
+server.xml:
+
+
+	
+	    apiDiscovery-1.0
+		jaxrs-1.1
+		jdbc-4.0
+		json-1.0
+		localConnector-1.0
+		ejbLite-3.1
+		restConnector-1.0
+		servlet-3.0
+		jndi-1.0
+		cdi-1.0
+	    jpa-2.0
+	    ssl-1.0	    
+    
+
+    
+
+	
+		
+	
+	
+		
+		
+	
+	
+	
+	     
+	
+
+	
+	
+
+    
+
+
+
+I use @Path annotation in my Webservices.]]></description>
+		<content:encoded><![CDATA[<p>Hi Arthur,<br />
+I am trying to configure that but my api is not discovered. Could you please advice what am I doing wrong.</p>
+<p>C:\Program-extras\wlp-webProfile7-8.5.5.8\wlp\bin&gt;productInfo version<br />
+Product name: WebSphere Application Server<br />
+Product version: 8.5.5.8<br />
+Product edition: BASE_ILAN</p>
+<p>server.xml:</p>
+<p>	    apiDiscovery-1.0<br />
+		jaxrs-1.1<br />
+		jdbc-4.0<br />
+		json-1.0<br />
+		localConnector-1.0<br />
+		ejbLite-3.1<br />
+		restConnector-1.0<br />
+		servlet-3.0<br />
+		jndi-1.0<br />
+		cdi-1.0<br />
+	    jpa-2.0<br />
+	    ssl-1.0	    </p>
+<p>I use @Path annotation in my Webservices.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

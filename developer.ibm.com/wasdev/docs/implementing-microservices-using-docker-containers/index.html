@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-08-28",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Implementing microservices using Docker containers",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"Docker,",
+						"contentArea": "DevOps, Cloud"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,",
+		      "description":"Implementing microservices using Docker containers"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Implementing microservices using Docker containers - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A step-by-step guide to implementing two microservices using Docker containers and WAS Liberty."/>
+<link rel="canonical" href="../../index.html%3Fp=14113.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Implementing microservices using Docker containers Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=14113.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fimplementing-microservices-using-docker-containers%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fimplementing-microservices-using-docker-containers%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-14113 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../index.html%3Fp=14113.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="../category/devops/index.html" rel="tag">DevOps</a><i>, </i><a href="../category/cloud/index.html" rel="tag">Cloud</a></span></div><h1 class="entry-title">Implementing microservices using Docker containers</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../blog/author/anandcha/index.html">AnandNatraj Chandramohan</a></span><br>Published on August 28, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="../../index.html%3Fp=14113.html#comments" class="pn_comments_icon">0 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../../docs.html">All Documentation</a><a href="../../index.html%3Fp=14113.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="../category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="../category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="../category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="../category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="../category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="../category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="../category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="../category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="../category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="../category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="../category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="../category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="../category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="../category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="../category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="../category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="../category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="../category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="../category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A step-by-step guide to implementing two microservices using Docker containers and WAS Liberty.</p>
+<p>Microservices is an architectural style in which large complex software applications are broken down into a collection of independent, loosely coupled services. Starting points to learn about microservices include <a href="http://martinfowler.com/articles/microservices.html">an excellent blog post by Martin Fowler</a> and the <a href="https://www.redbooks.ibm.com/redbooks.nsf/RedpieceAbstracts/sg248275.html?Open">IBM Redbooks publication</a>. Also, review the <a href="../../index.html%3Fp=13703.html">12-factor app for microservices</a> article by <a href="../../blog/author/katheris/index.html">Kate</a>.</p>
+<p><a href="https://www.docker.com/">Docker containers</a> wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries &#8211; ensuring that it will run consistently across all environments &#8211; on-premises/public cloud/private cloud/VMWare etc.</p>
+<h2>Building two microservices using Docker containers</h2>
+<p>In this article, we will put Docker and microservices together using an example microservices application composed of two services, Inventory and Billing. Each service will run in its own Docker container, and will communicate using lightweight REST APIs.</p>
+<p>Microservices are small and focused, meaning that each service is responsible for one task. Technology choices can vary from service to service, but should be made based on what it is the service has to do, for example choosing between a Relational or NoSQL datastore based on the type of data the service interacts with. The software stack for the services in our example include the following components:</p>
+<ul>
+<li><strong>Inventory microservice</strong>
+<ul>
+<li>runtime: Node.js</li>
+<li>database: node-json-db and node.js REST client</li>
+</ul>
+</li>
+<li><strong>Billing microservice</strong>
+<ul>
+<li>runtime: WAS Liberty</li>
+<li>database: Apache Derby</li>
+</ul>
+</li>
+</ul>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/1.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/1.png" alt="1" width="575" height="234" class="alignnone size-full wp-image-14060" srcset="../../wp-content/uploads/sites/9/2015/08/1.png 575w, ../../wp-content/uploads/sites/9/2015/08/1-300x122.png 300w" sizes="(max-width: 575px) 100vw, 575px" /></a></p>
+<h2>Kitematic &#8211; a GUI for Docker</h2>
+<p>Before we start, you need to <a href="https://hub.docker.com/account/signup/">get an account on Docker Hub</a>.</p>
+<p>Also, <a href="https://kitematic.com/">download and install Kitematic</a>, an easy and useful GUI-based tool for running Docker containers.</p>
+<p>After installing Kitematic, start the application, which starts a Linux VM that is needed to run Docker containers:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/2.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/2.png" alt="2" width="693" height="359" class="alignnone size-full wp-image-14062" srcset="../../wp-content/uploads/sites/9/2015/08/2.png 693w, ../../wp-content/uploads/sites/9/2015/08/2-300x155.png 300w" sizes="(max-width: 693px) 100vw, 693px" /></a></p>
+<p>On the home page, search for the Ubuntu image and click <strong>Create</strong> to create a container for the image:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/3.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/3.png" alt="3" width="544" height="446" class="alignnone size-full wp-image-14063" srcset="../../wp-content/uploads/sites/9/2015/08/3.png 544w, ../../wp-content/uploads/sites/9/2015/08/3-300x246.png 300w" sizes="(max-width: 544px) 100vw, 544px" /></a></p>
+<p>Now, we&#8217;ll build two Docker images, one for the Inventory microservice and another for the Billing microservice. You can use Dockerfile to automatically build Docker images (see <a href="../../blog/2014/12/04/liberty-docker/index.html">Running Liberty profile in a Docker container</a> for a detailed example of building a Docker image for running WAS Liberty).</p>
+<h2>Creating the Billing microservice</h2>
+<p>To build the Docker image for the Billing microservice, create a Dockerfile and add the following lines:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+FROM ubuntu
+
+ADD wlp-extended-8.5.5.6.jar /root/
+ADD wlp-runtime-8.5.5.6.jar /root/
+ADD BillingMicroservice.war /root/
+ADD db-derby-10.11.1.1-bin.tar.gz /root/
+
+RUN apt-get update
+RUN apt-get install -y default-jre
+RUN java -jar /root/wlp-runtime-8.5.5.6.jar --acceptLicense /root/
+RUN java -jar /root/wlp-extended-8.5.5.6.jar --acceptLicense /root/
+EXPOSE 9080
+</pre>
+<p>Download the <a href="https://developer.ibm.com/assets/wasdev/#asset/runtimes-8.5.5-wlp-runtime">Liberty runtime</a> and <a href="https://developer.ibm.com/assets/wasdev/#asset/addons-8.5.5-wlp-extended">Liberty Extended Programming Models</a> from the Liberty Repository. Download Apache Derby from <a href="http://db.apache.org/derby/releases/release-10.11.1.1.cgi" target="_blank">this link</a></p>
+<p>Download the attached the WAR for the Billing microservice from here <a href="../../wp-content/uploads/sites/9/2015/08/BillingMicroservice.war_.zip">BillingMicroservice.war</a></p>
+<p>Place the Dockerfile and the other four files in the same directory somewhere in your local file system. You should now see the following 5 files on your filesystem:</p>
+<ul>
+<li>BillingMicroservice.war</li>
+<li>db-derby-10.11.1.1-bin.tar.gz</li>
+<li>Dockerfile</li>
+<li>wlp-extended-8.5.5.6.jar</li>
+<li>wlp-runtime-8.5.5.6.jar</li>
+</ul>
+<p>Next, from the Kitematic console, click <strong>DOCKER CLI</strong> to bring up the command line interface for working with Docker images:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/5.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/5.png" alt="5" width="506" height="661" class="alignnone size-full wp-image-14066" srcset="../../wp-content/uploads/sites/9/2015/08/5.png 506w, ../../wp-content/uploads/sites/9/2015/08/5-230x300.png 230w" sizes="(max-width: 506px) 100vw, 506px" /></a></p>
+<p>In the shell, type the command <code>docker images</code> and you should see the following output:</p>
+<pre><code>REPOSITORY        TAG               IMAGE ID          CREATED           VIRTUAL SIZE
+ubuntu            latest            d2a0ecffe6fa      2 weeks ago       188.4 MB
+</code></pre>
+<p>Next, navigate to the directory where you placed the Dockerfile and the other software downloads and issue the command:</p>
+<pre><code>docker build -t anandnatraj/wlp .
+</code></pre>
+<p>Note that the <code>-t</code> flag allows us to tag our successfully built image with a name. In my case, the <code>anandnatraj</code> also corresponds to the name of my private registry on Docker Hub, making it easy when to push my image to Docker Hub. This step will usually take a few minutes. At the end, you should see a message:</p>
+<pre><code>Successfully built ab6b3dd7be8f
+</code></pre>
+<p>Let&#8217;s now explicitly publish our container’s exposed ports to specified ports on the host machine by issuing the following command:</p>
+<pre><code>docker run -p 1930:9080 anandnatraj/wlp
+</code></pre>
+<p>What we&#8217;re going to do next is a bit of a workaround. Since the current version of Kitematic does not import local Docker images, we have to publish our image to Docker Hub and import it back to the local machine using Kitematic. Also, since the Docker image now contains licensed code, you cannot publish it to the public registry on Docker Hub. So create a private registry on Docker Hub and push your Docker image to it by issuing the following command (in this case, the name of the private registry is <code>anandnatraj</code>):</p>
+<pre><code>docker push anandnatraj/wlp
+</code></pre>
+<p>This step takes several minutes, so #coffeetime.</p>
+<p>Log into Docker Hub and ensure your image has been published successfully.</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/6.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/6.png" alt="6" width="900" height="214" class="alignnone size-full wp-image-14067" srcset="../../wp-content/uploads/sites/9/2015/08/6.png 900w, ../../wp-content/uploads/sites/9/2015/08/6-300x71.png 300w" sizes="(max-width: 900px) 100vw, 900px" /></a></p>
+<p>Next, go back to the Docker CLI shell and remove the existing local Docker image because we will download it from Docker Hub in the next step:</p>
+<pre><code>docker rmi anandnatraj/wlp
+</code></pre>
+<p>Now, launch the Kitematic console. Ensure you are signed into it using your Docker Hub account. Click <strong>My Repos</strong> on the top-left-hand corner and you should see the image you just pushed to Docker Hub. If you don’t see it, try signing out and signing back into Kitematic.</p>
+<p>Click <strong>Create</strong> to download the image to your local machine and create a Docker container:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/7.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/7.png" alt="7" width="900" height="313" class="alignnone size-full wp-image-14068" srcset="../../wp-content/uploads/sites/9/2015/08/7.png 900w, ../../wp-content/uploads/sites/9/2015/08/7-300x104.png 300w" sizes="(max-width: 900px) 100vw, 900px" /></a></p>
+<p>Once the download is complete, click <strong>EXEC</strong> to launch a shell to work with the Docker container:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/8.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/8.png" alt="8" width="662" height="262" class="alignnone size-full wp-image-14069" srcset="../../wp-content/uploads/sites/9/2015/08/8.png 662w, ../../wp-content/uploads/sites/9/2015/08/8-300x119.png 300w" sizes="(max-width: 662px) 100vw, 662px" /></a></p>
+<p>Navigate to the <code>/root</code> directory and ensure you can see the files you added to the Docker image:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/9.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/9.png" alt="9" width="712" height="217" class="alignnone size-full wp-image-14070" srcset="../../wp-content/uploads/sites/9/2015/08/9.png 712w, ../../wp-content/uploads/sites/9/2015/08/9-300x91.png 300w" sizes="(max-width: 712px) 100vw, 712px" /></a></p>
+<p>Now, the Billing microservice Docker container is almost ready. Next we have to start the Derby database and install the BillingMicroservice app on the WAS Liberty server.</p>
+<p>So, navigate to <code>/root/db-derby-10.11.1.1-bin/bin</code> and type the following command to start the Derby database and to start the database:</p>
+<pre><code>./startNetworkServer
+</code></pre>
+<p>You&#8217;ll see the following message when it&#8217;s started:</p>
+<pre><code>Sun Jul 26 22:16:51 UTC 2015 : Apache Derby Network Server - 10.11.1.1 - (1616546) started and ready to accept connections on port 1527
+</code></pre>
+<p>If needed, you can launch another shell for the Docker container by selecting the <strong>wlp</strong> image and selecting <strong>EXEC</strong> on the Kitematic console.</p>
+<p>Let&#8217;s now create a Liberty server by issuing the following command:</p>
+<pre><code>./server create mylibertyserver
+</code></pre>
+<p>Don&#8217;t start the server yet.</p>
+<p>Install the BillingMicroservice app by copying it into the Liberty server&#8217;s <code>dropins</code> directory:</p>
+<pre><code>cp /root/BillingMicroservice.war /root/wlp/usr/servers/mylibertyserver/dropins/.
+</code></pre>
+<p>Before you start the server, navigate to <code>/root/wlp/usr/servers/mylibertyserver</code> and open the <code>server.xml</code> file. Replace all its contents and with the following lines:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;server description=&quot;new server&quot;&gt;
+    &lt;!-- Enable features --&gt;
+    &lt;featureManager&gt;
+           &lt;feature&gt;jaxrs-1.1&lt;/feature&gt;
+           &lt;feature&gt;jsp-2.2&lt;/feature&gt;
+           &lt;feature&gt;localConnector-1.0&lt;/feature&gt;
+    &lt;feature&gt;jsp-2.2&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+    &lt;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&gt;
+    &lt;httpEndpoint id=&quot;defaultHttpEndpoint&quot;
+                  host=&quot;*&quot;
+                  httpPort=&quot;9080&quot;
+                  httpsPort=&quot;9443&quot; /&gt;
+    &lt;webApplication id=&quot;BillingMicroservice&quot; location=&quot;BillingMicroservice.war&quot; name=&quot;BillingMicroservice&quot;/&gt;
+&lt;/server&gt;
+</pre>
+<p>Start the Liberty server:</p>
+<pre><code>./server start mylibertyserver
+</code></pre>
+<p>Now, &#8216;Docker-izing&#8217; the BillingMicroservice is complete. The service itself is very simple. It performs the following functions:</p>
+<ol>
+<li>Inserts Billing Information to the Apache Derby database.</li>
+<li>Returns a status (always “verified” to keep things simple).</li>
+<li>Exposed as a JAX-RS service. See <a href="../../index.html%3Fp=5356.html">How to create a simple JAX-RS servlet</a>.</li>
+</ol>
+<p>I pasted the skeleton code below for your reference. Note, you can use sample code from Apache to customize the java code below to access a derby database <a href="http://db.apache.org/derby/integrate/plugin_help/derby_app.html">sample code in the Apache Derby documentation</a>:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+package net.wasdev.jaxrs;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path(&quot;Billing/microservice&quot;)
+public class Billingmicroservice {
+
+	private static String status = &quot;verified&quot;;
+
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+
+	public Map&lt;String, String&gt; getSystemProperties(Map&lt;String, String&gt; input) {
+
+		System.out.println(&quot;Insert records to Apache Derby database&quot;);
+		/*
+		 * Apache Derby database record insert
+		 */
+		Map&lt;String, String&gt; result = new HashMap&lt;&gt;();
+		result.put(&quot;result&quot;, status);
+		return result;
+
+	}
+
+}
+</pre>
+<h2>Creating the Inventory microservice</h2>
+<p>In the next step, let&#8217;s build another Docker image with the Inventory microservice running on Node.js. On your host machine, create a new Dockerfile for the Inventory microservice image with the following lines:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+FROM ubuntu
+ADD InventoryMicroservice.js /root/
+ADD createDB.js
+</pre>
+<p>As before, ensure the Dockerfile and the other dependencies are in the same directory in your host machine. Download createDB.js and InventoryMicroservice.js from here: <a href="../../wp-content/uploads/sites/9/2015/08/Inventory.zip">Inventory Microservice Downloads</a></p>
+<p>The following screenshot shows the Dockerfile and other dependencies in the same directory on the filesystem of your host machine:</p>
+<ul>
+<li>createDB.js</li>
+<li>Dockerfile</li>
+<li>InventoryMicroservice.js</li>
+</ul>
+<p>Launch a command shell from your host machine and navigate to the directory where you placed for the Dockerfile for the node image. Then build and push the image by issuing the following commands (note that a free account on Docker Hub allows you to only keep one image, so you may need to delete the previous image before pushing this new one):</p>
+<pre><code>docker build -t anandnatraj/node .
+
+docker push anandnatraj/node
+</code></pre>
+<p>After pushing the image to Docker Hub, you can remove the local image, since we will be getting it back from Docker Hub (remember the work around we used above to get around the restriction of Kitematic not being able to pull images from a local registry).</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/11.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/11.png" alt="11" width="675" height="348" class="alignnone size-full wp-image-14074" srcset="../../wp-content/uploads/sites/9/2015/08/11.png 675w, ../../wp-content/uploads/sites/9/2015/08/11-300x155.png 300w" sizes="(max-width: 675px) 100vw, 675px" /></a></p>
+<pre><code>docker rmi anandnatraj/node
+</code></pre>
+<p>These steps, will take several minutes, so #coffeetimeagain.</p>
+<p>Again, log in to your Docker account to ensure the image made it through successfully:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/12.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/12.png" alt="12" width="675" height="215" class="alignnone size-full wp-image-14075" srcset="../../wp-content/uploads/sites/9/2015/08/12.png 675w, ../../wp-content/uploads/sites/9/2015/08/12-300x96.png 300w" sizes="(max-width: 675px) 100vw, 675px" /></a></p>
+<p>Now, launch the Kitematic console. Ensure you are signed into it using the Docker Hub account. Click <strong>My Repos</strong> on the top-left-hand corner and you should see the image you just pushed to Docker Hub. If you don’t see it, try signing out and signing back into Kitematic. Click <strong>Create</strong> to download the image to your local machine and create a Docker container:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/13.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/13.png" alt="13" width="544" height="189" class="alignnone size-full wp-image-14076" srcset="../../wp-content/uploads/sites/9/2015/08/13.png 544w, ../../wp-content/uploads/sites/9/2015/08/13-300x104.png 300w" sizes="(max-width: 544px) 100vw, 544px" /></a></p>
+<p>Once the download is complete, click <strong>EXEC</strong> to launch a shell to work with the Docker container.</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/14.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/14.png" alt="14" width="432" height="190" class="alignnone size-full wp-image-14077" srcset="../../wp-content/uploads/sites/9/2015/08/14.png 432w, ../../wp-content/uploads/sites/9/2015/08/14-300x132.png 300w" sizes="(max-width: 432px) 100vw, 432px" /></a></p>
+<p>Navigate to the <code>/root</code> directory and ensure you can see the file you added to the Docker image. Issue the following commands to install the Node REST Client and Node JSON DB modules:</p>
+<pre><code>apt-get update
+
+apt-get install nodejs [ Hit Y to continue if prompted] 
+
+apt-get install npm [ Hit Y to continue if prompted]
+
+npm install node-rest-client
+
+npm install node-json-db –save
+</code></pre>
+<p>The Inventory microservice has now been successfully “Docker-ized” as well. One small step is to update the end-point of the Billing microservice.</p>
+<p>Open the Inventory microservice:</p>
+<pre><code>vi InventoryMicroservice.js
+</code></pre>
+<p>Replace the line:</p>
+<pre><code>client.registerMethod("getBillingInfo", "http://localhost:32768/BillingMicroservice/rest/Billing/microservice", "POST");
+</code></pre>
+<p>With the following line:</p>
+<pre><code>client.registerMethod("getBillingInfo", "http://192.168.99.100:32768/BillingMicroservice/rest/Billing/microservice", "POST");
+</code></pre>
+<p>You can get the exposed HTTP port of BillingMicroservice from the Kitematic console:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/15.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/15.png" alt="15" width="640" height="286" class="alignnone size-full wp-image-14078" srcset="../../wp-content/uploads/sites/9/2015/08/15.png 640w, ../../wp-content/uploads/sites/9/2015/08/15-300x134.png 300w" sizes="(max-width: 640px) 100vw, 640px" /></a></p>
+<p>Create the required database for the Inventory service and then run the Inventory microservice:</p>
+<pre><code>nodejs createDB.js
+
+nodejs InventoryMicroservice.js
+</code></pre>
+<p>You should see the following output:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/16.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/16.png" alt="16" width="933" height="141" class="alignnone size-full wp-image-14079" srcset="../../wp-content/uploads/sites/9/2015/08/16.png 933w, ../../wp-content/uploads/sites/9/2015/08/16-300x45.png 300w" sizes="(max-width: 933px) 100vw, 933px" /></a></p>
+<p>The Inventory microservice is very simple. It performs two simple functions:</p>
+<ol>
+<li>Updates the Inventory information to a local node JSON DB.</li>
+<li>Invokes BillingMicroservice running inside another Docker container using the lightweight REST API.</li>
+</ol>
+<p>I pasted the code for the Inventory microservice here for your reference. The code for InventoryMicroservice is adapted from the <a href="https://www.npmjs.com/package/node-rest-client">sample code for <code>node-rest-client</code></a> and the code for createDB.js is adapted from <a href="https://www.npmjs.com/package/node-json-db">sample code for <code>node-json-db</code></a> on <code>www.npmjs.com</code>.</p>
+<pre class="brush: jscript; title: ; notranslate" title="">
+var Client = require('node-rest-client').Client;
+var client = new Client();
+
+var myargs = {
+  data: { Name: &quot;Anand&quot;,
+          Address:&quot;Austin&quot;,
+          Age:&quot;Nice-try !&quot;,
+          SSN:&quot;123&quot;,
+        },
+  headers:{&quot;Content-Type&quot;: &quot;application/json&quot;}
+};
+
+var myJSONDB = require('node-json-db');
+var mydb = new myJSONDB(&quot;InventoryDataBase&quot;, true, false);
+mydb.push(&quot;/Inventory&quot;,myargs);
+
+client.registerMethod(&quot;getBillingInfo&quot;, &quot;http://localhost:32768/BillingMicroservice/rest/Billing/microservice&quot;, &quot;POST&quot;);
+
+client.methods.getBillingInfo(args, function(data,response){
+  console.log(data);
+});
+</pre>
+<p>Also, login to the shell for the Liberty container and navigate to <code>/root/wlp/usr/servers/mylibertyserver/logs</code>. <code>Cat</code> the <code>console.log</code> file and you should see the following output indicating the BillingMicroservice was successfully invoked:</p>
+<p><a href="../../wp-content/uploads/sites/9/2015/08/17.png"><br />
+<img src="../../wp-content/uploads/sites/9/2015/08/17.png" alt="17" width="900" height="131" class="alignnone size-full wp-image-14144" srcset="../../wp-content/uploads/sites/9/2015/08/17.png 900w, ../../wp-content/uploads/sites/9/2015/08/17-300x44.png 300w" sizes="(max-width: 900px) 100vw, 900px" /></a></p>
+<h2>Conclusion</h2>
+<p>Docker and microservices form a very powerful combination. In this article, we examined a very simple example of running a microservices app in Docker containers. This simple microservices app consists of two microservices, Inventory and Billing, communicating via lightweight REST APIs.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="../../blog/tag/docker/index.html" rel="tag">Docker</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../blog/author/anandcha/index.html">AnandNatraj Chandramohan</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../index.html%3Fp=14113.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='14113' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fd110182c2" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="133"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../index.html%3Fp=14113.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../index.html%3Fp=14113.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../index.html%3Fp=14113.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fimplementing-microservices-using-docker-containers&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fimplementing-microservices-using-docker-containers"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

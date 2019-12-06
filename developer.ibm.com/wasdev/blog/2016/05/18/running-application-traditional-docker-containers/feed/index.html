@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Deploying applications to WAS traditional and IBM HTTP Server under Docker</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2016/05/18/running-application-traditional-docker-containers/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2016/05/18/running-application-traditional-docker-containers/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Kavitha Suresh Kumar</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/05/18/running-application-traditional-docker-containers/#comment-152212</link>
+		<dc:creator><![CDATA[Kavitha Suresh Kumar]]></dc:creator>
+		<pubDate>Fri, 23 Mar 2018 14:00:57 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17416#comment-152212</guid>
+		<description><![CDATA[Hi Ralph,
+
+       The command to be executed to start admin server is &quot;docker exec ihs /opt/IBM/HTTPServer/bin/adminctl start&quot;
+
+To restart container use &quot;docker restart ihs&quot;
+
+Thanks
+Kavitha]]></description>
+		<content:encoded><![CDATA[<p>Hi Ralph,</p>
+<p>       The command to be executed to start admin server is &#8220;docker exec ihs /opt/IBM/HTTPServer/bin/adminctl start&#8221;</p>
+<p>To restart container use &#8220;docker restart ihs&#8221;</p>
+<p>Thanks<br />
+Kavitha</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ralph</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/05/18/running-application-traditional-docker-containers/#comment-152183</link>
+		<dc:creator><![CDATA[Ralph]]></dc:creator>
+		<pubDate>Mon, 19 Mar 2018 01:32:02 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17416#comment-152183</guid>
+		<description><![CDATA[hello Kavitha,
+
+Good day.
+
+We are Configuring IBM HTTP Server to work with WebSphere Application Server running in containers and we are referring to some of your sharing (https://www.youtube.com/watch?v=wTT18wrCAd0, https://developer.ibm.com/recipes/tutorials/how-to-build-ibm-http-server-production-docker-image/?s_tact=C43001LW) on our end to make the IHS docker work, but….,
+
+Herewith we grasp the ihs image from ibmcom/ibm-http-server and make it running fine with below command
+docker run --name ihs -h ihs -p 80:80 --net=net1 -d ibmcom/ibm-http-server
+
+then we put the responsefile.txt (please refer to the attachment) into the /opt/IBM/WebSphere/Toolbox/WCT/ in ihs by below command
+docker cp responsefile.txt ihs: /opt/IBM/WebSphere/Toolbox/WCT/
+
+for configuring the ihs container, we docker exec -it --user root ihs /bin/bash and we run below command under /opt/IBM/WebSphere/Toolbox/WCT/, 
+wctcmd.sh -tool pct -defLocPathname /opt/IBM/WebSphere/Plugins -defLocName loc1 -createDefinition -response /opt/IBM/WebSphere/Toolbox/WCT/responsefile.txt
+
+and following your sharing, we also run
+docker exec ihs /opt/IBM/HTTPServer/bin/htpasswd -cb /opt/IBM/HTTPServer/conf/admin.passwd ihsadmin ihspasswd
+
+after above, we try to re-start (docker exec ihs /opt/IBM/HTTPServer/bin/apachectl start) the ihs, but unfortunately, the ihs is not able to run. 
+(console shows
+Starting IBM HTTP Server
+IBM HTTP Server started successfully
+IBM HTTP Server stopped)  then quickly shows IBM HTTP Server stopped
+(since the ihs container is not able to run, we are not able to get into the container to trace the error log, even the docker logs -f --tail=all ihs only shows IBM HTTP Server stopped)
+
+We would like to consult you whether we miss any steps or any action we do it wrong.
+
+Please kindly advice.
+Thanks.
+
+Ralph]]></description>
+		<content:encoded><![CDATA[here<p>hello Kavitha,</p>
+<p>Good day.</p>
+<p>We are Configuring IBM HTTP Server to work with WebSphere Application Server running in containers and we are referring to some of your sharing (<a href="https://www.youtube.com/watch?v=wTT18wrCAd0">https://www.youtube.com/watch?v=wTT18wrCAd0</a>, <a href="https://developer.ibm.com/recipes/tutorials/how-to-build-ibm-http-server-production-docker-image/?s_tact=C43001LW">https://developer.ibm.com/recipes/tutorials/how-to-build-ibm-http-server-production-docker-image/?s_tact=C43001LW</a>) on our end to make the IHS docker work, but….,</p>
+<p>Herewith we grasp the ihs image from ibmcom/ibm-http-server and make it running fine with below command<br />
+docker run &#8211;name ihs -h ihs -p 80:80 &#8211;net=net1 -d ibmcom/ibm-http-server</p>
+<p>then we put the responsefile.txt (please refer to the attachment) into the /opt/IBM/WebSphere/Toolbox/WCT/ in ihs by below command<br />
+docker cp responsefile.txt ihs: /opt/IBM/WebSphere/Toolbox/WCT/</p>
+<p>for configuring the ihs container, we docker exec -it &#8211;user root ihs /bin/bash and we run below command under /opt/IBM/WebSphere/Toolbox/WCT/,<br />
+wctcmd.sh -tool pct -defLocPathname /opt/IBM/WebSphere/Plugins -defLocName loc1 -createDefinition -response /opt/IBM/WebSphere/Toolbox/WCT/responsefile.txt</p>
+<p>and following your sharing, we also run<br />
+docker exec ihs /opt/IBM/HTTPServer/bin/htpasswd -cb /opt/IBM/HTTPServer/conf/admin.passwd ihsadmin ihspasswd</p>
+<p>after above, we try to re-start (docker exec ihs /opt/IBM/HTTPServer/bin/apachectl start) the ihs, but unfortunately, the ihs is not able to run.<br />
+(console shows<br />
+Starting IBM HTTP Server<br />
+IBM HTTP Server started successfully<br />
+IBM HTTP Server stopped)  then quickly shows IBM HTTP Server stopped<br />
+(since the ihs container is not able to run, we are not able to get into the container to trace the error log, even the docker logs -f &#8211;tail=all ihs only shows IBM HTTP Server stopped)</p>
+<p>We would like to consult you whether we miss any steps or any action we do it wrong.</p>
+<p>Please kindly advice.<br />
+Thanks.</p>
+<p>Ralph</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

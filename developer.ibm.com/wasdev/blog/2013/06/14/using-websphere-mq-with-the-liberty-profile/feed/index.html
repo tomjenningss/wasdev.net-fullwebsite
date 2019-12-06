@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Using WebSphere MQ with the Liberty profile</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: pnickoll</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-50611</link>
+		<dc:creator><![CDATA[pnickoll]]></dc:creator>
+		<pubDate>Wed, 05 Nov 2014 11:24:46 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-50611</guid>
+		<description><![CDATA[Hi Michael,
+
+My first guess would be that the wmqJmsClient.rar.location variable is not pointing at the WMQ RAR file, could you confirm if that is pointing to the right place?]]></description>
+		<content:encoded><![CDATA[<p>Hi Michael,</p>
+<p>My first guess would be that the wmqJmsClient.rar.location variable is not pointing at the WMQ RAR file, could you confirm if that is pointing to the right place?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Michael</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-50578</link>
+		<dc:creator><![CDATA[Michael]]></dc:creator>
+		<pubDate>Wed, 05 Nov 2014 10:15:06 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-50578</guid>
+		<description><![CDATA[If I follow your tutorial I get a Stack Dump = java.lang.ClassNotFoundException: com.ibm.mq.jms.MQQueue expection. Any idea what I could change?]]></description>
+		<content:encoded><![CDATA[<p>If I follow your tutorial I get a Stack Dump = java.lang.ClassNotFoundException: com.ibm.mq.jms.MQQueue expection. Any idea what I could change?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: jack</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-139</link>
+		<dc:creator><![CDATA[jack]]></dc:creator>
+		<pubDate>Sun, 22 Dec 2013 18:46:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-139</guid>
+		<description><![CDATA[http://sourceforge.net/projects/jackibmmqexplorer]]></description>
+		<content:encoded><![CDATA[<p><a href="http://sourceforge.net/projects/jackibmmqexplorer">http://sourceforge.net/projects/jackibmmqexplorer</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris Watts</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-64</link>
+		<dc:creator><![CDATA[Chris Watts]]></dc:creator>
+		<pubDate>Fri, 12 Jul 2013 06:57:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-64</guid>
+		<description><![CDATA[After trying everything I could think of, I found out what was missing.
+
+I didn&#039;t have this in my web.xml:
+
+    
+        jms/qcf
+        javax.jms.QueueConnectionFactory
+        Container
+    ]]></description>
+		<content:encoded><![CDATA[<p>After trying everything I could think of, I found out what was missing.</p>
+<p>I didn&#8217;t have this in my web.xml:</p>
+<p>        jms/qcf<br />
+        javax.jms.QueueConnectionFactory<br />
+        Container</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: pnickoll</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-59</link>
+		<dc:creator><![CDATA[pnickoll]]></dc:creator>
+		<pubDate>Thu, 04 Jul 2013 09:51:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-59</guid>
+		<description><![CDATA[Hi Chris, would you be able to raise a PMR for this, this sounds like it might be a Liberty problem and we&#039;d like to investigate further. PMR&#039;s can be raised here: https://www-947.ibm.com/support/servicerequest/Home.action?lnk=msdTS-srap-usen]]></description>
+		<content:encoded><![CDATA[<p>Hi Chris, would you be able to raise a PMR for this, this sounds like it might be a Liberty problem and we&#8217;d like to investigate further. PMR&#8217;s can be raised here: <a href="https://www-947.ibm.com/support/servicerequest/Home.action?lnk=msdTS-srap-usen">https://www-947.ibm.com/support/servicerequest/Home.action?lnk=msdTS-srap-usen</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris Watts</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-56</link>
+		<dc:creator><![CDATA[Chris Watts]]></dc:creator>
+		<pubDate>Tue, 02 Jul 2013 03:03:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-56</guid>
+		<description><![CDATA[Copy paste error, should have been:
+
+
+    
+]]></description>
+		<content:encoded><![CDATA[<p>Copy paste error, should have been:</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Chris Watts</title>
+		<link>https://developer.ibm.com/wasdev/blog/2013/06/14/using-websphere-mq-with-the-liberty-profile/#comment-55</link>
+		<dc:creator><![CDATA[Chris Watts]]></dc:creator>
+		<pubDate>Tue, 02 Jul 2013 03:00:00 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=3704#comment-55</guid>
+		<description><![CDATA[I&#039;ve installed the iFix, set it all up and configured a
+    
+        
+    
+
+However I get the following error:
+------Start of DE processing------ = [2/07/13 12:54:14:239 EST]
+Exception = javax.naming.NamingException
+Source = com.ibm.ws.jndi.internal.WSContext
+probeid = 139
+Stack Dump = javax.naming.NamingException: ConnectionFactoryImpl reference is null
+    at com.ibm.mq.connector.outbound.ConnectionFactoryImpl.getReference(ConnectionFactoryImpl.java:305)
+    at org.apache.aries.jndi.ObjectFactoryHelper.getObjectInstance(ObjectFactoryHelper.java:64)
+    at org.apache.aries.jndi.OSGiObjectFactoryBuilder.getObjectInstance(OSGiObjectFactoryBuilder.java:57)
+    at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:283)
+    at com.ibm.ws.jndi.internal.WSContext.resolveObject(WSContext.java:128)
+    at com.ibm.ws.jndi.internal.WSContext.lookup(WSContext.java:296)
+    at com.ibm.ws.jndi.internal.WSContext.lookup(WSContext.java:291)
+    at org.apache.aries.jndi.DelegateContext.lookup(DelegateContext.java:161)
+    at javax.naming.InitialContext.lookup(InitialContext.java:392)
+    at org.springframework.jndi.JndiTemplate$1.doInContext(JndiTemplate.java:154)]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;ve installed the iFix, set it all up and configured a</p>
+<p>However I get the following error:<br />
+&#8212;&#8212;Start of DE processing&#8212;&#8212; = [2/07/13 12:54:14:239 EST]<br />
+Exception = javax.naming.NamingException<br />
+Source = com.ibm.ws.jndi.internal.WSContext<br />
+probeid = 139<br />
+Stack Dump = javax.naming.NamingException: ConnectionFactoryImpl reference is null<br />
+    at com.ibm.mq.connector.outbound.ConnectionFactoryImpl.getReference(ConnectionFactoryImpl.java:305)<br />
+    at org.apache.aries.jndi.ObjectFactoryHelper.getObjectInstance(ObjectFactoryHelper.java:64)<br />
+    at org.apache.aries.jndi.OSGiObjectFactoryBuilder.getObjectInstance(OSGiObjectFactoryBuilder.java:57)<br />
+    at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:283)<br />
+    at com.ibm.ws.jndi.internal.WSContext.resolveObject(WSContext.java:128)<br />
+    at com.ibm.ws.jndi.internal.WSContext.lookup(WSContext.java:296)<br />
+    at com.ibm.ws.jndi.internal.WSContext.lookup(WSContext.java:291)<br />
+    at org.apache.aries.jndi.DelegateContext.lookup(DelegateContext.java:161)<br />
+    at javax.naming.InitialContext.lookup(InitialContext.java:392)<br />
+    at org.springframework.jndi.JndiTemplate$1.doInContext(JndiTemplate.java:154)</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

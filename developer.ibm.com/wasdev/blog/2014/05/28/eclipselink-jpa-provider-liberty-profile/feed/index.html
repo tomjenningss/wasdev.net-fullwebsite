@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: EclipseLink JPA provider for Liberty profile</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Kevin</title>
+		<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/#comment-148354</link>
+		<dc:creator><![CDATA[Kevin]]></dc:creator>
+		<pubDate>Fri, 06 Jan 2017 15:02:02 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=8704#comment-148354</guid>
+		<description><![CDATA[Yes, there are a few examples using the jpa-2.1 feature.  Here&#039;s a simple example to get you started:  https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample.
+
+And, here&#039;s an example using WDT and Liberty with JPA:  https://developer.ibm.com/wasdev/docs/developing-jpa-2-1-applications-websphere-developer-tools-liberty/
+
+Those are just a couple of examples.  Since jpa-2.1 has been available since Liberty 8.5.5.6, some web searching should produce more samples and discussions.  Good luck!]]></description>
+		<content:encoded><![CDATA[<p>Yes, there are a few examples using the jpa-2.1 feature.  Here&#8217;s a simple example to get you started:  <a href="https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample">https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample</a>.</p>
+<p>And, here&#8217;s an example using WDT and Liberty with JPA:  <a href="https://developer.ibm.com/wasdev/docs/developing-jpa-2-1-applications-websphere-developer-tools-liberty/">https://developer.ibm.com/wasdev/docs/developing-jpa-2-1-applications-websphere-developer-tools-liberty/</a></p>
+<p>Those are just a couple of examples.  Since jpa-2.1 has been available since Liberty 8.5.5.6, some web searching should produce more samples and discussions.  Good luck!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: carey</title>
+		<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/#comment-148352</link>
+		<dc:creator><![CDATA[carey]]></dc:creator>
+		<pubDate>Thu, 05 Jan 2017 22:19:19 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=8704#comment-148352</guid>
+		<description><![CDATA[Is there now an example that uses the jpa-2.1 feature?]]></description>
+		<content:encoded><![CDATA[<p>Is there now an example that uses the jpa-2.1 feature?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/#comment-81655</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Wed, 10 Dec 2014 23:13:25 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=8704#comment-81655</guid>
+		<description><![CDATA[If EclipseLink is the new default JPA provider, why do I need to put 8MB jar file into the shared/resources folder of my server? I would expect this to be part of the core runtime.
+
+The reason I ask is because when I package the server the eclipselink-2.5.2.jar is in there while packaging with the old JPA provider did not have any extra jars in my server package.]]></description>
+		<content:encoded><![CDATA[<p>If EclipseLink is the new default JPA provider, why do I need to put 8MB jar file into the shared/resources folder of my server? I would expect this to be part of the core runtime.</p>
+<p>The reason I ask is because when I package the server the eclipselink-2.5.2.jar is in there while packaging with the old JPA provider did not have any extra jars in my server package.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Kevin Sutter</title>
+		<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/#comment-77108</link>
+		<dc:creator><![CDATA[Kevin Sutter]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2014 23:13:47 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=8704#comment-77108</guid>
+		<description><![CDATA[Hi Roman,
+Yes, we are working on updating the simple JPA sample to just use the jpa-2.1 feature that is available in the Liberty Betas.  It&#039;s just not quite ready for posting yet.
+
+In the mean time, you are welcome to visit this sample that demonstrates how to use eclipselink as an alternate JPA provider in Liberty:
+https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample 
+
+The difference is that this sample packages EclipseLink library with the application instead of using the jpa-2.1 feature.  But, the included persistence.xml shows the various EclipseLink specific properties that are required to run within the WebSphere environment.
+
+Hope this helps,
+Kevin]]></description>
+		<content:encoded><![CDATA[<p>Hi Roman,<br />
+Yes, we are working on updating the simple JPA sample to just use the jpa-2.1 feature that is available in the Liberty Betas.  It&#8217;s just not quite ready for posting yet.</p>
+<p>In the mean time, you are welcome to visit this sample that demonstrates how to use eclipselink as an alternate JPA provider in Liberty:<br />
+<a href="https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample">https://developer.ibm.com/assets/wasdev/#asset/opensource-Java_Persistence_API_JPA_EclipseLink_Sample</a> </p>
+<p>The difference is that this sample packages EclipseLink library with the application instead of using the jpa-2.1 feature.  But, the included persistence.xml shows the various EclipseLink specific properties that are required to run within the WebSphere environment.</p>
+<p>Hope this helps,<br />
+Kevin</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Roman Kharkovski</title>
+		<link>https://developer.ibm.com/wasdev/blog/2014/05/28/eclipselink-jpa-provider-liberty-profile/#comment-77104</link>
+		<dc:creator><![CDATA[Roman Kharkovski]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2014 22:39:03 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?p=8704#comment-77104</guid>
+		<description><![CDATA[The sample app is configured to use JPA 2.0 and when I change that to JPA 2.1 it gives me an error. Any plans to provide an updated sample app for JPA 2.1?
+
+Here is the error I get when trying to use JPA 2.1 with the sample (please note that it works fine when I configure JPA 2.01):
+
+Hello JPA World Creating a brand new Thing Something went wrong. Caught exception javax.persistence.PersistenceException: java.lang.VerifyError: Bad return type Exception Details: Location: org/eclipse/persistence/internal/databaseaccess/DatasourcePlatform.buildNativeCall(Ljava/lang/String;)Lorg/eclipse/persistence/internal/databaseaccess/DatasourceCall; @8: areturn Reason: Type &#039;org/eclipse/persistence/queries/SQLCall&#039; (current frame, stack[0]) is not assignable to &#039;org/eclipse/persistence/internal/databaseaccess/DatasourceCall&#039; (from method signature) Current Frame: bci: @8 flags: { } locals: { &#039;org/eclipse/persistence/internal/databaseaccess/DatasourcePlatform&#039;, &#039;java/lang/String&#039; } stack: { &#039;org/eclipse/persistence/queries/SQLCall&#039; } Bytecode: 0000000: bb02 ce59 2bb7 02d0 b0]]></description>
+		<content:encoded><![CDATA[<p>The sample app is configured to use JPA 2.0 and when I change that to JPA 2.1 it gives me an error. Any plans to provide an updated sample app for JPA 2.1?</p>
+<p>Here is the error I get when trying to use JPA 2.1 with the sample (please note that it works fine when I configure JPA 2.01):</p>
+<p>Hello JPA World Creating a brand new Thing Something went wrong. Caught exception javax.persistence.PersistenceException: java.lang.VerifyError: Bad return type Exception Details: Location: org/eclipse/persistence/internal/databaseaccess/DatasourcePlatform.buildNativeCall(Ljava/lang/String;)Lorg/eclipse/persistence/internal/databaseaccess/DatasourceCall; @8: areturn Reason: Type &#8216;org/eclipse/persistence/queries/SQLCall&#8217; (current frame, stack[0]) is not assignable to &#8216;org/eclipse/persistence/internal/databaseaccess/DatasourceCall&#8217; (from method signature) Current Frame: bci: @8 flags: { } locals: { &#8216;org/eclipse/persistence/internal/databaseaccess/DatasourcePlatform&#8217;, &#8216;java/lang/String&#8217; } stack: { &#8216;org/eclipse/persistence/queries/SQLCall&#8217; } Bytecode: 0000000: bb02 ce59 2bb7 02d0 b0</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

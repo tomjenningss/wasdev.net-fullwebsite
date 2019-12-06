@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="security,OpenID Connect,Google,SSO," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-03-18",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Single sign-on with Google on Liberty",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"security,OpenID Connect,Google,SSO,",
+						"contentArea": "Java EE, Extending Liberty, Security"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"security,OpenID Connect,Google,SSO,",
+		      "description":"Single sign-on with Google on Liberty"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Single sign-on with Google on Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Configure your Liberty applications to use Single Sign-on with Google so that users of your applications can log in with their Google accounts."/>
+<link rel="canonical" href="index.html%3Fp=11797.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Single sign-on with Google on Liberty Comments Feed" href="docs/single-sign-google-liberty/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=11797.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsingle-sign-google-liberty%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsingle-sign-google-liberty%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-11797 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=11797.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a><i>, </i><a href="docs/category/extensions/index.html" rel="tag">Extending Liberty</a><i>, </i><a href="docs/category/security/index.html" rel="tag">Security</a></span></div><h1 class="entry-title">Single sign-on with Google on Liberty</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/liangch/index.html">Chunlong Liang</a></span><br>Published on March 18, 2015<i> / Updated on March 21, 2018</i></div><div class="pn_slic"><a href="index.html%3Fp=11797.html#comments" class="pn_comments_icon">14 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=11797.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">OpenID Connect 1.0 (OIDC) is a simple identity protocol over OAuth 2.0. You can configure your Liberty applications to use Single Sign-on with Google so that users of your applications can log in with their Google accounts.</p>
+<p>Authors: Bill O&#8217;Donnell (bill.odonnell@us.ibm.com), Chunlong Liang (liangch@us.ibm.com), Hiroko Takamiya (htakamiy@us.ibm.com)</p>
+<p>OpenID Connect (OIDC) is becoming the accepted Internet Single Sign-on (SSO) protocol, and it works well with cloud, mobile, and native applications. OIDC lets a client application (such as a cloud or mobile application) request the identity of the user as an ID token in a standardized, REST-like manner. In addition, the client application can use access tokens to access REST-like Services.</p>
+<p>Liberty can be configured as an OpenID Connect Provider or as a OpenID Connect Relying Party:</p>
+<ul>
+<li><strong>Liberty OIDC Provider</strong> – A dedicated Liberty instance can be configured as an OIDC provider (OP) and a Single Sign-on (SSO) server. Any client application can call an OP-hosted RESTful security service to request or verify end user identity and user profiles.</li>
+<li><strong>Liberty OIDC Relying Party</strong> – A Liberty instance can be configured as an OIDC relying party to take advantage of web SSO and use an OIDC provider as an identity provider. The Liberty security container can then call an OIDC OP to verify the identity of the end-user, instead of having the Liberty security container handle the user verification.</li>
+</ul>
+<h2>Configuring Liberty for Single Sign-on with Google</h2>
+<p>This article shows how to configure Liberty as an OIDC relying party to work with Google OpenID Connect provider. With this configuration, Liberty profile delegates user authentication to the Google OpenID Connect provider, and the application user is authenticated with their Google account. For more information, see our <a href="http://www.ibm.com/developerworks/websphere/library/techarticles/1502_odonnell/1502_odonnell.html" title="Using OpenID Connect in WebSphere Application Server Liberty Profile" target="_blank">developerWorks article</a>.</p>
+<ol>
+<li>Create a Liberty profile server, and name it <code>googleRP</code>. Find the <code>server.xml</code> file at <code>&lt;liberty_root&gt;/usr/servers/googleRP/server.xml</code>, open it in an editor, and make the following changes:
+<ol>
+<li>Add the required features:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;       
+        &lt;feature&gt;ssl-1.0&lt;/feature&gt;
+        &lt;feature&gt;jsp-2.2&lt;/feature&gt;
+        &lt;feature&gt;servlet-3.0&lt;/feature&gt;
+        &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+        &lt;feature&gt;openidConnectClient-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+   </pre>
+</li>
+<li>Create the SSL keystore. It will be used as the keyStore for SSL connection between the browser and the Liberty server, and as the truststore for Liberty server to make an SSL connection to Google:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;keyStore id=&quot;defaultKeyStore&quot; password=&quot;keyspass&quot; /&gt;
+ </pre>
+<p>The default keystore file is located at <code>&lt;liberty_root&gt;/usr/servers/googleRP/resources/security/key.jks</code>. In addition to storing the Liberty server certificate, you will import Google’s SSL certificate for https://www.googleapis.com/oauth2/v3/token into this key store in the next step.</li>
+<li>Import the SSL certificate for Google’s token endpoint
+<ol>
+<li>Download the Google G3 signer certificate:
+<ol>
+<li>In a browser, navigate to <a target="_blank" href="https://pki.goog/">Google Trust Services, Repository of Documentation and Certificates</a></li>
+<li>Right click on and dowload the DER file associated with GTS GIAG3
+<ul>
+<li>If you left click on DER, the certificate will be installed on your browser and that is not what you intend to do.</li>
+<li>The file name is <code>GTSGIAG3.crt</code></li>
+</ul>
+</li>
+</ol>
+<li>Import the Google G3 certificate into your Liberty server keystore:
+<ol>
+<li>Change directory to <code>&lt;liberty_root&gt;/usr/servers/googleRP/resources/security</code></li>
+<li>Run the following command to import the certificate:
+<pre class="brush: plain; title: ; notranslate" title="">
+keytool -importcert -keystore key.jks -storepass keyspass -alias googleG3 -file (path)/GTSGIAG3.crt -noprompt
+</pre>
+<p>Note that <code>keyspass</code> is the password provided for the <code>defaultKeyStore</code> in the previous step.
+</li>
+</ol>
+</li>
+</li>
+</ol>
+</li>
+<li>Add the OpenID Connect client configuration, which defines how and where to request the user’s ID Token from Google:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;openidConnectClient id=&quot;googleRP&quot;  
+           scope=&quot;openid profile email&quot;
+           clientId=&quot;replace with your google client ID&quot;
+           clientSecret=&quot;replace with your Google’s client secret&quot;
+           authorizationEndpointUrl=&quot;https://accounts.google.com/o/oauth2/auth&quot;
+           tokenEndpointUrl=&quot;https://www.googleapis.com/oauth2/v3/token&quot; 
+           jwkEndpointUrl=&quot;https://www.googleapis.com/oauth2/v2/certs&quot;
+           issuerIdentifier=&quot;accounts.google.com&quot;
+           signatureAlgorithm=&quot;RS256&quot;
+           userIdentityToCreateSubject=&quot;email&quot;&gt;
+    &lt;/openidConnectClient&gt;
+   </pre>
+</li>
+</ol>
+<p>We will come back to fill in both <code>clientId</code> and <code>clientSecret</code> after we register the Liberty server in Google. When you register Liberty profile in Google, you will need provide a URL to Google as callback, which is called as a redirect URL in OpenID Connect.</p>
+<p>The Liberty RP uses this pattern <code>https://&lt;hostname&gt;:&lt;sslport&gt;/oidcclient/redirect/&lt;openidConnecClient id&gt;</code> to generate its own redirect URL. For the OpenID Connect Client we just created, the redirect URL (assuming SSL port is 8020) is <code>https://localhost:8020/oidcclient/redirect/googleRP</code></p>
+<p>Write down this URL, which is the only information we need to give to Google.</p>
+</li>
+<li>
+<p>Configure the secured application. In this article, we deploy a very simple application, <code>testpage.war</code> to the server and we define security role mapping like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+  &lt;application type=&quot;war&quot; id=&quot;testpage&quot; name=&quot;testpage&quot; location=&quot;${server.config.dir}/apps/testpage.war&quot;&gt;
+    &lt;application-bnd&gt;
+      &lt;security-role name=&quot;All Role&quot;&gt;
+         &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt;
+      &lt;/security-role&gt;
+    &lt;/application-bnd&gt;
+  &lt;/application&gt;
+ </pre>
+<p>With Google OP, we can only map security role to all users with Google accounts. If fine-grained authorization is required, you will need to provide an account mapping in Liberty.</p>
+<p>The sample application is available from <a href="http://www.ibm.com/developerworks/websphere/library/techarticles/1502_odonnell/1502_odonnell.html#download">developerWorks</a></p>
+</li>
+<li>
+<p>Register Liberty profile as an OAuth client in Google OpenID Connect Provider</p>
+<ol>
+<li>Access <a href="https://console.developers.google.com">Google’s developers console</a></li>
+<li>Create new project, and enter your project name.</li>
+<li>Open your Google project, go to <strong>APIs &amp; auth > Credentials</strong></li>
+<li>Go to <strong>Create new Client ID</strong>, and you may need create <strong>Consent Form</strong> if you have not created one before.</li>
+<li>Write down the values of both <strong>CLIENT ID</strong> and <strong>CLIENT SECRET</strong>, and you will need edit the Liberty <code>server.xml</code> file to use those two values.</li>
+<li>Edit <strong>REDIRECT URIS</strong> to add Liberty profile’s redirect URL. In this demo, it is <code>https://localhost:8020/oidcclient/redirect/googleRP</code></li>
+<li>Now, save your Google project and configuration, and your Google setup is completed.</li>
+</ol>
+</li>
+<li>Open Liberty <code>server.xml</code> file, edit both <code>clientId</code> and <code>clientSecret</code>, and replace them with what you just got from Google Developers Console.<br />
+Validate the setup for Liberty profile as Google OpenID Connect’s relying party</p>
+<ol>
+<li>Start Liberty profile: <code>&lt;liberty_root&gt;/bin/server start googleRP</code></li>
+<li>Point web browser to: <code>https://localhost:8020/testpage/</code></li>
+<li>Follow the instructions. At the end, you should see a page that displays your Google Gmail account name.</li>
+</ol>
+<p>Sample server.xml</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+ &lt;server&gt;
+    &lt;featureManager&gt;
+        &lt;feature&gt;ssl-1.0&lt;/feature&gt;
+        &lt;feature&gt;jsp-2.2&lt;/feature&gt;
+        &lt;feature&gt;servlet-3.0&lt;/feature&gt;
+        &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+        &lt;feature&gt;openidConnectClient-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+    &lt;openidConnectClient id=&quot;googleRP&quot;  
+           scope=&quot;openid profile email&quot;
+           clientId=&quot;paste your Google’s CLIENT ID&quot;
+           clientSecret=&quot;paste your Google’s CLINT SECRET &quot;
+           authorizationEndpointUrl=&quot;https://accounts.google.com/o/oauth2/auth&quot;
+           tokenEndpointUrl=&quot;https://www.googleapis.com/oauth2/v3/token&quot; 
+           jwkEndpointUrl = &quot;https://www.googleapis.com/oauth2/v2/certs&quot;
+           issuerIdentifier=&quot;accounts.google.com&quot;
+           signatureAlgorithm=&quot;RS256&quot;
+           userIdentityToCreateSubject =&quot;email&quot;&gt;
+    &lt;/openidConnectClient&gt;
+    &lt;keyStore id=&quot;defaultKeyStore&quot; password=&quot;keyspass&quot; /&gt;  
+    &lt;httpEndpoint host=&quot;localhost&quot; httpPort=&quot;8011&quot; httpsPort=&quot;8021&quot; id=&quot;defaultHttpEndpoint&quot;/&gt;
+    
+        &lt;application type=&quot;war&quot; id=&quot;testpage&quot; name=&quot;testpage&quot; location=&quot;${server.config.dir}/apps/testpage.war&quot;&gt;
+            &lt;application-bnd&gt;
+                &lt;security-role name=&quot;All Role&quot;&gt;
+                    &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt;
+                &lt;/security-role&gt;
+            &lt;/application-bnd&gt;
+        &lt;/application&gt;
+&lt;/server&gt;
+ </pre>
+</p>
+</li>
+</ol>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/Rfxy0FKOfgw" frameborder="0" allowfullscreen></iframe></p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/security/index.html" rel="tag">security</a>, <a href="blog/tag/openid-connect/index.html" rel="tag">OpenID Connect</a>, <a href="blog/tag/google/index.html" rel="tag">Google</a>, <a href="blog/tag/sso/index.html" rel="tag">SSO</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/liangch/index.html">Chunlong Liang</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			14 comments on"Single sign-on with Google on Liberty"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-155816">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Vijay Kumar</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-155816">
+					May 03, 2019	         	</a>
+			</div>
+			      		<p>This is great article. I am curious to know how token and session management is done for application and do you have any article that covers the cluster environment implementations.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-155816' onclick='return addComment.moveForm( "comment-155816", "155816", "respond", "11797" )' aria-label='Reply to Vijay Kumar'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-153465">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">JK</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-153465">
+					August 16, 2018	         	</a>
+			</div>
+			      		<p>For clarity, please include the OAuth 2.0 Flow being used, and include the openidConnectClient responseType parameter.   Thanks!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-153465' onclick='return addComment.moveForm( "comment-153465", "153465", "respond", "11797" )' aria-label='Reply to JK'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-liangch bypostauthor even depth-2 pn-comment" id="comment-153480">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-153480">
+					August 19, 2018	         	</a>
+			</div>
+			      		<p>Thanks for your question! This article is for authorization code grant type, and response type of code, which is default.  We now have another feature that is dedicated to the login with Google account, see <a href="https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_sec_sociallogin.html#twlp_sec_sociallogin__google">https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/twlp_sec_sociallogin.html#twlp_sec_sociallogin__google</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-153480' onclick='return addComment.moveForm( "comment-153480", "153480", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-148926">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Jens Faeustl</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-148926">
+					April 13, 2017	         	</a>
+			</div>
+			      		<p>First of all, like that article. but I do have a problem with the SSL communication. My AppServer (Liberty) telling my, that the CertSigner &#8220;CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US&#8221; is not in my keystone. I downloaded Google Cert from <a href="https://accounts.google.com">https://accounts.google.com</a> and imported into my keystore. </p>
+<p>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p>[ERROR   ] CWPKI0022E: FEHLER BEIM SSL-HANDSHAKE: Es wurde ein Unterzeichner mit dem SubjectDN CN=*.googleapis.com, O=Google Inc, L=Mountain View, ST=California, C=US vom Zielhost gesendet. Der Unterzeichner muss dem lokalen Truststore /Users/jensfaustl/wlp/usr/servers/defaultServer/resources/security/key.jks im SSL-Konfigurationsalias defaultSSLConfig hinzugefügt werden. Die erweiterte Fehlernachricht aus der SSL-Handshake-Ausnahme lautet wie folgt: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target</p>
+<p>[ERROR   ] CWWKS1708E: Der OpenID Connect-Client [915261505398-q13oa5i12t01jvje67ft5qui51rfmg2q.apps.googleusercontent.com] kann keine Verbindung zum OpenID Connect-Provider unter [https://www.googleapis.com/oauth2/v3/token] herstellen, um ein ID-Token zu empfangen. Ursache: [java.security.cert.CertificateException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target].</p>
+<p>Do you have any idea why?<br />
+TX<br />
+Jens</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-148926' onclick='return addComment.moveForm( "comment-148926", "148926", "respond", "11797" )' aria-label='Reply to Jens Faeustl'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-liangch bypostauthor even depth-2 pn-comment" id="comment-148975">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-148975">
+					April 19, 2017	         	</a>
+			</div>
+			      		<p>Please import certificate from <a href="https://www.googleapis.com/oauth2/v3/token">https://www.googleapis.com/oauth2/v3/token</a>, not from <a href="https://accounts.google.com">https://accounts.google.com</a>. Those two URL use different certificates.<br />
+If you view their certificates, you can see they have different certificate serial numbers.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-148975' onclick='return addComment.moveForm( "comment-148975", "148975", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-liangch bypostauthor odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146112">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-146112">
+					March 30, 2016	         	</a>
+			</div>
+			      		<p>If you want to have fine grained authorization, you can assign security role to each group user. However, you can not assign role to group as Google OpenID Connect provider does not emit group membership in id token. If you want to assign role to group, you can configure a LDAP registry for Liberty, and have Liberty to map Google account to LDAP.</p>
+<p>The following is a sample configuration to assign role to two Google users:</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-146112' onclick='return addComment.moveForm( "comment-146112", "146112", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-146111">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Peter Nguyen</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-146111">
+					March 30, 2016	         	</a>
+			</div>
+			      		<p>Never mind. The question is out of scope of this tutorial.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-146111' onclick='return addComment.moveForm( "comment-146111", "146111", "respond", "11797" )' aria-label='Reply to Peter Nguyen'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-146105">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Peter Nguyen</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-146105">
+					March 29, 2016	         	</a>
+			</div>
+			      		<p>It&#8217;s a great article. I have a question.  Pretend that I use OpenID to authenticate for just 2 users (namely, <a href="mailto:pssex01@gmail.com">pssex01@gmail.com</a>, <a href="mailto:yun14@gmail.com">yun14@gmail.com</a>).  In the section of server.xml above, you indicated,</p>
+<p>How would you implement for just 2 users instead of ALL_AUTHENTICATED_USERS ?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-146105' onclick='return addComment.moveForm( "comment-146105", "146105", "respond", "11797" )' aria-label='Reply to Peter Nguyen'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-136414">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">George</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-136414">
+					December 30, 2015	         	</a>
+			</div>
+			      		<p>Is there a similar article on doing this with the full WebSphere profile?  I&#8217;ve tried this with a WebSphere version 8.5.5.5 profile and get a null refresh_token error when trying to use Google for authentication.  This is in the trace.                                                                             SessionData   &gt;  setAccessToken(token [ya29.WgKth4hc6Rl3tcx2P7P4JdYcuimsxIyfqR40BEUKzDqXfjIUw_xvrfJ28uCqat-hiqwo]) Entry<br />
+SessionData     getJsonValue(jobj[not null],key[refresh_token]) Entry<br />
+RelyingPartyU 3   Did not find the value for the provided key [refresh_token] in json object</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-136414' onclick='return addComment.moveForm( "comment-136414", "136414", "respond", "11797" )' aria-label='Reply to George'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-liangch bypostauthor odd alt depth-2 pn-comment" id="comment-138506">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-138506">
+					January 04, 2016	         	</a>
+			</div>
+			      		<p>Please use WebSphere 8.5.5.8 fix pack for your test. You can refer to this article for the configuration: <a href="https://www.ibm.com/developerworks/community/blogs/8f2bc166-3bdc-4a9d-bad4-3620dbb3e46c/entry/Enable_Appserver_RelyingParty_TAI_for_Google_authentication?lang=en">https://www.ibm.com/developerworks/community/blogs/8f2bc166-3bdc-4a9d-bad4-3620dbb3e46c/entry/Enable_Appserver_RelyingParty_TAI_for_Google_authentication?lang=en</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-138506' onclick='return addComment.moveForm( "comment-138506", "138506", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-128385">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Manu</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-128385">
+					August 04, 2015	         	</a>
+			</div>
+			      		<p>Thank you for your very useful article. Its not clear how do one do this step. Can you pls elaborate ?</p>
+<p>In addition to storing the Liberty server certificate, you will need to import Google’s certificate to this key store.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-128385' onclick='return addComment.moveForm( "comment-128385", "128385", "respond", "11797" )' aria-label='Reply to Manu'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-liangch bypostauthor odd alt depth-2 pn-comment" id="comment-128403">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-128403">
+					August 05, 2015	         	</a>
+			</div>
+			      		<p>You can use Firefox browser to import Google OP&#8217;s certificate to your keystore. Here are steps:<br />
+1. From firefox, enter <a href="https://accounts.google.com">https://accounts.google.com</a><br />
+2. Left click the lock in the front of https<br />
+3. click &#8220;more information&#8221;<br />
+4. Click &#8220;Security&#8221;<br />
+5. Click &#8220;View Certificate&#8221;<br />
+6. Click &#8220;Details&#8221;<br />
+7. Click &#8220;Export&#8221;<br />
+8. Save</p>
+<p>After that, you can use java keytool or other keytool (like iKeyman) to import Google&#8217;s certificate to your local keyStore.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-128403' onclick='return addComment.moveForm( "comment-128403", "128403", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-116919">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='https://plus.google.com/+JamesStansell' rel='external nofollow' class='url'>James Stansell</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-116919">
+					March 18, 2015	         	</a>
+			</div>
+			      		<p>Just wondering about step 6 (copied below) &#8211; is that redirect URI the one used in step 4 of Figure 2 in your developerWorks article?</p>
+<p>6. Edit REDIRECT URIS to add Liberty profile’s redirect URL. In this demo, it is <a href="https://localhost:8020/oidcclient/redirect/googleRP">https://localhost:8020/oidcclient/redirect/googleRP</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-116919' onclick='return addComment.moveForm( "comment-116919", "116919", "respond", "11797" )' aria-label='Reply to James Stansell'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-liangch bypostauthor odd alt depth-2 pn-comment" id="comment-117324">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Chunlong Liang</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=11797.html#comment-117324">
+					March 20, 2015	         	</a>
+			</div>
+			      		<p>Yes, that is Liberty profile&#8217;s redirect URL. Liberty profile redirect URL is like https://:/oidcclient/redirect/. If you have multiple openidConnecClient defined in Liberty server.xml, make sure you use the correct ID (You could define multiple IDs to single-sign-on with different OpenID Connect providers).</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=11797.html#comment-117324' onclick='return addComment.moveForm( "comment-117324", "117324", "respond", "11797" )' aria-label='Reply to Chunlong Liang'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=11797.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='11797' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ecaf076743" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="93"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=11797.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=11797.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=11797.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsingle-sign-google-liberty&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsingle-sign-google-liberty"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

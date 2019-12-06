@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Developing applications using WDT with Liberty in Docker</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/developing-applications-using-wdt-liberty-docker/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/developing-applications-using-wdt-liberty-docker/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Josue Cornejo</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-applications-using-wdt-liberty-docker/#comment-156445</link>
+		<dc:creator><![CDATA[Josue Cornejo]]></dc:creator>
+		<pubDate>Tue, 29 Oct 2019 04:50:10 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=18169#comment-156445</guid>
+		<description><![CDATA[Hi, I&#039;m working on a project where I&#039;m dockerizing an existing application, the docker container is running just fine. Now I&#039;m working on setting up my eclipse workspace with WDT and that&#039;s where I&#039;m facing issues.
+
+I&#039;ve been following the instructions on this page, I&#039;m able to create the server in eclipse and then add my existing project using &quot;Add and Remove&quot;, the application is added to the &quot;server.xml&quot; but all I can see in the &quot;Liberty Runtime (application name)&quot; directory is a file being created as application.war.xml inside &quot;servers/defaultServer/apps&quot; with content as:
+
+
+
+
+And that&#039;s all, I was expecting to see a folder &quot;expanded&quot; and all my files in there but its not being created. I should be missing some steps, hopefully you can help me out.
+
+Thank you]]></description>
+		<content:encoded><![CDATA[<p>Hi, I&#8217;m working on a project where I&#8217;m dockerizing an existing application, the docker container is running just fine. Now I&#8217;m working on setting up my eclipse workspace with WDT and that&#8217;s where I&#8217;m facing issues.</p>
+<p>I&#8217;ve been following the instructions on this page, I&#8217;m able to create the server in eclipse and then add my existing project using &#8220;Add and Remove&#8221;, the application is added to the &#8220;server.xml&#8221; but all I can see in the &#8220;Liberty Runtime (application name)&#8221; directory is a file being created as application.war.xml inside &#8220;servers/defaultServer/apps&#8221; with content as:</p>
+<p>And that&#8217;s all, I was expecting to see a folder &#8220;expanded&#8221; and all my files in there but its not being created. I should be missing some steps, hopefully you can help me out.</p>
+<p>Thank you</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ErinHarris</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-applications-using-wdt-liberty-docker/#comment-153860</link>
+		<dc:creator><![CDATA[ErinHarris]]></dc:creator>
+		<pubDate>Wed, 07 Nov 2018 18:38:52 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=18169#comment-153860</guid>
+		<description><![CDATA[The docker container should show up in the list of containers if it is running open-liberty or websphere-liberty and it is in the list returned by &#039;docker ps&#039;.  Specifically, it is looking for the ws-server.jar in the result of &#039;docker top &lt;container name&gt;&#039;.]]></description>
+		<content:encoded><![CDATA[<p>The docker container should show up in the list of containers if it is running open-liberty or websphere-liberty and it is in the list returned by &#8216;docker ps&#8217;.  Specifically, it is looking for the ws-server.jar in the result of &#8216;docker top &#8216;.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Oluwatobi Ajayi</title>
+		<link>https://developer.ibm.com/wasdev/docs/developing-applications-using-wdt-liberty-docker/#comment-153858</link>
+		<dc:creator><![CDATA[Oluwatobi Ajayi]]></dc:creator>
+		<pubDate>Wed, 07 Nov 2018 17:15:54 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=18169#comment-153858</guid>
+		<description><![CDATA[I&#039;ve tried the steps multiple time, but there&#039;s no consistency on when eclipse see the containers running when it&#039;s time to choose what container is running liberty just as described in step 5. Please can you provide some more insight on how to do that.]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;ve tried the steps multiple time, but there&#8217;s no consistency on when eclipse see the containers running when it&#8217;s time to choose what container is running liberty just as described in step 5. Please can you provide some more insight on how to do that.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker,12 factor," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-08-12",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Creating a 12-factor application with WAS Liberty",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"Docker,12 factor,",
+						"contentArea": "DevOps"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,12 factor,",
+		      "description":"Creating a 12-factor application with WAS Liberty"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Creating a 12-factor application with WAS Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A guide to creating a 12-factor application on WAS Liberty. Follow the 12 factors for a portable, maintainable application great for running on the cloud."/>
+<link rel="canonical" href="index.html%3Fp=13703.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Creating a 12-factor application with WAS Liberty Comments Feed" href="docs/creating-a-12-factor-application-with-was-liberty/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=13703.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-12-factor-application-with-was-liberty%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-12-factor-application-with-was-liberty%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"351329",ustr:"",originlat:"0",clientrtt:"8",ghostip:"2.18.66.133",ipv6:false,pct:"10",clientip:"195.212.29.82",requestid:"263b41",region:"34619",protocol:"",blver:14,akM:"x",akN:"ae",akTT:"O",akTX:"1",akTI:"263b41",ai:"335196",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-13703 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=13703.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/devops/index.html" rel="tag">DevOps</a></span></div><h1 class="entry-title">Creating a 12-factor application with WAS Liberty</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/katheris/index.html">Katherine Stanley</a></span><br>Published on August 12, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=13703.html#comments" class="pn_comments_icon">1 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=13703.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">A factor-by-factor guide to creating a 12-factor application on WAS Liberty. If you follow the 12-factors methodology you&#8217;ll have a portable application that&#8217;s great for running on the cloud and can be maintained easily in a continuous delivery pipeline. This also lends itself nicely to a microservices architecture.</p>
+<h2>What is a 12-factor applicaton and why should you care?</h2>
+<p>The <a href="http://www.12factor.net">12-factor app</a> is a methodology defined by the developers at Heroku for building platform-as-a-service applications that (quoting from <a href="http://www.12factor.net">12factor.net</a>):</p>
+<ul>
+<li><em>Use declarative formats for setup automation, which minimizes time and cost for new developers joining the project;</em></li>
+<li><em>Have a clean contract with the underlying operating system, offering maximum portability between execution environments;</em></li>
+<li><em>Are suitable for deployment on modern cloud platforms, removing the need for servers and systems administration;</em></li>
+<li><em>Minimize divergence between development and production, enabling continuous deployment for maximum agility;</em></li>
+<li><em>Can scale up without significant changes to tooling, architecture, or development practices.</em></li>
+</ul>
+<p>In other words if you follow the 12-factors methodology you will have a portable application that is great for running on the cloud and can be maintained easily in a continuous delivery pipeline. This also lends itself nicely to a <em>microservices</em> architecture. You can read more about microservices in the <a href="http://www.redbooks.ibm.com/redpieces/abstracts/sg248275.html?Open">IBM Redbook</a> or on <a href="https://www.ibm.com/developerworks/cloud/library/cl-bluemix-microservices-in-action-part-1-trs/">DeveloperWorks</a>.</p>
+<p>WAS Liberty has several characteristics that make it ideal for cloud deployment. Hopefully you all know what WAS Liberty is by now (an awesome application server that <a href="index.html%3Fp=13371.html">recently became fully Java EE7 compliant</a>) but if you want to hear more about how Liberty got to where it is now you can read all about it in <a href="index.html%3Fp=13005.html">Holly&#8217;s blog post</a>.</p>
+<h2>Our sample 12-factor application</h2>
+<p>Rather than try to talk about the 12 factors as abstract concepts we have developed a <a href="https://github.com/WASdev/sample.microservices.12factorapp">Liberty application</a> to use as a reference. The application is a data persistence service for some polling application. The polling application communicates with our app using REST requests which allows it to send data and get back previously stored data. This functionality is enabled using the jaxrs-2.0 feature which allows us to make our application accessible by HTTP requests by doing 3 simple things:</p>
+<ol>
+<li>Add the jaxrs-2.0 feature to the server.xml of your Liberty server</li>
+<li>Add a class to your application that extends javax.ws.rs.Application and has an @ApplicationPath annotation:
+<pre class="brush: java; title: ; notranslate" title="">
+
+package net.wasdev.twelvefactorapp;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath(&quot;/&quot;)
+public class JaxrsApplication extends Application {}
+
+  </pre>
+</p>
+</li>
+<li>Create a method that is annotated with @GET (and maybe @Produces(&#8230;) to specify a media type to return)
+<pre class="brush: java; title: ; notranslate" title="">
+
+@Path(&quot;/&quot;)
+public class JaxrsHttpReceiver {
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Reponse getResponse() {
+       ...
+}
+
+  </pre>
+</p>
+</li>
+</ol>
+<p>To hit the <code>getReponse()</code> method you just need to send a HTTP GET request to the context root of your application. (By the way if you want to see some more in depth and cool things that you can do with JAX-RS see this <a href="https://github.com/WASdev/sample.async.jaxrs">GitHub sample by Erin</a>.)</p>
+<p>Our application will use a Cloudant instance hosted on Bluemix and access the database using the Cloudant REST API. When built our application is a ZIP file that contains a packaged Liberty server with a WAR file and the <code>server.xml</code> configuration needed to run the application. It can be run on a local Liberty server or deployed to Bluemix. You can find the app on our <a href="https://github.com/WASdev/sample.microservices.12factorapp">GitHub page</a>, it is accessible by HTTP requests and reads and writes data to a Cloudant database hosted on Bluemix.</p>
+<h2>So let&#8217;s get started:</h2>
+<p>If you want to follow along with the application, head on over to our <a href="https://github.com/WASdev/sample.microservices.12factorapp">GitHub page</a> and follow the readme to build your own copy of the app and Cloudant database instance.</p>
+<h2>Factor 1 &#8211; Codebase</h2>
+<p><a href="http://www.12factor.net/codebase"><em>&#8220;One codebase tracked in revision control, many deploys&#8221;</em></a></p>
+<p>As I mentioned above, the application is stored in a git repository hosted on Github. Git is a revision control tool to allow more than one person to develop a project at once and to make sure that all of your code is safe. Alternatively you can use <a href="https://hub.jazz.net/">Bluemix DevOps Services</a>, which combines version control (git) with planning and deployment tools to provide a continuous development and delivery pipeline.</p>
+<h2>Factor 2 &#8211; Dependencies</h2>
+<p><a href="http://www.12factor.net/dependencies"><em>&#8220;Explicitly declare and isolate dependencies&#8221;</em></a></p>
+<p>In our sample application we have dependencies on certain Liberty features, more specifically <code>servlet-3.1</code>, <code>jsonp-1.0</code> and <code>jaxrs-2.0</code>. Our application must pull down all of the dependencies it requires during the build process. To build this sample we have provided two options: Maven and Gradle. In both cases you declare the dependencies in the build file (<code>pom.xml</code> for Maven or <code>build.gradle</code> for Gradle) and the required packages are downloaded from Maven Central Repository at build time to compile the code. The packaging step uses the Maven or Gradle Liberty plug-ins to pull down a Liberty runtime from the Liberty Repository and produces a packaged Liberty server containing the server configuration and a WAR file with the compiled application code. As a result the application does not have any dependencies that it assumes will already exist on the system.</p>
+<h2>Factor 3 &#8211; Config</h2>
+<p><a href="http://www.12factor.net/config"><em>&#8220;Store config in the environment&#8221;</em></a></p>
+<p>In simple terms this means that we shouldn&#8217;t put any environment-specific configuration in the application. The application shouldn&#8217;t care what environment it is running in and we shouldn&#8217;t need to change the app to run it in a different environment. For our specific application, we need the configuration details for the Cloudant database. We are using the same Cloudant database in both the local and Bluemix environments, and accessing it via the REST API provided by Cloudant. We need the URL to access Cloudant, and to abide by the 12 factors we have chosen to store this information in environment variables. When pushing applications to Bluemix you can provide a <code>manifest.yml</code> file to specify environment variables.</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+
+---
+applications
+- name: 12-factor-application
+env:
+   dbUsername: &lt;cloudant-username&gt;
+   dbPassword: &lt;cloudant-password&gt;
+   dbUrl: &lt;cloudant-url&gt;
+
+  </pre>
+<p>Alternatively if you use the IBM Bluemix Eclipse plug-in it gives you the option to specify environment variables when you push your application. Either way the configuration is stored in the environment and accessed at runtime rather than ingrained into the code.</p>
+<h2>Factor 4 &#8211; Backing Services</h2>
+<p><a href="http://www.12factor.net/backing-services"><em>&#8220;Treat backing services as attached resources&#8221;</em></a></p>
+<p>As mentioned in Factor 3 we can access the Cloudant database through a REST API. We can use the <code>jaxrsClient-2.0</code> Liberty feature (enabled by the <code>jaxrs-2.0</code> feature) to build HTTP requests to send to the API. For example here is a GET request:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+
+public String getDatabaseFiles() {
+    String authorizationHeaderName = &quot;Authorization&quot;;
+    String authorizationHeaderValue = &quot;Basic &quot; +
+        javax.xml.bind.DatatypeConverter.printBase64Binary((username + &quot;:&quot; + password).getBytes());
+
+    Client client = ClientBuilder.newClient();
+    WebTarget target = client.target(dbUrl);
+    Invocation.Builder invoBuild = target.request(MediaType.APPLICATION_JSON)
+        .header(authorizationHeaderName, authorizationHeaderValue);
+    Response httpresponse = invoBuild.get();
+    String contents = httpResponse.readEntity(String.class);
+    httpResponse.close();
+    return contents;
+}
+
+  </pre>
+<p>We can also use a PUT request to create a database for example:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+
+public String createDatabase(String name) {
+
+    // ... see above for start of method
+    String url = dbUrl + &quot;/&quot; + name;
+    WebTarget target = client.target(url);
+    Invocation.Builder invoBuild = target.request(MediaType.APPLICATION_JSON)
+        .header(authorizationHeaderName, authorizationHeadervalue);
+    Response httpResponse = invoBuild.build(&quot;PUT&quot;, null).invoke();
+    // ... see above for end of method
+}
+
+  </pre>
+<h2>Factor 5 &#8211; Build, release, run</h2>
+<p><a href="http://www.12factor.net/build-release-run"><em>&#8220;Strictly separate build and run stages&#8221;</em></a></p>
+<p>Factor 5 focuses on getting a clearly defined process with no cycles. The build stage should build everything you need; there should be no additional build steps when packaging a build with configuration to form a release artifact nor when running the application.</p>
+<p>For our sample, the build stage is clearly defined by the Maven/Gradle tools; the output of a build is a packaged server containing all of the environment agnostic config required to run the application. For the release stage we push a <code>manifest.yml</code> file and the packaged server to Bluemix. The <code>manifest.yml</code> is used to specify the environment variables we want in Bluemix, which in this case is the Cloudant configuration:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+---
+env:
+   dbUsername: &lt;cloudant-username&gt;
+   dbPassword: &lt;cloudant-password&gt;
+   dbUrl: &lt;cloudant-url&gt;
+  </pre>
+<pre><code>$ cf push &lt;application-name&gt; -p /path/to/12FactorApp.zip -f /path/to/manifest.yml
+</code></pre>
+<p>Once Bluemix has finished deploying your application it will start it up for you, this is the run stage. You can start and stop your application from the dashboard in Bluemix or from the Servers tab in Eclipse if you add the Bluemix Eclipse plug-in.</p>
+<p>When running locally the release stage is unzipping the packaged server into a runtime, or other suitable location and defining the environmental variables you require, e.g. Cloudant config and a <code>WLP_USER_DIR</code>. Then to run the application you simply navigate to the <code>bin</code> directory of your Liberty runtime and start the server:</p>
+<pre><code>$server run 12FactorAppServer
+</code></pre>
+<h2>Factor 6 &#8211; Processes</h2>
+<p><a href="http://www.12factor.net/processes"><em>&#8220;Execute the app as one or more stateless processes&#8221;</em></a></p>
+<p>This is a very useful factor as it means that if one instance of your application goes down you don&#8217;t lose the current state. It also simplifies workload balancing as your application doesn&#8217;t have an affinity to any particular instance of a service. In our sample application, persistent state is stored in the database. Any information required to process a request is either included in the request (as any proper invocation of a REST API would do), or is retrieved from the database.</p>
+<p>The application does not rely on an established session to satisfy new requests. In fact if your application is deployed onto Bluemix then this factor is almost achieved by default because Bluemix starts and stops process instances for you, and those instances are transient. This means that if your application needs to store state, it has to use a persistent datastore to do so.</p>
+<h2>Factor 7 &#8211; Port binding</h2>
+<p><a href="http://www.12factor.net/port-binding"><em>&#8220;Export services via port binding&#8221;</em></a></p>
+<p>The key for this factor is that the host and port used to access the service should be provided by the environment, not baked into the application, and that you aren&#8217;t relying on pre-existing or separately configured services for that endpoint. As mentioned in earlier factors, the release artifact (the packaged server in our sample) contains what is needed to configure and run your application. In Bluemix deployment we could get away with simply pushing a WAR file rather than a packaged server (since Bluemix has its own copy of Liberty) but in all cases, instance-specific attributes like host and port can (and should) be provided by the environment.</p>
+<p>If your application is running on a local Liberty server the application would be accessed by visiting <code>http://localhost:9082/12-factor-application/</code>. This points to a specific host and port where your application can be found and the default context root for a Liberty application (the name of the application). In a 12-factor application it makes much more sense to use Bluemix since it creates and manages routes to instances of your application when it is deployed (usually <code>.mybluemix.net</code>). When you want to access your application you simply visit the root context for the route.</p>
+<h2>Factor 8 &#8211; Concurrency</h2>
+<p><a href="http://www.12factor.net/concurrency"><em>&#8220;Scale out via the process model&#8221;</em></a></p>
+<p>This one is an easy factor to fulfill if you deploy to Bluemix. Bluemix comes ready made with both vertical and horizontal scaling. This can be done using the <a href="https://www.ng.bluemix.net/docs/starters/install_cli.html">Cloud Foundry Command Line Interface</a>:</p>
+<pre><code>$ cf scale APP -i INSTANCES
+</code></pre>
+<p>Alternatively you can do it in the Bluemix dashboard. Bluemix also provides an <a href="https://www.ng.bluemix.net/docs/services/Auto-Scaling/index.html">Autoscaling Service</a> that, when bound to your application, will manage all of the scaling for you.</p>
+<h2>Factor 9 &#8211; Disposability</h2>
+<p><a href="http://www.12factor.net/disposability"><em>&#8220;Maximize robustness with fast startup and graceful shutdown&#8221;</em></a></p>
+<p>One of the most shouted-about features of Liberty is how quick server startup and shutdown is. Of course since you can make updates to both your app and your server without having to do a restart this is not something that is used often but it does fit nicely with this factor. Since Bluemix&#8217;s Java application server of choice is Liberty, you get the benefits on the cloud as well. Bluemix does not require specific cleanup or extra setup between restarts so between the two we can easily create apps with disposability.</p>
+<p>Applications also have to ensure they are disposable. Our application does not perform extra configuration steps during startup and does not require any clean up operations to be performed during shutdown. As a result we have an application that starts quickly and can be easily restarted if something goes wrong.</p>
+<h2>Factor 10 &#8211; Dev/prod parity</h2>
+<p><a href="http://www.12factor.net/dev-prod-parity"><em>&#8220;Keep development, staging, and production as similar possible&#8221;</em></a></p>
+<p>Since you can do development, staging, and production on Bluemix the simple (and perhaps cheeky) answer here is to do development, staging, and production on Bluemix!</p>
+<p>That said, development and preliminary testing can be performed locally, The popularity of Docker images makes standing up test instances of Cloudant or other datastores fairly painless. As the location and credentials for accessing the service are provided by environment variables, it is easy to put together a production-like environment for local testing. If you use the <a href="http://www.ibm.com/developerworks/downloads/ws/wasdevelopers/">WebSphere Devloper Tools (WDT)</a> to do local development you also get the benefit of incremental publish, which allows you to make live changes to your application without having to go through packaging and release steps at development time.</p>
+<p>It is also interesting to note that running a server locally is a good method for testing. Since the server is so quick to startup, rather than having to build a mocking server to run unit tests with, you can actually just run them on a Liberty server without having to have a test suite that takes hours to run.</p>
+<h2>Factor 11 &#8211; Logs</h2>
+<p><a href="http://www.12factor.net/logs"><em>&#8220;Treat logs as event streams&#8221;</em></a></p>
+<p>When your application is deployed in Bluemix using the Liberty buildpack (which is the default and what our sample does), anything you write to<code>System.out</code> will be included in the <code>messages.log</code> that can be found in the <strong>Files and Logs</strong> tab on Bluemix.</p>
+<p>If you deploy your application to a different environment without the Liberty buildpack (e.g. using a docker image with the <a href="https://developer.ibm.com/bluemix/2015/06/22/ibm-containers-on-bluemix/">IBM Container Service</a>), it may be more appropriate to send all logging and trace from Liberty and your application to standard out. This is more consistent with this factor, which recommends that everything should be sent to the system streams so the containing/hosting environment can deal with it. This can be easily achieved by adding a <code>bootstrap.properties</code> file containing <code>com.ibm.ws.logging.trace.file.name=stdout</code> to your server folder (at the same level as <code>server.xml</code>).</p>
+<p>If you take the Bluemix approach and are looking for more detailed information you can also make use of the <a href="https://www.ng.bluemix.net/docs/services/monana/index.html">Monitoring and Analytics service on Bluemix</a>. This is a handy way to keep track of all of your applications and view in depth analytics of your applications at all stages; development, test and production.</p>
+<h2>Factor 12 &#8211; Admin processes</h2>
+<p><a href="http://www.12factor.net/admin-processes"><em>&#8220;Run admin/management tasks as one-off processes&#8221;</em></a></p>
+<p>It took a while to decide on a realistic admin process for us to run on our simple application. Examples given on <a href="http://12factor.net/">12factor.net</a> include migrating databases and running one-time scripts to do cleanup &#8211; things a small getting-started sample doesn&#8217;t usually need to do! We finally settled on gathering statistics about our application.</p>
+<p>The <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/rwlp_mon_webapp.html?cp=SSAW57_8.5.5%2F1-3-11-0-6-1"><code>monitor-1.0</code> Liberty feature</a> provides a servlet MXBean that reports runtime and access statistics, such as the application name, servlet name, and request count. This information is normally accessed using a JMX client, but by also enabling the <a href="http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/rwlp_feature_restConnector-1.0.html"><code>restConnector-1.0</code> feature</a> we can access the JMX clients using REST requests. Other MBeans are also available, you can view the full list by visiting the <code>/IBMJMXConnectorREST/mbeans/</code> context root and entering the username and password of the <code>quickStartSecurity</code> element in the <code>server.xml</code>.</p>
+<p>In the sample app we have created a servlet which can be accessed using the context root <code>/12-factor-application/admin/stats</code> which collects the request count details from the JMX connector, parses it, and displays the data. This servlet is deployed as part of the application but is only invoked as a one-off admin process.</p>
+<h2>Conclusion</h2>
+<p>So that concludes the 12 factors. Hopefully this article has helped you to put the 12 factors into context, understand how they apply to real-life applications, and what tools are available to help you when you are developing your application.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/docker/index.html" rel="tag">Docker</a>, <a href="blog/tag/12-factor/index.html" rel="tag">12 factor</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/katheris/index.html">Katherine Stanley</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			1 comment on"Creating a 12-factor application with WAS Liberty"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="pingback even thread-even depth-1 pn-comment" id="comment-128568">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='index.html%3Fp=14047.html' rel='external nofollow' class='url'>Building portable, 12-factor microservices with WAS Liberty and Bluemix - WASdev</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=13703.html#comment-128568">
+					August 12, 2015	         	</a>
+			</div>
+			      		<p>[&#8230;] and some are aspects of the surrounding environment. Kate has just published a sample and accompanying documentation that walks through all 12 factors and shows how to build a 12-factor application using JAX-RS 2.0 [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=13703.html#comment-128568' onclick='return addComment.moveForm( "comment-128568", "128568", "respond", "13703" )' aria-label='Reply to Building portable, 12-factor microservices with WAS Liberty and Bluemix - WASdev'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=13703.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='13703' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9f4967d429" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="227"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=13703.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=13703.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=13703.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-12-factor-application-with-was-liberty&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-12-factor-application-with-was-liberty"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

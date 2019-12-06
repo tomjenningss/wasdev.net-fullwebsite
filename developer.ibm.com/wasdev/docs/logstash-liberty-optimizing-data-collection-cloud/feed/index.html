@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Logstash and Liberty &#8211; optimizing data collection for the cloud</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/logstash-liberty-optimizing-data-collection-cloud/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/logstash-liberty-optimizing-data-collection-cloud/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: simonm99</title>
+		<link>https://developer.ibm.com/wasdev/docs/logstash-liberty-optimizing-data-collection-cloud/#comment-154380</link>
+		<dc:creator><![CDATA[simonm99]]></dc:creator>
+		<pubDate>Fri, 21 Dec 2018 12:45:21 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14477#comment-154380</guid>
+		<description><![CDATA[Erin, I found that multiline has been superceded by multiline-codec and that it was necessary to tweak your grok pattern from  &quot;(?m)[%{GREEDYDATA:ts}]%{ to  &quot;(?m)\[%{GREEDYDATA:ts}\]%{  (escaping the square brackets).]]></description>
+		<content:encoded><![CDATA[<p>Erin, I found that multiline has been superceded by multiline-codec and that it was necessary to tweak your grok pattern from  &#8220;(?m)[%{GREEDYDATA:ts}]%{ to  &#8220;(?m)\[%{GREEDYDATA:ts}\]%{  (escaping the square brackets).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: simonm99</title>
+		<link>https://developer.ibm.com/wasdev/docs/logstash-liberty-optimizing-data-collection-cloud/#comment-154369</link>
+		<dc:creator><![CDATA[simonm99]]></dc:creator>
+		<pubDate>Thu, 20 Dec 2018 11:29:53 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14477#comment-154369</guid>
+		<description><![CDATA[i&#039;m just finding my way with logstash and ZOS liberty, this was very helpful]]></description>
+		<content:encoded><![CDATA[<p>i&#8217;m just finding my way with logstash and ZOS liberty, this was very helpful</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ryo Imai</title>
+		<link>https://developer.ibm.com/wasdev/docs/logstash-liberty-optimizing-data-collection-cloud/#comment-153554</link>
+		<dc:creator><![CDATA[Ryo Imai]]></dc:creator>
+		<pubDate>Thu, 06 Sep 2018 04:35:12 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=14477#comment-153554</guid>
+		<description><![CDATA[Thank you for nice article. In Tag exceptions section, I found that `if [message] =~ /.java:d/ {` didn&#039;t work and `if [message] =~ /.java:\d/ {` worked because it&#039;s regular expression.]]></description>
+		<content:encoded><![CDATA[<p>Thank you for nice article. In Tag exceptions section, I found that `if [message] =~ /.java:d/ {` didn&#8217;t work and `if [message] =~ /.java:\d/ {` worked because it&#8217;s regular expression.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

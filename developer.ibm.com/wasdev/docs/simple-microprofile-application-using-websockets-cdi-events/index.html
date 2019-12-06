@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="MicroProfile," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2017-03-29",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Writing a simple MicroProfile application (4): Using WebSockets and CDI events",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"MicroProfile,",
+						"contentArea": "Coding, Java EE"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"MicroProfile,",
+		      "description":"Writing a simple MicroProfile application (4): Using WebSockets and CDI events"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Writing a simple MicroProfile application (4): Using WebSockets and CDI events - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="../../index.html%3Fp=21626.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="../../comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Writing a simple MicroProfile application (4): Using WebSockets and CDI events Comments Feed" href="feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='../../wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='../../wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='../../wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='../../wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='../../wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='../../wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='../../wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='../../wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='../../index.html%3Fp=21626.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsimple-microprofile-application-using-websockets-cdi-events%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsimple-microprofile-application-using-websockets-cdi-events%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-21626 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="../../index.html%3Fp=21626.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="../../index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="../portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="../introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="../../getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="../../downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="../../docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="../../help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="../../blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="../category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="../category/java-ee/index.html" rel="tag">Java EE</a></span></div><h1 class="entry-title">Writing a simple MicroProfile application (4): Using WebSockets and CDI events</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="../../blog/author/notatibm/index.html">Alasdair</a></span><br>Published on March 29, 2017<i> / Updated on March 31, 2017</i></div><div class="pn_slic"><a href="../../index.html%3Fp=21626.html#comments" class="pn_comments_icon">0 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="../../docs.html">All Documentation</a><a href="../../index.html%3Fp=21626.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="../category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="../category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="../category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="../category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="../category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="../category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="../category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="../category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="../category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="../category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="../category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="../category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="../category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="../category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="../category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="../category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="../category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="../category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="../category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="../category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="../category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="../category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="../category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="../category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p>In my last article on MicroProfile, <a href="../../index.html%3Fp=21607.html">Writing a simple MicroProfile application (3): Using Java EE concurrency</a>, I talked about using Concurrency Utilities for Java EE (for the other articles in this series, see the <a href="../../index.html%3Fp=21626.html#related">Related articles</a> section). In this article I&#8217;ll cover adding WebSockets and using CDI Events to integrate a WebSocket and the CDI beans so that the server can notify clients about changes.</p>
+<p>The sample application solves a real problem that the Liberty development team had. The globally-distributed Liberty development team has a lot of online meetings using IBM Connections Cloud Meetings. IBM Connections Cloud provides meeting rooms to individual employees, which is a problem for team meetings if the person who initially set up the meeting room canâ€™t make it (e.g. they were called into another meeting, are on vacation, or sick). The sample application provides a single URL for a meeting, which can then be â€˜startedâ€™ by one person and everyone else gets redirected.</p>
+<p>If you have eagle eyes, you might have noticed with the application that the redirect only works when a meeting is started, not when it is already running. In order to make the join action work, the browser needs to find out when the meeting has changed. This can be done by polling the server but that can be expensive. Instead, a WebSocket can be used to allow the server to notify the client. This reduces the number of requests to the server and provides prompt updates to the client.</p>
+<p>The meeting application is available in <a href="https://github.com/WASdev/sample.microprofile.meetingapp.git">GitHub</a>. Each branch in the repository maps to an article. The starting point for the app for this article is branch <code>part3</code>. By the end of this article, your code should match the code in branch <code>part4</code>.</p>
+<p>This article assumes you are using Eclipse and WebSphere Developer Tools (WDT). To install WDT, download and start <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/mars2">Eclipse</a>, then drag and drop <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1778478" class="drag" title="Drag to your running Eclipse workspace to install WebSphere Developer Tools"><br />
+<img src="https://marketplace.eclipse.org//sites/all/themes/solstice/public/images/marketplace/btn-install.png" alt="Drag to your running Eclipse workspace to install WebSphere Developer Tools" /></a> on to the toolbar to start the WDT installer.</p>
+<h2>Getting the source into Eclipse from GitHub</h2>
+<p>The files for this application are available in <a href="https://github.com/WASdev/sample.microprofile.meetingapp.git">GitHub</a>. To follow this article, you want to clone the repository, check out the <code>part3</code> branch of the repository, and import the project into Eclipse. You can do this from the command line or directly from Eclipse.</p>
+<h3>From the command line</h3>
+<p>If you prefer to clone the Git repository from the command line:</p>
+<ol>
+<li>Run the following commands:
+<pre>git clone https://github.com/WASdev/sample.microprofile.meetingapp.git
+cd sample.microprofile.meetingapp
+git checkout part3</pre>
+</li>
+<li>In Eclipse, import the project as an existing project, then switch to the Java EE perspective.</p>
+</li>
+</ol>
+<h3>From Eclipse</h3>
+<p>If you prefer to clone the Git repository from Eclipse:</p>
+<ol>
+<li>In Eclipse, switch to the Git perspective.</li>
+<li>Click <strong>Clone a Git repository</strong> from the Git Repositories view.</li>
+<li>Enter URI <code>https://github.com/WASdev/sample.microprofile.meetingapp.git</code></li>
+<li>Click <strong>Next</strong>, then click <strong>Next</strong> again accepting the defaults.</li>
+<li>From the <strong>Initial branch</strong> drop-down list, click <strong>part3</strong>.</li>
+<li>Select <strong>Import all existing Eclipse projects after clone finishes</strong>, then click <strong>Finish</strong>.</li>
+<li>Switch to the Java EE perspective.</li>
+</ol>
+<p>The <code>meetings</code> project is automatically created in the Project Explorer view.</p>
+<h2>Installing MongoDB</h2>
+<p>If you completed the previous articles and installed MongoDB, make sure MongoDB is running. If you are starting fresh, make sure you install MongoDB. Depending on what platform you are on the installation instructions may be different. For this exercise you should get the community version of MongoDB from the <a href="https://www.mongodb.com/download-center#community">mongoDB download-center</a>.</p>
+<p>Once installed you can run the MongoDB database daemon using:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+mongod -dbpath &lt;path to database&gt;
+</pre>
+<p>The database needs to be running for the application to work. If it isn&#8217;t running there will be a lot of noise in the server logs.</p>
+<h2>Updating the application to compile against the WebSocket API</h2>
+<p>To start writing code, the Maven <code>pom.xml</code> needs to be updated to indicate the dependency on the WebSocket API for Java EE:</p>
+<ol>
+<li>Open the <code>pom.xml</code> in Eclipse.</li>
+<li>In the editor, select the <strong>Dependencies</strong> tab.</li>
+<li>On the <strong>Dependencies</strong> tab there are two sections, one for Dependencies and the other for Dependency Management. Just to the right of the Dependencies box there is an <strong>Add</strong> button. Click the <strong>Add</strong> button.</li>
+<li>Enter a <strong>groupdId</strong> of javax.websocket`</li>
+<li>Enter a <strong>artifactId</strong> of <code>javax.websocket-api</code></li>
+<li>Enter a <strong>version</strong> of <code>1.1</code></li>
+<li>From the <code>scope</code> drop-down list, select <strong>provided</strong>. This will allow the application to compile but will prevent the Maven WAR packager putting the API in the WAR file. Later, the build will be configured to make it available to the server.</li>
+<li>Click <strong>OK</strong>.</li>
+<li>Save the <code>pom.xml</code>.</li>
+</ol>
+<h2>Create a CDI qualifier</h2>
+<p>A CDI qualifier is simply an annotation annotated with <code>@Qualifier</code>. This can then be used with other CDI annotations to influence behaviour. In the case of CDI events, it links the event producer to the event consumer.</p>
+<ol>
+<li>Right-click the <strong>meetings* project, then click **New > Annotation&#8230;</strong>.</li>
+<li>Enter a name of <code>MeetingEvent</code>.</li>
+<li>Click <strong>Finish</strong>.</li>
+<li>The annotations should be added to the type name. There are three key annotations. The first is <code>Qualifier</code>, which indicates that the annotation is a CDI qualifier:
+<pre class="brush: java; highlight: [1]; title: ; notranslate" title="">
+@Qualifier
+public @interface MeetingEvent {
+}
+</pre>
+</li>
+<li>This introduces a new type <code>Qualifier</code> in the package <code>javax.inject</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.inject.Qualifier;
+</pre>
+</li>
+<li>The second annotation, <code>Retention</code>, indicates that the annotation should be available at runtime. This allows the CDI runtime to process them:
+<pre class="brush: java; highlight: [2,3]; title: ; notranslate" title="">
+@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+</pre>
+</li>
+<li>This introduces two new types: <code>Retention</code> and <code>RetentionPolicy</code>. These are in the package <code>java.lang.annotation</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import java.lang.annotation.Retention;
+    import java.lang.annotation.RetentionPolicy;
+</pre>
+</li>
+<li>The last annotation, <code>Target</code>, indicates where the annotation can be applied. For the CDI qualifier it needs to be applied to a field and a parameter:
+<pre class="brush: java; highlight: [3]; title: ; notranslate" title="">
+@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+</pre>
+</li>
+<li>This introduces two new types: &#8216;Target&#8217; and &#8216;ElementType&#8217;. These are in the package &#8216;java.lang.annotation`:
+<pre class="brush: java; title: ; notranslate" title="">
+    import java.lang.annotation.ElementType;
+    import java.lang.annotation.Target;
+</pre>
+</li>
+<li>Save the file. The annotations should look like this:
+<pre class="brush: java; title: ; notranslate" title="">
+    @Qualifier
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target({ElementType.FIELD, ElementType.PARAMETER})
+    public @interface MeetingEvent {
+
+    }
+</pre>
+</li>
+</ol>
+<h2>Creating a CDI event object</h2>
+<p>With CDI events you can pass any object you want between the producer and consumer but, for this application, we will create an object. There are two things to be passed: one is the event to identify the meeting, the other is the URL of the meeting.</p>
+<p>To create the event object:</p>
+<ol>
+<li>Right-click the <strong>meetings* project, then click **New > Class&#8230;</strong>.</li>
+<li>In the <strong>Package</strong> field, type <code>net.wasdev.samples.microProfile.meetings</code></li>
+<li>Enter a name of <code>MeetingStartEvent</code></li>
+<li>Click <strong>Finish</strong>.</li>
+<li>Add a <code>String</code> field to store the ID.
+<pre class="brush: java; title: ; notranslate" title="">
+    private String id;
+</pre>
+</li>
+<li>Add a <code>String</code> field to store the URL.
+<pre class="brush: java; title: ; notranslate" title="">
+    private String url;
+</pre>
+</li>
+<li>Next add an constructor that takes the values of the <code>id</code> and <code>url</code> and stores them in the fields:
+<pre class="brush: java; title: ; notranslate" title="">
+    public MeetingStartEvent(String id, String url) {
+        this.id = id;
+        this.url = url;
+    }
+</pre>
+</li>
+<li>Finally, create the simple getters to return the fields:
+<pre class="brush: java; title: ; notranslate" title="">
+    public String getId() {
+        return id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+</pre>
+</li>
+<li>Save the file.</li>
+</ol>
+<h2>Sending an event when a meeting starts</h2>
+<p>The next part is to get the <code>MeetingManager</code> to emit an event when a meeting is started:</p>
+<ol>
+<li>Open the <strong>MeetingManager</strong> class.</li>
+<li>Add a new field to inject the CDI <code>Event</code> class. The <code>Event</code> class is parameterized with the event object to be set. This field should also be annotated using the CDI qualifier, <code>MeetingEvent</code>, that we created earlier:
+<pre class="brush: java; highlight: [3,4,5]; title: ; notranslate" title="">
+@Resource
+private ManagedScheduledExecutorService executor;
+@Inject
+@MeetingEvent
+private Event&lt;MeetingStartEvent&gt; events;
+</pre>
+</li>
+<li>This introduces a new type <code>Event</code> in the package <code>javax.enterprise.event</code>. It also introduces <code>Inject</code> from the package <code>javax.inject</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.enterprise.event.Event;
+    import javax.inject.Inject;
+</pre>
+</li>
+<li>Find the <code>startMeeting</code> method. At the end of the method construct a new instance of the <code>MeetingStartEvent</code> passing in the meeting ID and URL:
+<pre class="brush: java; title: ; notranslate" title="">
+    MeetingStartEvent eventObject = new MeetingStartEvent(id, url);
+</pre>
+</li>
+<li>Then call the <code>Event</code> fire object passing in the event object:
+<pre class="brush: java; title: ; notranslate" title="">
+    events.fire(eventObject);
+</pre>
+</li>
+<li>Save the file.</li>
+</ol>
+<p>At this stage the application could be run, the event would be emitted, but nothing would happen since there is nothing to receive the event.</p>
+<h2>Creating the WebSocket</h2>
+<p>The WebSocket will handle the connection between the browser and server, and receive the meeting start event. The browser will send the meeting ID and the WebSocket will notify it when that meeting gets started.</p>
+<p>To create the WebSocket:</p>
+<ol>
+<li>Right-click the <strong>meetings* project, then click **New > Class&#8230;</strong>.</li>
+<li>In the <strong>Package</strong> field, type <code>net.wasdev.samples.microProfile.meetings</code></li>
+<li>Enter a name of <code>MeetingNotifier</code></li>
+<li>Click <strong>Finish</strong>.</li>
+<li>According to the spec, WebSocket components are not CDI beans. To ensure that CDI can see the bean it needs to be annotated. In this case we add the <code>Dependent</code> annotation to the type:
+<pre class="brush: java; highlight: [1]; title: ; notranslate" title="">
+@Dependent
+public class MeetingNotifier {
+}
+</pre>
+</li>
+<li>This introduces a new class <code>Dependent</code> which is in package <code>javax.enterprise.context</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.enterprise.context.Dependent;
+</pre>
+</li>
+<li>To make the class into a WebSocket it needs to be annotated with the <code>ServerEndpoint</code> annotation. The annotation takes a URL path that will be used to invoke it. The URL path must start with a forward slash:
+<pre class="brush: java; highlight: [2]; title: ; notranslate" title="">
+@Dependent
+@ServerEndpoint(&quot;/notifier&quot;)
+</pre>
+</li>
+<li>This introduces a new class <code>ServerEndpoint</code> which is in package <code>javax.websocket.server</code>. When importing take care to import the right one since there are multiple <code>ServerEndpoint</code> classes:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.websocket.server.ServerEndpoint;
+</pre>
+</li>
+<li>Save the file. The type definition should now look like this:
+<pre class="brush: java; title: ; notranslate" title="">
+    @Dependent
+    @ServerEndpoint(&quot;/notifier&quot;)
+    public class MeetingNotifier {
+</pre>
+</li>
+<li>The WebSocket will need to interact with the <code>MeetingManager</code> so it needs to be injected into a field:
+<pre class="brush: java; highlight: [2,3]; title: ; notranslate" title="">
+public class MeetingNotifier {
+@Inject
+private MeetingManager manager;
+</pre>
+</li>
+<li>This introduces a new type <code>Inject</code> from the <code>javax.inject</code> package:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.inject.Inject;
+</pre>
+</li>
+<li>The WebSocket container manages an instance of the class for each WebSocket connection. When the CDI event system distributes events, however, it creates a new instance so the WebSocket <code>Session</code> objects need to be stored for later. A <code>Map</code> is used to store the <code>Session</code> objects associated with a meeting. Because there will be multiple <code>Session</code> objects, a <code>Collection</code> of <code>Session</code> objects is appropriate. Of course, because this will need to cope with multiple threads, we use concurrent versions of the sessions (added on the next line of the <code>MeetingNotifier</code> class):
+<pre class="brush: java; title: ; notranslate" title="">
+        private static ConcurrentMap&lt;String, Queue&lt;Session&gt;&gt; listeners = new ConcurrentHashMap&lt;&gt;();
+</pre>
+</li>
+<li>This introduces four new classes. The <code>ConcurrentMap</code>, and <code>ConcurrentHashMap</code> classes are in the <code>java.util.concurrent</code> package. The <code>Queue</code> class is in the <code>java.util</code> package and <code>Session</code> is in the <code>javax.websocket</code> package:
+<pre class="brush: java; title: ; notranslate" title="">
+    import java.util.Queue;
+    import java.util.concurrent.ConcurrentHashMap;
+    import java.util.concurrent.ConcurrentMap;
+    import javax.websocket.Session;
+</pre>
+</li>
+<li>There are multiple methods on a <code>ServerEndpoint</code> but for this the key one is the <code>onMessage</code> method:
+<ol>
+<li>An <code>onMessage</code> method is indicated using the <code>OnMessage</code> annotation. There are multiple method signatures that can be used but in this case the method will take a String that will contain the ID of the meeting and the WebSocket session:
+<pre class="brush: java; title: ; notranslate" title="">
+        @OnMessage
+        public void onMessage(String id, Session s) throws IOException {
+            // code will go in here
+        }
+</pre>
+</li>
+<li>This introduces a new type the <code>OnMessage</code> annotation in the <code>javax.websocket</code> package, as well as <code>IOException</code> from <code>java.io</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.websocket.OnMessage;
+    import java.io.IOException;
+</pre>
+</li>
+<li>The first thing to do is to check that the ID really is for a meeting. If there is no meeting with the ID&#8217;s name then the method should exit:
+<pre class="brush: java; title: ; notranslate" title="">
+        JsonObject m = manager.get(id);
+        if (m == null) {
+            s.close();
+            return;
+        }
+</pre>
+</li>
+<li>This introduces a new class <code>JsonObject</code> which is in the package <code>javax.json</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.json.JsonObject;
+</pre>
+</li>
+<li>The next thing to do is to get the meeting URL for the meeting:
+<pre class="brush: java; title: ; notranslate" title="">
+        JsonString url = m.getJsonString(&quot;meetingURL&quot;);
+</pre>
+</li>
+<li>This introduces a new class <code>JsonString</code> which is in the package <code>javax.json</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.json.JsonString;
+</pre>
+</li>
+<li>If the meeting URL is there, the information should be sent to the WebSocket client directly then the method should exit. To send information to the client the session is used: get a remote object, then send some text. The <code>JsonString</code> <code>toString</code> method wraps the URL in quotes so the <code>getString</code> method must be used:
+<pre class="brush: java; title: ; notranslate" title="">
+        if (url != null) {
+            s.getBasicRemote().sendText(url.getString());
+            s.close();
+            return;
+        }
+</pre>
+</li>
+<li>Now the session needs to be stored away so that when the meeting is started the client is notified. This is stored in the map, so the first thing to do is to get the collection of sessions:
+<pre class="brush: java; title: ; notranslate" title="">
+        Queue&lt;Session&gt; sessions = listeners.get(id);
+        if (sessions == null) {
+            // code will go here
+        }
+</pre>
+</li>
+<li>Inside the null check we need to create a new collection. This should be a concurrent collection, so use an <code>ArrayBlockingQueue</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+            sessions = new ArrayBlockingQueue&lt;&gt;(1000);
+</pre>
+</li>
+<li>This introduces a new class, the <code>ArrayBlockingQueue</code> in the package <code>java.util.concurrent</code>.
+<pre class="brush: java; title: ; notranslate" title="">
+    import java.util.concurrent.ArrayBlockingQueue;
+</pre>
+</li>
+<li>Now it needs to be put in the map. Of course there could be two clients coming through the method so, rather than doing a <code>put</code> which will overwrite, use the <code>putIfAbsent</code> method:
+<pre class="brush: java; title: ; notranslate" title="">
+            Queue&lt;Session&gt; actual = listeners.putIfAbsent(id, sessions);
+</pre>
+</li>
+<li>If the <code>put</code> succeeded, the <code>actual</code> will be null. If another thread won and put their copy of <code>sessions</code> in the map it&#8217;ll have the collection that should be used, so a swap is needed:
+<pre class="brush: java; title: ; notranslate" title="">
+            if (actual != null) {
+                sessions = actual;
+            }
+</pre>
+</li>
+<li>The last thing to do in the method (and outside the <code>if</code> block with the null check for <code>sessions</code>) is to add the <code>Session</code> to the <code>Collection</code> of <code>Session</code> objects:
+<pre class="brush: java; title: ; notranslate" title="">
+        sessions.add(s);
+</pre>
+</li>
+<li>The code added as a result of steps h-m should look like this:
+<pre class="brush: java; title: ; notranslate" title="">
+		Queue&lt;Session&gt; sessions = listeners.get(id);
+		if (sessions == null) {
+			sessions = new ArrayBlockingQueue&lt;&gt;(1000);
+			Queue&lt;Session&gt; actual = listeners.putIfAbsent(id, sessions);
+			if (actual != null) {
+				sessions = actual;
+			}
+		}
+		sessions.add(s);
+</pre>
+</li>
+</ol>
+</li>
+<li>Now the sessions are stored, the event method needs to be defined:
+<ol>
+<li>The name of the method isn&#8217;t important but it has to take the event. The parameter that takes the event needs to be annotated with the <code>Observes</code> annotation (which indicates that this is an event notification method) and the <code>MeetingEvent</code> annotation so it knows which kind of event to call with it:
+<pre class="brush: java; title: ; notranslate" title="">
+        public void startMeeting(@Observes @MeetingEvent MeetingStartEvent event) {
+            // add the notification code here
+        }
+</pre>
+</li>
+<li>This introduces the new type <code>Observes</code> in the package <code>javax.enterprise.event</code>:
+<pre class="brush: java; title: ; notranslate" title="">
+    import javax.enterprise.event.Observes;
+</pre>
+</li>
+<li>If this method is called then the meeting has started. The sessions no longer need to be cached away because the meeting has started and so they can be removed from the map:
+<pre class="brush: java; title: ; notranslate" title="">
+            Queue&lt;Session&gt; sessions = listeners.remove(event.getId());
+</pre>
+</li>
+<li>Of course it is possible there are no sessions stored, at which point it&#8217;ll be null so the next part should only happen if the <code>sessions</code> are non-null:
+<pre class="brush: java; title: ; notranslate" title="">
+            if (sessions != null) {
+                // add the next bit of code  here
+            }
+</pre>
+</li>
+<li>The logic should be done for each session, so a simple enhanced for loop will do:
+<pre class="brush: java; title: ; notranslate" title="">
+                for (Session s : sessions) {
+                    // add the next bit of code here
+                }
+</pre>
+</li>
+<li>The session needs to be open to send data to the client, so check that first:
+<pre class="brush: java; title: ; notranslate" title="">
+                    if (s.isOpen()) {
+                        // add the next bit of code here
+                    }
+</pre>
+</li>
+<li>Finally the URL should be sent to the client. This could cause an <code>IOException</code> which can&#8217;t be thrown by this method, so needs to be caught:
+<pre class="brush: java; title: ; notranslate" title="">
+                        try {
+                            s.getBasicRemote().sendText(event.getUrl());
+                            s.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+</pre>
+</li>
+</ol>
+</li>
+<li>Save the file.</li>
+</ol>
+<p>You&#8217;ve now coded the application. Test the app by opening two browser windows, one to join the meeting and the other to start the meeting. Watch as both browser windows redirect at once.</p>
+<h2>Configuring Liberty to run WebSockets</h2>
+<ol>
+<li>Open the <code>server.xml</code> from <strong>src > main > liberty > config > server.xml</strong>.</li>
+<li>Find the <code>&lt;feature manager&gt;</code> element. It should look like this:
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;mongodb-2.0&lt;/feature&gt;
+        &lt;feature&gt;concurrent-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+</pre>
+</li>
+<li>Before the closing <code>&lt;/featureManager&gt;</code> element add a <code>feature</code> element with the feature <code>websocket-1.1</code> as the body.
+<pre class="brush: xml; title: ; notranslate" title="">
+        &lt;feature&gt;websocket-1.1&lt;/feature&gt;
+</pre>
+</li>
+<li>Save the file.</li>
+</ol>
+<h2>Running the application</h2>
+<p>There are two ways to get the application running from within WDT:</p>
+<ul>
+<li>The first is to use Maven to build and run the project:
+<ol>
+<li>Run the Maven <code>install</code> goal to build and test the project: Right-click <strong>pom.xml</strong> in the <code>meetings</code> project, click <strong>Run As&#8230; > Maven Build&#8230;</strong>, then in the <strong>Goals</strong> field type <code>install</code> and click <strong>Run</strong>. The first time you run this goal, it might take a few minutes to download the Liberty dependencies.</li>
+<li>Run a Maven build for the <code>liberty:start-server</code> goal: Right-click <strong>pom.xml</strong>, click <strong>Run As&#8230; > Maven Build&#8230;</strong>, then in the <strong>Goals</strong> field, type <code>liberty:start-server</code> and click <strong>Run</strong>.  This starts the server in the background.</li>
+<li>Open the application, which is available at <code>http://localhost:9080/meetings/</code>.</li>
+<li>To stop the server again, run the <code>liberty:stop-server</code> build goal.</li>
+</ol>
+</li>
+<li>The second way is to right-click the <code>meetings</code> project and select <strong>Run As&#8230; > Run on Server</strong> but there are a few things to note if you do this. WDT doesn&#8217;t automatically add the MicroProfile features as you would expect so you need to manually add those. Also, any changes to the configuration in <code>src/main/liberty/config</code> won&#8217;t be picked up unless you add an include.</li>
+</ul>
+<p>Find out more about <a href="../../index.html%3Fp=20227.html">MicroProfile and WebSphere Liberty</a>.</p>
+<h2 id="related">Related articles</h2>
+<div class="ibm-fluid pn-grid-listing " >
+<div class="ibm-col-12-4 post-1">
+<article id="post-21607" class="pn-list__item post-21607 doc type-doc status-publish hentry tag-microprofile doc_categories-coding doc_categories-java-ee randcolor4">
+<header class="entry-header"><a class="list-thumbnail" href="../../index.html%3Fp=21607.html" rel="bookmark"></a></header>
+<div class="entry-content">
+<div class="entry-hd-wrap">
+<h2 class="entry-title"><a href="../../index.html%3Fp=21607.html" rel="bookmark">Writing a simple MicroProfile application (3): Using Java EE concurrency</a></h2>
+<div class="entry-meta"><span class="byline"> by <span class="author vcard"><a class="url fn n" href="../../blog/author/notatibm/index.html">Alasdair</a></span></span> <span class="posted-on"><i>on</i> <span><time class="entry-date published" datetime="">March 22, 2017</time></span></span><span class="pn-categories"><i> in</i> <a href="../category/coding/index.html" rel="tag">Coding</a>, <a href="../category/java-ee/index.html" rel="tag">Java EE</a></span></div>
+</div>
+<p class="exc-content">Alasdair takes his <a href="../../index.html%3Fp=21318.html">simple MicroProfile application</a> and adds persistence using MongoDB as the persistence mechanism. All code is in <a href="https://github.com/WASdev/sample.microprofile.meetingapp.git">GitHub</a>.</p>
+<p class="pn-readmore"><span class="pn-readmore"><a href="../../index.html%3Fp=21607.html" title="Continue reading Writing a simple MicroProfile application (3): Using Java EE concurrency">Continue reading <span class="screen-reader-text">Writing a simple MicroProfile application (3): Using Java EE concurrency</span></a></span></p>
+</div>
+</article>
+</div>
+<div class="ibm-col-12-4 post-2">
+<article id="post-21602" class="pn-list__item post-21602 doc type-doc status-publish hentry tag-microprofile doc_categories-coding doc_categories-java-ee randcolor3">
+<header class="entry-header"><a class="list-thumbnail" href="../../index.html%3Fp=21602.html" rel="bookmark"></a></header>
+<div class="entry-content">
+<div class="entry-hd-wrap">
+<h2 class="entry-title"><a href="../../index.html%3Fp=21602.html" rel="bookmark">Writing a simple MicroProfile application (2): Adding persistence</a></h2>
+<div class="entry-meta"><span class="byline"> by <span class="author vcard"><a class="url fn n" href="../../blog/author/notatibm/index.html">Alasdair</a></span></span> <span class="posted-on"><i>on</i> <span><time class="entry-date published" datetime="">March 8, 2017</time></span></span><span class="pn-categories"><i> in</i> <a href="../category/coding/index.html" rel="tag">Coding</a>, <a href="../category/java-ee/index.html" rel="tag">Java EE</a></span></div>
+</div>
+<p class="exc-content">Alasdair takes his <a href="../../index.html%3Fp=21318.html">simple MicroProfile application</a> and adds persistence using MongoDB as the persistence mechanism. All code is in<a href="https://github.com/WASdev/sample.microprofile.meetingapp.git"> GitHub</a>.</p>
+<p class="pn-readmore"><span class="pn-readmore"><a href="../../index.html%3Fp=21602.html" title="Continue reading Writing a simple MicroProfile application (2): Adding persistence">Continue reading <span class="screen-reader-text">Writing a simple MicroProfile application (2): Adding persistence</span></a></span></p>
+</div>
+</article>
+</div>
+<div class="ibm-col-12-4 post-3">
+<article id="post-21318" class="pn-list__item post-21318 doc type-doc status-publish hentry tag-microprofile doc_categories-coding doc_categories-java-ee randcolor2">
+<header class="entry-header"><a class="list-thumbnail" href="../../index.html%3Fp=21318.html" rel="bookmark"></a></header>
+<div class="entry-content">
+<div class="entry-hd-wrap">
+<h2 class="entry-title"><a href="../../index.html%3Fp=21318.html" rel="bookmark">Writing a simple MicroProfile application (1)</a></h2>
+<div class="entry-meta"><span class="byline"> by <span class="author vcard"><a class="url fn n" href="../../blog/author/notatibm/index.html">Alasdair</a></span></span> <span class="posted-on"><i>on</i> <span><time class="entry-date published" datetime="">January 11, 2017</time></span></span><span class="pn-categories"><i> in</i> <a href="../category/coding/index.html" rel="tag">Coding</a>, <a href="../category/java-ee/index.html" rel="tag">Java EE</a></span></div>
+</div>
+<p class="exc-content">Alasdair introduces MicroProfile by explaining how to write a simple application based around the mundane but real-life requirement to book meetings.</p>
+<p class="pn-readmore"><span class="pn-readmore"><a href="../../index.html%3Fp=21318.html" title="Continue reading Writing a simple MicroProfile application (1)">Continue reading <span class="screen-reader-text">Writing a simple MicroProfile application (1)</span></a></span></p>
+</div>
+</article>
+</div>
+</div>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="../../blog/tag/microprofile/index.html" rel="tag">MicroProfile</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="../../blog/author/notatibm/index.html">Alasdair</a></span></p><ul class="byline__social"><li class="byline__social__twitter"><a href="https://www.twitter.com/NottyCode">Twitter</a></li></ul><p class="byline__bio">Hi I'm Alasdair Nottingham, you might remember me from such videos such as "Interview with IBM's Alasdair Nottingham on the WebSphere Liberty Profile", and "OSGi Explained". 
+
+I'm the Liberty runtime architect, which means that I write less code than I would like.
+
+My role in the team is to ensure we stick to our principles, and to ensure we build the best application server for developers, oh and it also needs to rock in production too.</p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="../../index.html%3Fp=21626.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='21626' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="857afa400e" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="247"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="../../index.html%3Fp=21626.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="../../index.html%3Fp=21626.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="../../index.html%3Fp=21626.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='../../wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='../../wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='../../wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='../../wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsimple-microprofile-application-using-websockets-cdi-events&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fsimple-microprofile-application-using-websockets-cdi-events"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

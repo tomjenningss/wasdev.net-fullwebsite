@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="Docker," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-09-02",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Logstash and Liberty &#8211; optimizing data collection for the cloud",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"Docker,",
+						"contentArea": "DevOps, Cloud"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"Docker,",
+		      "description":"Logstash and Liberty &#8211; optimizing data collection for the cloud"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Logstash and Liberty - optimizing data collection for the cloud - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Using logstash, grok filters, input and output plugins to get the most information out of WAS Liberty logs."/>
+<link rel="canonical" href="index.html%3Fp=14477.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Logstash and Liberty &#8211; optimizing data collection for the cloud Comments Feed" href="docs/logstash-liberty-optimizing-data-collection-cloud/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=14477.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Flogstash-liberty-optimizing-data-collection-cloud%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Flogstash-liberty-optimizing-data-collection-cloud%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-14477 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=14477.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/devops/index.html" rel="tag">DevOps</a><i>, </i><a href="docs/category/cloud/index.html" rel="tag">Cloud</a></span></div><h1 class="entry-title">Logstash and Liberty &#8211; optimizing data collection for the cloud</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/schnabel/index.html">erin.schnabel</a></span><br>Published on September 2, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=14477.html#comments" class="pn_comments_icon">3 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=14477.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">Logstash is a core part of the ELK stack that can be used to pull and tag content in WAS Liberty logs.</p>
+<p>Microservice architectures are highly distributed, with services provided by individual processes that are scaled independently. Understanding and maintaining overall system health becomes increasingly difficult as the system grows; it becomes impractical to look at services instance-by-instance. Monitoring systems, like Nagios, help but what happens when things go wrong?</p>
+<p>It is not always possible (much less easy) to <code>ssh</code> into any given system. In some environments the filesystem used by any given instance is transient; when the process stops, the filesystem is cleaned up, including all the logs!</p>
+<p>The ELK stack (Elasticsearch, Logstash, and Kibana) is a commonly used system for gathering data (both logs and metrics). It allows that data to be aggregated, analyzed, visualized, and searched in useful ways.</p>
+<p>In this post, I&#8217;ll focus on getting the most out of WAS Liberty logs using Logstash. This isn&#8217;t the only way: the IBM WebSphere Liberty buildpack in Bluemix, for example, uses Loggregator (Cloud Foundry) rather than Logstash. But I do hope that this gives you some ideas for how to make the logging capabilities in WAS Liberty work for your environment.</p>
+<h2>Getting useful information to system streams</h2>
+<p>When operating on its own, WAS Liberty produces a few different log files by default:</p>
+<ul>
+<li>&#8220;console&#8221; output is lightly formatted and contains no timestamps. Failure/error messages and <code>System.err</code> are routed to STDERR, while other important messages and <code>System.out</code>, are routed to STDOUT. When run in the background using <code>server start</code>, both streams are collected into a <code>console.log</code> file.</li>
+<li><code>messages.log</code> also collects <code>System out</code>, <code>System.err</code>, as well as a larger subset of messages (including INFO).</li>
+<li><code>trace.log</code> only appears if detailed trace is enabled. It includes output from all enabled log sources, including <code>System.out</code> and <code>System.err</code>.</li>
+</ul>
+<p>Having log messages go directly to STDOUT and/or STDERR is a good environment-agnostic practice for microservices (and is also <a href="http://12factor.net/logs">one of the 12-factors</a>). It is a pretty simple change to get formatted Liberty logs writing to STDOUT. To ensure we don&#8217;t miss any messages from server bootstrap and startup, we&#8217;ll do this using a <a href="http://www.ibm.com/support/knowledgecenter/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_inst_bootstrap.html?cp=SSAW57_8.5.5%2F1-3-11-0-2-6"><code>bootstrap.properties</code> file</a> that contains:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # Write WLP logs to stdout directly
+    com.ibm.ws.logging.trace.file.name=stdout
+</pre>
+<p>As you might infer, this re-routes what would go to <code>trace.log</code> to STDOUT. Before this change, STDOUT (when running Liberty) looks something like this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # wlp/bin/server run
+    Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on Java HotSpot(TM) 64-Bit Server VM, version 1.7.0_72-b14 (en_US)
+    [AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+</pre>
+<p>Afterwards, it looks more like (notice the leading timestamp and fixed fields):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # wlp/bin/server run
+    Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on Java HotSpot(TM) 64-Bit Server VM, version 1.7.0_72-b14 (en_US)
+    [8/25/15 12:40:44:479 EDT] 00000001 id=         com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+</pre>
+<p>In some cases, this might be enough. If you&#8217;re running Liberty in the foreground in a Docker container, Liberty&#8217;s formatted log entries would now be spilling out as the Docker container&#8217;s STDOUT. If the hosting environment does post-processing on that output, you may have nothing left to do.</p>
+<h2>Using Logstash to post-process logs</h2>
+<p>We can, however, use Logstash to process Liberty log output to produce more robust events. How you link Logstash and Liberty together will depend on how and where Liberty is running. As a bare minimum useful for testing filters, you can try something like this:</p>
+<pre><code># wlp/bin/server run | logstash -f /path/to/logstash.conf
+</code></pre>
+<p>You can use the <code>-e</code> command line option to define your filters in line, but I&#8217;m starting with the configuration file up-front because I&#8217;ll spend the rest of the post adding things to it.</p>
+<h3>Changing the output / making sure it works</h3>
+<p>I&#8217;ll start with the log-processing equivalent of &#8220;Hello World&#8221;. Edit your <code>logstash.conf</code> file to contain:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    input {
+      stdin {
+      }
+    }
+    output {
+      stdout {
+      }
+    }
+</pre>
+<p>You get back pretty much exactly what you had before (with a leading message about Logstash startup being complete and additional leading Logstash timestamps):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # wlp/bin/server run | logstash -f logstash.conf
+    Logstash startup completed
+    2015-08-26T22:23:04.587Z ec2db0f13b8f Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on OpenJDK 64-Bit Server VM, version 1.8.0_45-internal-b14 (en)
+    2015-08-26T22:23:04.588Z ec2db0f13b8f [8/26/15 22:22:45:918 UTC] 00000001 id=         com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+</pre>
+<p>This does increase the amount of time it takes before we can see that the server has started properly, as the messages piped through Logstash get delayed a bit while Logstash starts itself.</p>
+<h3>Debugging</h3>
+<p>Given we&#8217;re going to start doing crazy things, we&#8217;ll want to be able to see how we changed what Logstash stores for each entry. We&#8217;ll use the <code>rubydebug</code> codec to do this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    output {
+      stdout {
+        codec =&gt; rubydebug
+      }
+      ...
+    }
+</pre>
+<p>Once we add that, those first few lines now look like this (please do scroll right):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+Logstash startup completed
+    {
+       &quot;message&quot; =&gt; &quot;Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on OpenJDK 64-Bit Server VM, version 1.8.0_45-internal-b14 (en)&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T12:24:48.542Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;
+    }
+    {
+       &quot;message&quot; =&gt; &quot;[8/28/15 12:24:29:777 UTC] 00000001 id=         com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T12:24:48.543Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;
+    }
+</pre>
+<h3>Handle multiple lines</h3>
+<p>We&#8217;re going to start adding filters in the next few sections. The first we will add is for multi-line output:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    input {
+      ...
+    }
+    filter {
+      # Combine lines that do not start with &quot;[&quot; or
+      # contain &quot;WebSphere Application Server&quot; with the previous message
+      multiline {
+        pattern =&gt; &quot;(^[)|(WebSphere Application Server)&quot;
+        negate =&gt; true
+        what =&gt; &quot;previous&quot;
+      }
+      ## MORE HERE.
+    }
+    output {
+      ...
+    }
+</pre>
+<p>Note, first, that the pattern is negated; we&#8217;re asserting that any line that does not match the pattern is a continuation and should be lumped together with the previous line.</p>
+<p>Liberty log entries (and even wrapped <code>System.out</code> or <code>System.err</code> output) all start with a bracketed timestamp that looks something like, <code>[8/26/15 22:22:45:918 UTC]</code>.</p>
+<p>But, remember that first line of Liberty trace? <code>Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749)</code>. As this is the very first line of output, we have to account for it as a standalone line (go ahead and take it out if you don&#8217;t believe me&#8230; ).</p>
+<p>Without Logstash (just using raw Liberty), you might see the following output if you use an include to reconfigure your <code>httpEndpoint</code> (note that the Liberty log timestamp is only on the first line, as this is a multi-line entry that is &#8211; further &#8211; not a stack trace):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+[8/28/15 13:10:45:551 UTC] 00000018 id=         com.ibm.ws.config.xml.internal.ConfigValidator               W CWWKG0011W: The configuration validation did not succeed. Found conflicting settings for com.ibm.ws.http[defaultHttpEndpoint] instance of httpEndpoint configuration.
+  Property httpPort has conflicting values:
+    Value 9081 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.
+    Value 9080 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.
+  Property httpPort will be set to 9080.
+  Property httpsPort has conflicting values:
+    Value 9444 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.
+    Value 9443 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.
+  Property httpsPort will be set to 9443.
+</pre>
+<p>Once this filter is applied, things are all properly together as one element. Scroll on and on (and on&#8230;) to the right, you&#8217;ll see all the lines are mashed together in the message separated by <code>n</code> characters:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+       &quot;message&quot; =&gt; &quot;[8/28/15 13:07:34:941 UTC] 00000018 id=         com.ibm.ws.config.xml.internal.ConfigValidator               W CWWKG0011W: The configuration validation did not succeed. Found conflicting settings for com.ibm.ws.http[defaultHttpEndpoint] instance of httpEndpoint configuration.n  Property httpPort has conflicting values:n    Value 9081 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9080 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpPort will be set to 9080.n  Property httpsPort has conflicting values:n    Value 9444 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9443 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpsPort will be set to 9443.n&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T13:07:48.991Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;,
+          &quot;tags&quot; =&gt; [
+        [0] &quot;multiline&quot;
+    ]
+}
+</pre>
+<h3>Fill the Logstash entry with interesting bits from Liberty trace</h3>
+<p>Just underneath the multiline filter (we&#8217;ll keep adding just above the <code>## MORE HERE</code> line), we&#8217;ll add a filter to parse out interesting tidbits from the Liberty log. This will give us something useful to trawl through later. This grok filter changes what Logstash keeps track of for each entry, and is scarily detailed, and is so long it has wrapped. You&#8217;ve been warned&#8230;</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # Overall WLP filter
+    grok {
+      match =&gt; [ &quot;message&quot;, &quot;(?m)[%{GREEDYDATA:ts}]%{SPACE}%{WORD:threadid}%{SPACE}id=%{BASE16NUM:id}?%{SPACE}%{NOTSPACE:module}%{SPACE}%{WORD:loglevel}%{SPACE}%{GREEDYDATA:message}&quot; ]
+      overwrite =&gt; [ &quot;message&quot; ]
+    }
+</pre>
+<p>This filter removes all of the fixed fields from the beginning of the message, transforming them into Logstash entry attributes instead. The elements of the filter:</p>
+<ul>
+<li><code>(?m)</code> &#8211; allows matching across line breaks, which is important when gathering the multi-line payload</li>
+<li><code>[%{GREEDYDATA:ts}]</code> &#8211; splices off Liberty&#8217;s timestamp by matching the brackets and being greedy about the middle, and then stores the timestamp</li>
+<li><code>%{SPACE}</code> &#8211; eats whitespace (used a few times)</li>
+<li><code>%{WORD:threadid}</code> &#8211; stores the thread ID</li>
+<li><code>id=%{BASE16NUM:id}?</code> &#8211; stores the associated object ID as an attribute (this may or may not have a value, and can be used to group entries that are related to the same instance of some object)</li>
+<li><code>%{NOTSPACE:module}</code> &#8211; stores the name of the Logger</li>
+<li><code>%{WORD:loglevel}</code> &#8211; stores the log level, e.g. <code>O</code> = System.out, <code>R</code> = System.err, <code>E</code> = Error, <code>W</code> = Warning, etc.</li>
+<li><code>%{GREEDYDATA:message}</code> &#8211; replaces the message field with the remainder of the (potentially multi-line) log entry (note that this is possible because of the overwrite directive)</li>
+</ul>
+<p>The output after you add this filter has more individual attributes, and a more focused message field. It looks like this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+       &quot;message&quot; =&gt; &quot;CWWKG0011W: The configuration validation did not succeed. Found conflicting settings for com.ibm.ws.http[defaultHttpEndpoint] instance of httpEndpoint configuration.n  Property httpPort has conflicting values:n    Value 9081 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9080 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpPort will be set to 9080.n  Property httpsPort has conflicting values:n    Value 9444 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9443 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpsPort will be set to 9443.n&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T13:27:18.766Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;,
+          &quot;tags&quot; =&gt; [
+        [0] &quot;multiline&quot;
+    ],
+            &quot;ts&quot; =&gt; &quot;8/28/15 13:27:04:067 UTC&quot;,
+      &quot;threadid&quot; =&gt; &quot;00000018&quot;,
+        &quot;module&quot; =&gt; &quot;com.ibm.ws.config.xml.internal.ConfigValidator&quot;,
+      &quot;loglevel&quot; =&gt; &quot;W&quot;
+}
+</pre>
+<h3>Catching mis-fits</h3>
+<p>As we mess around, we&#8217;re bound to mis-parse something. In addition to stdout, we&#8217;ll add an additional output filter to route badly parsed messages to a file (you might want this in <code>/var/log</code>):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    output {
+      stdout {
+        codec =&gt; &quot;rubydebug&quot;
+      }
+      if &quot;_grokparsefailure&quot; in [tags] {
+        file { path =&gt; &quot;failed_parse_events-%{+YYYY-MM-dd}&quot; }
+      }
+    }
+</pre>
+<p>And wouldn&#8217;t you know, we already have one (a parse error, I mean). When you run with that configuration, the file is created, and it contains:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+# cat failed_parse_events-2015-08-28
+    {&quot;message&quot;:&quot;Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on OpenJDK 64-Bit Server VM, version 1.8.0_45-internal-b14 (en)&quot;,&quot;@version&quot;:&quot;1&quot;,&quot;@timestamp&quot;:&quot;2015-08-28T02:03:02.118Z&quot;,&quot;host&quot;:&quot;ec2db0f13b8f&quot;,&quot;tags&quot;:[&quot;_grokparsefailure&quot;]}
+</pre>
+<p>Hey! It&#8217;s that first line that we said wasn&#8217;t a multi-line entry. The trouble is, it doesn&#8217;t match the only filter we have defined either. So let&#8217;s add one:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # Check for the first line (no parsed timestamp)
+    if [ts] !~ /.+/ {
+      grok {
+        match =&gt; [ &quot;message&quot;, &quot;(WebSphere Application Server)&quot; ]
+        add_tag =&gt; [&quot;version&quot;]
+        remove_tag =&gt; [&quot;_grokparsefailure&quot;]
+      }
+    }
+</pre>
+<p>You can only have one dominant grok filter. If you want to do any subsequent filters, they need to be guarded as this one is. This grok filter will only be attempted if the match failed on the previous grok filter (i.e. the <code>ts</code> field hasn&#8217;t been set). We then look to see if the WebSphere Application Server string is in there, and if it is, tag it as a <code>version</code> entry and remove the <code>_grokparsefailure</code> tag, as we have now successfully parsed it. Removing the parse failure tag is the more important of the two, IMO. The result looks like this:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+       &quot;message&quot; =&gt; &quot;Launching defaultServer (WebSphere Application Server 8.5.5.6/wlp-1.0.9.cl50620150610-1749) on OpenJDK 64-Bit Server VM, version 1.8.0_45-internal-b14 (en)&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T13:38:38.761Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;,
+          &quot;tags&quot; =&gt; [
+        [0] &quot;version&quot;
+    ]
+}
+</pre>
+<p>See? Much nicer, no parse errors, and a potentially useful version tag. Not bad.</p>
+<h3>Tag exceptions</h3>
+<p>To tag exceptions, we&#8217;ll add this filter (again, continuing to insert into the <code>logstash.conf</code> just abouve the <code>## MORE HERE.</code> line):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    # tag exceptions / stack traces
+    if [message] =~ /.java:d/ {
+      mutate {
+        add_tag =&gt; [&quot;exception&quot;, &quot;trace&quot;]
+      }
+    }
+</pre>
+<p>If we have a message that has been de-multilined and contains <code>.java:</code> followed by a digit, we&#8217;re going to hazard a good guess that it is a stack trace. This will add some tags for that case (to make searching easier). You can obviously do this to flag/tag other interesting messages as needed.</p>
+<p>I hacked my app to throw an exception, and it generated a lot of stuff. But I&#8217;ll grab one so you can see the single JSON event that contains the stack trace in the message:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{
+       &quot;message&quot; =&gt; &quot;SRVE0777E: Exception thrown by application class 'org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver.onMessage:116'njava.lang.RuntimeException: org.apache.cxf.interceptor.Fault: A test exception for logstash!ntat org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver.onMessage(AbstractFaultChainInitiatorObserver.java:116)ntat org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:371)ntat org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)ntat org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:259)ntat com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)ntat com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:149)ntat com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:115)ntat javax.servlet.http.HttpServlet.service(HttpServlet.java:687)ntat com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:99)ntat com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1285)ntat com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:776)ntat com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:473)ntat com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1143)ntat com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4865)ntat com.ibm.ws.webcontainer31.osgi.webapp.WebApp31.handleRequest(WebApp31.java:502)ntat com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:297)ntat com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:996)ntat com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:262)ntat com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:955)ntat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)ntat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)ntat java.lang.Thread.run(Thread.java:745)nCaused by: org.apache.cxf.interceptor.Fault: A test exception for logstash!ntat org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:163)ntat org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:129)ntat com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:195)ntat org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:200)ntat com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.invoke(LibertyJaxRsInvoker.java:366)ntat org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)ntat org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:61)ntat org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:99)ntat org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)nt... 20 morenCaused by: java.lang.RuntimeException: A test exception for logstash!ntat net.wasdev.jaxrs.async.ItemsResource.listItems(ItemsResource.java:42)ntat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)ntat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)ntat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)ntat java.lang.reflect.Method.invoke(Method.java:497)ntat com.ibm.ws.jaxrs20.cdi.component.JaxRsFactoryBeanCDICustomizer.serviceInvoke(JaxRsFactoryBeanCDICustomizer.java:211)ntat com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean.performInvocation(LibertyJaxRsServerFactoryBean.java:593)ntat com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker.performInvocation(LibertyJaxRsInvoker.java:114)ntat org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:97)nt... 27 moren&quot;,
+      &quot;@version&quot; =&gt; &quot;1&quot;,
+    &quot;@timestamp&quot; =&gt; &quot;2015-08-28T14:59:50.040Z&quot;,
+          &quot;host&quot; =&gt; &quot;ec2db0f13b8f&quot;,
+          &quot;tags&quot; =&gt; [
+        [0] &quot;multiline&quot;,
+        [1] &quot;exception&quot;,
+        [2] &quot;trace&quot;
+    ],
+            &quot;ts&quot; =&gt; &quot;8/28/15 14:59:49:873 UTC&quot;,
+      &quot;threadid&quot; =&gt; &quot;00000033&quot;,
+        &quot;module&quot; =&gt; &quot;com.ibm.ws.webcontainer.util.ApplicationErrorUtils&quot;,
+      &quot;loglevel&quot; =&gt; &quot;E&quot;
+}
+</pre>
+<p>Lots of scrolling to the right will show the de-multi-lined stack trace, but the more interesting aspect is that our filter added the tags we wanted (exception and trace).</p>
+<h2>Functional output</h2>
+<p>The <code>rubydebug</code> codec is great for debugging, but probably isn&#8217;t what you want to push around for a live system. Switching to JSON is as easy as replacing the <code>rubydebug</code> codec with <code>json</code>. You can also have a few output filters at the same time:</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+    output {
+      stdout {
+        codec =&gt; &quot;json&quot;
+      }
+      file {
+        path =&gt; &quot;wlp-%{+YYYY-MM-dd}&quot;
+      }
+      if &quot;_grokparsefailure&quot; in [tags] {
+        file { path =&gt; &quot;failed_parse_events-%{+YYYY-MM-dd}&quot; }
+      }
+    }
+</pre>
+<p>The above configuration produces single-line JSON going to STDOUT (lots of scrolling to the right again):</p>
+<pre class="brush: plain; title: ; notranslate" title="">
+{&quot;message&quot;:&quot;CWWKF0007I: Feature update started.&quot;,&quot;@version&quot;:&quot;1&quot;,&quot;@timestamp&quot;:&quot;2015-08-28T14:41:33.596Z&quot;,&quot;host&quot;:&quot;ec2db0f13b8f&quot;,&quot;ts&quot;:&quot;8/28/15 14:41:17:230 UTC&quot;,&quot;threadid&quot;:&quot;00000018&quot;,&quot;module&quot;:&quot;com.ibm.ws.kernel.feature.internal.FeatureManager&quot;,&quot;loglevel&quot;:&quot;I&quot;}
+{&quot;message&quot;:&quot;CWWKG0011W: The configuration validation did not succeed. Found conflicting settings for com.ibm.ws.http[defaultHttpEndpoint] instance of httpEndpoint configuration.n  Property httpPort has conflicting values:n    Value 9081 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9080 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpPort will be set to 9080.n  Property httpsPort has conflicting values:n    Value 9444 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/server.xml.n    Value 9443 is set in file:/opt/ibm/wlp/usr/servers/defaultServer/configDropins/overrides/docker.xml.n  Property httpsPort will be set to 9443.n&quot;,&quot;@version&quot;:&quot;1&quot;,&quot;@timestamp&quot;:&quot;2015-08-28T14:41:33.602Z&quot;,&quot;host&quot;:&quot;ec2db0f13b8f&quot;,&quot;tags&quot;:[&quot;multiline&quot;],&quot;ts&quot;:&quot;8/28/15 14:41:18:774 UTC&quot;,&quot;threadid&quot;:&quot;00000018&quot;,&quot;module&quot;:&quot;com.ibm.ws.config.xml.internal.ConfigValidator&quot;,&quot;loglevel&quot;:&quot;W&quot;}
+</pre>
+<p>And it <em>also</em> produces a file containing the same thing (the default codec for the file filter is <code>plain</code> and the default message_format is <code>json</code>), which is a handy local backup should some other post-processing step stop working.</p>
+<h2>The road goes ever on and on&#8230;</h2>
+<p>There is so much more you can do with Logstash, I could probably write a book about it (though I am fairly sure others already have).</p>
+<p>When using Docker containers, you could run Logstash inside the container, allowing you to manipulate the output before it goes anywhere else. The example configuration I&#8217;ve provided generates a rotating log file in addition to changing stdout from the container, but you could alternately use Logstash in the container to write to syslog instead of stdout.</p>
+<p><a href="https://denibertovic.com/post/docker-and-logstash-smarter-log-management-for-your-containers/">Logstash and containers</a> provides one point of view for how to use logstash with Docker containers, but bear in mind that some Docker hosting environments (like the IBM Container service in Bluemix) will handle the output produced by your container, alleviating some of the concerns around the log data managed by docker.</p>
+<h3>Some useful links for further reading:</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/logstash/current/introduction.html">Logstash overview</a>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/logstash/current/filter-plugins.html">filter reference</a></li>
+<li><a href="https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html">grok filter reference</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/elastic/logstash-forwarder">Logstash-forwarder</a></li>
+<li><a href="https://www.ng.bluemix.net/docs/containers/container_index.html">IBM Container service in Bluemix</a>
+<ul>
+<li><a href="https://developer.ibm.com/bluemix/2015/07/07/ibm-containers-service-overview-video/">IBM Container service overview</a> (Ryan Baxter, developer.ibm.com)</li>
+</ul>
+</li>
+</ul>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/docker/index.html" rel="tag">Docker</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/schnabel/index.html">erin.schnabel</a></span></p><ul class="byline__social"><li class="byline__social__twitter"><a href="https://www.twitter.com/ebullientworks">Twitter</a></li></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			3 comments on"Logstash and Liberty &#8211; optimizing data collection for the cloud"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment byuser comment-author-simon-miller-2 even thread-even depth-1 pn-comment" id="comment-154380">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">simonm99</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=14477.html#comment-154380">
+					December 21, 2018	         	</a>
+			</div>
+			      		<p>Erin, I found that multiline has been superceded by multiline-codec and that it was necessary to tweak your grok pattern from  &#8220;(?m)[%{GREEDYDATA:ts}]%{ to  &#8220;(?m)\[%{GREEDYDATA:ts}\]%{  (escaping the square brackets).</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=14477.html#comment-154380' onclick='return addComment.moveForm( "comment-154380", "154380", "respond", "14477" )' aria-label='Reply to simonm99'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-simon-miller-2 odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-154369">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">simonm99</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=14477.html#comment-154369">
+					December 20, 2018	         	</a>
+			</div>
+			      		<p>i&#8217;m just finding my way with logstash and ZOS liberty, this was very helpful</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=14477.html#comment-154369' onclick='return addComment.moveForm( "comment-154369", "154369", "respond", "14477" )' aria-label='Reply to simonm99'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-153554">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ryo Imai</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=14477.html#comment-153554">
+					September 06, 2018	         	</a>
+			</div>
+			      		<p>Thank you for nice article. In Tag exceptions section, I found that `if [message] =~ /.java:d/ {` didn&#8217;t work and `if [message] =~ /.java:\d/ {` worked because it&#8217;s regular expression.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=14477.html#comment-153554' onclick='return addComment.moveForm( "comment-153554", "153554", "respond", "14477" )' aria-label='Reply to Ryo Imai'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=14477.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='14477' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="43e7b205e8" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="43"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=14477.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=14477.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=14477.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Flogstash-liberty-optimizing-data-collection-cloud&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Flogstash-liberty-optimizing-data-collection-cloud"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

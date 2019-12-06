@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<title>
+IBM Cloud APM Data Collector 7.3 | IBM WebSphere Liberty Repository | WASdev
+</title>
+<link href="css/marketplace.css%3F_1416284010" rel="stylesheet" type="text/css">
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/"/>
+<link rel="shortcut icon" href="../../../../wp-content/themes/projectnext/css/favicon.ico" />
+<meta name="DC.Rights" content="? Copyright IBM Corporation 2016"/>
+<meta name="Keywords" content="IBM WebSphere Liberty Repository, IBM Marketplace, wasdev, wasdev community, WebSphere Application Server, download, JazzHub "/>
+<meta name="DC.Date" scheme="iso8601" content="2016-10-25"/>
+<meta name="Source"  content="developerWorks"/>
+<meta name="Security" content="Public"/>
+<meta name="Abstract" content="This feature enables your application to be easily monitored by IBM Cloud Application Performance Management. Instrument your application with this extension pack and your app usage, Java run time metrics, and end to end tracing information will be available.  Monitoring can start while you develop your app and will progress with your app into production, allowing operations team visibility."/>
+<meta name="Description" content="This feature enables your application to be easily monitored by IBM Cloud Application Performance Management. Instrument your application with this extension pack and your app usage, Java run time metrics, and end to end tracing information will be available.  Monitoring can start while you develop your app and will progress with your app into production, allowing operations team visibility."/>
+<meta name="IBM.Effective" scheme="W3CDTF" content="2016-10-25"/>
+<meta name="Owner" content="developerWorks Content/Raleigh/IBM"/>
+<meta name="DC.Language" scheme="rfc1766" content="en"/>
+<meta name="IBM.SpecialPurpose" content="SP001"/>
+<meta name="IBM.Country" content="ZZ"/>
+<meta name="Robots" content="index,follow"/>
+<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="CT801" />
+<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="ZZ999" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div id="eLoader"></div>
+<div id="eMain">
+<h1>IBM Cloud APM Data Collector 7.3</h1>
+<div id="description">
+<div id\="ibm-wasdev-feature-desc-content">
+<P>
+This extension pack contains a data collector, which can
+be deployed for monitoring your Liberty servers with IBM Cloud
+Application Performance Management. This data collector is applicable
+to the Liberty server running on Linux for System x only
+</P>
+
+<P>
+<B>Note:</B>This extension pack
+works with Cloud APM (SaaS) only. If you have an existing Cloud APM
+on-premises installation, do NOT use this extension pack to deploy
+the Liberty data collector. Instead, download the data collector
+package from your existing Cloud APM installation and follow the
+instructions on Cloud APM Knowledge Center to configure the data
+collector. 
+</P>
+<BR><H3>Prerequisites</H3>
+<UL>
+	<LI>
+	You must have an Application Performance Management
+	subscription. If you do not have one yet, go to the <A HREF="https://www.ibm.com/us-en/marketplace/application-performance-management"><U>IBM
+	Marketplace</U></A> and request a free
+	trial of Application Performance Management.
+	<LI><P>The monitor-1.0
+	feature is required by the data collector. If
+	your Liberty system has access to the Liberty feature repository,
+	the extension pack can automatically download and install this
+	feature.</P>
+</UL>
+<H3>Installation</H3>
+<OL>
+	<LI><P>
+	Go to the root of your Liberty installation directory.
+	For example, <FONT FACE="Courier New, serif">/opt/ibm/wlp</FONT>.</P>
+	<LI><P>
+	Create a file named <FONT FACE="Courier New, serif">apmdc.properties</FONT>
+	under the <FONT FACE="Courier New, serif">wlp/etc/extensions</FONT>
+	directory with the following content in this file:</P>
+</OL>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0.18cm; line-height: 100%">
+<FONT FACE="Courier New, serif">com.ibm.websphere.productId=com.ibm.apm.dc</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-top: 0.05cm; margin-bottom: 0.18cm; line-height: 100%">
+<FONT FACE="Courier New, serif">com.ibm.websphere.productInstall=apmdc/</FONT></P>
+<OL START=3>
+	<LI>From the <FONT FACE="Courier New, serif">wlp/bin</FONT>
+	directory, install this extension pack with the following command.</P>
+</OL>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0.28cm"><FONT FACE="Courier New, serif">./installUtility
+install apmDataCollector-7.3 --to=apmdc</FONT></P>
+
+<BR>
+<H3>Configuration</H3>
+Use the <FONT FACE="Courier New, serif">config_liberty_dc.sh</FONT> script in the <I>&lt;</I>
+<FONT FACE="Courier New, serif"><I>liberty_home&gt;</I>/../apmdc/7.3.0.14.04/bin</FONT>
+directory to configure the data collector by responding to prompts.
+<P><B>Note:</B>
+If you encounter curl: (35) SSL connect error during the
+configuration process, update the curl of your system to the latest
+version and try again.
+<H3>Additional information</H3>
+<P STYLE="margin-left: 0.64cm; margin-top: 0.05cm; margin-bottom: 0.18cm; line-height: 100%">
+For complete documentation of this extension pack, see
+<A HREF="https://developer.ibm.com/apm/resources/liberty-extension-pack/">APM
+Developer Center</A>.</P>
+<P STYLE="margin-left: 0.64cm; margin-top: 0.05cm; margin-bottom: 0.18cm; line-height: 100%">
+For information about how to download the Liberty
+features with installUtility, see <A HREF="https://www.ibm.com/support/knowledgecenter/en/SSAW57_8.5.5/com.ibm.websphere.wlp.nd.doc/ae/twlp_ins_installUtilitydl.html">Downloading
+assets using the installUtility command</A> in
+the WebSphere Application Server Network Deployment Knowledge Center.</P>
+<P STYLE="margin-left: 0.64cm; margin-top: 0.05cm; margin-bottom: 0.18cm; line-height: 100%">
+For information about Cloud APM dashboards and advanced
+configuration of Liberty data collector, see the
+<A HREF="https://www.ibm.com/support/knowledgecenter/SSMKFH/com.ibm.apmaas.doc/welcome.htm">Cloud
+APM Knowledge Center</A>.
+</P>
+
+</div>
+</div>
+<div style="display:none">
+<script>$( document ).ready(function() {
+	$('#eLoader').height($(window).height());
+    setTimeout(function(){
+		location.href='https://developer.ibm.com/wasdev/downloads/#asset/features-com.ibm.apm.dataCollector-7.3';
+	},100);
+});
+</script>
+</div>
+</body>
+
+</html>

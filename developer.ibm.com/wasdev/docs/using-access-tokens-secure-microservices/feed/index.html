@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Using access tokens to secure microservices</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: JacobLu</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/#comment-147550</link>
+		<dc:creator><![CDATA[JacobLu]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2016 20:02:30 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15420#comment-147550</guid>
+		<description><![CDATA[Hi ayoho,
+
+We configured our websphere as OpenID connect RP. It generates a JsessionID as well as an WAS_* cookie (which I believe is the LTPA token). Is it possible to turn off LTPA cookie and rely solely on the JsessionId to identity the user session? Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Hi ayoho,</p>
+<p>We configured our websphere as OpenID connect RP. It generates a JsessionID as well as an WAS_* cookie (which I believe is the LTPA token). Is it possible to turn off LTPA cookie and rely solely on the JsessionId to identity the user session? Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/#comment-132228</link>
+		<dc:creator><![CDATA[Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev]]></dc:creator>
+		<pubDate>Thu, 17 Dec 2015 09:45:25 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15420#comment-132228</guid>
+		<description><![CDATA[[&#8230;] Using access tokens to secure microservices is the first of two from Ozzy. He explains how the access tokens created as a result of working with OAuth and OpenID Connect work and are used within a microservices architecture. [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Using access tokens to secure microservices is the first of two from Ozzy. He explains how the access tokens created as a result of working with OAuth and OpenID Connect work and are used within a microservices architecture. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hågen</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/#comment-131589</link>
+		<dc:creator><![CDATA[Hågen]]></dc:creator>
+		<pubDate>Sat, 28 Nov 2015 11:54:47 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15420#comment-131589</guid>
+		<description><![CDATA[What if I have an application that in some scenarios act as a RP, and in other scenarios act as a RS, can I configure liberty and openidconnect to support this? Or do I have to break my application up into several pieces with more distinct roles (RP vs RS)?]]></description>
+		<content:encoded><![CDATA[<p>What if I have an application that in some scenarios act as a RP, and in other scenarios act as a RS, can I configure liberty and openidconnect to support this? Or do I have to break my application up into several pieces with more distinct roles (RP vs RS)?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: ayoho</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/#comment-131305</link>
+		<dc:creator><![CDATA[ayoho]]></dc:creator>
+		<pubDate>Tue, 17 Nov 2015 16:37:23 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15420#comment-131305</guid>
+		<description><![CDATA[OpenID Connect and LTPA tokens are distinct single sign-on constructs in Liberty. They are both mechanisms used for granting access to protected resources, however they do not necessarily share any kind of interaction.
+
+When authenticating to a Liberty server acting as an OpenID Provider (OP), an LTPA token is generated for that particular user to facilitate single sign-on with the OP. When authenticating to a Liberty server acting as an OpenID Connect Relying Party (RP), an LTPA token may be generated for subsequent request to the RP. However, that LTPA token (the one generated for the RP) behaves more like a session token and cannot be shared with other servers (the token is returned using a different cookie name and might have been generated using a different LTPA key which could render it useless to other servers).]]></description>
+		<content:encoded><![CDATA[<p>OpenID Connect and LTPA tokens are distinct single sign-on constructs in Liberty. They are both mechanisms used for granting access to protected resources, however they do not necessarily share any kind of interaction.</p>
+<p>When authenticating to a Liberty server acting as an OpenID Provider (OP), an LTPA token is generated for that particular user to facilitate single sign-on with the OP. When authenticating to a Liberty server acting as an OpenID Connect Relying Party (RP), an LTPA token may be generated for subsequent request to the RP. However, that LTPA token (the one generated for the RP) behaves more like a session token and cannot be shared with other servers (the token is returned using a different cookie name and might have been generated using a different LTPA key which could render it useless to other servers).</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hågen</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-access-tokens-secure-microservices/#comment-131204</link>
+		<dc:creator><![CDATA[Hågen]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 17:03:05 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15420#comment-131204</guid>
+		<description><![CDATA[Thanks for a great article! How does this interact with the ltpa token/mechanism?]]></description>
+		<content:encoded><![CDATA[<p>Thanks for a great article! How does this interact with the ltpa token/mechanism?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

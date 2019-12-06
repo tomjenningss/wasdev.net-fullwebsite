@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Deploying Swagger-enabled endpoints with WebSphere Liberty, IBM Cloud, and API Connect</title>
+	<atom:link href="https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/#comment-147175</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Fri, 19 Aug 2016 15:05:43 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17519#comment-147175</guid>
+		<description><![CDATA[Formatting issues:
+
+   &#060;httpEndpoint host=&quot;*&quot; httpPort=&quot;8010&quot; httpsPort=&quot;8020&quot; id=&quot;defaultHttpEndpoint&quot;/&#062;]]></description>
+		<content:encoded><![CDATA[<p>Formatting issues:</p>
+<p>   &lt;httpEndpoint host=&#8221;*&#8221; httpPort=&#8221;8010&#8243; httpsPort=&#8221;8020&#8243; id=&#8221;defaultHttpEndpoint&#8221;/&gt;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/#comment-147174</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Fri, 19 Aug 2016 15:05:07 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17519#comment-147174</guid>
+		<description><![CDATA[Hey Simon,
+
+As we found out yesterday, you must include the httpsPort attribute in your httpEndpoint element (in your server.xml), for example:
+
+   &lt;httpEndpoint host=&quot;*&quot; httpPort=&quot;8010&quot; httpsPort=&quot;8020&quot; id=&quot;defaultHttpEndpoint&quot;/&gt;
+
+Thanks.]]></description>
+		<content:encoded><![CDATA[<p>Hey Simon,</p>
+<p>As we found out yesterday, you must include the httpsPort attribute in your httpEndpoint element (in your server.xml), for example:</p>
+<p>Thanks.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Simon Helsen</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/#comment-147171</link>
+		<dc:creator><![CDATA[Simon Helsen]]></dc:creator>
+		<pubDate>Thu, 18 Aug 2016 17:30:37 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17519#comment-147171</guid>
+		<description><![CDATA[Arthur, grt videos, but I am running in a funny problem after I deploy my application to Bluemix. The ibm/api/explorer endpoint is available, but when the Swagger UI tries to render itself, it complains with a message of this kind &quot;Can&#039;t read swagger JSON from https://.stage1.ng.bluemix.net/ibm/api/docs?compact=true&quot;
+
+When I manually check https://tiam.stage1.ng.bluemix.net/ibm/api/docs, it appears not to be available: Error 404: CWWKO1000E: There are no registered handlers that match the requested URL /ibm/api/docs.
+
+Then, when I check /ibm/api it only sends back this:
+
+{
+    &quot;version&quot;: 1,
+    &quot;roots&quot;: [
+        &quot;/ibm/api/docs/subscription&quot;
+    ]
+}
+
+The logs are not showing anything suspicious. Note that everything works fine in my local deployment
+
+(If there is a better way to ask for support, let me know)]]></description>
+		<content:encoded><![CDATA[<p>Arthur, grt videos, but I am running in a funny problem after I deploy my application to Bluemix. The ibm/api/explorer endpoint is available, but when the Swagger UI tries to render itself, it complains with a message of this kind &#8220;Can&#8217;t read swagger JSON from <a href="https://.stage1.ng.bluemix.net/ibm/api/docs?compact=true">https://.stage1.ng.bluemix.net/ibm/api/docs?compact=true</a>&#8221;</p>
+<p>When I manually check <a href="https://tiam.stage1.ng.bluemix.net/ibm/api/docs">https://tiam.stage1.ng.bluemix.net/ibm/api/docs</a>, it appears not to be available: Error 404: CWWKO1000E: There are no registered handlers that match the requested URL /ibm/api/docs.</p>
+<p>Then, when I check /ibm/api it only sends back this:</p>
+<p>{<br />
+    &#8220;version&#8221;: 1,<br />
+    &#8220;roots&#8221;: [<br />
+        &#8220;/ibm/api/docs/subscription&#8221;<br />
+    ]<br />
+}</p>
+<p>The logs are not showing anything suspicious. Note that everything works fine in my local deployment</p>
+<p>(If there is a better way to ask for support, let me know)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Arthur De Magalhaes</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/#comment-147100</link>
+		<dc:creator><![CDATA[Arthur De Magalhaes]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2016 13:54:56 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17519#comment-147100</guid>
+		<description><![CDATA[Hi Nihilson.  Great question.  Yes, the APIProvider interface is the perfect SPI for this environment.  Just register a service that implements that interface, and you will get a chance to provide Swagger documentation (in either YAML or JSON format) into the aggregator. 
+
+Please note that this is an SPI (not an API), which means it is only available if your OSGi bundle is part of a user of extended feature.
+
+In your Liberty installation, you&#039;ll find the interface inside the jar wlp\dev\spi\ibm\com.ibm.websphere.appserver.spi.restHandler_x.jar
+
+The javadoc is inside the /javadoc folder in that parent directory, or online at http://www.ibm.com/support/knowledgecenter/SS7JFU_8.5.5/com.ibm.websphere.javadoc.liberty.doc/com.ibm.websphere.appserver.spi.restHandler_1.4-javadoc/com/ibm/wsspi/rest/api/discovery/APIProvider.html]]></description>
+		<content:encoded><![CDATA[<p>Hi Nihilson.  Great question.  Yes, the APIProvider interface is the perfect SPI for this environment.  Just register a service that implements that interface, and you will get a chance to provide Swagger documentation (in either YAML or JSON format) into the aggregator. </p>
+<p>Please note that this is an SPI (not an API), which means it is only available if your OSGi bundle is part of a user of extended feature.</p>
+<p>In your Liberty installation, you&#8217;ll find the interface inside the jar wlp\dev\spi\ibm\com.ibm.websphere.appserver.spi.restHandler_x.jar</p>
+<p>The javadoc is inside the /javadoc folder in that parent directory, or online at <a href="http://www.ibm.com/support/knowledgecenter/SS7JFU_8.5.5/com.ibm.websphere.javadoc.liberty.doc/com.ibm.websphere.appserver.spi.restHandler_1.4-javadoc/com/ibm/wsspi/rest/api/discovery/APIProvider.html">http://www.ibm.com/support/knowledgecenter/SS7JFU_8.5.5/com.ibm.websphere.javadoc.liberty.doc/com.ibm.websphere.appserver.spi.restHandler_1.4-javadoc/com/ibm/wsspi/rest/api/discovery/APIProvider.html</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Nihilson</title>
+		<link>https://developer.ibm.com/wasdev/blog/2016/04/13/deploying-swagger-enabled-endpoints-websphere-liberty-bluemix-api-connect/#comment-147087</link>
+		<dc:creator><![CDATA[Nihilson]]></dc:creator>
+		<pubDate>Sun, 31 Jul 2016 18:00:14 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?p=17519#comment-147087</guid>
+		<description><![CDATA[The demo and the sample application showing the hybrid pattern is very helpful. Good One !! Does the apiDiscovery-1.0 feature support only Web Applications for API discovery ? For non-web modules say a OSGi bundle fragment (.jar), will com.ibm.wsspi.rest.api.discovery.APIProvider Interface help ?]]></description>
+		<content:encoded><![CDATA[<p>The demo and the sample application showing the hybrid pattern is very helpful. Good One !! Does the apiDiscovery-1.0 feature support only Web Applications for API discovery ? For non-web modules say a OSGi bundle fragment (.jar), will com.ibm.wsspi.rest.api.discovery.APIProvider Interface help ?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Introducing the Puppet module for WebSphere Liberty</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-146362</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Wed, 11 May 2016 17:05:34 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-146362</guid>
+		<description><![CDATA[Hi Santhil,
+
+Please could you give a bit more context to your question (email: wasdev@uk.ibm.com). And I&#039;ll find the relevant person to answer your question.
+
+Thanks,
+Laura]]></description>
+		<content:encoded><![CDATA[<p>Hi Santhil,</p>
+<p>Please could you give a bit more context to your question (email: <a href="mailto:wasdev@uk.ibm.com">wasdev@uk.ibm.com</a>). And I&#8217;ll find the relevant person to answer your question.</p>
+<p>Thanks,<br />
+Laura</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Santhil</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-146336</link>
+		<dc:creator><![CDATA[Santhil]]></dc:creator>
+		<pubDate>Tue, 10 May 2016 00:45:45 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-146336</guid>
+		<description><![CDATA[Hello,
+
+Does puppet as auto discovery future to capture all the changes after the initial install for websphere application server? Please let me know if I need to elaborate my question.
+
+Thanks 
+
+Santhil Murugesan
+Daimler Trucks North America]]></description>
+		<content:encoded><![CDATA[<p>Hello,</p>
+<p>Does puppet as auto discovery future to capture all the changes after the initial install for websphere application server? Please let me know if I need to elaborate my question.</p>
+<p>Thanks </p>
+<p>Santhil Murugesan<br />
+Daimler Trucks North America</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Anil Maddipatla</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-114338</link>
+		<dc:creator><![CDATA[Anil Maddipatla]]></dc:creator>
+		<pubDate>Sun, 08 Mar 2015 15:54:13 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-114338</guid>
+		<description><![CDATA[Hi,
+   Thanks for your interest.If you are using puppet module for liberty without vagrant.The following is the structure you would need to place your apps,dependencies and server.xml files.
+
+1) /wlp/files - location to place your wlp installables
+
+2) /wlp/files/apps - location for your apps. If your app is named SampleApplication.war (or any other extension) then you need to have your application&#039;s deployment xml or corresponding additions to server.xml as SampleApplication.xml 
+
+The module takes care of automatically copying both the application and its corresponding server.xml extension based on the definition in site.pp
+
+3) /wlp/files/dependantLibs - If your application has dependencies like 3rd party libraries they can be placed in this directory.
+
+The base server.xml is taken from /wlp/templates.
+
+assuming  typically /etc/puppetlabs/puppet/modules/
+
+We are having a more another article coming up soon that would describe this in greater detail.That should clarify a lot of things.
+
+Regards
+Anil]]></description>
+		<content:encoded><![CDATA[<p>Hi,<br />
+   Thanks for your interest.If you are using puppet module for liberty without vagrant.The following is the structure you would need to place your apps,dependencies and server.xml files.</p>
+<p>1) /wlp/files &#8211; location to place your wlp installables</p>
+<p>2) /wlp/files/apps &#8211; location for your apps. If your app is named SampleApplication.war (or any other extension) then you need to have your application&#8217;s deployment xml or corresponding additions to server.xml as SampleApplication.xml </p>
+<p>The module takes care of automatically copying both the application and its corresponding server.xml extension based on the definition in site.pp</p>
+<p>3) /wlp/files/dependantLibs &#8211; If your application has dependencies like 3rd party libraries they can be placed in this directory.</p>
+<p>The base server.xml is taken from /wlp/templates.</p>
+<p>assuming  typically /etc/puppetlabs/puppet/modules/</p>
+<p>We are having a more another article coming up soon that would describe this in greater detail.That should clarify a lot of things.</p>
+<p>Regards<br />
+Anil</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jeremy Hughes</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-113617</link>
+		<dc:creator><![CDATA[Jeremy Hughes]]></dc:creator>
+		<pubDate>Fri, 06 Mar 2015 08:22:18 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-113617</guid>
+		<description><![CDATA[Thanks for your comment. We&#039;ve published the module here: https://forge.puppetlabs.com/ibmwas/wlp]]></description>
+		<content:encoded><![CDATA[<p>Thanks for your comment. We&#8217;ve published the module here: <a href="https://forge.puppetlabs.com/ibmwas/wlp">https://forge.puppetlabs.com/ibmwas/wlp</a></p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: AJ Johnson</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-113564</link>
+		<dc:creator><![CDATA[AJ Johnson]]></dc:creator>
+		<pubDate>Thu, 05 Mar 2015 18:34:25 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-113564</guid>
+		<description><![CDATA[This is excellent.  Puppet users will be excited to see support for Websphere Liberty.  Is it possible to publish this module on the Puppet Forge (https://forge.puppetlabs.com/).  Thanks!]]></description>
+		<content:encoded><![CDATA[<p>This is excellent.  Puppet users will be excited to see support for Websphere Liberty.  Is it possible to publish this module on the Puppet Forge (<a href="https://forge.puppetlabs.com/">https://forge.puppetlabs.com/</a>).  Thanks!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Name *</title>
+		<link>https://developer.ibm.com/wasdev/docs/introducing-puppet-module-websphere-liberty/#comment-113215</link>
+		<dc:creator><![CDATA[Name *]]></dc:creator>
+		<pubDate>Tue, 03 Mar 2015 19:40:20 +0000</pubDate>
+		<guid isPermaLink="false">https://www.ibmdw.net/wasdev/?post_type=doc&#038;p=8475#comment-113215</guid>
+		<description><![CDATA[We are very interested to leverage Puppet to deploy Liberty profile but without Vagrant presence. Where should I place the sample application and sample server.xml in this case? Thanks, Jeffrey]]></description>
+		<content:encoded><![CDATA[<p>We are very interested to leverage Puppet to deploy Liberty profile but without Vagrant presence. Where should I place the sample application and sample server.xml in this case? Thanks, Jeffrey</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

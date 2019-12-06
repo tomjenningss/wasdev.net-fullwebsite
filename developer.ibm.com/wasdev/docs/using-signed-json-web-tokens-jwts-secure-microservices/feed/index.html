@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Using signed JSON Web Tokens (JWTs) to secure microservices</title>
+	<atom:link href="https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/feed/" rel="self" type="application/rss+xml" />
+	<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/</link>
+	<description>Enterprise Java developer community</description>
+	<lastBuildDate>Mon, 02 Dec 2019 09:24:19 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.9</generator>
+	<item>
+		<title>By: Denis Forveille</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-152292</link>
+		<dc:creator><![CDATA[Denis Forveille]]></dc:creator>
+		<pubDate>Mon, 16 Apr 2018 15:37:20 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-152292</guid>
+		<description><![CDATA[Excellent  article! Thanks
+Q: In case of protecting  JAX_RS apps, is there a reason to use a standard @WebFilter instead of using the &quot;more JAX_RS way&quot; by using a class that implements ContainerRequestFilter with an annotation that is added to each JAX_RS endpoint we want to protect ?
+@Secured
+@Provider
+@Priority(Priorities.AUTHENTICATION)
+public class SecuredFilter implements ContainerRequestFilter {
+    public void filter(ContainerRequestContext requestContext) throws IOException {...}
+----
+@javax.ws.rs.NameBinding
+@Retention(RUNTIME)
+@Target({TYPE, METHOD})
+public @interface Secured {}
+-----
+@GET
+@Secured
+public Response mySecuredMethod() {...}]]></description>
+		<content:encoded><![CDATA[<p>Excellent  article! Thanks<br />
+Q: In case of protecting  JAX_RS apps, is there a reason to use a standard @WebFilter instead of using the &#8220;more JAX_RS way&#8221; by using a class that implements ContainerRequestFilter with an annotation that is added to each JAX_RS endpoint we want to protect ?<br />
+@Secured<br />
+@Provider<br />
+@Priority(Priorities.AUTHENTICATION)<br />
+public class SecuredFilter implements ContainerRequestFilter {<br />
+    public void filter(ContainerRequestContext requestContext) throws IOException {&#8230;}<br />
+&#8212;-<br />
+@javax.ws.rs.NameBinding<br />
+@Retention(RUNTIME)<br />
+@Target({TYPE, METHOD})<br />
+public @interface Secured {}<br />
+&#8212;&#8211;<br />
+@GET<br />
+@Secured<br />
+public Response mySecuredMethod() {&#8230;}</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ernani Joppert</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-147041</link>
+		<dc:creator><![CDATA[Ernani Joppert]]></dc:creator>
+		<pubDate>Sun, 24 Jul 2016 21:20:26 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-147041</guid>
+		<description><![CDATA[It seems I&#039;ve missed reading this section {Propagating identity using signed-JWTs}, it outlines identity propagation like a blueberry loaded cheescake...it seems identity propagation is the word to use instead of downstream delegation. Sorry for my miss!]]></description>
+		<content:encoded><![CDATA[<p>It seems I&#8217;ve missed reading this section {Propagating identity using signed-JWTs}, it outlines identity propagation like a blueberry loaded cheescake&#8230;it seems identity propagation is the word to use instead of downstream delegation. Sorry for my miss!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ernani Joppert</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-147036</link>
+		<dc:creator><![CDATA[Ernani Joppert]]></dc:creator>
+		<pubDate>Sun, 24 Jul 2016 04:07:58 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-147036</guid>
+		<description><![CDATA[Doesn&#039;t openidConnectClient validate the token with the certificate existing in indicated alias in trust store? I thought so.
+The same goes with WAS Full Profile where signVerifyAlias can be used to map a certificate alias in CellDefaultTrustStore, isn&#039;t it?
+BTW, this post provides a lot of great tips to validate the id_token with its given trust store and certificate alias programatically, but is this really required? I&#039;ve been new to openid connect and I also have heard about the term downstream delegation, which in essence sends the authorization token and refresh token to a 3rd party service, but, is the id_token also possible to be sent donwstream? Is this the reason  why it is required to perform its signature validation again? Thanks a lot!]]></description>
+		<content:encoded><![CDATA[<p>Doesn&#8217;t openidConnectClient validate the token with the certificate existing in indicated alias in trust store? I thought so.<br />
+The same goes with WAS Full Profile where signVerifyAlias can be used to map a certificate alias in CellDefaultTrustStore, isn&#8217;t it?<br />
+BTW, this post provides a lot of great tips to validate the id_token with its given trust store and certificate alias programatically, but is this really required? I&#8217;ve been new to openid connect and I also have heard about the term downstream delegation, which in essence sends the authorization token and refresh token to a 3rd party service, but, is the id_token also possible to be sent donwstream? Is this the reason  why it is required to perform its signature validation again? Thanks a lot!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-131760</link>
+		<dc:creator><![CDATA[Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev]]></dc:creator>
+		<pubDate>Fri, 04 Dec 2015 15:03:43 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-131760</guid>
+		<description><![CDATA[[&#8230;] Using signed JSON Web Tokens (JWTs) to secure microservices builds on the previous article to explain how to use Signed JWTs to propagate identity instead of access tokens. [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] Using signed JSON Web Tokens (JWTs) to secure microservices builds on the previous article to explain how to use Signed JWTs to propagate identity instead of access tokens. [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Ram Vennam</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-131216</link>
+		<dc:creator><![CDATA[Ram Vennam]]></dc:creator>
+		<pubDate>Fri, 13 Nov 2015 22:21:40 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-131216</guid>
+		<description><![CDATA[Great post Ozzy!]]></description>
+		<content:encoded><![CDATA[<p>Great post Ozzy!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Laura Cowen</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-131213</link>
+		<dc:creator><![CDATA[Laura Cowen]]></dc:creator>
+		<pubDate>Fri, 13 Nov 2015 09:56:07 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-131213</guid>
+		<description><![CDATA[Done. Sorry, Wordpress macro bug caught us out again.]]></description>
+		<content:encoded><![CDATA[<p>Done. Sorry, WordPress macro bug caught us out again.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Secure Microservices with signed JSON Web Tokens (JWTs) &#124; JAVA</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-131210</link>
+		<dc:creator><![CDATA[Secure Microservices with signed JSON Web Tokens (JWTs) &#124; JAVA]]></dc:creator>
+		<pubDate>Fri, 13 Nov 2015 05:02:51 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-131210</guid>
+		<description><![CDATA[[&#8230;] by  fadar  [link] [3 comments]  Full article:Secure Microservices with signed JSON Web Tokens [&#8230;]]]></description>
+		<content:encoded><![CDATA[<p>[&#8230;] by  fadar  [link] [3 comments]  Full article:Secure Microservices with signed JSON Web Tokens [&#8230;]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Stephan Knitelius</title>
+		<link>https://developer.ibm.com/wasdev/docs/using-signed-json-web-tokens-jwts-secure-microservices/#comment-131199</link>
+		<dc:creator><![CDATA[Stephan Knitelius]]></dc:creator>
+		<pubDate>Thu, 12 Nov 2015 13:11:13 +0000</pubDate>
+		<guid isPermaLink="false">https://developer.ibm.com/wasdev/?post_type=doc&#038;p=15417#comment-131199</guid>
+		<description><![CDATA[Good post, can you please fix the escaped characters in the xml.]]></description>
+		<content:encoded><![CDATA[<p>Good post, can you please fix the escaped characters in the xml.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

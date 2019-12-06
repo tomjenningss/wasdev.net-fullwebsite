@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="jpa,database," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-07-15",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Developing JPA 2.1 applications in WebSphere Developer Tools and Liberty",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"jpa,database,",
+						"contentArea": "Coding, Java EE"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"jpa,database,",
+		      "description":"Developing JPA 2.1 applications in WebSphere Developer Tools and Liberty"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Developing JPA 2.1 applications in WebSphere Developer Tools and Liberty - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="How to use the WebSphere Developer Tools for WAS Liberty to write JPA 2.1 applications."/>
+<link rel="canonical" href="index.html%3Fp=13614.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Developing JPA 2.1 applications in WebSphere Developer Tools and Liberty Comments Feed" href="docs/developing-jpa-2-1-applications-websphere-developer-tools-liberty/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=13614.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-jpa-2-1-applications-websphere-developer-tools-liberty%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-jpa-2-1-applications-websphere-developer-tools-liberty%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-13614 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=13614.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM¨</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a></span></div><h1 class="entry-title">Developing JPA 2.1 applications in WebSphere Developer Tools and Liberty</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/theivend/index.html">Len Theivendra</a></span><br>Published on July 15, 2015<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=13614.html#comments" class="pn_comments_icon">0 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=13614.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">Developing JPA 2.1 applications in WebSphere Developer Tools (WDT) for Liberty can greatly benefit from using the WebSphere Developer Tools (WDT) database connectivity tools with its JPA tooling. I&#8217;ll show some examples of configuring data sources for Liberty in a JPA application, taking advantage of the new schema generation feature in JPA 2.1 to create tables based on entities, and finally the auto-generation of JPA entities based on a database schema.</p>
+<h2>Getting started</h2>
+<p>For the purposes of this post, let&#8217;s use an embedded Derby database as an example and assume it&#8217;s in the <code>C:databasesderbysample</code> directory.  And let&#8217;s also assume the database&#8217;s JDBC driver <code>.jar</code> file is located at <code>C:jdbcderby.jar</code>.</p>
+<p>Firstly, a connection to the database needs to be created in WDT in the Data Source Explorer view:</p>
+<ol>
+<li>On the <strong>Database Connections</strong> node, click <strong>New</strong> or click <strong>File > New > Connection Profiles > Connection Profile</strong>.</li>
+<li>Choose <strong>Derby</strong> as the database type, and name your connection.</li>
+<li>On the <strong>Specify a Driver and Connection Details</strong> page, specify <code>C:databasesderbysample</code> as the database location.</li>
+<li>On the <strong>Drivers</strong> drop-down list, ensure <strong>Derby Embedded JDBC Driver</strong> is selected and click the triangle icon to the right of it to edit and specify the location of the JDBC <code>derby.jar</code> driver.</li>
+</ol>
+<p><a href="wp-content/uploads/sites/9/2015/06/dbconnection.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/dbconnection.jpg" alt="dbconnection" width="525" height="615" class="aligncenter size-full wp-image-13413" srcset="wp-content/uploads/sites/9/2015/06/dbconnection.jpg 525w, wp-content/uploads/sites/9/2015/06/dbconnection-256x300.jpg 256w" sizes="(max-width: 525px) 100vw, 525px" /></a></p>
+<p>After the connection is created you can associate it with your application project (that has the JPA facet enabled) by going to the <strong>JPA</strong> section in the project&#8217;s properties and choosing the connection. Once this is done, WDT will now perform extra validation in your application against the database, such as for example ensuring that any table or column referred to in your JPA entity <code>@Table</code> or <code>@Column</code> annotations match what&#8217;s in the database, etc.</p>
+<h2>Configuring a data source</h2>
+<p>There are two types of data sources that can be used in JPA applications running on Liberty: JTA and Resource Local.  A JTA type of data source is needed when using container-managed persistence. A Resource Local type data source is typically used when the application manages the persistence.</p>
+<p>For our example, let&#8217;s first create a JTA data source:</p>
+<ol>
+<li>In the Liberty server configuration editor for <code>server.xml</code>, add a <strong>Shared Library</strong> for the Derby JDBC driver. You can browse to the base directory where the driver .jars are, and then choose the applicable jar files for the include pattern, which in this case is derby.jar
+<p><a href="wp-content/uploads/sites/9/2015/06/ds_serverconfig_sharedlib.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/ds_serverconfig_sharedlib-1024x703.jpg" alt="ds_serverconfig_sharedlib" width="980" height="672" class="aligncenter size-large wp-image-13435" srcset="wp-content/uploads/sites/9/2015/06/ds_serverconfig_sharedlib-1024x703.jpg 1024w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_sharedlib-300x206.jpg 300w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_sharedlib.jpg 1082w" sizes="(max-width: 980px) 100vw, 980px" /></a></p>
+</li>
+<li>Add a <strong>Data Source</strong> element to the server configuration node, with a JNDI name of your choice; for example <code>jdbc/sampleDerbyDS</code>. And then add a <strong>JDBC Driver</strong> child element to the <strong>Data Source</strong> node, choosing the shared library created above for the <strong>Shared library reference</strong> field. Add a second child element to specify the database properties, in this case <strong>Derby Embedded Properties</strong> where the physical location of the database <code>C:databasesderbysample</code> is specified.
+<p><a href="wp-content/uploads/sites/9/2015/06/ds_serverconfig_jdbcdriver.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/ds_serverconfig_jdbcdriver-1024x695.jpg" alt="ds_serverconfig_jdbcdriver" width="980" height="665" class="aligncenter size-large wp-image-13438" srcset="wp-content/uploads/sites/9/2015/06/ds_serverconfig_jdbcdriver-1024x695.jpg 1024w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_jdbcdriver-300x203.jpg 300w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_jdbcdriver.jpg 1085w" sizes="(max-width: 980px) 100vw, 980px" /></a></p>
+<p><a href="wp-content/uploads/sites/9/2015/06/ds_serverconfig_derbyprops.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/ds_serverconfig_derbyprops-1024x699.jpg" alt="ds_serverconfig_derbyprops" width="980" height="668" class="aligncenter size-large wp-image-13437" srcset="wp-content/uploads/sites/9/2015/06/ds_serverconfig_derbyprops-1024x699.jpg 1024w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_derbyprops-300x204.jpg 300w, wp-content/uploads/sites/9/2015/06/ds_serverconfig_derbyprops.jpg 1079w" sizes="(max-width: 980px) 100vw, 980px" /></a></p>
+</li>
+<li>Finally, we need to create a reference to this new data source in the <code>persistence.xml</code> deployment descriptor. To do this, open the editor and switch to the <strong>Connection</strong> tab, and specify the JNDI name of the data source in the <strong>JTA data source</strong> field:
+<p><a href="wp-content/uploads/sites/9/2015/06/ds_jta_persistencexml.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/ds_jta_persistencexml.jpg" alt="ds_jta_persistencexml" width="920" height="632" class="aligncentere size-large wp-image-13440" srcset="wp-content/uploads/sites/9/2015/06/ds_jta_persistencexml.jpg 1082w, wp-content/uploads/sites/9/2015/06/ds_jta_persistencexml-300x206.jpg 300w, wp-content/uploads/sites/9/2015/06/ds_jta_persistencexml-1024x703.jpg 1024w" sizes="(max-width: 920px) 100vw, 920px" /></a></p>
+</li>
+</ol>
+<p>The following XML is the equivalent of the XML that WDT configures in <code>server.xml</code> when you have finished the above steps:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;server description=&quot;new server&quot;&gt;
+
+    &lt;!-- Enable features --&gt;
+    &lt;featureManager&gt;
+    
+        &lt;feature&gt;localConnector-1.0&lt;/feature&gt;
+        &lt;feature&gt;jsf-2.2&lt;/feature&gt;
+        &lt;feature&gt;jpa-2.1&lt;/feature&gt;
+    &lt;/featureManager&gt;
+
+    &lt;!-- To access this server from a remote client add a host attribute to the following element, e.g. host=&quot;*&quot; --&gt;
+    &lt;httpEndpoint httpPort=&quot;9080&quot; httpsPort=&quot;9443&quot; id=&quot;defaultHttpEndpoint&quot;/&gt;
+
+
+    &lt;applicationMonitor updateTrigger=&quot;mbean&quot;/&gt;
+
+	&lt;dataSource jndiName=&quot;jdbc/sampleDerbyDS&quot; id=&quot;SampleDerbyDS&quot;&gt;
+		&lt;jdbcDriver libraryRef=&quot;DerbyLib&quot;/&gt;
+		&lt;properties.derby.embedded databaseName=&quot;c:/databases/derbysample&quot; createDatabase=&quot;false&quot;/&gt;
+	&lt;/dataSource&gt;
+	&lt;library id=&quot;DerbyLib&quot;&gt;
+		&lt;fileset dir=&quot;c:/jdbc&quot; includes=&quot;derby.jar&quot;/&gt;
+	&lt;/library&gt;
+
+&lt;/server&gt;
+</pre>
+<p>For more information about configuring data sources in Liberty, refer to the <a href="https://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/twlp_dep_configuring_ds.html" title="IBM Knowledge Center">IBM Knowledge Center</a></p>
+<p>Now, let&#8217;s create a Resource Local data source:</p>
+<ol>
+<li>Open the persistence.xml editor and switch to the <strong>Connections</strong> tab.</li>
+<li>For <strong>Transaction type</strong>, choose <strong>Resource Local</strong> from the drop-down list.</li>
+<li>After naming the data source, click on <strong>Populate from Connection&#8230;</strong></li>
+<li>WDT now examines the database connection associated to your JPA project and fills in the appropriate JDBC properties. It&#8217;s as easy as that!
+<p><a href="wp-content/uploads/sites/9/2015/06/ds_resourcelocal_persistencexml.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/ds_resourcelocal_persistencexml.jpg" alt="ds_resourcelocal_persistencexml" width="917" height="626" class="aligncenter size-large wp-image-13452" srcset="wp-content/uploads/sites/9/2015/06/ds_resourcelocal_persistencexml.jpg 1079w, wp-content/uploads/sites/9/2015/06/ds_resourcelocal_persistencexml-300x204.jpg 300w, wp-content/uploads/sites/9/2015/06/ds_resourcelocal_persistencexml-1024x699.jpg 1024w" sizes="(max-width: 917px) 100vw, 917px" /></a></p>
+</li>
+</ol>
+<p>The updated <code>persistence.xml</code> looks like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;persistence xmlns=&quot;http://xmlns.jcp.org/xml/ns/persistence&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.1&quot;
+        xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd&quot;&gt; 
+        &lt;persistence-unit name=&quot;SamplePU&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;&gt;
+            &lt;non-jta-data-source&gt;localDS&lt;/non-jta-data-source&gt;
+            &lt;class&gt;com.test.SampleEntity&lt;/class&gt;
+            &lt;exclude-unlisted-classes&gt;true&lt;/exclude-unlisted-classes&gt;
+            &lt;properties&gt;
+               &lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:derby:c:databasesderbysample&quot;/&gt;
+               &lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;&quot;/&gt;
+               &lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;&quot;/&gt;
+               &lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;org.apache.derby.jdbc.EmbeddedDriver&quot;/&gt;
+            &lt;/properties&gt;
+        &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</pre>
+<h2>Using schema generation in JPA 2.1 to generate database tables from entities</h2>
+<p>JPA 2.1 introduces schema generation facilities which enable generating database tables, columns, and other schema in a standard and portable way. In addition to this, the latest specification also provides a way to load data into your database schema at startup.</p>
+<p>With these new features, you can now create your schema and prepare the database with startup data for your application when the server starts. For prototyping and testing, this can be a valuable feature. Liberty and WDT now support this and all the other new features of JPA 2.1 based on the EclipseLink JPA implementation.</p>
+<p>Let&#8217;s look at how we can configure schema generation for our example:</p>
+<ol>
+<li>In the persistence.xml editor, switch to the <strong>Schema Generation</strong> tab.</li>
+<li>To both delete and create the database tables on server startup, choose <strong>Drop and Create</strong> from the <strong>Database action</strong> drop-down list.</li>
+<li>Similar to the Database action, the <strong>Scripts generation</strong> field specifies the action for DDL scripts on server startup.</li>
+<li>The fields <strong>Metadata and script creation</strong> and <strong>Metadata and script dropping</strong> enable you to specify the order that, and what exactly happens when, the database and the DDL files are dropped or created. For example, choosing <strong>Metadata then Script</strong> means that the database will be modified first, and then the DDL script files generated.</li>
+<li>The <strong>Create database schemas</strong> check box enables you to enable or disable any schema creation actions that you have already set up.</li>
+<li>You can fill in the fields <strong>Scripts create target</strong> and <strong>Scripts drop target</strong> with the filenames of the DDL files in URI format.
+<p><a href="wp-content/uploads/sites/9/2015/06/schemagen_persistencexml.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/schemagen_persistencexml.jpg" alt="schemagen_persistencexml" width="920" height="627" class="aligncenter size-large wp-image-13455" srcset="wp-content/uploads/sites/9/2015/06/schemagen_persistencexml.jpg 1082w, wp-content/uploads/sites/9/2015/06/schemagen_persistencexml-300x204.jpg 300w, wp-content/uploads/sites/9/2015/06/schemagen_persistencexml-1024x697.jpg 1024w" sizes="(max-width: 920px) 100vw, 920px" /></a></p>
+</li>
+</ol>
+<p>The updated <code>persistence.xml</code> looks like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;persistence xmlns=&quot;http://xmlns.jcp.org/xml/ns/persistence&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.1&quot;
+        xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd&quot;&gt; 
+        &lt;persistence-unit name=&quot;SamplePU&quot;&gt;
+               &lt;jta-data-source&gt;jdbc/sampleDerbyDS&lt;/jta-data-source&gt;
+               &lt;class&gt;com.test.SampleEntity&lt;/class&gt;
+               &lt;exclude-unlisted-classes&gt;true&lt;/exclude-unlisted-classes&gt;
+               &lt;properties&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.create-source&quot; value=&quot;metadata-then-script&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.drop-source&quot; value=&quot;metadata-then-script&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.scripts.create-target&quot; value=&quot;file:///c:/temp/createSample.sql&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.scripts.drop-target&quot; value=&quot;file:///c:/temp/dropSample.sql&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.scripts.action&quot; value=&quot;drop-and-create&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.database.action&quot; value=&quot;drop-and-create&quot;/&gt;
+           			&lt;property name=&quot;javax.persistence.schema-generation.create-database-schemas&quot; value=&quot;true&quot;/&gt;
+               &lt;/properties&gt;
+        &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</pre>
+<p>With this configuration, when the Liberty server is started, it first drops the relevant tables for your entity beans from the database, then creates them afresh, then generates two DDL script files in <code>C:tempcreateSample.sql</code> and <code>C:tempdropSample.sql</code>. These two DDL script files contain the SQL statements to create and drop the tables.</p>
+<h2>Generating JPA entities from database tables</h2>
+<p>The previous section showed how to use WDT and Liberty to generate schema automatically based on JPA entities in an application. In this section, let&#8217;s do the reverse and generate JPA entities based on existing database schema.  This is useful to get a head-start on developing your entities modeled on an existing database schema, which can then be modified and further customized by hand to suit your application needs.</p>
+<p>WDT provides a convenient wizard that walks you through the process of choosing the tables from a schema and setting up further preferences for how exactly the generated entity beans will look.</p>
+<p>Assuming our sample Derby database has three tables for a simple relational model of employees and departments, and a JPA enabled project that is already connected to this database, here are the steps to generate JPA entities for the schema:</p>
+<ol>
+<li>From the project&#8217;s context menu, click on <strong>JPA Tools > Generate Entities from Tables&#8230;</strong>.</li>
+<li>On the first page of the wizard, select the tables you want to generate tables for. In this case, let&#8217;s choose all three:
+<p><a href="wp-content/uploads/sites/9/2015/06/entitygen_wiz1.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/entitygen_wiz1.jpg" alt="entitygen_wiz1" width="613" height="783" class="aligncenter size-large wp-image-13479" srcset="wp-content/uploads/sites/9/2015/06/entitygen_wiz1.jpg 613w, wp-content/uploads/sites/9/2015/06/entitygen_wiz1-234x300.jpg 234w" sizes="(max-width: 613px) 100vw, 613px" /></a></p>
+</li>
+<li>
+<p>On the second page, WDT discovers all the existing relationships between the tables you have chosen, and displays a graphical view of the entity relationships that is generated, so that you can further edit and customize them as necessary.</p>
+<p><a href="wp-content/uploads/sites/9/2015/06/entitygen_wiz2.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/entitygen_wiz2.jpg" alt="entitygen_wiz2" width="613" height="785" class="aligncenter size-large wp-image-13480" srcset="wp-content/uploads/sites/9/2015/06/entitygen_wiz2.jpg 613w, wp-content/uploads/sites/9/2015/06/entitygen_wiz2-234x300.jpg 234w" sizes="(max-width: 613px) 100vw, 613px" /></a></p>
+</li>
+<li>
+<p>The third and fourth pages give you further customization options as to how the entity data will be accessed (as fields or properties), default mapping options, Java package options, and so on:</p>
+<p><a href="wp-content/uploads/sites/9/2015/06/entitygen_wiz3.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/entitygen_wiz3.jpg" alt="entitygen_wiz3" width="613" height="783" class="aligncenter size-large wp-image-13481" srcset="wp-content/uploads/sites/9/2015/06/entitygen_wiz3.jpg 613w, wp-content/uploads/sites/9/2015/06/entitygen_wiz3-234x300.jpg 234w" sizes="(max-width: 613px) 100vw, 613px" /></a></p>
+<p><a href="wp-content/uploads/sites/9/2015/06/entitygen_wiz4.jpg"><br />
+<img src="wp-content/uploads/sites/9/2015/06/entitygen_wiz4.jpg" alt="entitygen_wiz4" width="613" height="785" class="aligncenter size-large wp-image-13482" srcset="wp-content/uploads/sites/9/2015/06/entitygen_wiz4.jpg 613w, wp-content/uploads/sites/9/2015/06/entitygen_wiz4-234x300.jpg 234w" sizes="(max-width: 613px) 100vw, 613px" /></a></p>
+</li>
+</ol>
+<p>When the wizard finishes, it generates the entity Java code in your project&#8217;s source folder.  For this example, here&#8217;s the generated entity bean for the Employee table:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.sql.Timestamp;
+
+
+/**
+ * The persistent class for the EMPLOYEE database table.
+ * 
+ */
+@Entity
+@NamedQuery(name=&quot;Employee.findAll&quot;, query=&quot;SELECT e FROM Employee e&quot;)
+public class Employee implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
+	private EmployeePK id;
+
+	private String firstname;
+
+	private Timestamp hiredate;
+
+	private String lastname;
+
+	private float salary;
+
+	//bi-directional many-to-one association to Address
+	@ManyToOne
+	private Address address;
+
+	//bi-directional many-to-one association to Department
+	@ManyToOne
+	private Department department;
+
+	public Employee() {
+	}
+
+	public EmployeePK getId() {
+		return this.id;
+	}
+
+	public void setId(EmployeePK id) {
+		this.id = id;
+	}
+
+	public String getFirstname() {
+		return this.firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public Timestamp getHiredate() {
+		return this.hiredate;
+	}
+
+	public void setHiredate(Timestamp hiredate) {
+		this.hiredate = hiredate;
+	}
+
+	public String getLastname() {
+		return this.lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public float getSalary() {
+		return this.salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+
+	public Address getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public Department getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+}
+</pre>
+<p>And there you have it. You&#8217;ve now configured data sources for Liberty in a JPA application, you&#8217;ve created tables based on entities using the schema generation feature, and you&#8217;ve generated JPA entities from a database schema.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/jpa/index.html" rel="tag">jpa</a>, <a href="blog/tag/database/index.html" rel="tag">database</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/theivend/index.html">Len Theivendra</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=13614.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='13614' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="92138125f9" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="81"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=13614.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=13614.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=13614.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-jpa-2-1-applications-websphere-developer-tools-liberty&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fdeveloping-jpa-2-1-applications-websphere-developer-tools-liberty"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

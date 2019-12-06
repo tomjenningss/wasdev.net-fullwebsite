@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="security,custom user registry,extending Liberty," />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2013-08-21",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Creating a custom user registry as a Liberty user feature",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"security,custom user registry,extending Liberty,",
+						"contentArea": "Coding, Java EE, OSGi, Extending Liberty"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"security,custom user registry,extending Liberty,",
+		      "description":"Creating a custom user registry as a Liberty user feature"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Creating a custom user registry as a Liberty user feature - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html%3Fp=4558.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Creating a custom user registry as a Liberty user feature Comments Feed" href="docs/creating-a-custom-user-registry-as-a-liberty-user-feature/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=4558.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-custom-user-registry-as-a-liberty-user-feature%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-custom-user-registry-as-a-liberty-user-feature%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-4558 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=4558.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/coding/index.html" rel="tag">Coding</a><i>, </i><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a><i>, </i><a href="docs/category/osgi-techs/index.html" rel="tag">OSGi</a><i>, </i><a href="docs/category/extensions/index.html" rel="tag">Extending Liberty</a></span></div><h1 class="entry-title">Creating a custom user registry as a Liberty user feature</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/ttorres/index.html">Teddy_J_Torres</a></span><br>Published on August 21, 2013<i> / Updated on January 5, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=4558.html#comments" class="pn_comments_icon">21 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=4558.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p class="wasdev-excerpt">How to create a Liberty user feature for a Custom User Registry implementation and configure it in a Liberty profile as a user registry for authentication.</p>
+<p>A custom registry is a registry that you implement using the <code>com.ibm.websphere.security.UserRegistry</code> Java interface, as provided by the product. A custom registry can support virtually any type of account repository from a relational database, flat file, and so on. For this sample, a file-based user registry is implemented by the <code>FileRegistrySample.java</code> file and users and groups are defined in the <code>users.props</code> and <code>groups.props</code> files (see the <a href="downloads/websphere-application-server-migration-tools/index.html#asset/samples-Custom_User_Registry">Custom User Registry sample</a> to download the files).</p>
+<p>In this sample, WebSphere Application Server Developer Tools are used to create a Liberty feature for the custom user registry implementation. An OSGi bundle is created with bundle activation and <code>FileRegistrySample.java</code> file is imported. The Activation class is modified to register it as an OSGi service and to receive configuration data. The Liberty feature is created with the OSGi bundle which can be installed into an existing Liberty profile server and used to configure a custom user registry for user applications.</p>
+<p><strong>Attention: The sample provided is intended to familiarize you with this feature. Do not use this sample in an actual production environment.</strong></p>
+<h2>Procedure</h2>
+<ol>
+<li>Implement the custom user registry (<code>FileRegistrySample.java</code> file). For more information, see <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-nd-mp&amp;topic=tsec_users">Developing the UserRegistry interface for using custom registries</a>.</li>
+<li>Creating an OSGi bundle with Bundle Activation. This can be achieved by using Eclipse and the WDT tool. For more information, see <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-libcore-mp&amp;topic=twlp_bundle_simple_activation">Developing an OSGi bundle with simple activation</a>
+<ol>
+<li>Create an OSGi Bundle Project and choose to create an <code>Activator</code> class</li>
+<li>Import the <code>FileRegistrysample.java</code> file</li>
+<li>Change the <code>Activator</code> class to extend the <code>FileRegistrySample</code> class and implement <code>BundleActivator, ManagedService</code></li>
+<li>Register the services. Add processing so that user and groups files defined in the <code>server.xml</code> file are passed to the <code>FileRegistrySample.java</code> file. The Liberty profile configuration is managed by the OSGi Configuration Admin service and can be accessed according to the OSGi Configuration Admin service specification.</li>
+<li>Make sure that correct import statements are added for the bundle.</li>
+</ol>
+</li>
+<li>Create the Liberty Feature using the tool:
+<ol>
+<li>Click on <code>New -&gt; OSGi -&gt; Liberty Feature</code></li>
+<li>Add the OSGi bundle which was created in the above step</li>
+<li>It will create a <code>subsystem.mf</code> file which is later renamed as the <code><i>feature_name</i>.mf</code> file</li>
+<li>This feature can be installed into the runtime by right clicking the feature name in the tool and choosing <code>"Install Feature"</code></li>
+<li>For more information, see <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&amp;product=was-libcore-mp&amp;topic=cwlp_prod_ext">Liberty profile: Product extension</a></li>
+</ol>
+</li>
+<li>Export the Liberty feature: Right-click on the feature name and export the feature as an <code>.esa</code> file</li>
+<li>Install the feature: Install the exported <code>.esa</code> file by running the command below from the <code>bin</code> directory in the Liberty profile installation:
+<pre>    featureManager install sampleCustomUserRegistry-1.0.esa</pre>
+<p>This will put the feature bundle in the <code>${wlp.user.dir}/extension/lib</code> directory and the .mf file in the <code>${wlp.user.lib}/extension/lib/features</code> directory.</li>
+<li>Configure the <code>server.xml</code> file:
+<ol>
+<li>After the feature is installed into the user product extension location, configure the <code>server.xml</code> file with the feature name. For example:
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;featureManager&gt;
+      &lt;feature&gt;usr:sampleCustomUserRegistry-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+</pre>
+</li>
+<li>Add the configuration information:
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;customUserRegistry usersFile=&quot;${server.config.dir}/resources/security/users.props&quot; groupsFile=&quot;${server.config.dir}/resources/security/groups.props&quot; /&gt;
+</pre>
+</li>
+<li>Add an application which will use this custom user registry for authentication. For example,
+<pre class="brush: xml; title: ; notranslate" title="">
+&lt;application type=&quot;ear&quot; id=&quot;SecureEJBSample&quot; name=&quot;SecureEJBSample&quot; location=&quot;${server.config.dir}/apps/SecureEJBSample.ear&quot;&gt;
+      &lt;application-bnd&gt;
+        &lt;security-role name=&quot;servletRole&quot;&gt;
+          &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt;
+        &lt;/security-role&gt;
+        &lt;security-role name=&quot;ejbRole&quot;&gt;
+          &lt;user name=&quot;user1&quot; /&gt;
+        &lt;/security-role&gt;
+      &lt;/application-bnd&gt;
+    &lt;/application&gt;
+</pre>
+</li>
+</ol>
+</li>
+<li>Execute the application:
+<ol>
+<li>Access the protected resource. For example:
+<pre>http://localhost:9080/SecureEJBSample/sampleServlet</pre>
+</li>
+<li>At the prompt, enter the valid user from custom user registry which is also mapped to a role in the application binding for authorization:
+<ul>
+<li>user: user1</li>
+<li>password: user1pwd</li>
+</ul>
+</li>
+<li>Confirm that the servlet output is as follows:
+<pre>In SecureEJBServlet, Hello Secure EJB World.</pre>
+</li>
+</ol>
+</li>
+</ol>
+<h2>Files needed for the sample:</h2>
+<p>The following files are included in the <code>CustomUserRegistrySample.jar</code> file:</p>
+<ol>
+<li>The <code>sampleCustomUserRegistry-1.0_1.0.0.201306201237.esa</code> file contains the sample custom user registry source and binaries</li>
+<li>The <code>users.props</code> file contains sample users and it is in the CustomUserRegistrySample server&#8217;s <code>resources/security</code> directory</li>
+<li>The <code>groups.props</code> file contains sample groups and it is in the CustomUserRegistrySample server&#8217;s <code>resources/security</code> directory</li>
+<li>The <code>SecureEJBSample.ear</code> file contains sample application and source and it is in the CustomUserRegistrySample server&#8217;s <code>apps</code> directory</li>
+</ol>
+							<footer class="entry-footer" id="doc_author">
+								<div class="tags-links">Tags <a href="blog/tag/security/index.html" rel="tag">security</a>, <a href="blog/tag/custom-user-registry/index.html" rel="tag">custom user registry</a>, <a href="blog/tag/extending-liberty/index.html" rel="tag">extending Liberty</a></div><div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/ttorres/index.html">Teddy_J_Torres</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			21 comments on"Creating a custom user registry as a Liberty user feature"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-150493">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ursus</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-150493">
+					July 04, 2017	         	</a>
+			</div>
+			      		<p>Hi all</p>
+<p>In WAS 8, I was able to look up the custom user registry with<br />
+  UserRegistry userRegistry = (UserRegistry) new InitialContext().lookup(&#8220;UserRegistry&#8221;);<br />
+With Websphere Liberty, this throws an NamingException.</p>
+<p>Searching the Web, I found this comment:<br />
+&#8220;In the Liberty profile the UserRegistry is not available in JNDI namespace. There is an API that can be used to get hold of it in its place.&#8221;<br />
+Unfortunately, it doesn&#8217;t say what API.</p>
+<p>How can I get hold of the user registry in Liberty?</p>
+<p>Thanks,<br />
+Ursus</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-150493' onclick='return addComment.moveForm( "comment-150493", "150493", "respond", "4558" )' aria-label='Reply to Ursus'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-ttorres bypostauthor odd alt depth-2 pn-comment" id="comment-150530">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Teddy_J_Torres</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-150530">
+					July 10, 2017	         	</a>
+			</div>
+			      		<p>Hi Ursus,</p>
+<p>The com.ibm.wsspi.security.registry.RegistryHelper API can be used to get the current UserRegistry instance in the same Liberty server.  For example,</p>
+<p>UserRegistry userRegistry = RegistryHelper.getUserRegistry(null);</p>
+<p>For more details and a full example of how to use the RegistryHelper API, please see <a href="https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_sec_apis.html">https://www.ibm.com/support/knowledgecenter/en/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_sec_apis.html</a> .</p>
+<p>Thank you for using WebSphere Application Server Liberty,</p>
+<p>Teddy J. Torres</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-150530' onclick='return addComment.moveForm( "comment-150530", "150530", "respond", "4558" )' aria-label='Reply to Teddy_J_Torres'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-150538">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ursus</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-150538">
+					July 11, 2017	         	</a>
+			</div>
+			      		<p>Hi Teddy</p>
+<p>Works!<br />
+My custom login module now can look up and make use of the UserRegistry.</p>
+<p>Thanks a lot,<br />
+Ursus</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-150538' onclick='return addComment.moveForm( "comment-150538", "150538", "respond", "4558" )' aria-label='Reply to Ursus'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-148409">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Hiroko Takamiya</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-148409">
+					January 19, 2017	         	</a>
+			</div>
+			      		<p>Hi, I am from WebSphere Liberty support team.    A customer kindly shared following experience with us while following this page.   It may or may not apply to all environment but posting here.  Thanks!  </p>
+<p>Environment:<br />
+WebSphere Liberty Dev Tools version is:  WebSphere® Application Server Liberty Tools                16.0.4000.v20161213_2112           com.ibm.websphere.wdt.server.tools.main.feature.group         IBM on Eclipse Neon Version: Neon.2 Release (4.6.2) Build id: 20161208-0600</p>
+<p>Issue:  After adding any javax.* package into MANIFEST.MF,  future can no longer be deployed or exported to Liberty. </p>
+<p>Solution:  Activate &#8220;OSGi Bundle&#8221; Facet</p>
+<p>&#8212;  Error message &#8212;&#8211;<br />
+Feature update failed. The server may still be using the feature resources. Stopping the server and trying the update again may resolve the problem.<br />
+Reason:<br />
+Error occurred while exporting Liberty feature: Extended Operation failure:<br />
+com.ibm.etools.aries.internal.core.datatransfer.exportmodel.ApplicationExportOperation<br />
+ &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-148409' onclick='return addComment.moveForm( "comment-148409", "148409", "respond", "4558" )' aria-label='Reply to Hiroko Takamiya'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-146248">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Jessica Pamdeth</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-146248">
+					April 28, 2016	         	</a>
+			</div>
+			      		<p>With all the interest in relational database based user registries, is it possible to get an example of using that?  This seems a more practical example than the file based one provided now.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-146248' onclick='return addComment.moveForm( "comment-146248", "146248", "respond", "4558" )' aria-label='Reply to Jessica Pamdeth'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-142583">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Joe Kesselman</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-142583">
+					January 28, 2016	         	</a>
+			</div>
+			      		<p>Something that may not be obvious: The com.ibm.ws.samples.cur package in the sample Custom User Registry needs OSGi access to the Liberty SPI layer, not just APIs. To recompile it under Eclipse, you will probably need to go to Preferences/Plug-in Development/Target Platform, and explicitly switch to the &#8220;with SPI&#8221; server target. If you don&#8217;t, you&#8217;ll get compilation errors.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-142583' onclick='return addComment.moveForm( "comment-142583", "142583", "respond", "4558" )' aria-label='Reply to Joe Kesselman'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-2 pn-comment" id="comment-149040">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Geoff Alexander</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-149040">
+					May 02, 2017	         	</a>
+			</div>
+			      		<p>I&#8217;m trying the sample Custom User Registry in Eclipse Neon.3.  I&#8217;ve installed the IBM WebSphere Application Liberty Developer Tools for Neon from the Eclipse Marketplace.  I&#8217;m getting a number of compile errors in the Activator.java and FileRegistrySample.java due to missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes. I looked at setting the target platform to the &#8220;with SPI&#8221; server target as suggested, but I only have &#8220;Running Platform&#8221; as a choice.  How to I get a &#8220;with SPI&#8221; server as a target platform choice?  Or is there some other way to update my OSGi Bundle project&#8217;s build path to find the missing com.ibm.websphere.security.* and org.osgi.service.cm.* classes?</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-149040' onclick='return addComment.moveForm( "comment-149040", "149040", "respond", "4558" )' aria-label='Reply to Geoff Alexander'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment odd alt depth-3 pn-comment" id="comment-149041">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Geoff Alexander</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-149041">
+					May 03, 2017	         	</a>
+			</div>
+			      		<p>To answer my own question, I found that I needed to</p>
+<p>(1) Create a new &#8220;WebSphere Application Server Liberty&#8221; by right clicking in the server view and selecting New -&gt; Server, selecting a server type of IBM -&gt; WebSphere Application Server Liberty, and stepping thru the wizard to complete creation of the server.</p>
+<p>(2) Setting my OSGi Bundle project&#8217;s targeted runtime, by right clicking on the project and selecting Properties.  Then in the properties dialog, selecting Targeted Runtimes and checking &#8220;WebSphere Application Server Liberty&#8221;.</p>
+<p>Once I did that,  Preferences -&gt; Plug-in Development -&gt; Target Platform then showed &#8220;WebSphere Application Server Liberty&#8221; and &#8220;WebSphere Application Server Liberty with SPI&#8221; as target platform choices in addition to &#8220;Running Platform&#8221;.  I selected &#8220;WebSphere Application Server Liberty with SPI&#8221; as the active target platform.  However, that still did not get rid of my compile errors.  </p>
+<p>To resolve the compile errors, I had to open my OSGi Bundles project&#8217;s BundleContent\META-INF\MANIFEST.MF file and add the following as Imported Packages:</p>
+<p>&#8211; com.ibm.websphere.security<br />
+&#8211; com.ibm.websphere.secruity.cred<br />
+&#8211; org.osgi.service.cm</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-149041' onclick='return addComment.moveForm( "comment-149041", "149041", "respond", "4558" )' aria-label='Reply to Geoff Alexander'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 pn-comment" id="comment-129431">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">A. Fachat</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-129431">
+					September 16, 2015	         	</a>
+			</div>
+			      		<p>I can&#8217;t seem to make the groups part working. Of course with a custom user registry I do not want to map users to roles in the server.xml file, but in the database.<br />
+However, when I remove the  for example so that only specific users have for example the servletRole. I added<br />
+&#8220;servletRole:006:user1&#8221; to the groups file, but the only thing I get is this error log:<br />
+[AUDIT   ] CWWKS9104A: Authorization failed for user user1:defaultRealm while invoking SecureEJBSampleEAR on /. The user is not granted access to any of the required roles: [servletRole].</p>
+<p>What am I missing here?</p>
+<p>Btw: we are using liberty 8.5.5 and the sample seems to be written to an older API version. I get complaints about the WSCredential class not being part of the API for example.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-129431' onclick='return addComment.moveForm( "comment-129431", "129431", "respond", "4558" )' aria-label='Reply to A. Fachat'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-ttorres bypostauthor odd alt depth-2 pn-comment" id="comment-129469">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Teddy_J_Torres</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-129469">
+					September 17, 2015	         	</a>
+			</div>
+			      		<p>Hi Fachat,</p>
+<p>Thank you for using WAS Liberty. The authorization is configured separately from the user registry. Since you want to use the role mapping in a database, then you can use JACC to achieve this. For more details on how to develop a JACC provider, please see the Knowledge Center article <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_developing_jacc_auth_provider">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_developing_jacc_auth_provider</a></p>
+<p>If you do not use JACC, then the role mapping for authorization must be configured either in the server.xml, the ibm-application-bnd.xml, or the ibm-application-bnd.xmi file as described in this other article, <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_sec_rolebased">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-dist&#038;topic=twlp_sec_rolebased</a> </p>
+<p>Once the role mapping for authorization is done using any of the above methods and the user or the group it is in is mapped to the role, the user will be authorized and the message CWWKS9104A will not be issued.</p>
+<p>The WSCredential API is included in the jar file com.ibm.websphere.appserver.api.basics_1.0.2.jar that is located in the wlp/dev/api/ibm directory.  Please ensure that this jar file is in the classpath when editing or compiling your classes.</p>
+<p>Regards,<br />
+Teddy J. Torres</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-129469' onclick='return addComment.moveForm( "comment-129469", "129469", "respond", "4558" )' aria-label='Reply to Teddy_J_Torres'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-3 pn-comment" id="comment-129496">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">A. Fachat</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-129496">
+					September 18, 2015	         	</a>
+			</div>
+			      		<p>Hi Terry, thank you for your answer!</p>
+<p>In the meantime I managed to get it to work. Liberty calls the &#8220;getUniqueGroupIds(user)&#8221; method, which in the File Registry Sample uses the users file. I overlooked that because I found the groups/user mapping in the groups file. So then mapping the registry group to the JEE group in server.xml worked, which is ok.</p>
+<p>Unfortunately I also use a custom JAAS provider together with the custom user registry. I had understood that JAAS would allow that user/role mapping, but with liberty obviously not.</p>
+<p>Now when using a JAAS provider, the getUniqueGroupIds(user) method is not called anymore. Some questions:</p>
+<p>1) what do I need to do in the JAAS provider to have the roles checked with the custom user registry?<br />
+2) Is a JAAS provider necessary when I have a custom user registry and implement its checkPassword() method?<br />
+3) Can I use this (setup from 2.) with Bluemix ID as a Service Single-Sign-On &#8220;password&#8221; checks as well? (i.e. call out via HTTP to another service?)</p>
+<p>Many thanks!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-129496' onclick='return addComment.moveForm( "comment-129496", "129496", "respond", "4558" )' aria-label='Reply to A. Fachat'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-ttorres bypostauthor odd alt depth-4 pn-comment" id="comment-129602">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Teddy_J_Torres</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-129602">
+					September 22, 2015	         	</a>
+			</div>
+			      		<p>Hi Fachat,</p>
+<p>I am glad that the Custom User Registry is now working for you.  Let us clarify some terminology to avoid problems or confusion.  Please let me know if you meant JACC instead of JAAS.  JAAS is used during the authentication phase.  It is also during that phase when the custom registry is used to verify the user is who it says it is.  On the other hand, when a JACC provider is configured it is used during the authorization phase after the authentication has taken place.  If you still need to use the custom registry from the JACC provider, then a service reference should be added to the JACC provider for the custom user registry.  That might not be necessary since the WSCredential in the Subject should already contain the groups the authenticated used is in.  A JACC provider is necessary if the role is not already mapped in the server.xml or in the bindings (ibm-application-bnd.xml, or the ibm-application-bnd.xmi file).  SSO will work regardless of registry type or whether JACC is used or not.  The one requirement is that the user should exist in the user registry of the server where the request is being sent to.</p>
+<p>Regards,<br />
+Teddy J. Torres</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-129602' onclick='return addComment.moveForm( "comment-129602", "129602", "respond", "4558" )' aria-label='Reply to Teddy_J_Torres'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-5 pn-comment" id="comment-129849">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">André</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-129849">
+					September 29, 2015	         	</a>
+			</div>
+			      		<p>Hi Teddy,<br />
+thanks for your answer. We are in fact using a custom JAAS module to authenticate users, and also assign them roles. I think what I stumbled over was that JAAS can authenticate any user even users that are not(!) configured in the user registry &#8211; but roles do not work this way. They need to be configured in the user registry. </p>
+<p>As we are using a static set of roles, we can configure them in the basic user registry, and are set with our JAAS provider, without need for a JACC module.</p>
+<p>Regards,<br />
+André</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-129849' onclick='return addComment.moveForm( "comment-129849", "129849", "respond", "4558" )' aria-label='Reply to André'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-119004">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Akshat</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-119004">
+					March 25, 2015	         	</a>
+			</div>
+			      		<p>I am trying to implement a similar customUserRegistry but with database.<br />
+In my user registry class i need to make a DB connection.<br />
+Is there any API i can use to read my DB credentials (schema, user, password, etc) form server.xml.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-119004' onclick='return addComment.moveForm( "comment-119004", "119004", "respond", "4558" )' aria-label='Reply to Akshat'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-ttorres bypostauthor even depth-2 pn-comment" id="comment-119347">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Teddy_J_Torres</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-119347">
+					March 26, 2015	         	</a>
+			</div>
+			      		<p>Hi Akshat,</p>
+<p>Thank you for using the custom user registry support.  There is no API to extract the user or password for a DB in server.xml. The OSGi service component xml file should be configured to receive configuration and the service should process the configuration during its activation.  Also, please note the restrictions on using a datasource from a custom user registry as documented in <a href="http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-iseries&#038;topic=tsectbucs">http://www14.software.ibm.com/webapp/wsbroker/redirect?version=phil&#038;product=was-nd-iseries&#038;topic=tsectbucs</a>.  It indicates to use the JDBC java.sql.DriverManager interface to connect to the database.</p>
+<p>Regards,</p>
+<p>Teddy J. Torres</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-119347' onclick='return addComment.moveForm( "comment-119347", "119347", "respond", "4558" )' aria-label='Reply to Teddy_J_Torres'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 pn-comment" id="comment-81104">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://Website*' rel='external nofollow' class='url'>Stefan Sell</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-81104">
+					December 09, 2014	         	</a>
+			</div>
+			      		<p>I have installed the CustomUserRegistry sample feature and added the feature to my server. If I add the configuration information to the corresponding server.xml file my eclipse (editor) show the statement  as being in error since  is not recognized by my eclipse (syntax checker). However that statement is recognized by my server and the attributes are passed to the feature which is working fine.<br />
+Is there a way to define  as a valid xml tag or is there something missing in the feature definition.</p>
+<p>Thanks and kind regards<br />
+Stefan Sell</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-81104' onclick='return addComment.moveForm( "comment-81104", "81104", "respond", "4558" )' aria-label='Reply to Stefan Sell'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-romanik even depth-2 pn-comment" id="comment-81164">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Roman Kharkovski</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-81164">
+					December 09, 2014	         	</a>
+			</div>
+			      		<p>Please see this thread on how to validate server.xml file with custom features: <a href="https://developer.ibm.com/answers/questions/26283/server-xml-xml-validation-error-when-using-custom-feature.html">https://developer.ibm.com/answers/questions/26283/server-xml-xml-validation-error-when-using-custom-feature.html</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-81164' onclick='return addComment.moveForm( "comment-81164", "81164", "respond", "4558" )' aria-label='Reply to Roman Kharkovski'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-romanik odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-24942">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Roman Kharkovski</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-24942">
+					September 10, 2014	         	</a>
+			</div>
+			      		<p>Your file based registry sample works well for me, but now I am changing it to the database and here is the question &#8211; I have JPA based classes that deal with users in the database in my web app that runs on Liberty 8.5.5.3. I am developing in Eclipse.</p>
+<p>I want to use the same JPA classes inside of the custom user registry. What is the best way to package and share these classes between my web app and the custom registry? </p>
+<p>Shall I create a separate Java project for my persistent classes and bundle the jar file with custom registry as well as web app? (this will cause duplication of classes) Or shall I create some shared library with my JPA classes and use it with both custom registry and web app? Or does it need to be OSGi bundle? I am afraid I am going to have problem doing JPA resource injection in OSGi bundle&#8230;</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-24942' onclick='return addComment.moveForm( "comment-24942", "24942", "respond", "4558" )' aria-label='Reply to Roman Kharkovski'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-romanik even depth-2 pn-comment" id="comment-24946">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Roman Kharkovski</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-24946">
+					September 10, 2014	         	</a>
+			</div>
+			      		<p>I also posted similar question on the wasdev forum: <a href="https://developer.ibm.com/answers/questions/25716/packaging-of-jpa-code-that-needs-to-be-shared-between-web-app-and-customregistry/?community=wasdev">https://developer.ibm.com/answers/questions/25716/packaging-of-jpa-code-that-needs-to-be-shared-between-web-app-and-customregistry/?community=wasdev</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-24946' onclick='return addComment.moveForm( "comment-24946", "24946", "respond", "4558" )' aria-label='Reply to Roman Kharkovski'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-ttorres bypostauthor odd alt thread-even depth-1 pn-comment" id="comment-23339">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Teddy_J_Torres</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-23339">
+					August 27, 2014	         	</a>
+			</div>
+			      		<p>Hi,<br />
+The SecurityEJBSample.ear is included in the sample CustomUserRegistrySample.jar download file.  The sample can be downloaded from <a href="downloads/websphere-application-server-migration-tools/index.html#asset/samples-Custom_User_Registry">https://developer.ibm.com/wasdev/downloads/#asset/samples-Custom_User_Registry</a></p>
+<p>There is also another sample page dedicated to just the Secure EJB sample and it can be found here, <a href="downloads/websphere-application-server-migration-tools/index.html#asset/samples-Secure_EJB_Sample">https://developer.ibm.com/wasdev/downloads/#asset/samples-Secure_EJB_Sample</a></p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-23339' onclick='return addComment.moveForm( "comment-23339", "23339", "respond", "4558" )' aria-label='Reply to Teddy_J_Torres'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-ponomariov_ivan even thread-odd thread-alt depth-1 pn-comment" id="comment-22902">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">CHK1_pushka_pushka</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=4558.html#comment-22902">
+					August 24, 2014	         	</a>
+			</div>
+			      		<p>Where is the sources of SecureEJBSample.ear? Can&#8217;t finish this tutorial without it. Please, publish. Thanks.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=4558.html#comment-22902' onclick='return addComment.moveForm( "comment-22902", "22902", "respond", "4558" )' aria-label='Reply to CHK1_pushka_pushka'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=4558.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='4558' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1eb5f5a69d" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="183"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=4558.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=4558.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=4558.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-custom-user-registry-as-a-liberty-user-feature&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fcreating-a-custom-user-registry-as-a-liberty-user-feature"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>

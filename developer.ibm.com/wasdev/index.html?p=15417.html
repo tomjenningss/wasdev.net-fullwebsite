@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- SITE MON : START (DO NOT DELETE) -->
+	<!-- developerWorks monitoring token -->
+	<!-- SITE MON : END (DO NOT DELETE) -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- v18 meta -->
+	<meta name="geo.country" content="ZZ" />
+	<meta name="dcterms.rights" content="� Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-07-18" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="https://www.ibm.com/favicon.ico" />
+
+		<!-- end of v18 meta -->
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://developer.ibm.com/wasdev/xmlrpc.php">
+<script>
+		 digitalData = {
+		  "page":{
+		    "category":{
+		      "primaryCategory":"SOFDCWSVZZ",		      "ibm":[
+
+		      ]
+		    },
+		    "pageInfo":{
+		      "effectiveDate":"2016-07-18",
+		      "expiryDate":"2020-07-18",
+		      "language":"en-US",
+		      "publishDate":"2015-11-12",
+		      "publisher":"IBM Corporation",
+		      "version":"v18",
+		      "pageID":"",
+		      "ibm":{
+						"contentDelivery":"HTML",
+		        "contentProducer":"IBM Northstar Template Generator 2.0",
+		        "country":"ZZ",
+		        "industry":"ZZ",
+		        "owner":"Jamie Pickett\/Boulder\/IBM",
+		        "siteID":"DWNEXT",
+						"subject":"SW700",
+		        "type":"SW700",
+		        "cmClientID":"50200000| DWNEXT",
+		        "encoding":"utf8",
+		        "encodingRaw":"utf-8",
+		        "title":"Using signed JSON Web Tokens (JWTs) to secure microservices",
+						"contentType": "doc",
+						"wpid":"9",
+						"topics":"",
+						"contentArea": "Java EE, Security"
+		      },
+		      "metrics":[
+
+		      ],
+		      "keywords":"",
+		      "description":"Using signed JSON Web Tokens (JWTs) to secure microservices"
+		    },
+		    "attributes":[
+
+		    ],
+		  },
+		  "event_coordinator":[
+
+		  ],
+		  "isLoaded":true,
+		  "user":{
+		    "profile":[
+
+		    ],
+		    "segment":{
+
+		    }
+		  }
+		};
+	 </script>
+<title>Using signed JSON Web Tokens (JWTs) to secure microservices - WASdev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="This sample application demonstrates how to use OpenID Connect and JWTs to secure an application that makes calls to other applications on behalf of the user."/>
+<link rel="canonical" href="index.html%3Fp=15417.html" />
+<link rel="publisher" href="https://plus.google.com/u/0/+WASdevNet"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='https://1.www.s81c.com/' />
+<link rel='dns-prefetch' href='https://www.ibm.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Comments Feed" href="comments/feed/index.html" />
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="WASdev (developerWorks)">
+<link rel="alternate" type="application/rss+xml" title="WASdev &raquo; Using signed JSON Web Tokens (JWTs) to secure microservices Comments Feed" href="docs/using-signed-json-web-tokens-jwts-secure-microservices/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"\/\/dw1.s81c.com\/dw\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='events-manager-css'  href='wp-content/plugins/events-manager/includes/css/events_manager.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tab-styles-css'  href='wp-content/plugins/projectnext-shortcodes/tab-styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cntctfrm_form_style-css'  href='wp-content/plugins/contact-form-plugin/css/form_style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rotatingtweets-css'  href='wp-content/plugins/rotatingtweets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dwboomer-style-css'  href='wp-content/themes/boomer-v18/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pagepost_css-css'  href='wp-content/themes/boomer-v18/css/pagepost.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pnext.utils-css'  href='wp-content/themes/boomer-v18/css/pnext.utils.css' type='text/css' media='all' />
+<link rel='stylesheet' id='uploaded_css-css'  href='wp-content/uploads/sites/9/2015/03/wasdev.css' type='text/css' media='screen' />
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/www.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/dyntabs.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/v18/js/masonry.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/core.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/widget.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/position.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/mouse.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/sortable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/datepicker.min.js'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/menu.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-a11y.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/autocomplete.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/resizable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/draggable.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/button.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/jquery/ui/dialog.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php","locationajaxurl":"https:\/\/developer.ibm.com\/wasdev\/wp-admin\/admin-ajax.php?action=locations_search","firstDay":"1","locale":"en","dateFormat":"dd\/mm\/yy","ui_css":"https:\/\/developer.ibm.com\/wasdev\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"1","txt_search":"Search","txt_searching":"Searching...","txt_loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-manager/includes/js/events-manager.js'></script>
+<script type='text/javascript' src='wp-content/plugins/projectnext-shortcodes/tab-dropdown.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/pnext.utils.js'></script>
+<script type='text/javascript' src='https://1.www.s81c.com/common/stats/ida_stats.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.ibm.com/wasdev/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.9" />
+<link rel='shortlink' href='index.html%3Fp=15417.html' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-signed-json-web-tokens-jwts-secure-microservices%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.ibm.com/wasdev/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-signed-json-web-tokens-jwts-secure-microservices%2F&#038;format=xml" />
+<link rel='https://github.com/WP-API/WP-API' href='https://developer.ibm.com/wasdev/wp-json' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style type="text/css" id="wp-custom-css">
+			.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+/* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pnpagepost  .pn-listing .pn-list__item .entry-content .entry-meta .byline br {
+	display: none;
+}
+
+/*Adds border to any screenshot with this class applied. Looks neater and clearer.*/
+img.screenshot {
+	border: 1px solid #afafaf;
+}
+
+/*Adds border to any photo with this class applied. Looks neater and clearer.*/
+img.photo {
+	border: 1px solid #afafaf;
+}
+
+/*Nests ordered lists correctly.*/
+ol>li ol>li::before {
+	content: counter(item, lower-alpha)".";
+}
+
+ol>li ol>li ol>li::before {
+	content: counter(item, lower-roman)".";
+}
+
+/* hiding the doubled up author images */
+.pn-listing .pn-list__item .byline .avatar {
+	display: none !important;
+}
+
+/* removing bullets from the EM widget */
+.widget-area .widget.widget_em_widget ul li:before,
+.widget-area .widget.widget_text ul li:before{display:none;}
+
+/*push anchored h2 headings down from browser top so they're not hidden behind the static headers
+h2:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -300px; 
+  height: 300px; 
+  visibility: hidden; 
+}*/
+
+h2 { padding-top: 30px !important; }
+		</style>
+	
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "masthead":{
+		    "type":"alternate"
+		  },
+			greeting: { enabled: false },
+		  "footer":{
+		  	"type":"alternate",
+		    "socialLinks":{
+		      "enabled":false
+		    }
+		  },
+			survey: { global_percent: 0 }
+		});
+	 </script>
+</head>
+
+<body id="ibm-com" class="doc-template-default single single-doc postid-15417 ibm-com ibm-type group-blog">
+	<div style="display:none"></div>
+<!--div id="page" class="site"-->
+<div id="ibm-top" class="ibm-landing-page">
+	<a class="skip-link screen-reader-text" href="index.html%3Fp=15417.html#main">Skip to content</a>
+
+	<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+		<div id="ibm-mast-options">
+			<ul role="toolbar" aria-labelledby="ibm-masthead">
+				<li id="ibm-geo" role="presentation">
+					<a href="http://www.ibm.com/planetwide/select/selector.html">United States</a>
+				</li>
+			</ul>
+		</div>
+		<div id="ibm-universal-nav">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/us-en/">IBM�</a>
+			</div>
+			<div class="dw-nav-left">
+				<a href="http://developer.ibm.com" class="dw-logo"><span>IBM Developer</span></a>
+							</div>
+			<ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide">
+				<li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+			</ul>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+				<!-- form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get" -->
+				<form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+					<p>
+						<label for="q"><span class="ibm-access">Search</span></label>
+						<input type="text" maxlength="100" value="" name="q" id="q"/>
+						<input type="hidden" name="v" value="18" />
+						<input type="hidden" name="en" value="utf" />
+						<input type="hidden" name="lang" value="en" />
+						<input type="hidden" name="cc" value="us" />
+						<input type="hidden" name="sn" value="dw" />
+						<input type="hidden" name="dw" value="dws" />
+
+						<span class="ibm-search-scope">
+							<input type="checkbox" class="ibm-styled-checkbox" name="sn" value="Search standards" checked id="scopeoption">
+							<label for="scopeoption">Search WASdev</label>
+						</span>
+
+						<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+					</p>
+				</form>
+									<form class="ibm-hide" id="devcenter-search-form" action="index.html%3Fp=719.html" method="get">
+						<p>
+							<label for="pnext-search-input" class="screen-reader-text">Search</label>
+							<input maxlength="100" required aria-required="true" id="q" class="pn-search-input pn-nav-search-input fl" name="q" type="text">
+							<input type="submit" id="ibm-search" class="ibm-btn-search" value="Seach"/>
+						</p>
+					</form>
+								</div>
+		</div>
+	</div>
+  <!-- MASTHEAD_END -->
+  <div id="ibm-content-wrapper">
+  	<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+  		<!-- MASTHEAD_SITENAV_BEGIN -->
+<div class="ibm-sitenav-menu-container">
+  <div class="ibm-sitenav-menu-name">
+    <a href="docs/portlet-container-differences-liberty-full-profile/index.html" rel="home">WASdev</a>
+  </div>
+    <div class="ibm-sitenav-menu-list"><ul id="primary-menu" class="menu"><li id="menu-item-11996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11996"><a title="About WebSphere Liberty" href="docs/introducing_the_liberty_profile/index.html">About</a></li>
+<li id="menu-item-12338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12338"><a href="getstarted/index.html">Get Started</a></li>
+<li id="menu-item-8368" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8368"><a title="Download Liberty, features, and samples" href="downloads/websphere-application-server-migration-tools/index.html">Downloads</a></li>
+<li id="menu-item-2816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2816"><a title="Articles and videos for developers" href="docs.html">Docs</a></li>
+<li id="menu-item-12458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12458"><a title="Open source code on Github" href="https://github.com/wasdev">Source Code</a></li>
+<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a title="All the ways you can get help developing on Liberty" href="help.html">Get Help</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2415"><a title="News, events, and opinions on WAS Liberty" href="blog.html">News &#038; Events</a></li>
+</ul></div></div>
+<!-- MASTHEAD_SITENAV_END -->
+  	</header>
+<style>#ibm-com .gsc-adBlock{display:none !important;}</style>
+<div id="content" class="site-content">
+<div id="primary" class="content-area ibm-columns pnpagepost">
+		<header class="pagepost-entry-header"><div class="pn_categories"><span><b>in </b><a href="docs/category/java-ee/index.html" rel="tag">Java EE</a><i>, </i><a href="docs/category/security/index.html" rel="tag">Security</a></span></div><h1 class="entry-title">Using signed JSON Web Tokens (JWTs) to secure microservices</h1><div class="entry-meta"><div class="pn_byline"><br><span class="author vcard"><a class="url fn n" href="blog/author/ozzy/index.html">Ozzy Osborne</a></span><br>Published on November 12, 2015<i> / Updated on November 15, 2017</i></div><div class="pn_slic"><a href="index.html%3Fp=15417.html#comments" class="pn_comments_icon">8 <i>Comments</i></a></div></div></header>		<section class="ibm-fluid">
+			<div class="ibm-col-12-3">
+				<nav role="left-nav" id="pnext_cpt_leftnav">
+									<div id="ibm-navigation">
+										<ul class="doc_categories" id="pnext_cpt_leftnav__links" role="tree" aria-labelledby="ibm-pagetitle-h1">
+											<li id="ibm-overview" class="cat-all"><a href="docs.html">All Documentation</a><a href="index.html%3Fp=15417.html#" class="pnext_cpt_leftnav_expand ibm-chevron-down-link"><i>expand</i></a></li>	<li class="cat-item cat-item-345"><a href="docs/category/open-liberty/index.html" >Open Liberty <span class="count">(19)</span></a>
+</li>
+	<li class="cat-item cat-item-333"><a href="docs/category/knowledge-centers/index.html" >Official documentation <span class="count">(5)</span></a>
+</li>
+	<li class="cat-item cat-item-84"><a href="docs/category/installation/index.html" >Installation <span class="count">(9)</span></a>
+</li>
+	<li class="cat-item cat-item-80"><a href="docs/category/getting-started/index.html" >Getting started with Liberty <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-88"><a href="docs/category/migration-articles/index.html" >Migration <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-85"><a href="docs/category/coding/index.html" >Coding <span class="count">(80)</span></a>
+</li>
+	<li class="cat-item cat-item-335"><a href="docs/category/tools/index.html" >Tools <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-212"><a href="docs/category/java-ee/index.html" >Java EE <span class="count">(53)</span></a>
+</li>
+	<li class="cat-item cat-item-330"><a href="docs/category/microprofile/index.html" >MicroProfile <span class="count">(13)</span></a>
+</li>
+	<li class="cat-item cat-item-210"><a href="docs/category/osgi-techs/index.html" >OSGi <span class="count">(12)</span></a>
+</li>
+	<li class="cat-item cat-item-226"><a href="docs/category/extensions/index.html" >Extending Liberty <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-223"><a href="docs/category/oss/index.html" >Liberty with open source <span class="count">(15)</span></a>
+</li>
+	<li class="cat-item cat-item-225"><a href="docs/category/workflow/index.html" >Setting up your Liberty workflow <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-86"><a href="docs/category/devops/index.html" >DevOps <span class="count">(57)</span></a>
+</li>
+	<li class="cat-item cat-item-273"><a href="docs/category/security/index.html" >Security <span class="count">(10)</span></a>
+</li>
+	<li class="cat-item cat-item-208"><a href="docs/category/internet-of-things/index.html" >Internet of Things <span class="count">(6)</span></a>
+</li>
+	<li class="cat-item cat-item-241"><a href="docs/category/rtcomm/index.html" >Real-time comms <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-274"><a href="docs/category/microservices/index.html" >Microservices <span class="count">(3)</span></a>
+</li>
+	<li class="cat-item cat-item-209"><a href="docs/category/cloud/index.html" >Cloud <span class="count">(22)</span></a>
+</li>
+	<li class="cat-item cat-item-126"><a href="docs/category/labs/index.html" >Labs <span class="count">(2)</span></a>
+</li>
+	<li class="cat-item cat-item-111"><a href="docs/category/fun-projects/index.html" >Fun projects <span class="count">(7)</span></a>
+</li>
+	<li class="cat-item cat-item-82"><a href="docs/category/videos/index.html" >Videos <span class="count">(25)</span></a>
+</li>
+	<li class="cat-item cat-item-83"><a href="docs/category/podcasts/index.html" >Podcasts <span class="count">(1)</span></a>
+</li>
+	<li class="cat-item cat-item-94"><a href="docs/category/early-access/index.html" >Early Access <span class="count">(7)</span></a>
+</li>
+</ul>
+									</div>
+								</nav>			</div>
+			<div class="ibm-col-12-9 entry-content">
+				<main id="main" class="site-main" role="main">
+														<p>The <a href="https://github.com/WASdev/sample.microservices.security.jwt">sample application</a> described in this article demonstrates how to use OpenID Connect and JSON Web Tokens (JWTs) to secure an application that makes calls to other applications on behalf of the user.</p>
+<p>Microservice-based architecture, described as <a href="http://martinfowler.com/articles/microservices.html">“a particular way of designing software applications as suites of independently deployable services”</a>, is becoming more common. The result of the transition to this kind of application composition is a lot of network traffic.</p>
+<p>A single request from the user can lead to many subsequent requests being made across the collection of services that together implement the app. Each of these subsequent requests should ideally be made in a secure way: You want to know that any given request being handled by any given service originated from a known user. In other words, any given request should be part of the normal expected flow within the application, and not an abuse of your app architecture by someone who noticed that your backend services just happened to also be reachable from wherever they were.</p>
+<h2>An overview of OpenID Connect</h2>
+<blockquote><p>
+  “The RP has the user talk to the OP which then talks back to the RP which then talks back to the OP before talking to the RS that replies to the RP that then replies to the user.”
+</p>
+</blockquote>
+<p>Clear? Excellent!</p>
+<p>If not, then don’t worry: the only thing that&#8217;s really clear is that OpenID Connect seems to love using lots of acronyms (it even abbreviates its own name as <em>OIDC</em>). Let’s start by translating that overview from OpenID-security-speak into something a little more consumable by a human (the definitive source for all this info is really in the OpenID Connect specs, but they can be hard going if you are coming at them cold).</p>
+<p>From the user experience point of view, you have the ugly-but-functional browser-provided form used for <em>Basic Auth</em>, and the much better experience of customized login forms with <em>I forgot my password</em> buttons. From the server side, both of these approaches involve validating the the user credentials against some configured data store (database, LDAP, … ). If that data store hasn’t been set up by folks who know what they’re doing, you have a repository full of user credentials that look like a frosted cupcake to a hungry hacker.</p>
+<p>There has been a realization that you (mostly) don’t (actually) want to look after that data yourself. All you really want to know is: “Who is the user?”. As many of those users already have email accounts or social media accounts that they authorize themselves with regularly, it would be fantastic (for all concerned) to allow the user to use those credentials to log into your web app, instead of them (and you) creating yet another user ID and password to look after.</p>
+<p>And that’s where OpenID Connect steps in. It provides a way for applications to verify the identity of their users without being responsible for managing the authentication or authorization of those users.</p>
+<p>OpenID Connect requires at least two services: one that acts as the authenticator, and one that relies upon the authenticator. The first is known as the <em>OpenID Provider</em> (OP) and the second is known as the <em>Relying Party</em> (RP). In our scenario, we also have a third service in the mix: the app the user talks to is the RP, but it talks to another service, which we’ll call the <em>Relying Service</em> (RS).</p>
+<p>Liberty can be configured to act as an OpenID Provider (that’s the OP), or it can be configured to protect applications as Relying Parties (RPs). Out of the box however, it does not currently offer a built-in way to protect the onward invocation of other services or apps (RS) by the Relying Party application.</p>
+<h2>Propagating identity using signed-JWTs</h2>
+<p>Once you have established identity using OpenID Connect (or another route&#8230;) you start considering how to propagate that identity to to your back-end services.</p>
+<p>You want to be able to:</p>
+<ul>
+<li>Know the request initiated from a user request</li>
+<li>Know the identity that the request was made on behalf of</li>
+<li>Know that this request isn’t a malicious replay of a previous request</li>
+</ul>
+<p>One solution is to use a <em>signed JWT</em>, which is like a small document stating who the user was, when the request was made, and possibly other information such as what the request was for, or the types of information the user agreed to you handling. This document is signed in a way that the services can know that the document has not been altered or tampered with since it was created.</p>
+<p>“<em>JSON Web Token</em> (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties” (RFC 7519) (<em>JSON</em> means JavaScript Object Notation, because nesting acronyms like this is apparently totally fair game… and I guess JSONWT sounded too much like “Jason What?”. Ironically, the preferred pronounciation for JWT is given as &#8216;JOT&#8217; which could even be a contraction of  JSON-What 😉 )</p>
+<p>Once identity is established, say via OpenID Connect, you can use signed JWTs to pass on that identity to other microservice invocations. They can, in turn, also pass it on. Each consumer of the token is able to verify that they can trust the claims made by it, by verifying that they trust the signature of the token. Once a consumer verifies the signature, they know the content of the token has not been altered after it was signed by the person they trust.</p>
+<p>The creator and signer of the token can embed information such as creation time and expiry time, along with the user’s identity. This can give the token a finite life during which it may be considered valid when passed from microservice to microservice. If the life is suitably small, say 5 to 10 seconds, then the opportunity for replay attacks (where a 3rd party captures the token to masquerade as the user in an alternate transaction) can be massively reduced.</p>
+<p>Additionally, the creator could embed information about the request the creator was handling for the user, and subsequent consumers of the token could test to see that the token they have is suitable for the action they are performing on behalf of the user. In this manner you could prevent a token captured for a read operation being used maliciously to perform a write operation.</p>
+<h2>About the sample</h2>
+<p>We’ve devised a sample application (<a href="https://github.com/WASdev/sample.microservices.security.jwt">available on GitHub</a>!) to demonstrate use of signed JWTs (JSON Web Tokens). It has five Liberty servers configured, each performing one of the three roles of OpenID Provider (OP), Relying Party (RP), and Relying Service (RS). The OP is showing how Liberty can act as an OpenID Provider but it could just as easily be the stand-in for IBM Cloud <a href="https://console.bluemix.net/catalog/services/single-sign-on">Single Sign On</a> or <a href="https://console.bluemix.net/catalog/services/app-id">App ID</a>. There are five in total because there are Spring and Java EE versions of both the RP and RS, and each RP invokes both RSs using the same authentication approach. Although it&#8217;s possible to combine all three roles into a single server, they have been split out to keep their responsibilities and configuration separate for clarity.</p>
+<h2>OpenID Provider (OP)</h2>
+<p>We’ve created a sample OpenID Provider (OP) to demonstrate what that actor does without relying on correctly configuring an external OAuth Provider (e.g. Facebook, Google, etc).</p>
+<h3>User registry</h3>
+<p>The OP has the job of authenticating the users. Liberty provides a simple way to define a basic user registry right within the <code>server.xml</code>, which is good enough for our purposes.</p>
+<p>The server configuration we need for this sample is in the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-op">liberty-op</a> project:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!-- This is our example user registry.. it has just the one user --&gt;
+    &lt;basicRegistry id=&quot;basic&quot; realm=&quot;BasicRealm&quot;&gt; 
+        &lt;user name=&quot;user&quot; password=&quot;password&quot; /&gt; 
+    &lt;/basicRegistry&gt;
+</pre>
+<p>This snippet defines a user registry with just one user called <code>user</code> and a password of <code>password</code>. Clearly this isn’t intended for production! Liberty can be configured to other methods for authenticating (like LDAP, for example) but we’re trying to focus on the use of signed JWTs here so we’ll keep things simple.</p>
+<p>The <code>basicRegistry</code> configuration element requires the <code>appSecurity</code> feature to be present, so we add this to our <code>featureManager</code> block in the configuration:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+</pre>
+<h3>OAuth Provider</h3>
+<p>We need to configure the server as an OAuth provider, configuring which clients are allowed to connect to the OP for authentication. In this example we have only two direct clients of the OP: The Spring and Java EE Relying Parties:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!-- For simplicity, we're using a client db defined here in the
+          server.xml In the localStore element we register the clients 
+          that will access the provider. For this example, that's just the RPs.
+      --&gt;
+    &lt;oauthProvider id=&quot;Oauth&quot; jwtAccessToken=&quot;true&quot;&gt;
+        &lt;localStore&gt;
+            &lt;client name=&quot;jee-rp&quot;
+                    secret=&quot;fish&quot;                
+                    displayname=&quot;The jee RP application&quot;
+                    redirect=&quot;${env.JEE_REDIRECT_URL}&quot;
+                    scope=&quot;openid jee-api spring-api jee&quot;
+                    preAuthorizedScope=&quot;openid&quot;
+                    enabled=&quot;true&quot;/&gt;
+            &lt;client name=&quot;spring-rp&quot;
+                    secret=&quot;fish&quot;
+                    displayname=&quot;The spring RP application&quot;
+                    redirect=&quot;${env.SPRING_REDIRECT_URL}&quot;
+                    scope=&quot;openid jee-api spring-api spring&quot;
+                    preAuthorizedScope=&quot;openid&quot;
+                    enabled=&quot;true&quot;/&gt;
+        &lt;/localStore&gt;
+    &lt;/oauthProvider&gt;
+
+    &lt;oauth-roles&gt;
+        &lt;authenticated&gt;
+            &lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt;
+        &lt;/authenticated&gt;
+    &lt;/oauth-roles&gt;
+</pre>
+<p>For any client, the <code>name</code> and <code>secret</code> are used to authenticate their connection to the OP. We’ll see the credentials again in the RP server config. The <code>redirect</code> URL is the post-authentication redirect target: The OP will redirect the client (usually a browser) there after the user has authenticated. We supply the redirect URL as an environment variable; this is a deployment choice that allows us to customise the URLs based on the runtime environment (a.k.a. &#8220;the redirect URL will be different when we deploy locally from when we deploy to IBM Cloud but we&#8217;d rather like to have just the one <code>server.xml</code> to maintain&#8221;).</p>
+<p>We also set <code>jwtAccessToken</code> to be <code>true</code> here; this allows the OP to issue access tokens that are also JWTs (that will be signed using the same configuration as configured for the OpenID Connect Provider). This allows the RPs to introspect information in the access token without needing to go back to the OP to discover allowed scopes etc.</p>
+<p>We don’t need to explicitly add any features to the <code>server.xml</code> for our OAuth configuration because we’ll be using OpenID Connect, which will automatically bring in the required OAuth functionality for us.</p>
+<p>There’s no client entry for either RS here because they will be processing a signed JWT from the RP, which they can do without needing to know about the OP at all.</p>
+<h3>OpenID Connect Provider (OP)</h3>
+<p>Now that we have a user registry and an OAuth provider defined, we need to put the OpenID Connect ribbon on and configure the server as an OpenID Provider (OP):</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;keyStore id=&quot;oidckeystore&quot; .... /&gt;
+     
+    &lt;!-- This is the OpenID Provider configuration.
+           We're using Asymmetric RS256 signing, so we must supply a
+           keystore and identify which key we should sign with.
+    --&gt;
+    &lt;openidConnectProvider id=&quot;OP&quot;
+           oauthProviderRef=&quot;Oauth&quot;
+           signatureAlgorithm=&quot;RS256&quot;
+           keyStoreRef=&quot;oidckeystore&quot;
+           keyAliasName=&quot;jwtsampleapp&quot;
+           issuerIdentifier=&quot;https://thesampleop/&quot;
+    /&gt;
+</pre>
+<p>There are a few things to explain here:</p>
+<ul>
+<li>The <code>id</code> attribute is used as part of the URL for the OpenID Provider. We’ve used <code>OP</code> for obviousness; you’ll see below where it ends up in the RP configuration URLs.</p>
+</li>
+<li>
+<p>The <code>keystoreRef</code> is required because we’ve opted to use asymmetrically signed <code>id_tokens</code>. We have to declare which <code>keyAliasName</code> from which keystore we’d like to use to sign the tokens.</p>
+</li>
+<li>
+<p>The <code>oauthProviderRef</code> is the reference to the OAuth element we defined above.</p>
+</li>
+</ul>
+<p>In a production configuration, it’s unlikely the clients would be declared like this within the <code>server.xml</code> and it&#8217;s more likely that they will be managed in a database; see the <a href="https://www.ibm.com/support/knowledgecenter/SSEQTP_liberty/as_ditamaps/was900_welcome_liberty.html">Knowledge Center</a> for more information.</p>
+<p>There’s no application declared for the OP server. The functionality to act as the OP comes purely from features provided by Liberty itself as part of the <code>openidConnectServer</code> feature. We’re also going to be using SSL, which brings our total combined <code>featureManager</code> block for the OP to look like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;openidConnectServer-1.0&lt;/feature&gt;
+        &lt;feature&gt;ssl-1.0&lt;/feature&gt;
+        &lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+</pre>
+<h2>Relying Party (RP)</h2>
+<p>The Relying Party (RP) is the first point of contact with a user. The only function of the RP in this sample is to show the chained invocation of a RS with the propagated identity within a JWT.</p>
+<p>We have both Java EE and Spring implementations of the RP, available in GitHub in the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-jee-rp">liberty-jee&#8211;rp</a> and <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-spring-rp">liberty-spring-rp</a> projects.</p>
+<p>The projects contain the OpenID Connect configuration for the RP, which is simpler than that for the OP:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;!--oidc client config.. 
+         We must have a secret to obtain a token, and 
+         we need a trust store to verify the signing key of the token from the OP. 
+         The EndpointUrls must point back to the OP. 
+    --&gt;
+	&lt;openidConnectClient id=&quot;RP&quot; 
+		clientId=&quot;spring-rp&quot;
+		clientSecret=&quot;fish&quot; 
+		signatureAlgorithm=&quot;RS256&quot; 
+		trustAliasName=&quot;jwtsampleapp&quot;
+		trustStoreRef=&quot;oidctruststore&quot; 
+		scope=&quot;openid jee-api spring-api spring&quot;
+		authorizationEndpointUrl=&quot;${env.AUTH_ENDPOINT_URL}&quot; 
+		tokenEndpointUrl=&quot;${env.TOKEN_ENDPOINT_URL}&quot; 
+		issuerIdentifier=&quot;https://thesampleop/&quot;
+		/&gt;
+</pre>
+<ul>
+<li>The <code>id</code> is important, it is part of the URL that we register in the OP for the redirect. We’ve chosen the value <code>RP</code>, which gives us a redirect URL of <code>https://127.0.0.1:9080/oidcclient/redirect/RP</code>. We set<br />
+this in the <code>server.xml</code> of the OP via the appropriate redirect URL environment variable. While <code>127.0.0.1:9080/oidcclient/redirect/RP</code> makes sense <em>inside</em> the container, we have to give the RP the <em>external</em> URL that corresponds to this address and <em>that</em> changes depending on whether we&#8217;re running locally with Docker or remotely in Cloud Foundry. You have to know how the RP will be accessed to be able to configure the OP redirect URL appropriately.</p>
+</li>
+<li>
+<p>The <code>clientId</code> and <code>clientSecret</code> are required and must match the RP’s client definition in the OP.</p>
+</li>
+<li>
+<p>We tell the client to expect asymmetrically signed tokens and tell it which keystore and key to use to verify that signature by specifying the <code>trustStoreRef</code> and <code>trustAliasName</code>.</p>
+</li>
+<li>
+<p>We configure the authorization and token endpoint URLs for the OP. Again we are setting these in <code>server.xml</code> using environment variables, so we can configure the endpoints from outside a container. If we know the host &amp; port to use, our urls would have the form <code>https://OP-HOST:OP-PORT/oidc/endpoint/OP/authorize</code> and <code>https://OP-HOST:OP-PORT/oidc/endpoint/OP/token</code>, the &#8220;<code>OP</code>&#8221; in the urls coming from the <code>id</code> we set for our OP. If we were running against a 3rd party OP, then we&#8217;d use the URLs they supplied here.</p>
+</li>
+</ul>
+<p>As with the server, we enable support for the <code>openidConnectClient</code> by adding the feature to our <code>featureManager</code> block in the <code>server.xml</code>. Again, we’re using SSL and the <code>appSecurity</code> feature but this time we include the OpenID Connect Client feature and servlet to host the app.</p>
+<p>For the Java EE RP, we&#8217;ll be using JNDI and CDI for injection of environment variables to our code, and JAXRS as our outbound client to talk to the RS. This leaves our final <code>featureManager</code> list looking like:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+		&lt;feature&gt;ssl-1.0&lt;/feature&gt;
+		&lt;feature&gt;jsp-2.3&lt;/feature&gt;
+		&lt;feature&gt;jndi-1.0&lt;/feature&gt;
+		&lt;feature&gt;jwt-1.0&lt;/feature&gt;
+		&lt;feature&gt;cdi-1.2&lt;/feature&gt;
+		&lt;feature&gt;jaxrs-2.0&lt;/feature&gt;
+		&lt;feature&gt;servlet-3.1&lt;/feature&gt;
+		&lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+		&lt;feature&gt;openidConnectClient-1.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+</pre>
+<p>For the Spring RP, we use fewer Liberty features (because Spring is doing the work), and that leaves us with a <code>featureManager</code> block that looks like this:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+	&lt;featureManager&gt;
+		&lt;feature&gt;ssl-1.0&lt;/feature&gt;
+		&lt;feature&gt;servlet-3.1&lt;/feature&gt;
+		&lt;feature&gt;jwt-1.0&lt;/feature&gt;
+		&lt;feature&gt;appSecurity-2.0&lt;/feature&gt;
+		&lt;feature&gt;openidConnectClient-1.0&lt;/feature&gt;
+	&lt;/featureManager&gt;
+</pre>
+<p>Our app is going to need to verify the signature of responses from the OP so it needs a private key with which to sign the JWTs. We can use the Liberty JWT API to achieve this. That allows us to define <code>jwtBuilders</code> and <code>jwtConsumers</code> in the <code>server.xml</code>, and configure them with the appropriate keystores and algorithms:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+	&lt;jwtBuilder id=&quot;rsBuilder&quot; 
+				issuer=&quot;https://thesamplerp/&quot;
+	  			keyStoreRef=&quot;defaultKeyStore&quot;
+	  			keyAlias=&quot;jwtsampleapp&quot;
+	/&gt;
+	
+	&lt;jwtConsumer id=&quot;oidcConsumer&quot;
+				 signatureAlgorithm=&quot;RS256&quot;
+				 issuer=&quot;https://thesampleop/&quot;
+				 trustStoreRef=&quot;defaultTrustStore&quot;
+				 trustedAlias=&quot;jwtsampleapp&quot;
+	/&gt;
+</pre>
+<p>The <code>rsBuilder</code> will be used to create JWTs that we send onwards to the RSs. The <code>oidcConsumer</code> is used to verify JWTs that come from the OP. In each case, we&#8217;re using RS256 as our signature algorithm type. We&#8217;re setting a keystore/truststore and an alias to use to sign/verify our JWTs. The trust store contains the public certificate for the key configured in the OP&#8217;s <code>openidConnectProvider</code> element. The keystore contains the key we plan to use to sign JWTs for the RSs which, in turn, will have the public certificate they can use to verify those JWTs.</p>
+<p>Noteworthy here is the customisation of the <code>issuer</code> attribute of the JWTs being generated. By default, Liberty uses the calculated endpoint address for your Liberty server as the issuer but, when running Liberty within a container, it may not always be able to correctly determine the actual endpoint address being used (eg, Docker port forwards, front-facing proxies etc). By overriding the issuer like this, we can guarantee the result is as expected. In a real deployment, this would likely be configured like the redirect URLs as an environment variable, injected into the container at runtime depending on the execution environment. For this example, fixed values work just fine.</p>
+<p>That just leaves the definition for the app itself:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+	&lt;!-- The app protected by OIDC, the security role enables security for the 
+		app, and by default when is oidc security is configured it applies to all 
+		secured apps --&gt;
+	&lt;application type=&quot;war&quot; id=&quot;signed-jwt-jee-rp-application&quot;
+		name=&quot;signed-jwt-jee-rp-application&quot; location=&quot;${server.config.dir}/apps/signed-jwt-jee-rp-application.war&quot;&gt;
+		&lt;application-bnd&gt;
+			&lt;security-role name=&quot;OIDCUser&quot;&gt;
+				&lt;special-subject type=&quot;ALL_AUTHENTICATED_USERS&quot; /&gt;
+			&lt;/security-role&gt;
+		&lt;/application-bnd&gt;
+	&lt;/application&gt;
+</pre>
+<p>You’ll note that there’s no explicit binding saying <em>&#8220;protect this app with openID Connect&#8221;</em>. When you declare an <code>openidConnectClient</code> within your Liberty server configuration, it applies to all apps. It is possible to configure a server to have multiple <code>openidConnectClient</code>s using <code>authFilterRef</code>s to decide which apps are protected by which client definitions (see the <a href="http://www.ibm.com/support/knowledgecenter/SSEQTP_8.5.5/com.ibm.websphere.wlp.doc/ae/twlp_config_oidc_rp.html">Knowledge Center</a> for details).</p>
+<h3>The Java EE RP application implementation…</h3>
+<p>The application is available in the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-jee-rp">liberty-jee-rp</a> project on Github.</p>
+<p>The <code>openIdConnectClient</code> configured above handles a lot for the application. By the time the request reaches the application, the user has already been redirected to the OP, authenticated, and Liberty has performed the token exchange to obtain the <code>id_token</code> and <code>access_token</code> from the OP. This is good stuff!</p>
+<p>Within our app, we just annotate our servlet with a <code>@ServletSecurity</code> annotation to ensure that accesses should only be allowed when the user has the role <code>OIDCUser</code> (which we configured as the role name for <code>ALL_AUTHENTICATED_USERS</code> back in our <code>server.xml</code> inside the application element):</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @ServletSecurity(@HttpConstraint(rolesAllowed = &quot;OIDCUser&quot;))
+</pre>
+<p>The RP will be invoking the two RSs so we need to pass on the identity of the invoking user. We now obtain the <code>id_token</code> from that Oauth exchange that protected the RP, to discover who we are authenticated as, and the scopes etc the user agreed to. The OpenID Connect feature in Liberty offers an easy API to obtain the <code>id_token</code>:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    IdToken id_token = PropagationHelper.getIdToken();
+</pre>
+<p>And then to obtain the scopes, we can process the <code>access_token</code> as a JWT (that&#8217;s why we picked that option earlier!). We just ask the <code>id_token</code> for the <code>access_token</code> and then use our configured <code>oidcConsumer</code> JwtConsumer to process the JWT for us:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    // lets extract the scopes from the access token, we can send them along to the rs.
+    ArrayList&lt;String&gt; scopes=new ArrayList&lt;&gt;();
+    // process the access_token as a jwt to obtain scopes.	
+    try {
+        JwtConsumer jwtConsumer = JwtConsumer.create(&quot;oidcConsumer&quot;);
+        JwtToken access_Token =  jwtConsumer.createJwt(PropagationHelper.getAccessToken());
+        scopes = access_Token.getClaims().getClaim(&quot;scope&quot;, ArrayList.class);
+    } catch (InvalidConsumerException | InvalidTokenException e1) {
+        e1.printStackTrace();
+        throw new WebApplicationException(e1);
+    }
+</pre>
+<p>Once we have the <code>id_token</code> we want to extract some information from it and build up a signed JWT to send on to the RS as our auth token. We’ll use the <code>rsBuilder</code> JwtBuilder we configured to build a simple JWT with the subject and scopes from the <code>id_token</code> and give it a 30-second lifespan:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+		// use liberty to build the new jwt, 'rsBuilder' identifies the jwtBuilder 
+		// defined in server.xml which already knows which keystore / key to use
+		// to sign the jwt.
+		JwtBuilder jwtBuilder;
+		try {			
+			jwtBuilder = JwtBuilder.create(&quot;rsBuilder&quot;);
+
+			// add the subject, and scopes from the existing request.
+			jwtBuilder.subject(id_token.getSubject());				
+			jwtBuilder.claim(&quot;scopes&quot;, scopes);
+			
+			// set a very short lifespan for the new jwt of 30 seconds.
+			Calendar calendar = Calendar.getInstance();
+			calendar.add(Calendar.SECOND, 30);
+			jwtBuilder.expirationTime(calendar.getTime().getTime());
+
+			// build the new encoded token
+			JwtToken jwtToken = jwtBuilder.buildJwt();
+			String newJwt = jwtToken.compact();
+			
+			... use newJwt ... 
+			
+		} catch (InvalidBuilderException | InvalidClaimException | JwtException e) {
+			e.printStackTrace();
+			//e.printStackTrace(out);
+			throw new WebApplicationException(e);
+		}			
+</pre>
+<p>If you wanted to improve this, you might choose to use <a href="http://www.joda.org/joda-time/quickstart.html">Joda-Time</a> or the <a href="http://www.oracle.com/technetwork/articles/java/jf14-date-time-2125367.html">Java 8 Date &amp; Time API</a> to handle creating that date 30 seconds in the future. You may also choose to add additional claims to the JWT relating to the type of action you are about to invoke on the RS, or even information regarding the path through which the user’s request arrived.</p>
+<p>And then we&#8217;ll build a request, and invoke the RS, with the token as a header. Here, we are using JAX-RS as the client:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    ClientBuilder cb = ClientBuilder.newBuilder();
+    cb.property(&quot;com.ibm.ws.jaxrs.client.disableCNCheck&quot;, true);
+    cb.property(&quot;com.ibm.ws.jaxrs.client.ssl.config&quot;, &quot;defaultSSLConfig&quot;);
+    
+    Client c = cb.build();
+    String result = &quot;&quot;;
+    try{
+        result = c.target(RS_JEE_ENDPOINT)
+                  .request()
+                  .header(&quot;jwt&quot;, newJwt)
+                  .get(String.class);
+    }finally{
+        c.close();
+    }
+</pre>
+<p>We&#8217;re disabling the common name check in SSL because we&#8217;re using self-signed certificates in the example and the host names will almost certainly not match the ones in the generated certificates. But if you are deploying to a more stable environment, with real SSL certificates, you&#8217;ll should able to remove that <code>disableCNCheck</code> line.</p>
+<p>The new JWT is added as a header as part of the request. Which is all pretty neat but it can be improved, if we make all the code that builds and adds the JWT into a JAXR-RS <code>ClientRequestFilter</code>. Then JAX-RS will automatically add the header for us each time. We&#8217;ve included <a href="https://github.com/WASdev/sample.microservices.security.jwt/blob/master/liberty-jee-rp/src/main/java/net/wasdev/securemicroservices/JwtJaxRSClientFilter.java">an example filter in the sample</a>.</p>
+<p>Using the filter means the RP implementation can collapse to just:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    ClientBuilder cb = ClientBuilder.newBuilder();
+    cb.property(&quot;com.ibm.ws.jaxrs.client.disableCNCheck&quot;, true);
+    cb.property(&quot;com.ibm.ws.jaxrs.client.ssl.config&quot;, &quot;defaultSSLConfig&quot;);
+    cb.register(JwtJaxRSClientFilter.class);
+    
+    Client c = cb.build();
+    String result = &quot;&quot;;
+    try {
+        result = c.target(RS_JEE_ENDPOINT).request().get(String.class);
+    } finally {
+        c.close();
+    }
+    ... use result ...
+</pre>
+<p>The filter is registered on the <code>ClientBuilder</code> so that any clients built from it will automatically add the JWT header when invoking services. For the complete code, look at <a href="https://github.com/WASdev/sample.microservices.security.jwt/blob/master/liberty-jee-rp/src/main/java/net/wasdev/securemicroservices/TestServletUsingFilter.java">the Java class in the sample in GitHub</a>.</p>
+<p>For comparison, the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-jee-rp">liberty-jee-rp</a> project shows the approach with and without use of a filter.</p>
+<h3>The Spring RP implementation</h3>
+<p>For Spring, we&#8217;ll use the Spring Security ability to delegate to the container for authentication (preauthentication). This lets Spring allow Liberty to handle the initial authentication and then populate its Spring security context from the Java EE Container authentication. That&#8217;s why the <code>server.xml</code>s are similar: Both RPs are using an <code>openidConnectClient</code> to talk to the OP. Additionally, since both Java EE and Spring need to know the result of the Java EE authentication, and need to parse and construct JWTs, we have the Spring implementation of the RP use the Liberty OIDC and JWT APIs.</p>
+<p>We&#8217;ll start with the <code>WebSecurityConfigurerAdapter</code>. This class is responsible for configuring the security for the Spring web application. Because we are delegating to the Java EE Container, it&#8217;s rather a simple configuration:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Configuration
+    @EnableWebSecurity
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                    .anyRequest().authenticated()
+                    .and()
+                .jee()
+                    .mappableAuthorities(&quot;OIDCUser&quot;);
+        }
+    }
+</pre>
+<p>All we are saying here is that every request should be authenticated and that we&#8217;ll allow the <code>OIDCUser</code> role within Spring. We&#8217;re not really using the role so it doesn&#8217;t  matter too much. We&#8217;re just protecting the entire app with Java EE security and we want to be able to ensure we&#8217;re authenticated both in Spring and Java EE.</p>
+<p>Because we&#8217;re using Spring, we don&#8217;t have a convenient <code>@ServletSecurity</code> annotation to enable security for the web app for us so we have to go back to using a <code>web.xml</code> (feels kinda odd in today&#8217;s super-annotated world!):</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+             xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee
+             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+             version=&quot;3.1&quot;&gt;
+        &lt;security-role&gt;
+            &lt;role-name&gt;OIDCUser&lt;/role-name&gt;
+        &lt;/security-role&gt;
+        &lt;security-constraint&gt;
+            &lt;web-resource-collection&gt;
+                &lt;web-resource-name&gt;Secured Areas&lt;/web-resource-name&gt;
+                &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+            &lt;/web-resource-collection&gt;
+            &lt;auth-constraint&gt;
+                &lt;role-name&gt;OIDCUser&lt;/role-name&gt;
+            &lt;/auth-constraint&gt;
+        &lt;/security-constraint&gt;
+    &lt;/web-app&gt;
+</pre>
+<p>Here we basically say that all URLs for the application should require the role <code>OIDCUser</code> which ties back to the <code>server.xml</code> where we defined <code>OIDCUser</code> as the role name to be used for <code>ALL_AUTHENTICATED_USERS</code>.</p>
+<p>That&#8217;s enough to ensure our Spring app requires authentication via the OP. Next, we need to code the client that will invoke the RSs. In Spring, we can do this using a <code>RestTemplate</code> and, much like JAX-RS allows us to register a filter to add the JWT, Spring allows us to add an <code>Interceptor</code> that can serve the same purpose:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Service
+    public class RsRestTemplate {
+    
+        private final RestTemplate restTemplate;
+    
+        public RsRestTemplate(RestTemplateBuilder builder){
+            this.restTemplate = builder.build();
+            this.restTemplate.setInterceptors(Collections.singletonList(new JWTAuthenticationInterceptor()));
+        }
+    
+        public String getResponseFromRs(String url) {
+            return this.restTemplate.getForObject(url, String.class);
+        }
+    }
+</pre>
+<p>This creates us an injectable RestTemplate that we can use to invoke the RS&#8217;s.  The <code>JWTAuthenticationInterceptor</code> is an implementation of <code>ClientHttpRequestInterceptor</code> and has code almost identical to the JEE RP&#8217;s filter, except for the hook point where it&#8217;s connected to Spring:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Override
+    public ClientHttpResponse intercept(
+            HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+            throws IOException {
+
+        HttpHeaders headers = request.getHeaders();
+        headers.add(&quot;jwt&quot;, getJwt());
+        return execution.execute(request, body);
+    }
+</pre>
+<p>The <code>intercept</code> method is driven by Spring when the RestTemplate is invoked. We just build the JWT and add it to the headers, then return the result back to Spring. The full code for the interceptor can be seen <a href="https://github.com/WASdev/sample.microservices.security.jwt/blob/master/liberty-spring-rp/src/main/java/net/wasdev/securemicroservices/JWTAuthenticationInterceptor.java">in the Java class on GitHub</a>.</p>
+<p>That just leaves the <code>@RestController</code> that implements the RP itself. We want the URLs for the RSs and the RestTemplate we built to be injected to us:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Autowired
+    RsRestTemplate restTemplate;
+
+    @Value(&quot;${RS_JEE_ENDPOINT_URL}&quot;)
+    String jeersurl;
+
+    @Value(&quot;${RS_SPRING_ENDPOINT_URL}&quot;)
+    String springrsurl;
+</pre>
+<p>And then we want to define the RP endpoint, and invoke the RS&#8230;</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @RequestMapping(&quot;/Test&quot;)
+    public String greeting(@RequestParam(value=&quot;name&quot;, required=false, defaultValue=&quot;World&quot;) String name) {
+        String jeeRsResp = null;
+        try {
+            jeeRsResp = restTemplate.getResponseFromRs(jeersurl);
+        }catch(HttpClientErrorException|HttpServerErrorException e){
+            return &quot;JEE RS Invoke failed : &quot;+e.getStatusCode()+&quot; :: &quot;+e.getResponseBodyAsString();
+        }  
+ 
+</pre>
+<p>And the same for the invocation of the Spring RS endpoint. The full source for the RestController is <a href="https://github.com/WASdev/sample.microservices.security.jwt/blob/master/liberty-spring-rp/src/main/java/net/wasdev/securemicroservices/GreetingController.java">in the Java class on GitHub</a>.</p>
+<h2>Relying Service (RS)</h2>
+<p>So that leaves the Relying Service (RS) implementations which, compared to their sibling RP code, look remarkably spartan. Their config has the usual SSL keystore elements and then just the app declaration (and, in this case, even that is optional; you could chuck this one in <code>dropins</code>). As with the other examples, the RS configuration is available at Github over in the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-jee-rs">liberty-jee-rs</a> and <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-spring-rs">liberty-spring-rs</a> projects.</p>
+<p>Here’s our simple application element:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;application type=&quot;war&quot; id=&quot;signed-jwt-jee-rs-application&quot; name=&quot;signed-jwt-spring-rs-application&quot;
+                 location=&quot;${server.config.dir}/apps/signed-jwt-jee-rs-application.war&quot;&gt;
+    &lt;/application&gt;
+</pre>
+<p>Because the RSs will be verifying a JWT, we also declare a <code>jwtConsumer</code>, the same way we did in the RP, except this time it&#8217;s for the RS consuming JWTs from the RP, where as the RP was consuming JWTs from the OP. Although in this example they are using the same keys, in a real deployment it&#8217;s more likely that these would be different, even using different keystores/truststores:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+     &lt;jwtConsumer id=&quot;rpConsumer&quot;
+                  signatureAlgorithm=&quot;RS256&quot;
+                  issuer=&quot;https://thesamplerp/&quot;
+                  trustStoreRef=&quot;defaultTrustStore&quot;
+                  trustedAlias=&quot;jwtsampleapp&quot;
+     /&gt;
+</pre>
+<p>Here we configure the JwtConsumer to expect JWTs with the RS256 algorithm, the appropriate public certificate from the trust store, and, critically, we set the expected issuer to match the value we&#8217;ve configured for the JWTs being built over in the RPs. This makes sure we keep working when running in different environments, where Liberty may not be able to guess the external address used to access the server.</p>
+<p>The RS has no server configuration for OpenID Connect because the authentication is all handled in the application code using the JWT.</p>
+<p>We’re using the SSL and servlet features to host the RS application. That gives us a relatively short feature manager list for both the Spring and Java EE RSs:</p>
+<pre class="brush: xml; title: ; notranslate" title="">
+    &lt;featureManager&gt;
+        &lt;feature&gt;ssl-1.0&lt;/feature&gt;
+        &lt;feature&gt;jwt-1.0&lt;/feature&gt;
+        &lt;feature&gt;servlet-3.0&lt;/feature&gt;
+    &lt;/featureManager&gt;
+</pre>
+<h3>The Java EE RS application implementation</h3>
+<p>The full code for this one can be read over in the <a href="https://github.com/WASdev/sample.microservices.security.jwt/tree/master/liberty-jee-rs">liberty-jee-rs</a> project on Github.</p>
+<p>We will use an annotated servlet filter (via <code>@WebFilter</code>) to intercept all requests to the RS, and to verify the JWT as present and valid:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @WebFilter(filterName=&quot;JWTFilter&quot;, urlPatterns = {&quot;/*&quot;})
+    public class JwtAuthFilter implements Filter{
+    ...
+    }
+</pre>
+<p>Using the JwtConsumer we declared in the <code>server.xml</code> makes the implementation of this filter pretty straightforward. We check for the JWT header within the request (and reject if missing):</p>
+<pre class="brush: java; title: ; notranslate" title="">
+		//read the jwt header &amp; reject if missing or empty.
+		String jwt = request.getHeader(&quot;jwt&quot;);		
+		if(jwt==null || jwt.isEmpty()){
+			response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+			return;
+		}
+</pre>
+<p>And then we use the JwtConsumer to process the header value. For simplicity&#8217;s sake, we set the parsed token directly into the request as an attribute. This allows the RS application to obtain the token and query it for information:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+		JwtConsumer jwtConsumer;
+		try {
+			//use the consumer 'rpConsumer' declared in server.xml
+			jwtConsumer = JwtConsumer.create(&quot;rpConsumer&quot;);
+			JwtToken jwt_Token =  jwtConsumer.createJwt(jwt);
+			
+			//put the parsed jwt object into the request for the app to use.
+			request.setAttribute(&quot;jwt&quot;, jwt_Token);
+			
+			//invoke rest of chain
+			chain.doFilter(req, resp);	
+		} catch (InvalidConsumerException e) {
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			return;
+		} catch (InvalidTokenException e) {
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		}
+</pre>
+<p>If the JWT is invalid, has expired, or has a bad issuer, an &#8216;InvalidTokenException&#8217; is thrown. So we only allow the onward chain invocation if everything is ok.</p>
+<p>With the filter defined, the RS implementation itself looks very simple:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @WebServlet(&quot;/Test&quot;)
+    public class TestServlet extends HttpServlet {
+    
+        private static final long serialVersionUID = 1L;
+    
+        @Override
+        public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+            PrintWriter out = response.getWriter();
+    
+            //added by the rp when it invoked us.
+            String jwtParam = request.getHeader(&quot;jwt&quot;);			
+            out.println(&quot;JEE RS App invoked with valid JWT&lt;br&gt;&quot;);
+    
+            //added by the auth filter after validating the jwt from the rp.
+            JwtToken jwt_Token = (JwtToken) request.getAttribute(&quot;jwt&quot;);
+            ArrayList&lt;String&gt; scopes = jwt_Token.getClaims().getClaim(&quot;scopes&quot;, ArrayList.class);
+            out.println(&quot;JEE RS JWT Had scopes &quot;+scopes.toString());
+        }
+    }
+</pre>
+<p>As this is just an example of how to propagate identity using a signed JWT, we don’t really have any processing to do so we just dump a little info on the scopes from the JWT to our output.</p>
+<h3>The Spring RS application implementation</h3>
+<p>The Spring RS is a little more complex than the Java EE one. We start by defining the <code>WebSecurityConfigurerAdapter</code> to add a custom Filter that will perform our JWT authentication:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    @Configuration
+    @EnableWebSecurity
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                    .authorizeRequests()
+                        .anyRequest().authenticated()
+                    .and()
+                        // And filter other requests to check the presence of JWT in header
+                        .addFilterBefore(new JWTAuthenticationFilter(),
+                            UsernamePasswordAuthenticationFilter.class);
+        }
+    }
+</pre>
+<p>The filter itself is an instance of a <code>GenericFilterBean</code> that delegates pretty much all of the real work it does to another bean that validates the JWT &amp; transforms it to a Spring <code>Authentication</code> object:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    public class JWTAuthenticationFilter extends GenericFilterBean {
+    
+        @Override
+        public void doFilter(ServletRequest request,
+                             ServletResponse response,
+                             FilterChain filterChain)
+                throws IOException, ServletException {
+            Authentication authentication = TokenAuthenticationService
+                    .getAuthentication((HttpServletRequest)request);
+            SecurityContextHolder.getContext()
+                    .setAuthentication(authentication);
+            filterChain.doFilter(request,response);
+        }
+    }
+</pre>
+<p>The <code>TokenAuthenticationService</code> has a static method that will look pretty similar to the Java EE filter logic, with the exception of the last part where it glues into Spring.</p>
+<p>We still retrieve the JWT from the HTTP headers. We still validate it with a JwtConsumer but if the JWT is valid, instead of invoking a chain, we create a <code>UsernamePasswordAuthentication</code> object to return. We populate the object with a custom <code>UserDetails</code> object that allows us to query details from the JWT later in the application:</p>
+<pre class="brush: java; title: ; notranslate" title="">
+    JwtUserDetails jud = new JwtUserDetails(jwt_Token);
+    return new UsernamePasswordAuthenticationToken(jud, &quot;&quot;, jud.getAuthorities());
+</pre>
+<p>The <code>JwtUserDetails</code> object is a simple implementation of Spring&#8217;s <code>UserDetails</code> interface, with an extra method to allow retrieval of the JWT token.</p>
+<p>With all that out of the way, the Spring RS application looks really quite simple indeed:</p>
+<pre class="brush: java; title: ; notranslate" title=""> 
+     @RestController
+     public class GreetingController {
+     
+         @RequestMapping(&quot;/Test&quot;)
+         public String greeting(@AuthenticationPrincipal JwtUserDetails userDetails,
+                                @RequestParam(value=&quot;name&quot;, required=false, defaultValue=&quot;World&quot;) String name) {
+     
+             ArrayList&lt;String&gt; scopes = userDetails.getJwt().getClaims().getClaim(&quot;scopes&quot;, ArrayList.class);
+     
+             return &quot;Spring RS App invoked with valid JWT &quot;+name+
+                     &quot;&lt;br&gt;You authenticated to me as &quot;+userDetails.getUsername()+
+                     &quot; and have scopes of &quot;+scopes.toString();
+         }
+     
+     }
+
+</pre>
+<p>You can see here the RestController is able to have the <code>JwtUserDetails</code> object injected directly as an argument to the request method itself. The <code>@AuthenticationPrincipal</code> annotation allows the application code to easily get access to the token, to extract the scopes, and to return them as a message.</p>
+<p>A proper RS implementation would likely perform real work at this stage but, again, as this is just a sample, it&#8217;s enough to show that we&#8217;re able to access information from the JWT inside the app.</p>
+<h2>A word or two on keys and keystores</h2>
+<p>This sample uses both SSL and signed ID tokens (as part of the OpenID Connect flows). As such, we end up having to play with SSL certificates and keys.</p>
+<p>We have quite a few of them being used by the five servers:</p>
+<ol>
+<li>Keystores used by the OpenID Provider server:
+<ul>
+<li>OpenID Connect KeyStore: Contains the private key used by the provider to sign the <code>id_tokens</code> returned to relying parties.</li>
+<li>OpenID Provider KeyStore: Contains the private key used by the provider to protect its SSL communications.</li>
+</ul>
+</li>
+<li>Keystores used by the relying party servers:
+<ul>
+<li>Relying Party KeyStore: Contains the private key used by the relying party to protect its SSL communications. Also used to sign each <code>signed-jwt</code> created to be sent to the RS.</li>
+<li>OpenID Provider TrustStore: Contains the public key used by the relying party to verify the signatures on the <code>id_token</code>&#8216;s from the OpenID provider.</li>
+<li>Relying Party TrustStore: Contains the public keys for the relying service SSL, and for the OpenID provider SSL.</li>
+</ul>
+</li>
+<li>Keystores used by the relying service servers:
+<ul>
+<li>Relying Service KeyStore: Contains the private key used to protect its SSL communications.</li>
+<li>Relying Service TrustStore: Contains the public key for the OP SSL, allowing the app to communicate with the OP. And contains the public key used by the RS to verify the signatures of the <code>signed-jwt</code> created by the RP.</li>
+</ul>
+</li>
+</ol>
+<p>For simplicity&#8217;s sake in the sample, many of these keystores are the same. It makes no difference to the validity sample if the SSL certificate for the OP happens to also be the same one we use to sign the JWTs between the RP and RS. In a real deployment, many of these will likely be different. It&#8217;s only important to ensure that the truststores for the appropriate places have certificates that allow them to trust the output of the corresponding service.</p>
+<h2>Running the sample</h2>
+<p>The full project with sample code is available in GitHub at <a href="https://github.com/WASdev/sample.microservices.security.jwt">https://github.com/WASdev/sample.microservices.security.jwt</a>. The sample  uses Maven to build the keystores. You can deploy the sample using Docker or remotely to IBM Cloud using Cloud Foundry apps.</p>
+<p>Check <a href="https://github.com/WASdev/sample.microservices.security.jwt/blob/master/README.md">the project readme</a> for the best up-to-date guide on running the sample.</p>
+							<footer class="entry-footer" id="doc_author">
+								<div class="byline"><div><p class="byline__author"><span class="author vcard">by <a class="url fn n" href="blog/author/ozzy/index.html">Ozzy Osborne</a></span></p><ul class="byline__social"></ul><p class="byline__bio"></p></div></div>							</footer><!-- .entry-footer -->
+							
+<div id="comments" class="comments-area">
+
+	
+			<p class="comments-title ibm-h3 ibm-light">
+			8 comments on"Using signed JSON Web Tokens (JWTs) to secure microservices"		</p>
+
+		
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 pn-comment" id="comment-152292">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Denis Forveille</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-152292">
+					April 16, 2018	         	</a>
+			</div>
+			      		<p>Excellent  article! Thanks<br />
+Q: In case of protecting  JAX_RS apps, is there a reason to use a standard @WebFilter instead of using the &#8220;more JAX_RS way&#8221; by using a class that implements ContainerRequestFilter with an annotation that is added to each JAX_RS endpoint we want to protect ?<br />
+@Secured<br />
+@Provider<br />
+@Priority(Priorities.AUTHENTICATION)<br />
+public class SecuredFilter implements ContainerRequestFilter {<br />
+    public void filter(ContainerRequestContext requestContext) throws IOException {&#8230;}<br />
+&#8212;-<br />
+@javax.ws.rs.NameBinding<br />
+@Retention(RUNTIME)<br />
+@Target({TYPE, METHOD})<br />
+public @interface Secured {}<br />
+&#8212;&#8211;<br />
+@GET<br />
+@Secured<br />
+public Response mySecuredMethod() {&#8230;}</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-152292' onclick='return addComment.moveForm( "comment-152292", "152292", "respond", "15417" )' aria-label='Reply to Denis Forveille'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 pn-comment" id="comment-147036">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ernani Joppert</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-147036">
+					July 24, 2016	         	</a>
+			</div>
+			      		<p>Doesn&#8217;t openidConnectClient validate the token with the certificate existing in indicated alias in trust store? I thought so.<br />
+The same goes with WAS Full Profile where signVerifyAlias can be used to map a certificate alias in CellDefaultTrustStore, isn&#8217;t it?<br />
+BTW, this post provides a lot of great tips to validate the id_token with its given trust store and certificate alias programatically, but is this really required? I&#8217;ve been new to openid connect and I also have heard about the term downstream delegation, which in essence sends the authorization token and refresh token to a 3rd party service, but, is the id_token also possible to be sent donwstream? Is this the reason  why it is required to perform its signature validation again? Thanks a lot!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-147036' onclick='return addComment.moveForm( "comment-147036", "147036", "respond", "15417" )' aria-label='Reply to Ernani Joppert'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment even depth-2 pn-comment" id="comment-147041">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ernani Joppert</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-147041">
+					July 24, 2016	         	</a>
+			</div>
+			      		<p>It seems I&#8217;ve missed reading this section {Propagating identity using signed-JWTs}, it outlines identity propagation like a blueberry loaded cheescake&#8230;it seems identity propagation is the word to use instead of downstream delegation. Sorry for my miss!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-147041' onclick='return addComment.moveForm( "comment-147041", "147041", "respond", "15417" )' aria-label='Reply to Ernani Joppert'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-even depth-1 pn-comment" id="comment-131760">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='index.html%3Fp=15794.html' rel='external nofollow' class='url'>Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-131760">
+					December 04, 2015	         	</a>
+			</div>
+			      		<p>[&#8230;] Using signed JSON Web Tokens (JWTs) to secure microservices builds on the previous article to explain how to use Signed JWTs to propagate identity instead of access tokens. [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-131760' onclick='return addComment.moveForm( "comment-131760", "131760", "respond", "15417" )' aria-label='Reply to Secure Microservices: API Keys, Access Tokens, and Signed JWTs - WASdev'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-rvennam even thread-odd thread-alt depth-1 pn-comment" id="comment-131216">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Ram Vennam</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-131216">
+					November 13, 2015	         	</a>
+			</div>
+			      		<p>Great post Ozzy!</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-131216' onclick='return addComment.moveForm( "comment-131216", "131216", "respond", "15417" )' aria-label='Reply to Ram Vennam'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-even depth-1 pn-comment" id="comment-131210">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://java.hot4web.com/2015/11/13/secure-microservices-with-signed-json-web-tokens-jwts/' rel='external nofollow' class='url'>Secure Microservices with signed JSON Web Tokens (JWTs) | JAVA</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-131210">
+					November 13, 2015	         	</a>
+			</div>
+			      		<p>[&#8230;] by  fadar  [link] [3 comments]  Full article:Secure Microservices with signed JSON Web Tokens [&#8230;]</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-131210' onclick='return addComment.moveForm( "comment-131210", "131210", "respond", "15417" )' aria-label='Reply to Secure Microservices with signed JSON Web Tokens (JWTs) | JAVA'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 pn-comment" id="comment-131199">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname">Stephan Knitelius</span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-131199">
+					November 12, 2015	         	</a>
+			</div>
+			      		<p>Good post, can you please fix the escaped characters in the xml.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-131199' onclick='return addComment.moveForm( "comment-131199", "131199", "respond", "15417" )' aria-label='Reply to Stephan Knitelius'>Reply</a>			</div>
+     	</div>
+    </li>
+<ul class="children">
+	<li class="comment byuser comment-author-laurac odd alt depth-2 pn-comment" id="comment-131213">
+    	<div class="pn-comment__avatar">
+			        </div>
+		<div class="pn-comment__comment">
+			<div class="pn-comment__author">
+        		<span class="pn-comment__authorname"><a href='http://www.lauracowen.co.uk' rel='external nofollow' class='url'>Laura Cowen</a></span> 	         	<a class="pn-comment__meta" href="index.html%3Fp=15417.html#comment-131213">
+					November 13, 2015	         	</a>
+			</div>
+			      		<p>Done. Sorry, WordPress macro bug caught us out again.</p>
+			<div class="pn-comment__actions">
+        		<a rel='nofollow' class='comment-reply-link' href='index.html%3Fp=15417.html#comment-131213' onclick='return addComment.moveForm( "comment-131213", "131213", "respond", "15417" )' aria-label='Reply to Laura Cowen'>Reply</a>			</div>
+     	</div>
+    </li>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+	
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Join The Discussion <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html%3Fp=15417.html#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://developer.ibm.com/wasdev/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Enter your comments..."></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="ibm-btn-pri ibm-btn-small ibm-btn-blue-50" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='15417' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d7b756b284" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="214"/></p>			</form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->
+											</main><!-- #main -->
+
+			</div>
+</div>
+<script>
+	jQuery(document).ready(function($){
+		// return;
+		$('.cat-item:has(.children)').addClass('arrowryt');
+		$('.current-cat:has(.children)').addClass('arrowdwn');
+		$('.current-cat-parent, .current-cat-ancestor').addClass('arrowdwn');
+		$('<span class="toggler"></span>').prependTo('.cat-item:has(.children)').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			$(this).parent().toggleClass('arrowdwn');
+		});
+		$('#pnext_cpt_leftnav .pnext_cpt_leftnav_expand').on('click',function(e){
+			e.preventDefault();
+			$(this).toggleClass('ibm-chevron-up-link');
+			$(this).parents('#pnext_cpt_leftnav__links').toggleClass('menuHide');
+		})
+	});
+</script>
+
+
+
+		</div><!-- #content -->
+	</div><!-- end of ibm-content-wrapper -->
+
+	<p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small">
+		<a class="ibm-nospacing ibm-top-link" aria-label="Back to top" href="index.html%3Fp=15417.html#top" tabindex="0">Back to top</a>
+	</p>
+
+	<footer role="contentinfo" aria-label="IBM" id="themeFooter">
+		<div id="boomer-footer" class="boomer_footer_menu"></div>
+		<div id="dw-footer" class="ibm-alternate ibm-padding-normal">
+			<div class="ibm-columns ibm-padding-bottom-0">
+				<div class="ibm-col-1-1">
+					<div class="ibm-footer-corporate-links">
+						<ul>
+              <li><a href="https://developer.ibm.com/feedback/">Contact</a></li>
+              <li><a href="https://www.ibm.com/privacy/us/en/">Privacy</a></li>
+              <li><a href="https://developer.ibm.com/terms/ibm-developer-terms-of-use/">Terms of use</a></li>
+              <li><a href="https://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+              <li class="ibm-feedbacklink"><a href="index.html%3Fp=15417.html#">Feedback</a></li>
+							<li><a href="https://www.ibm.com/developerworks/secure/report/">Report Abuse</a></li>
+              <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="index.html%3Fp=15417.html#">Cookie Preferences</a></li>
+          	</ul>
+					</div>
+					<div id="ibm-footer-locale-selector"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div><!-- #page -->
+
+<script>
+        jQuery(document).ready(function($){
+          var dcName = 'wasdev';
+          // $('a').each(function(){
+          //   if(this.href.match('bluemix.net')){
+          //     if(this.search){
+          //       this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }else{
+          //       this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+          //     }
+          //   }
+          // });
+
+          jQuery('a[href*="bluemix.net"]').each(function(){
+            if(this.search){
+              this.href = this.href + '&cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }else{
+              this.href = this.href + '?cm_sp=dw-bluemix-_-'+dcName+'-_-devcenter';
+            }
+          });
+
+        });
+      </script><link rel='stylesheet' id='pn-doccat-styles-css'  href='wp-content/plugins/projectnext-docs-categorical-2/partials/v18/pdc.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js'></script>
+<script type='text/javascript' src='wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.ibm.com/wasdev/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/navigation.js'></script>
+<script type='text/javascript' src='wp-content/themes/boomer-v18/js/skip-link-focus-fix.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tactic.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/software/info/js/tacticbindlinks.js'></script>
+<script type='text/javascript' src='wp-content/plugins/page-links-to/js/new-tab.min.js'></script>
+<script type='text/javascript' src='https://dw1.s81c.com/dw/wp-includes/js/wp-embed.min.js'></script>
+<script async="async" type='text/javascript' src='wp-content/plugins/akismet/_inc/form.js'></script>
+
+<script>
+	/* this is where we are going to control the main menu */
+	function changeMenu(links) {
+		IBMCore.common.module.masthead.editProfileMenu({
+			action: "replace",
+			links: links
+		});
+	}
+
+	var setMainMenu = function(){
+					var userLinks = [{
+				title: "My IBM",
+				url: "https://myibm.ibm.com/dashboard/?lnk=mmi"
+			},{
+				title: "Sign In",
+				url: "https://developer.ibm.com/sso/login?d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-signed-json-web-tokens-jwts-secure-microservices&lang=en_US"
+			},
+			{
+				title: "Register",
+				url: "https://developer.ibm.com/sso/register?lang=en_US&d=https%3A%2F%2Fdeveloper.ibm.com%2Fwasdev%2Fdocs%2Fusing-signed-json-web-tokens-jwts-secure-microservices"
+			}];
+				changeMenu(userLinks);
+	}
+
+	IBMCore.common.module.masthead.subscribe("profileMenuReady", "customjs", setMainMenu);
+</script>
+<script>
+		(function($) {
+			$(document).ready(function(){
+				/* prevent the # links in the main menu from firing */
+				$('.ibm-sitenav-menu-list #primary-menu a').on('click.stopFakeLinks',function(e){
+					$this = $(this);
+					if($this.attr('href') === "#"){
+						return false;
+					}
+				});
+
+				/* bind the feedback click evnet */
+				jQuery('#dw-footer .ibm-feedbacklink a').on("click", function(evt) {
+			        evt.preventDefault();
+			        var iframeWidth = 970;
+			        if (window.innerWidth < 900) {
+			            iframeWidth = window.innerWidth - 80
+			        }
+			        IBMCore.common.widget.surveyccfintercept.initFeedback({
+			            survey: {
+			                height: 700,
+			                id: "web-exp",
+			                metaData: "",
+			                type: "medallia",
+			                width: iframeWidth
+			            }
+			        })
+			   });
+				//testing out the alpha helper
+				$('[data-alpha]').each(function(i){
+					$elm = $(this);
+					var bg = $elm.css('backgroundColor').replace(/[rgb(]/g,'').replace(/ /g,'').replace(/[)]/g,'');
+					var alpha = $elm.data('alpha')/100;
+					$elm.css("cssText", "background-color: rgba("+bg+","+alpha+") !important;");
+				})
+				//testing out the panel slider
+				$('.pn-sliding-panels').each(function(i){
+					$elm = $(this);
+					//get the width of the active panel
+					var activeWidth = $elm.data('openamount'),
+						panelCount = $elm.data('panelcount'),
+						inactiveWidth = ((100 - activeWidth) / (panelCount-1));
+					//set the first slide as active - later, allow it to be set
+					$elm.find('.pn-panel').each(function(i,item){
+						$panel = $(item);
+						$panel.data('closedwidth',inactiveWidth);
+						$panel.data('openwidth',activeWidth);
+						if(i == 0){
+							$panel.addClass('pn-panel__active').css({width:activeWidth+'%'});
+						}else{
+							$panel.css({width:inactiveWidth+'%'});
+						}
+					});
+
+					$elm.on('click.slide','.pn-panel',function(e){
+						$this = $(this);
+						//console.info('clicked')
+						if($this.hasClass('pn-panel__active')){
+							//allow for the links in the active panel to be clicked
+							//console.info('im open, let the links through')
+						}else{
+							e.preventDefault();
+							//set the width of the currently active panel to the closed amount
+							var $active = $this.parents('.pn-sliding-panels').find('.pn-panel__active');
+								$active.css({width:$active.data('closedwidth')+'%'}).removeClass('pn-panel__active');
+							$this.addClass('pn-panel__active').css({width:$this.data('openwidth')+'%'});
+						}
+
+					})
+				});
+
+			})
+		})( jQuery );
+	</script>
+
+	
+</body>
+</html>
